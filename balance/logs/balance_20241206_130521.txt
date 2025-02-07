@@ -1,0 +1,18 @@
+2024-12-06 16:05:21,037 - DEBUG - Building SSL context
+2024-12-06 16:05:21,078 - DEBUG - Switching to SSL
+2024-12-06 16:05:21,081 - DEBUG - SSL has been enabled
+2024-12-06 16:05:21,081 - DEBUG - Starting authorization phase
+2024-12-06 16:05:21,081 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-06 16:05:21,081 - INFO - package: mysql.connector.plugins
+2024-12-06 16:05:21,081 - INFO - plugin_name: caching_sha2_password
+2024-12-06 16:05:21,081 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-06 16:05:21,082 - DEBUG - Exchanging further packets
+2024-12-06 16:05:21,084 - DEBUG - caching_sha2_password completed succesfully
+2024-12-06 16:05:21,098 - INFO - Starting Flask app.
+2024-12-06 16:05:21,107 - WARNING -  * Debugger is active!
+2024-12-06 16:05:21,109 - INFO -  * Debugger PIN: 599-719-174
+2024-12-06 16:05:27,881 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-06 16:05:31,534 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x0abb43f42c09a3528ba01eae7e3e876fb0c46eb6&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2024-12-06 16:05:31,535 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-06 16:05:32,169 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0x0abb43f42c09a3528ba01eae7e3e876fb0c46eb6&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 187
+2024-12-06 16:05:32,170 - INFO - 127.0.0.1 - - [06/Dec/2024 16:05:32] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -

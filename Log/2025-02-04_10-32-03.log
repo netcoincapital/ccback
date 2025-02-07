@@ -1,0 +1,30 @@
+2025-02-04 10:32:03,353 - DEBUG - Building SSL context
+2025-02-04 10:32:03,407 - DEBUG - Switching to SSL
+2025-02-04 10:32:03,411 - DEBUG - SSL has been enabled
+2025-02-04 10:32:03,411 - DEBUG - Starting authorization phase
+2025-02-04 10:32:03,412 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-04 10:32:03,412 - INFO - package: mysql.connector.plugins
+2025-02-04 10:32:03,412 - INFO - plugin_name: caching_sha2_password
+2025-02-04 10:32:03,413 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-04 10:32:03,413 - DEBUG - Exchanging further packets
+2025-02-04 10:32:03,416 - DEBUG - caching_sha2_password completed succesfully
+2025-02-04 10:32:03,429 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-04 10:32:03,436 - WARNING -  * Debugger is active!
+2025-02-04 10:32:03,439 - INFO -  * Debugger PIN: 117-061-111
+2025-02-04 10:32:05,575 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-04 10:32:05,643 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-04 10:32:05,647 - INFO - 127.0.0.1 - - [04/Feb/2025 10:32:05] "POST /balance HTTP/1.1" 200 -
+2025-02-04 13:00:56,935 - WARNING - No wallets/addresses or no tokens found for user 7002b3ca-7842-4dd5-9a0a-d2fc1516d795
+2025-02-04 13:00:56,937 - INFO - 127.0.0.1 - - [04/Feb/2025 13:00:56] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-04 13:01:06,063 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-04 13:01:06,102 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-04 13:01:06,104 - INFO - 127.0.0.1 - - [04/Feb/2025 13:01:06] "POST /balance HTTP/1.1" 200 -
+2025-02-04 13:08:02,161 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-04 13:08:02,208 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-04 13:08:02,210 - INFO - 127.0.0.1 - - [04/Feb/2025 13:08:02] "POST /balance HTTP/1.1" 200 -
+2025-02-04 16:21:17,993 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-04 16:21:18,050 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 13997
+2025-02-04 16:21:18,054 - INFO - 127.0.0.1 - - [04/Feb/2025 16:21:18] "POST /balance HTTP/1.1" 200 -
+2025-02-04 16:21:36,923 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-04 16:21:36,972 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14738
+2025-02-04 16:21:36,975 - INFO - 127.0.0.1 - - [04/Feb/2025 16:21:36] "POST /balance HTTP/1.1" 200 -

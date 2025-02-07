@@ -1,0 +1,28 @@
+2024-12-11 04:58:13,040 - INFO - Services module initialized.
+2024-12-11 04:58:13,045 - INFO - LogManager initialized successfully.
+2024-12-11 04:58:13,069 - DEBUG - Building SSL context
+2024-12-11 04:58:13,114 - DEBUG - Switching to SSL
+2024-12-11 04:58:13,117 - DEBUG - SSL has been enabled
+2024-12-11 04:58:13,118 - DEBUG - Starting authorization phase
+2024-12-11 04:58:13,119 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-11 04:58:13,119 - INFO - package: mysql.connector.plugins
+2024-12-11 04:58:13,119 - INFO - plugin_name: caching_sha2_password
+2024-12-11 04:58:13,122 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-11 04:58:13,123 - DEBUG - Exchanging further packets
+2024-12-11 04:58:13,124 - DEBUG - caching_sha2_password completed succesfully
+2024-12-11 04:58:13,137 - INFO - Starting Flask app.
+2024-12-11 04:58:13,145 - WARNING -  * Debugger is active!
+2024-12-11 04:58:13,147 - INFO -  * Debugger PIN: 599-719-174
+2024-12-11 04:58:17,428 - INFO - Request received: {'PrivateKey': 'dd3a3c409764a31e713547d4af4771d39601fdd5347c19395690dcf5efc0919b', 'PhraseKey': None, 'Password': 'NEWTHING1111', 'WalletName': 'sanaz'}
+2024-12-11 04:58:17,459 - ERROR - Error in Etherscan get_wallet_balance: 'EtherscanService' object has no attribute 'base_url'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\APIs.py", line 43, in get_wallet_balance
+    url = f"{self.base_url}?module=account&action=balance&address={public_address}&tag=latest&apikey={self.api_key}"
+             ^^^^^^^^^^^^^
+AttributeError: 'EtherscanService' object has no attribute 'base_url'. Did you mean: 'api_url'?
+2024-12-11 04:58:17,464 - ERROR - Error in import_wallet: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry 'imported_address_example' for key 'wallets.Wallet_Address'
+[SQL: INSERT INTO `Wallets` (`WalletID`, `UserID`, `WalletName`, `WalletAddress`, `IsMultiSig`, `RequiredSignatures`, `CreatedAt`, `UpdatedAt`) VALUES (%(WalletID)s, %(UserID)s, %(WalletName)s, %(WalletAddress)s, %(IsMultiSig)s, %(RequiredSignatures)s, %(CreatedAt)s, %(UpdatedAt)s)]
+[parameters: {'WalletID': '502b4da5-cc94-42bb-bf66-b11ebc159c37', 'UserID': '36c744ab-9680-42c6-a5a5-2b5c459976a5', 'WalletName': 'sanaz', 'WalletAddress': 'imported_address_example', 'IsMultiSig': 0, 'RequiredSignatures': '1', 'CreatedAt': datetime.datetime(2024, 12, 11, 1, 58, 17, 461716), 'UpdatedAt': datetime.datetime(2024, 12, 11, 1, 58, 17, 462715)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-11 04:58:17,465 - INFO - Database session closed.
+2024-12-11 04:58:17,466 - INFO - 127.0.0.1 - - [11/Dec/2024 04:58:17] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 500 -

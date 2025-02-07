@@ -1,0 +1,25 @@
+2025-01-19 17:06:41,272 - DEBUG - Building SSL context
+2025-01-19 17:06:41,307 - DEBUG - Switching to SSL
+2025-01-19 17:06:41,310 - DEBUG - SSL has been enabled
+2025-01-19 17:06:41,311 - DEBUG - Starting authorization phase
+2025-01-19 17:06:41,311 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-19 17:06:41,312 - INFO - package: mysql.connector.plugins
+2025-01-19 17:06:41,313 - INFO - plugin_name: caching_sha2_password
+2025-01-19 17:06:41,313 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-19 17:06:41,314 - DEBUG - Exchanging further packets
+2025-01-19 17:06:41,316 - DEBUG - caching_sha2_password completed succesfully
+2025-01-19 17:06:41,331 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-19 17:06:41,338 - WARNING -  * Debugger is active!
+2025-01-19 17:06:41,341 - INFO -  * Debugger PIN: 117-061-111
+2025-01-19 17:06:45,237 - DEBUG - Starting new HTTPS connection (1): blockchain.info:443
+2025-01-19 17:06:45,332 - DEBUG - https://blockchain.info:443 "GET /q/addressbalance/bc1qec4k5vxnra0w7yjnv39jsxfp2xm46czef8mygt HTTP/1.1" 200 21
+2025-01-19 17:06:45,339 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2025-01-19 17:06:45,952 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x330C898e12e8929bc83D26b02c91F0FBC9e5a6c9&tag=latest&apikey=%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%E2%80%8C%D8%B4%D8%AF%D9%87-%D8%A7%D8%B2-%D8%B3%D8%A7%DB%8C%D8%AA-etherscan HTTP/1.1" 200 185
+2025-01-19 17:06:45,953 - ERROR - Error in get_balance_and_tokens: invalid literal for int() with base 10: 'Invalid API Key (#err2)|54'
+2025-01-19 17:06:45,959 - DEBUG - Starting new HTTPS connection (1): apilist.tronscanapi.com:443
+2025-01-19 17:06:46,154 - ERROR - Error in get_balance_and_tokens: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+2025-01-19 17:06:46,157 - DEBUG - Starting new HTTPS connection (1): polygon-mainnet.infura.io:443
+2025-01-19 17:06:46,703 - DEBUG - https://polygon-mainnet.infura.io:443 "POST /v3/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%E2%80%8C%D8%B4%D8%AF%D9%87-%D8%A7%D8%B2-%D8%B3%D8%A7%DB%8C%D8%AA-polygonscan HTTP/1.1" 401 31
+2025-01-19 17:06:46,704 - ERROR - Error in get_balance_and_tokens: Expecting value: line 1 column 1 (char 0)
+2025-01-19 17:06:46,715 - INFO - 127.0.0.1 - - [19/Jan/2025 17:06:46] "POST /import_wallet HTTP/1.1" 200 -
+2025-01-19 17:11:51,234 - INFO -  * Detected change in 'c:\\Users\\kozmos teknoloji\\Desktop\\CC\\WI\\import_wallet.py', reloading

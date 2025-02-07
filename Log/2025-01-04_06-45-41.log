@@ -1,0 +1,133 @@
+2025-01-04 06:45:41,034 - INFO - Services module initialized.
+2025-01-04 06:45:41,037 - INFO - LogManager initialized successfully.
+2025-01-04 06:45:41,081 - DEBUG - Building SSL context
+2025-01-04 06:45:41,120 - DEBUG - Switching to SSL
+2025-01-04 06:45:41,123 - DEBUG - SSL has been enabled
+2025-01-04 06:45:41,124 - DEBUG - Starting authorization phase
+2025-01-04 06:45:41,124 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-04 06:45:41,124 - INFO - package: mysql.connector.plugins
+2025-01-04 06:45:41,125 - INFO - plugin_name: caching_sha2_password
+2025-01-04 06:45:41,125 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-04 06:45:41,126 - DEBUG - Exchanging further packets
+2025-01-04 06:45:41,126 - DEBUG - caching_sha2_password completed succesfully
+2025-01-04 06:45:41,137 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-04 06:45:41,144 - WARNING -  * Debugger is active!
+2025-01-04 06:45:41,146 - INFO -  * Debugger PIN: 599-719-174
+2025-01-04 06:45:46,317 - DEBUG - Request data: {'WalletName': 'Sandman222', 'Password': '12345123451'}
+2025-01-04 06:45:46,317 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-04 06:45:46,328 - INFO - New user created: <User(UserID=a002aa66-bad1-450a-ada7-5406a3d5f73e, ID=None, Email='None')>
+2025-01-04 06:45:46,330 - INFO - Generated BIP39 Mnemonic: wine music degree junior monitor bike follow size steak aerobic virtual bracket
+2025-01-04 06:45:46,330 - INFO - Wallet created: <Wallet(WalletID=3ddf8af9-1b20-40ab-b709-e2064eaaf7a2, UserID=a002aa66-bad1-450a-ada7-5406a3d5f73e, WalletName='Sandman222', IsMultiSig=False, RequiredSignatures='1')>
+2025-01-04 06:45:46,334 - INFO - Generating wallet for blockchain: Ethereum
+2025-01-04 06:45:46,344 - DEBUG - Derived PrivateKey=09f938987e160fcabb12776421bd2ae06803494c17e55ad8a2d538b712082c07, PublicAddress=0x94fe607676586d3fec081a27d5A9f62DB0175361
+2025-01-04 06:45:46,346 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x94fe607676586d3fec081a27d5A9f62DB0175361')>
+2025-01-04 06:45:46,346 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2025-01-04 06:45:46,981 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x94fe607676586d3fec081a27d5A9f62DB0175361&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2025-01-04 06:45:46,983 - WARNING - Error fetching balance for Ethereum: NOTOK
+2025-01-04 06:45:46,983 - WARNING - Could not fetch balance for blockchain: Ethereum
+2025-01-04 06:45:46,984 - INFO - Generating wallet for blockchain: Tron
+2025-01-04 06:45:46,988 - DEBUG - Derived PrivateKey=ddc89fa5b3bd138256042212fea6b4b3d6713e55fb4e4b651dc7da4c6b335d03, PublicAddress=TTEvAcGjVQYzBrQBzRTXEPb6yJpzaodpVB
+2025-01-04 06:45:46,989 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TTEvAcGjVQYzBrQBzRTXEPb6yJpzaodpVB')>
+2025-01-04 06:45:46,989 - DEBUG - Starting new HTTPS connection (1): api.tronscan.org:443
+2025-01-04 06:45:47,560 - DEBUG - https://api.tronscan.org:443 "GET /api/account?address=TTEvAcGjVQYzBrQBzRTXEPb6yJpzaodpVB HTTP/1.1" 301 162
+2025-01-04 06:45:47,562 - DEBUG - Starting new HTTPS connection (1): apilist.tronscan.org:443
+2025-01-04 06:45:48,056 - DEBUG - https://apilist.tronscan.org:443 "GET /api/account?address=TTEvAcGjVQYzBrQBzRTXEPb6yJpzaodpVB HTTP/1.1" 200 None
+2025-01-04 06:45:48,058 - INFO - Balance fetched successfully for Tron: 0
+2025-01-04 06:45:48,059 - INFO - Balance for Tron: 0
+2025-01-04 06:45:48,059 - INFO - Generating wallet for blockchain: BNB
+2025-01-04 06:45:48,063 - ERROR - Error deriving wallet for BNB: type object 'Bip44Coins' has no attribute 'SMART_CHAIN'
+2025-01-04 06:45:48,075 - ERROR - Error in generate_wallet: (mysql.connector.errors.IntegrityError) 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`ironwallet`.`userholding`, CONSTRAINT `userholding_ibfk_2` FOREIGN KEY (`CurrencyID`) REFERENCES `currencies` (`CurrencyID`))
+[SQL: INSERT INTO `UserHolding` (`UserID`, `CurrencyID`, `Amount`, `LastUpdated`) VALUES (%(UserID)s, %(CurrencyID)s, %(Amount)s, %(LastUpdated)s)]
+[parameters: {'UserID': 'a002aa66-bad1-450a-ada7-5406a3d5f73e', 'CurrencyID': 2, 'Amount': '0', 'LastUpdated': datetime.datetime(2025, 1, 4, 3, 45, 48, 59315)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\mysql\connector\cursor.py", line 748, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\mysql\connector\connection.py", line 861, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\mysql\connector\connection.py", line 637, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.IntegrityError: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`ironwallet`.`userholding`, CONSTRAINT `userholding_ibfk_2` FOREIGN KEY (`CurrencyID`) REFERENCES `currencies` (`CurrencyID`))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 213, in generate_wallet
+    session.commit()
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\mysql\connector\cursor.py", line 748, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\mysql\connector\connection.py", line 861, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\mysql\connector\connection.py", line 637, in _handle_result
+    raise get_exception(packet)
+sqlalchemy.exc.IntegrityError: (mysql.connector.errors.IntegrityError) 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`ironwallet`.`userholding`, CONSTRAINT `userholding_ibfk_2` FOREIGN KEY (`CurrencyID`) REFERENCES `currencies` (`CurrencyID`))
+[SQL: INSERT INTO `UserHolding` (`UserID`, `CurrencyID`, `Amount`, `LastUpdated`) VALUES (%(UserID)s, %(CurrencyID)s, %(Amount)s, %(LastUpdated)s)]
+[parameters: {'UserID': 'a002aa66-bad1-450a-ada7-5406a3d5f73e', 'CurrencyID': 2, 'Amount': '0', 'LastUpdated': datetime.datetime(2025, 1, 4, 3, 45, 48, 59315)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-04 06:45:48,166 - DEBUG - Database session closed.
+2025-01-04 06:45:48,167 - INFO - 127.0.0.1 - - [04/Jan/2025 06:45:48] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -

@@ -1,0 +1,32 @@
+2025-01-30 14:37:37,478 - DEBUG - Building SSL context
+2025-01-30 14:37:37,521 - DEBUG - Switching to SSL
+2025-01-30 14:37:37,525 - DEBUG - SSL has been enabled
+2025-01-30 14:37:37,525 - DEBUG - Starting authorization phase
+2025-01-30 14:37:37,526 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-30 14:37:37,526 - INFO - package: mysql.connector.plugins
+2025-01-30 14:37:37,526 - INFO - plugin_name: caching_sha2_password
+2025-01-30 14:37:37,527 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-30 14:37:37,528 - DEBUG - Exchanging further packets
+2025-01-30 14:37:37,529 - DEBUG - caching_sha2_password completed succesfully
+2025-01-30 14:37:37,548 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-30 14:37:37,556 - WARNING -  * Debugger is active!
+2025-01-30 14:37:37,560 - INFO -  * Debugger PIN: 117-061-111
+2025-01-30 14:37:45,591 - INFO - New user created: <User(UserID=92b26009-092f-4b55-b025-989ca44eb5e5, ID=None, Email='None')>
+2025-01-30 14:37:45,591 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=3bf0f280-1136-4927-9f68-5c5618f6de96, UserID=92b26009-092f-4b55-b025-989ca44eb5e5, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-30 14:37:45,608 - INFO - Generated Mnemonic: merry since eagle you lucky title bonus fun amateur believe plate robot
+2025-01-30 14:37:45,656 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x4aE80e0aF8434Ed89417c9C30779C6C832eE9C41')>
+2025-01-30 14:37:45,657 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TTb53CTWM3GWiWqRrqVXnh5iVNMjRQ2eka')>
+2025-01-30 14:37:45,657 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0x4aE80e0aF8434Ed89417c9C30779C6C832eE9C41')>
+2025-01-30 14:37:45,658 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1qqek0zfsk3kpmdq0jdfj8dqp5eg5s6m8hczw9nl')>
+2025-01-30 14:37:45,658 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0x4aE80e0aF8434Ed89417c9C30779C6C832eE9C41')>
+2025-01-30 14:37:45,659 - INFO - Address created for Arbitrum: <Address(AddressID=None, PublicAddress='0x4aE80e0aF8434Ed89417c9C30779C6C832eE9C41')>
+2025-01-30 14:37:45,660 - INFO - Address created for XRP: <Address(AddressID=None, PublicAddress='rKHeWEkD5UBgrjxcCBmW1T6jJyYxSRPZNK')>
+2025-01-30 14:37:45,661 - INFO - Address created for Solana: <Address(AddressID=None, PublicAddress='6uZrZBAVLRpUg1rFiFS5LZQtv9MxUSw6b6UpYgnpZRva')>
+2025-01-30 14:37:45,661 - WARNING - Skipping blockchain: Avalanche (not recognized).
+2025-01-30 14:37:45,662 - ERROR - Error in generate_wallet: Unsupported blockchain in DB
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 205, in generate_wallet
+    raise ValueError("Unsupported blockchain in DB")
+ValueError: Unsupported blockchain in DB
+2025-01-30 14:37:45,664 - DEBUG - Database session closed.
+2025-01-30 14:37:45,664 - INFO - 127.0.0.1 - - [30/Jan/2025 14:37:45] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -

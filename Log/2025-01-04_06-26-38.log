@@ -1,0 +1,82 @@
+2025-01-04 06:26:38,317 - INFO - Services module initialized.
+2025-01-04 06:26:38,320 - INFO - LogManager initialized successfully.
+2025-01-04 06:26:38,369 - DEBUG - Building SSL context
+2025-01-04 06:26:38,419 - DEBUG - Switching to SSL
+2025-01-04 06:26:38,423 - DEBUG - SSL has been enabled
+2025-01-04 06:26:38,423 - DEBUG - Starting authorization phase
+2025-01-04 06:26:38,423 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-04 06:26:38,423 - INFO - package: mysql.connector.plugins
+2025-01-04 06:26:38,424 - INFO - plugin_name: caching_sha2_password
+2025-01-04 06:26:38,426 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-04 06:26:38,427 - DEBUG - Exchanging further packets
+2025-01-04 06:26:38,428 - DEBUG - caching_sha2_password completed succesfully
+2025-01-04 06:26:38,440 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-04 06:26:38,450 - WARNING -  * Debugger is active!
+2025-01-04 06:26:38,452 - INFO -  * Debugger PIN: 599-719-174
+2025-01-04 06:26:45,689 - DEBUG - Request data: {'WalletName': 'WATCh2', 'Password': '12345123451'}
+2025-01-04 06:26:45,690 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-04 06:26:45,705 - INFO - New user created: <User(UserID=7002b3ca-7842-4dd5-9a0a-d2fc1516d795, ID=None, Email='None')>
+2025-01-04 06:26:45,707 - INFO - Generated base Mnemonic Phrase: chalk tip exhaust fatal outdoor spy correct stadium theme wool estate hidden
+2025-01-04 06:26:45,707 - INFO - Wallet created: <Wallet(WalletID=fee639f9-2b7c-400c-bc69-eac01747de55, UserID=7002b3ca-7842-4dd5-9a0a-d2fc1516d795, WalletName='WATCh2', IsMultiSig=False, RequiredSignatures='1')>
+2025-01-04 06:26:45,713 - INFO - Generating wallet for blockchain: Ethereum
+2025-01-04 06:26:45,713 - ERROR - Error deriving wallet for Ethereum: Language is not an enumerative of Bip39Languages
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 172, in generate_wallet
+    derived_private_key, derived_public_address = derive_keys_from_mnemonic(
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 64, in derive_keys_from_mnemonic
+    validator = Bip39MnemonicValidator(mnemonic)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_validator.py", line 45, in __init__
+    super().__init__(Bip39MnemonicDecoder(lang))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_decoder.py", line 54, in __init__
+    super().__init__(lang, Bip39WordsListFinder, Bip39WordsListGetter)
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\utils\mnemonic\mnemonic_decoder_base.py", line 60, in __init__
+    self.m_words_list = (words_list_getter_cls.Instance().GetByLanguage(lang)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_utils.py", line 56, in GetByLanguage
+    raise TypeError("Language is not an enumerative of Bip39Languages")
+TypeError: Language is not an enumerative of Bip39Languages
+2025-01-04 06:26:45,716 - INFO - Generating wallet for blockchain: Tron
+2025-01-04 06:26:45,717 - ERROR - Error deriving wallet for Tron: Language is not an enumerative of Bip39Languages
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 172, in generate_wallet
+    derived_private_key, derived_public_address = derive_keys_from_mnemonic(
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 64, in derive_keys_from_mnemonic
+    validator = Bip39MnemonicValidator(mnemonic)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_validator.py", line 45, in __init__
+    super().__init__(Bip39MnemonicDecoder(lang))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_decoder.py", line 54, in __init__
+    super().__init__(lang, Bip39WordsListFinder, Bip39WordsListGetter)
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\utils\mnemonic\mnemonic_decoder_base.py", line 60, in __init__
+    self.m_words_list = (words_list_getter_cls.Instance().GetByLanguage(lang)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_utils.py", line 56, in GetByLanguage
+    raise TypeError("Language is not an enumerative of Bip39Languages")
+TypeError: Language is not an enumerative of Bip39Languages
+2025-01-04 06:26:45,718 - INFO - Generating wallet for blockchain: BNB
+2025-01-04 06:26:45,719 - ERROR - Error deriving wallet for BNB: Language is not an enumerative of Bip39Languages
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 172, in generate_wallet
+    derived_private_key, derived_public_address = derive_keys_from_mnemonic(
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 64, in derive_keys_from_mnemonic
+    validator = Bip39MnemonicValidator(mnemonic)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_validator.py", line 45, in __init__
+    super().__init__(Bip39MnemonicDecoder(lang))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_decoder.py", line 54, in __init__
+    super().__init__(lang, Bip39WordsListFinder, Bip39WordsListGetter)
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\utils\mnemonic\mnemonic_decoder_base.py", line 60, in __init__
+    self.m_words_list = (words_list_getter_cls.Instance().GetByLanguage(lang)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\bip_utils\bip\bip39\bip39_mnemonic_utils.py", line 56, in GetByLanguage
+    raise TypeError("Language is not an enumerative of Bip39Languages")
+TypeError: Language is not an enumerative of Bip39Languages
+2025-01-04 06:26:45,729 - DEBUG - Database session closed.
+2025-01-04 06:26:45,729 - INFO - 127.0.0.1 - - [04/Jan/2025 06:26:45] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

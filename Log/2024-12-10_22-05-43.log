@@ -1,0 +1,17 @@
+2024-12-10 22:05:43,197 - DEBUG - Building SSL context
+2024-12-10 22:05:43,243 - DEBUG - Switching to SSL
+2024-12-10 22:05:43,246 - DEBUG - SSL has been enabled
+2024-12-10 22:05:43,246 - DEBUG - Starting authorization phase
+2024-12-10 22:05:43,247 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-10 22:05:43,247 - INFO - package: mysql.connector.plugins
+2024-12-10 22:05:43,247 - INFO - plugin_name: caching_sha2_password
+2024-12-10 22:05:43,248 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-10 22:05:43,248 - DEBUG - Exchanging further packets
+2024-12-10 22:05:43,251 - DEBUG - caching_sha2_password completed succesfully
+2024-12-10 22:05:43,268 - INFO - Starting Flask app.
+2024-12-10 22:05:43,277 - WARNING -  * Debugger is active!
+2024-12-10 22:05:43,280 - INFO -  * Debugger PIN: 599-719-174
+2024-12-10 22:05:46,264 - DEBUG - Request data: {'PrivateKey': '5aa7cb8abb7d33d72b08a3d6c8ddc2aa136c451a83bb8b3a2f185da155994385', 'PhraseKey': None, 'Password': 'NEWTHING1111', 'WalletName': 'sanaz'}
+2024-12-10 22:05:46,295 - INFO - User 3e8e6216-9c18-4942-b3d3-3f6e09cf2326 updated successfully.
+2024-12-10 22:05:46,296 - DEBUG - Database session closed.
+2024-12-10 22:05:46,297 - INFO - 127.0.0.1 - - [10/Dec/2024 22:05:46] "POST /import-wallet HTTP/1.1" 200 -

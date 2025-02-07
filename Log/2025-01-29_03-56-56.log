@@ -1,0 +1,42 @@
+2025-01-29 03:56:56,152 - DEBUG - Building SSL context
+2025-01-29 03:56:56,192 - DEBUG - Switching to SSL
+2025-01-29 03:56:56,195 - DEBUG - SSL has been enabled
+2025-01-29 03:56:56,196 - DEBUG - Starting authorization phase
+2025-01-29 03:56:56,196 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-29 03:56:56,196 - INFO - package: mysql.connector.plugins
+2025-01-29 03:56:56,197 - INFO - plugin_name: caching_sha2_password
+2025-01-29 03:56:56,197 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-29 03:56:56,197 - DEBUG - Exchanging further packets
+2025-01-29 03:56:56,198 - DEBUG - caching_sha2_password completed succesfully
+2025-01-29 03:56:56,211 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-29 03:56:56,216 - WARNING -  * Debugger is active!
+2025-01-29 03:56:56,219 - INFO -  * Debugger PIN: 117-061-111
+2025-01-29 03:56:57,234 - INFO - New user created: <User(UserID=099a5e6f-71a8-4161-be63-bcc2e308dd9c, ID=None, Email='None')>
+2025-01-29 03:56:57,235 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=2e1f2620-3b8e-47f0-a44b-f96dcf29d86b, UserID=099a5e6f-71a8-4161-be63-bcc2e308dd9c, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-29 03:56:57,236 - INFO - Generated Mnemonic: train organ fever book brush close cricket iron tank lecture believe naive
+2025-01-29 03:56:57,249 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x1b6D4A4047567923E14197Fab7775214d3c50C50')>
+2025-01-29 03:56:57,250 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TRTyu5VgbMC4RgPHF5yrLS64hgqdP2F7xV')>
+2025-01-29 03:56:57,251 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0x1b6D4A4047567923E14197Fab7775214d3c50C50')>
+2025-01-29 03:56:57,251 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1qlwpej4zw9p4jrxsr9yacm2v7a679d3fyjdmwzh')>
+2025-01-29 03:56:57,251 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0x1b6D4A4047567923E14197Fab7775214d3c50C50')>
+2025-01-29 03:56:57,252 - INFO - Address created for Arbitrum: <Address(AddressID=None, PublicAddress='0x1b6D4A4047567923E14197Fab7775214d3c50C50')>
+2025-01-29 03:56:57,252 - WARNING - Skipping blockchain: Avalanche (not recognized).
+2025-01-29 03:56:57,253 - ERROR - Error in generate_wallet: Unsupported blockchain in DB
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 180, in generate_wallet
+    raise ValueError("Unsupported blockchain in DB")
+ValueError: Unsupported blockchain in DB
+2025-01-29 03:56:57,254 - DEBUG - Database session closed.
+2025-01-29 03:56:57,255 - INFO - 127.0.0.1 - - [29/Jan/2025 03:56:57] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -
+2025-01-29 03:57:32,495 - INFO - New user created: <User(UserID=f676061c-15f8-4bce-92a7-da070b42f294, ID=None, Email='None')>
+2025-01-29 03:57:32,496 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=f48c4b8f-916f-470b-8ae2-ff2630a0e37c, UserID=f676061c-15f8-4bce-92a7-da070b42f294, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-29 03:57:32,496 - INFO - Generated Mnemonic: stand nephew loyal castle enjoy fat never despair transfer orange blind lesson
+2025-01-29 03:57:32,506 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x9667a3749EFF1e2837E3194Fb3E1dFf8e447Ce21')>
+2025-01-29 03:57:32,506 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TRSnqp3qfN3mcxmyDFW34WYpmSWSxSJGq4')>
+2025-01-29 03:57:32,508 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0x9667a3749EFF1e2837E3194Fb3E1dFf8e447Ce21')>
+2025-01-29 03:57:32,508 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1qy226t772cmqs06mpf0y8c7qh4nm5r58ckcljhe')>
+2025-01-29 03:57:32,508 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0x9667a3749EFF1e2837E3194Fb3E1dFf8e447Ce21')>
+2025-01-29 03:57:32,509 - INFO - Address created for Arbitrum: <Address(AddressID=None, PublicAddress='0x9667a3749EFF1e2837E3194Fb3E1dFf8e447Ce21')>
+2025-01-29 03:57:32,509 - INFO - Address created for XRP: <Address(AddressID=None, PublicAddress='rPDUKuL4C2W6tWsqmPGjvByH6ZC1fMNTyX')>
+2025-01-29 03:57:32,527 - DEBUG - Database session closed.
+2025-01-29 03:57:32,527 - INFO - 127.0.0.1 - - [29/Jan/2025 03:57:32] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

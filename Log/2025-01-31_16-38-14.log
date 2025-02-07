@@ -1,0 +1,21 @@
+2025-01-31 16:38:15,046 - DEBUG - Building SSL context
+2025-01-31 16:38:15,083 - DEBUG - Switching to SSL
+2025-01-31 16:38:15,088 - DEBUG - SSL has been enabled
+2025-01-31 16:38:15,088 - DEBUG - Starting authorization phase
+2025-01-31 16:38:15,088 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-31 16:38:15,089 - INFO - package: mysql.connector.plugins
+2025-01-31 16:38:15,089 - INFO - plugin_name: caching_sha2_password
+2025-01-31 16:38:15,090 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-31 16:38:15,090 - DEBUG - Exchanging further packets
+2025-01-31 16:38:15,091 - DEBUG - caching_sha2_password completed succesfully
+2025-01-31 16:38:15,104 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-31 16:38:15,111 - WARNING -  * Debugger is active!
+2025-01-31 16:38:15,114 - INFO -  * Debugger PIN: 117-061-111
+2025-01-31 16:38:17,129 - ERROR - Error in import_wallet: not enough values to unpack (expected 3, got 2)
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\WI\import_wallet.py", line 176, in import_wallet
+    for chain_name, pub_address, priv_acc in chain_addresses.items():
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+2025-01-31 16:38:17,130 - DEBUG - Database session closed.
+2025-01-31 16:38:17,131 - INFO - 127.0.0.1 - - [31/Jan/2025 16:38:17] "[35m[1mPOST /import_wallet HTTP/1.1[0m" 500 -

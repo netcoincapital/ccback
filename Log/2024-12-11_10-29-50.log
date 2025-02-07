@@ -1,0 +1,33 @@
+2024-12-11 10:29:50,668 - DEBUG - Building SSL context
+2024-12-11 10:29:50,710 - DEBUG - Switching to SSL
+2024-12-11 10:29:50,713 - DEBUG - SSL has been enabled
+2024-12-11 10:29:50,714 - DEBUG - Starting authorization phase
+2024-12-11 10:29:50,714 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-11 10:29:50,715 - INFO - package: mysql.connector.plugins
+2024-12-11 10:29:50,715 - INFO - plugin_name: caching_sha2_password
+2024-12-11 10:29:50,716 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-11 10:29:50,716 - DEBUG - Exchanging further packets
+2024-12-11 10:29:50,719 - DEBUG - caching_sha2_password completed succesfully
+2024-12-11 10:29:50,730 - INFO - Starting Flask app.
+2024-12-11 10:29:50,736 - WARNING -  * Debugger is active!
+2024-12-11 10:29:50,739 - INFO -  * Debugger PIN: 599-719-174
+2024-12-11 10:29:51,953 - INFO - Attempting to identify blockchain for address: 0x9203471f56E035c4C642aab0d3467E883b2074D3
+2024-12-11 10:29:51,956 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-11 10:29:52,554 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x9203471f56E035c4C642aab0d3467E883b2074D3&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2024-12-11 10:29:52,556 - INFO - Response from Etherscan: {'status': '0', 'message': 'NOTOK'}
+2024-12-11 10:29:52,558 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-11 10:29:53,186 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0x9203471f56E035c4C642aab0d3467E883b2074D3&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 187
+2024-12-11 10:29:53,187 - INFO - Response from BscScan: {'status': '0', 'message': 'NOTOK'}
+2024-12-11 10:29:53,187 - INFO - Unknown Blockchain format
+2024-12-11 10:29:53,188 - INFO - Attempting to identify blockchain for address: TPHFap8CjSGriZfNinmcqhqsJ53qYoh45o
+2024-12-11 10:29:53,189 - DEBUG - Starting new HTTPS connection (1): api.tronscan.org:443
+2024-12-11 10:29:53,769 - DEBUG - https://api.tronscan.org:443 "GET /api/account?address=TPHFap8CjSGriZfNinmcqhqsJ53qYoh45o HTTP/1.1" 301 162
+2024-12-11 10:29:53,770 - DEBUG - Starting new HTTPS connection (1): apilist.tronscan.org:443
+2024-12-11 10:29:54,342 - DEBUG - https://apilist.tronscan.org:443 "GET /api/account?address=TPHFap8CjSGriZfNinmcqhqsJ53qYoh45o HTTP/1.1" 200 None
+2024-12-11 10:29:54,343 - INFO - Blockchain identified as Tron
+2024-12-11 10:29:54,344 - DEBUG - Starting new HTTPS connection (1): api.tronscan.org:443
+2024-12-11 10:29:54,891 - DEBUG - https://api.tronscan.org:443 "GET /api/account?address=T349246972d1ac19c39e045957b0d5857f HTTP/1.1" 301 162
+2024-12-11 10:29:54,892 - DEBUG - Starting new HTTPS connection (1): apilist.tronscan.org:443
+2024-12-11 10:29:55,320 - DEBUG - https://apilist.tronscan.org:443 "GET /api/account?address=T349246972d1ac19c39e045957b0d5857f HTTP/1.1" 200 3
+2024-12-11 10:29:55,321 - WARNING - Wallet not found on Tron network: No balance found
+2024-12-11 10:29:55,323 - INFO - 127.0.0.1 - - [11/Dec/2024 10:29:55] "[31m[1mPOST /import-wallet HTTP/1.1[0m" 400 -

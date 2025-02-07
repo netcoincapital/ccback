@@ -1,0 +1,25 @@
+2025-01-04 06:39:37,703 - INFO - Services module initialized.
+2025-01-04 06:39:37,705 - INFO - LogManager initialized successfully.
+2025-01-04 06:39:37,750 - DEBUG - Building SSL context
+2025-01-04 06:39:37,791 - DEBUG - Switching to SSL
+2025-01-04 06:39:37,794 - DEBUG - SSL has been enabled
+2025-01-04 06:39:37,794 - DEBUG - Starting authorization phase
+2025-01-04 06:39:37,794 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-04 06:39:37,795 - INFO - package: mysql.connector.plugins
+2025-01-04 06:39:37,795 - INFO - plugin_name: caching_sha2_password
+2025-01-04 06:39:37,796 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-04 06:39:37,796 - DEBUG - Exchanging further packets
+2025-01-04 06:39:37,797 - DEBUG - caching_sha2_password completed succesfully
+2025-01-04 06:39:37,809 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-04 06:39:37,816 - WARNING -  * Debugger is active!
+2025-01-04 06:39:37,818 - INFO -  * Debugger PIN: 599-719-174
+2025-01-04 06:39:42,321 - DEBUG - Request data: {'WalletName': 'Sandman2', 'Password': '12345123451'}
+2025-01-04 06:39:42,322 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-04 06:39:42,333 - INFO - New user created: <User(UserID=b4cbc18b-f21a-4061-9972-f2cf86d7da24, ID=None, Email='None')>
+2025-01-04 06:39:42,341 - INFO - Generated BIP39 Mnemonic: law cash tube fox model table fog ginger unique timber camp stadium
+2025-01-04 06:39:42,342 - INFO - Wallet created: <Wallet(WalletID=707b708f-7dc6-4034-933e-53aed6f2a5af, UserID=b4cbc18b-f21a-4061-9972-f2cf86d7da24, WalletName='Sandman2', IsMultiSig=False, RequiredSignatures='1')>
+2025-01-04 06:39:42,347 - INFO - Generating wallet for blockchain: Ethereum
+2025-01-04 06:39:42,362 - INFO - Generating wallet for blockchain: Tron
+2025-01-04 06:39:42,370 - INFO - Generating wallet for blockchain: BNB
+2025-01-04 06:39:42,388 - DEBUG - Database session closed.
+2025-01-04 06:39:42,388 - INFO - 127.0.0.1 - - [04/Jan/2025 06:39:42] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

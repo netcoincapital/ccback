@@ -1,0 +1,25 @@
+2025-01-09 17:40:00,426 - INFO - Services module initialized.
+2025-01-09 17:40:00,429 - INFO - LogManager initialized successfully.
+2025-01-09 17:40:00,505 - DEBUG - Building SSL context
+2025-01-09 17:40:00,548 - DEBUG - Switching to SSL
+2025-01-09 17:40:00,553 - DEBUG - SSL has been enabled
+2025-01-09 17:40:00,553 - DEBUG - Starting authorization phase
+2025-01-09 17:40:00,554 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-09 17:40:00,554 - INFO - package: mysql.connector.plugins
+2025-01-09 17:40:00,555 - INFO - plugin_name: caching_sha2_password
+2025-01-09 17:40:00,555 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-09 17:40:00,556 - DEBUG - Exchanging further packets
+2025-01-09 17:40:00,556 - DEBUG - caching_sha2_password completed succesfully
+2025-01-09 17:40:00,570 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-09 17:40:00,577 - WARNING -  * Debugger is active!
+2025-01-09 17:40:00,579 - INFO -  * Debugger PIN: 599-719-174
+2025-01-09 17:40:45,571 - INFO - New user created: <User(UserID=bc33017a-b5a1-47d2-b161-8831c8bf10b5, ID=None, Email='None')>
+2025-01-09 17:40:45,572 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=1216a909-807a-4e5e-94ae-a6f3a875bb95, UserID=bc33017a-b5a1-47d2-b161-8831c8bf10b5, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-09 17:40:45,573 - INFO - Generated Mnemonic: time fancy imitate uncover ribbon insect rapid junior reward rely promote neglect
+2025-01-09 17:40:45,590 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0xA55F7Ae6c186c3D713ab4107894F0a71b17C90f3')>
+2025-01-09 17:40:45,591 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TBYq6gwmh9HAxk64nY7gjeMS1ubDrRTGot')>
+2025-01-09 17:40:45,592 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0xA55F7Ae6c186c3D713ab4107894F0a71b17C90f3')>
+2025-01-09 17:40:45,592 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1q6xh2re3mdt2kk53f5xawkrnfj0cdgets5ec9uc')>
+2025-01-09 17:40:45,592 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0xA55F7Ae6c186c3D713ab4107894F0a71b17C90f3')>
+2025-01-09 17:40:45,610 - DEBUG - Database session closed.
+2025-01-09 17:40:45,612 - INFO - 127.0.0.1 - - [09/Jan/2025 17:40:45] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

@@ -1,0 +1,22 @@
+2024-12-08 06:52:37,265 - DEBUG - Building SSL context
+2024-12-08 06:52:37,309 - DEBUG - Switching to SSL
+2024-12-08 06:52:37,313 - DEBUG - SSL has been enabled
+2024-12-08 06:52:37,313 - DEBUG - Starting authorization phase
+2024-12-08 06:52:37,313 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-08 06:52:37,313 - INFO - package: mysql.connector.plugins
+2024-12-08 06:52:37,314 - INFO - plugin_name: caching_sha2_password
+2024-12-08 06:52:37,314 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-08 06:52:37,314 - DEBUG - Exchanging further packets
+2024-12-08 06:52:37,317 - DEBUG - caching_sha2_password completed succesfully
+2024-12-08 06:52:37,332 - INFO - Starting Flask app.
+2024-12-08 06:52:37,339 - WARNING -  * Debugger is active!
+2024-12-08 06:52:37,341 - INFO -  * Debugger PIN: 599-719-174
+2024-12-08 06:52:39,844 - DEBUG - Request data: {'PrivateKey': '7af8aa584bda16748df2c1748ce36bef0ad51db24c068dc845267bba3465324e', 'Username': 'NFTS', 'Wallet_Name': 'NFTS', 'Password_Hash': '12345678'}
+2024-12-08 06:52:39,860 - ERROR - Error in import_wallet: type object 'Address' has no attribute 'UserID'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\WI\import_wallet.py", line 44, in import_wallet
+    ).join(Address, Users.UserID == Address.UserID, isouter=True).first()
+                                    ^^^^^^^^^^^^^^
+AttributeError: type object 'Address' has no attribute 'UserID'
+2024-12-08 06:52:39,861 - DEBUG - Database session closed.
+2024-12-08 06:52:39,861 - INFO - 127.0.0.1 - - [08/Dec/2024 06:52:39] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 500 -

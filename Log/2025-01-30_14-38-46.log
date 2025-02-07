@@ -1,0 +1,28 @@
+2025-01-30 14:38:47,020 - DEBUG - Building SSL context
+2025-01-30 14:38:47,058 - DEBUG - Switching to SSL
+2025-01-30 14:38:47,060 - DEBUG - SSL has been enabled
+2025-01-30 14:38:47,061 - DEBUG - Starting authorization phase
+2025-01-30 14:38:47,061 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-30 14:38:47,062 - INFO - package: mysql.connector.plugins
+2025-01-30 14:38:47,062 - INFO - plugin_name: caching_sha2_password
+2025-01-30 14:38:47,062 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-30 14:38:47,063 - DEBUG - Exchanging further packets
+2025-01-30 14:38:47,064 - DEBUG - caching_sha2_password completed succesfully
+2025-01-30 14:38:47,080 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-30 14:38:47,086 - WARNING -  * Debugger is active!
+2025-01-30 14:38:47,088 - INFO -  * Debugger PIN: 117-061-111
+2025-01-30 14:38:50,091 - INFO - New user created: <User(UserID=4dfd4467-efc9-43e8-9c3e-91a2a7a91ba8, ID=None, Email='None')>
+2025-01-30 14:38:50,092 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=dab97389-70ad-49dd-9d7b-eeb7df10ef31, UserID=4dfd4467-efc9-43e8-9c3e-91a2a7a91ba8, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-30 14:38:50,093 - INFO - Generated Mnemonic: reunion sea because barrel skate prison business cry lunch soldier boil coyote
+2025-01-30 14:38:50,114 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x422eFE1CEC518f129629A9CF46420A0Ac83Ef604')>
+2025-01-30 14:38:50,114 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TQzptYRwLxer91JSkBUjRu3sCazJMXHbNB')>
+2025-01-30 14:38:50,114 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0x422eFE1CEC518f129629A9CF46420A0Ac83Ef604')>
+2025-01-30 14:38:50,115 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1q6uzwrcdg6545n4s0g0wu2k2zzm5tvpfyl4rx24')>
+2025-01-30 14:38:50,115 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0x422eFE1CEC518f129629A9CF46420A0Ac83Ef604')>
+2025-01-30 14:38:50,115 - INFO - Address created for Arbitrum: <Address(AddressID=None, PublicAddress='0x422eFE1CEC518f129629A9CF46420A0Ac83Ef604')>
+2025-01-30 14:38:50,116 - INFO - Address created for XRP: <Address(AddressID=None, PublicAddress='rHADpvYEaxUk5BSKcPKkRuh1LtFo4f84Ys')>
+2025-01-30 14:38:50,116 - INFO - Address created for Solana: <Address(AddressID=None, PublicAddress='83ub7E3B8sJ8cmVdaXHcvp8HNT9S6Xvwxbr6CJYtpsPJ')>
+2025-01-30 14:38:50,116 - INFO - Address created for Avalanche: <Address(AddressID=None, PublicAddress='83ub7E3B8sJ8cmVdaXHcvp8HNT9S6Xvwxbr6CJYtpsPJ')>
+2025-01-30 14:38:50,116 - INFO - Address created for Polkadot: <Address(AddressID=None, PublicAddress='83ub7E3B8sJ8cmVdaXHcvp8HNT9S6Xvwxbr6CJYtpsPJ')>
+2025-01-30 14:38:50,150 - DEBUG - Database session closed.
+2025-01-30 14:38:50,151 - INFO - 127.0.0.1 - - [30/Jan/2025 14:38:50] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

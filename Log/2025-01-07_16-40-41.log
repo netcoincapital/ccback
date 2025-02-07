@@ -1,0 +1,28 @@
+2025-01-07 16:40:41,415 - INFO - Services module initialized.
+2025-01-07 16:40:41,419 - INFO - LogManager initialized successfully.
+2025-01-07 16:40:41,465 - DEBUG - Building SSL context
+2025-01-07 16:40:41,504 - DEBUG - Switching to SSL
+2025-01-07 16:40:41,508 - DEBUG - SSL has been enabled
+2025-01-07 16:40:41,508 - DEBUG - Starting authorization phase
+2025-01-07 16:40:41,509 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-07 16:40:41,509 - INFO - package: mysql.connector.plugins
+2025-01-07 16:40:41,509 - INFO - plugin_name: caching_sha2_password
+2025-01-07 16:40:41,510 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-07 16:40:41,511 - DEBUG - Exchanging further packets
+2025-01-07 16:40:41,511 - DEBUG - caching_sha2_password completed succesfully
+2025-01-07 16:40:41,522 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-07 16:40:41,529 - WARNING -  * Debugger is active!
+2025-01-07 16:40:41,533 - INFO -  * Debugger PIN: 599-719-174
+2025-01-07 16:40:46,698 - DEBUG - Request data: {'WalletName': 'MMMARBZ', 'Password': '12345123451'}
+2025-01-07 16:40:46,698 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-07 16:40:46,714 - INFO - New user created: <User(UserID=95903fbb-08c8-400b-b093-cf00b0489054, ID=None, Email='None')>
+2025-01-07 16:40:46,726 - INFO - Generated Mnemonic (12 words): list clinic frown game clever labor piano exhaust jeans common select outer
+2025-01-07 16:40:46,726 - INFO - Wallet created: <Wallet(WalletID=b8699171-741c-4ff1-8b34-8f59672147db, UserID=95903fbb-08c8-400b-b093-cf00b0489054, WalletName='MMMARBZ', IsMultiSig=False, RequiredSignatures='1')>
+2025-01-07 16:40:46,753 - INFO - Generating wallet for blockchain: Ethereum
+2025-01-07 16:40:46,753 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0xd156e5c03473635581ff15e2D0Ec4696D68c1ED9')>
+2025-01-07 16:40:46,753 - INFO - Generating wallet for blockchain: Tron
+2025-01-07 16:40:46,754 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TJ6T145kTs5qokSscifYZdrjgNCBtAwryA')>
+2025-01-07 16:40:46,754 - INFO - Generating wallet for blockchain: BNB
+2025-01-07 16:40:46,755 - WARNING - Skipping unsupported blockchain: BNB
+2025-01-07 16:40:46,772 - DEBUG - Database session closed.
+2025-01-07 16:40:46,774 - INFO - 127.0.0.1 - - [07/Jan/2025 16:40:46] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

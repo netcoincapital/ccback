@@ -1,0 +1,35 @@
+2025-01-03 05:42:11,238 - INFO - Services module initialized.
+2025-01-03 05:42:11,241 - INFO - LogManager initialized successfully.
+2025-01-03 05:42:11,287 - DEBUG - Building SSL context
+2025-01-03 05:42:11,345 - DEBUG - Switching to SSL
+2025-01-03 05:42:11,349 - DEBUG - SSL has been enabled
+2025-01-03 05:42:11,349 - DEBUG - Starting authorization phase
+2025-01-03 05:42:11,350 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-03 05:42:11,350 - INFO - package: mysql.connector.plugins
+2025-01-03 05:42:11,350 - INFO - plugin_name: caching_sha2_password
+2025-01-03 05:42:11,353 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-03 05:42:11,354 - DEBUG - Exchanging further packets
+2025-01-03 05:42:11,354 - DEBUG - caching_sha2_password completed succesfully
+2025-01-03 05:42:11,368 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-03 05:42:11,376 - WARNING -  * Debugger is active!
+2025-01-03 05:42:11,379 - INFO -  * Debugger PIN: 599-719-174
+2025-01-03 05:42:24,869 - INFO - Request received: {'PrivateKey': None, 'PhraseKey': 'suspect jelly auto wisdom sight dust hill thumb token text cheese know', 'Password': '2222222', 'WalletName': '2211111'}
+2025-01-03 05:42:24,893 - ERROR - Error in import_wallet: 'WalletService' object has no attribute 'get_wallets_with_address'
+2025-01-03 05:42:24,893 - INFO - Database session closed.
+2025-01-03 05:42:24,895 - INFO - 127.0.0.1 - - [03/Jan/2025 05:42:24] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 500 -
+2025-01-03 05:42:46,483 - INFO - Request received: {'PrivateKey': 'f3d8367b336e890645af92e0b38008f7bfbbaf75971bb93716ebe83bc9fd818d', 'PhraseKey': None, 'Password': '11111111111111111', 'WalletName': '111111111111111111111'}
+2025-01-03 05:42:46,507 - INFO - Imported Ethereum Wallet - Address: 0x3E5D469DCb76CFB5cA981D662030B073E8A8B3D3
+2025-01-03 05:42:46,615 - INFO - Imported Tron Wallet - Address: TFexdsX6Z53R878ZbG9MHr8gWcv9rGpsVy
+2025-01-03 05:42:46,716 - INFO - Imported Binance Smart Chain Wallet - Address: 0x3E5D469DCb76CFB5cA981D662030B073E8A8B3D3
+2025-01-03 05:42:46,823 - INFO - Database session closed.
+2025-01-03 05:42:46,824 - INFO - 127.0.0.1 - - [03/Jan/2025 05:42:46] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 201 -
+2025-01-03 05:43:34,125 - INFO - Request received: {'PrivateKey': 'f3d8367b336e890645af92e0b38008f7bfbbaf75971bb93716ebe83bc9fd818d', 'PhraseKey': None, 'Password': '111111111111111112', 'WalletName': '1111111111111111111112'}
+2025-01-03 05:43:34,141 - INFO - Imported Ethereum Wallet - Address: 0x3E5D469DCb76CFB5cA981D662030B073E8A8B3D3
+2025-01-03 05:43:34,244 - INFO - Imported Tron Wallet - Address: TFexdsX6Z53R878ZbG9MHr8gWcv9rGpsVy
+2025-01-03 05:43:34,342 - INFO - Imported Binance Smart Chain Wallet - Address: 0x3E5D469DCb76CFB5cA981D662030B073E8A8B3D3
+2025-01-03 05:43:34,451 - INFO - Database session closed.
+2025-01-03 05:43:34,451 - INFO - 127.0.0.1 - - [03/Jan/2025 05:43:34] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 201 -
+2025-01-03 05:43:54,046 - INFO - Request received: {'PrivateKey': None, 'PhraseKey': 'suspect jelly auto wisdom sight dust hill thumb token text cheese know', 'Password': '2222222', 'WalletName': '2211111'}
+2025-01-03 05:43:54,051 - ERROR - Error in import_wallet: 'WalletService' object has no attribute 'get_wallets_with_address'
+2025-01-03 05:43:54,052 - INFO - Database session closed.
+2025-01-03 05:43:54,052 - INFO - 127.0.0.1 - - [03/Jan/2025 05:43:54] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 500 -

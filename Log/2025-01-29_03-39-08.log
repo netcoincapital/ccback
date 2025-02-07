@@ -1,0 +1,45 @@
+2025-01-29 03:39:08,582 - DEBUG - Building SSL context
+2025-01-29 03:39:08,620 - DEBUG - Switching to SSL
+2025-01-29 03:39:08,623 - DEBUG - SSL has been enabled
+2025-01-29 03:39:08,624 - DEBUG - Starting authorization phase
+2025-01-29 03:39:08,624 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-29 03:39:08,625 - INFO - package: mysql.connector.plugins
+2025-01-29 03:39:08,625 - INFO - plugin_name: caching_sha2_password
+2025-01-29 03:39:08,625 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-29 03:39:08,626 - DEBUG - Exchanging further packets
+2025-01-29 03:39:08,629 - DEBUG - caching_sha2_password completed succesfully
+2025-01-29 03:39:08,643 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-29 03:39:08,652 - WARNING -  * Debugger is active!
+2025-01-29 03:39:08,655 - INFO -  * Debugger PIN: 117-061-111
+2025-01-29 03:39:19,141 - INFO - New user created: <User(UserID=aebdcfd8-3133-4e1e-ba2f-55f337ccd8a4, ID=None, Email='None')>
+2025-01-29 03:39:19,141 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=d474fc3f-a21e-447f-94ff-50311df33710, UserID=aebdcfd8-3133-4e1e-ba2f-55f337ccd8a4, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-29 03:39:19,154 - INFO - Generated Mnemonic: mention stuff brief post betray dismiss hammer pledge eyebrow arrange baby purse
+2025-01-29 03:39:19,192 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x1DEfD1700EB9f044A4A9C897d3Da8c9B6Eb5fcE0')>
+2025-01-29 03:39:19,193 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TCsVE3kpdAcMThyeR5XFLDaYdpdKBnqDpK')>
+2025-01-29 03:39:19,193 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0x1DEfD1700EB9f044A4A9C897d3Da8c9B6Eb5fcE0')>
+2025-01-29 03:39:19,194 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1q55ye0exy52x83dypzf2warnlajfuyruyce9ztk')>
+2025-01-29 03:39:19,194 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0x1DEfD1700EB9f044A4A9C897d3Da8c9B6Eb5fcE0')>
+2025-01-29 03:39:19,194 - WARNING - Skipping blockchain: Arbitrum (not recognized).
+2025-01-29 03:39:19,197 - ERROR - Error in generate_wallet: Unsupported blockchain in DB
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 180, in generate_wallet
+    raise ValueError("Unsupported blockchain in DB")
+ValueError: Unsupported blockchain in DB
+2025-01-29 03:39:19,198 - DEBUG - Database session closed.
+2025-01-29 03:39:19,199 - INFO - 127.0.0.1 - - [29/Jan/2025 03:39:19] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -
+2025-01-29 03:42:51,558 - INFO - New user created: <User(UserID=7315c221-d799-454a-9492-2a6d208be39d, ID=None, Email='None')>
+2025-01-29 03:42:51,558 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=94aa2496-5a51-495f-9189-d812e773aae4, UserID=7315c221-d799-454a-9492-2a6d208be39d, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-29 03:42:51,558 - INFO - Generated Mnemonic: syrup whip cereal region verb rubber print purity exotic puzzle ordinary advice
+2025-01-29 03:42:51,568 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x7dE1587b80D22D20e4271c3ac035c8cb1a3C971f')>
+2025-01-29 03:42:51,569 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TNtnAT5vhRJDuXhgTJdXyL4UHRErGTeY73')>
+2025-01-29 03:42:51,569 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0x7dE1587b80D22D20e4271c3ac035c8cb1a3C971f')>
+2025-01-29 03:42:51,570 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1qm7wx36sa5jm4e9zzw34f8jhv9vhdwjk5fn7kmn')>
+2025-01-29 03:42:51,570 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0x7dE1587b80D22D20e4271c3ac035c8cb1a3C971f')>
+2025-01-29 03:42:51,570 - WARNING - Skipping blockchain: Arbitrum (not recognized).
+2025-01-29 03:42:51,572 - ERROR - Error in generate_wallet: Unsupported blockchain in DB
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 180, in generate_wallet
+    raise ValueError("Unsupported blockchain in DB")
+ValueError: Unsupported blockchain in DB
+2025-01-29 03:42:51,572 - DEBUG - Database session closed.
+2025-01-29 03:42:51,573 - INFO - 127.0.0.1 - - [29/Jan/2025 03:42:51] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -

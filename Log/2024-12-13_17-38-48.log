@@ -1,0 +1,19 @@
+2024-12-13 17:38:48,075 - INFO - Services module initialized.
+2024-12-13 17:38:48,079 - INFO - LogManager initialized successfully.
+2024-12-13 17:38:48,104 - DEBUG - Building SSL context
+2024-12-13 17:38:48,148 - DEBUG - Switching to SSL
+2024-12-13 17:38:48,154 - DEBUG - SSL has been enabled
+2024-12-13 17:38:48,154 - DEBUG - Starting authorization phase
+2024-12-13 17:38:48,155 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-13 17:38:48,155 - INFO - package: mysql.connector.plugins
+2024-12-13 17:38:48,155 - INFO - plugin_name: caching_sha2_password
+2024-12-13 17:38:48,156 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-13 17:38:48,156 - DEBUG - Exchanging further packets
+2024-12-13 17:38:48,156 - DEBUG - caching_sha2_password completed succesfully
+2024-12-13 17:38:48,172 - INFO - Starting Flask app.
+2024-12-13 17:38:48,179 - WARNING -  * Debugger is active!
+2024-12-13 17:38:48,181 - INFO -  * Debugger PIN: 599-719-174
+2024-12-13 17:38:50,352 - INFO - Request received: {'PrivateKey': '8d759ff762078c87a424ab0537032e7238362f89f6cd91a6aefbae770dd61030', 'PhraseKey': None, 'Password': 'NEWTHING1111', 'WalletName': '123456'}
+2024-12-13 17:38:50,362 - ERROR - Error in import_wallet: type object 'Wallets' has no attribute 'address'
+2024-12-13 17:38:50,363 - INFO - Database session closed.
+2024-12-13 17:38:50,364 - INFO - 127.0.0.1 - - [13/Dec/2024 17:38:50] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 500 -

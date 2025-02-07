@@ -1,0 +1,24 @@
+2025-01-31 06:22:35,929 - DEBUG - Building SSL context
+2025-01-31 06:22:35,966 - DEBUG - Switching to SSL
+2025-01-31 06:22:35,970 - DEBUG - SSL has been enabled
+2025-01-31 06:22:35,971 - DEBUG - Starting authorization phase
+2025-01-31 06:22:35,971 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-31 06:22:35,972 - INFO - package: mysql.connector.plugins
+2025-01-31 06:22:35,972 - INFO - plugin_name: caching_sha2_password
+2025-01-31 06:22:35,972 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-31 06:22:35,972 - DEBUG - Exchanging further packets
+2025-01-31 06:22:35,973 - DEBUG - caching_sha2_password completed succesfully
+2025-01-31 06:22:35,985 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-31 06:22:35,992 - WARNING -  * Debugger is active!
+2025-01-31 06:22:35,995 - INFO -  * Debugger PIN: 117-061-111
+2025-01-31 06:22:38,417 - INFO - New user created: <User(UserID=99f72ea7-c2b5-4767-ab8c-4f53913fe1eb, ID=None, Email='None')>
+2025-01-31 06:22:38,417 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=7a727960-7fbe-41ee-9d25-1a55ff001f26, UserID=99f72ea7-c2b5-4767-ab8c-4f53913fe1eb, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-31 06:22:38,419 - INFO - Generated Mnemonic: orbit meadow plug dumb aim asthma slogan brave sudden detail knife ordinary
+2025-01-31 06:22:38,433 - ERROR - Error in generate_wallet: 'Bip44' object has no attribute 'DerivePath'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 152, in generate_wallet
+    solana_acc = bip44_solana.DerivePath("m/44'/501'/0'/0'")
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bip44' object has no attribute 'DerivePath'
+2025-01-31 06:22:38,435 - DEBUG - Database session closed.
+2025-01-31 06:22:38,436 - INFO - 127.0.0.1 - - [31/Jan/2025 06:22:38] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -

@@ -1,0 +1,87 @@
+2025-01-12 16:52:35,078 - INFO - Services module initialized.
+2025-01-12 16:52:35,081 - INFO - LogManager initialized successfully.
+2025-01-12 16:52:35,135 - DEBUG - Building SSL context
+2025-01-12 16:52:35,177 - DEBUG - Switching to SSL
+2025-01-12 16:52:35,180 - DEBUG - SSL has been enabled
+2025-01-12 16:52:35,181 - DEBUG - Starting authorization phase
+2025-01-12 16:52:35,181 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-12 16:52:35,182 - INFO - package: mysql.connector.plugins
+2025-01-12 16:52:35,182 - INFO - plugin_name: caching_sha2_password
+2025-01-12 16:52:35,185 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-12 16:52:35,185 - DEBUG - Exchanging further packets
+2025-01-12 16:52:35,185 - DEBUG - caching_sha2_password completed succesfully
+2025-01-12 16:52:35,201 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-12 16:52:35,211 - WARNING -  * Debugger is active!
+2025-01-12 16:52:35,213 - INFO -  * Debugger PIN: 599-719-174
+2025-01-12 16:52:56,230 - INFO - Received a request to fetch currency prices based on UserID and CurrencyID list.
+2025-01-12 16:52:56,231 - INFO - Fetching price for these symbols ['ETH', 'SHIB', 'BTC', 'NCC'], requested by UserID: ec99e22a-653c-44b8-a1a8-9347464666d7
+2025-01-12 16:52:56,249 - INFO - Fetched these symbols from database: ['ETH', 'SHIB']
+2025-01-12 16:52:56,250 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: USD
+2025-01-12 16:52:56,252 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:57,009 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=USD HTTP/1.1" 200 None
+2025-01-12 16:52:57,010 - INFO - Prices fetched successfully: {'ETH': 3265.5623910851605, 'SHIB': 2.171522924029564e-05}
+2025-01-12 16:52:57,010 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: CAD
+2025-01-12 16:52:57,012 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:57,181 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=CAD HTTP/1.1" 200 None
+2025-01-12 16:52:57,182 - INFO - Prices fetched successfully: {'ETH': 4713.822983719495, 'SHIB': 3.134582483222069e-05}
+2025-01-12 16:52:57,183 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: AUD
+2025-01-12 16:52:57,184 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:57,358 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=AUD HTTP/1.1" 200 None
+2025-01-12 16:52:57,359 - INFO - Prices fetched successfully: {'ETH': 5312.449553441224, 'SHIB': 3.5326552080405175e-05}
+2025-01-12 16:52:57,360 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: GBP
+2025-01-12 16:52:57,361 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:57,535 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=GBP HTTP/1.1" 200 None
+2025-01-12 16:52:57,536 - INFO - Prices fetched successfully: {'ETH': 2675.047478342831, 'SHIB': 1.778844262154368e-05}
+2025-01-12 16:52:57,537 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: EUR
+2025-01-12 16:52:57,538 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:57,736 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=EUR HTTP/1.1" 200 None
+2025-01-12 16:52:57,738 - INFO - Prices fetched successfully: {'ETH': 3184.517663663223, 'SHIB': 2.1176300681010074e-05}
+2025-01-12 16:52:57,739 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: KWD
+2025-01-12 16:52:57,740 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:57,914 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=KWD HTTP/1.1" 200 None
+2025-01-12 16:52:57,915 - INFO - Prices fetched successfully: {'ETH': 1006.3352998111496, 'SHIB': 6.691895334064946e-06}
+2025-01-12 16:52:57,917 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: TRY
+2025-01-12 16:52:57,918 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:58,111 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=TRY HTTP/1.1" 200 None
+2025-01-12 16:52:58,113 - INFO - Prices fetched successfully: {'ETH': 115605.15387550755, 'SHIB': 0.0007687473449043746}
+2025-01-12 16:52:58,113 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: IRR
+2025-01-12 16:52:58,115 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:58,289 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=IRR HTTP/1.1" 200 None
+2025-01-12 16:52:58,290 - INFO - Prices fetched successfully: {'ETH': 137439357.13493413, 'SHIB': 0.9139397106518566}
+2025-01-12 16:52:58,291 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: SAR
+2025-01-12 16:52:58,292 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:58,486 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=SAR HTTP/1.1" 200 None
+2025-01-12 16:52:58,488 - INFO - Prices fetched successfully: {'ETH': 12258.225651344255, 'SHIB': 8.151434522424073e-05}
+2025-01-12 16:52:58,488 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: CNY
+2025-01-12 16:52:58,490 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:58,683 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=CNY HTTP/1.1" 200 None
+2025-01-12 16:52:58,685 - INFO - Prices fetched successfully: {'ETH': 23945.389345110292, 'SHIB': 0.0001592312614503167}
+2025-01-12 16:52:58,685 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: KRW
+2025-01-12 16:52:58,687 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:58,888 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=KRW HTTP/1.1" 200 None
+2025-01-12 16:52:58,889 - INFO - Prices fetched successfully: {'ETH': 4813847.1597619625, 'SHIB': 0.032010962303874416}
+2025-01-12 16:52:58,889 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: JPY
+2025-01-12 16:52:58,890 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:59,071 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=JPY HTTP/1.1" 200 None
+2025-01-12 16:52:59,071 - INFO - Prices fetched successfully: {'ETH': 514930.20563810866, 'SHIB': 0.0034241659227549877}
+2025-01-12 16:52:59,071 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: INR
+2025-01-12 16:52:59,072 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:59,250 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=INR HTTP/1.1" 200 None
+2025-01-12 16:52:59,252 - INFO - Prices fetched successfully: {'ETH': 281408.6961049173, 'SHIB': 0.0018713022794521793}
+2025-01-12 16:52:59,252 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: RUB
+2025-01-12 16:52:59,254 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:59,453 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=RUB HTTP/1.1" 200 None
+2025-01-12 16:52:59,454 - INFO - Prices fetched successfully: {'ETH': 331911.8365377299, 'SHIB': 0.0022071363994332505}
+2025-01-12 16:52:59,455 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: IQD
+2025-01-12 16:52:59,456 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:59,643 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=IQD HTTP/1.1" 200 None
+2025-01-12 16:52:59,644 - INFO - Prices fetched successfully: {'ETH': 4296675.560258833, 'SHIB': 0.028571891634013816}
+2025-01-12 16:52:59,644 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: BHD
+2025-01-12 16:52:59,645 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:52:59,847 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=BHD HTTP/1.1" 200 None
+2025-01-12 16:52:59,848 - INFO - Prices fetched successfully: {'ETH': 1229.62139386399, 'SHIB': 8.176695848599412e-06}
+2025-01-12 16:52:59,849 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: TND
+2025-01-12 16:52:59,852 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-12 16:53:00,038 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=TND HTTP/1.1" 200 None
+2025-01-12 16:53:00,042 - INFO - Prices fetched successfully: {'ETH': 10528.506236222302, 'SHIB': 7.001211402409468e-05}
+2025-01-12 16:53:00,047 - INFO - 127.0.0.1 - - [12/Jan/2025 16:53:00] "POST /prices HTTP/1.1" 200 -

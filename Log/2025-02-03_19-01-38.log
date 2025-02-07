@@ -1,0 +1,26 @@
+2025-02-03 19:01:38,461 - DEBUG - Building SSL context
+2025-02-03 19:01:38,502 - DEBUG - Switching to SSL
+2025-02-03 19:01:38,506 - DEBUG - SSL has been enabled
+2025-02-03 19:01:38,506 - DEBUG - Starting authorization phase
+2025-02-03 19:01:38,507 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-03 19:01:38,507 - INFO - package: mysql.connector.plugins
+2025-02-03 19:01:38,507 - INFO - plugin_name: caching_sha2_password
+2025-02-03 19:01:38,508 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-03 19:01:38,508 - DEBUG - Exchanging further packets
+2025-02-03 19:01:38,509 - DEBUG - caching_sha2_password completed succesfully
+2025-02-03 19:01:38,522 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-03 19:01:38,529 - WARNING -  * Debugger is active!
+2025-02-03 19:01:38,531 - INFO -  * Debugger PIN: 117-061-111
+2025-02-03 19:03:21,639 - WARNING - No wallets found for user 7002b3ca-7842-4dd5-9a0a-d2fc1516d795
+2025-02-03 19:03:21,640 - INFO - 127.0.0.1 - - [03/Feb/2025 19:03:21] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-03 19:03:46,231 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-03 19:03:46,473 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 500 42
+2025-02-03 19:03:46,474 - ERROR - Non-200 status code (500) for address index 0
+2025-02-03 19:03:46,475 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-03 19:03:46,480 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 15
+2025-02-03 19:03:46,481 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-03 19:03:46,485 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 15
+2025-02-03 19:03:46,486 - WARNING - No wallets found for user db32f43b-b577-43b6-9e37-468e33497b93
+2025-02-03 19:03:46,487 - INFO - 127.0.0.1 - - [03/Feb/2025 19:03:46] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-03 19:04:02,281 - WARNING - No wallets found for user feae51f9-7a08-4736-ae19-ba8efa382c5b
+2025-02-03 19:04:02,282 - INFO - 127.0.0.1 - - [03/Feb/2025 19:04:02] "[33mPOST /balance HTTP/1.1[0m" 404 -

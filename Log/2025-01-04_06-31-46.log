@@ -1,0 +1,29 @@
+2025-01-04 06:31:46,018 - INFO - Services module initialized.
+2025-01-04 06:31:46,021 - INFO - LogManager initialized successfully.
+2025-01-04 06:31:46,064 - DEBUG - Building SSL context
+2025-01-04 06:31:46,109 - DEBUG - Switching to SSL
+2025-01-04 06:31:46,113 - DEBUG - SSL has been enabled
+2025-01-04 06:31:46,114 - DEBUG - Starting authorization phase
+2025-01-04 06:31:46,114 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-04 06:31:46,114 - INFO - package: mysql.connector.plugins
+2025-01-04 06:31:46,115 - INFO - plugin_name: caching_sha2_password
+2025-01-04 06:31:46,117 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-04 06:31:46,118 - DEBUG - Exchanging further packets
+2025-01-04 06:31:46,118 - DEBUG - caching_sha2_password completed succesfully
+2025-01-04 06:31:46,133 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-04 06:31:46,139 - WARNING -  * Debugger is active!
+2025-01-04 06:31:46,141 - INFO -  * Debugger PIN: 599-719-174
+2025-01-04 06:31:53,726 - DEBUG - Request data: {'WalletName': 'WATChMan', 'Password': '12345123451'}
+2025-01-04 06:31:53,726 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-04 06:31:53,739 - INFO - New user created: <User(UserID=7efc1c55-1ff6-4b24-aa12-fa4f5b6b4cd8, ID=None, Email='None')>
+2025-01-04 06:31:53,740 - ERROR - Error in generate_wallet: Bip39MnemonicGenerator.__init__() got an unexpected keyword argument 'language'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 141, in generate_wallet
+    bip_mnemonic = generate_mnemonic_bip_utils(word_count=12)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 57, in generate_mnemonic_bip_utils
+    mnemonic = Bip39MnemonicGenerator(language=Bip39Languages.ENGLISH).FromWordsNumber(words_num)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Bip39MnemonicGenerator.__init__() got an unexpected keyword argument 'language'
+2025-01-04 06:31:53,741 - DEBUG - Database session closed.
+2025-01-04 06:31:53,742 - INFO - 127.0.0.1 - - [04/Jan/2025 06:31:53] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -

@@ -1,0 +1,79 @@
+2024-12-30 03:02:09,573 - INFO - Services module initialized.
+2024-12-30 03:02:09,577 - INFO - LogManager initialized successfully.
+2024-12-30 03:02:09,619 - DEBUG - Building SSL context
+2024-12-30 03:02:09,659 - DEBUG - Switching to SSL
+2024-12-30 03:02:09,663 - DEBUG - SSL has been enabled
+2024-12-30 03:02:09,664 - DEBUG - Starting authorization phase
+2024-12-30 03:02:09,664 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-30 03:02:09,664 - INFO - package: mysql.connector.plugins
+2024-12-30 03:02:09,664 - INFO - plugin_name: caching_sha2_password
+2024-12-30 03:02:09,668 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-30 03:02:09,669 - DEBUG - Exchanging further packets
+2024-12-30 03:02:09,669 - DEBUG - caching_sha2_password completed succesfully
+2024-12-30 03:02:09,682 - INFO - Starting Flask app with Keep-Alive enabled.
+2024-12-30 03:02:09,688 - WARNING -  * Debugger is active!
+2024-12-30 03:02:09,690 - INFO -  * Debugger PIN: 599-719-174
+2024-12-30 03:02:14,306 - INFO - Starting asset retrieval
+2024-12-30 03:02:14,323 - INFO - Queueing request for user 099d5597-78cb-4da1-b518-c0bd1efc2a8f, address 0x16ded1fee9b00b3e836d0da338ebd1793f8985c2
+2024-12-30 03:02:14,324 - INFO - Attempting to identify blockchain for address: 0x16ded1fee9b00b3e836d0da338ebd1793f8985c2
+2024-12-30 03:02:14,326 - INFO - Queueing request for user 099d5597-78cb-4da1-b518-c0bd1efc2a8f, address T264f6580256c4fd1de85f993091384daf
+2024-12-30 03:02:14,327 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-30 03:02:14,329 - INFO - Queueing request for user 099d5597-78cb-4da1-b518-c0bd1efc2a8f, address 0xeb018209fc383b6fd0e59cf3ea547c41002f3a8d
+2024-12-30 03:02:14,331 - INFO - Queueing request for user 3985d013-6239-4d48-b9e3-8896aab18de4, address d83a0a4c-ad33-4ae4-8f5c-cac583055d26
+2024-12-30 03:02:14,332 - INFO - Queueing request for user 3985d013-6239-4d48-b9e3-8896aab18de4, address b537f807-c78f-4265-b26e-23c2ef3e0b79
+2024-12-30 03:02:14,332 - INFO - Queueing request for user 3985d013-6239-4d48-b9e3-8896aab18de4, address 2992b402-c22c-4725-8086-8875978cc5c5
+2024-12-30 03:02:14,333 - INFO - Queueing request for user b9131226-adde-4860-9fa4-a55d6af9b9a2, address 2f9ce0ef-aa56-489f-b63a-0fbe9575a3c8
+2024-12-30 03:02:14,334 - INFO - Queueing request for user b9131226-adde-4860-9fa4-a55d6af9b9a2, address e1342c06-48e9-4bd5-a2c2-87380e1852dc
+2024-12-30 03:02:14,334 - INFO - Queueing request for user b9131226-adde-4860-9fa4-a55d6af9b9a2, address 658c76d0-41a8-421d-a7d3-1bb074a6a649
+2024-12-30 03:02:14,335 - INFO - Queueing request for user e7b495a0-29be-4dd2-8779-f02050763756, address 0x4bdd0dfa1d0e7df0675ca536720a7a44a91cad1d
+2024-12-30 03:02:14,336 - INFO - Queueing request for user e7b495a0-29be-4dd2-8779-f02050763756, address T31acd76c33ea4720ed50e6ac60cc062d1
+2024-12-30 03:02:14,336 - INFO - Queueing request for user e7b495a0-29be-4dd2-8779-f02050763756, address 0x2c68d39e4d5fe13d8b04617701d75cd9aca16f72
+2024-12-30 03:02:14,994 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x16ded1fee9b00b3e836d0da338ebd1793f8985c2&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2024-12-30 03:02:14,996 - INFO - Response from Etherscan: {'status': '0', 'message': 'NOTOK'}
+2024-12-30 03:02:14,998 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-30 03:02:15,624 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0x16ded1fee9b00b3e836d0da338ebd1793f8985c2&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 187
+2024-12-30 03:02:15,625 - INFO - Response from BscScan: {'status': '0', 'message': 'NOTOK'}
+2024-12-30 03:02:15,626 - INFO - Unknown Blockchain format
+2024-12-30 03:02:15,626 - WARNING - Unknown blockchain for address: 0x16ded1fee9b00b3e836d0da338ebd1793f8985c2
+2024-12-30 03:02:15,626 - INFO - Attempting to identify blockchain for address: T264f6580256c4fd1de85f993091384daf
+2024-12-30 03:02:15,628 - DEBUG - Starting new HTTPS connection (1): api.tronscan.org:443
+2024-12-30 03:02:16,206 - DEBUG - https://api.tronscan.org:443 "GET /api/account?address=T264f6580256c4fd1de85f993091384daf HTTP/1.1" 301 162
+2024-12-30 03:02:16,207 - DEBUG - Starting new HTTPS connection (1): apilist.tronscan.org:443
+2024-12-30 03:02:16,687 - DEBUG - https://apilist.tronscan.org:443 "GET /api/account?address=T264f6580256c4fd1de85f993091384daf HTTP/1.1" 200 3
+2024-12-30 03:02:16,688 - INFO - Unknown Blockchain format
+2024-12-30 03:02:16,689 - WARNING - Unknown blockchain for address: T264f6580256c4fd1de85f993091384daf
+2024-12-30 03:02:16,689 - INFO - Attempting to identify blockchain for address: 0xeb018209fc383b6fd0e59cf3ea547c41002f3a8d
+2024-12-30 03:02:16,690 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-30 03:02:17,313 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0xeb018209fc383b6fd0e59cf3ea547c41002f3a8d&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2024-12-30 03:02:17,314 - INFO - Response from Etherscan: {'status': '0', 'message': 'NOTOK'}
+2024-12-30 03:02:17,315 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-30 03:02:17,959 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0xeb018209fc383b6fd0e59cf3ea547c41002f3a8d&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 187
+2024-12-30 03:02:17,961 - INFO - Response from BscScan: {'status': '0', 'message': 'NOTOK'}
+2024-12-30 03:02:17,962 - INFO - Unknown Blockchain format
+2024-12-30 03:02:17,962 - WARNING - Unknown blockchain for address: 0xeb018209fc383b6fd0e59cf3ea547c41002f3a8d
+2024-12-30 03:02:17,963 - INFO - Attempting to identify blockchain for address: d83a0a4c-ad33-4ae4-8f5c-cac583055d26
+2024-12-30 03:02:17,963 - INFO - Unknown Blockchain format
+2024-12-30 03:02:17,964 - WARNING - Unknown blockchain for address: d83a0a4c-ad33-4ae4-8f5c-cac583055d26
+2024-12-30 03:02:17,964 - INFO - Attempting to identify blockchain for address: b537f807-c78f-4265-b26e-23c2ef3e0b79
+2024-12-30 03:02:17,964 - INFO - Unknown Blockchain format
+2024-12-30 03:02:17,965 - WARNING - Unknown blockchain for address: b537f807-c78f-4265-b26e-23c2ef3e0b79
+2024-12-30 03:02:17,965 - INFO - Attempting to identify blockchain for address: 2992b402-c22c-4725-8086-8875978cc5c5
+2024-12-30 03:02:17,966 - INFO - Unknown Blockchain format
+2024-12-30 03:02:17,966 - WARNING - Unknown blockchain for address: 2992b402-c22c-4725-8086-8875978cc5c5
+2024-12-30 03:02:17,966 - INFO - Attempting to identify blockchain for address: 2f9ce0ef-aa56-489f-b63a-0fbe9575a3c8
+2024-12-30 03:02:17,967 - ERROR - Error in get_user_assets: type object 'UserHolding' has no attribute 'CurrencySymbol'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\balance\UpdateAsset.py", line 90, in get_user_assets
+    holdings = db.query(UserHolding.UserID, UserHolding.CurrencySymbol, UserHolding.Balance).all()
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'UserHolding' has no attribute 'CurrencySymbol'
+2024-12-30 03:02:17,967 - INFO - Unknown Blockchain format
+2024-12-30 03:02:17,969 - INFO - 127.0.0.1 - - [30/Dec/2024 03:02:17] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-12-30 03:02:17,969 - WARNING - Unknown blockchain for address: 2f9ce0ef-aa56-489f-b63a-0fbe9575a3c8
+2024-12-30 03:02:17,970 - ERROR - Error processing request for user b9131226-adde-4860-9fa4-a55d6af9b9a2, address 2f9ce0ef-aa56-489f-b63a-0fbe9575a3c8: task_done() called too many times
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\balance\UpdateAsset.py", line 33, in process_requests
+    request_queue.task_done()
+  File "C:\Program Files\Python312\Lib\queue.py", line 75, in task_done
+    raise ValueError('task_done() called too many times')
+ValueError: task_done() called too many times

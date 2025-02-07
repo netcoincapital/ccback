@@ -1,0 +1,24 @@
+2025-02-03 14:30:54,274 - DEBUG - Building SSL context
+2025-02-03 14:30:54,312 - DEBUG - Switching to SSL
+2025-02-03 14:30:54,316 - DEBUG - SSL has been enabled
+2025-02-03 14:30:54,316 - DEBUG - Starting authorization phase
+2025-02-03 14:30:54,316 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-03 14:30:54,317 - INFO - package: mysql.connector.plugins
+2025-02-03 14:30:54,317 - INFO - plugin_name: caching_sha2_password
+2025-02-03 14:30:54,317 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-03 14:30:54,318 - DEBUG - Exchanging further packets
+2025-02-03 14:30:54,318 - DEBUG - caching_sha2_password completed succesfully
+2025-02-03 14:30:54,328 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-03 14:30:54,336 - WARNING -  * Debugger is active!
+2025-02-03 14:30:54,338 - INFO -  * Debugger PIN: 117-061-111
+2025-02-03 14:30:58,317 - INFO - Fetching balance for user: 8a4365bc-1346-4846-acfe-92c3bbd49b24
+2025-02-03 14:30:58,323 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-03 14:30:58,357 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 15
+2025-02-03 14:30:58,359 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-03 14:30:58,582 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 500 42
+2025-02-03 14:30:58,583 - ERROR - Non-200 status code (500) for address index 1
+2025-02-03 14:30:58,584 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-03 14:30:58,612 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 15
+2025-02-03 14:30:58,613 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-03 14:30:58,643 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 15
+2025-02-03 14:30:58,645 - INFO - 127.0.0.1 - - [03/Feb/2025 14:30:58] "GET /balance HTTP/1.1" 200 -

@@ -1,0 +1,23 @@
+2025-01-03 05:49:06,230 - INFO - Services module initialized.
+2025-01-03 05:49:06,233 - INFO - LogManager initialized successfully.
+2025-01-03 05:49:06,308 - DEBUG - Building SSL context
+2025-01-03 05:49:06,358 - DEBUG - Switching to SSL
+2025-01-03 05:49:06,361 - DEBUG - SSL has been enabled
+2025-01-03 05:49:06,362 - DEBUG - Starting authorization phase
+2025-01-03 05:49:06,362 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-03 05:49:06,362 - INFO - package: mysql.connector.plugins
+2025-01-03 05:49:06,363 - INFO - plugin_name: caching_sha2_password
+2025-01-03 05:49:06,365 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-03 05:49:06,365 - DEBUG - Exchanging further packets
+2025-01-03 05:49:06,365 - DEBUG - caching_sha2_password completed succesfully
+2025-01-03 05:49:06,379 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-03 05:49:06,385 - WARNING -  * Debugger is active!
+2025-01-03 05:49:06,387 - INFO -  * Debugger PIN: 599-719-174
+2025-01-03 05:49:31,000 - INFO - Request received: {'PrivateKey': None, 'PhraseKey': 'suspect jelly auto wisdom sight dust hill thumb token text cheese know', 'Password': 'MSSAS', 'WalletName': 'MSSAS'}
+2025-01-03 05:49:31,046 - ERROR - Error in import_wallet: 'Wallets' object has no attribute 'WalletAddress'
+2025-01-03 05:49:31,046 - INFO - Database session closed.
+2025-01-03 05:49:31,047 - INFO - 127.0.0.1 - - [03/Jan/2025 05:49:31] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 500 -
+2025-01-03 05:50:05,760 - INFO - Request received: {'PrivateKey': None, 'PhraseKey': 'suspect jelly auto wisdom sight dust hill thumb token text cheese know', 'Password': 'MASSS', 'WalletName': 'MASSS'}
+2025-01-03 05:50:05,774 - ERROR - Error in import_wallet: 'Wallets' object has no attribute 'WalletAddress'
+2025-01-03 05:50:05,774 - INFO - Database session closed.
+2025-01-03 05:50:05,775 - INFO - 127.0.0.1 - - [03/Jan/2025 05:50:05] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 500 -

@@ -1,0 +1,15 @@
+2024-12-11 11:09:35,347 - DEBUG - Building SSL context
+2024-12-11 11:09:35,388 - DEBUG - Switching to SSL
+2024-12-11 11:09:35,392 - DEBUG - SSL has been enabled
+2024-12-11 11:09:35,392 - DEBUG - Starting authorization phase
+2024-12-11 11:09:35,392 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-11 11:09:35,393 - INFO - package: mysql.connector.plugins
+2024-12-11 11:09:35,393 - INFO - plugin_name: caching_sha2_password
+2024-12-11 11:09:35,393 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-11 11:09:35,394 - DEBUG - Exchanging further packets
+2024-12-11 11:09:35,394 - DEBUG - caching_sha2_password completed succesfully
+2024-12-11 11:09:35,412 - INFO - Starting Flask app.
+2024-12-11 11:09:35,421 - WARNING -  * Debugger is active!
+2024-12-11 11:09:35,424 - INFO -  * Debugger PIN: 599-719-174
+2024-12-11 11:09:37,228 - INFO - Imported Tron Wallet - Address: TLSaX5kttwKHSeegEpc2nuXnfersv355qp
+2024-12-11 11:09:37,251 - INFO - 127.0.0.1 - - [11/Dec/2024 11:09:37] "POST /import-wallet HTTP/1.1" 200 -

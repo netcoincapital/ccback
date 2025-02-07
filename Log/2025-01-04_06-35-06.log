@@ -1,0 +1,25 @@
+2025-01-04 06:35:06,160 - INFO - Services module initialized.
+2025-01-04 06:35:06,163 - INFO - LogManager initialized successfully.
+2025-01-04 06:35:06,204 - DEBUG - Building SSL context
+2025-01-04 06:35:06,247 - DEBUG - Switching to SSL
+2025-01-04 06:35:06,251 - DEBUG - SSL has been enabled
+2025-01-04 06:35:06,252 - DEBUG - Starting authorization phase
+2025-01-04 06:35:06,252 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-04 06:35:06,253 - INFO - package: mysql.connector.plugins
+2025-01-04 06:35:06,253 - INFO - plugin_name: caching_sha2_password
+2025-01-04 06:35:06,254 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-04 06:35:06,254 - DEBUG - Exchanging further packets
+2025-01-04 06:35:06,255 - DEBUG - caching_sha2_password completed succesfully
+2025-01-04 06:35:06,269 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-04 06:35:06,277 - WARNING -  * Debugger is active!
+2025-01-04 06:35:06,279 - INFO -  * Debugger PIN: 599-719-174
+2025-01-04 06:35:11,755 - DEBUG - Request data: {'WalletName': 'Sandman', 'Password': '12345123451'}
+2025-01-04 06:35:11,755 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-04 06:35:11,768 - INFO - New user created: <User(UserID=4aca71d3-2f99-4485-95cf-34bdc1be364f, ID=None, Email='None')>
+2025-01-04 06:35:11,781 - INFO - Generated BIP39 Mnemonic: climb field junior carry wood path stick they page expire aim travel
+2025-01-04 06:35:11,781 - INFO - Wallet created: <Wallet(WalletID=ef5bda5a-d14b-45f2-a826-07c2910abe9a, UserID=4aca71d3-2f99-4485-95cf-34bdc1be364f, WalletName='Sandman', IsMultiSig=False, RequiredSignatures='1')>
+2025-01-04 06:35:11,786 - INFO - Generating wallet for blockchain: Ethereum
+2025-01-04 06:35:11,897 - INFO - Generating wallet for blockchain: Tron
+2025-01-04 06:35:11,904 - INFO - Generating wallet for blockchain: BNB
+2025-01-04 06:35:11,920 - DEBUG - Database session closed.
+2025-01-04 06:35:11,921 - INFO - 127.0.0.1 - - [04/Jan/2025 06:35:11] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

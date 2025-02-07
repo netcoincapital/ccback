@@ -1,0 +1,30 @@
+2025-01-04 06:56:28,722 - INFO - Services module initialized.
+2025-01-04 06:56:28,725 - INFO - LogManager initialized successfully.
+2025-01-04 06:56:28,768 - DEBUG - Building SSL context
+2025-01-04 06:56:28,807 - DEBUG - Switching to SSL
+2025-01-04 06:56:28,811 - DEBUG - SSL has been enabled
+2025-01-04 06:56:28,811 - DEBUG - Starting authorization phase
+2025-01-04 06:56:28,811 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-04 06:56:28,812 - INFO - package: mysql.connector.plugins
+2025-01-04 06:56:28,812 - INFO - plugin_name: caching_sha2_password
+2025-01-04 06:56:28,815 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-04 06:56:28,815 - DEBUG - Exchanging further packets
+2025-01-04 06:56:28,815 - DEBUG - caching_sha2_password completed succesfully
+2025-01-04 06:56:28,827 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-04 06:56:28,833 - WARNING -  * Debugger is active!
+2025-01-04 06:56:28,836 - INFO -  * Debugger PIN: 599-719-174
+2025-01-04 06:56:31,811 - DEBUG - Request data: {'WalletName': 'Sandman222222', 'Password': '12345123451'}
+2025-01-04 06:56:31,811 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-04 06:56:31,835 - INFO - New user created: <User(UserID=f44b3c45-45f7-4c03-ae0b-ad407cb978ff, ID=None, Email='None')>
+2025-01-04 06:56:31,836 - INFO - Generated BIP39 Mnemonic: soup forward off afraid dress barely pause cross rescue ignore hope gate
+2025-01-04 06:56:31,837 - INFO - Wallet created: <Wallet(WalletID=848f8781-e283-4a36-9e55-5f5a6e4a0da6, UserID=f44b3c45-45f7-4c03-ae0b-ad407cb978ff, WalletName='Sandman222222', IsMultiSig=False, RequiredSignatures='1')>
+2025-01-04 06:56:31,840 - INFO - Generating wallet for blockchain: Ethereum
+2025-01-04 06:56:31,848 - DEBUG - Derived PrivateKey=8c39db41a307748436b3b4a418e1aa68faaa184767ae6f5c71c09a1b6226d154, PublicAddress=0x823d947681b57cA203e32F6A9Db645f1C38099F0
+2025-01-04 06:56:31,849 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x823d947681b57cA203e32F6A9Db645f1C38099F0')>
+2025-01-04 06:56:31,849 - INFO - Generating wallet for blockchain: Tron
+2025-01-04 06:56:31,854 - DEBUG - Derived PrivateKey=ae94dd63faf4768690f5e5d289281dcc119588dbb23bbc4fc7760a80020d2282, PublicAddress=TYqBF1W7B1RWevJPXKzkjAwoVb852c41ye
+2025-01-04 06:56:31,854 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TYqBF1W7B1RWevJPXKzkjAwoVb852c41ye')>
+2025-01-04 06:56:31,855 - INFO - Generating wallet for blockchain: BNB
+2025-01-04 06:56:31,859 - ERROR - Error deriving wallet for BNB: type object 'Bip44Coins' has no attribute 'SMART_CHAIN'
+2025-01-04 06:56:31,875 - DEBUG - Database session closed.
+2025-01-04 06:56:31,876 - INFO - 127.0.0.1 - - [04/Jan/2025 06:56:31] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

@@ -1,0 +1,13 @@
+2025-02-06 15:47:05,529 - DEBUG - Building SSL context
+2025-02-06 15:47:05,564 - DEBUG - Switching to SSL
+2025-02-06 15:47:05,567 - DEBUG - SSL has been enabled
+2025-02-06 15:47:05,568 - DEBUG - Starting authorization phase
+2025-02-06 15:47:05,568 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-06 15:47:05,569 - INFO - package: mysql.connector.plugins
+2025-02-06 15:47:05,569 - INFO - plugin_name: caching_sha2_password
+2025-02-06 15:47:05,570 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-06 15:47:05,570 - DEBUG - Exchanging further packets
+2025-02-06 15:47:05,571 - DEBUG - caching_sha2_password completed succesfully
+2025-02-06 15:47:05,584 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-06 15:47:05,591 - WARNING -  * Debugger is active!
+2025-02-06 15:47:05,593 - INFO -  * Debugger PIN: 117-061-111

@@ -1,0 +1,15 @@
+2025-02-02 02:14:37,294 - DEBUG - Building SSL context
+2025-02-02 02:14:37,332 - DEBUG - Switching to SSL
+2025-02-02 02:14:37,336 - DEBUG - SSL has been enabled
+2025-02-02 02:14:37,336 - DEBUG - Starting authorization phase
+2025-02-02 02:14:37,337 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-02 02:14:37,337 - INFO - package: mysql.connector.plugins
+2025-02-02 02:14:37,337 - INFO - plugin_name: caching_sha2_password
+2025-02-02 02:14:37,338 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-02 02:14:37,338 - DEBUG - Exchanging further packets
+2025-02-02 02:14:37,339 - DEBUG - caching_sha2_password completed succesfully
+2025-02-02 02:14:37,356 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-02 02:14:37,365 - WARNING -  * Debugger is active!
+2025-02-02 02:14:37,367 - INFO -  * Debugger PIN: 117-061-111
+2025-02-02 02:14:41,211 - INFO - 127.0.0.1 - - [02/Feb/2025 02:14:41] "[35m[1mGET /balance HTTP/1.1[0m" 500 -
+2025-02-02 02:20:28,208 - INFO -  * Detected change in 'c:\\Users\\kozmos teknoloji\\Desktop\\CC\\balance\\Balance.py', reloading

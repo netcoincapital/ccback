@@ -1,0 +1,1087 @@
+2025-01-03 08:39:34,992 - INFO - Services module initialized.
+2025-01-03 08:39:34,997 - INFO - LogManager initialized successfully.
+2025-01-03 08:39:35,051 - DEBUG - Building SSL context
+2025-01-03 08:39:35,096 - DEBUG - Switching to SSL
+2025-01-03 08:39:35,099 - DEBUG - SSL has been enabled
+2025-01-03 08:39:35,100 - DEBUG - Starting authorization phase
+2025-01-03 08:39:35,100 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-03 08:39:35,100 - INFO - package: mysql.connector.plugins
+2025-01-03 08:39:35,101 - INFO - plugin_name: caching_sha2_password
+2025-01-03 08:39:35,103 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-03 08:39:35,104 - DEBUG - Exchanging further packets
+2025-01-03 08:39:35,104 - DEBUG - caching_sha2_password completed succesfully
+2025-01-03 08:39:35,116 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-03 08:39:35,123 - WARNING -  * Debugger is active!
+2025-01-03 08:39:35,124 - INFO -  * Debugger PIN: 599-719-174
+2025-01-03 08:39:37,502 - INFO - Attempting to fetch all currencies from the database.
+2025-01-03 08:39:37,546 - INFO - Fetched symbols from database: ['$MBAG', '$MICRO', '$MONG', '$WELL', '0', '0x0', '0xBTC', '0XDEV', '1ART', '1CAT', '1EARTH', '1INCH', '1UP', '5IRE', '8PAY', 'A', 'A8', 'AAVE', 'ABDS', 'ABOND', 'ABT', 'ABYSS', 'ACE', 'ACH', 'ACQ', 'ACX', 'AD', 'ADAPAD', 'ADP', 'ADS', 'ADX', 'AEG', 'AEUR', 'AEVO', 'AGETH', 'AGI', 'AGIX', 'AGLA', 'AGLD', 'AGRS', 'AGX', 'AIAT', 'AIKEK', 'AIPAD', 'AIT', 'AKITA', 'AKRO', 'AKTIO', 'AL', 'ALCX', 'ALEPH', 'ALI', 'ALICE', 'ALLIN', 'ALN', 'ALPHA', 'ALPHR', 'ALT', 'ALVA', 'ALY', 'AMA', 'AMC', 'AMO', 'AMON', 'AMP', 'AMPL', 'ANDY', 'ANKR', 'ANT', 'ANYONE', 'AOA', 'APE', 'APED', 'APEX', 'APFC', 'API3', 'APM', 'APP', 'APRS', 'APU', 'APYS', 'AQT', 'ARC', 'ARCA', 'ARCONA', 'ARES', 'ARIA20', 'ARKI', 'ARKM', 'ARPA', 'ARV', 'ASD', 'ASM', 'AST', 'ASTA', 'ASTO', 'ASTRA', 'ASTX', 'ATA', 'ATH', 'ATLAS', 'ATT', 'AUCTION', 'AUDIO', 'AURA', 'AURORA', 'AUSD', 'AVA', 'AVAIL', 'AVG', 'AVI', 'AVINOC', 'AVT', 'AWC', 'AX', 'AXIS', 'AXL', 'AXS', 'AZUKI', 'AZUR', 'BAAS', 'BABYNEIRO', 'BABYTRUMP', 'BAC', 'BAD', 'BADGER', 'BAG', 'BAL', 'BALPHA', 'BANANA', 'BAND', 'BANK', 'BAR', 'BASE', 'BASEDAI', 'BAT', 'BAX', 'BBANK', 'BBF', 'BBL', 'BBS', 'BCMC', 'BCUBE', 'BCUG', 'BCUT', 'BCZERO', 'BDP', 'BEAM', 'BEFE', 'BEFI', 'BEL', 'BEND', 'BEPRO', 'BERRY', 'BETA', 'BF', 'BFC', 'BGB', 'BICO', 'BIFI', 'BIGTIME', 'BIOT', 'BIRD', 'BIST', 'BIT', 'BITBEDR', 'BITCOIN', 'BKN', 'BL00P', 'BLANK', 'BLAST', 'BLENDR', 'BLOCK', 'BLOCX', 'BLOX', 'BLUR', 'BLY', 'BLZ', 'BMAX', 'BMI', 'BMX', 'BNANA', 'BNF', 'BNT', 'BOB', 'BOBO', 'BOLT', 'BOMB', 'BOME', 'BOND', 'BONDLY', 'BONE', 'BONK', 'BOO', 'BOOE', 'BOOM', 'BOPPY', 'BORG', 'BOSON', 'BOTTO', 'BOUTS', 'BOX', 'BP', 'BREED', 'BRETT', 'BRISE', 'BRKL', 'BROCK', 'BRUH', 'BRWL', 'BSSB', 'BST', 'BTB', 'BTR', 'BTRS', 'BTRST', 'BUBBLE', 'BUFFI', 'BUILD', 'BURN', 'BUSY', 'BUY', 'BVM', 'BXC', 'BXX', 'BYN', 'BYTE', 'BYTES', 'BZR', 'BZZ', 'C20', 'C98', 'CA', 'CAD', 'CAGA', 'CAH', 'CAKE', 'CAPS', 'CARE', 'CAST', 'CAT', 'CATALORIAN', 'CATBOY', 'CATE', 'CAW', 'CBG', 'CBK', 'CBX', 'CDT', 'CEEK', 'CEL', 'CELL', 'CELR', 'CEP', 'CERE', 'CFi', 'CGG', 'CHEEMS', 'CHEQ', 'CHEX', 'CHKN', 'CHO', 'CHR', 'CHRP', 'CHZ', 'CIRUS', 'CIV', 'CLS', 'CLV', 'CNB', 'CNTM', 'CO', 'COBE', 'COMAI', 'COMBO', 'COMP', 'CONV', 'COOK', 'COPI', 'COR', 'CORX', 'COSMIC', 'COT', 'COVAL', 'COW', 'CPOOL', 'CPU', 'CRAI', 'CRDT', 'CRE8', 'CREAM', 'CREDI', 'CREO', 'CROS', 'CROWN', 'CRPT', 'CRTS', 'CRU', 'CRV', 'CSIX', 'CSM', 'CSWAP', 'CTA', 'CTCN', 'CTI', 'CTRL', 'CTSI', 'CTT', 'CTX', 'CUBE', 'CUDOS', 'CULT', 'CVC', 'CVP', 'CVT', 'CVX', 'CVXCRV', 'CWEB', 'CWT', 'CXT', 'CYBER', 'CYL', 'DACXI', 'DAD', 'DAFI', 'DAI', 'DAMEX', 'DAO', 'DAPP', 'DAPPX', 'DAR', 'DARAM', 'DATA', 'DAWN', 'DBZ', 'DC', 'DCK', 'DCN', 'DDBAM', 'DDIM', 'DDOS', 'DDX', 'DEAI', 'DEC', 'DEFI', 'DEFROGS', 'DEGO', 'DENT', 'DEP', 'DEUSD', 'DEVVE', 'DEXA', 'DEXE', 'DEXT', 'DF', 'DFA', 'DFT', 'DFYN', 'DG', 'DHB', 'DHT', 'DHV', 'DIA', 'DIFX', 'DIGG', 'DINERO', 'DINO', 'DIONE', 'DIP', 'DKA', 'DMAIL', 'DMCK', 'DMTR', 'DNT', 'DNXC', 'DODO', 'DOG', 'DOGA', 'DOGE', 'DOGECAST', 'DOGES', 'DOGGO', 'DOGS', 'DOGWIFHAT', 'DOLA', 'DOLLAR', 'DON', 'DONUT', 'DOP', 'DORA', 'DORKY', 'DOSE', 'DOWS', 'DPI', 'DPR', 'DPS', 'DRAGGY', 'DRAGONX', 'DRC', 'DREP', 'DRGN', 'DRT', 'DSK', 'DSLA', 'DSYNC', 'DTX', 'DUCK', 'DUCKIES', 'DUCKY', 'DUEL', 'DUSK', 'DUST', 'DVI', 'DX', 'DXGM', 'DYP', 'EAI', 'EARN', 'EBULL', 'ECU', 'EDEN', 'EDGE', 'EDLC', 'EFI', 'EGG', 'EGGT', 'EIGEN', 'EKTA', 'EL', 'ELAND', 'ELET', 'ELG', 'ELMO', 'ELMT', 'ELON', 'EM', 'EMAID', 'EML', 'EMP', 'EMRX', 'ENA', 'enqAI', 'ENS', 'EPIK', 'EPIKO', 'EQUAD', 'ERN', 'eRSDL', 'ESD', 'ESE', 'ETH', 'ETHA', 'ETHDYDX', 'ETHFI', 'ETHPAD', 'EUL', 'EURC', 'EURI', 'EURS', 'EURt', 'eUSD', 'EVAI', 'EVERY', 'EVRY', 'EVY', 'EVZ', 'EXM', 'EXRD', 'EZ', 'F', 'FAC', 'FANC', 'FARM', 'FASTAI', 'FB', 'FBX', 'FCL', 'FCT', 'FDUSD', 'FEAR', 'FEFE', 'FEI', 'FER', 'FEX', 'FI', 'FIGHT', 'FIN', 'FIS', 'FJO', 'FLASH', 'FLIP', 'FLIXX', 'FLOKI', 'FLT', 'FLX', 'FLZ', 'FMB', 'FNXAI', 'FOG', 'FOR', 'FORM', 'FORTH', 'FOUR', 'FOX', 'FP', 'FRAX', 'FREE', 'FRIN', 'FRM', 'FRONT', 'FRXETH', 'FS', 'FT', 'FTW', 'FUKU', 'FUN', 'FUND', 'FUSE', 'FUZE', 'FWT', 'FX', 'FXC', 'FXF', 'FXS', 'G3', 'GAINS', 'GAL', 'GALA', 'GALAXIS', 'GALEON', 'GAME', 'GARD', 'GDAO', 'GDR', 'GEAR', 'GEEQ', 'GEKKO', 'GEL', 'GEMS', 'GEO', 'GET', 'GF', 'GFI', 'GHO', 'GHST', 'GHX', 'GLM', 'GMAC', 'GME', 'GMEE', 'GMM', 'GMT', 'GNO', 'GNX', 'GNY', 'GOB', 'GODS', 'GOF', 'GOG', 'GOLD', 'Gomining', 'GONDOLA', 'GORILLA', 'GOU', 'GOVI', 'GPU', 'GRACY', 'GRG', 'GROK', 'GROYPER', 'GRT', 'GS', 'GSWAP', 'GSWIFT', 'GT', 'GTC', 'GUM', 'GUSD', 'GXT', 'GYD', 'GYEN', 'GZONE', 'HAI', 'HAKKA', 'HAN', 'HANA', 'HANDY', 'HAPI', 'HARD', 'HARRIS', 'HASHAI', 'HEART', 'HEGIC', 'HELLO', 'HEMULE', 'HEX', 'HEZ', 'HFT', 'HGET', 'HGOLD', 'HI', 'HIFI', 'HIGH', 'HMQ', 'HMT', 'HOGE', 'HONK', 'HOPPY', 'HOPR', 'HORD', 'HOT', 'HOTCROSS', 'HOTKEY', 'HPO', 'HSF', 'HSK', 'HT', 'HUGE', 'HUNT', 'HUSD', 'HUSL', 'HVH', 'HYPC', 'HYVE', 'ICHI', 'ID', 'IDEX', 'IDIA', 'IDLE', 'IDRT', 'IDV', 'ILV', 'IMGNAI', 'IMPT', 'IMT', 'IMX', 'INDEX', 'INEX', 'INFRA', 'INJ', 'INNBC', 'INS', 'INSP', 'INST', 'INSUR', 'INV', 'INXT', 'IOEN', 'IOI', 'IPV', 'IQ', 'IQT', 'ISEC', 'ISIKC', 'ISK', 'ISP', 'ITGR', 'IXS', 'IZI', 'IZZY', 'JAM', 'JANET', 'JASMY', 'JENNER', 'JESUS', 'JET', 'JFIN', 'JGN', 'JMPT', 'JNB', 'JOB', 'JOE', 'JRT', 'JSM', 'K21', 'KAI', 'KAMPAY', 'KAN', 'KANGAL', 'KARATE', 'KARRAT', 'KATA', 'KAVA', 'KCS', 'KCT', 'KDAG', 'KEEP', 'KEKE', 'KEKEC', 'KENDU', 'KEY', 'KEYFI', 'KFT', 'KIBSHI', 'KINE', 'KING', 'KISHU', 'KLAUS', 'KNC', 'KNDX', 'KNINE', 'KOAI', 'KOK', 'KOLZ', 'KOMPETE', 'KONO', 'KP3R', 'KRL', 'KROM', 'KRW', 'KTN', 'KTON', 'KTT', 'KUV', 'KYL', 'KZEN', 'L2', 'L3', 'LA', 'LADYS', 'LAI', 'LAIKA', 'LAMB', 'LAND', 'LAYER', 'LBK', 'LBL', 'LBP', 'LBR', 'LCX', 'LDO', 'LEAD', 'LEASH', 'LEDGER', 'LEMON', 'LEO', 'LEVER', 'LFDOG', 'LGCY', 'LIF3', 'LIFE', 'LINA', 'LINK', 'LINKA', 'LIT', 'LITH', 'LIZ', 'LKR', 'LL', 'LM', 'LMEOW', 'LMR', 'LMWR', 'LNC', 'LNDX', 'LNQ', 'LOCG', 'LOCK', 'LOCUS', 'LOGX', 'LOKA', 'LON', 'LOOKS', 'LOOM', 'LOOT', 'LORDS', 'LOVELY', 'LOWB', 'LPM', 'LPOOL', 'LPT', 'LQTY', 'LRC', 'LRDS', 'LSS', 'LTD', 'LTT', 'LTX', 'LUFFY', 'LUSD', 'LYM', 'LYRA', 'M87', 'MAGA', 'MAGAA', 'MAGIC', 'MAHA', 'MAK', 'MANA', 'MANC', 'MAO', 'MAPS', 'MARS', 'MARS4', 'MARSH', 'MARVIN', 'MASA', 'MASK', 'MASQ', 'MATH', 'MATT', 'MAV', 'MAVIA', 'MAX', 'MBD', 'MBLK', 'MCB', 'MCG', 'MCHC', 'MCO2', 'MDAI', 'MDT', 'MEL', 'MEME', 'MEMEAI', 'MEMECUP', 'METIS', 'MILK2', 'MIND', 'MIR', 'MISHA', 'MITX', 'MIX', 'MKR', 'MKUSD', 'MLN', 'MLT', 'MMA', 'MMAI', 'MNEE', 'MNFT', 'MNT', 'MNTC', 'MNTL', 'MNW', 'MOBY', 'MOC', 'MOCA', 'MOD', 'MOG', 'MOMA', 'MON', 'MONA', 'MONOPOLY', 'MOODENG', 'MOOV', 'MORPHO', 'MORRA', 'MPC', 'MPH', 'MPL', 'MSB', 'MSI', 'MSN', 'MSTR', 'MTA', 'MTD', 'MTLX', 'MUBI', 'MULTI', 'MUSE', 'MUSIC', 'MV', 'MVC', 'MVL', 'MVP', 'MX', 'MYRIA', 'MYST', 'MYTH', 'NABOX', 'NAI', 'NASDAQ420', 'NAVI', 'NBT', 'NCDT', 'NCT', 'NDX', 'NEIRO', 'NERD', 'NEST', 'NETVR', 'NEURA', 'NEURAL', 'NEXO', 'NEXT', 'NFNT', 'NFT', 'NFTD', 'NFTX', 'NFTY', 'NGL', 'NGM', 'NGTG$$', 'NHT', 'NINU', 'NIZA', 'NLK', 'NMR', 'NMT', 'NOGS', 'NOIA', 'NORD', 'NOW', 'NPC', 'NPT', 'NRFB', 'NSBT', 'NSFW', 'NST', 'NSURE', 'NTX', 'NUM', 'NUT', 'NUX', 'NVIR', 'NWC', 'NXRA', 'NYA', 'NYM', 'O', 'O3', 'OAX', 'OBI', 'OBT', 'OCEAN', 'OCTO', 'ODDZ', 'OGGY', 'OGN', 'oGPU', 'OGV', 'OHM', 'OIN', 'OJA', 'OKB', 'OL', 'OLAS', 'OLE', 'OLY', 'OM', 'OMG', 'OMI', 'OMIKAMI', 'OMNI', 'ONDO', 'ONE', 'ONI', 'OOKI', 'OPCT', 'OPEN', 'OPIUM', 'OPTI', 'OPUL', 'ORA', 'ORAI', 'ORAO', 'ORB', 'ORBR', 'ORBS', 'ORC', 'ORDER', 'ORDS', 'ORION', 'ORN', 'OSAK', 'OSCAR', 'OUSD', 'OVR', 'OX', 'OXT', 'OXY', 'P2PS', 'PAAL', 'PACE', 'PAI', 'PAINT', 'PALM', 'PANDORA', 'PAPI', 'PAR', 'PARAM', 'PATRIOT', 'PAXG', 'PAY', 'PBR', 'PBX', 'PCNT', 'PDA', 'PDEX', 'PDT', 'PDX', 'PEAK', 'PEANUT', 'PEAS', 'PEIPEI', 'PENDLE', 'PEOPLE', 'PEPE', 'PEPE2.0', 'PEPECOIN', 'PERC', 'PERI', 'PERL', 'PERP', 'PEW', 'PHIL', 'PHNX', 'PHX', 'PIB', 'PICKLE', 'PIKA', 'PIN', 'PINS', 'PIRATE', 'PIXEL', 'PIXFI', 'PKF', 'PLANET', 'PLF', 'PLOT', 'PLPA', 'PLR', 'PLSPAD', 'PLT', 'PLU', 'PLX', 'PLY', 'PMON', 'PMPY', 'PNK', 'PNP', 'PNT', 'POKT', 'POL', 'POLA', 'POLC', 'POLI', 'POLK', 'POLS', 'POLY', 'POND', 'POOH', 'POPCAT', 'PORK', 'PORT3', 'PORTAL', 'POWR', 'PPAY', 'PPT', 'PRARE', 'PRE', 'PRIME', 'PRMX', 'PRNT', 'PRO', 'PROB', 'PROM', 'PROPC', 'PROS', 'PRQ', 'PSP', 'PSPS', 'PSTAKE', 'PT', 'PTF', 'PTU', 'PUFFER', 'PUMLX', 'PUNDIX', 'PUPPIES', 'PUSH', 'PUSSY', 'PYR', 'PYRO', 'PYUSD', 'QAI', 'QANX', 'QDFI', 'QDX', 'QGOV', 'QKC', 'QNT', 'QOM', 'QORPO', 'QSWAP', 'QTCON', 'QUICK', 'QWAN', 'RACA', 'RADAR', 'RAGE', 'RAI', 'RAIN', 'RAKE', 'RAMP', 'RARE', 'RARI', 'RAZE', 'RAZOR', 'RB', 'RBC', 'RBLX', 'RBN', 'RBX', 'RCH', 'RDNT', 'REAP', 'RED', 'REKT', 'REN', 'RENDER', 'REP', 'REQ', 'RETIK', 'REV', 'REVV', 'REZ', 'RFOX', 'RFR', 'RGP', 'RGT', 'RHYTHM', 'RIDE', 'RING', 'RIO', 'RISE', 'RJV', 'RLB', 'RLC', 'RLY', 'RMRK', 'RMV', 'ROCKI', 'ROG', 'ROOBEE', 'ROOK', 'ROOT', 'ROSE', 'ROUTE', 'RPG', 'RPK', 'RPL', 'RPZX', 'RSC', 'RSR', 'RSS3', 'RSV', 'RUFF', 'RUSH', 'RVF', 'RWA', 'RYO', 'RYU', 'S4F', 'SABAI', 'SAFE', 'SAI', 'SAITAMA', 'SAITO', 'SAKE', 'SALD', 'SALT', 'SAND', 'SATA', 'SATO', 'SATT', 'SBR', 'SCALE', 'SD', 'SDAI', 'SDAO', 'SDCRV', 'SDEX', 'SDT', 'SECOND', 'SEFA', 'SENATE', 'SENC', 'SENSO', 'SFG', 'SFI', 'SG', 'SGT', 'SHA', 'SHARD', 'SHARE', 'SHEB', 'SHEZMU', 'SHFL', 'SHI', 'SHIA', 'SHIB', 'SHIBDOGE', 'SHIDO', 'SHIRO', 'SHIRYO', 'SHOE', 'SHOOT', 'SHOP', 'SHOPX', 'SHPING', 'SHRAP', 'SHROOM', 'SHRUB', 'SHX', 'SIDUS', 'SIS', 'SIX', 'SKAI', 'SKEB', 'SKEY', 'SKL', 'SKY', 'SKYA', 'SKYRIM', 'SLAP', 'SLICE', 'SLN', 'SLP', 'SMART', 'SMI', 'SMILE', 'SMILEY', 'SMT', 'SMURFCAT', 'SNB', 'SNC', 'SNN', 'SNOW', 'SNSY', 'SNT', 'SNX', 'SOCIAL', 'SOFI', 'SOLVE', 'SOMM', 'SOON', 'SORA', 'SOS', 'SOUL', 'SOV', 'SPA', 'SPARKLET', 'SPC', 'SPEC', 'SPECTRE', 'SPEEDY', 'SPELL', 'SPELLFIRE', 'SPH', 'SPIKE', 'SPUME', 'SPWN', 'SPX', 'SQ3', 'SQGROW', 'SQT', 'SRK', 'SSV', 'STAK', 'STAKE', 'STARL', 'STAT', 'STBU', 'STFX', 'STG', 'STMX', 'STND', 'STORJ', 'STOS', 'STPT', 'STRK', 'STRM', 'STRONG', 'STRP', 'STRUMP', 'SUKU', 'SUPER', 'SURE', 'SUSD', 'SUSHI', 'SUTER', 'SVN', 'SWAP', 'SWASH', 'SWEAT', 'SWELL', 'SWFTC', 'SWGT', 'SWINGBY', 'SWORLD', 'SWRV', 'SWTH', 'SYLO', 'SYN', 'SYNC', 'SYNT', 'SYRUP', 'T', 'TAMA', 'TAROT', 'TATSU', 'TAVA', 'TBC', 'TBX', 'TEL', 'TEM', 'TERMINUS', 'TERRA', 'TET', 'TFBX', 'TGC', 'THN', 'THREE', 'TIDAL', 'TIK', 'TIME', 'TITAN', 'TITANX', 'TKAI', 'TKB', 'TKING', 'TKP', 'TLM', 'TME', 'TOAD', 'TOKO', 'TOMI', 'TOMS', 'TON', 'TONE', 'TOP', 'TOPIA', 'TORN', 'TOTM', 'TOWER', 'TPY', 'TRAC', 'TRADE', 'TRAXX', 'TRB', 'TRIBE', 'TRIBL', 'TRIX', 'TROG', 'TROLL', 'TROPPY', 'TRU', 'TRUF', 'TRUMP', 'TRV', 'TRVL', 'TSUKA', 'TUBES', 'TUNE', 'TURBO', 'TURT', 'TUSD', 'TXA', 'TXL', 'TYBENG', 'TYPE', 'U', 'UBDN', 'UBEX', 'UBT', 'UBXS', 'UDO', 'UDS', 'UFARM', 'UFI', 'UFO', 'UFT', 'UGOLD', 'UMA', 'UMB', 'UNA', 'UNB', 'UNCX', 'UNI', 'UNIBOT', 'UNIO', 'UNIX', 'UNLEASH', 'UOS', 'UPC', 'UPI', 'UQC', 'URUS', 'USD0', 'USD0++', 'USDC', 'USDD', 'USDe', 'USDG', 'USDL', 'USDM', 'USDP', 'USDT', 'USDV', 'USDY', 'USDZ', 'USR', 'USTC', 'USUAL', 'UTK', 'VAI', 'VAL', 'VALOR', 'VALUE', 'VANRY', 'VCHF', 'VDR', 'VEGA', 'VELAR', 'VEMP', 'VERSE', 'VERTAI', 'VES', 'VEST', 'VEUR', 'VEXT', 'VGX', 'VIB', 'VIDT', 'VIDYA', 'VIRTUAL', 'VISTA', 'VIX', 'VLXPAD', 'VMINT', 'VNXAU', 'VOLT', 'VPP', 'VR', 'VRA', 'VSG', 'VSP', 'VV', 'VVS', 'VXV', 'VYPER', 'W', 'WAAC', 'WAG', 'WAGMIGAMES', 'WAIT', 'WALLY', 'WARPED', 'WAT', 'WBT', 'WECAN', 'WEFI', 'WFAI', 'WHALE', 'WHITE', 'WIKEN', 'WILD', 'WING', 'WITCH', 'WLD', 'WMTX', 'WNCG', 'WNZ', 'WOJAK', 'WOLF', 'WOM', 'WOMBAT', 'WOO', 'WOZX', 'WQT', 'WRLD', 'WTC', 'WUSD', 'WX', 'WXM', 'WXT', 'X', 'X2Y2', 'XAR', 'XAUt', 'XCAD', 'XCHNG', 'XCN', 'XCUR', 'XCV', 'XDNA', 'XED', 'XELS', 'XEN', 'XLAB', 'XMON', 'XMW', 'XNL', 'XNO', 'XOR', 'XPRT', 'XRP', 'XRT', 'XRUNE', 'XSGD', 'XT', 'XTN', 'XTP', 'XVS', 'XWG', 'XY', 'XYO', 'XZK', 'YAI', 'YAM', 'YAWN', 'YES', 'YF-DAI', 'YFI', 'YFII', 'YGG', 'YIELD', 'YLD', 'YOURAI', 'YVS', 'ZAP', 'ZAPI', 'ZBU', 'ZCX', 'ZEE', 'ZELIX', 'ZENT', 'ZEON', 'ZERC', 'ZETA', 'ZIG', 'ZIK', 'ZKB', 'ZKJ', 'ZKL', 'ZKML', 'ZLW', 'ZND', 'ZRC', 'ZRO', 'ZRX', 'ZUM', 'ZUSD', 'ZUZALU', 'ZYN', 'ZYPTO']
+2025-01-03 08:39:37,550 - INFO - Fetching latest prices from CurrencyPriceService.
+2025-01-03 08:39:37,550 - INFO - Fetching prices for batch: ['$MBAG', '$MICRO', '$MONG', '$WELL', '0', '0x0', '0xBTC', '0XDEV', '1ART', '1CAT', '1EARTH', '1INCH', '1UP', '5IRE', '8PAY', 'A', 'A8', 'AAVE', 'ABDS', 'ABOND', 'ABT', 'ABYSS', 'ACE', 'ACH', 'ACQ', 'ACX', 'AD', 'ADAPAD', 'ADP', 'ADS', 'ADX', 'AEG', 'AEUR', 'AEVO', 'AGETH', 'AGI', 'AGIX', 'AGLA', 'AGLD', 'AGRS', 'AGX', 'AIAT', 'AIKEK', 'AIPAD', 'AIT', 'AKITA', 'AKRO', 'AKTIO', 'AL', 'ALCX']
+2025-01-03 08:39:37,551 - INFO - Fetching latest prices for symbols: $MBAG,$MICRO,$MONG,$WELL,0,0x0,0xBTC,0XDEV,1ART,1CAT,1EARTH,1INCH,1UP,5IRE,8PAY,A,A8,AAVE,ABDS,ABOND,ABT,ABYSS,ACE,ACH,ACQ,ACX,AD,ADAPAD,ADP,ADS,ADX,AEG,AEUR,AEVO,AGETH,AGI,AGIX,AGLA,AGLD,AGRS,AGX,AIAT,AIKEK,AIPAD,AIT,AKITA,AKRO,AKTIO,AL,ALCX, convert: USD
+2025-01-03 08:39:37,553 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:37,847 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=%24%2CM%2CB%2CA%2CG%2C%2C%2C%24%2CM%2CI%2CC%2CR%2CO%2C%2C%2C%24%2CM%2CO%2CN%2CG%2C%2C%2C%24%2CW%2CE%2CL%2CL%2C%2C%2C0%2C%2C%2C0%2Cx%2C0%2C%2C%2C0%2Cx%2CB%2CT%2CC%2C%2C%2C0%2CX%2CD%2CE%2CV%2C%2C%2C1%2CA%2CR%2CT%2C%2C%2C1%2CC%2CA%2CT%2C%2C%2C1%2CE%2CA%2CR%2CT%2CH%2C%2C%2C1%2CI%2CN%2CC%2CH%2C%2C%2C1%2CU%2CP%2C%2C%2C5%2CI%2CR%2CE%2C%2C%2C8%2CP%2CA%2CY%2C%2C%2CA%2C%2C%2CA%2C8%2C%2C%2CA%2CA%2CV%2CE%2C%2C%2CA%2CB%2CD%2CS%2C%2C%2CA%2CB%2CO%2CN%2CD%2C%2C%2CA%2CB%2CT%2C%2C%2CA%2CB%2CY%2CS%2CS%2C%2C%2CA%2CC%2CE%2C%2C%2CA%2CC%2CH%2C%2C%2CA%2CC%2CQ%2C%2C%2CA%2CC%2CX%2C%2C%2CA%2CD%2C%2C%2CA%2CD%2CA%2CP%2CA%2CD%2C%2C%2CA%2CD%2CP%2C%2C%2CA%2CD%2CS%2C%2C%2CA%2CD%2CX%2C%2C%2CA%2CE%2CG%2C%2C%2CA%2CE%2CU%2CR%2C%2C%2CA%2CE%2CV%2CO%2C%2C%2CA%2CG%2CE%2CT%2CH%2C%2C%2CA%2CG%2CI%2C%2C%2CA%2CG%2CI%2CX%2C%2C%2CA%2CG%2CL%2CA%2C%2C%2CA%2CG%2CL%2CD%2C%2C%2CA%2CG%2CR%2CS%2C%2C%2CA%2CG%2CX%2C%2C%2CA%2CI%2CA%2CT%2C%2C%2CA%2CI%2CK%2CE%2CK%2C%2C%2CA%2CI%2CP%2CA%2CD%2C%2C%2CA%2CI%2CT%2C%2C%2CA%2CK%2CI%2CT%2CA%2C%2C%2CA%2CK%2CR%2CO%2C%2C%2CA%2CK%2CT%2CI%2CO%2C%2C%2CA%2CL%2C%2C%2CA%2CL%2CC%2CX&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:37,850 - INFO - Prices fetched successfully: {'$': None, 'M': 0.001639275849766676, 'B': 0.0, 'A': None, 'G': 0.030613887273570606, ',': 0.0, 'I': 0.0, 'C': None, 'R': None, 'O': 0.996770634789183, 'N': None, 'W': 0.29996939576165554, 'E': 0.0, 'L': 0.0, '0': 0.0, 'x': 0.0, 'T': 0.02746997350000764, 'X': 0.0001540851022979559, 'D': None, 'V': None, '1': 0.0, 'H': 0.0, 'U': 0.038979676869328114, 'P': 0.0, '5': 0.0, '8': 0.0, 'Y': 0.0, 'S': 3.389699904100254e-09, 'Q': None, 'K': 0.0}
+2025-01-03 08:39:38,852 - WARNING - Missing prices for symbols: ['$MBAG', '$MICRO', '$MONG', '$WELL', '0x0', '0xBTC', '0XDEV', '1ART', '1CAT', '1EARTH', '1INCH', '1UP', '5IRE', '8PAY', 'A8', 'AAVE', 'ABDS', 'ABOND', 'ABT', 'ABYSS', 'ACE', 'ACH', 'ACQ', 'ACX', 'AD', 'ADAPAD', 'ADP', 'ADS', 'ADX', 'AEG', 'AEUR', 'AEVO', 'AGETH', 'AGI', 'AGIX', 'AGLA', 'AGLD', 'AGRS', 'AGX', 'AIAT', 'AIKEK', 'AIPAD', 'AIT', 'AKITA', 'AKRO', 'AKTIO', 'AL', 'ALCX']. Skipping these symbols.
+2025-01-03 08:39:38,852 - WARNING - Skipping symbol $MBAG due to missing or invalid price.
+2025-01-03 08:39:38,853 - WARNING - Skipping symbol $MICRO due to missing or invalid price.
+2025-01-03 08:39:38,853 - WARNING - Skipping symbol $MONG due to missing or invalid price.
+2025-01-03 08:39:38,853 - WARNING - Skipping symbol $WELL due to missing or invalid price.
+2025-01-03 08:39:38,854 - WARNING - Skipping symbol 0x0 due to missing or invalid price.
+2025-01-03 08:39:38,854 - WARNING - Skipping symbol 0xBTC due to missing or invalid price.
+2025-01-03 08:39:38,854 - WARNING - Skipping symbol 0XDEV due to missing or invalid price.
+2025-01-03 08:39:38,855 - WARNING - Skipping symbol 1ART due to missing or invalid price.
+2025-01-03 08:39:38,855 - WARNING - Skipping symbol 1CAT due to missing or invalid price.
+2025-01-03 08:39:38,855 - WARNING - Skipping symbol 1EARTH due to missing or invalid price.
+2025-01-03 08:39:38,855 - WARNING - Skipping symbol 1INCH due to missing or invalid price.
+2025-01-03 08:39:38,856 - WARNING - Skipping symbol 1UP due to missing or invalid price.
+2025-01-03 08:39:38,856 - WARNING - Skipping symbol 5IRE due to missing or invalid price.
+2025-01-03 08:39:38,856 - WARNING - Skipping symbol 8PAY due to missing or invalid price.
+2025-01-03 08:39:38,856 - WARNING - Skipping symbol A due to missing or invalid price.
+2025-01-03 08:39:38,857 - WARNING - Skipping symbol A8 due to missing or invalid price.
+2025-01-03 08:39:38,857 - WARNING - Skipping symbol AAVE due to missing or invalid price.
+2025-01-03 08:39:38,857 - WARNING - Skipping symbol ABDS due to missing or invalid price.
+2025-01-03 08:39:38,857 - WARNING - Skipping symbol ABOND due to missing or invalid price.
+2025-01-03 08:39:38,857 - WARNING - Skipping symbol ABT due to missing or invalid price.
+2025-01-03 08:39:38,858 - WARNING - Skipping symbol ABYSS due to missing or invalid price.
+2025-01-03 08:39:38,858 - WARNING - Skipping symbol ACE due to missing or invalid price.
+2025-01-03 08:39:38,858 - WARNING - Skipping symbol ACH due to missing or invalid price.
+2025-01-03 08:39:38,858 - WARNING - Skipping symbol ACQ due to missing or invalid price.
+2025-01-03 08:39:38,858 - WARNING - Skipping symbol ACX due to missing or invalid price.
+2025-01-03 08:39:38,858 - WARNING - Skipping symbol AD due to missing or invalid price.
+2025-01-03 08:39:38,858 - WARNING - Skipping symbol ADAPAD due to missing or invalid price.
+2025-01-03 08:39:38,859 - WARNING - Skipping symbol ADP due to missing or invalid price.
+2025-01-03 08:39:38,859 - WARNING - Skipping symbol ADS due to missing or invalid price.
+2025-01-03 08:39:38,859 - WARNING - Skipping symbol ADX due to missing or invalid price.
+2025-01-03 08:39:38,859 - WARNING - Skipping symbol AEG due to missing or invalid price.
+2025-01-03 08:39:38,859 - WARNING - Skipping symbol AEUR due to missing or invalid price.
+2025-01-03 08:39:38,860 - WARNING - Skipping symbol AEVO due to missing or invalid price.
+2025-01-03 08:39:38,860 - WARNING - Skipping symbol AGETH due to missing or invalid price.
+2025-01-03 08:39:38,860 - WARNING - Skipping symbol AGI due to missing or invalid price.
+2025-01-03 08:39:38,860 - WARNING - Skipping symbol AGIX due to missing or invalid price.
+2025-01-03 08:39:38,860 - WARNING - Skipping symbol AGLA due to missing or invalid price.
+2025-01-03 08:39:38,860 - WARNING - Skipping symbol AGLD due to missing or invalid price.
+2025-01-03 08:39:38,861 - WARNING - Skipping symbol AGRS due to missing or invalid price.
+2025-01-03 08:39:38,861 - WARNING - Skipping symbol AGX due to missing or invalid price.
+2025-01-03 08:39:38,861 - WARNING - Skipping symbol AIAT due to missing or invalid price.
+2025-01-03 08:39:38,861 - WARNING - Skipping symbol AIKEK due to missing or invalid price.
+2025-01-03 08:39:38,861 - WARNING - Skipping symbol AIPAD due to missing or invalid price.
+2025-01-03 08:39:38,861 - WARNING - Skipping symbol AIT due to missing or invalid price.
+2025-01-03 08:39:38,862 - WARNING - Skipping symbol AKITA due to missing or invalid price.
+2025-01-03 08:39:38,862 - WARNING - Skipping symbol AKRO due to missing or invalid price.
+2025-01-03 08:39:38,862 - WARNING - Skipping symbol AKTIO due to missing or invalid price.
+2025-01-03 08:39:38,862 - WARNING - Skipping symbol AL due to missing or invalid price.
+2025-01-03 08:39:38,862 - WARNING - Skipping symbol ALCX due to missing or invalid price.
+2025-01-03 08:39:38,862 - INFO - Fetching prices for batch: ['ALEPH', 'ALI', 'ALICE', 'ALLIN', 'ALN', 'ALPHA', 'ALPHR', 'ALT', 'ALVA', 'ALY', 'AMA', 'AMC', 'AMO', 'AMON', 'AMP', 'AMPL', 'ANDY', 'ANKR', 'ANT', 'ANYONE', 'AOA', 'APE', 'APED', 'APEX', 'APFC', 'API3', 'APM', 'APP', 'APRS', 'APU', 'APYS', 'AQT', 'ARC', 'ARCA', 'ARCONA', 'ARES', 'ARIA20', 'ARKI', 'ARKM', 'ARPA', 'ARV', 'ASD', 'ASM', 'AST', 'ASTA', 'ASTO', 'ASTRA', 'ASTX', 'ATA', 'ATH']
+2025-01-03 08:39:38,863 - INFO - Fetching latest prices for symbols: ALEPH,ALI,ALICE,ALLIN,ALN,ALPHA,ALPHR,ALT,ALVA,ALY,AMA,AMC,AMO,AMON,AMP,AMPL,ANDY,ANKR,ANT,ANYONE,AOA,APE,APED,APEX,APFC,API3,APM,APP,APRS,APU,APYS,AQT,ARC,ARCA,ARCONA,ARES,ARIA20,ARKI,ARKM,ARPA,ARV,ASD,ASM,AST,ASTA,ASTO,ASTRA,ASTX,ATA,ATH, convert: USD
+2025-01-03 08:39:38,864 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:39,299 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=A%2CL%2CE%2CP%2CH%2C%2C%2CA%2CL%2CI%2C%2C%2CA%2CL%2CI%2CC%2CE%2C%2C%2CA%2CL%2CL%2CI%2CN%2C%2C%2CA%2CL%2CN%2C%2C%2CA%2CL%2CP%2CH%2CA%2C%2C%2CA%2CL%2CP%2CH%2CR%2C%2C%2CA%2CL%2CT%2C%2C%2CA%2CL%2CV%2CA%2C%2C%2CA%2CL%2CY%2C%2C%2CA%2CM%2CA%2C%2C%2CA%2CM%2CC%2C%2C%2CA%2CM%2CO%2C%2C%2CA%2CM%2CO%2CN%2C%2C%2CA%2CM%2CP%2C%2C%2CA%2CM%2CP%2CL%2C%2C%2CA%2CN%2CD%2CY%2C%2C%2CA%2CN%2CK%2CR%2C%2C%2CA%2CN%2CT%2C%2C%2CA%2CN%2CY%2CO%2CN%2CE%2C%2C%2CA%2CO%2CA%2C%2C%2CA%2CP%2CE%2C%2C%2CA%2CP%2CE%2CD%2C%2C%2CA%2CP%2CE%2CX%2C%2C%2CA%2CP%2CF%2CC%2C%2C%2CA%2CP%2CI%2C3%2C%2C%2CA%2CP%2CM%2C%2C%2CA%2CP%2CP%2C%2C%2CA%2CP%2CR%2CS%2C%2C%2CA%2CP%2CU%2C%2C%2CA%2CP%2CY%2CS%2C%2C%2CA%2CQ%2CT%2C%2C%2CA%2CR%2CC%2C%2C%2CA%2CR%2CC%2CA%2C%2C%2CA%2CR%2CC%2CO%2CN%2CA%2C%2C%2CA%2CR%2CE%2CS%2C%2C%2CA%2CR%2CI%2CA%2C2%2C0%2C%2C%2CA%2CR%2CK%2CI%2C%2C%2CA%2CR%2CK%2CM%2C%2C%2CA%2CR%2CP%2CA%2C%2C%2CA%2CR%2CV%2C%2C%2CA%2CS%2CD%2C%2C%2CA%2CS%2CM%2C%2C%2CA%2CS%2CT%2C%2C%2CA%2CS%2CT%2CA%2C%2C%2CA%2CS%2CT%2CO%2C%2C%2CA%2CS%2CT%2CR%2CA%2C%2C%2CA%2CS%2CT%2CX%2C%2C%2CA%2CT%2CA%2C%2C%2CA%2CT%2CH&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:39,302 - INFO - Prices fetched successfully: {'A': None, 'L': 0.0, 'E': 0.0, 'P': 0.0, 'H': 0.0, ',': 0.0, 'I': 0.0, 'C': None, 'N': None, 'R': None, 'T': 0.02746997350000764, 'V': None, 'Y': 0.0, 'M': 0.001639275849766676, 'O': 0.996770634789183, 'D': None, 'K': 0.0, 'X': 0.0001540851022979559, 'F': 0.05043524573390982, '3': 1.5148327885198476e-05, 'S': 3.389699904100254e-09, 'U': 0.038979676869328114, 'Q': None, '2': 0.0, '0': 0.0}
+2025-01-03 08:39:40,304 - WARNING - Missing prices for symbols: ['ALEPH', 'ALI', 'ALICE', 'ALLIN', 'ALN', 'ALPHA', 'ALPHR', 'ALT', 'ALVA', 'ALY', 'AMA', 'AMC', 'AMO', 'AMON', 'AMP', 'AMPL', 'ANDY', 'ANKR', 'ANT', 'ANYONE', 'AOA', 'APE', 'APED', 'APEX', 'APFC', 'API3', 'APM', 'APP', 'APRS', 'APU', 'APYS', 'AQT', 'ARC', 'ARCA', 'ARCONA', 'ARES', 'ARIA20', 'ARKI', 'ARKM', 'ARPA', 'ARV', 'ASD', 'ASM', 'AST', 'ASTA', 'ASTO', 'ASTRA', 'ASTX', 'ATA', 'ATH']. Skipping these symbols.
+2025-01-03 08:39:40,304 - WARNING - Skipping symbol ALEPH due to missing or invalid price.
+2025-01-03 08:39:40,305 - WARNING - Skipping symbol ALI due to missing or invalid price.
+2025-01-03 08:39:40,305 - WARNING - Skipping symbol ALICE due to missing or invalid price.
+2025-01-03 08:39:40,305 - WARNING - Skipping symbol ALLIN due to missing or invalid price.
+2025-01-03 08:39:40,306 - WARNING - Skipping symbol ALN due to missing or invalid price.
+2025-01-03 08:39:40,306 - WARNING - Skipping symbol ALPHA due to missing or invalid price.
+2025-01-03 08:39:40,307 - WARNING - Skipping symbol ALPHR due to missing or invalid price.
+2025-01-03 08:39:40,307 - WARNING - Skipping symbol ALT due to missing or invalid price.
+2025-01-03 08:39:40,307 - WARNING - Skipping symbol ALVA due to missing or invalid price.
+2025-01-03 08:39:40,307 - WARNING - Skipping symbol ALY due to missing or invalid price.
+2025-01-03 08:39:40,308 - WARNING - Skipping symbol AMA due to missing or invalid price.
+2025-01-03 08:39:40,308 - WARNING - Skipping symbol AMC due to missing or invalid price.
+2025-01-03 08:39:40,308 - WARNING - Skipping symbol AMO due to missing or invalid price.
+2025-01-03 08:39:40,308 - WARNING - Skipping symbol AMON due to missing or invalid price.
+2025-01-03 08:39:40,308 - WARNING - Skipping symbol AMP due to missing or invalid price.
+2025-01-03 08:39:40,308 - WARNING - Skipping symbol AMPL due to missing or invalid price.
+2025-01-03 08:39:40,310 - WARNING - Skipping symbol ANDY due to missing or invalid price.
+2025-01-03 08:39:40,310 - WARNING - Skipping symbol ANKR due to missing or invalid price.
+2025-01-03 08:39:40,310 - WARNING - Skipping symbol ANT due to missing or invalid price.
+2025-01-03 08:39:40,310 - WARNING - Skipping symbol ANYONE due to missing or invalid price.
+2025-01-03 08:39:40,311 - WARNING - Skipping symbol AOA due to missing or invalid price.
+2025-01-03 08:39:40,311 - WARNING - Skipping symbol APE due to missing or invalid price.
+2025-01-03 08:39:40,311 - WARNING - Skipping symbol APED due to missing or invalid price.
+2025-01-03 08:39:40,312 - WARNING - Skipping symbol APEX due to missing or invalid price.
+2025-01-03 08:39:40,312 - WARNING - Skipping symbol APFC due to missing or invalid price.
+2025-01-03 08:39:40,312 - WARNING - Skipping symbol API3 due to missing or invalid price.
+2025-01-03 08:39:40,312 - WARNING - Skipping symbol APM due to missing or invalid price.
+2025-01-03 08:39:40,312 - WARNING - Skipping symbol APP due to missing or invalid price.
+2025-01-03 08:39:40,313 - WARNING - Skipping symbol APRS due to missing or invalid price.
+2025-01-03 08:39:40,313 - WARNING - Skipping symbol APU due to missing or invalid price.
+2025-01-03 08:39:40,313 - WARNING - Skipping symbol APYS due to missing or invalid price.
+2025-01-03 08:39:40,313 - WARNING - Skipping symbol AQT due to missing or invalid price.
+2025-01-03 08:39:40,313 - WARNING - Skipping symbol ARC due to missing or invalid price.
+2025-01-03 08:39:40,314 - WARNING - Skipping symbol ARCA due to missing or invalid price.
+2025-01-03 08:39:40,314 - WARNING - Skipping symbol ARCONA due to missing or invalid price.
+2025-01-03 08:39:40,314 - WARNING - Skipping symbol ARES due to missing or invalid price.
+2025-01-03 08:39:40,314 - WARNING - Skipping symbol ARIA20 due to missing or invalid price.
+2025-01-03 08:39:40,314 - WARNING - Skipping symbol ARKI due to missing or invalid price.
+2025-01-03 08:39:40,314 - WARNING - Skipping symbol ARKM due to missing or invalid price.
+2025-01-03 08:39:40,314 - WARNING - Skipping symbol ARPA due to missing or invalid price.
+2025-01-03 08:39:40,315 - WARNING - Skipping symbol ARV due to missing or invalid price.
+2025-01-03 08:39:40,315 - WARNING - Skipping symbol ASD due to missing or invalid price.
+2025-01-03 08:39:40,315 - WARNING - Skipping symbol ASM due to missing or invalid price.
+2025-01-03 08:39:40,315 - WARNING - Skipping symbol AST due to missing or invalid price.
+2025-01-03 08:39:40,315 - WARNING - Skipping symbol ASTA due to missing or invalid price.
+2025-01-03 08:39:40,315 - WARNING - Skipping symbol ASTO due to missing or invalid price.
+2025-01-03 08:39:40,315 - WARNING - Skipping symbol ASTRA due to missing or invalid price.
+2025-01-03 08:39:40,315 - WARNING - Skipping symbol ASTX due to missing or invalid price.
+2025-01-03 08:39:40,316 - WARNING - Skipping symbol ATA due to missing or invalid price.
+2025-01-03 08:39:40,316 - WARNING - Skipping symbol ATH due to missing or invalid price.
+2025-01-03 08:39:40,316 - INFO - Fetching prices for batch: ['ATLAS', 'ATT', 'AUCTION', 'AUDIO', 'AURA', 'AURORA', 'AUSD', 'AVA', 'AVAIL', 'AVG', 'AVI', 'AVINOC', 'AVT', 'AWC', 'AX', 'AXIS', 'AXL', 'AXS', 'AZUKI', 'AZUR', 'BAAS', 'BABYNEIRO', 'BABYTRUMP', 'BAC', 'BAD', 'BADGER', 'BAG', 'BAL', 'BALPHA', 'BANANA', 'BAND', 'BANK', 'BAR', 'BASE', 'BASEDAI', 'BAT', 'BAX', 'BBANK', 'BBF', 'BBL', 'BBS', 'BCMC', 'BCUBE', 'BCUG', 'BCUT', 'BCZERO', 'BDP', 'BEAM', 'BEFE', 'BEFI']
+2025-01-03 08:39:40,316 - INFO - Fetching latest prices for symbols: ATLAS,ATT,AUCTION,AUDIO,AURA,AURORA,AUSD,AVA,AVAIL,AVG,AVI,AVINOC,AVT,AWC,AX,AXIS,AXL,AXS,AZUKI,AZUR,BAAS,BABYNEIRO,BABYTRUMP,BAC,BAD,BADGER,BAG,BAL,BALPHA,BANANA,BAND,BANK,BAR,BASE,BASEDAI,BAT,BAX,BBANK,BBF,BBL,BBS,BCMC,BCUBE,BCUG,BCUT,BCZERO,BDP,BEAM,BEFE,BEFI, convert: USD
+2025-01-03 08:39:40,318 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:40,490 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=A%2CT%2CL%2CA%2CS%2C%2C%2CA%2CT%2CT%2C%2C%2CA%2CU%2CC%2CT%2CI%2CO%2CN%2C%2C%2CA%2CU%2CD%2CI%2CO%2C%2C%2CA%2CU%2CR%2CA%2C%2C%2CA%2CU%2CR%2CO%2CR%2CA%2C%2C%2CA%2CU%2CS%2CD%2C%2C%2CA%2CV%2CA%2C%2C%2CA%2CV%2CA%2CI%2CL%2C%2C%2CA%2CV%2CG%2C%2C%2CA%2CV%2CI%2C%2C%2CA%2CV%2CI%2CN%2CO%2CC%2C%2C%2CA%2CV%2CT%2C%2C%2CA%2CW%2CC%2C%2C%2CA%2CX%2C%2C%2CA%2CX%2CI%2CS%2C%2C%2CA%2CX%2CL%2C%2C%2CA%2CX%2CS%2C%2C%2CA%2CZ%2CU%2CK%2CI%2C%2C%2CA%2CZ%2CU%2CR%2C%2C%2CB%2CA%2CA%2CS%2C%2C%2CB%2CA%2CB%2CY%2CN%2CE%2CI%2CR%2CO%2C%2C%2CB%2CA%2CB%2CY%2CT%2CR%2CU%2CM%2CP%2C%2C%2CB%2CA%2CC%2C%2C%2CB%2CA%2CD%2C%2C%2CB%2CA%2CD%2CG%2CE%2CR%2C%2C%2CB%2CA%2CG%2C%2C%2CB%2CA%2CL%2C%2C%2CB%2CA%2CL%2CP%2CH%2CA%2C%2C%2CB%2CA%2CN%2CA%2CN%2CA%2C%2C%2CB%2CA%2CN%2CD%2C%2C%2CB%2CA%2CN%2CK%2C%2C%2CB%2CA%2CR%2C%2C%2CB%2CA%2CS%2CE%2C%2C%2CB%2CA%2CS%2CE%2CD%2CA%2CI%2C%2C%2CB%2CA%2CT%2C%2C%2CB%2CA%2CX%2C%2C%2CB%2CB%2CA%2CN%2CK%2C%2C%2CB%2CB%2CF%2C%2C%2CB%2CB%2CL%2C%2C%2CB%2CB%2CS%2C%2C%2CB%2CC%2CM%2CC%2C%2C%2CB%2CC%2CU%2CB%2CE%2C%2C%2CB%2CC%2CU%2CG%2C%2C%2CB%2CC%2CU%2CT%2C%2C%2CB%2CC%2CZ%2CE%2CR%2CO%2C%2C%2CB%2CD%2CP%2C%2C%2CB%2CE%2CA%2CM%2C%2C%2CB%2CE%2CF%2CE%2C%2C%2CB%2CE%2CF%2CI&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:40,493 - INFO - Prices fetched successfully: {'A': None, 'T': 0.02746997350000764, 'L': 0.0, 'S': 3.389699904100254e-09, ',': 0.0, 'U': 0.038979676869328114, 'C': None, 'I': 0.0, 'O': 0.996770634789183, 'N': None, 'D': None, 'R': None, 'V': None, 'G': 0.030613887273570606, 'W': 0.29996939576165554, 'X': 0.0001540851022979559, 'Z': None, 'K': 0.0, 'B': 0.0, 'Y': 0.0, 'E': 0.0, 'M': 0.001639275849766676, 'P': 0.0, 'H': 0.0, 'F': 0.05043524573390982}
+2025-01-03 08:39:41,494 - WARNING - Missing prices for symbols: ['ATLAS', 'ATT', 'AUCTION', 'AUDIO', 'AURA', 'AURORA', 'AUSD', 'AVA', 'AVAIL', 'AVG', 'AVI', 'AVINOC', 'AVT', 'AWC', 'AX', 'AXIS', 'AXL', 'AXS', 'AZUKI', 'AZUR', 'BAAS', 'BABYNEIRO', 'BABYTRUMP', 'BAC', 'BAD', 'BADGER', 'BAG', 'BAL', 'BALPHA', 'BANANA', 'BAND', 'BANK', 'BAR', 'BASE', 'BASEDAI', 'BAT', 'BAX', 'BBANK', 'BBF', 'BBL', 'BBS', 'BCMC', 'BCUBE', 'BCUG', 'BCUT', 'BCZERO', 'BDP', 'BEAM', 'BEFE', 'BEFI']. Skipping these symbols.
+2025-01-03 08:39:41,495 - WARNING - Skipping symbol ATLAS due to missing or invalid price.
+2025-01-03 08:39:41,495 - WARNING - Skipping symbol ATT due to missing or invalid price.
+2025-01-03 08:39:41,496 - WARNING - Skipping symbol AUCTION due to missing or invalid price.
+2025-01-03 08:39:41,496 - WARNING - Skipping symbol AUDIO due to missing or invalid price.
+2025-01-03 08:39:41,497 - WARNING - Skipping symbol AURA due to missing or invalid price.
+2025-01-03 08:39:41,497 - WARNING - Skipping symbol AURORA due to missing or invalid price.
+2025-01-03 08:39:41,498 - WARNING - Skipping symbol AUSD due to missing or invalid price.
+2025-01-03 08:39:41,498 - WARNING - Skipping symbol AVA due to missing or invalid price.
+2025-01-03 08:39:41,499 - WARNING - Skipping symbol AVAIL due to missing or invalid price.
+2025-01-03 08:39:41,499 - WARNING - Skipping symbol AVG due to missing or invalid price.
+2025-01-03 08:39:41,500 - WARNING - Skipping symbol AVI due to missing or invalid price.
+2025-01-03 08:39:41,500 - WARNING - Skipping symbol AVINOC due to missing or invalid price.
+2025-01-03 08:39:41,500 - WARNING - Skipping symbol AVT due to missing or invalid price.
+2025-01-03 08:39:41,501 - WARNING - Skipping symbol AWC due to missing or invalid price.
+2025-01-03 08:39:41,501 - WARNING - Skipping symbol AX due to missing or invalid price.
+2025-01-03 08:39:41,501 - WARNING - Skipping symbol AXIS due to missing or invalid price.
+2025-01-03 08:39:41,502 - WARNING - Skipping symbol AXL due to missing or invalid price.
+2025-01-03 08:39:41,502 - WARNING - Skipping symbol AXS due to missing or invalid price.
+2025-01-03 08:39:41,502 - WARNING - Skipping symbol AZUKI due to missing or invalid price.
+2025-01-03 08:39:41,502 - WARNING - Skipping symbol AZUR due to missing or invalid price.
+2025-01-03 08:39:41,503 - WARNING - Skipping symbol BAAS due to missing or invalid price.
+2025-01-03 08:39:41,503 - WARNING - Skipping symbol BABYNEIRO due to missing or invalid price.
+2025-01-03 08:39:41,503 - WARNING - Skipping symbol BABYTRUMP due to missing or invalid price.
+2025-01-03 08:39:41,503 - WARNING - Skipping symbol BAC due to missing or invalid price.
+2025-01-03 08:39:41,503 - WARNING - Skipping symbol BAD due to missing or invalid price.
+2025-01-03 08:39:41,503 - WARNING - Skipping symbol BADGER due to missing or invalid price.
+2025-01-03 08:39:41,505 - WARNING - Skipping symbol BAG due to missing or invalid price.
+2025-01-03 08:39:41,505 - WARNING - Skipping symbol BAL due to missing or invalid price.
+2025-01-03 08:39:41,505 - WARNING - Skipping symbol BALPHA due to missing or invalid price.
+2025-01-03 08:39:41,505 - WARNING - Skipping symbol BANANA due to missing or invalid price.
+2025-01-03 08:39:41,505 - WARNING - Skipping symbol BAND due to missing or invalid price.
+2025-01-03 08:39:41,505 - WARNING - Skipping symbol BANK due to missing or invalid price.
+2025-01-03 08:39:41,506 - WARNING - Skipping symbol BAR due to missing or invalid price.
+2025-01-03 08:39:41,506 - WARNING - Skipping symbol BASE due to missing or invalid price.
+2025-01-03 08:39:41,506 - WARNING - Skipping symbol BASEDAI due to missing or invalid price.
+2025-01-03 08:39:41,506 - WARNING - Skipping symbol BAT due to missing or invalid price.
+2025-01-03 08:39:41,506 - WARNING - Skipping symbol BAX due to missing or invalid price.
+2025-01-03 08:39:41,506 - WARNING - Skipping symbol BBANK due to missing or invalid price.
+2025-01-03 08:39:41,506 - WARNING - Skipping symbol BBF due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BBL due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BBS due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BCMC due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BCUBE due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BCUG due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BCUT due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BCZERO due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BDP due to missing or invalid price.
+2025-01-03 08:39:41,507 - WARNING - Skipping symbol BEAM due to missing or invalid price.
+2025-01-03 08:39:41,508 - WARNING - Skipping symbol BEFE due to missing or invalid price.
+2025-01-03 08:39:41,508 - WARNING - Skipping symbol BEFI due to missing or invalid price.
+2025-01-03 08:39:41,508 - INFO - Fetching prices for batch: ['BEL', 'BEND', 'BEPRO', 'BERRY', 'BETA', 'BF', 'BFC', 'BGB', 'BICO', 'BIFI', 'BIGTIME', 'BIOT', 'BIRD', 'BIST', 'BIT', 'BITBEDR', 'BITCOIN', 'BKN', 'BL00P', 'BLANK', 'BLAST', 'BLENDR', 'BLOCK', 'BLOCX', 'BLOX', 'BLUR', 'BLY', 'BLZ', 'BMAX', 'BMI', 'BMX', 'BNANA', 'BNF', 'BNT', 'BOB', 'BOBO', 'BOLT', 'BOMB', 'BOME', 'BOND', 'BONDLY', 'BONE', 'BONK', 'BOO', 'BOOE', 'BOOM', 'BOPPY', 'BORG', 'BOSON', 'BOTTO']
+2025-01-03 08:39:41,508 - INFO - Fetching latest prices for symbols: BEL,BEND,BEPRO,BERRY,BETA,BF,BFC,BGB,BICO,BIFI,BIGTIME,BIOT,BIRD,BIST,BIT,BITBEDR,BITCOIN,BKN,BL00P,BLANK,BLAST,BLENDR,BLOCK,BLOCX,BLOX,BLUR,BLY,BLZ,BMAX,BMI,BMX,BNANA,BNF,BNT,BOB,BOBO,BOLT,BOMB,BOME,BOND,BONDLY,BONE,BONK,BOO,BOOE,BOOM,BOPPY,BORG,BOSON,BOTTO, convert: USD
+2025-01-03 08:39:41,510 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:41,951 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=B%2CE%2CL%2C%2C%2CB%2CE%2CN%2CD%2C%2C%2CB%2CE%2CP%2CR%2CO%2C%2C%2CB%2CE%2CR%2CR%2CY%2C%2C%2CB%2CE%2CT%2CA%2C%2C%2CB%2CF%2C%2C%2CB%2CF%2CC%2C%2C%2CB%2CG%2CB%2C%2C%2CB%2CI%2CC%2CO%2C%2C%2CB%2CI%2CF%2CI%2C%2C%2CB%2CI%2CG%2CT%2CI%2CM%2CE%2C%2C%2CB%2CI%2CO%2CT%2C%2C%2CB%2CI%2CR%2CD%2C%2C%2CB%2CI%2CS%2CT%2C%2C%2CB%2CI%2CT%2C%2C%2CB%2CI%2CT%2CB%2CE%2CD%2CR%2C%2C%2CB%2CI%2CT%2CC%2CO%2CI%2CN%2C%2C%2CB%2CK%2CN%2C%2C%2CB%2CL%2C0%2C0%2CP%2C%2C%2CB%2CL%2CA%2CN%2CK%2C%2C%2CB%2CL%2CA%2CS%2CT%2C%2C%2CB%2CL%2CE%2CN%2CD%2CR%2C%2C%2CB%2CL%2CO%2CC%2CK%2C%2C%2CB%2CL%2CO%2CC%2CX%2C%2C%2CB%2CL%2CO%2CX%2C%2C%2CB%2CL%2CU%2CR%2C%2C%2CB%2CL%2CY%2C%2C%2CB%2CL%2CZ%2C%2C%2CB%2CM%2CA%2CX%2C%2C%2CB%2CM%2CI%2C%2C%2CB%2CM%2CX%2C%2C%2CB%2CN%2CA%2CN%2CA%2C%2C%2CB%2CN%2CF%2C%2C%2CB%2CN%2CT%2C%2C%2CB%2CO%2CB%2C%2C%2CB%2CO%2CB%2CO%2C%2C%2CB%2CO%2CL%2CT%2C%2C%2CB%2CO%2CM%2CB%2C%2C%2CB%2CO%2CM%2CE%2C%2C%2CB%2CO%2CN%2CD%2C%2C%2CB%2CO%2CN%2CD%2CL%2CY%2C%2C%2CB%2CO%2CN%2CE%2C%2C%2CB%2CO%2CN%2CK%2C%2C%2CB%2CO%2CO%2C%2C%2CB%2CO%2CO%2CE%2C%2C%2CB%2CO%2CO%2CM%2C%2C%2CB%2CO%2CP%2CP%2CY%2C%2C%2CB%2CO%2CR%2CG%2C%2C%2CB%2CO%2CS%2CO%2CN%2C%2C%2CB%2CO%2CT%2CT%2CO&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:41,953 - INFO - Prices fetched successfully: {'B': 0.0, 'E': 0.0, 'L': 0.0, ',': 0.0, 'N': None, 'D': None, 'P': 0.0, 'R': None, 'O': 0.996770634789183, 'Y': 0.0, 'T': 0.02746997350000764, 'A': None, 'F': 0.05043524573390982, 'C': None, 'G': 0.030613887273570606, 'I': 0.0, 'M': 0.001639275849766676, 'S': 3.389699904100254e-09, 'K': 0.0, '0': 0.0, 'X': 0.0001540851022979559, 'U': 0.038979676869328114, 'Z': None}
+2025-01-03 08:39:42,954 - WARNING - Missing prices for symbols: ['BEL', 'BEND', 'BEPRO', 'BERRY', 'BETA', 'BF', 'BFC', 'BGB', 'BICO', 'BIFI', 'BIGTIME', 'BIOT', 'BIRD', 'BIST', 'BIT', 'BITBEDR', 'BITCOIN', 'BKN', 'BL00P', 'BLANK', 'BLAST', 'BLENDR', 'BLOCK', 'BLOCX', 'BLOX', 'BLUR', 'BLY', 'BLZ', 'BMAX', 'BMI', 'BMX', 'BNANA', 'BNF', 'BNT', 'BOB', 'BOBO', 'BOLT', 'BOMB', 'BOME', 'BOND', 'BONDLY', 'BONE', 'BONK', 'BOO', 'BOOE', 'BOOM', 'BOPPY', 'BORG', 'BOSON', 'BOTTO']. Skipping these symbols.
+2025-01-03 08:39:42,955 - WARNING - Skipping symbol BEL due to missing or invalid price.
+2025-01-03 08:39:42,956 - WARNING - Skipping symbol BEND due to missing or invalid price.
+2025-01-03 08:39:42,956 - WARNING - Skipping symbol BEPRO due to missing or invalid price.
+2025-01-03 08:39:42,957 - WARNING - Skipping symbol BERRY due to missing or invalid price.
+2025-01-03 08:39:42,957 - WARNING - Skipping symbol BETA due to missing or invalid price.
+2025-01-03 08:39:42,958 - WARNING - Skipping symbol BF due to missing or invalid price.
+2025-01-03 08:39:42,959 - WARNING - Skipping symbol BFC due to missing or invalid price.
+2025-01-03 08:39:42,959 - WARNING - Skipping symbol BGB due to missing or invalid price.
+2025-01-03 08:39:42,960 - WARNING - Skipping symbol BICO due to missing or invalid price.
+2025-01-03 08:39:42,961 - WARNING - Skipping symbol BIFI due to missing or invalid price.
+2025-01-03 08:39:42,961 - WARNING - Skipping symbol BIGTIME due to missing or invalid price.
+2025-01-03 08:39:42,961 - WARNING - Skipping symbol BIOT due to missing or invalid price.
+2025-01-03 08:39:42,962 - WARNING - Skipping symbol BIRD due to missing or invalid price.
+2025-01-03 08:39:42,962 - WARNING - Skipping symbol BIST due to missing or invalid price.
+2025-01-03 08:39:42,962 - WARNING - Skipping symbol BIT due to missing or invalid price.
+2025-01-03 08:39:42,963 - WARNING - Skipping symbol BITBEDR due to missing or invalid price.
+2025-01-03 08:39:42,963 - WARNING - Skipping symbol BITCOIN due to missing or invalid price.
+2025-01-03 08:39:42,963 - WARNING - Skipping symbol BKN due to missing or invalid price.
+2025-01-03 08:39:42,964 - WARNING - Skipping symbol BL00P due to missing or invalid price.
+2025-01-03 08:39:42,964 - WARNING - Skipping symbol BLANK due to missing or invalid price.
+2025-01-03 08:39:42,964 - WARNING - Skipping symbol BLAST due to missing or invalid price.
+2025-01-03 08:39:42,965 - WARNING - Skipping symbol BLENDR due to missing or invalid price.
+2025-01-03 08:39:42,965 - WARNING - Skipping symbol BLOCK due to missing or invalid price.
+2025-01-03 08:39:42,965 - WARNING - Skipping symbol BLOCX due to missing or invalid price.
+2025-01-03 08:39:42,966 - WARNING - Skipping symbol BLOX due to missing or invalid price.
+2025-01-03 08:39:42,966 - WARNING - Skipping symbol BLUR due to missing or invalid price.
+2025-01-03 08:39:42,966 - WARNING - Skipping symbol BLY due to missing or invalid price.
+2025-01-03 08:39:42,966 - WARNING - Skipping symbol BLZ due to missing or invalid price.
+2025-01-03 08:39:42,966 - WARNING - Skipping symbol BMAX due to missing or invalid price.
+2025-01-03 08:39:42,967 - WARNING - Skipping symbol BMI due to missing or invalid price.
+2025-01-03 08:39:42,967 - WARNING - Skipping symbol BMX due to missing or invalid price.
+2025-01-03 08:39:42,967 - WARNING - Skipping symbol BNANA due to missing or invalid price.
+2025-01-03 08:39:42,967 - WARNING - Skipping symbol BNF due to missing or invalid price.
+2025-01-03 08:39:42,967 - WARNING - Skipping symbol BNT due to missing or invalid price.
+2025-01-03 08:39:42,967 - WARNING - Skipping symbol BOB due to missing or invalid price.
+2025-01-03 08:39:42,967 - WARNING - Skipping symbol BOBO due to missing or invalid price.
+2025-01-03 08:39:42,967 - WARNING - Skipping symbol BOLT due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BOMB due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BOME due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BOND due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BONDLY due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BONE due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BONK due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BOO due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BOOE due to missing or invalid price.
+2025-01-03 08:39:42,968 - WARNING - Skipping symbol BOOM due to missing or invalid price.
+2025-01-03 08:39:42,969 - WARNING - Skipping symbol BOPPY due to missing or invalid price.
+2025-01-03 08:39:42,969 - WARNING - Skipping symbol BORG due to missing or invalid price.
+2025-01-03 08:39:42,969 - WARNING - Skipping symbol BOSON due to missing or invalid price.
+2025-01-03 08:39:42,969 - WARNING - Skipping symbol BOTTO due to missing or invalid price.
+2025-01-03 08:39:42,969 - INFO - Fetching prices for batch: ['BOUTS', 'BOX', 'BP', 'BREED', 'BRETT', 'BRISE', 'BRKL', 'BROCK', 'BRUH', 'BRWL', 'BSSB', 'BST', 'BTB', 'BTR', 'BTRS', 'BTRST', 'BUBBLE', 'BUFFI', 'BUILD', 'BURN', 'BUSY', 'BUY', 'BVM', 'BXC', 'BXX', 'BYN', 'BYTE', 'BYTES', 'BZR', 'BZZ', 'C20', 'C98', 'CA', 'CAD', 'CAGA', 'CAH', 'CAKE', 'CAPS', 'CARE', 'CAST', 'CAT', 'CATALORIAN', 'CATBOY', 'CATE', 'CAW', 'CBG', 'CBK', 'CBX', 'CDT', 'CEEK']
+2025-01-03 08:39:42,969 - INFO - Fetching latest prices for symbols: BOUTS,BOX,BP,BREED,BRETT,BRISE,BRKL,BROCK,BRUH,BRWL,BSSB,BST,BTB,BTR,BTRS,BTRST,BUBBLE,BUFFI,BUILD,BURN,BUSY,BUY,BVM,BXC,BXX,BYN,BYTE,BYTES,BZR,BZZ,C20,C98,CA,CAD,CAGA,CAH,CAKE,CAPS,CARE,CAST,CAT,CATALORIAN,CATBOY,CATE,CAW,CBG,CBK,CBX,CDT,CEEK, convert: USD
+2025-01-03 08:39:42,971 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:43,145 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=B%2CO%2CU%2CT%2CS%2C%2C%2CB%2CO%2CX%2C%2C%2CB%2CP%2C%2C%2CB%2CR%2CE%2CE%2CD%2C%2C%2CB%2CR%2CE%2CT%2CT%2C%2C%2CB%2CR%2CI%2CS%2CE%2C%2C%2CB%2CR%2CK%2CL%2C%2C%2CB%2CR%2CO%2CC%2CK%2C%2C%2CB%2CR%2CU%2CH%2C%2C%2CB%2CR%2CW%2CL%2C%2C%2CB%2CS%2CS%2CB%2C%2C%2CB%2CS%2CT%2C%2C%2CB%2CT%2CB%2C%2C%2CB%2CT%2CR%2C%2C%2CB%2CT%2CR%2CS%2C%2C%2CB%2CT%2CR%2CS%2CT%2C%2C%2CB%2CU%2CB%2CB%2CL%2CE%2C%2C%2CB%2CU%2CF%2CF%2CI%2C%2C%2CB%2CU%2CI%2CL%2CD%2C%2C%2CB%2CU%2CR%2CN%2C%2C%2CB%2CU%2CS%2CY%2C%2C%2CB%2CU%2CY%2C%2C%2CB%2CV%2CM%2C%2C%2CB%2CX%2CC%2C%2C%2CB%2CX%2CX%2C%2C%2CB%2CY%2CN%2C%2C%2CB%2CY%2CT%2CE%2C%2C%2CB%2CY%2CT%2CE%2CS%2C%2C%2CB%2CZ%2CR%2C%2C%2CB%2CZ%2CZ%2C%2C%2CC%2C2%2C0%2C%2C%2CC%2C9%2C8%2C%2C%2CC%2CA%2C%2C%2CC%2CA%2CD%2C%2C%2CC%2CA%2CG%2CA%2C%2C%2CC%2CA%2CH%2C%2C%2CC%2CA%2CK%2CE%2C%2C%2CC%2CA%2CP%2CS%2C%2C%2CC%2CA%2CR%2CE%2C%2C%2CC%2CA%2CS%2CT%2C%2C%2CC%2CA%2CT%2C%2C%2CC%2CA%2CT%2CA%2CL%2CO%2CR%2CI%2CA%2CN%2C%2C%2CC%2CA%2CT%2CB%2CO%2CY%2C%2C%2CC%2CA%2CT%2CE%2C%2C%2CC%2CA%2CW%2C%2C%2CC%2CB%2CG%2C%2C%2CC%2CB%2CK%2C%2C%2CC%2CB%2CX%2C%2C%2CC%2CD%2CT%2C%2C%2CC%2CE%2CE%2CK&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:43,147 - INFO - Prices fetched successfully: {'B': 0.0, 'O': 0.996770634789183, 'U': 0.038979676869328114, 'T': 0.02746997350000764, 'S': 3.389699904100254e-09, ',': 0.0, 'X': 0.0001540851022979559, 'P': 0.0, 'R': None, 'E': 0.0, 'D': None, 'I': 0.0, 'K': 0.0, 'L': 0.0, 'C': None, 'H': 0.0, 'W': 0.29996939576165554, 'F': 0.05043524573390982, 'N': None, 'Y': 0.0, 'V': None, 'M': 0.001639275849766676, 'Z': None, '2': 0.0, '0': 0.0, '9': 0.0, '8': 0.0, 'A': None, 'G': 0.030613887273570606}
+2025-01-03 08:39:44,148 - WARNING - Missing prices for symbols: ['BOUTS', 'BOX', 'BP', 'BREED', 'BRETT', 'BRISE', 'BRKL', 'BROCK', 'BRUH', 'BRWL', 'BSSB', 'BST', 'BTB', 'BTR', 'BTRS', 'BTRST', 'BUBBLE', 'BUFFI', 'BUILD', 'BURN', 'BUSY', 'BUY', 'BVM', 'BXC', 'BXX', 'BYN', 'BYTE', 'BYTES', 'BZR', 'BZZ', 'C20', 'C98', 'CA', 'CAD', 'CAGA', 'CAH', 'CAKE', 'CAPS', 'CARE', 'CAST', 'CAT', 'CATALORIAN', 'CATBOY', 'CATE', 'CAW', 'CBG', 'CBK', 'CBX', 'CDT', 'CEEK']. Skipping these symbols.
+2025-01-03 08:39:44,148 - WARNING - Skipping symbol BOUTS due to missing or invalid price.
+2025-01-03 08:39:44,149 - WARNING - Skipping symbol BOX due to missing or invalid price.
+2025-01-03 08:39:44,149 - WARNING - Skipping symbol BP due to missing or invalid price.
+2025-01-03 08:39:44,150 - WARNING - Skipping symbol BREED due to missing or invalid price.
+2025-01-03 08:39:44,150 - WARNING - Skipping symbol BRETT due to missing or invalid price.
+2025-01-03 08:39:44,150 - WARNING - Skipping symbol BRISE due to missing or invalid price.
+2025-01-03 08:39:44,151 - WARNING - Skipping symbol BRKL due to missing or invalid price.
+2025-01-03 08:39:44,151 - WARNING - Skipping symbol BROCK due to missing or invalid price.
+2025-01-03 08:39:44,151 - WARNING - Skipping symbol BRUH due to missing or invalid price.
+2025-01-03 08:39:44,151 - WARNING - Skipping symbol BRWL due to missing or invalid price.
+2025-01-03 08:39:44,152 - WARNING - Skipping symbol BSSB due to missing or invalid price.
+2025-01-03 08:39:44,152 - WARNING - Skipping symbol BST due to missing or invalid price.
+2025-01-03 08:39:44,152 - WARNING - Skipping symbol BTB due to missing or invalid price.
+2025-01-03 08:39:44,152 - WARNING - Skipping symbol BTR due to missing or invalid price.
+2025-01-03 08:39:44,152 - WARNING - Skipping symbol BTRS due to missing or invalid price.
+2025-01-03 08:39:44,153 - WARNING - Skipping symbol BTRST due to missing or invalid price.
+2025-01-03 08:39:44,153 - WARNING - Skipping symbol BUBBLE due to missing or invalid price.
+2025-01-03 08:39:44,153 - WARNING - Skipping symbol BUFFI due to missing or invalid price.
+2025-01-03 08:39:44,153 - WARNING - Skipping symbol BUILD due to missing or invalid price.
+2025-01-03 08:39:44,153 - WARNING - Skipping symbol BURN due to missing or invalid price.
+2025-01-03 08:39:44,153 - WARNING - Skipping symbol BUSY due to missing or invalid price.
+2025-01-03 08:39:44,154 - WARNING - Skipping symbol BUY due to missing or invalid price.
+2025-01-03 08:39:44,154 - WARNING - Skipping symbol BVM due to missing or invalid price.
+2025-01-03 08:39:44,154 - WARNING - Skipping symbol BXC due to missing or invalid price.
+2025-01-03 08:39:44,154 - WARNING - Skipping symbol BXX due to missing or invalid price.
+2025-01-03 08:39:44,154 - WARNING - Skipping symbol BYN due to missing or invalid price.
+2025-01-03 08:39:44,154 - WARNING - Skipping symbol BYTE due to missing or invalid price.
+2025-01-03 08:39:44,154 - WARNING - Skipping symbol BYTES due to missing or invalid price.
+2025-01-03 08:39:44,154 - WARNING - Skipping symbol BZR due to missing or invalid price.
+2025-01-03 08:39:44,155 - WARNING - Skipping symbol BZZ due to missing or invalid price.
+2025-01-03 08:39:44,155 - WARNING - Skipping symbol C20 due to missing or invalid price.
+2025-01-03 08:39:44,155 - WARNING - Skipping symbol C98 due to missing or invalid price.
+2025-01-03 08:39:44,155 - WARNING - Skipping symbol CA due to missing or invalid price.
+2025-01-03 08:39:44,155 - WARNING - Skipping symbol CAD due to missing or invalid price.
+2025-01-03 08:39:44,155 - WARNING - Skipping symbol CAGA due to missing or invalid price.
+2025-01-03 08:39:44,156 - WARNING - Skipping symbol CAH due to missing or invalid price.
+2025-01-03 08:39:44,156 - WARNING - Skipping symbol CAKE due to missing or invalid price.
+2025-01-03 08:39:44,156 - WARNING - Skipping symbol CAPS due to missing or invalid price.
+2025-01-03 08:39:44,156 - WARNING - Skipping symbol CARE due to missing or invalid price.
+2025-01-03 08:39:44,156 - WARNING - Skipping symbol CAST due to missing or invalid price.
+2025-01-03 08:39:44,156 - WARNING - Skipping symbol CAT due to missing or invalid price.
+2025-01-03 08:39:44,156 - WARNING - Skipping symbol CATALORIAN due to missing or invalid price.
+2025-01-03 08:39:44,157 - WARNING - Skipping symbol CATBOY due to missing or invalid price.
+2025-01-03 08:39:44,157 - WARNING - Skipping symbol CATE due to missing or invalid price.
+2025-01-03 08:39:44,157 - WARNING - Skipping symbol CAW due to missing or invalid price.
+2025-01-03 08:39:44,157 - WARNING - Skipping symbol CBG due to missing or invalid price.
+2025-01-03 08:39:44,157 - WARNING - Skipping symbol CBK due to missing or invalid price.
+2025-01-03 08:39:44,157 - WARNING - Skipping symbol CBX due to missing or invalid price.
+2025-01-03 08:39:44,157 - WARNING - Skipping symbol CDT due to missing or invalid price.
+2025-01-03 08:39:44,158 - WARNING - Skipping symbol CEEK due to missing or invalid price.
+2025-01-03 08:39:44,158 - INFO - Fetching prices for batch: ['CEL', 'CELL', 'CELR', 'CEP', 'CERE', 'CFi', 'CGG', 'CHEEMS', 'CHEQ', 'CHEX', 'CHKN', 'CHO', 'CHR', 'CHRP', 'CHZ', 'CIRUS', 'CIV', 'CLS', 'CLV', 'CNB', 'CNTM', 'CO', 'COBE', 'COMAI', 'COMBO', 'COMP', 'CONV', 'COOK', 'COPI', 'COR', 'CORX', 'COSMIC', 'COT', 'COVAL', 'COW', 'CPOOL', 'CPU', 'CRAI', 'CRDT', 'CRE8', 'CREAM', 'CREDI', 'CREO', 'CROS', 'CROWN', 'CRPT', 'CRTS', 'CRU', 'CRV', 'CSIX']
+2025-01-03 08:39:44,159 - INFO - Fetching latest prices for symbols: CEL,CELL,CELR,CEP,CERE,CFi,CGG,CHEEMS,CHEQ,CHEX,CHKN,CHO,CHR,CHRP,CHZ,CIRUS,CIV,CLS,CLV,CNB,CNTM,CO,COBE,COMAI,COMBO,COMP,CONV,COOK,COPI,COR,CORX,COSMIC,COT,COVAL,COW,CPOOL,CPU,CRAI,CRDT,CRE8,CREAM,CREDI,CREO,CROS,CROWN,CRPT,CRTS,CRU,CRV,CSIX, convert: USD
+2025-01-03 08:39:44,161 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:44,337 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=C%2CE%2CL%2C%2C%2CC%2CE%2CL%2CL%2C%2C%2CC%2CE%2CL%2CR%2C%2C%2CC%2CE%2CP%2C%2C%2CC%2CE%2CR%2CE%2C%2C%2CC%2CF%2Ci%2C%2C%2CC%2CG%2CG%2C%2C%2CC%2CH%2CE%2CE%2CM%2CS%2C%2C%2CC%2CH%2CE%2CQ%2C%2C%2CC%2CH%2CE%2CX%2C%2C%2CC%2CH%2CK%2CN%2C%2C%2CC%2CH%2CO%2C%2C%2CC%2CH%2CR%2C%2C%2CC%2CH%2CR%2CP%2C%2C%2CC%2CH%2CZ%2C%2C%2CC%2CI%2CR%2CU%2CS%2C%2C%2CC%2CI%2CV%2C%2C%2CC%2CL%2CS%2C%2C%2CC%2CL%2CV%2C%2C%2CC%2CN%2CB%2C%2C%2CC%2CN%2CT%2CM%2C%2C%2CC%2CO%2C%2C%2CC%2CO%2CB%2CE%2C%2C%2CC%2CO%2CM%2CA%2CI%2C%2C%2CC%2CO%2CM%2CB%2CO%2C%2C%2CC%2CO%2CM%2CP%2C%2C%2CC%2CO%2CN%2CV%2C%2C%2CC%2CO%2CO%2CK%2C%2C%2CC%2CO%2CP%2CI%2C%2C%2CC%2CO%2CR%2C%2C%2CC%2CO%2CR%2CX%2C%2C%2CC%2CO%2CS%2CM%2CI%2CC%2C%2C%2CC%2CO%2CT%2C%2C%2CC%2CO%2CV%2CA%2CL%2C%2C%2CC%2CO%2CW%2C%2C%2CC%2CP%2CO%2CO%2CL%2C%2C%2CC%2CP%2CU%2C%2C%2CC%2CR%2CA%2CI%2C%2C%2CC%2CR%2CD%2CT%2C%2C%2CC%2CR%2CE%2C8%2C%2C%2CC%2CR%2CE%2CA%2CM%2C%2C%2CC%2CR%2CE%2CD%2CI%2C%2C%2CC%2CR%2CE%2CO%2C%2C%2CC%2CR%2CO%2CS%2C%2C%2CC%2CR%2CO%2CW%2CN%2C%2C%2CC%2CR%2CP%2CT%2C%2C%2CC%2CR%2CT%2CS%2C%2C%2CC%2CR%2CU%2C%2C%2CC%2CR%2CV%2C%2C%2CC%2CS%2CI%2CX&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:44,340 - INFO - Prices fetched successfully: {'C': None, 'E': 0.0, 'L': 0.0, ',': 0.0, 'R': None, 'P': 0.0, 'F': 0.05043524573390982, 'i': 0.0, 'G': 0.030613887273570606, 'H': 0.0, 'M': 0.001639275849766676, 'S': 3.389699904100254e-09, 'Q': None, 'X': 0.0001540851022979559, 'K': 0.0, 'N': None, 'O': 0.996770634789183, 'Z': None, 'I': 0.0, 'U': 0.038979676869328114, 'V': None, 'B': 0.0, 'T': 0.02746997350000764, 'A': None, 'W': 0.29996939576165554, 'D': None, '8': 0.0}
+2025-01-03 08:39:45,342 - WARNING - Missing prices for symbols: ['CEL', 'CELL', 'CELR', 'CEP', 'CERE', 'CFi', 'CGG', 'CHEEMS', 'CHEQ', 'CHEX', 'CHKN', 'CHO', 'CHR', 'CHRP', 'CHZ', 'CIRUS', 'CIV', 'CLS', 'CLV', 'CNB', 'CNTM', 'CO', 'COBE', 'COMAI', 'COMBO', 'COMP', 'CONV', 'COOK', 'COPI', 'COR', 'CORX', 'COSMIC', 'COT', 'COVAL', 'COW', 'CPOOL', 'CPU', 'CRAI', 'CRDT', 'CRE8', 'CREAM', 'CREDI', 'CREO', 'CROS', 'CROWN', 'CRPT', 'CRTS', 'CRU', 'CRV', 'CSIX']. Skipping these symbols.
+2025-01-03 08:39:45,342 - WARNING - Skipping symbol CEL due to missing or invalid price.
+2025-01-03 08:39:45,342 - WARNING - Skipping symbol CELL due to missing or invalid price.
+2025-01-03 08:39:45,343 - WARNING - Skipping symbol CELR due to missing or invalid price.
+2025-01-03 08:39:45,343 - WARNING - Skipping symbol CEP due to missing or invalid price.
+2025-01-03 08:39:45,344 - WARNING - Skipping symbol CERE due to missing or invalid price.
+2025-01-03 08:39:45,344 - WARNING - Skipping symbol CFi due to missing or invalid price.
+2025-01-03 08:39:45,344 - WARNING - Skipping symbol CGG due to missing or invalid price.
+2025-01-03 08:39:45,345 - WARNING - Skipping symbol CHEEMS due to missing or invalid price.
+2025-01-03 08:39:45,345 - WARNING - Skipping symbol CHEQ due to missing or invalid price.
+2025-01-03 08:39:45,345 - WARNING - Skipping symbol CHEX due to missing or invalid price.
+2025-01-03 08:39:45,345 - WARNING - Skipping symbol CHKN due to missing or invalid price.
+2025-01-03 08:39:45,345 - WARNING - Skipping symbol CHO due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CHR due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CHRP due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CHZ due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CIRUS due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CIV due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CLS due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CLV due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CNB due to missing or invalid price.
+2025-01-03 08:39:45,346 - WARNING - Skipping symbol CNTM due to missing or invalid price.
+2025-01-03 08:39:45,347 - WARNING - Skipping symbol CO due to missing or invalid price.
+2025-01-03 08:39:45,347 - WARNING - Skipping symbol COBE due to missing or invalid price.
+2025-01-03 08:39:45,347 - WARNING - Skipping symbol COMAI due to missing or invalid price.
+2025-01-03 08:39:45,347 - WARNING - Skipping symbol COMBO due to missing or invalid price.
+2025-01-03 08:39:45,347 - WARNING - Skipping symbol COMP due to missing or invalid price.
+2025-01-03 08:39:45,347 - WARNING - Skipping symbol CONV due to missing or invalid price.
+2025-01-03 08:39:45,347 - WARNING - Skipping symbol COOK due to missing or invalid price.
+2025-01-03 08:39:45,348 - WARNING - Skipping symbol COPI due to missing or invalid price.
+2025-01-03 08:39:45,348 - WARNING - Skipping symbol COR due to missing or invalid price.
+2025-01-03 08:39:45,348 - WARNING - Skipping symbol CORX due to missing or invalid price.
+2025-01-03 08:39:45,348 - WARNING - Skipping symbol COSMIC due to missing or invalid price.
+2025-01-03 08:39:45,348 - WARNING - Skipping symbol COT due to missing or invalid price.
+2025-01-03 08:39:45,348 - WARNING - Skipping symbol COVAL due to missing or invalid price.
+2025-01-03 08:39:45,348 - WARNING - Skipping symbol COW due to missing or invalid price.
+2025-01-03 08:39:45,348 - WARNING - Skipping symbol CPOOL due to missing or invalid price.
+2025-01-03 08:39:45,349 - WARNING - Skipping symbol CPU due to missing or invalid price.
+2025-01-03 08:39:45,349 - WARNING - Skipping symbol CRAI due to missing or invalid price.
+2025-01-03 08:39:45,349 - WARNING - Skipping symbol CRDT due to missing or invalid price.
+2025-01-03 08:39:45,349 - WARNING - Skipping symbol CRE8 due to missing or invalid price.
+2025-01-03 08:39:45,349 - WARNING - Skipping symbol CREAM due to missing or invalid price.
+2025-01-03 08:39:45,349 - WARNING - Skipping symbol CREDI due to missing or invalid price.
+2025-01-03 08:39:45,349 - WARNING - Skipping symbol CREO due to missing or invalid price.
+2025-01-03 08:39:45,349 - WARNING - Skipping symbol CROS due to missing or invalid price.
+2025-01-03 08:39:45,350 - WARNING - Skipping symbol CROWN due to missing or invalid price.
+2025-01-03 08:39:45,350 - WARNING - Skipping symbol CRPT due to missing or invalid price.
+2025-01-03 08:39:45,350 - WARNING - Skipping symbol CRTS due to missing or invalid price.
+2025-01-03 08:39:45,350 - WARNING - Skipping symbol CRU due to missing or invalid price.
+2025-01-03 08:39:45,350 - WARNING - Skipping symbol CRV due to missing or invalid price.
+2025-01-03 08:39:45,350 - WARNING - Skipping symbol CSIX due to missing or invalid price.
+2025-01-03 08:39:45,350 - INFO - Fetching prices for batch: ['CSM', 'CSWAP', 'CTA', 'CTCN', 'CTI', 'CTRL', 'CTSI', 'CTT', 'CTX', 'CUBE', 'CUDOS', 'CULT', 'CVC', 'CVP', 'CVT', 'CVX', 'CVXCRV', 'CWEB', 'CWT', 'CXT', 'CYBER', 'CYL', 'DACXI', 'DAD', 'DAFI', 'DAI', 'DAMEX', 'DAO', 'DAPP', 'DAPPX', 'DAR', 'DARAM', 'DATA', 'DAWN', 'DBZ', 'DC', 'DCK', 'DCN', 'DDBAM', 'DDIM', 'DDOS', 'DDX', 'DEAI', 'DEC', 'DEFI', 'DEFROGS', 'DEGO', 'DENT', 'DEP', 'DEUSD']
+2025-01-03 08:39:45,350 - INFO - Fetching latest prices for symbols: CSM,CSWAP,CTA,CTCN,CTI,CTRL,CTSI,CTT,CTX,CUBE,CUDOS,CULT,CVC,CVP,CVT,CVX,CVXCRV,CWEB,CWT,CXT,CYBER,CYL,DACXI,DAD,DAFI,DAI,DAMEX,DAO,DAPP,DAPPX,DAR,DARAM,DATA,DAWN,DBZ,DC,DCK,DCN,DDBAM,DDIM,DDOS,DDX,DEAI,DEC,DEFI,DEFROGS,DEGO,DENT,DEP,DEUSD, convert: USD
+2025-01-03 08:39:45,352 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:45,520 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=C%2CS%2CM%2C%2C%2CC%2CS%2CW%2CA%2CP%2C%2C%2CC%2CT%2CA%2C%2C%2CC%2CT%2CC%2CN%2C%2C%2CC%2CT%2CI%2C%2C%2CC%2CT%2CR%2CL%2C%2C%2CC%2CT%2CS%2CI%2C%2C%2CC%2CT%2CT%2C%2C%2CC%2CT%2CX%2C%2C%2CC%2CU%2CB%2CE%2C%2C%2CC%2CU%2CD%2CO%2CS%2C%2C%2CC%2CU%2CL%2CT%2C%2C%2CC%2CV%2CC%2C%2C%2CC%2CV%2CP%2C%2C%2CC%2CV%2CT%2C%2C%2CC%2CV%2CX%2C%2C%2CC%2CV%2CX%2CC%2CR%2CV%2C%2C%2CC%2CW%2CE%2CB%2C%2C%2CC%2CW%2CT%2C%2C%2CC%2CX%2CT%2C%2C%2CC%2CY%2CB%2CE%2CR%2C%2C%2CC%2CY%2CL%2C%2C%2CD%2CA%2CC%2CX%2CI%2C%2C%2CD%2CA%2CD%2C%2C%2CD%2CA%2CF%2CI%2C%2C%2CD%2CA%2CI%2C%2C%2CD%2CA%2CM%2CE%2CX%2C%2C%2CD%2CA%2CO%2C%2C%2CD%2CA%2CP%2CP%2C%2C%2CD%2CA%2CP%2CP%2CX%2C%2C%2CD%2CA%2CR%2C%2C%2CD%2CA%2CR%2CA%2CM%2C%2C%2CD%2CA%2CT%2CA%2C%2C%2CD%2CA%2CW%2CN%2C%2C%2CD%2CB%2CZ%2C%2C%2CD%2CC%2C%2C%2CD%2CC%2CK%2C%2C%2CD%2CC%2CN%2C%2C%2CD%2CD%2CB%2CA%2CM%2C%2C%2CD%2CD%2CI%2CM%2C%2C%2CD%2CD%2CO%2CS%2C%2C%2CD%2CD%2CX%2C%2C%2CD%2CE%2CA%2CI%2C%2C%2CD%2CE%2CC%2C%2C%2CD%2CE%2CF%2CI%2C%2C%2CD%2CE%2CF%2CR%2CO%2CG%2CS%2C%2C%2CD%2CE%2CG%2CO%2C%2C%2CD%2CE%2CN%2CT%2C%2C%2CD%2CE%2CP%2C%2C%2CD%2CE%2CU%2CS%2CD&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:45,521 - INFO - Prices fetched successfully: {'C': None, 'S': 3.389699904100254e-09, 'M': 0.001639275849766676, ',': 0.0, 'W': 0.29996939576165554, 'A': None, 'P': 0.0, 'T': 0.02746997350000764, 'N': None, 'I': 0.0, 'R': None, 'L': 0.0, 'X': 0.0001540851022979559, 'U': 0.038979676869328114, 'B': 0.0, 'E': 0.0, 'D': None, 'O': 0.996770634789183, 'V': None, 'Y': 0.0, 'F': 0.05043524573390982, 'Z': None, 'K': 0.0, 'G': 0.030613887273570606}
+2025-01-03 08:39:46,523 - WARNING - Missing prices for symbols: ['CSM', 'CSWAP', 'CTA', 'CTCN', 'CTI', 'CTRL', 'CTSI', 'CTT', 'CTX', 'CUBE', 'CUDOS', 'CULT', 'CVC', 'CVP', 'CVT', 'CVX', 'CVXCRV', 'CWEB', 'CWT', 'CXT', 'CYBER', 'CYL', 'DACXI', 'DAD', 'DAFI', 'DAI', 'DAMEX', 'DAO', 'DAPP', 'DAPPX', 'DAR', 'DARAM', 'DATA', 'DAWN', 'DBZ', 'DC', 'DCK', 'DCN', 'DDBAM', 'DDIM', 'DDOS', 'DDX', 'DEAI', 'DEC', 'DEFI', 'DEFROGS', 'DEGO', 'DENT', 'DEP', 'DEUSD']. Skipping these symbols.
+2025-01-03 08:39:46,523 - WARNING - Skipping symbol CSM due to missing or invalid price.
+2025-01-03 08:39:46,525 - WARNING - Skipping symbol CSWAP due to missing or invalid price.
+2025-01-03 08:39:46,525 - WARNING - Skipping symbol CTA due to missing or invalid price.
+2025-01-03 08:39:46,525 - WARNING - Skipping symbol CTCN due to missing or invalid price.
+2025-01-03 08:39:46,525 - WARNING - Skipping symbol CTI due to missing or invalid price.
+2025-01-03 08:39:46,526 - WARNING - Skipping symbol CTRL due to missing or invalid price.
+2025-01-03 08:39:46,526 - WARNING - Skipping symbol CTSI due to missing or invalid price.
+2025-01-03 08:39:46,527 - WARNING - Skipping symbol CTT due to missing or invalid price.
+2025-01-03 08:39:46,527 - WARNING - Skipping symbol CTX due to missing or invalid price.
+2025-01-03 08:39:46,528 - WARNING - Skipping symbol CUBE due to missing or invalid price.
+2025-01-03 08:39:46,528 - WARNING - Skipping symbol CUDOS due to missing or invalid price.
+2025-01-03 08:39:46,529 - WARNING - Skipping symbol CULT due to missing or invalid price.
+2025-01-03 08:39:46,529 - WARNING - Skipping symbol CVC due to missing or invalid price.
+2025-01-03 08:39:46,529 - WARNING - Skipping symbol CVP due to missing or invalid price.
+2025-01-03 08:39:46,530 - WARNING - Skipping symbol CVT due to missing or invalid price.
+2025-01-03 08:39:46,530 - WARNING - Skipping symbol CVX due to missing or invalid price.
+2025-01-03 08:39:46,530 - WARNING - Skipping symbol CVXCRV due to missing or invalid price.
+2025-01-03 08:39:46,531 - WARNING - Skipping symbol CWEB due to missing or invalid price.
+2025-01-03 08:39:46,531 - WARNING - Skipping symbol CWT due to missing or invalid price.
+2025-01-03 08:39:46,531 - WARNING - Skipping symbol CXT due to missing or invalid price.
+2025-01-03 08:39:46,531 - WARNING - Skipping symbol CYBER due to missing or invalid price.
+2025-01-03 08:39:46,531 - WARNING - Skipping symbol CYL due to missing or invalid price.
+2025-01-03 08:39:46,532 - WARNING - Skipping symbol DACXI due to missing or invalid price.
+2025-01-03 08:39:46,532 - WARNING - Skipping symbol DAD due to missing or invalid price.
+2025-01-03 08:39:46,532 - WARNING - Skipping symbol DAFI due to missing or invalid price.
+2025-01-03 08:39:46,532 - WARNING - Skipping symbol DAI due to missing or invalid price.
+2025-01-03 08:39:46,532 - WARNING - Skipping symbol DAMEX due to missing or invalid price.
+2025-01-03 08:39:46,533 - WARNING - Skipping symbol DAO due to missing or invalid price.
+2025-01-03 08:39:46,533 - WARNING - Skipping symbol DAPP due to missing or invalid price.
+2025-01-03 08:39:46,533 - WARNING - Skipping symbol DAPPX due to missing or invalid price.
+2025-01-03 08:39:46,533 - WARNING - Skipping symbol DAR due to missing or invalid price.
+2025-01-03 08:39:46,533 - WARNING - Skipping symbol DARAM due to missing or invalid price.
+2025-01-03 08:39:46,533 - WARNING - Skipping symbol DATA due to missing or invalid price.
+2025-01-03 08:39:46,534 - WARNING - Skipping symbol DAWN due to missing or invalid price.
+2025-01-03 08:39:46,534 - WARNING - Skipping symbol DBZ due to missing or invalid price.
+2025-01-03 08:39:46,534 - WARNING - Skipping symbol DC due to missing or invalid price.
+2025-01-03 08:39:46,534 - WARNING - Skipping symbol DCK due to missing or invalid price.
+2025-01-03 08:39:46,534 - WARNING - Skipping symbol DCN due to missing or invalid price.
+2025-01-03 08:39:46,534 - WARNING - Skipping symbol DDBAM due to missing or invalid price.
+2025-01-03 08:39:46,534 - WARNING - Skipping symbol DDIM due to missing or invalid price.
+2025-01-03 08:39:46,534 - WARNING - Skipping symbol DDOS due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DDX due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DEAI due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DEC due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DEFI due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DEFROGS due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DEGO due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DENT due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DEP due to missing or invalid price.
+2025-01-03 08:39:46,535 - WARNING - Skipping symbol DEUSD due to missing or invalid price.
+2025-01-03 08:39:46,536 - INFO - Fetching prices for batch: ['DEVVE', 'DEXA', 'DEXE', 'DEXT', 'DF', 'DFA', 'DFT', 'DFYN', 'DG', 'DHB', 'DHT', 'DHV', 'DIA', 'DIFX', 'DIGG', 'DINERO', 'DINO', 'DIONE', 'DIP', 'DKA', 'DMAIL', 'DMCK', 'DMTR', 'DNT', 'DNXC', 'DODO', 'DOG', 'DOGA', 'DOGE', 'DOGECAST', 'DOGES', 'DOGGO', 'DOGS', 'DOGWIFHAT', 'DOLA', 'DOLLAR', 'DON', 'DONUT', 'DOP', 'DORA', 'DORKY', 'DOSE', 'DOWS', 'DPI', 'DPR', 'DPS', 'DRAGGY', 'DRAGONX', 'DRC', 'DREP']
+2025-01-03 08:39:46,536 - INFO - Fetching latest prices for symbols: DEVVE,DEXA,DEXE,DEXT,DF,DFA,DFT,DFYN,DG,DHB,DHT,DHV,DIA,DIFX,DIGG,DINERO,DINO,DIONE,DIP,DKA,DMAIL,DMCK,DMTR,DNT,DNXC,DODO,DOG,DOGA,DOGE,DOGECAST,DOGES,DOGGO,DOGS,DOGWIFHAT,DOLA,DOLLAR,DON,DONUT,DOP,DORA,DORKY,DOSE,DOWS,DPI,DPR,DPS,DRAGGY,DRAGONX,DRC,DREP, convert: USD
+2025-01-03 08:39:46,537 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:46,717 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=D%2CE%2CV%2CV%2CE%2C%2C%2CD%2CE%2CX%2CA%2C%2C%2CD%2CE%2CX%2CE%2C%2C%2CD%2CE%2CX%2CT%2C%2C%2CD%2CF%2C%2C%2CD%2CF%2CA%2C%2C%2CD%2CF%2CT%2C%2C%2CD%2CF%2CY%2CN%2C%2C%2CD%2CG%2C%2C%2CD%2CH%2CB%2C%2C%2CD%2CH%2CT%2C%2C%2CD%2CH%2CV%2C%2C%2CD%2CI%2CA%2C%2C%2CD%2CI%2CF%2CX%2C%2C%2CD%2CI%2CG%2CG%2C%2C%2CD%2CI%2CN%2CE%2CR%2CO%2C%2C%2CD%2CI%2CN%2CO%2C%2C%2CD%2CI%2CO%2CN%2CE%2C%2C%2CD%2CI%2CP%2C%2C%2CD%2CK%2CA%2C%2C%2CD%2CM%2CA%2CI%2CL%2C%2C%2CD%2CM%2CC%2CK%2C%2C%2CD%2CM%2CT%2CR%2C%2C%2CD%2CN%2CT%2C%2C%2CD%2CN%2CX%2CC%2C%2C%2CD%2CO%2CD%2CO%2C%2C%2CD%2CO%2CG%2C%2C%2CD%2CO%2CG%2CA%2C%2C%2CD%2CO%2CG%2CE%2C%2C%2CD%2CO%2CG%2CE%2CC%2CA%2CS%2CT%2C%2C%2CD%2CO%2CG%2CE%2CS%2C%2C%2CD%2CO%2CG%2CG%2CO%2C%2C%2CD%2CO%2CG%2CS%2C%2C%2CD%2CO%2CG%2CW%2CI%2CF%2CH%2CA%2CT%2C%2C%2CD%2CO%2CL%2CA%2C%2C%2CD%2CO%2CL%2CL%2CA%2CR%2C%2C%2CD%2CO%2CN%2C%2C%2CD%2CO%2CN%2CU%2CT%2C%2C%2CD%2CO%2CP%2C%2C%2CD%2CO%2CR%2CA%2C%2C%2CD%2CO%2CR%2CK%2CY%2C%2C%2CD%2CO%2CS%2CE%2C%2C%2CD%2CO%2CW%2CS%2C%2C%2CD%2CP%2CI%2C%2C%2CD%2CP%2CR%2C%2C%2CD%2CP%2CS%2C%2C%2CD%2CR%2CA%2CG%2CG%2CY%2C%2C%2CD%2CR%2CA%2CG%2CO%2CN%2CX%2C%2C%2CD%2CR%2CC%2C%2C%2CD%2CR%2CE%2CP&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:46,718 - INFO - Prices fetched successfully: {'D': None, 'E': 0.0, 'V': None, ',': 0.0, 'X': 0.0001540851022979559, 'A': None, 'T': 0.02746997350000764, 'F': 0.05043524573390982, 'Y': 0.0, 'N': None, 'G': 0.030613887273570606, 'H': 0.0, 'B': 0.0, 'I': 0.0, 'R': None, 'O': 0.996770634789183, 'P': 0.0, 'K': 0.0, 'M': 0.001639275849766676, 'L': 0.0, 'C': None, 'S': 3.389699904100254e-09, 'W': 0.29996939576165554, 'U': 0.038979676869328114}
+2025-01-03 08:39:47,720 - WARNING - Missing prices for symbols: ['DEVVE', 'DEXA', 'DEXE', 'DEXT', 'DF', 'DFA', 'DFT', 'DFYN', 'DG', 'DHB', 'DHT', 'DHV', 'DIA', 'DIFX', 'DIGG', 'DINERO', 'DINO', 'DIONE', 'DIP', 'DKA', 'DMAIL', 'DMCK', 'DMTR', 'DNT', 'DNXC', 'DODO', 'DOG', 'DOGA', 'DOGE', 'DOGECAST', 'DOGES', 'DOGGO', 'DOGS', 'DOGWIFHAT', 'DOLA', 'DOLLAR', 'DON', 'DONUT', 'DOP', 'DORA', 'DORKY', 'DOSE', 'DOWS', 'DPI', 'DPR', 'DPS', 'DRAGGY', 'DRAGONX', 'DRC', 'DREP']. Skipping these symbols.
+2025-01-03 08:39:47,721 - WARNING - Skipping symbol DEVVE due to missing or invalid price.
+2025-01-03 08:39:47,722 - WARNING - Skipping symbol DEXA due to missing or invalid price.
+2025-01-03 08:39:47,723 - WARNING - Skipping symbol DEXE due to missing or invalid price.
+2025-01-03 08:39:47,724 - WARNING - Skipping symbol DEXT due to missing or invalid price.
+2025-01-03 08:39:47,725 - WARNING - Skipping symbol DF due to missing or invalid price.
+2025-01-03 08:39:47,725 - WARNING - Skipping symbol DFA due to missing or invalid price.
+2025-01-03 08:39:47,726 - WARNING - Skipping symbol DFT due to missing or invalid price.
+2025-01-03 08:39:47,726 - WARNING - Skipping symbol DFYN due to missing or invalid price.
+2025-01-03 08:39:47,726 - WARNING - Skipping symbol DG due to missing or invalid price.
+2025-01-03 08:39:47,727 - WARNING - Skipping symbol DHB due to missing or invalid price.
+2025-01-03 08:39:47,728 - WARNING - Skipping symbol DHT due to missing or invalid price.
+2025-01-03 08:39:47,728 - WARNING - Skipping symbol DHV due to missing or invalid price.
+2025-01-03 08:39:47,729 - WARNING - Skipping symbol DIA due to missing or invalid price.
+2025-01-03 08:39:47,729 - WARNING - Skipping symbol DIFX due to missing or invalid price.
+2025-01-03 08:39:47,729 - WARNING - Skipping symbol DIGG due to missing or invalid price.
+2025-01-03 08:39:47,729 - WARNING - Skipping symbol DINERO due to missing or invalid price.
+2025-01-03 08:39:47,730 - WARNING - Skipping symbol DINO due to missing or invalid price.
+2025-01-03 08:39:47,730 - WARNING - Skipping symbol DIONE due to missing or invalid price.
+2025-01-03 08:39:47,731 - WARNING - Skipping symbol DIP due to missing or invalid price.
+2025-01-03 08:39:47,731 - WARNING - Skipping symbol DKA due to missing or invalid price.
+2025-01-03 08:39:47,731 - WARNING - Skipping symbol DMAIL due to missing or invalid price.
+2025-01-03 08:39:47,732 - WARNING - Skipping symbol DMCK due to missing or invalid price.
+2025-01-03 08:39:47,732 - WARNING - Skipping symbol DMTR due to missing or invalid price.
+2025-01-03 08:39:47,732 - WARNING - Skipping symbol DNT due to missing or invalid price.
+2025-01-03 08:39:47,733 - WARNING - Skipping symbol DNXC due to missing or invalid price.
+2025-01-03 08:39:47,733 - WARNING - Skipping symbol DODO due to missing or invalid price.
+2025-01-03 08:39:47,733 - WARNING - Skipping symbol DOG due to missing or invalid price.
+2025-01-03 08:39:47,734 - WARNING - Skipping symbol DOGA due to missing or invalid price.
+2025-01-03 08:39:47,734 - WARNING - Skipping symbol DOGE due to missing or invalid price.
+2025-01-03 08:39:47,734 - WARNING - Skipping symbol DOGECAST due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DOGES due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DOGGO due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DOGS due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DOGWIFHAT due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DOLA due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DOLLAR due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DON due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DONUT due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DOP due to missing or invalid price.
+2025-01-03 08:39:47,735 - WARNING - Skipping symbol DORA due to missing or invalid price.
+2025-01-03 08:39:47,736 - WARNING - Skipping symbol DORKY due to missing or invalid price.
+2025-01-03 08:39:47,736 - WARNING - Skipping symbol DOSE due to missing or invalid price.
+2025-01-03 08:39:47,736 - WARNING - Skipping symbol DOWS due to missing or invalid price.
+2025-01-03 08:39:47,736 - WARNING - Skipping symbol DPI due to missing or invalid price.
+2025-01-03 08:39:47,736 - WARNING - Skipping symbol DPR due to missing or invalid price.
+2025-01-03 08:39:47,736 - WARNING - Skipping symbol DPS due to missing or invalid price.
+2025-01-03 08:39:47,736 - WARNING - Skipping symbol DRAGGY due to missing or invalid price.
+2025-01-03 08:39:47,736 - WARNING - Skipping symbol DRAGONX due to missing or invalid price.
+2025-01-03 08:39:47,737 - WARNING - Skipping symbol DRC due to missing or invalid price.
+2025-01-03 08:39:47,737 - WARNING - Skipping symbol DREP due to missing or invalid price.
+2025-01-03 08:39:47,737 - INFO - Fetching prices for batch: ['DRGN', 'DRT', 'DSK', 'DSLA', 'DSYNC', 'DTX', 'DUCK', 'DUCKIES', 'DUCKY', 'DUEL', 'DUSK', 'DUST', 'DVI', 'DX', 'DXGM', 'DYP', 'EAI', 'EARN', 'EBULL', 'ECU', 'EDEN', 'EDGE', 'EDLC', 'EFI', 'EGG', 'EGGT', 'EIGEN', 'EKTA', 'EL', 'ELAND', 'ELET', 'ELG', 'ELMO', 'ELMT', 'ELON', 'EM', 'EMAID', 'EML', 'EMP', 'EMRX', 'ENA', 'enqAI', 'ENS', 'EPIK', 'EPIKO', 'EQUAD', 'ERN', 'eRSDL', 'ESD', 'ESE']
+2025-01-03 08:39:47,737 - INFO - Fetching latest prices for symbols: DRGN,DRT,DSK,DSLA,DSYNC,DTX,DUCK,DUCKIES,DUCKY,DUEL,DUSK,DUST,DVI,DX,DXGM,DYP,EAI,EARN,EBULL,ECU,EDEN,EDGE,EDLC,EFI,EGG,EGGT,EIGEN,EKTA,EL,ELAND,ELET,ELG,ELMO,ELMT,ELON,EM,EMAID,EML,EMP,EMRX,ENA,enqAI,ENS,EPIK,EPIKO,EQUAD,ERN,eRSDL,ESD,ESE, convert: USD
+2025-01-03 08:39:47,738 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:47,914 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=D%2CR%2CG%2CN%2C%2C%2CD%2CR%2CT%2C%2C%2CD%2CS%2CK%2C%2C%2CD%2CS%2CL%2CA%2C%2C%2CD%2CS%2CY%2CN%2CC%2C%2C%2CD%2CT%2CX%2C%2C%2CD%2CU%2CC%2CK%2C%2C%2CD%2CU%2CC%2CK%2CI%2CE%2CS%2C%2C%2CD%2CU%2CC%2CK%2CY%2C%2C%2CD%2CU%2CE%2CL%2C%2C%2CD%2CU%2CS%2CK%2C%2C%2CD%2CU%2CS%2CT%2C%2C%2CD%2CV%2CI%2C%2C%2CD%2CX%2C%2C%2CD%2CX%2CG%2CM%2C%2C%2CD%2CY%2CP%2C%2C%2CE%2CA%2CI%2C%2C%2CE%2CA%2CR%2CN%2C%2C%2CE%2CB%2CU%2CL%2CL%2C%2C%2CE%2CC%2CU%2C%2C%2CE%2CD%2CE%2CN%2C%2C%2CE%2CD%2CG%2CE%2C%2C%2CE%2CD%2CL%2CC%2C%2C%2CE%2CF%2CI%2C%2C%2CE%2CG%2CG%2C%2C%2CE%2CG%2CG%2CT%2C%2C%2CE%2CI%2CG%2CE%2CN%2C%2C%2CE%2CK%2CT%2CA%2C%2C%2CE%2CL%2C%2C%2CE%2CL%2CA%2CN%2CD%2C%2C%2CE%2CL%2CE%2CT%2C%2C%2CE%2CL%2CG%2C%2C%2CE%2CL%2CM%2CO%2C%2C%2CE%2CL%2CM%2CT%2C%2C%2CE%2CL%2CO%2CN%2C%2C%2CE%2CM%2C%2C%2CE%2CM%2CA%2CI%2CD%2C%2C%2CE%2CM%2CL%2C%2C%2CE%2CM%2CP%2C%2C%2CE%2CM%2CR%2CX%2C%2C%2CE%2CN%2CA%2C%2C%2Ce%2Cn%2Cq%2CA%2CI%2C%2C%2CE%2CN%2CS%2C%2C%2CE%2CP%2CI%2CK%2C%2C%2CE%2CP%2CI%2CK%2CO%2C%2C%2CE%2CQ%2CU%2CA%2CD%2C%2C%2CE%2CR%2CN%2C%2C%2Ce%2CR%2CS%2CD%2CL%2C%2C%2CE%2CS%2CD%2C%2C%2CE%2CS%2CE&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:47,916 - INFO - Prices fetched successfully: {'D': None, 'R': None, 'G': 0.030613887273570606, 'N': None, ',': 0.0, 'T': 0.02746997350000764, 'S': 3.389699904100254e-09, 'K': 0.0, 'L': 0.0, 'A': None, 'Y': 0.0, 'C': None, 'X': 0.0001540851022979559, 'U': 0.038979676869328114, 'I': 0.0, 'E': 0.0, 'V': None, 'M': 0.001639275849766676, 'P': 0.0, 'B': 0.0, 'F': 0.05043524573390982, 'O': 0.996770634789183, 'e': 0.0, 'n': 0.0, 'q': 0.0, 'Q': None}
+2025-01-03 08:39:48,917 - WARNING - Missing prices for symbols: ['DRGN', 'DRT', 'DSK', 'DSLA', 'DSYNC', 'DTX', 'DUCK', 'DUCKIES', 'DUCKY', 'DUEL', 'DUSK', 'DUST', 'DVI', 'DX', 'DXGM', 'DYP', 'EAI', 'EARN', 'EBULL', 'ECU', 'EDEN', 'EDGE', 'EDLC', 'EFI', 'EGG', 'EGGT', 'EIGEN', 'EKTA', 'EL', 'ELAND', 'ELET', 'ELG', 'ELMO', 'ELMT', 'ELON', 'EM', 'EMAID', 'EML', 'EMP', 'EMRX', 'ENA', 'enqAI', 'ENS', 'EPIK', 'EPIKO', 'EQUAD', 'ERN', 'eRSDL', 'ESD', 'ESE']. Skipping these symbols.
+2025-01-03 08:39:48,918 - WARNING - Skipping symbol DRGN due to missing or invalid price.
+2025-01-03 08:39:48,918 - WARNING - Skipping symbol DRT due to missing or invalid price.
+2025-01-03 08:39:48,918 - WARNING - Skipping symbol DSK due to missing or invalid price.
+2025-01-03 08:39:48,919 - WARNING - Skipping symbol DSLA due to missing or invalid price.
+2025-01-03 08:39:48,919 - WARNING - Skipping symbol DSYNC due to missing or invalid price.
+2025-01-03 08:39:48,919 - WARNING - Skipping symbol DTX due to missing or invalid price.
+2025-01-03 08:39:48,919 - WARNING - Skipping symbol DUCK due to missing or invalid price.
+2025-01-03 08:39:48,920 - WARNING - Skipping symbol DUCKIES due to missing or invalid price.
+2025-01-03 08:39:48,920 - WARNING - Skipping symbol DUCKY due to missing or invalid price.
+2025-01-03 08:39:48,921 - WARNING - Skipping symbol DUEL due to missing or invalid price.
+2025-01-03 08:39:48,921 - WARNING - Skipping symbol DUSK due to missing or invalid price.
+2025-01-03 08:39:48,921 - WARNING - Skipping symbol DUST due to missing or invalid price.
+2025-01-03 08:39:48,922 - WARNING - Skipping symbol DVI due to missing or invalid price.
+2025-01-03 08:39:48,922 - WARNING - Skipping symbol DX due to missing or invalid price.
+2025-01-03 08:39:48,922 - WARNING - Skipping symbol DXGM due to missing or invalid price.
+2025-01-03 08:39:48,922 - WARNING - Skipping symbol DYP due to missing or invalid price.
+2025-01-03 08:39:48,923 - WARNING - Skipping symbol EAI due to missing or invalid price.
+2025-01-03 08:39:48,923 - WARNING - Skipping symbol EARN due to missing or invalid price.
+2025-01-03 08:39:48,923 - WARNING - Skipping symbol EBULL due to missing or invalid price.
+2025-01-03 08:39:48,923 - WARNING - Skipping symbol ECU due to missing or invalid price.
+2025-01-03 08:39:48,924 - WARNING - Skipping symbol EDEN due to missing or invalid price.
+2025-01-03 08:39:48,924 - WARNING - Skipping symbol EDGE due to missing or invalid price.
+2025-01-03 08:39:48,924 - WARNING - Skipping symbol EDLC due to missing or invalid price.
+2025-01-03 08:39:48,924 - WARNING - Skipping symbol EFI due to missing or invalid price.
+2025-01-03 08:39:48,924 - WARNING - Skipping symbol EGG due to missing or invalid price.
+2025-01-03 08:39:48,924 - WARNING - Skipping symbol EGGT due to missing or invalid price.
+2025-01-03 08:39:48,924 - WARNING - Skipping symbol EIGEN due to missing or invalid price.
+2025-01-03 08:39:48,924 - WARNING - Skipping symbol EKTA due to missing or invalid price.
+2025-01-03 08:39:48,925 - WARNING - Skipping symbol EL due to missing or invalid price.
+2025-01-03 08:39:48,925 - WARNING - Skipping symbol ELAND due to missing or invalid price.
+2025-01-03 08:39:48,925 - WARNING - Skipping symbol ELET due to missing or invalid price.
+2025-01-03 08:39:48,925 - WARNING - Skipping symbol ELG due to missing or invalid price.
+2025-01-03 08:39:48,925 - WARNING - Skipping symbol ELMO due to missing or invalid price.
+2025-01-03 08:39:48,926 - WARNING - Skipping symbol ELMT due to missing or invalid price.
+2025-01-03 08:39:48,926 - WARNING - Skipping symbol ELON due to missing or invalid price.
+2025-01-03 08:39:48,926 - WARNING - Skipping symbol EM due to missing or invalid price.
+2025-01-03 08:39:48,926 - WARNING - Skipping symbol EMAID due to missing or invalid price.
+2025-01-03 08:39:48,927 - WARNING - Skipping symbol EML due to missing or invalid price.
+2025-01-03 08:39:48,927 - WARNING - Skipping symbol EMP due to missing or invalid price.
+2025-01-03 08:39:48,927 - WARNING - Skipping symbol EMRX due to missing or invalid price.
+2025-01-03 08:39:48,927 - WARNING - Skipping symbol ENA due to missing or invalid price.
+2025-01-03 08:39:48,928 - WARNING - Skipping symbol enqAI due to missing or invalid price.
+2025-01-03 08:39:48,928 - WARNING - Skipping symbol ENS due to missing or invalid price.
+2025-01-03 08:39:48,928 - WARNING - Skipping symbol EPIK due to missing or invalid price.
+2025-01-03 08:39:48,928 - WARNING - Skipping symbol EPIKO due to missing or invalid price.
+2025-01-03 08:39:48,928 - WARNING - Skipping symbol EQUAD due to missing or invalid price.
+2025-01-03 08:39:48,929 - WARNING - Skipping symbol ERN due to missing or invalid price.
+2025-01-03 08:39:48,929 - WARNING - Skipping symbol eRSDL due to missing or invalid price.
+2025-01-03 08:39:48,929 - WARNING - Skipping symbol ESD due to missing or invalid price.
+2025-01-03 08:39:48,929 - WARNING - Skipping symbol ESE due to missing or invalid price.
+2025-01-03 08:39:48,929 - INFO - Fetching prices for batch: ['ETH', 'ETHA', 'ETHDYDX', 'ETHFI', 'ETHPAD', 'EUL', 'EURC', 'EURI', 'EURS', 'EURt', 'eUSD', 'EVAI', 'EVERY', 'EVRY', 'EVY', 'EVZ', 'EXM', 'EXRD', 'EZ', 'F', 'FAC', 'FANC', 'FARM', 'FASTAI', 'FB', 'FBX', 'FCL', 'FCT', 'FDUSD', 'FEAR', 'FEFE', 'FEI', 'FER', 'FEX', 'FI', 'FIGHT', 'FIN', 'FIS', 'FJO', 'FLASH', 'FLIP', 'FLIXX', 'FLOKI', 'FLT', 'FLX', 'FLZ', 'FMB', 'FNXAI', 'FOG', 'FOR']
+2025-01-03 08:39:48,930 - INFO - Fetching latest prices for symbols: ETH,ETHA,ETHDYDX,ETHFI,ETHPAD,EUL,EURC,EURI,EURS,EURt,eUSD,EVAI,EVERY,EVRY,EVY,EVZ,EXM,EXRD,EZ,F,FAC,FANC,FARM,FASTAI,FB,FBX,FCL,FCT,FDUSD,FEAR,FEFE,FEI,FER,FEX,FI,FIGHT,FIN,FIS,FJO,FLASH,FLIP,FLIXX,FLOKI,FLT,FLX,FLZ,FMB,FNXAI,FOG,FOR, convert: USD
+2025-01-03 08:39:48,931 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:49,107 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=E%2CT%2CH%2C%2C%2CE%2CT%2CH%2CA%2C%2C%2CE%2CT%2CH%2CD%2CY%2CD%2CX%2C%2C%2CE%2CT%2CH%2CF%2CI%2C%2C%2CE%2CT%2CH%2CP%2CA%2CD%2C%2C%2CE%2CU%2CL%2C%2C%2CE%2CU%2CR%2CC%2C%2C%2CE%2CU%2CR%2CI%2C%2C%2CE%2CU%2CR%2CS%2C%2C%2CE%2CU%2CR%2Ct%2C%2C%2Ce%2CU%2CS%2CD%2C%2C%2CE%2CV%2CA%2CI%2C%2C%2CE%2CV%2CE%2CR%2CY%2C%2C%2CE%2CV%2CR%2CY%2C%2C%2CE%2CV%2CY%2C%2C%2CE%2CV%2CZ%2C%2C%2CE%2CX%2CM%2C%2C%2CE%2CX%2CR%2CD%2C%2C%2CE%2CZ%2C%2C%2CF%2C%2C%2CF%2CA%2CC%2C%2C%2CF%2CA%2CN%2CC%2C%2C%2CF%2CA%2CR%2CM%2C%2C%2CF%2CA%2CS%2CT%2CA%2CI%2C%2C%2CF%2CB%2C%2C%2CF%2CB%2CX%2C%2C%2CF%2CC%2CL%2C%2C%2CF%2CC%2CT%2C%2C%2CF%2CD%2CU%2CS%2CD%2C%2C%2CF%2CE%2CA%2CR%2C%2C%2CF%2CE%2CF%2CE%2C%2C%2CF%2CE%2CI%2C%2C%2CF%2CE%2CR%2C%2C%2CF%2CE%2CX%2C%2C%2CF%2CI%2C%2C%2CF%2CI%2CG%2CH%2CT%2C%2C%2CF%2CI%2CN%2C%2C%2CF%2CI%2CS%2C%2C%2CF%2CJ%2CO%2C%2C%2CF%2CL%2CA%2CS%2CH%2C%2C%2CF%2CL%2CI%2CP%2C%2C%2CF%2CL%2CI%2CX%2CX%2C%2C%2CF%2CL%2CO%2CK%2CI%2C%2C%2CF%2CL%2CT%2C%2C%2CF%2CL%2CX%2C%2C%2CF%2CL%2CZ%2C%2C%2CF%2CM%2CB%2C%2C%2CF%2CN%2CX%2CA%2CI%2C%2C%2CF%2CO%2CG%2C%2C%2CF%2CO%2CR&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:49,109 - INFO - Prices fetched successfully: {'E': 0.0, 'T': 0.02746997350000764, 'H': 0.0, ',': 0.0, 'A': None, 'D': None, 'Y': 0.0, 'X': 0.0001540851022979559, 'F': 0.05043524573390982, 'I': 0.0, 'P': 0.0, 'U': 0.038979676869328114, 'L': 0.0, 'R': None, 'C': None, 'S': 3.389699904100254e-09, 't': 0.0, 'e': 0.0, 'V': None, 'Z': None, 'M': 0.001639275849766676, 'N': None, 'B': 0.0, 'G': 0.030613887273570606, 'J': None, 'O': 0.996770634789183, 'K': 0.0}
+2025-01-03 08:39:50,111 - WARNING - Missing prices for symbols: ['ETH', 'ETHA', 'ETHDYDX', 'ETHFI', 'ETHPAD', 'EUL', 'EURC', 'EURI', 'EURS', 'EURt', 'eUSD', 'EVAI', 'EVERY', 'EVRY', 'EVY', 'EVZ', 'EXM', 'EXRD', 'EZ', 'FAC', 'FANC', 'FARM', 'FASTAI', 'FB', 'FBX', 'FCL', 'FCT', 'FDUSD', 'FEAR', 'FEFE', 'FEI', 'FER', 'FEX', 'FI', 'FIGHT', 'FIN', 'FIS', 'FJO', 'FLASH', 'FLIP', 'FLIXX', 'FLOKI', 'FLT', 'FLX', 'FLZ', 'FMB', 'FNXAI', 'FOG', 'FOR']. Skipping these symbols.
+2025-01-03 08:39:50,111 - WARNING - Skipping symbol ETH due to missing or invalid price.
+2025-01-03 08:39:50,112 - WARNING - Skipping symbol ETHA due to missing or invalid price.
+2025-01-03 08:39:50,112 - WARNING - Skipping symbol ETHDYDX due to missing or invalid price.
+2025-01-03 08:39:50,112 - WARNING - Skipping symbol ETHFI due to missing or invalid price.
+2025-01-03 08:39:50,113 - WARNING - Skipping symbol ETHPAD due to missing or invalid price.
+2025-01-03 08:39:50,113 - WARNING - Skipping symbol EUL due to missing or invalid price.
+2025-01-03 08:39:50,113 - WARNING - Skipping symbol EURC due to missing or invalid price.
+2025-01-03 08:39:50,114 - WARNING - Skipping symbol EURI due to missing or invalid price.
+2025-01-03 08:39:50,114 - WARNING - Skipping symbol EURS due to missing or invalid price.
+2025-01-03 08:39:50,114 - WARNING - Skipping symbol EURt due to missing or invalid price.
+2025-01-03 08:39:50,114 - WARNING - Skipping symbol eUSD due to missing or invalid price.
+2025-01-03 08:39:50,114 - WARNING - Skipping symbol EVAI due to missing or invalid price.
+2025-01-03 08:39:50,114 - WARNING - Skipping symbol EVERY due to missing or invalid price.
+2025-01-03 08:39:50,115 - WARNING - Skipping symbol EVRY due to missing or invalid price.
+2025-01-03 08:39:50,115 - WARNING - Skipping symbol EVY due to missing or invalid price.
+2025-01-03 08:39:50,115 - WARNING - Skipping symbol EVZ due to missing or invalid price.
+2025-01-03 08:39:50,115 - WARNING - Skipping symbol EXM due to missing or invalid price.
+2025-01-03 08:39:50,115 - WARNING - Skipping symbol EXRD due to missing or invalid price.
+2025-01-03 08:39:50,115 - WARNING - Skipping symbol EZ due to missing or invalid price.
+2025-01-03 08:39:50,116 - WARNING - Skipping symbol FAC due to missing or invalid price.
+2025-01-03 08:39:50,116 - WARNING - Skipping symbol FANC due to missing or invalid price.
+2025-01-03 08:39:50,116 - WARNING - Skipping symbol FARM due to missing or invalid price.
+2025-01-03 08:39:50,116 - WARNING - Skipping symbol FASTAI due to missing or invalid price.
+2025-01-03 08:39:50,116 - WARNING - Skipping symbol FB due to missing or invalid price.
+2025-01-03 08:39:50,117 - WARNING - Skipping symbol FBX due to missing or invalid price.
+2025-01-03 08:39:50,117 - WARNING - Skipping symbol FCL due to missing or invalid price.
+2025-01-03 08:39:50,117 - WARNING - Skipping symbol FCT due to missing or invalid price.
+2025-01-03 08:39:50,117 - WARNING - Skipping symbol FDUSD due to missing or invalid price.
+2025-01-03 08:39:50,117 - WARNING - Skipping symbol FEAR due to missing or invalid price.
+2025-01-03 08:39:50,117 - WARNING - Skipping symbol FEFE due to missing or invalid price.
+2025-01-03 08:39:50,118 - WARNING - Skipping symbol FEI due to missing or invalid price.
+2025-01-03 08:39:50,118 - WARNING - Skipping symbol FER due to missing or invalid price.
+2025-01-03 08:39:50,118 - WARNING - Skipping symbol FEX due to missing or invalid price.
+2025-01-03 08:39:50,118 - WARNING - Skipping symbol FI due to missing or invalid price.
+2025-01-03 08:39:50,118 - WARNING - Skipping symbol FIGHT due to missing or invalid price.
+2025-01-03 08:39:50,118 - WARNING - Skipping symbol FIN due to missing or invalid price.
+2025-01-03 08:39:50,118 - WARNING - Skipping symbol FIS due to missing or invalid price.
+2025-01-03 08:39:50,119 - WARNING - Skipping symbol FJO due to missing or invalid price.
+2025-01-03 08:39:50,119 - WARNING - Skipping symbol FLASH due to missing or invalid price.
+2025-01-03 08:39:50,119 - WARNING - Skipping symbol FLIP due to missing or invalid price.
+2025-01-03 08:39:50,119 - WARNING - Skipping symbol FLIXX due to missing or invalid price.
+2025-01-03 08:39:50,119 - WARNING - Skipping symbol FLOKI due to missing or invalid price.
+2025-01-03 08:39:50,119 - WARNING - Skipping symbol FLT due to missing or invalid price.
+2025-01-03 08:39:50,120 - WARNING - Skipping symbol FLX due to missing or invalid price.
+2025-01-03 08:39:50,120 - WARNING - Skipping symbol FLZ due to missing or invalid price.
+2025-01-03 08:39:50,120 - WARNING - Skipping symbol FMB due to missing or invalid price.
+2025-01-03 08:39:50,120 - WARNING - Skipping symbol FNXAI due to missing or invalid price.
+2025-01-03 08:39:50,120 - WARNING - Skipping symbol FOG due to missing or invalid price.
+2025-01-03 08:39:50,121 - WARNING - Skipping symbol FOR due to missing or invalid price.
+2025-01-03 08:39:50,121 - INFO - Fetching prices for batch: ['FORM', 'FORTH', 'FOUR', 'FOX', 'FP', 'FRAX', 'FREE', 'FRIN', 'FRM', 'FRONT', 'FRXETH', 'FS', 'FT', 'FTW', 'FUKU', 'FUN', 'FUND', 'FUSE', 'FUZE', 'FWT', 'FX', 'FXC', 'FXF', 'FXS', 'G3', 'GAINS', 'GAL', 'GALA', 'GALAXIS', 'GALEON', 'GAME', 'GARD', 'GDAO', 'GDR', 'GEAR', 'GEEQ', 'GEKKO', 'GEL', 'GEMS', 'GEO', 'GET', 'GF', 'GFI', 'GHO', 'GHST', 'GHX', 'GLM', 'GMAC', 'GME', 'GMEE']
+2025-01-03 08:39:50,121 - INFO - Fetching latest prices for symbols: FORM,FORTH,FOUR,FOX,FP,FRAX,FREE,FRIN,FRM,FRONT,FRXETH,FS,FT,FTW,FUKU,FUN,FUND,FUSE,FUZE,FWT,FX,FXC,FXF,FXS,G3,GAINS,GAL,GALA,GALAXIS,GALEON,GAME,GARD,GDAO,GDR,GEAR,GEEQ,GEKKO,GEL,GEMS,GEO,GET,GF,GFI,GHO,GHST,GHX,GLM,GMAC,GME,GMEE, convert: USD
+2025-01-03 08:39:50,123 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:50,316 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=F%2CO%2CR%2CM%2C%2C%2CF%2CO%2CR%2CT%2CH%2C%2C%2CF%2CO%2CU%2CR%2C%2C%2CF%2CO%2CX%2C%2C%2CF%2CP%2C%2C%2CF%2CR%2CA%2CX%2C%2C%2CF%2CR%2CE%2CE%2C%2C%2CF%2CR%2CI%2CN%2C%2C%2CF%2CR%2CM%2C%2C%2CF%2CR%2CO%2CN%2CT%2C%2C%2CF%2CR%2CX%2CE%2CT%2CH%2C%2C%2CF%2CS%2C%2C%2CF%2CT%2C%2C%2CF%2CT%2CW%2C%2C%2CF%2CU%2CK%2CU%2C%2C%2CF%2CU%2CN%2C%2C%2CF%2CU%2CN%2CD%2C%2C%2CF%2CU%2CS%2CE%2C%2C%2CF%2CU%2CZ%2CE%2C%2C%2CF%2CW%2CT%2C%2C%2CF%2CX%2C%2C%2CF%2CX%2CC%2C%2C%2CF%2CX%2CF%2C%2C%2CF%2CX%2CS%2C%2C%2CG%2C3%2C%2C%2CG%2CA%2CI%2CN%2CS%2C%2C%2CG%2CA%2CL%2C%2C%2CG%2CA%2CL%2CA%2C%2C%2CG%2CA%2CL%2CA%2CX%2CI%2CS%2C%2C%2CG%2CA%2CL%2CE%2CO%2CN%2C%2C%2CG%2CA%2CM%2CE%2C%2C%2CG%2CA%2CR%2CD%2C%2C%2CG%2CD%2CA%2CO%2C%2C%2CG%2CD%2CR%2C%2C%2CG%2CE%2CA%2CR%2C%2C%2CG%2CE%2CE%2CQ%2C%2C%2CG%2CE%2CK%2CK%2CO%2C%2C%2CG%2CE%2CL%2C%2C%2CG%2CE%2CM%2CS%2C%2C%2CG%2CE%2CO%2C%2C%2CG%2CE%2CT%2C%2C%2CG%2CF%2C%2C%2CG%2CF%2CI%2C%2C%2CG%2CH%2CO%2C%2C%2CG%2CH%2CS%2CT%2C%2C%2CG%2CH%2CX%2C%2C%2CG%2CL%2CM%2C%2C%2CG%2CM%2CA%2CC%2C%2C%2CG%2CM%2CE%2C%2C%2CG%2CM%2CE%2CE&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:50,320 - INFO - Prices fetched successfully: {'F': 0.05043524573390982, 'O': 0.996770634789183, 'R': None, 'M': 0.001639275849766676, ',': 0.0, 'T': 0.02746997350000764, 'H': 0.0, 'U': 0.038979676869328114, 'X': 0.0001540851022979559, 'P': 0.0, 'A': None, 'E': 0.0, 'I': 0.0, 'N': None, 'S': 3.389699904100254e-09, 'W': 0.29996939576165554, 'K': 0.0, 'D': None, 'Z': None, 'C': None, 'G': 0.030613887273570606, '3': 1.5148327885198476e-05, 'L': 0.0, 'Q': None}
+2025-01-03 08:39:51,322 - WARNING - Missing prices for symbols: ['FORM', 'FORTH', 'FOUR', 'FOX', 'FP', 'FRAX', 'FREE', 'FRIN', 'FRM', 'FRONT', 'FRXETH', 'FS', 'FT', 'FTW', 'FUKU', 'FUN', 'FUND', 'FUSE', 'FUZE', 'FWT', 'FX', 'FXC', 'FXF', 'FXS', 'G3', 'GAINS', 'GAL', 'GALA', 'GALAXIS', 'GALEON', 'GAME', 'GARD', 'GDAO', 'GDR', 'GEAR', 'GEEQ', 'GEKKO', 'GEL', 'GEMS', 'GEO', 'GET', 'GF', 'GFI', 'GHO', 'GHST', 'GHX', 'GLM', 'GMAC', 'GME', 'GMEE']. Skipping these symbols.
+2025-01-03 08:39:51,322 - WARNING - Skipping symbol FORM due to missing or invalid price.
+2025-01-03 08:39:51,323 - WARNING - Skipping symbol FORTH due to missing or invalid price.
+2025-01-03 08:39:51,323 - WARNING - Skipping symbol FOUR due to missing or invalid price.
+2025-01-03 08:39:51,324 - WARNING - Skipping symbol FOX due to missing or invalid price.
+2025-01-03 08:39:51,324 - WARNING - Skipping symbol FP due to missing or invalid price.
+2025-01-03 08:39:51,324 - WARNING - Skipping symbol FRAX due to missing or invalid price.
+2025-01-03 08:39:51,325 - WARNING - Skipping symbol FREE due to missing or invalid price.
+2025-01-03 08:39:51,325 - WARNING - Skipping symbol FRIN due to missing or invalid price.
+2025-01-03 08:39:51,325 - WARNING - Skipping symbol FRM due to missing or invalid price.
+2025-01-03 08:39:51,326 - WARNING - Skipping symbol FRONT due to missing or invalid price.
+2025-01-03 08:39:51,326 - WARNING - Skipping symbol FRXETH due to missing or invalid price.
+2025-01-03 08:39:51,326 - WARNING - Skipping symbol FS due to missing or invalid price.
+2025-01-03 08:39:51,326 - WARNING - Skipping symbol FT due to missing or invalid price.
+2025-01-03 08:39:51,327 - WARNING - Skipping symbol FTW due to missing or invalid price.
+2025-01-03 08:39:51,327 - WARNING - Skipping symbol FUKU due to missing or invalid price.
+2025-01-03 08:39:51,327 - WARNING - Skipping symbol FUN due to missing or invalid price.
+2025-01-03 08:39:51,327 - WARNING - Skipping symbol FUND due to missing or invalid price.
+2025-01-03 08:39:51,328 - WARNING - Skipping symbol FUSE due to missing or invalid price.
+2025-01-03 08:39:51,328 - WARNING - Skipping symbol FUZE due to missing or invalid price.
+2025-01-03 08:39:51,328 - WARNING - Skipping symbol FWT due to missing or invalid price.
+2025-01-03 08:39:51,328 - WARNING - Skipping symbol FX due to missing or invalid price.
+2025-01-03 08:39:51,329 - WARNING - Skipping symbol FXC due to missing or invalid price.
+2025-01-03 08:39:51,329 - WARNING - Skipping symbol FXF due to missing or invalid price.
+2025-01-03 08:39:51,329 - WARNING - Skipping symbol FXS due to missing or invalid price.
+2025-01-03 08:39:51,329 - WARNING - Skipping symbol G3 due to missing or invalid price.
+2025-01-03 08:39:51,330 - WARNING - Skipping symbol GAINS due to missing or invalid price.
+2025-01-03 08:39:51,331 - WARNING - Skipping symbol GAL due to missing or invalid price.
+2025-01-03 08:39:51,366 - WARNING - Skipping symbol GALA due to missing or invalid price.
+2025-01-03 08:39:51,382 - WARNING - Skipping symbol GALAXIS due to missing or invalid price.
+2025-01-03 08:39:51,383 - WARNING - Skipping symbol GALEON due to missing or invalid price.
+2025-01-03 08:39:51,383 - WARNING - Skipping symbol GAME due to missing or invalid price.
+2025-01-03 08:39:51,383 - WARNING - Skipping symbol GARD due to missing or invalid price.
+2025-01-03 08:39:51,383 - WARNING - Skipping symbol GDAO due to missing or invalid price.
+2025-01-03 08:39:51,383 - WARNING - Skipping symbol GDR due to missing or invalid price.
+2025-01-03 08:39:51,384 - WARNING - Skipping symbol GEAR due to missing or invalid price.
+2025-01-03 08:39:51,384 - WARNING - Skipping symbol GEEQ due to missing or invalid price.
+2025-01-03 08:39:51,384 - WARNING - Skipping symbol GEKKO due to missing or invalid price.
+2025-01-03 08:39:51,384 - WARNING - Skipping symbol GEL due to missing or invalid price.
+2025-01-03 08:39:51,385 - WARNING - Skipping symbol GEMS due to missing or invalid price.
+2025-01-03 08:39:51,385 - WARNING - Skipping symbol GEO due to missing or invalid price.
+2025-01-03 08:39:51,385 - WARNING - Skipping symbol GET due to missing or invalid price.
+2025-01-03 08:39:51,385 - WARNING - Skipping symbol GF due to missing or invalid price.
+2025-01-03 08:39:51,386 - WARNING - Skipping symbol GFI due to missing or invalid price.
+2025-01-03 08:39:51,386 - WARNING - Skipping symbol GHO due to missing or invalid price.
+2025-01-03 08:39:51,386 - WARNING - Skipping symbol GHST due to missing or invalid price.
+2025-01-03 08:39:51,386 - WARNING - Skipping symbol GHX due to missing or invalid price.
+2025-01-03 08:39:51,387 - WARNING - Skipping symbol GLM due to missing or invalid price.
+2025-01-03 08:39:51,387 - WARNING - Skipping symbol GMAC due to missing or invalid price.
+2025-01-03 08:39:51,387 - WARNING - Skipping symbol GME due to missing or invalid price.
+2025-01-03 08:39:51,388 - WARNING - Skipping symbol GMEE due to missing or invalid price.
+2025-01-03 08:39:51,388 - INFO - Fetching prices for batch: ['GMM', 'GMT', 'GNO', 'GNX', 'GNY', 'GOB', 'GODS', 'GOF', 'GOG', 'GOLD', 'Gomining', 'GONDOLA', 'GORILLA', 'GOU', 'GOVI', 'GPU', 'GRACY', 'GRG', 'GROK', 'GROYPER', 'GRT', 'GS', 'GSWAP', 'GSWIFT', 'GT', 'GTC', 'GUM', 'GUSD', 'GXT', 'GYD', 'GYEN', 'GZONE', 'HAI', 'HAKKA', 'HAN', 'HANA', 'HANDY', 'HAPI', 'HARD', 'HARRIS', 'HASHAI', 'HEART', 'HEGIC', 'HELLO', 'HEMULE', 'HEX', 'HEZ', 'HFT', 'HGET', 'HGOLD']
+2025-01-03 08:39:51,388 - INFO - Fetching latest prices for symbols: GMM,GMT,GNO,GNX,GNY,GOB,GODS,GOF,GOG,GOLD,Gomining,GONDOLA,GORILLA,GOU,GOVI,GPU,GRACY,GRG,GROK,GROYPER,GRT,GS,GSWAP,GSWIFT,GT,GTC,GUM,GUSD,GXT,GYD,GYEN,GZONE,HAI,HAKKA,HAN,HANA,HANDY,HAPI,HARD,HARRIS,HASHAI,HEART,HEGIC,HELLO,HEMULE,HEX,HEZ,HFT,HGET,HGOLD, convert: USD
+2025-01-03 08:39:51,390 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:51,846 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=G%2CM%2CM%2C%2C%2CG%2CM%2CT%2C%2C%2CG%2CN%2CO%2C%2C%2CG%2CN%2CX%2C%2C%2CG%2CN%2CY%2C%2C%2CG%2CO%2CB%2C%2C%2CG%2CO%2CD%2CS%2C%2C%2CG%2CO%2CF%2C%2C%2CG%2CO%2CG%2C%2C%2CG%2CO%2CL%2CD%2C%2C%2CG%2Co%2Cm%2Ci%2Cn%2Ci%2Cn%2Cg%2C%2C%2CG%2CO%2CN%2CD%2CO%2CL%2CA%2C%2C%2CG%2CO%2CR%2CI%2CL%2CL%2CA%2C%2C%2CG%2CO%2CU%2C%2C%2CG%2CO%2CV%2CI%2C%2C%2CG%2CP%2CU%2C%2C%2CG%2CR%2CA%2CC%2CY%2C%2C%2CG%2CR%2CG%2C%2C%2CG%2CR%2CO%2CK%2C%2C%2CG%2CR%2CO%2CY%2CP%2CE%2CR%2C%2C%2CG%2CR%2CT%2C%2C%2CG%2CS%2C%2C%2CG%2CS%2CW%2CA%2CP%2C%2C%2CG%2CS%2CW%2CI%2CF%2CT%2C%2C%2CG%2CT%2C%2C%2CG%2CT%2CC%2C%2C%2CG%2CU%2CM%2C%2C%2CG%2CU%2CS%2CD%2C%2C%2CG%2CX%2CT%2C%2C%2CG%2CY%2CD%2C%2C%2CG%2CY%2CE%2CN%2C%2C%2CG%2CZ%2CO%2CN%2CE%2C%2C%2CH%2CA%2CI%2C%2C%2CH%2CA%2CK%2CK%2CA%2C%2C%2CH%2CA%2CN%2C%2C%2CH%2CA%2CN%2CA%2C%2C%2CH%2CA%2CN%2CD%2CY%2C%2C%2CH%2CA%2CP%2CI%2C%2C%2CH%2CA%2CR%2CD%2C%2C%2CH%2CA%2CR%2CR%2CI%2CS%2C%2C%2CH%2CA%2CS%2CH%2CA%2CI%2C%2C%2CH%2CE%2CA%2CR%2CT%2C%2C%2CH%2CE%2CG%2CI%2CC%2C%2C%2CH%2CE%2CL%2CL%2CO%2C%2C%2CH%2CE%2CM%2CU%2CL%2CE%2C%2C%2CH%2CE%2CX%2C%2C%2CH%2CE%2CZ%2C%2C%2CH%2CF%2CT%2C%2C%2CH%2CG%2CE%2CT%2C%2C%2CH%2CG%2CO%2CL%2CD&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:51,850 - INFO - Prices fetched successfully: {'G': 0.030613887273570606, 'M': 0.001639275849766676, ',': 0.0, 'T': 0.02746997350000764, 'N': None, 'O': 0.996770634789183, 'X': 0.0001540851022979559, 'Y': 0.0, 'B': 0.0, 'D': None, 'S': 3.389699904100254e-09, 'F': 0.05043524573390982, 'L': 0.0, 'o': 0.0, 'm': 0.0, 'i': 0.0, 'n': 0.0, 'g': 0.0, 'A': None, 'R': None, 'I': 0.0, 'U': 0.038979676869328114, 'V': None, 'P': 0.0, 'C': None, 'K': 0.0, 'E': 0.0, 'W': 0.29996939576165554, 'Z': None, 'H': 0.0}
+2025-01-03 08:39:52,852 - WARNING - Missing prices for symbols: ['GMM', 'GMT', 'GNO', 'GNX', 'GNY', 'GOB', 'GODS', 'GOF', 'GOG', 'GOLD', 'Gomining', 'GONDOLA', 'GORILLA', 'GOU', 'GOVI', 'GPU', 'GRACY', 'GRG', 'GROK', 'GROYPER', 'GRT', 'GS', 'GSWAP', 'GSWIFT', 'GT', 'GTC', 'GUM', 'GUSD', 'GXT', 'GYD', 'GYEN', 'GZONE', 'HAI', 'HAKKA', 'HAN', 'HANA', 'HANDY', 'HAPI', 'HARD', 'HARRIS', 'HASHAI', 'HEART', 'HEGIC', 'HELLO', 'HEMULE', 'HEX', 'HEZ', 'HFT', 'HGET', 'HGOLD']. Skipping these symbols.
+2025-01-03 08:39:52,853 - WARNING - Skipping symbol GMM due to missing or invalid price.
+2025-01-03 08:39:52,854 - WARNING - Skipping symbol GMT due to missing or invalid price.
+2025-01-03 08:39:52,855 - WARNING - Skipping symbol GNO due to missing or invalid price.
+2025-01-03 08:39:52,856 - WARNING - Skipping symbol GNX due to missing or invalid price.
+2025-01-03 08:39:52,856 - WARNING - Skipping symbol GNY due to missing or invalid price.
+2025-01-03 08:39:52,857 - WARNING - Skipping symbol GOB due to missing or invalid price.
+2025-01-03 08:39:52,858 - WARNING - Skipping symbol GODS due to missing or invalid price.
+2025-01-03 08:39:52,858 - WARNING - Skipping symbol GOF due to missing or invalid price.
+2025-01-03 08:39:52,859 - WARNING - Skipping symbol GOG due to missing or invalid price.
+2025-01-03 08:39:52,859 - WARNING - Skipping symbol GOLD due to missing or invalid price.
+2025-01-03 08:39:52,860 - WARNING - Skipping symbol Gomining due to missing or invalid price.
+2025-01-03 08:39:52,861 - WARNING - Skipping symbol GONDOLA due to missing or invalid price.
+2025-01-03 08:39:52,861 - WARNING - Skipping symbol GORILLA due to missing or invalid price.
+2025-01-03 08:39:52,861 - WARNING - Skipping symbol GOU due to missing or invalid price.
+2025-01-03 08:39:52,862 - WARNING - Skipping symbol GOVI due to missing or invalid price.
+2025-01-03 08:39:52,862 - WARNING - Skipping symbol GPU due to missing or invalid price.
+2025-01-03 08:39:52,862 - WARNING - Skipping symbol GRACY due to missing or invalid price.
+2025-01-03 08:39:52,862 - WARNING - Skipping symbol GRG due to missing or invalid price.
+2025-01-03 08:39:52,863 - WARNING - Skipping symbol GROK due to missing or invalid price.
+2025-01-03 08:39:52,863 - WARNING - Skipping symbol GROYPER due to missing or invalid price.
+2025-01-03 08:39:52,863 - WARNING - Skipping symbol GRT due to missing or invalid price.
+2025-01-03 08:39:52,864 - WARNING - Skipping symbol GS due to missing or invalid price.
+2025-01-03 08:39:52,864 - WARNING - Skipping symbol GSWAP due to missing or invalid price.
+2025-01-03 08:39:52,864 - WARNING - Skipping symbol GSWIFT due to missing or invalid price.
+2025-01-03 08:39:52,864 - WARNING - Skipping symbol GT due to missing or invalid price.
+2025-01-03 08:39:52,865 - WARNING - Skipping symbol GTC due to missing or invalid price.
+2025-01-03 08:39:52,865 - WARNING - Skipping symbol GUM due to missing or invalid price.
+2025-01-03 08:39:52,865 - WARNING - Skipping symbol GUSD due to missing or invalid price.
+2025-01-03 08:39:52,866 - WARNING - Skipping symbol GXT due to missing or invalid price.
+2025-01-03 08:39:52,866 - WARNING - Skipping symbol GYD due to missing or invalid price.
+2025-01-03 08:39:52,866 - WARNING - Skipping symbol GYEN due to missing or invalid price.
+2025-01-03 08:39:52,866 - WARNING - Skipping symbol GZONE due to missing or invalid price.
+2025-01-03 08:39:52,866 - WARNING - Skipping symbol HAI due to missing or invalid price.
+2025-01-03 08:39:52,867 - WARNING - Skipping symbol HAKKA due to missing or invalid price.
+2025-01-03 08:39:52,867 - WARNING - Skipping symbol HAN due to missing or invalid price.
+2025-01-03 08:39:52,867 - WARNING - Skipping symbol HANA due to missing or invalid price.
+2025-01-03 08:39:52,867 - WARNING - Skipping symbol HANDY due to missing or invalid price.
+2025-01-03 08:39:52,867 - WARNING - Skipping symbol HAPI due to missing or invalid price.
+2025-01-03 08:39:52,867 - WARNING - Skipping symbol HARD due to missing or invalid price.
+2025-01-03 08:39:52,867 - WARNING - Skipping symbol HARRIS due to missing or invalid price.
+2025-01-03 08:39:52,868 - WARNING - Skipping symbol HASHAI due to missing or invalid price.
+2025-01-03 08:39:52,868 - WARNING - Skipping symbol HEART due to missing or invalid price.
+2025-01-03 08:39:52,868 - WARNING - Skipping symbol HEGIC due to missing or invalid price.
+2025-01-03 08:39:52,868 - WARNING - Skipping symbol HELLO due to missing or invalid price.
+2025-01-03 08:39:52,868 - WARNING - Skipping symbol HEMULE due to missing or invalid price.
+2025-01-03 08:39:52,868 - WARNING - Skipping symbol HEX due to missing or invalid price.
+2025-01-03 08:39:52,869 - WARNING - Skipping symbol HEZ due to missing or invalid price.
+2025-01-03 08:39:52,869 - WARNING - Skipping symbol HFT due to missing or invalid price.
+2025-01-03 08:39:52,869 - WARNING - Skipping symbol HGET due to missing or invalid price.
+2025-01-03 08:39:52,869 - WARNING - Skipping symbol HGOLD due to missing or invalid price.
+2025-01-03 08:39:52,869 - INFO - Fetching prices for batch: ['HI', 'HIFI', 'HIGH', 'HMQ', 'HMT', 'HOGE', 'HONK', 'HOPPY', 'HOPR', 'HORD', 'HOT', 'HOTCROSS', 'HOTKEY', 'HPO', 'HSF', 'HSK', 'HT', 'HUGE', 'HUNT', 'HUSD', 'HUSL', 'HVH', 'HYPC', 'HYVE', 'ICHI', 'ID', 'IDEX', 'IDIA', 'IDLE', 'IDRT', 'IDV', 'ILV', 'IMGNAI', 'IMPT', 'IMT', 'IMX', 'INDEX', 'INEX', 'INFRA', 'INJ', 'INNBC', 'INS', 'INSP', 'INST', 'INSUR', 'INV', 'INXT', 'IOEN', 'IOI', 'IPV']
+2025-01-03 08:39:52,870 - INFO - Fetching latest prices for symbols: HI,HIFI,HIGH,HMQ,HMT,HOGE,HONK,HOPPY,HOPR,HORD,HOT,HOTCROSS,HOTKEY,HPO,HSF,HSK,HT,HUGE,HUNT,HUSD,HUSL,HVH,HYPC,HYVE,ICHI,ID,IDEX,IDIA,IDLE,IDRT,IDV,ILV,IMGNAI,IMPT,IMT,IMX,INDEX,INEX,INFRA,INJ,INNBC,INS,INSP,INST,INSUR,INV,INXT,IOEN,IOI,IPV, convert: USD
+2025-01-03 08:39:52,871 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:53,064 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=H%2CI%2C%2C%2CH%2CI%2CF%2CI%2C%2C%2CH%2CI%2CG%2CH%2C%2C%2CH%2CM%2CQ%2C%2C%2CH%2CM%2CT%2C%2C%2CH%2CO%2CG%2CE%2C%2C%2CH%2CO%2CN%2CK%2C%2C%2CH%2CO%2CP%2CP%2CY%2C%2C%2CH%2CO%2CP%2CR%2C%2C%2CH%2CO%2CR%2CD%2C%2C%2CH%2CO%2CT%2C%2C%2CH%2CO%2CT%2CC%2CR%2CO%2CS%2CS%2C%2C%2CH%2CO%2CT%2CK%2CE%2CY%2C%2C%2CH%2CP%2CO%2C%2C%2CH%2CS%2CF%2C%2C%2CH%2CS%2CK%2C%2C%2CH%2CT%2C%2C%2CH%2CU%2CG%2CE%2C%2C%2CH%2CU%2CN%2CT%2C%2C%2CH%2CU%2CS%2CD%2C%2C%2CH%2CU%2CS%2CL%2C%2C%2CH%2CV%2CH%2C%2C%2CH%2CY%2CP%2CC%2C%2C%2CH%2CY%2CV%2CE%2C%2C%2CI%2CC%2CH%2CI%2C%2C%2CI%2CD%2C%2C%2CI%2CD%2CE%2CX%2C%2C%2CI%2CD%2CI%2CA%2C%2C%2CI%2CD%2CL%2CE%2C%2C%2CI%2CD%2CR%2CT%2C%2C%2CI%2CD%2CV%2C%2C%2CI%2CL%2CV%2C%2C%2CI%2CM%2CG%2CN%2CA%2CI%2C%2C%2CI%2CM%2CP%2CT%2C%2C%2CI%2CM%2CT%2C%2C%2CI%2CM%2CX%2C%2C%2CI%2CN%2CD%2CE%2CX%2C%2C%2CI%2CN%2CE%2CX%2C%2C%2CI%2CN%2CF%2CR%2CA%2C%2C%2CI%2CN%2CJ%2C%2C%2CI%2CN%2CN%2CB%2CC%2C%2C%2CI%2CN%2CS%2C%2C%2CI%2CN%2CS%2CP%2C%2C%2CI%2CN%2CS%2CT%2C%2C%2CI%2CN%2CS%2CU%2CR%2C%2C%2CI%2CN%2CV%2C%2C%2CI%2CN%2CX%2CT%2C%2C%2CI%2CO%2CE%2CN%2C%2C%2CI%2CO%2CI%2C%2C%2CI%2CP%2CV&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:53,066 - INFO - Prices fetched successfully: {'H': 0.0, 'I': 0.0, ',': 0.0, 'F': 0.05043524573390982, 'G': 0.030613887273570606, 'M': 0.001639275849766676, 'Q': None, 'T': 0.02746997350000764, 'O': 0.996770634789183, 'E': 0.0, 'N': None, 'K': 0.0, 'P': 0.0, 'Y': 0.0, 'R': None, 'D': None, 'C': None, 'S': 3.389699904100254e-09, 'U': 0.038979676869328114, 'L': 0.0, 'V': None, 'X': 0.0001540851022979559, 'A': None, 'J': None, 'B': 0.0}
+2025-01-03 08:39:54,067 - WARNING - Missing prices for symbols: ['HI', 'HIFI', 'HIGH', 'HMQ', 'HMT', 'HOGE', 'HONK', 'HOPPY', 'HOPR', 'HORD', 'HOT', 'HOTCROSS', 'HOTKEY', 'HPO', 'HSF', 'HSK', 'HT', 'HUGE', 'HUNT', 'HUSD', 'HUSL', 'HVH', 'HYPC', 'HYVE', 'ICHI', 'ID', 'IDEX', 'IDIA', 'IDLE', 'IDRT', 'IDV', 'ILV', 'IMGNAI', 'IMPT', 'IMT', 'IMX', 'INDEX', 'INEX', 'INFRA', 'INJ', 'INNBC', 'INS', 'INSP', 'INST', 'INSUR', 'INV', 'INXT', 'IOEN', 'IOI', 'IPV']. Skipping these symbols.
+2025-01-03 08:39:54,068 - WARNING - Skipping symbol HI due to missing or invalid price.
+2025-01-03 08:39:54,068 - WARNING - Skipping symbol HIFI due to missing or invalid price.
+2025-01-03 08:39:54,069 - WARNING - Skipping symbol HIGH due to missing or invalid price.
+2025-01-03 08:39:54,069 - WARNING - Skipping symbol HMQ due to missing or invalid price.
+2025-01-03 08:39:54,070 - WARNING - Skipping symbol HMT due to missing or invalid price.
+2025-01-03 08:39:54,070 - WARNING - Skipping symbol HOGE due to missing or invalid price.
+2025-01-03 08:39:54,070 - WARNING - Skipping symbol HONK due to missing or invalid price.
+2025-01-03 08:39:54,071 - WARNING - Skipping symbol HOPPY due to missing or invalid price.
+2025-01-03 08:39:54,071 - WARNING - Skipping symbol HOPR due to missing or invalid price.
+2025-01-03 08:39:54,071 - WARNING - Skipping symbol HORD due to missing or invalid price.
+2025-01-03 08:39:54,072 - WARNING - Skipping symbol HOT due to missing or invalid price.
+2025-01-03 08:39:54,072 - WARNING - Skipping symbol HOTCROSS due to missing or invalid price.
+2025-01-03 08:39:54,072 - WARNING - Skipping symbol HOTKEY due to missing or invalid price.
+2025-01-03 08:39:54,072 - WARNING - Skipping symbol HPO due to missing or invalid price.
+2025-01-03 08:39:54,072 - WARNING - Skipping symbol HSF due to missing or invalid price.
+2025-01-03 08:39:54,072 - WARNING - Skipping symbol HSK due to missing or invalid price.
+2025-01-03 08:39:54,073 - WARNING - Skipping symbol HT due to missing or invalid price.
+2025-01-03 08:39:54,073 - WARNING - Skipping symbol HUGE due to missing or invalid price.
+2025-01-03 08:39:54,073 - WARNING - Skipping symbol HUNT due to missing or invalid price.
+2025-01-03 08:39:54,073 - WARNING - Skipping symbol HUSD due to missing or invalid price.
+2025-01-03 08:39:54,073 - WARNING - Skipping symbol HUSL due to missing or invalid price.
+2025-01-03 08:39:54,074 - WARNING - Skipping symbol HVH due to missing or invalid price.
+2025-01-03 08:39:54,074 - WARNING - Skipping symbol HYPC due to missing or invalid price.
+2025-01-03 08:39:54,074 - WARNING - Skipping symbol HYVE due to missing or invalid price.
+2025-01-03 08:39:54,074 - WARNING - Skipping symbol ICHI due to missing or invalid price.
+2025-01-03 08:39:54,074 - WARNING - Skipping symbol ID due to missing or invalid price.
+2025-01-03 08:39:54,074 - WARNING - Skipping symbol IDEX due to missing or invalid price.
+2025-01-03 08:39:54,074 - WARNING - Skipping symbol IDIA due to missing or invalid price.
+2025-01-03 08:39:54,074 - WARNING - Skipping symbol IDLE due to missing or invalid price.
+2025-01-03 08:39:54,075 - WARNING - Skipping symbol IDRT due to missing or invalid price.
+2025-01-03 08:39:54,075 - WARNING - Skipping symbol IDV due to missing or invalid price.
+2025-01-03 08:39:54,075 - WARNING - Skipping symbol ILV due to missing or invalid price.
+2025-01-03 08:39:54,075 - WARNING - Skipping symbol IMGNAI due to missing or invalid price.
+2025-01-03 08:39:54,075 - WARNING - Skipping symbol IMPT due to missing or invalid price.
+2025-01-03 08:39:54,075 - WARNING - Skipping symbol IMT due to missing or invalid price.
+2025-01-03 08:39:54,076 - WARNING - Skipping symbol IMX due to missing or invalid price.
+2025-01-03 08:39:54,076 - WARNING - Skipping symbol INDEX due to missing or invalid price.
+2025-01-03 08:39:54,076 - WARNING - Skipping symbol INEX due to missing or invalid price.
+2025-01-03 08:39:54,076 - WARNING - Skipping symbol INFRA due to missing or invalid price.
+2025-01-03 08:39:54,076 - WARNING - Skipping symbol INJ due to missing or invalid price.
+2025-01-03 08:39:54,077 - WARNING - Skipping symbol INNBC due to missing or invalid price.
+2025-01-03 08:39:54,077 - WARNING - Skipping symbol INS due to missing or invalid price.
+2025-01-03 08:39:54,077 - WARNING - Skipping symbol INSP due to missing or invalid price.
+2025-01-03 08:39:54,077 - WARNING - Skipping symbol INST due to missing or invalid price.
+2025-01-03 08:39:54,077 - WARNING - Skipping symbol INSUR due to missing or invalid price.
+2025-01-03 08:39:54,077 - WARNING - Skipping symbol INV due to missing or invalid price.
+2025-01-03 08:39:54,078 - WARNING - Skipping symbol INXT due to missing or invalid price.
+2025-01-03 08:39:54,078 - WARNING - Skipping symbol IOEN due to missing or invalid price.
+2025-01-03 08:39:54,078 - WARNING - Skipping symbol IOI due to missing or invalid price.
+2025-01-03 08:39:54,078 - WARNING - Skipping symbol IPV due to missing or invalid price.
+2025-01-03 08:39:54,078 - INFO - Fetching prices for batch: ['IQ', 'IQT', 'ISEC', 'ISIKC', 'ISK', 'ISP', 'ITGR', 'IXS', 'IZI', 'IZZY', 'JAM', 'JANET', 'JASMY', 'JENNER', 'JESUS', 'JET', 'JFIN', 'JGN', 'JMPT', 'JNB', 'JOB', 'JOE', 'JRT', 'JSM', 'K21', 'KAI', 'KAMPAY', 'KAN', 'KANGAL', 'KARATE', 'KARRAT', 'KATA', 'KAVA', 'KCS', 'KCT', 'KDAG', 'KEEP', 'KEKE', 'KEKEC', 'KENDU', 'KEY', 'KEYFI', 'KFT', 'KIBSHI', 'KINE', 'KING', 'KISHU', 'KLAUS', 'KNC', 'KNDX']
+2025-01-03 08:39:54,078 - INFO - Fetching latest prices for symbols: IQ,IQT,ISEC,ISIKC,ISK,ISP,ITGR,IXS,IZI,IZZY,JAM,JANET,JASMY,JENNER,JESUS,JET,JFIN,JGN,JMPT,JNB,JOB,JOE,JRT,JSM,K21,KAI,KAMPAY,KAN,KANGAL,KARATE,KARRAT,KATA,KAVA,KCS,KCT,KDAG,KEEP,KEKE,KEKEC,KENDU,KEY,KEYFI,KFT,KIBSHI,KINE,KING,KISHU,KLAUS,KNC,KNDX, convert: USD
+2025-01-03 08:39:54,080 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:54,261 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=I%2CQ%2C%2C%2CI%2CQ%2CT%2C%2C%2CI%2CS%2CE%2CC%2C%2C%2CI%2CS%2CI%2CK%2CC%2C%2C%2CI%2CS%2CK%2C%2C%2CI%2CS%2CP%2C%2C%2CI%2CT%2CG%2CR%2C%2C%2CI%2CX%2CS%2C%2C%2CI%2CZ%2CI%2C%2C%2CI%2CZ%2CZ%2CY%2C%2C%2CJ%2CA%2CM%2C%2C%2CJ%2CA%2CN%2CE%2CT%2C%2C%2CJ%2CA%2CS%2CM%2CY%2C%2C%2CJ%2CE%2CN%2CN%2CE%2CR%2C%2C%2CJ%2CE%2CS%2CU%2CS%2C%2C%2CJ%2CE%2CT%2C%2C%2CJ%2CF%2CI%2CN%2C%2C%2CJ%2CG%2CN%2C%2C%2CJ%2CM%2CP%2CT%2C%2C%2CJ%2CN%2CB%2C%2C%2CJ%2CO%2CB%2C%2C%2CJ%2CO%2CE%2C%2C%2CJ%2CR%2CT%2C%2C%2CJ%2CS%2CM%2C%2C%2CK%2C2%2C1%2C%2C%2CK%2CA%2CI%2C%2C%2CK%2CA%2CM%2CP%2CA%2CY%2C%2C%2CK%2CA%2CN%2C%2C%2CK%2CA%2CN%2CG%2CA%2CL%2C%2C%2CK%2CA%2CR%2CA%2CT%2CE%2C%2C%2CK%2CA%2CR%2CR%2CA%2CT%2C%2C%2CK%2CA%2CT%2CA%2C%2C%2CK%2CA%2CV%2CA%2C%2C%2CK%2CC%2CS%2C%2C%2CK%2CC%2CT%2C%2C%2CK%2CD%2CA%2CG%2C%2C%2CK%2CE%2CE%2CP%2C%2C%2CK%2CE%2CK%2CE%2C%2C%2CK%2CE%2CK%2CE%2CC%2C%2C%2CK%2CE%2CN%2CD%2CU%2C%2C%2CK%2CE%2CY%2C%2C%2CK%2CE%2CY%2CF%2CI%2C%2C%2CK%2CF%2CT%2C%2C%2CK%2CI%2CB%2CS%2CH%2CI%2C%2C%2CK%2CI%2CN%2CE%2C%2C%2CK%2CI%2CN%2CG%2C%2C%2CK%2CI%2CS%2CH%2CU%2C%2C%2CK%2CL%2CA%2CU%2CS%2C%2C%2CK%2CN%2CC%2C%2C%2CK%2CN%2CD%2CX&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:54,264 - INFO - Prices fetched successfully: {'I': 0.0, 'Q': None, ',': 0.0, 'T': 0.02746997350000764, 'S': 3.389699904100254e-09, 'E': 0.0, 'C': None, 'K': 0.0, 'P': 0.0, 'G': 0.030613887273570606, 'R': None, 'X': 0.0001540851022979559, 'Z': None, 'Y': 0.0, 'J': None, 'A': None, 'M': 0.001639275849766676, 'N': None, 'U': 0.038979676869328114, 'F': 0.05043524573390982, 'B': 0.0, 'O': 0.996770634789183, '2': 0.0, '1': 0.0, 'L': 0.0, 'V': None, 'D': None, 'H': 0.0}
+2025-01-03 08:39:55,265 - WARNING - Missing prices for symbols: ['IQ', 'IQT', 'ISEC', 'ISIKC', 'ISK', 'ISP', 'ITGR', 'IXS', 'IZI', 'IZZY', 'JAM', 'JANET', 'JASMY', 'JENNER', 'JESUS', 'JET', 'JFIN', 'JGN', 'JMPT', 'JNB', 'JOB', 'JOE', 'JRT', 'JSM', 'K21', 'KAI', 'KAMPAY', 'KAN', 'KANGAL', 'KARATE', 'KARRAT', 'KATA', 'KAVA', 'KCS', 'KCT', 'KDAG', 'KEEP', 'KEKE', 'KEKEC', 'KENDU', 'KEY', 'KEYFI', 'KFT', 'KIBSHI', 'KINE', 'KING', 'KISHU', 'KLAUS', 'KNC', 'KNDX']. Skipping these symbols.
+2025-01-03 08:39:55,265 - WARNING - Skipping symbol IQ due to missing or invalid price.
+2025-01-03 08:39:55,265 - WARNING - Skipping symbol IQT due to missing or invalid price.
+2025-01-03 08:39:55,265 - WARNING - Skipping symbol ISEC due to missing or invalid price.
+2025-01-03 08:39:55,266 - WARNING - Skipping symbol ISIKC due to missing or invalid price.
+2025-01-03 08:39:55,266 - WARNING - Skipping symbol ISK due to missing or invalid price.
+2025-01-03 08:39:55,266 - WARNING - Skipping symbol ISP due to missing or invalid price.
+2025-01-03 08:39:55,266 - WARNING - Skipping symbol ITGR due to missing or invalid price.
+2025-01-03 08:39:55,266 - WARNING - Skipping symbol IXS due to missing or invalid price.
+2025-01-03 08:39:55,266 - WARNING - Skipping symbol IZI due to missing or invalid price.
+2025-01-03 08:39:55,267 - WARNING - Skipping symbol IZZY due to missing or invalid price.
+2025-01-03 08:39:55,267 - WARNING - Skipping symbol JAM due to missing or invalid price.
+2025-01-03 08:39:55,267 - WARNING - Skipping symbol JANET due to missing or invalid price.
+2025-01-03 08:39:55,267 - WARNING - Skipping symbol JASMY due to missing or invalid price.
+2025-01-03 08:39:55,267 - WARNING - Skipping symbol JENNER due to missing or invalid price.
+2025-01-03 08:39:55,267 - WARNING - Skipping symbol JESUS due to missing or invalid price.
+2025-01-03 08:39:55,268 - WARNING - Skipping symbol JET due to missing or invalid price.
+2025-01-03 08:39:55,268 - WARNING - Skipping symbol JFIN due to missing or invalid price.
+2025-01-03 08:39:55,268 - WARNING - Skipping symbol JGN due to missing or invalid price.
+2025-01-03 08:39:55,268 - WARNING - Skipping symbol JMPT due to missing or invalid price.
+2025-01-03 08:39:55,268 - WARNING - Skipping symbol JNB due to missing or invalid price.
+2025-01-03 08:39:55,268 - WARNING - Skipping symbol JOB due to missing or invalid price.
+2025-01-03 08:39:55,268 - WARNING - Skipping symbol JOE due to missing or invalid price.
+2025-01-03 08:39:55,268 - WARNING - Skipping symbol JRT due to missing or invalid price.
+2025-01-03 08:39:55,269 - WARNING - Skipping symbol JSM due to missing or invalid price.
+2025-01-03 08:39:55,269 - WARNING - Skipping symbol K21 due to missing or invalid price.
+2025-01-03 08:39:55,269 - WARNING - Skipping symbol KAI due to missing or invalid price.
+2025-01-03 08:39:55,269 - WARNING - Skipping symbol KAMPAY due to missing or invalid price.
+2025-01-03 08:39:55,269 - WARNING - Skipping symbol KAN due to missing or invalid price.
+2025-01-03 08:39:55,269 - WARNING - Skipping symbol KANGAL due to missing or invalid price.
+2025-01-03 08:39:55,269 - WARNING - Skipping symbol KARATE due to missing or invalid price.
+2025-01-03 08:39:55,269 - WARNING - Skipping symbol KARRAT due to missing or invalid price.
+2025-01-03 08:39:55,270 - WARNING - Skipping symbol KATA due to missing or invalid price.
+2025-01-03 08:39:55,270 - WARNING - Skipping symbol KAVA due to missing or invalid price.
+2025-01-03 08:39:55,270 - WARNING - Skipping symbol KCS due to missing or invalid price.
+2025-01-03 08:39:55,270 - WARNING - Skipping symbol KCT due to missing or invalid price.
+2025-01-03 08:39:55,270 - WARNING - Skipping symbol KDAG due to missing or invalid price.
+2025-01-03 08:39:55,270 - WARNING - Skipping symbol KEEP due to missing or invalid price.
+2025-01-03 08:39:55,270 - WARNING - Skipping symbol KEKE due to missing or invalid price.
+2025-01-03 08:39:55,270 - WARNING - Skipping symbol KEKEC due to missing or invalid price.
+2025-01-03 08:39:55,271 - WARNING - Skipping symbol KENDU due to missing or invalid price.
+2025-01-03 08:39:55,271 - WARNING - Skipping symbol KEY due to missing or invalid price.
+2025-01-03 08:39:55,271 - WARNING - Skipping symbol KEYFI due to missing or invalid price.
+2025-01-03 08:39:55,271 - WARNING - Skipping symbol KFT due to missing or invalid price.
+2025-01-03 08:39:55,271 - WARNING - Skipping symbol KIBSHI due to missing or invalid price.
+2025-01-03 08:39:55,271 - WARNING - Skipping symbol KINE due to missing or invalid price.
+2025-01-03 08:39:55,271 - WARNING - Skipping symbol KING due to missing or invalid price.
+2025-01-03 08:39:55,271 - WARNING - Skipping symbol KISHU due to missing or invalid price.
+2025-01-03 08:39:55,272 - WARNING - Skipping symbol KLAUS due to missing or invalid price.
+2025-01-03 08:39:55,272 - WARNING - Skipping symbol KNC due to missing or invalid price.
+2025-01-03 08:39:55,272 - WARNING - Skipping symbol KNDX due to missing or invalid price.
+2025-01-03 08:39:55,272 - INFO - Fetching prices for batch: ['KNINE', 'KOAI', 'KOK', 'KOLZ', 'KOMPETE', 'KONO', 'KP3R', 'KRL', 'KROM', 'KRW', 'KTN', 'KTON', 'KTT', 'KUV', 'KYL', 'KZEN', 'L2', 'L3', 'LA', 'LADYS', 'LAI', 'LAIKA', 'LAMB', 'LAND', 'LAYER', 'LBK', 'LBL', 'LBP', 'LBR', 'LCX', 'LDO', 'LEAD', 'LEASH', 'LEDGER', 'LEMON', 'LEO', 'LEVER', 'LFDOG', 'LGCY', 'LIF3', 'LIFE', 'LINA', 'LINK', 'LINKA', 'LIT', 'LITH', 'LIZ', 'LKR', 'LL', 'LM']
+2025-01-03 08:39:55,272 - INFO - Fetching latest prices for symbols: KNINE,KOAI,KOK,KOLZ,KOMPETE,KONO,KP3R,KRL,KROM,KRW,KTN,KTON,KTT,KUV,KYL,KZEN,L2,L3,LA,LADYS,LAI,LAIKA,LAMB,LAND,LAYER,LBK,LBL,LBP,LBR,LCX,LDO,LEAD,LEASH,LEDGER,LEMON,LEO,LEVER,LFDOG,LGCY,LIF3,LIFE,LINA,LINK,LINKA,LIT,LITH,LIZ,LKR,LL,LM, convert: USD
+2025-01-03 08:39:55,274 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:55,713 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=K%2CN%2CI%2CN%2CE%2C%2C%2CK%2CO%2CA%2CI%2C%2C%2CK%2CO%2CK%2C%2C%2CK%2CO%2CL%2CZ%2C%2C%2CK%2CO%2CM%2CP%2CE%2CT%2CE%2C%2C%2CK%2CO%2CN%2CO%2C%2C%2CK%2CP%2C3%2CR%2C%2C%2CK%2CR%2CL%2C%2C%2CK%2CR%2CO%2CM%2C%2C%2CK%2CR%2CW%2C%2C%2CK%2CT%2CN%2C%2C%2CK%2CT%2CO%2CN%2C%2C%2CK%2CT%2CT%2C%2C%2CK%2CU%2CV%2C%2C%2CK%2CY%2CL%2C%2C%2CK%2CZ%2CE%2CN%2C%2C%2CL%2C2%2C%2C%2CL%2C3%2C%2C%2CL%2CA%2C%2C%2CL%2CA%2CD%2CY%2CS%2C%2C%2CL%2CA%2CI%2C%2C%2CL%2CA%2CI%2CK%2CA%2C%2C%2CL%2CA%2CM%2CB%2C%2C%2CL%2CA%2CN%2CD%2C%2C%2CL%2CA%2CY%2CE%2CR%2C%2C%2CL%2CB%2CK%2C%2C%2CL%2CB%2CL%2C%2C%2CL%2CB%2CP%2C%2C%2CL%2CB%2CR%2C%2C%2CL%2CC%2CX%2C%2C%2CL%2CD%2CO%2C%2C%2CL%2CE%2CA%2CD%2C%2C%2CL%2CE%2CA%2CS%2CH%2C%2C%2CL%2CE%2CD%2CG%2CE%2CR%2C%2C%2CL%2CE%2CM%2CO%2CN%2C%2C%2CL%2CE%2CO%2C%2C%2CL%2CE%2CV%2CE%2CR%2C%2C%2CL%2CF%2CD%2CO%2CG%2C%2C%2CL%2CG%2CC%2CY%2C%2C%2CL%2CI%2CF%2C3%2C%2C%2CL%2CI%2CF%2CE%2C%2C%2CL%2CI%2CN%2CA%2C%2C%2CL%2CI%2CN%2CK%2C%2C%2CL%2CI%2CN%2CK%2CA%2C%2C%2CL%2CI%2CT%2C%2C%2CL%2CI%2CT%2CH%2C%2C%2CL%2CI%2CZ%2C%2C%2CL%2CK%2CR%2C%2C%2CL%2CL%2C%2C%2CL%2CM&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:55,715 - INFO - Prices fetched successfully: {'K': 0.0, 'N': None, 'I': 0.0, 'E': 0.0, ',': 0.0, 'O': 0.996770634789183, 'A': None, 'L': 0.0, 'Z': None, 'M': 0.001639275849766676, 'P': 0.0, 'T': 0.02746997350000764, '3': 1.5148327885198476e-05, 'R': None, 'W': 0.29996939576165554, 'U': 0.038979676869328114, 'V': None, 'Y': 0.0, '2': 0.0, 'D': None, 'S': 3.389699904100254e-09, 'B': 0.0, 'C': None, 'X': 0.0001540851022979559, 'H': 0.0, 'G': 0.030613887273570606, 'F': 0.05043524573390982}
+2025-01-03 08:39:56,716 - WARNING - Missing prices for symbols: ['KNINE', 'KOAI', 'KOK', 'KOLZ', 'KOMPETE', 'KONO', 'KP3R', 'KRL', 'KROM', 'KRW', 'KTN', 'KTON', 'KTT', 'KUV', 'KYL', 'KZEN', 'L2', 'L3', 'LA', 'LADYS', 'LAI', 'LAIKA', 'LAMB', 'LAND', 'LAYER', 'LBK', 'LBL', 'LBP', 'LBR', 'LCX', 'LDO', 'LEAD', 'LEASH', 'LEDGER', 'LEMON', 'LEO', 'LEVER', 'LFDOG', 'LGCY', 'LIF3', 'LIFE', 'LINA', 'LINK', 'LINKA', 'LIT', 'LITH', 'LIZ', 'LKR', 'LL', 'LM']. Skipping these symbols.
+2025-01-03 08:39:56,717 - WARNING - Skipping symbol KNINE due to missing or invalid price.
+2025-01-03 08:39:56,717 - WARNING - Skipping symbol KOAI due to missing or invalid price.
+2025-01-03 08:39:56,718 - WARNING - Skipping symbol KOK due to missing or invalid price.
+2025-01-03 08:39:56,718 - WARNING - Skipping symbol KOLZ due to missing or invalid price.
+2025-01-03 08:39:56,718 - WARNING - Skipping symbol KOMPETE due to missing or invalid price.
+2025-01-03 08:39:56,719 - WARNING - Skipping symbol KONO due to missing or invalid price.
+2025-01-03 08:39:56,719 - WARNING - Skipping symbol KP3R due to missing or invalid price.
+2025-01-03 08:39:56,719 - WARNING - Skipping symbol KRL due to missing or invalid price.
+2025-01-03 08:39:56,720 - WARNING - Skipping symbol KROM due to missing or invalid price.
+2025-01-03 08:39:56,720 - WARNING - Skipping symbol KRW due to missing or invalid price.
+2025-01-03 08:39:56,720 - WARNING - Skipping symbol KTN due to missing or invalid price.
+2025-01-03 08:39:56,720 - WARNING - Skipping symbol KTON due to missing or invalid price.
+2025-01-03 08:39:56,721 - WARNING - Skipping symbol KTT due to missing or invalid price.
+2025-01-03 08:39:56,721 - WARNING - Skipping symbol KUV due to missing or invalid price.
+2025-01-03 08:39:56,721 - WARNING - Skipping symbol KYL due to missing or invalid price.
+2025-01-03 08:39:56,721 - WARNING - Skipping symbol KZEN due to missing or invalid price.
+2025-01-03 08:39:56,721 - WARNING - Skipping symbol L2 due to missing or invalid price.
+2025-01-03 08:39:56,721 - WARNING - Skipping symbol L3 due to missing or invalid price.
+2025-01-03 08:39:56,721 - WARNING - Skipping symbol LA due to missing or invalid price.
+2025-01-03 08:39:56,722 - WARNING - Skipping symbol LADYS due to missing or invalid price.
+2025-01-03 08:39:56,722 - WARNING - Skipping symbol LAI due to missing or invalid price.
+2025-01-03 08:39:56,722 - WARNING - Skipping symbol LAIKA due to missing or invalid price.
+2025-01-03 08:39:56,722 - WARNING - Skipping symbol LAMB due to missing or invalid price.
+2025-01-03 08:39:56,722 - WARNING - Skipping symbol LAND due to missing or invalid price.
+2025-01-03 08:39:56,722 - WARNING - Skipping symbol LAYER due to missing or invalid price.
+2025-01-03 08:39:56,722 - WARNING - Skipping symbol LBK due to missing or invalid price.
+2025-01-03 08:39:56,723 - WARNING - Skipping symbol LBL due to missing or invalid price.
+2025-01-03 08:39:56,723 - WARNING - Skipping symbol LBP due to missing or invalid price.
+2025-01-03 08:39:56,723 - WARNING - Skipping symbol LBR due to missing or invalid price.
+2025-01-03 08:39:56,723 - WARNING - Skipping symbol LCX due to missing or invalid price.
+2025-01-03 08:39:56,723 - WARNING - Skipping symbol LDO due to missing or invalid price.
+2025-01-03 08:39:56,724 - WARNING - Skipping symbol LEAD due to missing or invalid price.
+2025-01-03 08:39:56,724 - WARNING - Skipping symbol LEASH due to missing or invalid price.
+2025-01-03 08:39:56,724 - WARNING - Skipping symbol LEDGER due to missing or invalid price.
+2025-01-03 08:39:56,724 - WARNING - Skipping symbol LEMON due to missing or invalid price.
+2025-01-03 08:39:56,725 - WARNING - Skipping symbol LEO due to missing or invalid price.
+2025-01-03 08:39:56,725 - WARNING - Skipping symbol LEVER due to missing or invalid price.
+2025-01-03 08:39:56,725 - WARNING - Skipping symbol LFDOG due to missing or invalid price.
+2025-01-03 08:39:56,725 - WARNING - Skipping symbol LGCY due to missing or invalid price.
+2025-01-03 08:39:56,725 - WARNING - Skipping symbol LIF3 due to missing or invalid price.
+2025-01-03 08:39:56,725 - WARNING - Skipping symbol LIFE due to missing or invalid price.
+2025-01-03 08:39:56,726 - WARNING - Skipping symbol LINA due to missing or invalid price.
+2025-01-03 08:39:56,726 - WARNING - Skipping symbol LINK due to missing or invalid price.
+2025-01-03 08:39:56,726 - WARNING - Skipping symbol LINKA due to missing or invalid price.
+2025-01-03 08:39:56,726 - WARNING - Skipping symbol LIT due to missing or invalid price.
+2025-01-03 08:39:56,726 - WARNING - Skipping symbol LITH due to missing or invalid price.
+2025-01-03 08:39:56,727 - WARNING - Skipping symbol LIZ due to missing or invalid price.
+2025-01-03 08:39:56,727 - WARNING - Skipping symbol LKR due to missing or invalid price.
+2025-01-03 08:39:56,727 - WARNING - Skipping symbol LL due to missing or invalid price.
+2025-01-03 08:39:56,727 - WARNING - Skipping symbol LM due to missing or invalid price.
+2025-01-03 08:39:56,728 - INFO - Fetching prices for batch: ['LMEOW', 'LMR', 'LMWR', 'LNC', 'LNDX', 'LNQ', 'LOCG', 'LOCK', 'LOCUS', 'LOGX', 'LOKA', 'LON', 'LOOKS', 'LOOM', 'LOOT', 'LORDS', 'LOVELY', 'LOWB', 'LPM', 'LPOOL', 'LPT', 'LQTY', 'LRC', 'LRDS', 'LSS', 'LTD', 'LTT', 'LTX', 'LUFFY', 'LUSD', 'LYM', 'LYRA', 'M87', 'MAGA', 'MAGAA', 'MAGIC', 'MAHA', 'MAK', 'MANA', 'MANC', 'MAO', 'MAPS', 'MARS', 'MARS4', 'MARSH', 'MARVIN', 'MASA', 'MASK', 'MASQ', 'MATH']
+2025-01-03 08:39:56,728 - INFO - Fetching latest prices for symbols: LMEOW,LMR,LMWR,LNC,LNDX,LNQ,LOCG,LOCK,LOCUS,LOGX,LOKA,LON,LOOKS,LOOM,LOOT,LORDS,LOVELY,LOWB,LPM,LPOOL,LPT,LQTY,LRC,LRDS,LSS,LTD,LTT,LTX,LUFFY,LUSD,LYM,LYRA,M87,MAGA,MAGAA,MAGIC,MAHA,MAK,MANA,MANC,MAO,MAPS,MARS,MARS4,MARSH,MARVIN,MASA,MASK,MASQ,MATH, convert: USD
+2025-01-03 08:39:56,729 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:56,912 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=L%2CM%2CE%2CO%2CW%2C%2C%2CL%2CM%2CR%2C%2C%2CL%2CM%2CW%2CR%2C%2C%2CL%2CN%2CC%2C%2C%2CL%2CN%2CD%2CX%2C%2C%2CL%2CN%2CQ%2C%2C%2CL%2CO%2CC%2CG%2C%2C%2CL%2CO%2CC%2CK%2C%2C%2CL%2CO%2CC%2CU%2CS%2C%2C%2CL%2CO%2CG%2CX%2C%2C%2CL%2CO%2CK%2CA%2C%2C%2CL%2CO%2CN%2C%2C%2CL%2CO%2CO%2CK%2CS%2C%2C%2CL%2CO%2CO%2CM%2C%2C%2CL%2CO%2CO%2CT%2C%2C%2CL%2CO%2CR%2CD%2CS%2C%2C%2CL%2CO%2CV%2CE%2CL%2CY%2C%2C%2CL%2CO%2CW%2CB%2C%2C%2CL%2CP%2CM%2C%2C%2CL%2CP%2CO%2CO%2CL%2C%2C%2CL%2CP%2CT%2C%2C%2CL%2CQ%2CT%2CY%2C%2C%2CL%2CR%2CC%2C%2C%2CL%2CR%2CD%2CS%2C%2C%2CL%2CS%2CS%2C%2C%2CL%2CT%2CD%2C%2C%2CL%2CT%2CT%2C%2C%2CL%2CT%2CX%2C%2C%2CL%2CU%2CF%2CF%2CY%2C%2C%2CL%2CU%2CS%2CD%2C%2C%2CL%2CY%2CM%2C%2C%2CL%2CY%2CR%2CA%2C%2C%2CM%2C8%2C7%2C%2C%2CM%2CA%2CG%2CA%2C%2C%2CM%2CA%2CG%2CA%2CA%2C%2C%2CM%2CA%2CG%2CI%2CC%2C%2C%2CM%2CA%2CH%2CA%2C%2C%2CM%2CA%2CK%2C%2C%2CM%2CA%2CN%2CA%2C%2C%2CM%2CA%2CN%2CC%2C%2C%2CM%2CA%2CO%2C%2C%2CM%2CA%2CP%2CS%2C%2C%2CM%2CA%2CR%2CS%2C%2C%2CM%2CA%2CR%2CS%2C4%2C%2C%2CM%2CA%2CR%2CS%2CH%2C%2C%2CM%2CA%2CR%2CV%2CI%2CN%2C%2C%2CM%2CA%2CS%2CA%2C%2C%2CM%2CA%2CS%2CK%2C%2C%2CM%2CA%2CS%2CQ%2C%2C%2CM%2CA%2CT%2CH&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:56,915 - INFO - Prices fetched successfully: {'L': 0.0, 'M': 0.001639275849766676, 'E': 0.0, 'O': 0.996770634789183, 'W': 0.29996939576165554, ',': 0.0, 'R': None, 'N': None, 'C': None, 'D': None, 'X': 0.0001540851022979559, 'Q': None, 'G': 0.030613887273570606, 'K': 0.0, 'U': 0.038979676869328114, 'S': 3.389699904100254e-09, 'A': None, 'T': 0.02746997350000764, 'V': None, 'Y': 0.0, 'B': 0.0, 'P': 0.0, 'F': 0.05043524573390982, '8': 0.0, '7': 0.008200555454692088, 'I': 0.0, 'H': 0.0, '4': 0.0}
+2025-01-03 08:39:57,917 - WARNING - Missing prices for symbols: ['LMEOW', 'LMR', 'LMWR', 'LNC', 'LNDX', 'LNQ', 'LOCG', 'LOCK', 'LOCUS', 'LOGX', 'LOKA', 'LON', 'LOOKS', 'LOOM', 'LOOT', 'LORDS', 'LOVELY', 'LOWB', 'LPM', 'LPOOL', 'LPT', 'LQTY', 'LRC', 'LRDS', 'LSS', 'LTD', 'LTT', 'LTX', 'LUFFY', 'LUSD', 'LYM', 'LYRA', 'M87', 'MAGA', 'MAGAA', 'MAGIC', 'MAHA', 'MAK', 'MANA', 'MANC', 'MAO', 'MAPS', 'MARS', 'MARS4', 'MARSH', 'MARVIN', 'MASA', 'MASK', 'MASQ', 'MATH']. Skipping these symbols.
+2025-01-03 08:39:57,918 - WARNING - Skipping symbol LMEOW due to missing or invalid price.
+2025-01-03 08:39:57,918 - WARNING - Skipping symbol LMR due to missing or invalid price.
+2025-01-03 08:39:57,919 - WARNING - Skipping symbol LMWR due to missing or invalid price.
+2025-01-03 08:39:57,919 - WARNING - Skipping symbol LNC due to missing or invalid price.
+2025-01-03 08:39:57,920 - WARNING - Skipping symbol LNDX due to missing or invalid price.
+2025-01-03 08:39:57,920 - WARNING - Skipping symbol LNQ due to missing or invalid price.
+2025-01-03 08:39:57,921 - WARNING - Skipping symbol LOCG due to missing or invalid price.
+2025-01-03 08:39:57,921 - WARNING - Skipping symbol LOCK due to missing or invalid price.
+2025-01-03 08:39:57,922 - WARNING - Skipping symbol LOCUS due to missing or invalid price.
+2025-01-03 08:39:57,923 - WARNING - Skipping symbol LOGX due to missing or invalid price.
+2025-01-03 08:39:57,923 - WARNING - Skipping symbol LOKA due to missing or invalid price.
+2025-01-03 08:39:57,924 - WARNING - Skipping symbol LON due to missing or invalid price.
+2025-01-03 08:39:57,924 - WARNING - Skipping symbol LOOKS due to missing or invalid price.
+2025-01-03 08:39:57,924 - WARNING - Skipping symbol LOOM due to missing or invalid price.
+2025-01-03 08:39:57,925 - WARNING - Skipping symbol LOOT due to missing or invalid price.
+2025-01-03 08:39:57,925 - WARNING - Skipping symbol LORDS due to missing or invalid price.
+2025-01-03 08:39:57,925 - WARNING - Skipping symbol LOVELY due to missing or invalid price.
+2025-01-03 08:39:57,926 - WARNING - Skipping symbol LOWB due to missing or invalid price.
+2025-01-03 08:39:57,926 - WARNING - Skipping symbol LPM due to missing or invalid price.
+2025-01-03 08:39:57,926 - WARNING - Skipping symbol LPOOL due to missing or invalid price.
+2025-01-03 08:39:57,927 - WARNING - Skipping symbol LPT due to missing or invalid price.
+2025-01-03 08:39:57,927 - WARNING - Skipping symbol LQTY due to missing or invalid price.
+2025-01-03 08:39:57,927 - WARNING - Skipping symbol LRC due to missing or invalid price.
+2025-01-03 08:39:57,928 - WARNING - Skipping symbol LRDS due to missing or invalid price.
+2025-01-03 08:39:57,928 - WARNING - Skipping symbol LSS due to missing or invalid price.
+2025-01-03 08:39:57,928 - WARNING - Skipping symbol LTD due to missing or invalid price.
+2025-01-03 08:39:57,929 - WARNING - Skipping symbol LTT due to missing or invalid price.
+2025-01-03 08:39:57,929 - WARNING - Skipping symbol LTX due to missing or invalid price.
+2025-01-03 08:39:57,929 - WARNING - Skipping symbol LUFFY due to missing or invalid price.
+2025-01-03 08:39:57,930 - WARNING - Skipping symbol LUSD due to missing or invalid price.
+2025-01-03 08:39:57,930 - WARNING - Skipping symbol LYM due to missing or invalid price.
+2025-01-03 08:39:57,930 - WARNING - Skipping symbol LYRA due to missing or invalid price.
+2025-01-03 08:39:57,930 - WARNING - Skipping symbol M87 due to missing or invalid price.
+2025-01-03 08:39:57,930 - WARNING - Skipping symbol MAGA due to missing or invalid price.
+2025-01-03 08:39:57,931 - WARNING - Skipping symbol MAGAA due to missing or invalid price.
+2025-01-03 08:39:57,931 - WARNING - Skipping symbol MAGIC due to missing or invalid price.
+2025-01-03 08:39:57,931 - WARNING - Skipping symbol MAHA due to missing or invalid price.
+2025-01-03 08:39:57,931 - WARNING - Skipping symbol MAK due to missing or invalid price.
+2025-01-03 08:39:57,931 - WARNING - Skipping symbol MANA due to missing or invalid price.
+2025-01-03 08:39:57,931 - WARNING - Skipping symbol MANC due to missing or invalid price.
+2025-01-03 08:39:57,931 - WARNING - Skipping symbol MAO due to missing or invalid price.
+2025-01-03 08:39:57,931 - WARNING - Skipping symbol MAPS due to missing or invalid price.
+2025-01-03 08:39:57,932 - WARNING - Skipping symbol MARS due to missing or invalid price.
+2025-01-03 08:39:57,932 - WARNING - Skipping symbol MARS4 due to missing or invalid price.
+2025-01-03 08:39:57,932 - WARNING - Skipping symbol MARSH due to missing or invalid price.
+2025-01-03 08:39:57,932 - WARNING - Skipping symbol MARVIN due to missing or invalid price.
+2025-01-03 08:39:57,932 - WARNING - Skipping symbol MASA due to missing or invalid price.
+2025-01-03 08:39:57,932 - WARNING - Skipping symbol MASK due to missing or invalid price.
+2025-01-03 08:39:57,932 - WARNING - Skipping symbol MASQ due to missing or invalid price.
+2025-01-03 08:39:57,932 - WARNING - Skipping symbol MATH due to missing or invalid price.
+2025-01-03 08:39:57,932 - INFO - Fetching prices for batch: ['MATT', 'MAV', 'MAVIA', 'MAX', 'MBD', 'MBLK', 'MCB', 'MCG', 'MCHC', 'MCO2', 'MDAI', 'MDT', 'MEL', 'MEME', 'MEMEAI', 'MEMECUP', 'METIS', 'MILK2', 'MIND', 'MIR', 'MISHA', 'MITX', 'MIX', 'MKR', 'MKUSD', 'MLN', 'MLT', 'MMA', 'MMAI', 'MNEE', 'MNFT', 'MNT', 'MNTC', 'MNTL', 'MNW', 'MOBY', 'MOC', 'MOCA', 'MOD', 'MOG', 'MOMA', 'MON', 'MONA', 'MONOPOLY', 'MOODENG', 'MOOV', 'MORPHO', 'MORRA', 'MPC', 'MPH']
+2025-01-03 08:39:57,933 - INFO - Fetching latest prices for symbols: MATT,MAV,MAVIA,MAX,MBD,MBLK,MCB,MCG,MCHC,MCO2,MDAI,MDT,MEL,MEME,MEMEAI,MEMECUP,METIS,MILK2,MIND,MIR,MISHA,MITX,MIX,MKR,MKUSD,MLN,MLT,MMA,MMAI,MNEE,MNFT,MNT,MNTC,MNTL,MNW,MOBY,MOC,MOCA,MOD,MOG,MOMA,MON,MONA,MONOPOLY,MOODENG,MOOV,MORPHO,MORRA,MPC,MPH, convert: USD
+2025-01-03 08:39:57,934 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:58,168 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=M%2CA%2CT%2CT%2C%2C%2CM%2CA%2CV%2C%2C%2CM%2CA%2CV%2CI%2CA%2C%2C%2CM%2CA%2CX%2C%2C%2CM%2CB%2CD%2C%2C%2CM%2CB%2CL%2CK%2C%2C%2CM%2CC%2CB%2C%2C%2CM%2CC%2CG%2C%2C%2CM%2CC%2CH%2CC%2C%2C%2CM%2CC%2CO%2C2%2C%2C%2CM%2CD%2CA%2CI%2C%2C%2CM%2CD%2CT%2C%2C%2CM%2CE%2CL%2C%2C%2CM%2CE%2CM%2CE%2C%2C%2CM%2CE%2CM%2CE%2CA%2CI%2C%2C%2CM%2CE%2CM%2CE%2CC%2CU%2CP%2C%2C%2CM%2CE%2CT%2CI%2CS%2C%2C%2CM%2CI%2CL%2CK%2C2%2C%2C%2CM%2CI%2CN%2CD%2C%2C%2CM%2CI%2CR%2C%2C%2CM%2CI%2CS%2CH%2CA%2C%2C%2CM%2CI%2CT%2CX%2C%2C%2CM%2CI%2CX%2C%2C%2CM%2CK%2CR%2C%2C%2CM%2CK%2CU%2CS%2CD%2C%2C%2CM%2CL%2CN%2C%2C%2CM%2CL%2CT%2C%2C%2CM%2CM%2CA%2C%2C%2CM%2CM%2CA%2CI%2C%2C%2CM%2CN%2CE%2CE%2C%2C%2CM%2CN%2CF%2CT%2C%2C%2CM%2CN%2CT%2C%2C%2CM%2CN%2CT%2CC%2C%2C%2CM%2CN%2CT%2CL%2C%2C%2CM%2CN%2CW%2C%2C%2CM%2CO%2CB%2CY%2C%2C%2CM%2CO%2CC%2C%2C%2CM%2CO%2CC%2CA%2C%2C%2CM%2CO%2CD%2C%2C%2CM%2CO%2CG%2C%2C%2CM%2CO%2CM%2CA%2C%2C%2CM%2CO%2CN%2C%2C%2CM%2CO%2CN%2CA%2C%2C%2CM%2CO%2CN%2CO%2CP%2CO%2CL%2CY%2C%2C%2CM%2CO%2CO%2CD%2CE%2CN%2CG%2C%2C%2CM%2CO%2CO%2CV%2C%2C%2CM%2CO%2CR%2CP%2CH%2CO%2C%2C%2CM%2CO%2CR%2CR%2CA%2C%2C%2CM%2CP%2CC%2C%2C%2CM%2CP%2CH&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:58,170 - INFO - Prices fetched successfully: {'M': 0.001639275849766676, 'A': None, 'T': 0.02746997350000764, ',': 0.0, 'V': None, 'I': 0.0, 'X': 0.0001540851022979559, 'B': 0.0, 'D': None, 'L': 0.0, 'K': 0.0, 'C': None, 'G': 0.030613887273570606, 'H': 0.0, 'O': 0.996770634789183, '2': 0.0, 'E': 0.0, 'U': 0.038979676869328114, 'P': 0.0, 'S': 3.389699904100254e-09, 'N': None, 'R': None, 'F': 0.05043524573390982, 'W': 0.29996939576165554, 'Y': 0.0}
+2025-01-03 08:39:59,171 - WARNING - Missing prices for symbols: ['MATT', 'MAV', 'MAVIA', 'MAX', 'MBD', 'MBLK', 'MCB', 'MCG', 'MCHC', 'MCO2', 'MDAI', 'MDT', 'MEL', 'MEME', 'MEMEAI', 'MEMECUP', 'METIS', 'MILK2', 'MIND', 'MIR', 'MISHA', 'MITX', 'MIX', 'MKR', 'MKUSD', 'MLN', 'MLT', 'MMA', 'MMAI', 'MNEE', 'MNFT', 'MNT', 'MNTC', 'MNTL', 'MNW', 'MOBY', 'MOC', 'MOCA', 'MOD', 'MOG', 'MOMA', 'MON', 'MONA', 'MONOPOLY', 'MOODENG', 'MOOV', 'MORPHO', 'MORRA', 'MPC', 'MPH']. Skipping these symbols.
+2025-01-03 08:39:59,172 - WARNING - Skipping symbol MATT due to missing or invalid price.
+2025-01-03 08:39:59,173 - WARNING - Skipping symbol MAV due to missing or invalid price.
+2025-01-03 08:39:59,174 - WARNING - Skipping symbol MAVIA due to missing or invalid price.
+2025-01-03 08:39:59,175 - WARNING - Skipping symbol MAX due to missing or invalid price.
+2025-01-03 08:39:59,176 - WARNING - Skipping symbol MBD due to missing or invalid price.
+2025-01-03 08:39:59,176 - WARNING - Skipping symbol MBLK due to missing or invalid price.
+2025-01-03 08:39:59,177 - WARNING - Skipping symbol MCB due to missing or invalid price.
+2025-01-03 08:39:59,178 - WARNING - Skipping symbol MCG due to missing or invalid price.
+2025-01-03 08:39:59,178 - WARNING - Skipping symbol MCHC due to missing or invalid price.
+2025-01-03 08:39:59,179 - WARNING - Skipping symbol MCO2 due to missing or invalid price.
+2025-01-03 08:39:59,179 - WARNING - Skipping symbol MDAI due to missing or invalid price.
+2025-01-03 08:39:59,180 - WARNING - Skipping symbol MDT due to missing or invalid price.
+2025-01-03 08:39:59,180 - WARNING - Skipping symbol MEL due to missing or invalid price.
+2025-01-03 08:39:59,181 - WARNING - Skipping symbol MEME due to missing or invalid price.
+2025-01-03 08:39:59,181 - WARNING - Skipping symbol MEMEAI due to missing or invalid price.
+2025-01-03 08:39:59,181 - WARNING - Skipping symbol MEMECUP due to missing or invalid price.
+2025-01-03 08:39:59,182 - WARNING - Skipping symbol METIS due to missing or invalid price.
+2025-01-03 08:39:59,182 - WARNING - Skipping symbol MILK2 due to missing or invalid price.
+2025-01-03 08:39:59,182 - WARNING - Skipping symbol MIND due to missing or invalid price.
+2025-01-03 08:39:59,182 - WARNING - Skipping symbol MIR due to missing or invalid price.
+2025-01-03 08:39:59,183 - WARNING - Skipping symbol MISHA due to missing or invalid price.
+2025-01-03 08:39:59,183 - WARNING - Skipping symbol MITX due to missing or invalid price.
+2025-01-03 08:39:59,183 - WARNING - Skipping symbol MIX due to missing or invalid price.
+2025-01-03 08:39:59,184 - WARNING - Skipping symbol MKR due to missing or invalid price.
+2025-01-03 08:39:59,184 - WARNING - Skipping symbol MKUSD due to missing or invalid price.
+2025-01-03 08:39:59,184 - WARNING - Skipping symbol MLN due to missing or invalid price.
+2025-01-03 08:39:59,184 - WARNING - Skipping symbol MLT due to missing or invalid price.
+2025-01-03 08:39:59,184 - WARNING - Skipping symbol MMA due to missing or invalid price.
+2025-01-03 08:39:59,185 - WARNING - Skipping symbol MMAI due to missing or invalid price.
+2025-01-03 08:39:59,185 - WARNING - Skipping symbol MNEE due to missing or invalid price.
+2025-01-03 08:39:59,185 - WARNING - Skipping symbol MNFT due to missing or invalid price.
+2025-01-03 08:39:59,185 - WARNING - Skipping symbol MNT due to missing or invalid price.
+2025-01-03 08:39:59,185 - WARNING - Skipping symbol MNTC due to missing or invalid price.
+2025-01-03 08:39:59,185 - WARNING - Skipping symbol MNTL due to missing or invalid price.
+2025-01-03 08:39:59,186 - WARNING - Skipping symbol MNW due to missing or invalid price.
+2025-01-03 08:39:59,186 - WARNING - Skipping symbol MOBY due to missing or invalid price.
+2025-01-03 08:39:59,186 - WARNING - Skipping symbol MOC due to missing or invalid price.
+2025-01-03 08:39:59,186 - WARNING - Skipping symbol MOCA due to missing or invalid price.
+2025-01-03 08:39:59,186 - WARNING - Skipping symbol MOD due to missing or invalid price.
+2025-01-03 08:39:59,186 - WARNING - Skipping symbol MOG due to missing or invalid price.
+2025-01-03 08:39:59,186 - WARNING - Skipping symbol MOMA due to missing or invalid price.
+2025-01-03 08:39:59,187 - WARNING - Skipping symbol MON due to missing or invalid price.
+2025-01-03 08:39:59,187 - WARNING - Skipping symbol MONA due to missing or invalid price.
+2025-01-03 08:39:59,187 - WARNING - Skipping symbol MONOPOLY due to missing or invalid price.
+2025-01-03 08:39:59,187 - WARNING - Skipping symbol MOODENG due to missing or invalid price.
+2025-01-03 08:39:59,187 - WARNING - Skipping symbol MOOV due to missing or invalid price.
+2025-01-03 08:39:59,187 - WARNING - Skipping symbol MORPHO due to missing or invalid price.
+2025-01-03 08:39:59,188 - WARNING - Skipping symbol MORRA due to missing or invalid price.
+2025-01-03 08:39:59,188 - WARNING - Skipping symbol MPC due to missing or invalid price.
+2025-01-03 08:39:59,188 - WARNING - Skipping symbol MPH due to missing or invalid price.
+2025-01-03 08:39:59,188 - INFO - Fetching prices for batch: ['MPL', 'MSB', 'MSI', 'MSN', 'MSTR', 'MTA', 'MTD', 'MTLX', 'MUBI', 'MULTI', 'MUSE', 'MUSIC', 'MV', 'MVC', 'MVL', 'MVP', 'MX', 'MYRIA', 'MYST', 'MYTH', 'NABOX', 'NAI', 'NASDAQ420', 'NAVI', 'NBT', 'NCDT', 'NCT', 'NDX', 'NEIRO', 'NERD', 'NEST', 'NETVR', 'NEURA', 'NEURAL', 'NEXO', 'NEXT', 'NFNT', 'NFT', 'NFTD', 'NFTX', 'NFTY', 'NGL', 'NGM', 'NGTG$$', 'NHT', 'NINU', 'NIZA', 'NLK', 'NMR', 'NMT']
+2025-01-03 08:39:59,188 - INFO - Fetching latest prices for symbols: MPL,MSB,MSI,MSN,MSTR,MTA,MTD,MTLX,MUBI,MULTI,MUSE,MUSIC,MV,MVC,MVL,MVP,MX,MYRIA,MYST,MYTH,NABOX,NAI,NASDAQ420,NAVI,NBT,NCDT,NCT,NDX,NEIRO,NERD,NEST,NETVR,NEURA,NEURAL,NEXO,NEXT,NFNT,NFT,NFTD,NFTX,NFTY,NGL,NGM,NGTG$$,NHT,NINU,NIZA,NLK,NMR,NMT, convert: USD
+2025-01-03 08:39:59,190 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:39:59,398 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=M%2CP%2CL%2C%2C%2CM%2CS%2CB%2C%2C%2CM%2CS%2CI%2C%2C%2CM%2CS%2CN%2C%2C%2CM%2CS%2CT%2CR%2C%2C%2CM%2CT%2CA%2C%2C%2CM%2CT%2CD%2C%2C%2CM%2CT%2CL%2CX%2C%2C%2CM%2CU%2CB%2CI%2C%2C%2CM%2CU%2CL%2CT%2CI%2C%2C%2CM%2CU%2CS%2CE%2C%2C%2CM%2CU%2CS%2CI%2CC%2C%2C%2CM%2CV%2C%2C%2CM%2CV%2CC%2C%2C%2CM%2CV%2CL%2C%2C%2CM%2CV%2CP%2C%2C%2CM%2CX%2C%2C%2CM%2CY%2CR%2CI%2CA%2C%2C%2CM%2CY%2CS%2CT%2C%2C%2CM%2CY%2CT%2CH%2C%2C%2CN%2CA%2CB%2CO%2CX%2C%2C%2CN%2CA%2CI%2C%2C%2CN%2CA%2CS%2CD%2CA%2CQ%2C4%2C2%2C0%2C%2C%2CN%2CA%2CV%2CI%2C%2C%2CN%2CB%2CT%2C%2C%2CN%2CC%2CD%2CT%2C%2C%2CN%2CC%2CT%2C%2C%2CN%2CD%2CX%2C%2C%2CN%2CE%2CI%2CR%2CO%2C%2C%2CN%2CE%2CR%2CD%2C%2C%2CN%2CE%2CS%2CT%2C%2C%2CN%2CE%2CT%2CV%2CR%2C%2C%2CN%2CE%2CU%2CR%2CA%2C%2C%2CN%2CE%2CU%2CR%2CA%2CL%2C%2C%2CN%2CE%2CX%2CO%2C%2C%2CN%2CE%2CX%2CT%2C%2C%2CN%2CF%2CN%2CT%2C%2C%2CN%2CF%2CT%2C%2C%2CN%2CF%2CT%2CD%2C%2C%2CN%2CF%2CT%2CX%2C%2C%2CN%2CF%2CT%2CY%2C%2C%2CN%2CG%2CL%2C%2C%2CN%2CG%2CM%2C%2C%2CN%2CG%2CT%2CG%2C%24%2C%24%2C%2C%2CN%2CH%2CT%2C%2C%2CN%2CI%2CN%2CU%2C%2C%2CN%2CI%2CZ%2CA%2C%2C%2CN%2CL%2CK%2C%2C%2CN%2CM%2CR%2C%2C%2CN%2CM%2CT&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:39:59,401 - INFO - Prices fetched successfully: {'M': 0.001639275849766676, 'P': 0.0, 'L': 0.0, ',': 0.0, 'S': 3.389699904100254e-09, 'B': 0.0, 'I': 0.0, 'N': None, 'T': 0.02746997350000764, 'R': None, 'A': None, 'D': None, 'X': 0.0001540851022979559, 'U': 0.038979676869328114, 'E': 0.0, 'C': None, 'V': None, 'Y': 0.0, 'H': 0.0, 'O': 0.996770634789183, 'Q': None, '4': 0.0, '2': 0.0, '0': 0.0, 'F': 0.05043524573390982, 'G': 0.030613887273570606, '$': None, 'Z': None, 'K': 0.0}
+2025-01-03 08:40:00,402 - WARNING - Missing prices for symbols: ['MPL', 'MSB', 'MSI', 'MSN', 'MSTR', 'MTA', 'MTD', 'MTLX', 'MUBI', 'MULTI', 'MUSE', 'MUSIC', 'MV', 'MVC', 'MVL', 'MVP', 'MX', 'MYRIA', 'MYST', 'MYTH', 'NABOX', 'NAI', 'NASDAQ420', 'NAVI', 'NBT', 'NCDT', 'NCT', 'NDX', 'NEIRO', 'NERD', 'NEST', 'NETVR', 'NEURA', 'NEURAL', 'NEXO', 'NEXT', 'NFNT', 'NFT', 'NFTD', 'NFTX', 'NFTY', 'NGL', 'NGM', 'NGTG$$', 'NHT', 'NINU', 'NIZA', 'NLK', 'NMR', 'NMT']. Skipping these symbols.
+2025-01-03 08:40:00,402 - WARNING - Skipping symbol MPL due to missing or invalid price.
+2025-01-03 08:40:00,403 - WARNING - Skipping symbol MSB due to missing or invalid price.
+2025-01-03 08:40:00,403 - WARNING - Skipping symbol MSI due to missing or invalid price.
+2025-01-03 08:40:00,404 - WARNING - Skipping symbol MSN due to missing or invalid price.
+2025-01-03 08:40:00,404 - WARNING - Skipping symbol MSTR due to missing or invalid price.
+2025-01-03 08:40:00,404 - WARNING - Skipping symbol MTA due to missing or invalid price.
+2025-01-03 08:40:00,404 - WARNING - Skipping symbol MTD due to missing or invalid price.
+2025-01-03 08:40:00,405 - WARNING - Skipping symbol MTLX due to missing or invalid price.
+2025-01-03 08:40:00,405 - WARNING - Skipping symbol MUBI due to missing or invalid price.
+2025-01-03 08:40:00,405 - WARNING - Skipping symbol MULTI due to missing or invalid price.
+2025-01-03 08:40:00,406 - WARNING - Skipping symbol MUSE due to missing or invalid price.
+2025-01-03 08:40:00,406 - WARNING - Skipping symbol MUSIC due to missing or invalid price.
+2025-01-03 08:40:00,406 - WARNING - Skipping symbol MV due to missing or invalid price.
+2025-01-03 08:40:00,407 - WARNING - Skipping symbol MVC due to missing or invalid price.
+2025-01-03 08:40:00,407 - WARNING - Skipping symbol MVL due to missing or invalid price.
+2025-01-03 08:40:00,407 - WARNING - Skipping symbol MVP due to missing or invalid price.
+2025-01-03 08:40:00,407 - WARNING - Skipping symbol MX due to missing or invalid price.
+2025-01-03 08:40:00,408 - WARNING - Skipping symbol MYRIA due to missing or invalid price.
+2025-01-03 08:40:00,408 - WARNING - Skipping symbol MYST due to missing or invalid price.
+2025-01-03 08:40:00,408 - WARNING - Skipping symbol MYTH due to missing or invalid price.
+2025-01-03 08:40:00,408 - WARNING - Skipping symbol NABOX due to missing or invalid price.
+2025-01-03 08:40:00,408 - WARNING - Skipping symbol NAI due to missing or invalid price.
+2025-01-03 08:40:00,409 - WARNING - Skipping symbol NASDAQ420 due to missing or invalid price.
+2025-01-03 08:40:00,409 - WARNING - Skipping symbol NAVI due to missing or invalid price.
+2025-01-03 08:40:00,409 - WARNING - Skipping symbol NBT due to missing or invalid price.
+2025-01-03 08:40:00,409 - WARNING - Skipping symbol NCDT due to missing or invalid price.
+2025-01-03 08:40:00,410 - WARNING - Skipping symbol NCT due to missing or invalid price.
+2025-01-03 08:40:00,410 - WARNING - Skipping symbol NDX due to missing or invalid price.
+2025-01-03 08:40:00,410 - WARNING - Skipping symbol NEIRO due to missing or invalid price.
+2025-01-03 08:40:00,411 - WARNING - Skipping symbol NERD due to missing or invalid price.
+2025-01-03 08:40:00,411 - WARNING - Skipping symbol NEST due to missing or invalid price.
+2025-01-03 08:40:00,411 - WARNING - Skipping symbol NETVR due to missing or invalid price.
+2025-01-03 08:40:00,411 - WARNING - Skipping symbol NEURA due to missing or invalid price.
+2025-01-03 08:40:00,411 - WARNING - Skipping symbol NEURAL due to missing or invalid price.
+2025-01-03 08:40:00,412 - WARNING - Skipping symbol NEXO due to missing or invalid price.
+2025-01-03 08:40:00,412 - WARNING - Skipping symbol NEXT due to missing or invalid price.
+2025-01-03 08:40:00,412 - WARNING - Skipping symbol NFNT due to missing or invalid price.
+2025-01-03 08:40:00,412 - WARNING - Skipping symbol NFT due to missing or invalid price.
+2025-01-03 08:40:00,412 - WARNING - Skipping symbol NFTD due to missing or invalid price.
+2025-01-03 08:40:00,413 - WARNING - Skipping symbol NFTX due to missing or invalid price.
+2025-01-03 08:40:00,413 - WARNING - Skipping symbol NFTY due to missing or invalid price.
+2025-01-03 08:40:00,413 - WARNING - Skipping symbol NGL due to missing or invalid price.
+2025-01-03 08:40:00,413 - WARNING - Skipping symbol NGM due to missing or invalid price.
+2025-01-03 08:40:00,413 - WARNING - Skipping symbol NGTG$$ due to missing or invalid price.
+2025-01-03 08:40:00,413 - WARNING - Skipping symbol NHT due to missing or invalid price.
+2025-01-03 08:40:00,413 - WARNING - Skipping symbol NINU due to missing or invalid price.
+2025-01-03 08:40:00,413 - WARNING - Skipping symbol NIZA due to missing or invalid price.
+2025-01-03 08:40:00,414 - WARNING - Skipping symbol NLK due to missing or invalid price.
+2025-01-03 08:40:00,414 - WARNING - Skipping symbol NMR due to missing or invalid price.
+2025-01-03 08:40:00,414 - WARNING - Skipping symbol NMT due to missing or invalid price.
+2025-01-03 08:40:00,414 - INFO - Fetching prices for batch: ['NOGS', 'NOIA', 'NORD', 'NOW', 'NPC', 'NPT', 'NRFB', 'NSBT', 'NSFW', 'NST', 'NSURE', 'NTX', 'NUM', 'NUT', 'NUX', 'NVIR', 'NWC', 'NXRA', 'NYA', 'NYM', 'O', 'O3', 'OAX', 'OBI', 'OBT', 'OCEAN', 'OCTO', 'ODDZ', 'OGGY', 'OGN', 'oGPU', 'OGV', 'OHM', 'OIN', 'OJA', 'OKB', 'OL', 'OLAS', 'OLE', 'OLY', 'OM', 'OMG', 'OMI', 'OMIKAMI', 'OMNI', 'ONDO', 'ONE', 'ONI', 'OOKI', 'OPCT']
+2025-01-03 08:40:00,414 - INFO - Fetching latest prices for symbols: NOGS,NOIA,NORD,NOW,NPC,NPT,NRFB,NSBT,NSFW,NST,NSURE,NTX,NUM,NUT,NUX,NVIR,NWC,NXRA,NYA,NYM,O,O3,OAX,OBI,OBT,OCEAN,OCTO,ODDZ,OGGY,OGN,oGPU,OGV,OHM,OIN,OJA,OKB,OL,OLAS,OLE,OLY,OM,OMG,OMI,OMIKAMI,OMNI,ONDO,ONE,ONI,OOKI,OPCT, convert: USD
+2025-01-03 08:40:00,416 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:40:00,729 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=N%2CO%2CG%2CS%2C%2C%2CN%2CO%2CI%2CA%2C%2C%2CN%2CO%2CR%2CD%2C%2C%2CN%2CO%2CW%2C%2C%2CN%2CP%2CC%2C%2C%2CN%2CP%2CT%2C%2C%2CN%2CR%2CF%2CB%2C%2C%2CN%2CS%2CB%2CT%2C%2C%2CN%2CS%2CF%2CW%2C%2C%2CN%2CS%2CT%2C%2C%2CN%2CS%2CU%2CR%2CE%2C%2C%2CN%2CT%2CX%2C%2C%2CN%2CU%2CM%2C%2C%2CN%2CU%2CT%2C%2C%2CN%2CU%2CX%2C%2C%2CN%2CV%2CI%2CR%2C%2C%2CN%2CW%2CC%2C%2C%2CN%2CX%2CR%2CA%2C%2C%2CN%2CY%2CA%2C%2C%2CN%2CY%2CM%2C%2C%2CO%2C%2C%2CO%2C3%2C%2C%2CO%2CA%2CX%2C%2C%2CO%2CB%2CI%2C%2C%2CO%2CB%2CT%2C%2C%2CO%2CC%2CE%2CA%2CN%2C%2C%2CO%2CC%2CT%2CO%2C%2C%2CO%2CD%2CD%2CZ%2C%2C%2CO%2CG%2CG%2CY%2C%2C%2CO%2CG%2CN%2C%2C%2Co%2CG%2CP%2CU%2C%2C%2CO%2CG%2CV%2C%2C%2CO%2CH%2CM%2C%2C%2CO%2CI%2CN%2C%2C%2CO%2CJ%2CA%2C%2C%2CO%2CK%2CB%2C%2C%2CO%2CL%2C%2C%2CO%2CL%2CA%2CS%2C%2C%2CO%2CL%2CE%2C%2C%2CO%2CL%2CY%2C%2C%2CO%2CM%2C%2C%2CO%2CM%2CG%2C%2C%2CO%2CM%2CI%2C%2C%2CO%2CM%2CI%2CK%2CA%2CM%2CI%2C%2C%2CO%2CM%2CN%2CI%2C%2C%2CO%2CN%2CD%2CO%2C%2C%2CO%2CN%2CE%2C%2C%2CO%2CN%2CI%2C%2C%2CO%2CO%2CK%2CI%2C%2C%2CO%2CP%2CC%2CT&convert=USD HTTP/1.1" 200 None
+2025-01-03 08:40:00,731 - INFO - Prices fetched successfully: {'N': None, 'O': 0.996770634789183, 'G': 0.030613887273570606, 'S': 3.389699904100254e-09, ',': 0.0, 'I': 0.0, 'A': None, 'R': None, 'D': None, 'W': 0.29996939576165554, 'P': 0.0, 'C': None, 'T': 0.02746997350000764, 'F': 0.05043524573390982, 'B': 0.0, 'U': 0.038979676869328114, 'E': 0.0, 'X': 0.0001540851022979559, 'M': 0.001639275849766676, 'V': None, 'Y': 0.0, '3': 1.5148327885198476e-05, 'Z': None, 'o': 0.0, 'H': 0.0, 'J': None, 'K': 0.0, 'L': 0.0}
+2025-01-03 08:40:01,733 - WARNING - Missing prices for symbols: ['NOGS', 'NOIA', 'NORD', 'NOW', 'NPC', 'NPT', 'NRFB', 'NSBT', 'NSFW', 'NST', 'NSURE', 'NTX', 'NUM', 'NUT', 'NUX', 'NVIR', 'NWC', 'NXRA', 'NYA', 'NYM', 'O3', 'OAX', 'OBI', 'OBT', 'OCEAN', 'OCTO', 'ODDZ', 'OGGY', 'OGN', 'oGPU', 'OGV', 'OHM', 'OIN', 'OJA', 'OKB', 'OL', 'OLAS', 'OLE', 'OLY', 'OM', 'OMG', 'OMI', 'OMIKAMI', 'OMNI', 'ONDO', 'ONE', 'ONI', 'OOKI', 'OPCT']. Skipping these symbols.
+2025-01-03 08:40:01,734 - WARNING - Skipping symbol NOGS due to missing or invalid price.
+2025-01-03 08:40:01,735 - WARNING - Skipping symbol NOIA due to missing or invalid price.
+2025-01-03 08:40:01,736 - WARNING - Skipping symbol NORD due to missing or invalid price.
+2025-01-03 08:40:01,737 - WARNING - Skipping symbol NOW due to missing or invalid price.
+2025-01-03 08:40:01,737 - WARNING - Skipping symbol NPC due to missing or invalid price.
+2025-01-03 08:40:01,738 - WARNING - Skipping symbol NPT due to missing or invalid price.
+2025-01-03 08:40:01,739 - WARNING - Skipping symbol NRFB due to missing or invalid price.
+2025-01-03 08:40:01,740 - WARNING - Skipping symbol NSBT due to missing or invalid price.
+2025-01-03 08:40:01,740 - WARNING - Skipping symbol NSFW due to missing or invalid price.
+2025-01-03 08:40:01,741 - WARNING - Skipping symbol NST due to missing or invalid price.
+2025-01-03 08:40:01,741 - WARNING - Skipping symbol NSURE due to missing or invalid price.
+2025-01-03 08:40:01,742 - WARNING - Skipping symbol NTX due to missing or invalid price.
+2025-01-03 08:40:01,742 - WARNING - Skipping symbol NUM due to missing or invalid price.
+2025-01-03 08:40:01,743 - WARNING - Skipping symbol NUT due to missing or invalid price.
+2025-01-03 08:40:01,743 - WARNING - Skipping symbol NUX due to missing or invalid price.
+2025-01-03 08:40:01,743 - WARNING - Skipping symbol NVIR due to missing or invalid price.
+2025-01-03 08:40:01,744 - WARNING - Skipping symbol NWC due to missing or invalid price.
+2025-01-03 08:40:01,744 - WARNING - Skipping symbol NXRA due to missing or invalid price.
+2025-01-03 08:40:01,745 - WARNING - Skipping symbol NYA due to missing or invalid price.
+2025-01-03 08:40:01,745 - WARNING - Skipping symbol NYM due to missing or invalid price.
+2025-01-03 08:40:01,745 - WARNING - Skipping symbol O3 due to missing or invalid price.
+2025-01-03 08:40:01,746 - WARNING - Skipping symbol OAX due to missing or invalid price.
+2025-01-03 08:40:01,746 - WARNING - Skipping symbol OBI due to missing or invalid price.
+2025-01-03 08:40:01,746 - WARNING - Skipping symbol OBT due to missing or invalid price.
+2025-01-03 08:40:01,746 - WARNING - Skipping symbol OCEAN due to missing or invalid price.
+2025-01-03 08:40:01,747 - WARNING - Skipping symbol OCTO due to missing or invalid price.
+2025-01-03 08:40:01,747 - WARNING - Skipping symbol ODDZ due to missing or invalid price.
+2025-01-03 08:40:01,747 - WARNING - Skipping symbol OGGY due to missing or invalid price.
+2025-01-03 08:40:01,748 - WARNING - Skipping symbol OGN due to missing or invalid price.
+2025-01-03 08:40:01,748 - WARNING - Skipping symbol oGPU due to missing or invalid price.
+2025-01-03 08:40:01,749 - WARNING - Skipping symbol OGV due to missing or invalid price.
+2025-01-03 08:40:01,750 - WARNING - Skipping symbol OHM due to missing or invalid price.
+2025-01-03 08:40:01,750 - WARNING - Skipping symbol OIN due to missing or invalid price.
+2025-01-03 08:40:01,750 - WARNING - Skipping symbol OJA due to missing or invalid price.
+2025-01-03 08:40:01,750 - WARNING - Skipping symbol OKB due to missing or invalid price.
+2025-01-03 08:40:01,750 - WARNING - Skipping symbol OL due to missing or invalid price.
+2025-01-03 08:40:01,750 - WARNING - Skipping symbol OLAS due to missing or invalid price.
+2025-01-03 08:40:01,750 - WARNING - Skipping symbol OLE due to missing or invalid price.
+2025-01-03 08:40:01,751 - WARNING - Skipping symbol OLY due to missing or invalid price.
+2025-01-03 08:40:01,751 - WARNING - Skipping symbol OM due to missing or invalid price.
+2025-01-03 08:40:01,751 - WARNING - Skipping symbol OMG due to missing or invalid price.
+2025-01-03 08:40:01,751 - WARNING - Skipping symbol OMI due to missing or invalid price.
+2025-01-03 08:40:01,751 - WARNING - Skipping symbol OMIKAMI due to missing or invalid price.
+2025-01-03 08:40:01,751 - WARNING - Skipping symbol OMNI due to missing or invalid price.
+2025-01-03 08:40:01,752 - WARNING - Skipping symbol ONDO due to missing or invalid price.
+2025-01-03 08:40:01,752 - WARNING - Skipping symbol ONE due to missing or invalid price.
+2025-01-03 08:40:01,752 - WARNING - Skipping symbol ONI due to missing or invalid price.
+2025-01-03 08:40:01,752 - WARNING - Skipping symbol OOKI due to missing or invalid price.
+2025-01-03 08:40:01,752 - WARNING - Skipping symbol OPCT due to missing or invalid price.
+2025-01-03 08:40:01,752 - INFO - Fetching prices for batch: ['OPEN', 'OPIUM', 'OPTI', 'OPUL', 'ORA', 'ORAI', 'ORAO', 'ORB', 'ORBR', 'ORBS', 'ORC', 'ORDER', 'ORDS', 'ORION', 'ORN', 'OSAK', 'OSCAR', 'OUSD', 'OVR', 'OX', 'OXT', 'OXY', 'P2PS', 'PAAL', 'PACE', 'PAI', 'PAINT', 'PALM', 'PANDORA', 'PAPI', 'PAR', 'PARAM', 'PATRIOT', 'PAXG', 'PAY', 'PBR', 'PBX', 'PCNT', 'PDA', 'PDEX', 'PDT', 'PDX', 'PEAK', 'PEANUT', 'PEAS', 'PEIPEI', 'PENDLE', 'PEOPLE', 'PEPE', 'PEPE2.0']
+2025-01-03 08:40:01,753 - INFO - Fetching latest prices for symbols: OPEN,OPIUM,OPTI,OPUL,ORA,ORAI,ORAO,ORB,ORBR,ORBS,ORC,ORDER,ORDS,ORION,ORN,OSAK,OSCAR,OUSD,OVR,OX,OXT,OXY,P2PS,PAAL,PACE,PAI,PAINT,PALM,PANDORA,PAPI,PAR,PARAM,PATRIOT,PAXG,PAY,PBR,PBX,PCNT,PDA,PDEX,PDT,PDX,PEAK,PEANUT,PEAS,PEIPEI,PENDLE,PEOPLE,PEPE,PEPE2.0, convert: USD
+2025-01-03 08:40:01,754 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-03 08:40:02,264 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=O%2CP%2CE%2CN%2C%2C%2CO%2CP%2CI%2CU%2CM%2C%2C%2CO%2CP%2CT%2CI%2C%2C%2CO%2CP%2CU%2CL%2C%2C%2CO%2CR%2CA%2C%2C%2CO%2CR%2CA%2CI%2C%2C%2CO%2CR%2CA%2CO%2C%2C%2CO%2CR%2CB%2C%2C%2CO%2CR%2CB%2CR%2C%2C%2CO%2CR%2CB%2CS%2C%2C%2CO%2CR%2CC%2C%2C%2CO%2CR%2CD%2CE%2CR%2C%2C%2CO%2CR%2CD%2CS%2C%2C%2CO%2CR%2CI%2CO%2CN%2C%2C%2CO%2CR%2CN%2C%2C%2CO%2CS%2CA%2CK%2C%2C%2CO%2CS%2CC%2CA%2CR%2C%2C%2CO%2CU%2CS%2CD%2C%2C%2CO%2CV%2CR%2C%2C%2CO%2CX%2C%2C%2CO%2CX%2CT%2C%2C%2CO%2CX%2CY%2C%2C%2CP%2C2%2CP%2CS%2C%2C%2CP%2CA%2CA%2CL%2C%2C%2CP%2CA%2CC%2CE%2C%2C%2CP%2CA%2CI%2C%2C%2CP%2CA%2CI%2CN%2CT%2C%2C%2CP%2CA%2CL%2CM%2C%2C%2CP%2CA%2CN%2CD%2CO%2CR%2CA%2C%2C%2CP%2CA%2CP%2CI%2C%2C%2CP%2CA%2CR%2C%2C%2CP%2CA%2CR%2CA%2CM%2C%2C%2CP%2CA%2CT%2CR%2CI%2CO%2CT%2C%2C%2CP%2CA%2CX%2CG%2C%2C%2CP%2CA%2CY%2C%2C%2CP%2CB%2CR%2C%2C%2CP%2CB%2CX%2C%2C%2CP%2CC%2CN%2CT%2C%2C%2CP%2CD%2CA%2C%2C%2CP%2CD%2CE%2CX%2C%2C%2CP%2CD%2CT%2C%2C%2CP%2CD%2CX%2C%2C%2CP%2CE%2CA%2CK%2C%2C%2CP%2CE%2CA%2CN%2CU%2CT%2C%2C%2CP%2CE%2CA%2CS%2C%2C%2CP%2CE%2CI%2CP%2CE%2CI%2C%2C%2CP%2CE%2CN%2CD%2CL%2CE%2C%2C%2CP%2CE%2CO%2CP%2CL%2CE%2C%2C%2CP%2CE%2CP%2CE%2C%2C%2CP%2CE%2CP%2CE%2C2%2C.%2C0&convert=USD HTTP/1.1" 400 198
+2025-01-03 08:40:02,266 - ERROR - Exception in get_latest_prices: 'str' object has no attribute 'get'
+2025-01-03 08:40:03,266 - ERROR - Error occurred while fetching prices: Failed to fetch prices from external service.
+2025-01-03 08:40:03,268 - INFO - 127.0.0.1 - - [03/Jan/2025 08:40:03] "[35m[1mGET /prices HTTP/1.1[0m" 500 -
+2025-01-03 08:42:21,746 - INFO -  * Detected change in 'c:\\Users\\kozmos teknoloji\\Desktop\\CC\\CU\\CurrencyUpdate.py', reloading

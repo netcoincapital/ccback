@@ -1,0 +1,28 @@
+2025-01-04 06:42:40,136 - INFO - Services module initialized.
+2025-01-04 06:42:40,138 - INFO - LogManager initialized successfully.
+2025-01-04 06:42:40,178 - DEBUG - Building SSL context
+2025-01-04 06:42:40,218 - DEBUG - Switching to SSL
+2025-01-04 06:42:40,222 - DEBUG - SSL has been enabled
+2025-01-04 06:42:40,222 - DEBUG - Starting authorization phase
+2025-01-04 06:42:40,222 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-04 06:42:40,223 - INFO - package: mysql.connector.plugins
+2025-01-04 06:42:40,223 - INFO - plugin_name: caching_sha2_password
+2025-01-04 06:42:40,226 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-04 06:42:40,226 - DEBUG - Exchanging further packets
+2025-01-04 06:42:40,227 - DEBUG - caching_sha2_password completed succesfully
+2025-01-04 06:42:40,240 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-04 06:42:40,246 - WARNING -  * Debugger is active!
+2025-01-04 06:42:40,248 - INFO -  * Debugger PIN: 599-719-174
+2025-01-04 06:42:44,814 - DEBUG - Request data: {'WalletName': 'Sandman22', 'Password': '12345123451'}
+2025-01-04 06:42:44,815 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-04 06:42:44,849 - INFO - New user created: <User(UserID=70e77488-2e8e-4b60-8d9b-29fdddc96762, ID=None, Email='None')>
+2025-01-04 06:42:44,852 - INFO - Generated BIP39 Mnemonic: gasp convince ten wet banner melt gap offer total place bus swallow
+2025-01-04 06:42:44,852 - INFO - Wallet created: <Wallet(WalletID=a470de78-b00b-4b8b-b75a-dca3ce240b32, UserID=70e77488-2e8e-4b60-8d9b-29fdddc96762, WalletName='Sandman22', IsMultiSig=False, RequiredSignatures='1')>
+2025-01-04 06:42:44,859 - INFO - Generating wallet for blockchain: Ethereum
+2025-01-04 06:42:44,889 - ERROR - Error deriving wallet for Ethereum: 'Bip39SeedGenerator' object has no attribute 'GenerateSeed'
+2025-01-04 06:42:44,889 - INFO - Generating wallet for blockchain: Tron
+2025-01-04 06:42:44,890 - ERROR - Error deriving wallet for Tron: 'Bip39SeedGenerator' object has no attribute 'GenerateSeed'
+2025-01-04 06:42:44,890 - INFO - Generating wallet for blockchain: BNB
+2025-01-04 06:42:44,891 - ERROR - Error deriving wallet for BNB: 'Bip39SeedGenerator' object has no attribute 'GenerateSeed'
+2025-01-04 06:42:44,903 - DEBUG - Database session closed.
+2025-01-04 06:42:44,903 - INFO - 127.0.0.1 - - [04/Jan/2025 06:42:44] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

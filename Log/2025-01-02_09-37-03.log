@@ -1,0 +1,24 @@
+2025-01-02 09:37:03,146 - INFO - Services module initialized.
+2025-01-02 09:37:03,149 - INFO - LogManager initialized successfully.
+2025-01-02 09:37:03,189 - DEBUG - Building SSL context
+2025-01-02 09:37:03,231 - DEBUG - Switching to SSL
+2025-01-02 09:37:03,235 - DEBUG - SSL has been enabled
+2025-01-02 09:37:03,235 - DEBUG - Starting authorization phase
+2025-01-02 09:37:03,236 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-02 09:37:03,236 - INFO - package: mysql.connector.plugins
+2025-01-02 09:37:03,236 - INFO - plugin_name: caching_sha2_password
+2025-01-02 09:37:03,239 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-02 09:37:03,240 - DEBUG - Exchanging further packets
+2025-01-02 09:37:03,240 - DEBUG - caching_sha2_password completed succesfully
+2025-01-02 09:37:03,254 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-02 09:37:03,261 - WARNING -  * Debugger is active!
+2025-01-02 09:37:03,263 - INFO -  * Debugger PIN: 599-719-174
+2025-01-02 09:37:03,922 - INFO - Attempting to fetch all currencies from the database.
+2025-01-02 09:37:03,936 - INFO - Fetched symbols from database: ['ETH']
+2025-01-02 09:37:03,937 - INFO - Fetching latest prices from CurrencyPriceService.
+2025-01-02 09:37:03,937 - INFO - Fetching latest prices for symbols: ['ETH'], convert: USD
+2025-01-02 09:37:03,938 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-01-02 09:37:04,453 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH&convert=USD HTTP/1.1" 200 None
+2025-01-02 09:37:04,457 - INFO - Prices fetched successfully: {'ETH': 3399.3485512402854}
+2025-01-02 09:37:04,458 - INFO - Prices fetched successfully.
+2025-01-02 09:37:04,459 - INFO - 127.0.0.1 - - [02/Jan/2025 09:37:04] "GET /prices HTTP/1.1" 200 -

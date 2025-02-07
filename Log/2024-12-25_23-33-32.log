@@ -1,0 +1,19 @@
+2024-12-25 23:33:32,547 - INFO - Services module initialized.
+2024-12-25 23:33:32,550 - INFO - LogManager initialized successfully.
+2024-12-25 23:33:32,586 - DEBUG - Building SSL context
+2024-12-25 23:33:32,632 - DEBUG - Switching to SSL
+2024-12-25 23:33:32,637 - DEBUG - SSL has been enabled
+2024-12-25 23:33:32,638 - DEBUG - Starting authorization phase
+2024-12-25 23:33:32,638 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-25 23:33:32,639 - INFO - package: mysql.connector.plugins
+2024-12-25 23:33:32,639 - INFO - plugin_name: caching_sha2_password
+2024-12-25 23:33:32,642 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-25 23:33:32,643 - DEBUG - Exchanging further packets
+2024-12-25 23:33:32,643 - DEBUG - caching_sha2_password completed succesfully
+2024-12-25 23:33:32,661 - INFO - Starting Flask app with Keep-Alive enabled.
+2024-12-25 23:33:32,668 - WARNING -  * Debugger is active!
+2024-12-25 23:33:32,671 - INFO -  * Debugger PIN: 599-719-174
+2024-12-25 23:33:49,190 - INFO - Request received: {'PrivateKey': 'e7bcb326cbda0c9260273063f3fcdc7302b1c269ada573c7861c97c16be5ff5f', 'PhraseKey': None, 'Password': 'New12345678', 'WalletName': 'YMWIJ'}
+2024-12-25 23:33:49,238 - ERROR - Error in import_wallet: Unsupported blockchain: UnifiedWallet
+2024-12-25 23:33:49,245 - INFO - Database session closed.
+2024-12-25 23:33:49,246 - INFO - 127.0.0.1 - - [25/Dec/2024 23:33:49] "[35m[1mPOST /import-wallet HTTP/1.1[0m" 500 -

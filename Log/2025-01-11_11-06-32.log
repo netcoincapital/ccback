@@ -1,0 +1,37 @@
+2025-01-11 11:06:32,052 - INFO - Services module initialized.
+2025-01-11 11:06:32,055 - INFO - LogManager initialized successfully.
+2025-01-11 11:06:32,122 - DEBUG - Building SSL context
+2025-01-11 11:06:32,172 - DEBUG - Switching to SSL
+2025-01-11 11:06:32,178 - DEBUG - SSL has been enabled
+2025-01-11 11:06:32,178 - DEBUG - Starting authorization phase
+2025-01-11 11:06:32,179 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-11 11:06:32,179 - INFO - package: mysql.connector.plugins
+2025-01-11 11:06:32,179 - INFO - plugin_name: caching_sha2_password
+2025-01-11 11:06:32,180 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-11 11:06:32,181 - DEBUG - Exchanging further packets
+2025-01-11 11:06:32,181 - DEBUG - caching_sha2_password completed succesfully
+2025-01-11 11:06:32,204 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-11 11:06:32,217 - WARNING -  * Debugger is active!
+2025-01-11 11:06:32,221 - INFO -  * Debugger PIN: 599-719-174
+2025-01-11 11:06:34,161 - INFO - Received a request to fetch a currency price based on UserID and CurrencyID.
+2025-01-11 11:06:34,162 - INFO - Fetching price for CurrencyID: ['ETH', 'SHIB'] requested by UserID: ec99e22a-653c-44b8-a1a8-9347464666d7
+2025-01-11 11:06:34,178 - ERROR - An exception occurred while fetching the currency price.
+Traceback (most recent call last):
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\base.py", line 2181, in _entity_namespace_key
+    return getattr(ns, key)  # type: ignore
+           ^^^^^^^^^^^^^^^^
+AttributeError: type object 'Currencies' has no attribute 'id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\CU\CurrencyUpdate.py", line 46, in get_currency_price
+    currency = db_session.query(Currencies).filter_by(id=currency_id).first()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\query.py", line 1984, in filter_by
+    _entity_namespace_key(from_entity, key) == value
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\base.py", line 2183, in _entity_namespace_key
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "Currencies" has no property "id"
+2025-01-11 11:06:34,216 - INFO - 127.0.0.1 - - [11/Jan/2025 11:06:34] "[35m[1mPOST /prices HTTP/1.1[0m" 500 -

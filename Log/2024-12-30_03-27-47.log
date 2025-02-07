@@ -1,0 +1,25 @@
+2024-12-30 03:27:47,184 - INFO - Services module initialized.
+2024-12-30 03:27:47,188 - INFO - LogManager initialized successfully.
+2024-12-30 03:27:47,227 - DEBUG - Building SSL context
+2024-12-30 03:27:47,273 - DEBUG - Switching to SSL
+2024-12-30 03:27:47,277 - DEBUG - SSL has been enabled
+2024-12-30 03:27:47,277 - DEBUG - Starting authorization phase
+2024-12-30 03:27:47,278 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-30 03:27:47,278 - INFO - package: mysql.connector.plugins
+2024-12-30 03:27:47,279 - INFO - plugin_name: caching_sha2_password
+2024-12-30 03:27:47,280 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-30 03:27:47,281 - DEBUG - Exchanging further packets
+2024-12-30 03:27:47,282 - DEBUG - caching_sha2_password completed succesfully
+2024-12-30 03:27:47,298 - INFO - Starting Flask app with Keep-Alive enabled.
+2024-12-30 03:27:47,306 - WARNING -  * Debugger is active!
+2024-12-30 03:27:47,309 - INFO -  * Debugger PIN: 599-719-174
+2024-12-30 03:27:54,978 - INFO - Starting asset retrieval
+2024-12-30 03:27:54,995 - INFO - Processing address 0x16ded1fee9b00b3e836d0da338ebd1793f8985c2 for user 099d5597-78cb-4da1-b518-c0bd1efc2a8f
+2024-12-30 03:27:55,004 - DEBUG - Fetching balance for currency Binance Coin on blockchain BNB
+2024-12-30 03:27:55,004 - ERROR - Error in get_user_assets: CheckBlockchain.get_wallet_balance() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\balance\UpdateAsset.py", line 59, in get_user_assets
+    balance_response = blockchain_service.get_wallet_balance(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CheckBlockchain.get_wallet_balance() takes 3 positional arguments but 4 were given
+2024-12-30 03:27:55,007 - INFO - 127.0.0.1 - - [30/Dec/2024 03:27:55] "[35m[1mGET /assets HTTP/1.1[0m" 500 -

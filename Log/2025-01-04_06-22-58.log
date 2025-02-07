@@ -1,0 +1,52 @@
+2025-01-04 06:22:58,608 - INFO - Services module initialized.
+2025-01-04 06:22:58,610 - INFO - LogManager initialized successfully.
+2025-01-04 06:22:58,671 - DEBUG - Building SSL context
+2025-01-04 06:22:58,723 - DEBUG - Switching to SSL
+2025-01-04 06:22:58,726 - DEBUG - SSL has been enabled
+2025-01-04 06:22:58,726 - DEBUG - Starting authorization phase
+2025-01-04 06:22:58,727 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-04 06:22:58,727 - INFO - package: mysql.connector.plugins
+2025-01-04 06:22:58,727 - INFO - plugin_name: caching_sha2_password
+2025-01-04 06:22:58,728 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-04 06:22:58,728 - DEBUG - Exchanging further packets
+2025-01-04 06:22:58,729 - DEBUG - caching_sha2_password completed succesfully
+2025-01-04 06:22:58,740 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-04 06:22:58,746 - WARNING -  * Debugger is active!
+2025-01-04 06:22:58,748 - INFO -  * Debugger PIN: 599-719-174
+2025-01-04 06:23:08,948 - DEBUG - Request data: {'WalletName': 'WATCh', 'Password': '12345123451'}
+2025-01-04 06:23:08,948 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2025-01-04 06:23:08,959 - INFO - New user created: <User(UserID=3d0bd6eb-b2ce-4ba2-92d9-147a05716f4d, ID=None, Email='None')>
+2025-01-04 06:23:08,960 - INFO - Generated base Mnemonic Phrase: math kidney route evidence soap cave tobacco dinner front album wasp hire
+2025-01-04 06:23:08,961 - INFO - Wallet created: <Wallet(WalletID=84e9f7a8-ff76-41b3-91ac-03a7e05f7034, UserID=3d0bd6eb-b2ce-4ba2-92d9-147a05716f4d, WalletName='WATCh', IsMultiSig=False, RequiredSignatures='1')>
+2025-01-04 06:23:08,966 - INFO - Generating wallet for blockchain: Ethereum
+2025-01-04 06:23:08,967 - ERROR - Error deriving wallet for Ethereum: Bip39MnemonicValidator.__init__() got multiple values for argument 'lang'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 164, in generate_wallet
+    derived_private_key, derived_public_address = derive_keys_from_mnemonic(
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 62, in derive_keys_from_mnemonic
+    if not mnemonic or not Bip39MnemonicValidator(mnemonic, lang=language).IsValid():
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Bip39MnemonicValidator.__init__() got multiple values for argument 'lang'
+2025-01-04 06:23:08,968 - INFO - Generating wallet for blockchain: Tron
+2025-01-04 06:23:08,968 - ERROR - Error deriving wallet for Tron: Bip39MnemonicValidator.__init__() got multiple values for argument 'lang'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 164, in generate_wallet
+    derived_private_key, derived_public_address = derive_keys_from_mnemonic(
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 62, in derive_keys_from_mnemonic
+    if not mnemonic or not Bip39MnemonicValidator(mnemonic, lang=language).IsValid():
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Bip39MnemonicValidator.__init__() got multiple values for argument 'lang'
+2025-01-04 06:23:08,969 - INFO - Generating wallet for blockchain: BNB
+2025-01-04 06:23:08,969 - ERROR - Error deriving wallet for BNB: Bip39MnemonicValidator.__init__() got multiple values for argument 'lang'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 164, in generate_wallet
+    derived_private_key, derived_public_address = derive_keys_from_mnemonic(
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 62, in derive_keys_from_mnemonic
+    if not mnemonic or not Bip39MnemonicValidator(mnemonic, lang=language).IsValid():
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Bip39MnemonicValidator.__init__() got multiple values for argument 'lang'
+2025-01-04 06:23:08,977 - DEBUG - Database session closed.
+2025-01-04 06:23:08,977 - INFO - 127.0.0.1 - - [04/Jan/2025 06:23:08] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

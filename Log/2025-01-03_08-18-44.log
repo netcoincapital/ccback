@@ -1,0 +1,19 @@
+2025-01-03 08:18:44,205 - INFO - Services module initialized.
+2025-01-03 08:18:44,208 - INFO - LogManager initialized successfully.
+2025-01-03 08:18:44,246 - DEBUG - Building SSL context
+2025-01-03 08:18:44,287 - DEBUG - Switching to SSL
+2025-01-03 08:18:44,290 - DEBUG - SSL has been enabled
+2025-01-03 08:18:44,291 - DEBUG - Starting authorization phase
+2025-01-03 08:18:44,291 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-03 08:18:44,291 - INFO - package: mysql.connector.plugins
+2025-01-03 08:18:44,292 - INFO - plugin_name: caching_sha2_password
+2025-01-03 08:18:44,294 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-03 08:18:44,294 - DEBUG - Exchanging further packets
+2025-01-03 08:18:44,295 - DEBUG - caching_sha2_password completed succesfully
+2025-01-03 08:18:44,307 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-03 08:18:44,319 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.35:5000
+2025-01-03 08:18:44,320 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-03 08:18:44,322 - INFO -  * Restarting with stat

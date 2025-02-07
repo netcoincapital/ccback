@@ -1,0 +1,50 @@
+2024-12-17 19:17:17,523 - INFO - Services module initialized.
+2024-12-17 19:17:17,528 - INFO - LogManager initialized successfully.
+2024-12-17 19:17:17,561 - DEBUG - Building SSL context
+2024-12-17 19:17:17,605 - DEBUG - Switching to SSL
+2024-12-17 19:17:17,609 - DEBUG - SSL has been enabled
+2024-12-17 19:17:17,610 - DEBUG - Starting authorization phase
+2024-12-17 19:17:17,610 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-17 19:17:17,611 - INFO - package: mysql.connector.plugins
+2024-12-17 19:17:17,611 - INFO - plugin_name: caching_sha2_password
+2024-12-17 19:17:17,614 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-17 19:17:17,615 - DEBUG - Exchanging further packets
+2024-12-17 19:17:17,615 - DEBUG - caching_sha2_password completed succesfully
+2024-12-17 19:17:17,632 - INFO - Starting Flask app.
+2024-12-17 19:17:17,639 - WARNING -  * Debugger is active!
+2024-12-17 19:17:17,642 - INFO -  * Debugger PIN: 599-719-174
+2024-12-17 19:18:01,518 - DEBUG - Request data: {'WalletName': 'SMN', 'Password': '12345123451'}
+2024-12-17 19:18:01,518 - DEBUG - Detected Device: PostmanRuntime/7.43.0, IP: 127.0.0.1
+2024-12-17 19:18:01,531 - INFO - New user created: <User(UserID=014163c6-efff-4265-8573-25b19fb6be25, ID=None, Email='None')>
+2024-12-17 19:18:01,543 - INFO - Generated Phrase Key: trust copper unique goose vicious moon rain tornado tornado extend employ pitch
+2024-12-17 19:18:01,547 - INFO - Generating wallet for blockchain: Ethereum
+2024-12-17 19:18:01,547 - INFO - Generated Ethereum wallet: {'address': '0x144aa7342efada3b4d1e06319eb2e99988f105b5', 'private_key': '1a945b59890a2c7a63347e36e5c5124440869f8c476a2f625e59e9d3ba5734b1'}
+2024-12-17 19:18:01,548 - DEBUG - Secured Private Key for blockchain Ethereum: ZGQ4YmQ4OWE3YTE3Mjc3M2VlNTVkM2FjNmRkMzllNjNlZjg0YTQ0ZjhjZWI2ZjQzZTMwMmFhMzBmOTYzZDU5Ng==
+2024-12-17 19:18:01,548 - INFO - Wallet created for Ethereum: <Wallet(WalletID=4c3eadf1-db74-41ea-99af-3bf93e080182, UserID=014163c6-efff-4265-8573-25b19fb6be25, WalletName='SMN', IsMultiSig=False, RequiredSignatures='1')>
+2024-12-17 19:18:01,549 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x144aa7342efada3b4d1e06319eb2e99988f105b5')>
+2024-12-17 19:18:01,550 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-17 19:18:06,196 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x144aa7342efada3b4d1e06319eb2e99988f105b5&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2024-12-17 19:18:06,202 - WARNING - Error fetching balance for Ethereum: NOTOK
+2024-12-17 19:18:06,202 - WARNING - Could not fetch balance for blockchain: Ethereum
+2024-12-17 19:18:06,202 - INFO - Generating wallet for blockchain: Tron
+2024-12-17 19:18:06,203 - INFO - Generated Tron wallet: {'address': 'Tf63eed34c49ec7462f98e8a308af7ee94', 'private_key': '3d23ebb80976422888d40dcf0c6396e1e744246a23d9a9ec9b62a6ccafee1c85'}
+2024-12-17 19:18:06,203 - DEBUG - Secured Private Key for blockchain Tron: OGJkYmMxZGJlNjllNWZjYjI2NDgyMGE3ODY5N2MwN2ZiOGNkOGJkMDMxNmZmYjllNmQ0YzczOGUxODQyMWNlYQ==
+2024-12-17 19:18:06,204 - INFO - Wallet created for Tron: <Wallet(WalletID=8d027135-52ed-4d55-8a8f-def79b44ea7c, UserID=014163c6-efff-4265-8573-25b19fb6be25, WalletName='SMN', IsMultiSig=False, RequiredSignatures='1')>
+2024-12-17 19:18:06,204 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='Tf63eed34c49ec7462f98e8a308af7ee94')>
+2024-12-17 19:18:06,206 - DEBUG - Starting new HTTPS connection (1): api.tronscan.org:443
+2024-12-17 19:18:06,823 - DEBUG - https://api.tronscan.org:443 "GET /api/account?address=Tf63eed34c49ec7462f98e8a308af7ee94 HTTP/1.1" 301 162
+2024-12-17 19:18:06,824 - DEBUG - Starting new HTTPS connection (1): apilist.tronscan.org:443
+2024-12-17 19:18:07,272 - DEBUG - https://apilist.tronscan.org:443 "GET /api/account?address=Tf63eed34c49ec7462f98e8a308af7ee94 HTTP/1.1" 200 3
+2024-12-17 19:18:07,273 - WARNING - Error fetching balance for Tron: No balance found
+2024-12-17 19:18:07,274 - WARNING - Could not fetch balance for blockchain: Tron
+2024-12-17 19:18:07,275 - INFO - Generating wallet for blockchain: BNB
+2024-12-17 19:18:07,275 - INFO - Generated BNB wallet: {'address': '0x9090b1aa68d721dd9f99a44dbee0ce5fd32f5b0b', 'private_key': '86447eeda414318a641bcaf15694fe41a9851a0778414b7cd84fa9a9d4affdbb'}
+2024-12-17 19:18:07,276 - DEBUG - Secured Private Key for blockchain BNB: MGFhYThkZWI0ZWQ3Mzg2OWU5ZDFkMjZkZTIxM2U1NzUyNjJlZjQwNTViNDcxZDRkZDdlNGM4OThiYzkzYjBhMg==
+2024-12-17 19:18:07,276 - INFO - Wallet created for BNB: <Wallet(WalletID=ba701684-49e4-4978-a3ba-261320724ceb, UserID=014163c6-efff-4265-8573-25b19fb6be25, WalletName='SMN', IsMultiSig=False, RequiredSignatures='1')>
+2024-12-17 19:18:07,277 - INFO - Address created for BNB: <Address(AddressID=None, PublicAddress='0x9090b1aa68d721dd9f99a44dbee0ce5fd32f5b0b')>
+2024-12-17 19:18:07,278 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-17 19:18:07,910 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0x9090b1aa68d721dd9f99a44dbee0ce5fd32f5b0b&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 187
+2024-12-17 19:18:07,910 - WARNING - Error fetching balance for BNB: NOTOK
+2024-12-17 19:18:07,911 - WARNING - Could not fetch balance for blockchain: BNB
+2024-12-17 19:18:07,946 - DEBUG - Database session closed.
+2024-12-17 19:18:07,947 - INFO - 127.0.0.1 - - [17/Dec/2024 19:18:07] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

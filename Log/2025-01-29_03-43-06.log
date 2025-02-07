@@ -1,0 +1,30 @@
+2025-01-29 03:43:06,384 - DEBUG - Building SSL context
+2025-01-29 03:43:06,426 - DEBUG - Switching to SSL
+2025-01-29 03:43:06,430 - DEBUG - SSL has been enabled
+2025-01-29 03:43:06,430 - DEBUG - Starting authorization phase
+2025-01-29 03:43:06,430 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-01-29 03:43:06,431 - INFO - package: mysql.connector.plugins
+2025-01-29 03:43:06,431 - INFO - plugin_name: caching_sha2_password
+2025-01-29 03:43:06,431 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-01-29 03:43:06,432 - DEBUG - Exchanging further packets
+2025-01-29 03:43:06,432 - DEBUG - caching_sha2_password completed succesfully
+2025-01-29 03:43:06,450 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-01-29 03:43:06,459 - WARNING -  * Debugger is active!
+2025-01-29 03:43:06,462 - INFO -  * Debugger PIN: 117-061-111
+2025-01-29 03:43:09,867 - INFO - New user created: <User(UserID=adc6af84-de4d-4150-9cdc-225370b2094e, ID=None, Email='None')>
+2025-01-29 03:43:09,868 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=a051811e-bcf3-4761-a590-26e78e6f4f49, UserID=adc6af84-de4d-4150-9cdc-225370b2094e, IsMultiSig=False, RequiredSignatures='1')>
+2025-01-29 03:43:09,869 - INFO - Generated Mnemonic: guard water august catalog snow rapid inherit discover thunder okay team mask
+2025-01-29 03:43:09,885 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x8B673aB5b66B52dcc5a12A762A0887bA66462EE5')>
+2025-01-29 03:43:09,885 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='TYUpfHvuDrQocaZSHGpuK8axN9fhirLE24')>
+2025-01-29 03:43:09,886 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0x8B673aB5b66B52dcc5a12A762A0887bA66462EE5')>
+2025-01-29 03:43:09,887 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1q5g90lexqwg4eca2zthlnf65fmwp70hnguvqy66')>
+2025-01-29 03:43:09,887 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0x8B673aB5b66B52dcc5a12A762A0887bA66462EE5')>
+2025-01-29 03:43:09,887 - WARNING - Skipping blockchain: Arbitrum (not recognized).
+2025-01-29 03:43:09,888 - ERROR - Error in generate_wallet: Unsupported blockchain in DB
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\generate\generate.py", line 180, in generate_wallet
+    raise ValueError("Unsupported blockchain in DB")
+ValueError: Unsupported blockchain in DB
+2025-01-29 03:43:09,890 - DEBUG - Database session closed.
+2025-01-29 03:43:09,891 - INFO - 127.0.0.1 - - [29/Jan/2025 03:43:09] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -
+2025-01-29 03:46:50,844 - INFO -  * Detected change in 'c:\\Users\\kozmos teknoloji\\Desktop\\CC\\generate\\generate.py', reloading

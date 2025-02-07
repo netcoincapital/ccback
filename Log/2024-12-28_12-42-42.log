@@ -1,0 +1,60 @@
+2024-12-28 12:42:42,464 - INFO - Services module initialized.
+2024-12-28 12:42:42,469 - INFO - LogManager initialized successfully.
+2024-12-28 12:42:42,505 - DEBUG - Building SSL context
+2024-12-28 12:42:42,553 - DEBUG - Switching to SSL
+2024-12-28 12:42:42,556 - DEBUG - SSL has been enabled
+2024-12-28 12:42:42,557 - DEBUG - Starting authorization phase
+2024-12-28 12:42:42,557 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-12-28 12:42:42,557 - INFO - package: mysql.connector.plugins
+2024-12-28 12:42:42,558 - INFO - plugin_name: caching_sha2_password
+2024-12-28 12:42:42,558 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-28 12:42:42,559 - DEBUG - Exchanging further packets
+2024-12-28 12:42:42,559 - DEBUG - caching_sha2_password completed succesfully
+2024-12-28 12:42:42,575 - INFO - Starting Flask app with Keep-Alive enabled.
+2024-12-28 12:42:42,582 - WARNING -  * Debugger is active!
+2024-12-28 12:42:42,584 - INFO -  * Debugger PIN: 599-719-174
+2024-12-28 12:42:46,068 - INFO - Attempting to identify blockchain for address: 0xeb018209fc383b6fd0e59cf3ea547c41002f3a8d
+2024-12-28 12:42:46,071 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-28 12:42:46,733 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0xeb018209fc383b6fd0e59cf3ea547c41002f3a8d&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2024-12-28 12:42:46,735 - INFO - Response from Etherscan: {'status': '0', 'message': 'NOTOK'}
+2024-12-28 12:42:46,736 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-28 12:42:47,340 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0xeb018209fc383b6fd0e59cf3ea547c41002f3a8d&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 187
+2024-12-28 12:42:47,340 - INFO - Response from BscScan: {'status': '0', 'message': 'NOTOK'}
+2024-12-28 12:42:47,340 - INFO - Unknown Blockchain format
+2024-12-28 12:42:47,341 - INFO - Attempting to identify blockchain for address: T264f6580256c4fd1de85f993091384daf
+2024-12-28 12:42:47,342 - DEBUG - Starting new HTTPS connection (1): api.tronscan.org:443
+2024-12-28 12:42:47,936 - DEBUG - https://api.tronscan.org:443 "GET /api/account?address=T264f6580256c4fd1de85f993091384daf HTTP/1.1" 301 162
+2024-12-28 12:42:47,937 - DEBUG - Starting new HTTPS connection (1): apilist.tronscan.org:443
+2024-12-28 12:42:48,616 - DEBUG - https://apilist.tronscan.org:443 "GET /api/account?address=T264f6580256c4fd1de85f993091384daf HTTP/1.1" 200 3
+2024-12-28 12:42:48,617 - INFO - Unknown Blockchain format
+2024-12-28 12:42:48,618 - INFO - Attempting to identify blockchain for address: 0x16ded1fee9b00b3e836d0da338ebd1793f8985c2
+2024-12-28 12:42:48,619 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-28 12:42:49,228 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x16ded1fee9b00b3e836d0da338ebd1793f8985c2&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2024-12-28 12:42:49,229 - INFO - Response from Etherscan: {'status': '0', 'message': 'NOTOK'}
+2024-12-28 12:42:49,230 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-28 12:42:49,823 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0x16ded1fee9b00b3e836d0da338ebd1793f8985c2&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 187
+2024-12-28 12:42:49,824 - INFO - Response from BscScan: {'status': '0', 'message': 'NOTOK'}
+2024-12-28 12:42:49,824 - INFO - Unknown Blockchain format
+2024-12-28 12:42:49,824 - INFO - Attempting to identify blockchain for address: 0x4bdd0dfa1d0e7df0675ca536720a7a44a91cad1d
+2024-12-28 12:42:49,825 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-28 12:42:50,466 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x4bdd0dfa1d0e7df0675ca536720a7a44a91cad1d&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 185
+2024-12-28 12:42:50,467 - INFO - Response from Etherscan: {'status': '0', 'message': 'NOTOK'}
+2024-12-28 12:42:50,468 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-28 12:42:51,076 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0x4bdd0dfa1d0e7df0675ca536720a7a44a91cad1d&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 205
+2024-12-28 12:42:51,077 - INFO - Response from BscScan: {'status': '0', 'message': 'NOTOK'}
+2024-12-28 12:42:51,078 - INFO - Unknown Blockchain format
+2024-12-28 12:42:51,078 - INFO - Attempting to identify blockchain for address: T31acd76c33ea4720ed50e6ac60cc062d1
+2024-12-28 12:42:51,079 - DEBUG - Starting new HTTPS connection (1): api.tronscan.org:443
+2024-12-28 12:42:51,637 - DEBUG - https://api.tronscan.org:443 "GET /api/account?address=T31acd76c33ea4720ed50e6ac60cc062d1 HTTP/1.1" 301 162
+2024-12-28 12:42:51,638 - DEBUG - Starting new HTTPS connection (1): apilist.tronscan.org:443
+2024-12-28 12:42:52,105 - DEBUG - https://apilist.tronscan.org:443 "GET /api/account?address=T31acd76c33ea4720ed50e6ac60cc062d1 HTTP/1.1" 200 3
+2024-12-28 12:42:52,106 - INFO - Unknown Blockchain format
+2024-12-28 12:42:52,106 - INFO - Attempting to identify blockchain for address: 0x2c68d39e4d5fe13d8b04617701d75cd9aca16f72
+2024-12-28 12:42:52,108 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2024-12-28 12:42:52,758 - DEBUG - https://api.etherscan.io:443 "GET /api?module=account&action=balance&address=0x2c68d39e4d5fe13d8b04617701d75cd9aca16f72&tag=latest&apikey=YOUR_ETHERSCAN_API_KEY HTTP/1.1" 200 205
+2024-12-28 12:42:52,759 - INFO - Response from Etherscan: {'status': '0', 'message': 'NOTOK'}
+2024-12-28 12:42:52,760 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2024-12-28 12:42:53,376 - DEBUG - https://api.bscscan.com:443 "GET /api?module=account&action=balance&address=0x2c68d39e4d5fe13d8b04617701d75cd9aca16f72&tag=latest&apikey=YOUR_BSCSCAN_API_KEY HTTP/1.1" 200 205
+2024-12-28 12:42:53,377 - INFO - Response from BscScan: {'status': '0', 'message': 'NOTOK'}
+2024-12-28 12:42:53,377 - INFO - Unknown Blockchain format
+2024-12-28 12:42:53,380 - INFO - 127.0.0.1 - - [28/Dec/2024 12:42:53] "GET /update_asset HTTP/1.1" 200 -
