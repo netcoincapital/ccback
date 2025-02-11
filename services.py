@@ -443,15 +443,13 @@ class CurrencyPriceService:
         """
         try:
             self.logger.info(f"Fetching latest prices for symbols: {symbols}, convert: {convert}")
-            symbol_str = ",".join(symbols)  # تبدیل لیست به رشته با جداکننده ","
+            symbol_str = ",".join(symbols)
             response = self.coin_market_cap.get_token_price(symbol_str, convert)
-            
-            # در صورتی که response از نوع رشته باشد، یعنی یک پیام خطا است.
+
             if isinstance(response, str):
                 self.logger.error(f"Error fetching prices: {response}")
                 return {"status": "error", "message": response}
 
-            # اگر پاسخ معتبر و بدون خطای سرویس باشد (خطای 0 از سمت CoinMarketCap)
             if response.get("status") and response["status"].get("error_code") == 0:
                 prices = {}
                 for symbol in symbols:
@@ -459,7 +457,6 @@ class CurrencyPriceService:
                     if price_data:
                         prices[symbol] = price_data["quote"][convert]["price"]
                     else:
-                        # اگر از سوی سرویس قیمت نداشته باشد، None بگذاریم
                         prices[symbol] = None
                 self.logger.info(f"Prices fetched successfully: {prices}")
                 return prices
@@ -470,6 +467,41 @@ class CurrencyPriceService:
         except Exception as e:
             self.logger.error(f"Exception in get_latest_prices: {str(e)}")
             return {"status": "error", "message": str(e)}
+
+    def get_24h_changes(self, symbols: list[str], convert: str = "USD") -> dict:
+        """
+        دریافت درصد تغییرات قیمت ۲۴ ساعته برای هر ارز دیجیتال.
+
+        :param symbols: لیستی از نماد ارزهای دیجیتال (مانند ['BTC', 'ETH']).
+        :param convert: ارز تبدیل (پیش‌فرض: 'USD').
+        :return: دیکشنری شامل درصد تغییر ۲۴ ساعته هر ارز یا مقدار None در صورت نبود داده.
+        """
+        try:
+            self.logger.info(f"Fetching 24h changes for symbols: {symbols}, convert: {convert}")
+            symbol_str = ",".join(symbols)
+            response = self.coin_market_cap.get_token_price(symbol_str, convert)
+
+            if isinstance(response, str):
+                self.logger.error(f"Error fetching 24h changes: {response}")
+                return {symbol: None for symbol in symbols}
+
+            if response.get("status") and response["status"].get("error_code") == 0:
+                changes = {}
+                for symbol in symbols:
+                    price_data = response["data"].get(symbol)
+                    if price_data:
+                        changes[symbol] = price_data["quote"][convert]["percent_change_24h"]
+                    else:
+                        changes[symbol] = None
+                self.logger.info(f"24h changes fetched successfully: {changes}")
+                return changes
+            else:
+                error_msg = response.get("status", {}).get("error_message", "Unknown error")
+                self.logger.error(f"Error fetching 24h changes: {error_msg}")
+                return {symbol: None for symbol in symbols}
+        except Exception as e:
+            self.logger.error(f"Exception in get_24h_changes: {str(e)}")
+            return {symbol: None for symbol in symbols}
 
 class PhraseKeyManager:
     

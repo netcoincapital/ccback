@@ -1,0 +1,24 @@
+2025-02-11 08:11:14,238 - DEBUG - Building SSL context
+2025-02-11 08:11:14,274 - DEBUG - Switching to SSL
+2025-02-11 08:11:14,278 - DEBUG - SSL has been enabled
+2025-02-11 08:11:14,279 - DEBUG - Starting authorization phase
+2025-02-11 08:11:14,279 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-11 08:11:14,279 - INFO - package: mysql.connector.plugins
+2025-02-11 08:11:14,280 - INFO - plugin_name: caching_sha2_password
+2025-02-11 08:11:14,280 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-11 08:11:14,281 - DEBUG - Exchanging further packets
+2025-02-11 08:11:14,281 - DEBUG - caching_sha2_password completed succesfully
+2025-02-11 08:11:14,297 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-11 08:11:14,303 - WARNING -  * Debugger is active!
+2025-02-11 08:11:14,306 - INFO -  * Debugger PIN: 117-061-111
+2025-02-11 08:12:24,179 - INFO - Received a request to fetch currency prices based on UserID and CurrencyID list.
+2025-02-11 08:12:24,179 - INFO - Fetching price for these symbols ['ETH', 'SHIB'], requested by UserID: ec99e22a-653c-44b8-a1a8-9347464666d7
+2025-02-11 08:12:24,180 - INFO - Final fiat currencies to fetch: ['USD', 'EUR', 'IRR']
+2025-02-11 08:12:24,208 - INFO - Fetched these symbols from database: ['ETH', 'SHIB']
+2025-02-11 08:12:24,209 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: ['USD', 'EUR', 'IRR']
+2025-02-11 08:12:24,210 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-11 08:12:24,755 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=USD&convert=EUR&convert=IRR HTTP/1.1" 400 144
+2025-02-11 08:12:24,759 - ERROR - Exception in get_latest_prices: 'str' object has no attribute 'get'
+2025-02-11 08:12:24,759 - ERROR - Error occurred while fetching prices for fiat USD: 'str' object has no attribute 'get'
+2025-02-11 08:12:24,761 - INFO - 127.0.0.1 - - [11/Feb/2025 08:12:24] "[35m[1mPOST /prices HTTP/1.1[0m" 500 -
+2025-02-11 08:12:35,075 - INFO -  * Detected change in 'c:\\Users\\kozmos teknoloji\\Desktop\\CC\\CU\\CurrencyUpdate.py', reloading

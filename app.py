@@ -4,7 +4,7 @@ from database import init_db
 from generate import generate_bp
 from WI import import_bp
 from CU import CUpdate_bp, CPost_bp
-from TA import phrase_key_bp, receive_bp
+from TA import phrase_key_bp, receive_bp, gasfee_bp
 from balance import balance_bp
 import logging
 import os
@@ -48,6 +48,7 @@ app.register_blueprint(CPost_bp)
 app.register_blueprint(phrase_key_bp)
 app.register_blueprint(receive_bp)
 app.register_blueprint(balance_bp)
+app.register_blueprint(gasfee_bp)
 
 # مقداردهی اولیه پایگاه داده
 init_db()

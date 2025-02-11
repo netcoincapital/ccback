@@ -1,0 +1,28 @@
+2025-02-07 18:30:26,753 - DEBUG - Building SSL context
+2025-02-07 18:30:26,792 - DEBUG - Switching to SSL
+2025-02-07 18:30:26,796 - DEBUG - SSL has been enabled
+2025-02-07 18:30:26,796 - DEBUG - Starting authorization phase
+2025-02-07 18:30:26,797 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-07 18:30:26,797 - INFO - package: mysql.connector.plugins
+2025-02-07 18:30:26,797 - INFO - plugin_name: caching_sha2_password
+2025-02-07 18:30:26,798 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-07 18:30:26,798 - DEBUG - Exchanging further packets
+2025-02-07 18:30:26,799 - DEBUG - caching_sha2_password completed succesfully
+2025-02-07 18:30:26,814 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-07 18:30:26,821 - WARNING -  * Debugger is active!
+2025-02-07 18:30:26,823 - INFO -  * Debugger PIN: 117-061-111
+2025-02-07 18:30:44,184 - INFO - New user created: <User(UserID=ab7e8b1a-321f-48ca-a37a-167d64a39659, ID=None, Email='None')>
+2025-02-07 18:30:44,185 - INFO - Wallet created (wallet name not stored): <Wallet(WalletID=af54300d-2cdf-4acb-b0a2-08af242f3cb3, UserID=ab7e8b1a-321f-48ca-a37a-167d64a39659, IsMultiSig=False, RequiredSignatures='1')>
+2025-02-07 18:30:44,197 - INFO - Generated Mnemonic: rebel visa reopen limb appear strike march best clock debate autumn want
+2025-02-07 18:30:44,244 - INFO - Address created for Ethereum: <Address(AddressID=None, PublicAddress='0x57282F783af675666f61B079e9Ac7ca7b2688B91')>
+2025-02-07 18:30:44,245 - INFO - Address created for Tron: <Address(AddressID=None, PublicAddress='THrhwZyq352ud8JKvMxEETiNaRDpJA2yaN')>
+2025-02-07 18:30:44,245 - INFO - Address created for Binance Smart Chain: <Address(AddressID=None, PublicAddress='0x57282F783af675666f61B079e9Ac7ca7b2688B91')>
+2025-02-07 18:30:44,246 - INFO - Address created for Bitcoin: <Address(AddressID=None, PublicAddress='bc1qahdqj258u53ty7adg6pzwujqa32vkl29utu4y0')>
+2025-02-07 18:30:44,246 - INFO - Address created for Polygon: <Address(AddressID=None, PublicAddress='0x57282F783af675666f61B079e9Ac7ca7b2688B91')>
+2025-02-07 18:30:44,247 - INFO - Address created for Arbitrum: <Address(AddressID=None, PublicAddress='0x57282F783af675666f61B079e9Ac7ca7b2688B91')>
+2025-02-07 18:30:44,247 - INFO - Address created for XRP: <Address(AddressID=None, PublicAddress='rBNMjUDNWtJfNF1qA9w9hUqdRMHarbvCBN')>
+2025-02-07 18:30:44,248 - INFO - Address created for Solana: <Address(AddressID=None, PublicAddress='FTKsL1Y9yVL8GghuS9PhQFnyS5rj9MnzQsYum4y4sHuo')>
+2025-02-07 18:30:44,248 - INFO - Address created for Avalanche: <Address(AddressID=None, PublicAddress='0x57282F783af675666f61B079e9Ac7ca7b2688B91')>
+2025-02-07 18:30:44,249 - INFO - Address created for Polkadot: <Address(AddressID=None, PublicAddress='16XgkN4GzGRtLShwsgfayFqhEfrdWQfRD795G5QTEwBhFEvd')>
+2025-02-07 18:30:44,290 - DEBUG - Database session closed.
+2025-02-07 18:30:44,291 - INFO - 127.0.0.1 - - [07/Feb/2025 18:30:44] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 201 -

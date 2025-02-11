@@ -1,0 +1,34 @@
+2025-02-09 04:32:30,302 - DEBUG - Building SSL context
+2025-02-09 04:32:30,339 - DEBUG - Switching to SSL
+2025-02-09 04:32:30,344 - DEBUG - SSL has been enabled
+2025-02-09 04:32:30,345 - DEBUG - Starting authorization phase
+2025-02-09 04:32:30,345 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-09 04:32:30,345 - INFO - package: mysql.connector.plugins
+2025-02-09 04:32:30,346 - INFO - plugin_name: caching_sha2_password
+2025-02-09 04:32:30,346 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-09 04:32:30,347 - DEBUG - Exchanging further packets
+2025-02-09 04:32:30,348 - DEBUG - caching_sha2_password completed succesfully
+2025-02-09 04:32:30,372 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-09 04:32:30,379 - WARNING -  * Debugger is active!
+2025-02-09 04:32:30,384 - INFO -  * Debugger PIN: 117-061-111
+2025-02-09 04:32:53,226 - DEBUG - Starting new HTTPS connection (1): mempool.space:443
+2025-02-09 04:32:53,395 - DEBUG - https://mempool.space:443 "GET /api/v1/fees/recommended HTTP/1.1" 200 74
+2025-02-09 04:32:53,396 - DEBUG - Starting new HTTPS connection (1): api.etherscan.io:443
+2025-02-09 04:32:55,068 - DEBUG - https://api.etherscan.io:443 "GET /api?module=gastracker&action=gasoracle&apikey=RRYN92DT9T4DFIYN6ATT7UIPS3Z9PW6B8S HTTP/1.1" 200 343
+2025-02-09 04:32:55,073 - DEBUG - Starting new HTTPS connection (1): apilist.tronscan.org:443
+2025-02-09 04:32:55,584 - DEBUG - https://apilist.tronscan.org:443 "GET /api/system/status HTTP/1.1" 200 181
+2025-02-09 04:32:55,586 - DEBUG - Starting new HTTPS connection (1): api.bscscan.com:443
+2025-02-09 04:32:56,274 - DEBUG - https://api.bscscan.com:443 "GET /api?module=gastracker&action=gasoracle&apikey=DVYV2FWBR9QQDQ97Q86YGF9SFYZ14DMPV8 HTTP/1.1" 200 218
+2025-02-09 04:32:56,275 - DEBUG - Starting new HTTPS connection (1): api.polygonscan.com:443
+2025-02-09 04:32:56,880 - DEBUG - https://api.polygonscan.com:443 "GET /api?module=gastracker&action=gasoracle&apikey=a8ab43a04ce044de988a838d92f478a7 HTTP/1.1" 200 187
+2025-02-09 04:32:56,882 - DEBUG - Starting new HTTPS connection (1): api.subscan.io:443
+2025-02-09 04:32:57,745 - DEBUG - https://api.subscan.io:443 "GET /api/scan/metadata HTTP/1.1" 404 None
+2025-02-09 04:32:57,747 - DEBUG - Starting new HTTPS connection (1): public-api.solscan.io:443
+2025-02-09 04:32:58,047 - DEBUG - https://public-api.solscan.io:443 "GET /v2/market/gas-fees HTTP/1.1" 404 None
+2025-02-09 04:32:58,048 - DEBUG - Starting new HTTPS connection (1): api.arbiscan.io:443
+2025-02-09 04:32:58,401 - DEBUG - https://api.arbiscan.io:443 "GET /api?module=gastracker&action=gasoracle&apikey=a8ab43a04ce044de988a838d92f478a7 HTTP/1.1" 200 187
+2025-02-09 04:32:58,403 - DEBUG - Starting new HTTPS connection (1): data.ripple.com:443
+2025-02-09 04:32:58,746 - DEBUG - https://data.ripple.com:443 "GET /v2/fees HTTP/1.1" 403 274
+2025-02-09 04:32:58,747 - DEBUG - Starting new HTTPS connection (1): api.snowtrace.io:443
+2025-02-09 04:32:59,134 - DEBUG - https://api.snowtrace.io:443 "GET /api?module=gastracker&action=gasoracle&apikey=a8ab43a04ce044de988a838d92f478a7 HTTP/1.1" 200 81
+2025-02-09 04:32:59,138 - INFO - 127.0.0.1 - - [09/Feb/2025 04:32:59] "GET /gasfee HTTP/1.1" 200 -
