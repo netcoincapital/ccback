@@ -1,9 +1,44 @@
+import re
+import getpass
+from decimal import Decimal
 from web3 import Web3
+from web3.exceptions import TransactionNotFound
 from eth_account import Account
 
-# -------------------------- ERC20 ABI گسترش‌یافته --------------------------
-# متدهای transfer, decimals, balanceOf, symbol
-ERC20_ABI = [
+NETWORKS = {
+    "1": {
+        "name": "Ethereum Mainnet",
+        "chain_id": 1,
+        "rpc_url": "https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7",  # Replace with your valid Infura or other RPC
+        "explorer": "https://etherscan.io/tx/"
+    },
+    "2": {
+        "name": "Binance Smart Chain (BSC)",
+        "chain_id": 56,
+        "rpc_url": "https://bsc-dataseed.binance.org/",
+        "explorer": "https://bscscan.com/tx/"
+    },
+    "3": {
+        "name": "Polygon",
+        "chain_id": 137,
+        "rpc_url": "https://polygon-rpc.com",
+        "explorer": "https://polygonscan.com/tx/"
+    },
+    "4": {
+        "name": "Arbitrum",
+        "chain_id": 42161,
+        "rpc_url": "https://arb1.arbitrum.io/rpc",
+        "explorer": "https://arbiscan.io/tx/"
+    },
+    "5": {
+        "name": "Avalanche",
+        "chain_id": 43114,
+        "rpc_url": "https://api.avax.network/ext/bc/C/rpc",
+        "explorer": "https://snowtrace.io/tx/"
+    }
+}
+
+MIN_ERC20_ABI = [
     {
         "constant": False,
         "inputs": [
@@ -11,264 +46,264 @@ ERC20_ABI = [
             {"name": "_value", "type": "uint256"}
         ],
         "name": "transfer",
-        "outputs": [{"name": "", "type": "bool"}],
-        "type": "function"
-    },
-    {
-        "constant": True,
-        "inputs": [],
-        "name": "decimals",
-        "outputs": [{"name": "", "type": "uint8"}],
-        "type": "function"
-    },
-    {
-        "constant": True,
-        "inputs": [
-            {"name": "_owner", "type": "address"}
+        "outputs": [
+            {"name": "", "type": "bool"}
         ],
-        "name": "balanceOf",
-        "outputs": [{"name": "", "type": "uint256"}],
-        "type": "function"
-    },
-    {
-        "constant": True,
-        "inputs": [],
-        "name": "symbol",
-        "outputs": [{"name": "", "type": "string"}],
         "type": "function"
     }
 ]
 
-# --------------------------- RPC های معتبر برای شبکه‌ها ---------------------------
-ETHEREUM_PROVIDER  = "https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7"    # با مقدار Project ID خودتان جایگزین کنید
-BSC_PROVIDER       = "https://bsc-dataseed1.binance.org"
-POLYGON_PROVIDER   = "https://polygon-mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7"  # با مقدار Project ID خودتان جایگزین کنید
-ARBITRUM_PROVIDER  = "https://arb1.arbitrum.io/rpc"
-AVALANCHE_PROVIDER = "https://api.avax.network/ext/bc/C/rpc"
 
-# --------------------------- ساخت Web3 برای هر شبکه ---------------------------
-ethereum_network  = Web3(Web3.HTTPProvider(ETHEREUM_PROVIDER))
-bsc_network       = Web3(Web3.HTTPProvider(BSC_PROVIDER))
-polygon_network   = Web3(Web3.HTTPProvider(POLYGON_PROVIDER))
-arbitrum_network  = Web3(Web3.HTTPProvider(ARBITRUM_PROVIDER))
-avalanche_network = Web3(Web3.HTTPProvider(AVALANCHE_PROVIDER))
-
-# نمایش وضعیت اتصال
-print("Ethereum:",  "Connected" if ethereum_network.is_connected()  else "Not connected")
-print("BSC:     ",  "Connected" if bsc_network.is_connected()       else "Not connected")
-print("Polygon: ",  "Connected" if polygon_network.is_connected()   else "Not connected")
-print("Arbitrum:",  "Connected" if arbitrum_network.is_connected()  else "Not connected")
-print("Avalanche:", "Connected" if avalanche_network.is_connected() else "Not connected")
-
-
-def get_eip1559_fees(network):
+def is_valid_private_key(key: str) -> bool:
     """
-    تلاش برای محاسبه پویا بر اساس آخرین بلاک و max_priority_fee.
-    اگر شبکه از EIP-1559 پشتیبانی نکند یا اطلاعات بلاک ناقص باشد،
-    None برمی‌گرداند.
+    Checks if a given string is a valid 64-character hexadecimal private key.
+    Note: This does NOT validate balances, usage, or security best practices.
+    """
+    return bool(re.fullmatch(r"[0-9a-fA-F]{64}", key))
+
+
+def get_web3_provider(network_choice: str) -> Web3:
+    """
+    Returns a Web3 provider connected to the selected network's RPC.
+    Raises ValueError if the network choice is invalid.
+    """
+    if network_choice not in NETWORKS:
+        raise ValueError("Invalid network choice.")
+    rpc_url = NETWORKS[network_choice]["rpc_url"]
+    return Web3(Web3.HTTPProvider(rpc_url))
+
+
+def get_transaction_url(tx_hash: str, network_choice: str) -> str:
+    """
+    Returns the explorer URL for a given transaction hash and network.
+    """
+    base_url = NETWORKS[network_choice]["explorer"]
+    return f"{base_url}{tx_hash}"
+
+
+def get_account_balance(web3: Web3, address: str) -> float:
+    """
+    Returns the native coin (ETH/BNB/MATIC/etc.) balance of 'address' as a float.
+    1 native coin = 10^18 wei.
+    """
+    balance_wei = web3.eth.get_balance(address)
+    balance = Web3.fromWei(balance_wei, 'ether')
+    return float(balance)
+
+
+def estimate_gas_fee(web3: Web3, contract_function, from_address: str, gas_price: int = None):
+    """
+    Estimates the gas limit and fee for a given contract function call.
+    
+    Parameters:
+      - web3: Web3 provider instance
+      - contract_function: e.g., contract.functions.transfer(...)
+      - from_address: the sender's address
+      - gas_price: optionally override the gas price in wei. If None, tries to use web3.eth.gas_price.
+    
+    Returns:
+      (gas_estimate, fee_in_native) as a tuple.
+      If estimation fails, returns (None, "Unknown").
     """
     try:
-        latest_block = network.eth.get_block("latest")
-        # اگر بلاک دارای baseFeePerGas باشد، یعنی از EIP-1559 پشتیبانی می‌کند
-        base_fee = latest_block.get("baseFeePerGas", None)
-        if base_fee is not None:
-            # تلاش برای بدست آوردن priority_fee به شکل پیش‌فرض وب3
-            priority_fee = None
-            try:
-                priority_fee = network.eth.max_priority_fee
-            except:
-                # اگر متد max_priority_fee وجود نداشت، یک مقدار پیش‌فرض در نظر می‌گیریم
-                priority_fee = network.to_wei("2", "gwei")
+        if gas_price is None:
+            # Attempt to use the network's recommended dynamic gas price
+            gas_price = web3.eth.gas_price
+        gas_estimate = contract_function.estimateGas({"from": from_address})
+        fee_wei = gas_estimate * gas_price
+        fee_in_native = Web3.fromWei(fee_wei, 'ether')
+        return gas_estimate, float(fee_in_native)
+    except Exception:
+        return None, "Unknown"
 
-            # محاسبه‌ی یک maxFeePerGas با ضریب 1.2 روی baseFee + priorityFee
-            max_fee_per_gas = int(base_fee * 1.2 + priority_fee)
-            max_priority_fee_per_gas = int(priority_fee)
 
-            return (max_fee_per_gas, max_priority_fee_per_gas)
-        else:
-            return None
-    except:
+# -----------------------------------------------------------------------------
+# Main ERC20 Sending Function
+# -----------------------------------------------------------------------------
+def send_erc20_token(
+    network_choice: str,
+    private_key: str,
+    contract_address: str,
+    to_address: str,
+    amount: Decimal,
+    decimals: int = 18
+):
+    """
+    Sends an ERC20 token from the sender to the recipient on the chosen EVM network.
+
+    Parameters:
+      - network_choice (str): Key in the NETWORKS dict (e.g., '1' for Ethereum).
+      - private_key (str): The sender's private key in hex (without '0x' prefix).
+      - contract_address (str): The ERC20 contract address.
+      - to_address (str): Recipient address (0x...).
+      - amount (Decimal): Amount of tokens to send (in human-readable form).
+      - decimals (int): Number of decimals for the token (default = 18).
+    """
+    # 1. Validate private key format
+    if not is_valid_private_key(private_key):
+        print("❌ Invalid private key format!")
         return None
 
-
-def send_native_transaction(network, private_key, to_address, value_in_ether, network_name):
-    """
-    ارسال کوین اصلی شبکه با در نظر گرفتن EIP-1559 برای شبکه‌هایی که پشتیبانی می‌کنند.
-    اگر شبکه Legacy باشد (مانند BSC) یا اطلاعات EIP-1559 در دسترس نباشد، از gasPrice استفاده می‌کنیم.
-    """
-    try:
-        sender_address = Account.from_key(private_key).address
-        balance = network.eth.get_balance(sender_address)
-        balance_in_ether = network.from_wei(balance, "ether")
-        print(f"Sender Address: {sender_address}")
-        print(f"Sender {network_name} Balance: {balance_in_ether}")
-
-        if balance_in_ether < value_in_ether:
-            print("Insufficient balance!")
-            return None
-
-        nonce = network.eth.get_transaction_count(sender_address)
-        chain_id = network.eth.chain_id
-
-        eip1559_fees = get_eip1559_fees(network)
-        if eip1559_fees is not None and network_name != "Binance Smart Chain":
-            # شبکه از EIP-1559 پشتیبانی می‌کند
-            max_fee_per_gas, max_priority_fee_per_gas = eip1559_fees
-            tx = {
-                "chainId": chain_id,
-                "to": to_address,
-                "value": network.to_wei(value_in_ether, "ether"),
-                "gas": 21000,
-                "maxFeePerGas": max_fee_per_gas,
-                "maxPriorityFeePerGas": max_priority_fee_per_gas,
-                "nonce": nonce
-            }
-        else:
-            # Legacy (برای BSC یا شبکه‌هایی که EIP-1559 را پشتیبانی نمی‌کنند)
-            gas_price = network.eth.gas_price  # مقدار پویا از شبکه
-            tx = {
-                "chainId": chain_id,
-                "to": to_address,
-                "value": network.to_wei(value_in_ether, "ether"),
-                "gas": 21000,
-                "gasPrice": gas_price,
-                "nonce": nonce
-            }
-
-        signed_txn = network.eth.account.sign_transaction(tx, private_key)
-        tx_hash = network.eth.send_raw_transaction(signed_txn.rawTransaction)
-        tx_hash_hex = network.to_hex(tx_hash)
-        print(f"Transaction sent! Hash: {tx_hash_hex}")
-        return tx_hash_hex
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    # 2. Connect to the selected network
+    web3 = get_web3_provider(network_choice)
+    if not web3.isConnected():
+        print("❌ Failed to connect to the selected network!")
         return None
 
+    # 3. Create the sender account and extract sender's address
+    sender_account = Account.from_key(private_key)
+    sender_address = sender_account.address
 
-def send_token_transaction(network, private_key, token_address, to_address, amount_in_tokens, network_name):
-    """
-    ارسال توکن ERC20 (یا سازگار) در شبکه‌های مختلف EVM، با درنظرگرفتن EIP-1559.
-    اگر شبکه پشتیبانی نکند، از روش Legacy (gasPrice) استفاده می‌شود.
-    """
+    # 4. Convert token amount to the smallest unit
+    #    e.g., if decimals=6 and amount=12.345, smallest_unit = 12345000
+    amount_in_smallest_unit = int(amount * (10 ** decimals))
+
+    # 5. Get the sender's native balance (for paying transaction fees)
+    sender_balance = get_account_balance(web3, sender_address)
+
+    # 6. Build the contract interface
+    contract = web3.eth.contract(
+        address=web3.toChecksumAddress(contract_address),
+        abi=MIN_ERC20_ABI
+    )
+
+    # 7. Prepare the transfer function
+    transfer_function = contract.functions.transfer(to_address, amount_in_smallest_unit)
+
+    # 8. Estimate gas and fee
+    gas_estimate, fee_estimate = estimate_gas_fee(web3, transfer_function, sender_address)
+
+    if gas_estimate is None or fee_estimate == "Unknown":
+        print("⚠️ Unable to estimate gas or fee (Unknown).")
+        print("   You may need to set a manual gas price.")
+        gas_estimate = "Unknown"
+        fee_estimate = "Unknown"
+
+    # 9. Calculate post-transaction balance if possible
+    if fee_estimate == "Unknown":
+        balance_after_tx = "Unknown"
+    else:
+        balance_after_tx = sender_balance - fee_estimate
+
+    # 10. Print transaction summary (pre-broadcast)
+    chain_name = NETWORKS[network_choice]["name"]
+    print(f"\n📌 Transaction Details (Before Sending):")
+    print(f"   Network: {chain_name}")
+    print(f"   Sender Address: {sender_address}")
+    print(f"   Recipient Address: {to_address}")
+    print(f"   Token Contract: {contract_address}")
+    print(f"   Amount to Send: {amount} tokens")
+    print(f"   Sender Balance (Before): {sender_balance} (native)")
+    print(f"   Estimated Gas Limit: {gas_estimate}")
+    print(f"   Estimated Fee: {fee_estimate} (native)")
+    print(f"   Sender Balance (After): {balance_after_tx} (native)\n")
+
+    if balance_after_tx != "Unknown" and balance_after_tx < 0:
+        print("❌ Insufficient native balance for the transaction fee!")
+        return None
+
+    confirm = input("✅ Do you want to proceed with the transaction? (yes/no): ").strip().lower()
+    if confirm != "yes":
+        print("🚫 Transaction canceled.")
+        return None
+
+    # 11. Build and sign the transaction
     try:
-        sender_address = Account.from_key(private_key).address
-        chain_id = network.eth.chain_id
+        nonce = web3.eth.get_transaction_count(sender_address)
 
-        contract = network.eth.contract(
-            address=Web3.to_checksum_address(token_address),
-            abi=ERC20_ABI
-        )
+        # If we want to rely on the dynamic gas price from the network:
+        gas_price = web3.eth.gas_price
 
-        # تعداد اعشار توکن
-        decimals = contract.functions.decimals().call()
-        amount_wei = int(amount_in_tokens * (10 ** decimals))
+        # If gas_estimate is not known, we can set a safe upper limit
+        if gas_estimate == "Unknown":
+            gas_limit = 300000  # A higher fallback to avoid out-of-gas
+        else:
+            # Add some buffer for any potential fluctuation
+            gas_limit = gas_estimate + 10000
 
-        # (اختیاری) نمایش بالانس فعلی توکن فرستنده
-        sender_balance_wei = contract.functions.balanceOf(sender_address).call()
-        sender_balance_tokens = sender_balance_wei / (10 ** decimals)
-        token_symbol = contract.functions.symbol().call()
-        print(f"Sender has {sender_balance_tokens} {token_symbol}")
-
-        # بررسی اینکه آیا بالانس توکن کافی است (اختیاری)
-        if sender_balance_tokens < amount_in_tokens:
-            print("Insufficient token balance!")
-            return None
-
-        nonce = network.eth.get_transaction_count(sender_address)
-        # تخمین اولیه برای انتقال توکن
-        gas_limit_estimated = contract.functions.transfer(
-            Web3.to_checksum_address(to_address),
-            amount_wei
-        ).estimate_gas({
-            "from": sender_address
+        tx_data = transfer_function.buildTransaction({
+            "chainId": NETWORKS[network_choice]["chain_id"],
+            "from": sender_address,
+            "nonce": nonce,
+            "gas": gas_limit,
+            "gasPrice": gas_price
         })
-        # حاشیه امنیت
-        gas_limit = int(gas_limit_estimated * 1.2)
 
-        eip1559_fees = get_eip1559_fees(network)
-        if eip1559_fees is not None and network_name != "Binance Smart Chain":
-            max_fee_per_gas, max_priority_fee_per_gas = eip1559_fees
-            tx = contract.functions.transfer(
-                Web3.to_checksum_address(to_address),
-                amount_wei
-            ).build_transaction({
-                "chainId": chain_id,
-                "gas": gas_limit,
-                "maxFeePerGas": max_fee_per_gas,
-                "maxPriorityFeePerGas": max_priority_fee_per_gas,
-                "nonce": nonce
-            })
+        signed_tx = sender_account.sign_transaction(tx_data)
+
+        # 12. Broadcast the transaction
+        print("🚀 Sending transaction...")
+        tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
+        tx_hash_hex = tx_hash.hex()
+
+        print(f"   Transaction Hash: {tx_hash_hex}")
+        print(f"   Waiting for confirmation...")
+
+        # 13. Wait for transaction receipt (confirmation)
+        receipt = web3.eth.wait_for_transaction_receipt(tx_hash, timeout=180)
+        # status: 1 = success, 0 = failure
+        if receipt.status == 1:
+            status_msg = "✅ Success"
         else:
-            # Legacy (BSC یا شبکه‌هایی که EIP-1559 ندارند)
-            gas_price = network.eth.gas_price
-            tx = contract.functions.transfer(
-                Web3.to_checksum_address(to_address),
-                amount_wei
-            ).build_transaction({
-                "chainId": chain_id,
-                "gas": gas_limit,
-                "gasPrice": gas_price,
-                "nonce": nonce
-            })
+            status_msg = "❌ Failed"
 
-        signed_txn = network.eth.account.sign_transaction(tx, private_key)
-        tx_hash = network.eth.send_raw_transaction(signed_txn.rawTransaction)
-        tx_hash_hex = network.to_hex(tx_hash)
-        print(f"Token transfer sent! Hash: {tx_hash_hex}")
+        # Calculate the actual fee spent
+        actual_gas_used = receipt.gasUsed
+        actual_fee_wei = actual_gas_used * gas_price
+        actual_fee_native = Web3.fromWei(actual_fee_wei, 'ether')
+
+        # Retrieve updated sender balance
+        sender_balance_after = get_account_balance(web3, sender_address)
+
+        print(f"\n✅ Transaction Confirmed!")
+        print(f"   Network: {chain_name}")
+        print(f"   Transaction Hash: {tx_hash_hex}")
+        print(f"   Explorer URL: {get_transaction_url(tx_hash_hex, network_choice)}")
+        print(f"   Actual Gas Used: {actual_gas_used}")
+        print(f"   Actual Fee: {actual_fee_native} (native)")
+        print(f"   Sender Balance (After): {sender_balance_after} (native)")
+        print(f"   Status: {status_msg}\n")
+
         return tx_hash_hex
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"❌ Error while sending transaction: {e}")
         return None
 
-
+# -----------------------------------------------------------------------------
+# Main Entry Point
+# -----------------------------------------------------------------------------
 if __name__ == "__main__":
-    print("Select the blockchain network:")
-    print("1. Ethereum")
-    print("2. Binance Smart Chain")
+    print("Select the network to use:")
+    print("1. Ethereum Mainnet")
+    print("2. Binance Smart Chain (BSC)")
     print("3. Polygon")
     print("4. Arbitrum")
     print("5. Avalanche")
 
-    network_choice = input("Enter the number of the network (1-5): ").strip()
-
-    if network_choice == "1":
-        network = ethereum_network
-        network_name = "Ethereum"
-    elif network_choice == "2":
-        network = bsc_network
-        network_name = "Binance Smart Chain"
-    elif network_choice == "3":
-        network = polygon_network
-        network_name = "Polygon"
-    elif network_choice == "4":
-        network = arbitrum_network
-        network_name = "Arbitrum"
-    elif network_choice == "5":
-        network = avalanche_network
-        network_name = "Avalanche"
-    else:
-        print("Invalid choice! Exiting...")
+    network_choice = input("Enter the number of the desired network: ").strip()
+    if network_choice not in NETWORKS:
+        print("Invalid network choice! Exiting...")
         exit()
 
-    # انتخاب نوع تراکنش
-    print(f"\nSelected network: {network_name}")
-    print("Choose transaction type:")
-    print("1. Send native coin")
-    print("2. Send token (ERC20-compatible)")
+    # Securely prompt for the private key (without echoing input)
+    private_key = getpass.getpass("Enter your private key (without 0x prefix): ")
+    to_address = input("Enter the recipient address (0x...): ")
+    contract_address = input("Enter the ERC20 contract address (0x...): ")
 
-    tx_type_choice = input("Enter choice (1 or 2): ").strip()
+    try:
+        amount = Decimal(input("Enter the amount of tokens to send: "))
+        decimals_str = input("Enter the token decimals (default is 18): ").strip()
+        decimals = int(decimals_str) if decimals_str else 18
+    except ValueError:
+        print("Invalid amount or decimals! Please enter valid numeric values.")
+        exit()
 
-    private_key = input("Enter your private key (hex): ").strip()
-    to_address = input("Enter recipient's address: ").strip()
-
-    if tx_type_choice == "1":
-        amount = float(input(f"Enter amount to send in {network_name}'s native coin: "))
-        send_native_transaction(network, private_key, to_address, amount, network_name)
-    elif tx_type_choice == "2":
-        token_address = input("Enter the token contract address: ").strip()
-        amount = float(input("Enter amount of tokens to send: "))
-        send_token_transaction(network, private_key, token_address, to_address, amount, network_name)
-    else:
-        print("Invalid choice for transaction type!")
+    send_erc20_token(
+        network_choice=network_choice,
+        private_key=private_key,
+        contract_address=contract_address,
+        to_address=to_address,
+        amount=amount,
+        decimals=decimals
+    )

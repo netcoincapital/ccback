@@ -1,0 +1,42 @@
+2025-02-11 16:12:34,859 - DEBUG - Building SSL context
+2025-02-11 16:12:34,902 - DEBUG - Switching to SSL
+2025-02-11 16:12:34,906 - DEBUG - SSL has been enabled
+2025-02-11 16:12:34,907 - DEBUG - Starting authorization phase
+2025-02-11 16:12:34,907 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-11 16:12:34,908 - INFO - package: mysql.connector.plugins
+2025-02-11 16:12:34,908 - INFO - plugin_name: caching_sha2_password
+2025-02-11 16:12:34,908 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-11 16:12:34,909 - DEBUG - Exchanging further packets
+2025-02-11 16:12:34,910 - DEBUG - caching_sha2_password completed succesfully
+2025-02-11 16:12:34,926 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-11 16:12:34,933 - WARNING -  * Debugger is active!
+2025-02-11 16:12:34,936 - INFO -  * Debugger PIN: 117-061-111
+2025-02-11 16:12:38,580 - INFO - Received a request to fetch currency prices.
+2025-02-11 16:12:38,581 - INFO - Final fiat currencies to fetch: ['USD', 'EUR', 'IRR']
+2025-02-11 16:12:38,601 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: USD
+2025-02-11 16:12:38,603 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-11 16:12:39,670 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=USD HTTP/1.1" 200 None
+2025-02-11 16:12:39,673 - INFO - Prices fetched successfully: {'ETH': 2691.9996918064076, 'SHIB': 1.6107530812021172e-05}
+2025-02-11 16:12:39,673 - INFO - Fetching 24h changes for symbols: ['ETH', 'SHIB'], convert: USD
+2025-02-11 16:12:39,674 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-11 16:12:39,869 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=USD HTTP/1.1" 200 None
+2025-02-11 16:12:39,871 - INFO - 24h changes fetched successfully: {'ETH': 1.71337315, 'SHIB': 1.73682375}
+2025-02-11 16:12:39,871 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: EUR
+2025-02-11 16:12:39,872 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-11 16:12:40,043 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=EUR HTTP/1.1" 200 None
+2025-02-11 16:12:40,043 - INFO - Prices fetched successfully: {'ETH': 2607.49512948091, 'SHIB': 1.5601899312300998e-05}
+2025-02-11 16:12:40,044 - INFO - Fetching 24h changes for symbols: ['ETH', 'SHIB'], convert: EUR
+2025-02-11 16:12:40,046 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-11 16:12:40,221 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=EUR HTTP/1.1" 200 None
+2025-02-11 16:12:40,222 - INFO - 24h changes fetched successfully: {'ETH': 1.71337315, 'SHIB': 1.73682375}
+2025-02-11 16:12:40,223 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: IRR
+2025-02-11 16:12:40,223 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-11 16:12:40,813 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=IRR HTTP/1.1" 200 None
+2025-02-11 16:12:40,815 - INFO - Prices fetched successfully: {'ETH': 113299537.02901548, 'SHIB': 0.677925703051619}
+2025-02-11 16:12:40,815 - INFO - Fetching 24h changes for symbols: ['ETH', 'SHIB'], convert: IRR
+2025-02-11 16:12:40,816 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-11 16:12:40,986 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=IRR HTTP/1.1" 200 None
+2025-02-11 16:12:40,988 - INFO - 24h changes fetched successfully: {'ETH': 1.71337315, 'SHIB': 1.73682375}
+2025-02-11 16:12:40,990 - INFO - 127.0.0.1 - - [11/Feb/2025 16:12:40] "POST /prices HTTP/1.1" 200 -
+2025-02-11 23:20:56,768 - DEBUG - Database session closed.
+2025-02-11 23:20:56,770 - INFO - 127.0.0.1 - - [11/Feb/2025 23:20:56] "POST /import_wallet HTTP/1.1" 200 -

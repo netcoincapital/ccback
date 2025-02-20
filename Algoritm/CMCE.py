@@ -4,20 +4,20 @@ import time
 import os
 
 # Your CoinMarketCap API Key
-API_KEY = "d1b7bd0f-e5d7-41e8-8f8a-accef3ac9d17"
+API_KEY = "bbae831b-bd1b-4949-8945-2b5ab0b9456d"
 
 # Blockchain platforms mapping
 BLOCKCHAINS = {
     #"Ethereum": "ETH",
-    # "Tron": "TRX",
-    "Binance Smart Chain": "BNB",
-    # "Polygon": "MATIC", 
-    # "Arbitrum": "ARB",
-    # "Solana": "SOL",
-    # "Polkadot": "DOT",
-    # "Avalanche": "AVAX",
-    # "Ripple": "XRP",
-    # "Bitcoin": "BTC"
+    #Tron": "TRX",  # فقط Tron برای مثال
+    #"Binance Smart Chain": "BNB",
+    #"Polygon": "MATIC", 
+    #"Arbitrum": "ARB",
+    #"Solana": "SOL",
+    #"Polkadot": "DOT",
+    #"Avalanche": "AVAX",
+    #"Ripple": "XRP",
+    "Bitcoin": "BTC"
 }
 
 # API Endpoints
@@ -38,8 +38,8 @@ currencies = []
 
 
 def fetch_tokens_for_blockchain(blockchain_name):
-    """ Fetch tokens for a specific blockchain only """
-    print(f"\n🔄 Fetching tokens for {blockchain_name} (one blockchain at a time)...\n")
+    """ Fetch tokens for a specific blockchain only (اما در اینجا فیلتر نمی‌کنیم) """
+    print(f"\n🔄 Fetching tokens (all) for potential {blockchain_name} contracts...\n")
     start = 1
     limit = 4000  # Enforce a strict limit per request
     token_data = {}
@@ -69,17 +69,18 @@ def fetch_tokens_for_blockchain(blockchain_name):
         batch_size = len(data["data"])
         print(f"✅ Fetched {batch_size} tokens (Batch: {start}-{start + batch_size - 1})")
 
-        # Extract tokens for this specific blockchain
+        # تغییر اصلی ↓
+        # -----------------------------
+        # اینجا همه توکن‌ها را جمع می‌کنیم و دیگر فیلتری برای پلتفرم نمی‌گذاریم
         for coin in data["data"]:
-            if "platform" in coin and coin["platform"]:
-                platform_name = coin["platform"]["name"]
-                if platform_name == blockchain_name:
-                    token_id = str(coin["id"])
-                    token_data[token_id] = {
-                        "name": coin["name"],
-                        "symbol": coin["symbol"],
-                        "platform": BLOCKCHAINS[platform_name]
-                    }
+            token_id = str(coin["id"])
+            # ممکن است پلتفرم اصلی چیز دیگری باشد ولی در متادیتا شبکه Tron را داشته باشد
+            token_data[token_id] = {
+                "name": coin["name"],
+                "symbol": coin["symbol"],
+                "platform": None
+            }
+        # -----------------------------
 
         # Stop pagination when no more data
         if batch_size < limit:
@@ -128,25 +129,30 @@ def fetch_contract_addresses_and_images(token_data, blockchain_name):
             image_url = details.get("logo", None)
             image_filename = f"{symbol}.png" if image_url else "N/A"
 
+            # اینجا لیست contract_address را بررسی می‌کنیم
             if "contract_address" in details and isinstance(details["contract_address"], list):
                 for contract in details["contract_address"]:
                     platform_name = contract.get("platform", {}).get("name", "")
                     contract_address = contract.get("contract_address", "")
 
-                    if platform_name == blockchain_name:
+                    # تغییر اصلی ↓
+                    # -----------------------------
+                    # اینجا پلتفرم را کنترل می‌کنیم که اگر Tron بود، در currencies اضافه کنیم
+                    if platform_name and "btc" in platform_name.lower():
                         currencies.append({
                             "Name": name,
                             "Symbol": symbol,
-                            "Platform": BLOCKCHAINS[platform_name],
+                            "Platform": BLOCKCHAINS[blockchain_name],
                             "ContractAddress": contract_address,
                             "Image": image_filename
                         })
 
-                        # Download token image if available
+                        # اگر تصویر هم داشته باشد، دانلود می‌کنیم
                         if image_url:
                             save_token_image(image_url, image_filename)
+                    # -----------------------------
 
-        print(f"✅ Processed {i + batch_size} tokens for {blockchain_name}...")
+        print(f"✅ Processed {min(i + batch_size, len(token_ids))} tokens for {blockchain_name}...")
 
 
 def save_token_image(image_url, image_filename):
@@ -164,7 +170,7 @@ def save_token_image(image_url, image_filename):
         print(f"❌ Error saving image {image_filename}: {e}")
 
 
-# ** Fetch tokens for one blockchain only (Ethereum for now) **
+# ** Fetch tokens (all) and then pick Tron tokens from their metadata **
 for blockchain in BLOCKCHAINS.keys():
     token_data = fetch_tokens_for_blockchain(blockchain)
 
@@ -173,12 +179,15 @@ for blockchain in BLOCKCHAINS.keys():
 
     # Save data to CSV file after each blockchain is completed
     csv_filename = "cryptocurrencies.csv"
-    with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
+    
+    # اگر فایل وجود ندارد، هدر اضافه می‌کنیم؛ وگرنه صرفاً الحاق (append) می‌کنیم
+    file_exists = os.path.isfile(csv_filename)
+    with open(csv_filename, mode="a", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=["Name", "Symbol", "Platform", "ContractAddress", "Image"])
-        writer.writeheader()
+        if not file_exists:
+            writer.writeheader()
         writer.writerows(currencies)
 
-    print(f"\n✅ Successfully saved {len(currencies)} cryptocurrencies for {blockchain} to {csv_filename}.")
+    print(f"\n✅ Successfully appended {len(currencies)} cryptocurrencies for {blockchain} to {csv_filename}.")
 
-    # Wait before switching to next blockchain (manually uncomment when ready)
-    break  # 🚀 Only processing 1 blockchain at a time!
+    # break  # اگر خواستید فقط همین یک شبکه انجام شود، uncomment کنید

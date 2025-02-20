@@ -23,13 +23,22 @@ def is_valid_private_key(key):
 def estimate_fee(txn):
     """ Estimate transaction fee before sending. """
     try:
-        # Estimate transaction cost before sending
-        tx_info = txn.fee_limit(5_000_000).estimate_energy()
+        tx_info = txn.estimate_energy()
         estimated_fee_sun = tx_info * 280  # Approximate cost per energy unit
         estimated_fee_trx = estimated_fee_sun / 1_000_000  # Convert from Sun to TRX
         return round(estimated_fee_trx, 6)
     except Exception:
         return "Unknown"
+
+def get_bandwidth_energy(address):
+    """ Fetch Bandwidth and Energy information for the given address. """
+    try:
+        account_info = client.get_account_resource(address)
+        bandwidth = account_info.get("freeNetUsed", 0) + account_info.get("netUsed", 0)
+        energy = account_info.get("energyUsed", 0)
+        return bandwidth, energy
+    except Exception:
+        return "Unknown", "Unknown"
 
 def send_trc20(private_key, contract_address, to_address, amount, decimals=6):
     """
@@ -43,28 +52,20 @@ def send_trc20(private_key, contract_address, to_address, amount, decimals=6):
         sender_private_key = PrivateKey(bytes.fromhex(private_key))
         sender_address = sender_private_key.public_key.to_base58check_address()
 
-        # Convert amount to smallest unit
         amount_in_smallest_unit = int(amount * (10 ** decimals))
-
-        # Get sender balance before transaction
         sender_balance = client.get_account_balance(sender_address)
-
-        # Get contract instance
         contract = client.get_contract(contract_address)
-
-        # Build transaction for estimation
+        
         txn = (
             contract.functions.transfer(to_address, amount_in_smallest_unit)
             .with_owner(sender_address)
             .build()
         )
 
-        # Estimate transaction fee
         estimated_fee = estimate_fee(txn)
-
-        # Calculate balance after transaction
+        bandwidth, energy = get_bandwidth_energy(sender_address)
         balance_after_tx = sender_balance - estimated_fee if estimated_fee != "Unknown" else "Unknown"
-
+        
         print(f"\n📌 **Transaction Details (Before Sending):**")
         print(f"   🔹 Sender Address: {sender_address}")
         print(f"   🔹 Recipient Address: {to_address}")
@@ -72,28 +73,31 @@ def send_trc20(private_key, contract_address, to_address, amount, decimals=6):
         print(f"   🔹 Amount: {amount} Tokens")
         print(f"   🔹 Sender Balance (Before): {sender_balance} TRX")
         print(f"   🔹 Estimated Fee: {estimated_fee} TRX")
+        print(f"   🔹 Bandwidth Used: {bandwidth}")
+        print(f"   🔹 Energy Used: {energy}")
         print(f"   🔹 Sender Balance (After): {balance_after_tx} TRX\n")
+        
+        if balance_after_tx != "Unknown" and balance_after_tx < 0:
+            print("❌ Warning: Insufficient balance for this transaction!")
+            return None
 
         confirm = input("✅ Confirm transaction? (yes/no): ").strip().lower()
         if confirm != "yes":
             print("🚫 Transaction canceled.")
             return None
 
-        # Sign & send transaction
         txn = txn.sign(sender_private_key)
         print("🚀 Sending transaction...")
 
         txn_hash = txn.broadcast().wait()
         txn_id = txn_hash["id"]
 
-        # Get transaction info after sending
         tx_info = client.get_transaction_info(txn_id)
         fee_in_sun = tx_info.get("fee", 0)
         fee_in_trx = fee_in_sun / 1_000_000  # Convert from Sun to TRX
         result = tx_info.get("contractResult", ["N/A"])[0]
         status = "✅ Success" if tx_info.get("receipt", {}).get("result") == "SUCCESS" else "❌ Failed"
 
-        # Get sender balance after transaction
         sender_balance_after = client.get_account_balance(sender_address)
 
         print(f"\n✅ **Transaction Successfully Sent!**")

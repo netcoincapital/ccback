@@ -1,0 +1,192 @@
+2025-02-18 17:09:43,736 - DEBUG - Building SSL context
+2025-02-18 17:09:43,772 - DEBUG - Switching to SSL
+2025-02-18 17:09:43,776 - DEBUG - SSL has been enabled
+2025-02-18 17:09:43,776 - DEBUG - Starting authorization phase
+2025-02-18 17:09:43,776 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-18 17:09:43,777 - INFO - package: mysql.connector.plugins
+2025-02-18 17:09:43,777 - INFO - plugin_name: caching_sha2_password
+2025-02-18 17:09:43,777 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-18 17:09:43,778 - DEBUG - Exchanging further packets
+2025-02-18 17:09:43,779 - DEBUG - caching_sha2_password completed succesfully
+2025-02-18 17:09:43,793 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-18 17:09:43,798 - WARNING -  * Debugger is active!
+2025-02-18 17:09:43,800 - INFO -  * Debugger PIN: 117-061-111
+2025-02-18 17:09:51,330 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,355 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:09:51,357 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,384 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,433 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:09:51,438 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,445 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,474 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14833
+2025-02-18 17:09:51,476 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,507 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,547 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14738
+2025-02-18 17:09:51,549 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,570 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,609 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14081
+2025-02-18 17:09:51,612 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,621 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,646 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,661 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:09:51,663 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,693 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,724 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,763 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14831
+2025-02-18 17:09:51,766 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,788 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,804 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:09:51,807 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,834 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,873 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:09:51,875 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,895 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:51,919 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:09:51,921 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,941 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:51,972 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:51] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:09:52,004 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:09:52,020 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14739
+2025-02-18 17:09:52,022 - INFO - 127.0.0.1 - - [18/Feb/2025 17:09:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,061 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,080 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:52,086 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,127 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:52,133 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,154 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14833
+2025-02-18 17:10:52,161 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,180 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14738
+2025-02-18 17:10:52,185 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,214 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14081
+2025-02-18 17:10:52,224 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,262 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:52,273 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,291 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14831
+2025-02-18 17:10:52,297 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,312 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:52,318 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,360 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:52,367 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,405 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:10:52,419 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,451 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14739
+2025-02-18 17:10:52,458 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,465 - DEBUG - http://localhost:3000 "POST /blockchain/newGroup HTTP/1.1" 200 46
+2025-02-18 17:10:52,470 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,488 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,517 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14738
+2025-02-18 17:10:52,519 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,528 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,562 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14833
+2025-02-18 17:10:52,563 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,582 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,618 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:52,620 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,645 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,681 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:52,684 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,705 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,742 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:52,745 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,767 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,805 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:10:52,806 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,829 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,868 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:10:52,872 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,882 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,899 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14099
+2025-02-18 17:10:52,901 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,920 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,959 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 13997
+2025-02-18 17:10:52,962 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:52,971 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:52,992 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14036
+2025-02-18 17:10:52,995 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:52] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:53,002 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:53,018 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:10:53,020 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:53,028 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:53,043 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:10:53,046 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:53,052 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:53,067 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14099
+2025-02-18 17:10:53,069 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:10:53,076 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:10:53,095 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14833
+2025-02-18 17:10:53,098 - INFO - 127.0.0.1 - - [18/Feb/2025 17:10:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,107 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,142 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14738
+2025-02-18 17:11:53,148 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,170 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14833
+2025-02-18 17:11:53,176 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,214 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,221 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,260 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,266 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,306 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,312 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,327 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:11:53,333 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,349 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:11:53,356 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,376 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14099
+2025-02-18 17:11:53,380 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,395 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 13997
+2025-02-18 17:11:53,400 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,414 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14036
+2025-02-18 17:11:53,420 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,435 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:11:53,441 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,456 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,460 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,474 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14099
+2025-02-18 17:11:53,479 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,493 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14833
+2025-02-18 17:11:53,498 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,511 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,513 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,516 - DEBUG - http://localhost:3000 "POST /blockchain/newGroup HTTP/1.1" 200 46
+2025-02-18 17:11:53,521 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,534 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,537 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,545 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,561 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,564 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,572 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,579 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,595 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14081
+2025-02-18 17:11:53,597 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,605 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,619 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14279
+2025-02-18 17:11:53,622 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,642 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,661 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14738
+2025-02-18 17:11:53,663 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,690 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,732 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14185
+2025-02-18 17:11:53,737 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,747 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,788 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,791 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,819 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,866 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,868 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,877 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,929 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14091
+2025-02-18 17:11:53,931 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:53,955 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:53,992 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 13997
+2025-02-18 17:11:53,996 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:53] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:54,003 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:54,024 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14279
+2025-02-18 17:11:54,027 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:54] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:54,046 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:54,083 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14833
+2025-02-18 17:11:54,086 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:54] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:54,095 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:54,130 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 13997
+2025-02-18 17:11:54,132 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:54] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-18 17:11:54,140 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-18 17:11:54,179 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 14480
+2025-02-18 17:11:54,182 - INFO - 127.0.0.1 - - [18/Feb/2025 17:11:54] "[33mPOST /balance HTTP/1.1[0m" 404 -

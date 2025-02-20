@@ -25,27 +25,23 @@ log_filename = os.path.join(log_directory, f"balance_log_{datetime.now().strftim
 logger = logging.getLogger("balance_logger")
 logger.setLevel(logging.INFO)  # تنظیم سطح لاگ
 
-# بررسی و حذف هندلرهای قبلی برای جلوگیری از لاگ‌های تکراری
+# جلوگیری از انتشار لاگ‌ها به سایر logger ها
+logger.propagate = False
+
+# بررسی و حذف `FileHandler` های قبلی (برای جلوگیری از ایجاد چندین هندلر)
 if not logger.handlers:
-    # ایجاد FileHandler برای ذخیره لاگ‌ها در فایل
     file_handler = logging.FileHandler(log_filename, encoding='utf-8')
     file_handler.setLevel(logging.INFO)
 
-    # ایجاد StreamHandler برای نمایش لاگ در کنسول
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
 
-    # تنظیم فرمت لاگ‌ها
     log_format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     file_handler.setFormatter(log_format)
     console_handler.setFormatter(log_format)
 
-    # اضافه کردن هندلرها به logger
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
-
-# جلوگیری از انتشار لاگ‌ها به logger‌های دیگر
-logger.propagate = False
 
 # ایجاد Blueprint
 balance_bp = Blueprint('balance', __name__)
@@ -102,18 +98,30 @@ def get_balance_for_user(user_id):
     for item in results_array:
         tokens_dict = item.get("tokens", {})
         for symbol_or_contract, val_int in tokens_dict.items():
-            val_dec = Decimal(val_int or 0)
+            val_dec = Decimal(val_int)
             if symbol_or_contract not in tokens_info:
                 tokens_info[symbol_or_contract] = Decimal('0')
             tokens_info[symbol_or_contract] += val_dec
 
-    if not tokens_info:
-        logger.warning(f"User {user_id} has addresses but all token balances are zero")
-        logger.info(f"Successfully fetched balance for user {user_id}: {tokens_info}")
+    # فیلتر توکن‌هایی که بالانس > 0 دارند
+    filtered_tokens_info = {
+        k: v for k, v in tokens_info.items()
+        if v > Decimal('0')
+    }
 
+    if not filtered_tokens_info:
+        # تغییر سطح لاگ از warning به info
+        logger.info(f"No non-zero tokens found for user {user_id}")
+        return {
+            "UserID": user_id,
+            "Tokens": {},
+            "NoNonZeroTokens": True  # پرچمی برای تشخیص در متد post_balance
+        }
+
+    logger.info(f"Successfully fetched balance for user {user_id}: {filtered_tokens_info}")
     return {
         "UserID": user_id,
-        "Tokens": {k: str(v) for k, v in tokens_info.items()}
+        "Tokens": {k: str(v) for k, v in filtered_tokens_info.items()}
     }
 
 @balance_bp.route('/balance', methods=['POST'])
@@ -135,25 +143,17 @@ def post_balance():
 
         result = get_balance_for_user(user_id)
 
+        # اگر بعد از فیلتر چیزی باقی نماند، پیام ساده بازگردانده شود (status=200)
+        if result.get("NoNonZeroTokens") is True:
+            return jsonify({"message": "No non-zero tokens found for this user"}), 200
+
         if not result["Tokens"]:
-            logger.warning(f"No wallets/addresses or no tokens found for user {user_id}")
-            return jsonify({"error": "No wallets/addresses or no tokens found for this user"}), 404
+            logger.info(f"User {user_id} has no tokens or address might not exist.")
+            return jsonify({"message": "No tokens or addresses for this user"}), 200
 
         logger.info(f"Returning balance data for user {user_id}")
-        
-        # اطمینان از نوشتن لاگ‌ها در فایل
-        for handler in logger.handlers:
-            if isinstance(handler, logging.FileHandler):
-                handler.flush()
-        
         return jsonify({"Tokens": result["Tokens"]}), 200
 
     except Exception as e:
         logger.error(f"Error processing balance request: {e}")
-
-        # اطمینان از نوشتن لاگ‌ها در فایل
-        for handler in logger.handlers:
-            if isinstance(handler, logging.FileHandler):
-                handler.flush()
-        
         return jsonify({"error": str(e)}), 500

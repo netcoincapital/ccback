@@ -1,4 +1,5 @@
 import logging
+import json
 from flask import Blueprint, jsonify, request
 from database import SessionLocal, Currencies
 from services import CurrencyPriceService
@@ -42,6 +43,7 @@ def get_currency_price():
         if not isinstance(currency_ids, list):
             return jsonify({"success": False, "message": "CurrencyID must be list or string."}), 400
 
+        # گرفتن فیات‌ها (ارزهای رایج)
         fiat_currencies_input = data.get("FiatCurrencies", None)
         if fiat_currencies_input is None:
             fiat_currencies = list(fiat_symbols.keys())
@@ -55,6 +57,7 @@ def get_currency_price():
 
         logger.info(f"Final fiat currencies to fetch: {fiat_currencies}")
 
+        # کوئری گرفتن ارزهای درخواستی
         currencies = db_session.query(Currencies).filter(Currencies.Symbol.in_(currency_ids)).all()
         if not currencies:
             return jsonify({"success": False, "message": "No currencies found."}), 404
@@ -68,9 +71,45 @@ def get_currency_price():
             prices_response = currency_service.get_latest_prices(symbols, fiat)
             changes_response = currency_service.get_24h_changes(symbols, fiat)
 
-            if "status" in prices_response and prices_response["status"] == "error":
+            # --- prices_response ---
+            if isinstance(prices_response, str):
+                try:
+                    # اگر JSON باشد دیکدش می‌کنیم
+                    prices_response = json.loads(prices_response)
+                except json.JSONDecodeError:
+                    # اگر JSON نبود، دیکشنری خطایی درست می‌کنیم تا با .get(...) سازگار باشد
+                    prices_response = {
+                        "status": "error",
+                        "message": prices_response
+                    }
+
+            # --- changes_response ---
+            if isinstance(changes_response, str):
+                try:
+                    changes_response = json.loads(changes_response)
+                except json.JSONDecodeError:
+                    changes_response = {
+                        "status": "error",
+                        "message": changes_response
+                    }
+
+            # در این مرحله باید حتماً دیکشنری باشند
+            if not isinstance(prices_response, dict):
+                logger.error(f"prices_response is not a dict: {type(prices_response)}")
+                return jsonify({"success": False, "message": "Invalid response format from get_latest_prices."}), 500
+
+            if not isinstance(changes_response, dict):
+                logger.error(f"changes_response is not a dict: {type(changes_response)}")
+                return jsonify({"success": False, "message": "Invalid response format from get_24h_changes."}), 500
+
+            # اگر دارای فیلد status با مقدار error است، یعنی خطای سمت سرویس
+            if prices_response.get("status") == "error":
                 return jsonify({"success": False, "message": prices_response.get("message", "Unknown error.")}), 500
 
+            if changes_response.get("status") == "error":
+                return jsonify({"success": False, "message": changes_response.get("message", "Unknown error.")}), 500
+
+            # ایجاد ساختار خروجی نهایی
             for symbol in symbols:
                 price_value = prices_response.get(symbol)
                 change_value = changes_response.get(symbol)

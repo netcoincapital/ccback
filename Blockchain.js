@@ -190,10 +190,16 @@ app.post('/blockchain/batch', async (req, res) => {
           let decimals = cur.DecimalPlaces || 18; // اگر خالی بود، پیش‌فرض 18
           const symbolKey = cur.Symbol || cur.SmartContractAddress;
 
+          // ---- تغییر جدید: فقط زمانی مقدار بالانس را در tokensMap ذخیره کن که > 0 باشد
           const p = fetchTokenBalance(cur.SmartContractAddress, decimals)
             .then(val => {
-    // جلوگیری از مقدار null یا undefined
-                tokensMap[symbolKey] = val != null ? val : 0;
+              if (val > 0) {
+                tokensMap[symbolKey] = val;
+              }
+            })
+            .catch(err => {
+              console.error(`Error fetching token balance for ${symbolKey}:`, err.message);
+              // در صورت خطا، می‌توان تصمیم گرفت که 0 ثبت کنیم یا حذف کنیم
             });
 
           promises.push(p);

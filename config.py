@@ -15,7 +15,7 @@ BNBSCAN_API_URL = 'https://api.bscscan.com/api'
 BNBSCAN_API_KEY = 'AXZ8211BAB2GVKKMMUVU24ERT858ZGE3SJ'
 
 COINMARKETCAP_API_URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
-COINMARKETCAP_API_KEY = 'd1b7bd0f-e5d7-41e8-8f8a-accef3ac9d17'
+COINMARKETCAP_API_KEY = 'bbae831b-bd1b-4949-8945-2b5ab0b9456d'
 
 
 class BaseConfig:

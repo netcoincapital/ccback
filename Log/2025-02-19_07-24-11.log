@@ -1,0 +1,35 @@
+2025-02-19 07:24:11,153 - DEBUG - Building SSL context
+2025-02-19 07:24:11,195 - DEBUG - Switching to SSL
+2025-02-19 07:24:11,198 - DEBUG - SSL has been enabled
+2025-02-19 07:24:11,199 - DEBUG - Starting authorization phase
+2025-02-19 07:24:11,199 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-19 07:24:11,199 - INFO - package: mysql.connector.plugins
+2025-02-19 07:24:11,200 - INFO - plugin_name: caching_sha2_password
+2025-02-19 07:24:11,200 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-02-19 07:24:11,201 - DEBUG - Exchanging further packets
+2025-02-19 07:24:11,204 - DEBUG - caching_sha2_password completed succesfully
+2025-02-19 07:24:11,221 - INFO - Starting Flask app with Keep-Alive enabled.
+2025-02-19 07:24:11,227 - WARNING -  * Debugger is active!
+2025-02-19 07:24:11,230 - INFO -  * Debugger PIN: 117-061-111
+2025-02-19 07:24:12,984 - DEBUG - Starting new HTTP connection (1): localhost:3000
+2025-02-19 07:24:13,056 - DEBUG - http://localhost:3000 "POST /blockchain/batch HTTP/1.1" 200 934
+2025-02-19 07:24:13,058 - INFO - 127.0.0.1 - - [19/Feb/2025 07:24:13] "[33mPOST /balance HTTP/1.1[0m" 404 -
+2025-02-19 18:48:12,730 - INFO - Received a request to fetch currency prices.
+2025-02-19 18:48:12,731 - INFO - Final fiat currencies to fetch: ['USD', 'EUR', 'IRR']
+2025-02-19 18:48:12,740 - DEBUG - Building SSL context
+2025-02-19 18:48:12,788 - DEBUG - Switching to SSL
+2025-02-19 18:48:12,792 - DEBUG - SSL has been enabled
+2025-02-19 18:48:12,792 - DEBUG - Starting authorization phase
+2025-02-19 18:48:12,792 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-02-19 18:48:12,792 - DEBUG - Exchanging further packets
+2025-02-19 18:48:12,793 - DEBUG - caching_sha2_password completed succesfully
+2025-02-19 18:48:12,798 - INFO - Fetching latest prices for symbols: ['ETH', 'SHIB'], convert: USD
+2025-02-19 18:48:12,800 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-19 18:48:13,092 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=USD HTTP/1.1" 429 395
+2025-02-19 18:48:13,093 - ERROR - Exception in get_latest_prices: 'str' object has no attribute 'get'
+2025-02-19 18:48:13,094 - INFO - Fetching 24h changes for symbols: ['ETH', 'SHIB'], convert: USD
+2025-02-19 18:48:13,095 - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-02-19 18:48:13,255 - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?symbol=ETH%2CSHIB&convert=USD HTTP/1.1" 429 395
+2025-02-19 18:48:13,256 - ERROR - Exception in get_24h_changes: 'str' object has no attribute 'get'
+2025-02-19 18:48:13,258 - INFO - 127.0.0.1 - - [19/Feb/2025 18:48:13] "[35m[1mPOST /prices HTTP/1.1[0m" 500 -
+2025-02-19 19:00:39,171 - INFO -  * Detected change in 'c:\\Users\\kozmos teknoloji\\Desktop\\CC\\CU\\CurrencyUpdate.py', reloading
