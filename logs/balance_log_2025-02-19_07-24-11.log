@@ -1,5 +1,0 @@
-2025-02-19 07:24:12,963 - INFO - Received balance request for user c3e418f0-90d6-484b-b7ba-4d68a4965e91
-2025-02-19 07:24:12,964 - INFO - Fetching balance for user c3e418f0-90d6-484b-b7ba-4d68a4965e91
-2025-02-19 07:24:13,057 - WARNING - User c3e418f0-90d6-484b-b7ba-4d68a4965e91 has addresses but all token balances are zero or no tokens at all
-2025-02-19 07:24:13,057 - INFO - Successfully fetched balance for user c3e418f0-90d6-484b-b7ba-4d68a4965e91: {}
-2025-02-19 07:24:13,057 - WARNING - No non-zero tokens found for user c3e418f0-90d6-484b-b7ba-4d68a4965e91

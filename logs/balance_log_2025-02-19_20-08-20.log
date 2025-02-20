@@ -1,4 +1,0 @@
-2025-02-19 20:08:42,137 - INFO - Received balance request for user c3e418f0-90d6-484b-b7ba-4d68a4965e91
-2025-02-19 20:08:42,138 - INFO - Fetching balance for user c3e418f0-90d6-484b-b7ba-4d68a4965e91
-2025-02-19 20:08:46,277 - ERROR - Failed batch request for user c3e418f0-90d6-484b-b7ba-4d68a4965e91: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /blockchain/batch (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022929C00860>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2025-02-19 20:08:46,278 - INFO - User c3e418f0-90d6-484b-b7ba-4d68a4965e91 has no tokens or address might not exist.
