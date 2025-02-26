@@ -16,9 +16,16 @@ def get_all_currencies():
 
     # تعریف یک مپ برای تبدیل BlockchainID به BlockchainName
     blockchain_map = {
+        4: "Bitcoin",
         1: "Ethereum",
         2: "Tron",
-        3: "BNB",
+        3: "Binance",
+        5: "Polygon",
+        11: "XRP",
+        12: "Solana",
+        6: "Arbitrum",
+        13: "Polkadot",
+        14: "Avalanche"
     }
 
     # ایجاد Session برای ارتباط با دیتابیس

@@ -14,7 +14,7 @@ import config  # ایمپورت فایل تنظیمات دیتابیس
 getcontext().prec = 28
 
 # ایجاد دایرکتوری Logs اگر وجود نداشته باشد
-log_directory = "Logs"
+log_directory = "Logssssss"
 if not os.path.exists(log_directory):
     os.makedirs(log_directory)
 
@@ -46,114 +46,100 @@ if not logger.handlers:
 # ایجاد Blueprint
 balance_bp = Blueprint('balance', __name__)
 
-def get_balance_for_user(user_id):
-    """
-    این تابع تمام آدرس‌های متعلق به کاربر را پیدا می‌کند و آن‌ها را در قالب
-    یک Batch Request به سرور Node.js ارسال می‌نماید تا تنها توکن‌ها را برگرداند.
-    """
-
-    logger.info(f"Fetching balance for user {user_id}")
-
-    with SessionLocal() as session:
-        wallets = session.query(Wallets).filter(Wallets.UserID == user_id).all()
-        if not wallets:
-            logger.warning(f"No wallets found for user {user_id}")
-            return {"UserID": user_id, "Tokens": {}}
-
-        address_list = []
-        for w in wallets:
-            addresses = session.query(Address).filter(Address.WalletID == w.WalletID).all()
-            for addr in addresses:
-                address_list.append({
-                    "public_address": addr.PublicAddress,
-                    "blockchain_id": addr.BlockchainID
-                })
-
-        if not address_list:
-            logger.warning(f"User {user_id} has wallets but no addresses")
-            return {"UserID": user_id, "Tokens": {}}
-
-    payload = {"requests": address_list}
-
-    try:
-        response = requests.post(
-            "http://localhost:3000/blockchain/batch",
-            json=payload,
-            timeout=10
-        )
-        response.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Failed batch request for user {user_id}: {e}")
-        return {"UserID": user_id, "Tokens": {}}
-
-    try:
-        data = response.json()
-    except Exception as e:
-        logger.error(f"Error parsing JSON for user {user_id}: {e}")
-        return {"UserID": user_id, "Tokens": {}}
-
-    results_array = data.get("results", [])
-    tokens_info = {}
-
-    for item in results_array:
-        tokens_dict = item.get("tokens", {})
-        for symbol_or_contract, val_int in tokens_dict.items():
-            val_dec = Decimal(val_int)
-            if symbol_or_contract not in tokens_info:
-                tokens_info[symbol_or_contract] = Decimal('0')
-            tokens_info[symbol_or_contract] += val_dec
-
-    # فیلتر توکن‌هایی که بالانس > 0 دارند
-    filtered_tokens_info = {
-        k: v for k, v in tokens_info.items()
-        if v > Decimal('0')
-    }
-
-    if not filtered_tokens_info:
-        # تغییر سطح لاگ از warning به info
-        logger.info(f"No non-zero tokens found for user {user_id}")
-        return {
-            "UserID": user_id,
-            "Tokens": {},
-            "NoNonZeroTokens": True  # پرچمی برای تشخیص در متد post_balance
-        }
-
-    logger.info(f"Successfully fetched balance for user {user_id}: {filtered_tokens_info}")
-    return {
-        "UserID": user_id,
-        "Tokens": {k: str(v) for k, v in filtered_tokens_info.items()}
-    }
+BLOCKCHAIN_SERVICE_URL = "http://localhost:4000/blockchain/batch"
+REQUEST_TIMEOUT = 120  # seconds
 
 @balance_bp.route('/balance', methods=['POST'])
 def post_balance():
-    """
-    متد اصلی که با فراخوانی POST /balance و ارسال:
-    {
-       "UserID": "<uuid یا id کاربر>"
-    }
-    بالانس توکن‌های کاربر را برمی‌گرداند.
-    """
     try:
+        # دریافت UserID از درخواست
         data = request.get_json()
-        if not data or "UserID" not in data:
+        user_id = data.get('UserID')
+        
+        if not user_id:
             return jsonify({"error": "UserID is required"}), 400
 
-        user_id = data["UserID"]
-        logger.info(f"Received balance request for user {user_id}")
+        logger.info(f"Fetching balance for UserID: {user_id}")
 
-        result = get_balance_for_user(user_id)
+        # دریافت آدرس‌های کاربر از دیتابیس
+        with SessionLocal() as session:
+            # پیدا کردن تمام کیف پول‌های کاربر
+            wallets = session.query(Wallets).filter(Wallets.UserID == user_id).all()
+            
+            if not wallets:
+                logger.warning(f"No wallets found for UserID: {user_id}")
+                return jsonify({
+                    "UserID": user_id,
+                    "Tokens": {}
+                })
 
-        # اگر بعد از فیلتر چیزی باقی نماند، پیام ساده بازگردانده شود (status=200)
-        if result.get("NoNonZeroTokens") is True:
-            return jsonify({"message": "No non-zero tokens found for this user"}), 200
+            # جمع‌آوری تمام آدرس‌ها از تمام کیف پول‌ها
+            address_requests = []
+            for wallet in wallets:
+                addresses = session.query(Address).filter(Address.WalletID == wallet.WalletID).all()
+                for addr in addresses:
+                    address_requests.append({
+                        "public_address": addr.PublicAddress,
+                        "blockchain_id": addr.BlockchainID
+                    })
 
-        if not result["Tokens"]:
-            logger.info(f"User {user_id} has no tokens or address might not exist.")
-            return jsonify({"message": "No tokens or addresses for this user"}), 200
+            if not address_requests:
+                logger.warning(f"No addresses found for UserID: {user_id}")
+                return jsonify({
+                    "UserID": user_id,
+                    "Tokens": {}
+                })
 
-        logger.info(f"Returning balance data for user {user_id}")
-        return jsonify({"Tokens": result["Tokens"]}), 200
+            logger.info(f"Found {len(address_requests)} addresses for UserID: {user_id}")
+
+        # ارسال درخواست به سرویس Node.js
+        try:
+            response = requests.post(
+                BLOCKCHAIN_SERVICE_URL,
+                json={"requests": address_requests},
+                timeout=REQUEST_TIMEOUT
+            )
+            response.raise_for_status()
+            blockchain_data = response.json()
+            
+            logger.debug(f"Blockchain service response: {blockchain_data}")
+
+            # تجمیع تمام توکن‌ها از تمام آدرس‌ها
+            all_tokens = {}
+            for result in blockchain_data.get('results', []):
+                tokens = result.get('tokens', {})
+                for token_symbol, balance in tokens.items():
+                    # اگر توکن قبلاً وجود دارد، مقدار جدید را اضافه کن
+                    if token_symbol in all_tokens:
+                        all_tokens[token_symbol] += balance
+                    else:
+                        all_tokens[token_symbol] = balance
+
+            # حذف توکن‌هایی که موجودی صفر دارند
+            non_zero_tokens = {k: v for k, v in all_tokens.items() if v > 0}
+
+            if not non_zero_tokens:
+                logger.info(f"No non-zero tokens found for UserID: {user_id}")
+                return jsonify({
+                    "UserID": user_id,
+                    "Tokens": {}
+                })
+
+            return jsonify({
+                "UserID": user_id,
+                "Tokens": non_zero_tokens
+            })
+
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Error calling blockchain service: {e}")
+            return jsonify({
+                "error": "Failed to fetch blockchain data",
+                "details": str(e)
+            }), 500
 
     except Exception as e:
-        logger.error(f"Error processing balance request: {e}")
-        return jsonify({"error": str(e)}), 500
+        logger.error(f"Unexpected error: {e}", exc_info=True)
+        return jsonify({
+            "error": "Internal server error",
+            "details": str(e)
+        }), 500

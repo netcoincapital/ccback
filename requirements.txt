@@ -17,3 +17,6 @@ setuptools
 grequests
 flask_sqlalchemy
 celery
+bit
+xrpl-py
+redis
