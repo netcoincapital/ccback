@@ -25,6 +25,7 @@ class BaseConfig:
     def __init__(self, api_url: str, api_key: str):
         self.api_url = api_url
         self.api_key = api_key
+    
 
 
 HMAC_SECRET_KEY = os.getenv('HMAC_SECRET_KEY', 'my_secret_key')

@@ -1,6 +1,14 @@
-from flask import Flask, Blueprint, jsonify
+from flask import Flask, Blueprint, jsonify, request
 import requests
 from web3 import Web3
+from security.validators import InputValidator, SecurityUtils, ValidationError
+import logging
+from datetime import datetime
+
+from database import SessionLocal
+from security.validators import InputValidator, SecurityUtils, ValidationError
+from services.blockchain_service import BlockchainService
+from utils.error_handlers import handle_api_errors
 
 gasfee_bp = Blueprint('gasfee', __name__)
 
@@ -86,9 +94,28 @@ def fetch_all_gas_fees():
 
 # Define API route
 @gasfee_bp.route('/gasfee', methods=['GET'])
-def get_gas_fees():
-    gas_fees = fetch_all_gas_fees()
-    return jsonify(gas_fees)
+@SecurityUtils.rate_limit(requests=100, window=60)
+@handle_api_errors
+def get_gas_fee():
+    """دریافت کارمزد شبکه"""
+    session = SessionLocal()
+    try:
+        network = InputValidator.validate_string(
+            request.args.get('network', ''),
+            "Network",
+            pattern=r'^[a-zA-Z0-9_]+$'
+        )
+
+        blockchain_service = BlockchainService(session)
+        gas_fee = blockchain_service.get_gas_fee(network)
+
+        return jsonify({
+            'gas_fee': gas_fee,
+            'success': True
+        }), 200
+
+    finally:
+        session.close()
 
 # Initialize Flask app
 app = Flask(__name__)

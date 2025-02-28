@@ -1,44 +1,39 @@
-from flask import Blueprint, request, jsonify
-from sqlalchemy.orm import Session
-from database import Users, Wallets, Address, SessionLocal
+from flask import Blueprint, jsonify, request
+import logging
+from datetime import datetime
+
+from database import SessionLocal
+from security.validators import InputValidator, SecurityUtils, ValidationError
+from services.wallet_service import WalletService
+from utils.error_handlers import handle_api_errors
 
 # تعریف Blueprint
 phrase_key_bp = Blueprint('phrase_key', __name__)
 
 # مسیر برای دریافت Phrase Key
 @phrase_key_bp.route('/get_phrase_key', methods=['POST'])
+@SecurityUtils.rate_limit(requests=3, window=300)  # 3 درخواست در 5 دقیقه
+@handle_api_errors
 def get_phrase_key():
+    """دریافت کلید عبارت بازیابی"""
+    session = SessionLocal()
     try:
-        # اتصال به دیتابیس
-        session = SessionLocal()
-
-        # دریافت UserID از درخواست
         data = request.get_json()
-        user_id = data.get('UserID')
-        
-        if not user_id:
-            return jsonify({"success": False, "message": "UserID is required"}), 400
+        if not data:
+            raise ValidationError("Invalid request data")
 
-        # جستجوی WalletID در جدول Wallets
-        wallet = session.query(Wallets).filter(Wallets.UserID == user_id).first()
+        user_id = InputValidator.validate_uuid(
+            data.get('UserID', ''),
+            "UserID"
+        )
 
-        if not wallet:
-            return jsonify({"success": False, "message": "Wallet not found for the given UserID"}), 404
+        wallet_service = WalletService(session)
+        phrase_key = wallet_service.get_phrase_key(user_id)
 
-        # جستجوی PhraseKey در جدول Address
-        address = session.query(Address).filter(Address.WalletID == wallet.WalletID).first()
-
-        if not address or not address.PhraseKey:
-            return jsonify({"success": False, "message": "PhraseKey not found for the given WalletID"}), 404
-
-        # بازگرداندن PhraseKey به کاربر
         return jsonify({
-            "success": True,
-            "PhraseKey": address.PhraseKey
-        })
-
-    except Exception as e:
-        return jsonify({"success": False, "message": f"An error occurred: {str(e)}"}), 500
+            'phrase_key': phrase_key,
+            'success': True
+        }), 200
 
     finally:
         session.close()

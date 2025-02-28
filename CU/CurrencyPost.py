@@ -1,66 +1,45 @@
 import logging
 from flask import Blueprint, jsonify, request
 from database import SessionLocal, Currencies
+from security.validators import InputValidator, SecurityUtils, ValidationError
+from services.currency_service import CurrencyService
+from utils.error_handlers import handle_api_errors
 
 logger = logging.getLogger(__name__)
 
 # تعریف Blueprint برای نمایش تمامی کارنسی‌ها
-CPost_bp = Blueprint('CPost_bp', __name__)
+CPost_bp = Blueprint('currency_post', __name__)
 
-@CPost_bp.route('/all-currencies', methods=['GET'])
+@CPost_bp.route('/all-currencies', methods=['POST'])
+@SecurityUtils.rate_limit(requests=100, window=60)
+@handle_api_errors
 def get_all_currencies():
-    """
-    این اندپوینت تمام کارنسی‌های موجود در دیتابیس را برگردانده و نمایش می‌دهد.
-    """
-    logger.info("Attempting to fetch all currencies from the database.")
-
-    # تعریف یک مپ برای تبدیل BlockchainID به BlockchainName
-    blockchain_map = {
-        4: "Bitcoin",
-        1: "Ethereum",
-        2: "Tron",
-        3: "Binance",
-        5: "Polygon",
-        11: "XRP",
-        12: "Solana",
-        6: "Arbitrum",
-        13: "Polkadot",
-        14: "Avalanche"
-    }
-
-    # ایجاد Session برای ارتباط با دیتابیس
-    db_session = SessionLocal()
-
+    """دریافت لیست تمام ارزها"""
+    session = SessionLocal()
     try:
-        # دریافت تمام رکوردهای Currencies از دیتابیس
-        currencies = db_session.query(Currencies).all()
-        
-        if not currencies:
-            logger.warning("No currencies found in the database.")
-            return jsonify({"success": False, "message": "No currencies found."}), 404
+        data = request.get_json()
+        if not data:
+            raise ValidationError("Invalid request data")
 
-        # تبدیل اطلاعات کارنسی‌ها به قالب JSON
-        data = []
-        for currency in currencies:
-            # جایگزینی BlockchainID با BlockchainName
-            blockchain_name = blockchain_map.get(currency.BlockchainID, "Unknown")
-            
-            data.append({
-                "CurrencyID": currency.CurrencyID,
-                "CurrencyName": currency.CurrencyName,
-                "Icon": currency.Icon,
-                "Symbol": currency.Symbol,
-                "BlockchainName": blockchain_name,  # استفاده از نام به‌جای آی‌دی
-                "DecimalPlaces": currency.DecimalPlaces,
-                "IsToken": currency.IsToken,
-                "SmartContractAddress": currency.SmartContractAddress,
-            })
+        page = InputValidator.validate_integer(
+            data.get('page', 1),
+            "Page",
+            min_value=1
+        )
+        per_page = InputValidator.validate_integer(
+            data.get('per_page', 10),
+            "PerPage",
+            min_value=1,
+            max_value=100
+        )
 
-        logger.info("All currencies fetched successfully.")
-        return jsonify({"success": True, "currencies": data}), 200
-    except Exception as e:
-        logger.exception("An exception occurred while fetching all currencies.")
-        return jsonify({"success": False, "message": str(e)}), 500
+        currency_service = CurrencyService(session)
+        currencies = currency_service.get_all_currencies(page, per_page)
+
+        return jsonify({
+            'currencies': currencies,
+            'success': True
+        }), 200
+
     finally:
-        # بستن سشن دیتابیس
-        db_session.close()
+        session.close()

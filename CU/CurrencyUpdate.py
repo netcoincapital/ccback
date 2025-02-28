@@ -2,7 +2,9 @@ import logging
 import json
 from flask import Blueprint, jsonify, request
 from database import SessionLocal, Currencies
-from services import CurrencyPriceService
+from security.validators import InputValidator, SecurityUtils, ValidationError
+from services.currency_service import CurrencyService
+from utils.error_handlers import handle_api_errors
 
 logger = logging.getLogger(__name__)
 
@@ -23,41 +25,76 @@ def dynamic_decimal_format(price_value: float) -> str:
     else:
         return f"{price_value:,.8f}"
 
-CUpdate_bp = Blueprint('CUpdate_bp', __name__)
+CUpdate_bp = Blueprint('currency_update', __name__)
+
+@CUpdate_bp.route('/update-prices', methods=['POST'])
+@SecurityUtils.rate_limit(requests=10, window=60)
+@handle_api_errors
+def update_currency_prices():
+    """به‌روزرسانی قیمت ارزها"""
+    session = SessionLocal()
+    try:
+        currency_service = CurrencyService(session)
+        with session.begin():
+            updated_prices = currency_service.update_prices()
+
+        return jsonify({
+            'updated_prices': updated_prices,
+            'success': True
+        }), 200
+
+    finally:
+        session.close()
 
 @CUpdate_bp.route('/prices', methods=['POST'])
+@SecurityUtils.rate_limit(requests=100, window=60)  # 100 درخواست در دقیقه
 def get_currency_price():
-    logger.info("Received a request to fetch currency prices.")
-
-    db_session = SessionLocal()
     try:
-        data = request.json
-        if not data or "UserID" not in data or "CurrencyID" not in data:
-            logger.error("UserID or CurrencyID not provided.")
-            return jsonify({"success": False, "message": "UserID and CurrencyID are required."}), 400
+        data = request.get_json()
+        if not data:
+            raise ValidationError("Invalid request data")
 
-        user_id = data["UserID"]
-        currency_ids = data["CurrencyID"]
+        # اعتبارسنجی UserID
+        user_id = InputValidator.validate_uuid(
+            data.get('UserID', ''),
+            "UserID"
+        )
+
+        # اعتبارسنجی CurrencyID
+        currency_ids = data.get('CurrencyID', [])
         if isinstance(currency_ids, str):
             currency_ids = [currency_ids]
         if not isinstance(currency_ids, list):
-            return jsonify({"success": False, "message": "CurrencyID must be list or string."}), 400
+            raise ValidationError("CurrencyID must be list or string")
 
-        # گرفتن فیات‌ها (ارزهای رایج)
-        fiat_currencies_input = data.get("FiatCurrencies", None)
-        if fiat_currencies_input is None:
-            fiat_currencies = list(fiat_symbols.keys())
-        else:
-            if isinstance(fiat_currencies_input, str):
-                fiat_currencies_input = [fiat_currencies_input]
-            if not isinstance(fiat_currencies_input, list):
-                return jsonify({"success": False, "message": "FiatCurrencies must be list or string."}), 400
-            filtered_fiats = [f for f in fiat_currencies_input if f in fiat_symbols]
-            fiat_currencies = filtered_fiats if filtered_fiats else list(fiat_symbols.keys())
+        validated_currency_ids = [
+            InputValidator.validate_string(
+                cid,
+                "CurrencyID",
+                pattern=r'^[A-Z0-9]+$'
+            ) for cid in currency_ids
+        ]
+
+        # اعتبارسنجی FiatCurrencies
+        fiat_currencies = data.get('FiatCurrencies', None)
+        if fiat_currencies is not None:
+            if isinstance(fiat_currencies, str):
+                fiat_currencies = [fiat_currencies]
+            if not isinstance(fiat_currencies, list):
+                raise ValidationError("FiatCurrencies must be list or string")
+            
+            validated_fiats = [
+                InputValidator.validate_string(
+                    fiat,
+                    "FiatCurrency",
+                    pattern=r'^[A-Z]{3}$'
+                ) for fiat in fiat_currencies
+            ]
 
         logger.info(f"Final fiat currencies to fetch: {fiat_currencies}")
 
         # کوئری گرفتن ارزهای درخواستی
+        db_session = SessionLocal()
         currencies = db_session.query(Currencies).filter(Currencies.Symbol.in_(currency_ids)).all()
         if not currencies:
             return jsonify({"success": False, "message": "No currencies found."}), 404
@@ -132,9 +169,16 @@ def get_currency_price():
 
         return jsonify({"success": True, "prices": final_prices}), 200
 
+    except ValidationError as e:
+        SecurityUtils.log_failed_attempt(
+            request.remote_addr,
+            request.endpoint,
+            str(e)
+        )
+        return jsonify({"success": False, "message": str(e)}), e.status_code
     except Exception as e:
-        logger.exception("An exception occurred while fetching currency prices.")
-        return jsonify({"success": False, "message": str(e)}), 500
+        logging.error(f"Error in get_currency_price: {str(e)}")
+        return jsonify({"success": False, "message": "Internal server error"}), 500
 
     finally:
         db_session.close()
