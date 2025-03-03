@@ -1,0 +1,22 @@
+2025-03-02 15:15:48,480 - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-03-02 15:15:49,110 - INFO - Initializing wallet generation module
+2025-03-02 15:15:49,112 - INFO - Initializing wallet import module
+2025-03-02 15:15:49,114 - INFO - Initializing currency update module
+2025-03-02 15:15:49,116 - INFO - Initializing currency post module
+2025-03-02 15:15:49,121 - INFO - Initializing phrase key module
+2025-03-02 15:15:49,124 - INFO - Initializing receive transaction module
+2025-03-02 15:15:49,125 - INFO - Initializing gas fee module
+2025-03-02 15:15:49,129 - INFO - Starting IronWallet application
+2025-03-02 15:15:49,182 - DEBUG - Building SSL context
+2025-03-02 15:15:49,223 - DEBUG - Switching to SSL
+2025-03-02 15:15:49,226 - DEBUG - SSL has been enabled
+2025-03-02 15:15:49,227 - DEBUG - Starting authorization phase
+2025-03-02 15:15:49,227 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-03-02 15:15:49,227 - INFO - package: mysql.connector.plugins
+2025-03-02 15:15:49,228 - INFO - plugin_name: caching_sha2_password
+2025-03-02 15:15:49,228 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-03-02 15:15:49,229 - DEBUG - Exchanging further packets
+2025-03-02 15:15:49,229 - DEBUG - caching_sha2_password completed succesfully
+2025-03-02 15:15:49,264 - WARNING -  * Debugger is active!
+2025-03-02 15:15:49,267 - INFO -  * Debugger PIN: 102-041-039
+2025-03-02 15:15:54,759 - INFO -  * Detected change in 'c:\\Users\\kozmos teknoloji\\Desktop\\CC\\app.py', reloading

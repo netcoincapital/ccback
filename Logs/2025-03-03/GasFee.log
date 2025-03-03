@@ -1,0 +1,17 @@
+2025-03-03 08:43:01,275 - GasFee - INFO - Initializing gas fee module
+2025-03-03 08:43:09,355 - GasFee - INFO - Initializing gas fee module
+2025-03-03 08:43:42,941 - GasFee - WARNING - Validation error in get_gas_fee: Network must be at least 1 characters
+2025-03-03 08:48:52,356 - GasFee - INFO - Initializing gas fee module
+2025-03-03 08:49:00,492 - GasFee - INFO - Initializing gas fee module
+2025-03-03 08:49:05,046 - GasFee - DEBUG - Fetching gas fee for Ethereum network
+2025-03-03 08:49:05,642 - GasFee - DEBUG - Fetching gas fee for Bitcoin network
+2025-03-03 08:49:05,831 - GasFee - INFO - Successfully retrieved gas fees for both networks
+2025-03-03 08:55:07,465 - GasFee - INFO - Initializing gas fee module
+2025-03-03 09:00:55,846 - GasFee - INFO - Initializing gas fee module
+2025-03-03 09:01:03,858 - GasFee - INFO - Initializing gas fee module
+2025-03-03 09:02:15,990 - GasFee - INFO - Initializing gas fee module
+2025-03-03 09:02:36,525 - GasFee - INFO - Initializing gas fee module
+2025-03-03 09:02:44,568 - GasFee - INFO - Initializing gas fee module
+2025-03-03 09:03:39,410 - GasFee - INFO - Initializing gas fee module
+2025-03-03 09:21:05,956 - GasFee - INFO - Initializing gas fee module
+2025-03-03 09:21:14,008 - GasFee - INFO - Initializing gas fee module

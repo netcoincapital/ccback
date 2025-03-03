@@ -1,125 +1,88 @@
-from flask import Flask, Blueprint, jsonify, request
+from flask import Blueprint, jsonify
 import requests
 from web3 import Web3
-from security.validators import InputValidator, SecurityUtils, ValidationError
-import logging
-from datetime import datetime
-
-from database import SessionLocal
-from security.validators import InputValidator, SecurityUtils, ValidationError
-from services.blockchain_service import BlockchainService
+import os
+from utils.logging_config import get_logger
+from security.validators import SecurityUtils
 from utils.error_handlers import handle_api_errors
+
+# Configure logging
+logger = get_logger(__file__)
+logger.info("Initializing gas fee module")
 
 gasfee_bp = Blueprint('gasfee', __name__)
 
-# Infura API Key (Replace with your own)
-INFURA_API_KEY = "a8ab43a04ce044de988a838d92f478a7"
+# Load API key from environment variables
+INFURA_API_KEY = os.getenv('INFURA_API_KEY', "a8ab43a04ce044de988a838d92f478a7")
 
-# Infura URLs for EVM-based blockchains
-INFURA_URLS = {
-    "Ethereum": f"https://mainnet.infura.io/v3/{INFURA_API_KEY}",
-    "Polygon": f"https://polygon-mainnet.infura.io/v3/{INFURA_API_KEY}",
-    "Arbitrum": f"https://arbitrum-mainnet.infura.io/v3/{INFURA_API_KEY}",
-    "Avalanche": f"https://avalanche-mainnet.infura.io/v3/{INFURA_API_KEY}",
-    "Binance": f"https://bsc-mainnet.infura.io/v3/{INFURA_API_KEY}",
-    "Solana": f"https://solana-mainnet.g.alchemy.com/v2/{INFURA_API_KEY}"
-}
+# Infura URL for Ethereum
+ETHEREUM_URL = f"https://mainnet.infura.io/v3/{INFURA_API_KEY}"
 
-# API Endpoints for Non-EVM Networks
+# Bitcoin API endpoint
+BITCOIN_API = "https://mempool.space/api/v1/fees/recommended"
 
-# API Keys for Non-EVM Blockchains
-TRON_API_KEY = "61d401f5-27e5-4de7-81ae-a9a48a7fc5d8"
-POLKADOT_API_KEY = "RRYN92DT9T4DFIYN6ATT7UIPS3Z9PW6B8S"
-XRP_API_KEY = "your_xrp_api_key_here"
-
-
-NON_EVM_APIS = {
-    "Bitcoin": "https://mempool.space/api/v1/fees/recommended",
-    "Tron": f"https://api.trongrid.io/v1/wallet/getnowblock?apiKey={TRON_API_KEY}",
-    "Polkadot": "https://api.subscan.io/api/scan/metadata",
-    "XRP": "https://s1.ripple.com:51234"
-}
-
-# Fetch gas fees from Infura for EVM-based networks
-def fetch_infura_gas_fee(network):
+def fetch_ethereum_gas_fee():
+    """Fetch gas fee for Ethereum network"""
     try:
-        w3 = Web3(Web3.HTTPProvider(INFURA_URLS[network]))
+        logger.debug("Fetching gas fee for Ethereum network")
+        w3 = Web3(Web3.HTTPProvider(ETHEREUM_URL))
         gas_price = w3.eth.gas_price
-        return {"gas_fee": Web3.from_wei(gas_price, "gwei")}
+        return {"gas_fee": float(Web3.from_wei(gas_price, "gwei"))}
     except Exception as e:
+        logger.error(f"Error fetching Ethereum gas fee: {str(e)}")
         return {"error": str(e)}
 
-# Fetch gas fees from external APIs for non-EVM networks
-def fetch_non_evm_gas_fee(network):
+def fetch_bitcoin_gas_fee():
+    """Fetch gas fee for Bitcoin network"""
     try:
+        logger.debug("Fetching gas fee for Bitcoin network")
         headers = {"Accept": "application/json"}
-        response = requests.get(NON_EVM_APIS[network], headers=headers, timeout=10)
+        response = requests.get(BITCOIN_API, headers=headers, timeout=10)
 
         if response.status_code != 200:
+            logger.warning(f"Bitcoin API returned status code {response.status_code}")
             return {"error": f"API returned status code {response.status_code}"}
 
         data = response.json()
         if not data:
+            logger.warning("Empty response from Bitcoin API")
             return {"error": "Empty response from API"}
 
-        if network == "Bitcoin":
-            return {"gas_fee": data.get("fastestFee", "Unknown")}
-        elif network == "Tron":
-            return {"gas_fee": data.get("energyFee", data.get("bandwidth", "Unknown"))}
-        elif network == "Polkadot":
-            return {"gas_fee": data.get("data", {}).get("tokenDecimals", "Unknown")}
-        elif network == "Solana":
-            return {"gas_fee": data.get("average", "Unknown")}
-        elif network == "XRP":
-            return {"gas_fee": data.get("drops", {}).get("base_fee", "Unknown")}
-        else:
-            return {"error": "Unsupported network"}
-
+        return {"gas_fee": data.get("fastestFee", "Unknown")}
     except Exception as e:
+        logger.error(f"Error fetching Bitcoin gas fee: {str(e)}")
         return {"error": str(e)}
 
-# Fetch gas fees for all networks
-def fetch_all_gas_fees():
-    gas_fees = {}
-
-    # Fetch from Infura
-    for network in INFURA_URLS.keys():
-        gas_fees[network] = fetch_infura_gas_fee(network)
-
-    # Fetch from other APIs
-    for network in NON_EVM_APIS.keys():
-        gas_fees[network] = fetch_non_evm_gas_fee(network)
-
-    return gas_fees
-
-# Define API route
 @gasfee_bp.route('/gasfee', methods=['GET'])
 @SecurityUtils.rate_limit(requests=100, window=60)
 @handle_api_errors
 def get_gas_fee():
-    """دریافت کارمزد شبکه"""
-    session = SessionLocal()
+    """
+    Get gas fees for Ethereum and Bitcoin networks
+    ---
+    tags:
+      - Blockchain
+    responses:
+      200:
+        description: Gas fees retrieved successfully
+      429:
+        description: Rate limit exceeded
+    """
     try:
-        network = InputValidator.validate_string(
-            request.args.get('network', ''),
-            "Network",
-            pattern=r'^[a-zA-Z0-9_]+$'
-        )
+        # Fetch gas fees for both networks
+        eth_fee = fetch_ethereum_gas_fee()
+        btc_fee = fetch_bitcoin_gas_fee()
 
-        blockchain_service = BlockchainService(session)
-        gas_fee = blockchain_service.get_gas_fee(network)
+        # Prepare response
+        response = {
+            "Ethereum": eth_fee,
+            "Bitcoin": btc_fee,
+            "success": True
+        }
 
-        return jsonify({
-            'gas_fee': gas_fee,
-            'success': True
-        }), 200
+        logger.info("Successfully retrieved gas fees for both networks")
+        return jsonify(response), 200
 
-    finally:
-        session.close()
-
-# Initialize Flask app
-app = Flask(__name__)
-app.register_blueprint(gasfee_bp)
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    except Exception as e:
+        logger.error(f"Error in get_gas_fee: {str(e)}", exc_info=True)
+        raise

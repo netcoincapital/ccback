@@ -1,0 +1,21 @@
+2025-03-03 08:43:01,267 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 08:43:09,349 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 08:43:20,448 - CurrencyUpdate - INFO - Fetching prices for currencies: ['ETH', 'SHIB'] in fiats: ['USD', 'EUR', 'IRR']
+2025-03-03 08:43:20,468 - CurrencyUpdate - DEBUG - Fetching latest prices for ['ETH', 'SHIB'] in USD
+2025-03-03 08:43:20,708 - CurrencyUpdate - DEBUG - Fetching 24h changes for ['ETH', 'SHIB'] in USD
+2025-03-03 08:43:21,145 - CurrencyUpdate - DEBUG - Fetching latest prices for ['ETH', 'SHIB'] in EUR
+2025-03-03 08:43:21,340 - CurrencyUpdate - DEBUG - Fetching 24h changes for ['ETH', 'SHIB'] in EUR
+2025-03-03 08:43:21,517 - CurrencyUpdate - DEBUG - Fetching latest prices for ['ETH', 'SHIB'] in IRR
+2025-03-03 08:43:21,965 - CurrencyUpdate - DEBUG - Fetching 24h changes for ['ETH', 'SHIB'] in IRR
+2025-03-03 08:43:22,148 - CurrencyUpdate - INFO - Successfully retrieved prices for 2 currencies in 3 fiat currencies
+2025-03-03 08:48:52,348 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 08:49:00,486 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 08:55:07,453 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 09:00:55,837 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 09:01:03,848 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 09:02:15,978 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 09:02:36,517 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 09:02:44,560 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 09:03:39,396 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 09:21:05,949 - CurrencyUpdate - INFO - Initializing currency update module
+2025-03-03 09:21:14,003 - CurrencyUpdate - INFO - Initializing currency update module

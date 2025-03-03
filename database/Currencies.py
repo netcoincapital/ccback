@@ -25,3 +25,16 @@ class Currencies(Base):
 
     def __repr__(self):
         return f"<Currencies(CurrencyID={self.CurrencyID}, CurrencyName='{self.CurrencyName}')>"
+        
+    def to_dict(self):
+        """Convert currency object to dictionary for serialization"""
+        return {
+            'CurrencyID': self.CurrencyID,
+            'CurrencyName': self.CurrencyName,
+            'Symbol': self.Symbol,
+            'Icon': self.Icon,
+            'BlockchainID': self.BlockchainID,
+            'DecimalPlaces': self.DecimalPlaces,
+            'IsToken': self.IsToken,
+            'SmartContractAddress': self.SmartContractAddress
+        }

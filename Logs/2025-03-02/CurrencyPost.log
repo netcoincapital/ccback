@@ -1,0 +1,220 @@
+2025-03-02 12:25:56,090 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 12:25:58,906 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 12:28:45,733 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 12:28:47,831 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 14:34:42,937 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 14:34:45,026 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 14:38:57,299 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 14:38:59,266 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:13:56,981 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:13:58,990 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:15:49,116 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:15:56,995 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:16:25,513 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:17:05,062 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:17:09,008 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:19:27,437 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:19:57,555 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:20:23,075 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:20:31,183 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:21:50,243 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:21:58,551 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:28:19,983 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:28:28,132 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:31:00,384 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:31:08,545 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:37:45,359 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 15:37:53,231 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:00:04,288 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:00:12,538 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:00:26,695 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:00:54,473 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:01:04,941 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:01:26,415 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:01:41,293 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:01:49,837 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:02:48,482 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:03:09,388 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:04:20,820 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:04:31,965 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:13:22,545 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:13:30,484 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:14:26,903 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:15:44,602 - CurrencyPost - ERROR - Error in get_all_currencies: type object 'InputValidator' has no attribute 'validate_integer'
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\CU\CurrencyPost.py", line 62, in get_all_currencies
+    page = InputValidator.validate_integer(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'InputValidator' has no attribute 'validate_integer'
+2025-03-02 16:16:03,482 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:16:26,268 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:16:41,268 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:16:49,424 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:16:53,901 - CurrencyPost - ERROR - Error in get_all_currencies: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\werkzeug\wrappers\request.py", line 608, in get_json
+    rv = self.json_module.loads(data)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\flask\json\provider.py", line 187, in loads
+    return json.loads(s, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\CU\CurrencyPost.py", line 58, in get_all_currencies
+    data = request.get_json()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\werkzeug\wrappers\request.py", line 617, in get_json
+    rv = self.on_json_loading_failed(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\flask\wrappers.py", line 131, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\werkzeug\wrappers\request.py", line 642, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2025-03-02 16:19:59,139 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:20:07,464 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:21:10,493 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:21:18,891 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:21:23,406 - CurrencyPost - DEBUG - Fetching currencies page 1 with 10 items per page
+2025-03-02 16:21:27,503 - CurrencyPost - ERROR - Error in get_all_currencies: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+Traceback (most recent call last):
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 730, in _connect
+    raise err
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\CU\CurrencyPost.py", line 84, in get_all_currencies
+    currencies = currency_service.get_all_currencies(page, per_page)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\services\currency_service.py", line 20, in get_all_currencies
+    cached_data = redis_client.get(cache_key)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\commands\core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 1422, in get_connection
+    connection.connect()
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2025-03-02 16:25:38,580 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:25:46,835 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:25:51,323 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=False
+2025-03-02 16:25:51,408 - CurrencyPost - INFO - Retrieved 1000 currencies for page 1
+2025-03-02 16:26:11,402 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=False
+2025-03-02 16:26:11,426 - CurrencyPost - INFO - Retrieved 1000 currencies for page 1
+2025-03-02 16:27:37,482 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:27:45,778 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:27:50,265 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=False
+2025-03-02 16:27:50,347 - CurrencyPost - INFO - Retrieved 1000 currencies for page 1
+2025-03-02 16:28:12,557 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:28:17,094 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=False
+2025-03-02 16:28:17,179 - CurrencyPost - INFO - Retrieved 1000 currencies for page 1
+2025-03-02 16:29:37,055 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:29:45,254 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:29:59,233 - CurrencyPost - DEBUG - Raw 'all' parameter value: None
+2025-03-02 16:29:59,233 - CurrencyPost - DEBUG - Parsed get_all value: False
+2025-03-02 16:29:59,235 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=False
+2025-03-02 16:29:59,318 - CurrencyPost - INFO - Retrieved 1000 currencies for page 1
+2025-03-02 16:30:04,115 - CurrencyPost - DEBUG - Raw 'all' parameter value: true
+2025-03-02 16:30:04,116 - CurrencyPost - DEBUG - Parsed get_all value: True
+2025-03-02 16:30:04,116 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=True
+2025-03-02 16:30:04,119 - CurrencyPost - INFO - Fetching all 7207 currencies
+2025-03-02 16:30:04,120 - CurrencyPost - DEBUG - Fetching batch 1/8
+2025-03-02 16:30:04,142 - CurrencyPost - DEBUG - Added 1000 currencies from batch 1, total so far: 1000
+2025-03-02 16:30:04,143 - CurrencyPost - DEBUG - Fetching batch 2/8
+2025-03-02 16:30:04,163 - CurrencyPost - DEBUG - Added 1000 currencies from batch 2, total so far: 2000
+2025-03-02 16:30:04,165 - CurrencyPost - DEBUG - Fetching batch 3/8
+2025-03-02 16:30:04,185 - CurrencyPost - DEBUG - Added 1000 currencies from batch 3, total so far: 3000
+2025-03-02 16:30:04,185 - CurrencyPost - DEBUG - Fetching batch 4/8
+2025-03-02 16:30:04,211 - CurrencyPost - DEBUG - Added 1000 currencies from batch 4, total so far: 4000
+2025-03-02 16:30:04,212 - CurrencyPost - DEBUG - Fetching batch 5/8
+2025-03-02 16:30:04,237 - CurrencyPost - DEBUG - Added 1000 currencies from batch 5, total so far: 5000
+2025-03-02 16:30:04,238 - CurrencyPost - DEBUG - Fetching batch 6/8
+2025-03-02 16:30:04,266 - CurrencyPost - DEBUG - Added 1000 currencies from batch 6, total so far: 6000
+2025-03-02 16:30:04,266 - CurrencyPost - DEBUG - Fetching batch 7/8
+2025-03-02 16:30:04,295 - CurrencyPost - DEBUG - Added 1000 currencies from batch 7, total so far: 7000
+2025-03-02 16:30:04,296 - CurrencyPost - DEBUG - Fetching batch 8/8
+2025-03-02 16:30:04,306 - CurrencyPost - DEBUG - Added 207 currencies from batch 8, total so far: 7207
+2025-03-02 16:30:04,307 - CurrencyPost - INFO - Retrieved all 7207 currencies
+2025-03-02 16:30:14,154 - CurrencyPost - DEBUG - Raw 'all' parameter value: true
+2025-03-02 16:30:14,155 - CurrencyPost - DEBUG - Parsed get_all value: True
+2025-03-02 16:30:14,155 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=True
+2025-03-02 16:30:14,159 - CurrencyPost - INFO - Fetching all 7207 currencies
+2025-03-02 16:30:14,159 - CurrencyPost - DEBUG - Fetching batch 1/8
+2025-03-02 16:30:14,184 - CurrencyPost - DEBUG - Added 1000 currencies from batch 1, total so far: 1000
+2025-03-02 16:30:14,184 - CurrencyPost - DEBUG - Fetching batch 2/8
+2025-03-02 16:30:14,212 - CurrencyPost - DEBUG - Added 1000 currencies from batch 2, total so far: 2000
+2025-03-02 16:30:14,212 - CurrencyPost - DEBUG - Fetching batch 3/8
+2025-03-02 16:30:14,336 - CurrencyPost - DEBUG - Added 1000 currencies from batch 3, total so far: 3000
+2025-03-02 16:30:14,337 - CurrencyPost - DEBUG - Fetching batch 4/8
+2025-03-02 16:30:14,360 - CurrencyPost - DEBUG - Added 1000 currencies from batch 4, total so far: 4000
+2025-03-02 16:30:14,360 - CurrencyPost - DEBUG - Fetching batch 5/8
+2025-03-02 16:30:14,381 - CurrencyPost - DEBUG - Added 1000 currencies from batch 5, total so far: 5000
+2025-03-02 16:30:14,381 - CurrencyPost - DEBUG - Fetching batch 6/8
+2025-03-02 16:30:14,403 - CurrencyPost - DEBUG - Added 1000 currencies from batch 6, total so far: 6000
+2025-03-02 16:30:14,404 - CurrencyPost - DEBUG - Fetching batch 7/8
+2025-03-02 16:30:14,426 - CurrencyPost - DEBUG - Added 1000 currencies from batch 7, total so far: 7000
+2025-03-02 16:30:14,427 - CurrencyPost - DEBUG - Fetching batch 8/8
+2025-03-02 16:30:14,435 - CurrencyPost - DEBUG - Added 207 currencies from batch 8, total so far: 7207
+2025-03-02 16:30:14,436 - CurrencyPost - INFO - Retrieved all 7207 currencies
+2025-03-02 16:30:36,656 - CurrencyPost - DEBUG - Raw 'all' parameter value: true
+2025-03-02 16:30:36,657 - CurrencyPost - DEBUG - Parsed get_all value: True
+2025-03-02 16:30:36,658 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=True
+2025-03-02 16:30:36,661 - CurrencyPost - INFO - Fetching all 7207 currencies
+2025-03-02 16:30:36,662 - CurrencyPost - DEBUG - Fetching batch 1/8
+2025-03-02 16:30:36,687 - CurrencyPost - DEBUG - Added 1000 currencies from batch 1, total so far: 1000
+2025-03-02 16:30:36,688 - CurrencyPost - DEBUG - Fetching batch 2/8
+2025-03-02 16:30:36,717 - CurrencyPost - DEBUG - Added 1000 currencies from batch 2, total so far: 2000
+2025-03-02 16:30:36,718 - CurrencyPost - DEBUG - Fetching batch 3/8
+2025-03-02 16:30:36,740 - CurrencyPost - DEBUG - Added 1000 currencies from batch 3, total so far: 3000
+2025-03-02 16:30:36,741 - CurrencyPost - DEBUG - Fetching batch 4/8
+2025-03-02 16:30:36,763 - CurrencyPost - DEBUG - Added 1000 currencies from batch 4, total so far: 4000
+2025-03-02 16:30:36,764 - CurrencyPost - DEBUG - Fetching batch 5/8
+2025-03-02 16:30:36,787 - CurrencyPost - DEBUG - Added 1000 currencies from batch 5, total so far: 5000
+2025-03-02 16:30:36,788 - CurrencyPost - DEBUG - Fetching batch 6/8
+2025-03-02 16:30:36,812 - CurrencyPost - DEBUG - Added 1000 currencies from batch 6, total so far: 6000
+2025-03-02 16:30:36,813 - CurrencyPost - DEBUG - Fetching batch 7/8
+2025-03-02 16:30:36,835 - CurrencyPost - DEBUG - Added 1000 currencies from batch 7, total so far: 7000
+2025-03-02 16:30:36,836 - CurrencyPost - DEBUG - Fetching batch 8/8
+2025-03-02 16:30:36,848 - CurrencyPost - DEBUG - Added 207 currencies from batch 8, total so far: 7207
+2025-03-02 16:30:36,848 - CurrencyPost - INFO - Retrieved all 7207 currencies
+2025-03-02 16:33:23,870 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:33:32,273 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 16:33:36,762 - CurrencyPost - DEBUG - Raw 'all' parameter value: None
+2025-03-02 16:33:36,763 - CurrencyPost - DEBUG - Parsed get_all value: False
+2025-03-02 16:33:36,764 - CurrencyPost - DEBUG - Fetching currencies page 1 with 1000 items per page, get_all=False
+2025-03-02 16:33:36,846 - CurrencyPost - INFO - Retrieved 1000 currencies for page 1
+2025-03-02 19:35:12,852 - CurrencyPost - INFO - Initializing currency post module
+2025-03-02 19:35:20,951 - CurrencyPost - INFO - Initializing currency post module

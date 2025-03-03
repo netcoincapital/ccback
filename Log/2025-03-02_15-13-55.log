@@ -1,0 +1,28 @@
+2025-03-02 15:13:55,277 - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-03-02 15:13:56,973 - INFO - Initializing wallet generation module
+2025-03-02 15:13:56,976 - INFO - Initializing wallet import module
+2025-03-02 15:13:56,980 - INFO - Initializing currency update module
+2025-03-02 15:13:56,981 - INFO - Initializing currency post module
+2025-03-02 15:13:56,984 - INFO - Initializing phrase key module
+2025-03-02 15:13:56,987 - INFO - Initializing receive transaction module
+2025-03-02 15:13:56,990 - INFO - Initializing gas fee module
+2025-03-02 15:13:56,992 - INFO - Starting IronWallet application
+2025-03-02 15:13:57,044 - DEBUG - Building SSL context
+2025-03-02 15:13:57,081 - DEBUG - Switching to SSL
+2025-03-02 15:13:57,100 - DEBUG - SSL has been enabled
+2025-03-02 15:13:57,100 - DEBUG - Starting authorization phase
+2025-03-02 15:13:57,101 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-03-02 15:13:57,101 - INFO - package: mysql.connector.plugins
+2025-03-02 15:13:57,102 - INFO - plugin_name: caching_sha2_password
+2025-03-02 15:13:57,102 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-03-02 15:13:57,103 - DEBUG - Exchanging further packets
+2025-03-02 15:13:57,108 - DEBUG - caching_sha2_password completed succesfully
+2025-03-02 15:13:57,191 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://192.168.1.32:3000
+2025-03-02 15:13:57,191 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-02 15:13:57,193 - INFO -  * Restarting with stat
+2025-03-02 15:15:47,089 - INFO -  * Restarting with stat
+2025-03-02 15:15:54,987 - INFO -  * Restarting with stat
+2025-03-02 15:16:21,651 - INFO -  * Restarting with stat

@@ -12,7 +12,16 @@ from flask_wtf.csrf import CSRFProtect
 import jwt
 
 # Redis connection
-redis_client = redis.Redis(host='localhost', port=6379, db=0)
+try:
+    redis_client = redis.Redis(host='localhost', port=6379, db=0, socket_connect_timeout=1)
+    # Test connection
+    redis_client.ping()
+    redis_available = True
+    logging.info("Redis connection successful")
+except (redis.RedisError, ConnectionError):
+    logging.warning("Redis server is not available. Rate limiting will be disabled.")
+    redis_available = False
+    redis_client = None
 
 @dataclass
 class ValidationError(Exception):
@@ -30,6 +39,10 @@ class SecurityUtils:
         def decorator(f):
             @wraps(f)
             def wrapped(*args, **kwargs):
+                # If Redis is not available, skip rate limiting
+                if not redis_available:
+                    return f(*args, **kwargs)
+                    
                 ip = request.remote_addr
                 key = f"{ip}:{request.endpoint}"
                 
@@ -55,6 +68,9 @@ class SecurityUtils:
     def log_failed_attempt(ip: str, endpoint: str, reason: str):
         """ثبت تلاش‌های ناموفق"""
         logging.warning(f"Failed attempt from IP: {ip}, Endpoint: {endpoint}, Reason: {reason}")
+        if not redis_available:
+            return
+            
         try:
             key = f"failed_attempts:{ip}"
             redis_client.incr(key)

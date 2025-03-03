@@ -1,0 +1,121 @@
+2025-03-02 12:25:56,103 - app - INFO - Starting IronWallet application
+2025-03-02 12:25:58,914 - app - INFO - Starting IronWallet application
+2025-03-02 12:28:45,741 - app - INFO - Starting IronWallet application
+2025-03-02 12:28:47,841 - app - INFO - Starting IronWallet application
+2025-03-02 14:34:42,947 - app - INFO - Starting IronWallet application
+2025-03-02 14:34:45,034 - app - INFO - Starting IronWallet application
+2025-03-02 14:38:57,303 - app - INFO - Starting IronWallet application
+2025-03-02 14:38:59,273 - app - INFO - Starting IronWallet application
+2025-03-02 15:13:56,992 - app - INFO - Starting IronWallet application
+2025-03-02 15:13:59,000 - app - INFO - Starting IronWallet application
+2025-03-02 15:14:05,429 - app - ERROR - Error in generate_wallet: 'WalletGenerationRequest' object has no attribute 'wallet_name'
+2025-03-02 15:15:49,129 - app - INFO - Starting IronWallet application
+2025-03-02 15:15:57,005 - app - INFO - Starting IronWallet application
+2025-03-02 15:16:25,522 - app - INFO - Starting IronWallet application
+2025-03-02 15:17:05,067 - app - INFO - Starting IronWallet application
+2025-03-02 15:17:09,016 - app - INFO - Starting IronWallet application
+2025-03-02 15:17:13,520 - app - ERROR - Error in generate_wallet: 
+2025-03-02 15:19:27,444 - app - INFO - Starting IronWallet application
+2025-03-02 15:19:31,548 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:19:57,562 - app - INFO - Starting IronWallet application
+2025-03-02 15:20:01,673 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:20:23,080 - app - INFO - Starting IronWallet application
+2025-03-02 15:20:27,142 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:20:31,191 - app - INFO - Starting IronWallet application
+2025-03-02 15:20:35,236 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:20:40,388 - app - ERROR - Error in generate_wallet: cannot access local variable 'rabbitmq_available' where it is not associated with a value
+2025-03-02 15:21:50,250 - app - INFO - Starting IronWallet application
+2025-03-02 15:21:54,314 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:21:58,559 - app - INFO - Starting IronWallet application
+2025-03-02 15:22:02,603 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:22:02,991 - app - INFO - Processing wallet generation synchronously for TabLoita
+2025-03-02 15:22:03,132 - app - INFO - Wallet generated synchronously for user 0e827d03-6f6d-4838-b981-3bc041b100e3
+2025-03-02 15:28:19,990 - app - INFO - Starting IronWallet application
+2025-03-02 15:28:24,089 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:28:28,137 - app - INFO - Starting IronWallet application
+2025-03-02 15:28:32,247 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:28:32,619 - app - INFO - Processing wallet generation synchronously for TabLaaaaoita
+2025-03-02 15:28:32,673 - app - INFO - Wallet generated synchronously for user fee35ecd-bdfb-4575-b47c-2558e2961245
+2025-03-02 15:31:00,389 - app - INFO - Starting IronWallet application
+2025-03-02 15:31:04,498 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:31:08,550 - app - INFO - Starting IronWallet application
+2025-03-02 15:31:12,637 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:31:13,016 - app - INFO - Processing wallet generation synchronously for TabLaaaaoita
+2025-03-02 15:31:13,069 - app - INFO - Wallet generated synchronously for user 2bed8646-4066-4ccd-9c78-28a32e0409e2
+2025-03-02 15:37:45,364 - app - INFO - Starting IronWallet application
+2025-03-02 15:37:49,443 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:37:53,238 - app - INFO - Starting IronWallet application
+2025-03-02 15:37:57,321 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 15:37:57,447 - app - ERROR - Error checking/adding Binance blockchain: 'IsActive' is an invalid keyword argument for Blockchains
+2025-03-02 15:37:57,730 - app - INFO - Processing wallet generation synchronously for TabLaaaaoita
+2025-03-02 15:37:57,772 - app - INFO - Wallet generated synchronously for user 62ce984e-9ff3-4e5a-877d-1afb5a1289a4
+2025-03-02 16:00:04,293 - app - INFO - Starting IronWallet application
+2025-03-02 16:00:08,394 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:00:12,545 - app - INFO - Starting IronWallet application
+2025-03-02 16:00:16,619 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:00:26,702 - app - INFO - Starting IronWallet application
+2025-03-02 16:00:30,794 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:00:54,478 - app - INFO - Starting IronWallet application
+2025-03-02 16:00:58,572 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:01:04,947 - app - INFO - Starting IronWallet application
+2025-03-02 16:01:09,056 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:01:26,420 - app - INFO - Starting IronWallet application
+2025-03-02 16:01:30,507 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:01:41,297 - app - INFO - Starting IronWallet application
+2025-03-02 16:01:45,385 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:01:49,847 - app - INFO - Starting IronWallet application
+2025-03-02 16:01:53,909 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:02:48,489 - app - INFO - Starting IronWallet application
+2025-03-02 16:02:52,565 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:03:09,394 - app - INFO - Starting IronWallet application
+2025-03-02 16:03:13,476 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:04:20,827 - app - INFO - Starting IronWallet application
+2025-03-02 16:04:24,929 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:04:31,970 - app - INFO - Starting IronWallet application
+2025-03-02 16:04:36,060 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:13:22,551 - app - INFO - Starting IronWallet application
+2025-03-02 16:13:26,651 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:13:30,490 - app - INFO - Starting IronWallet application
+2025-03-02 16:13:34,586 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:14:26,909 - app - INFO - Starting IronWallet application
+2025-03-02 16:14:31,024 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:16:03,487 - app - INFO - Starting IronWallet application
+2025-03-02 16:16:07,586 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:16:26,278 - app - INFO - Starting IronWallet application
+2025-03-02 16:16:30,374 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:16:41,274 - app - INFO - Starting IronWallet application
+2025-03-02 16:16:45,361 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:16:49,429 - app - INFO - Starting IronWallet application
+2025-03-02 16:16:53,519 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:19:59,144 - app - INFO - Starting IronWallet application
+2025-03-02 16:20:03,235 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:20:07,473 - app - INFO - Starting IronWallet application
+2025-03-02 16:20:11,585 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:21:10,498 - app - INFO - Starting IronWallet application
+2025-03-02 16:21:14,594 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:21:18,899 - app - INFO - Starting IronWallet application
+2025-03-02 16:21:22,999 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:25:38,586 - app - INFO - Starting IronWallet application
+2025-03-02 16:25:42,680 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:25:46,840 - app - INFO - Starting IronWallet application
+2025-03-02 16:25:50,937 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:27:37,488 - app - INFO - Starting IronWallet application
+2025-03-02 16:27:41,575 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:27:45,785 - app - INFO - Starting IronWallet application
+2025-03-02 16:27:49,871 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:28:12,564 - app - INFO - Starting IronWallet application
+2025-03-02 16:28:16,660 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:29:37,060 - app - INFO - Starting IronWallet application
+2025-03-02 16:29:41,191 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:29:45,262 - app - INFO - Starting IronWallet application
+2025-03-02 16:29:49,356 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:33:23,875 - app - INFO - Starting IronWallet application
+2025-03-02 16:33:27,973 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 16:33:32,279 - app - INFO - Starting IronWallet application
+2025-03-02 16:33:36,371 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 19:28:31,751 - app - INFO - Processing wallet generation synchronously for TabLosssssssita
+2025-03-02 19:28:31,830 - app - INFO - Wallet generated synchronously for user 6572f6f2-4a22-43b6-90b5-5bdbdf417cd3
+2025-03-02 19:35:12,861 - app - INFO - Starting IronWallet application
+2025-03-02 19:35:16,987 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 
+2025-03-02 19:35:20,956 - app - INFO - Starting IronWallet application
+2025-03-02 19:35:25,073 - app - WARNING - RabbitMQ server is not available. Using synchronous processing instead: 

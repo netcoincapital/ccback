@@ -1,0 +1,75 @@
+2025-03-02 15:13:58,402 - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-03-02 15:13:58,984 - INFO - Initializing wallet generation module
+2025-03-02 15:13:58,986 - INFO - Initializing wallet import module
+2025-03-02 15:13:58,989 - INFO - Initializing currency update module
+2025-03-02 15:13:58,990 - INFO - Initializing currency post module
+2025-03-02 15:13:58,992 - INFO - Initializing phrase key module
+2025-03-02 15:13:58,994 - INFO - Initializing receive transaction module
+2025-03-02 15:13:58,996 - INFO - Initializing gas fee module
+2025-03-02 15:13:59,000 - INFO - Starting IronWallet application
+2025-03-02 15:13:59,054 - DEBUG - Building SSL context
+2025-03-02 15:13:59,091 - DEBUG - Switching to SSL
+2025-03-02 15:13:59,095 - DEBUG - SSL has been enabled
+2025-03-02 15:13:59,095 - DEBUG - Starting authorization phase
+2025-03-02 15:13:59,095 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-03-02 15:13:59,096 - INFO - package: mysql.connector.plugins
+2025-03-02 15:13:59,096 - INFO - plugin_name: caching_sha2_password
+2025-03-02 15:13:59,096 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-03-02 15:13:59,097 - DEBUG - Exchanging further packets
+2025-03-02 15:13:59,098 - DEBUG - caching_sha2_password completed succesfully
+2025-03-02 15:13:59,132 - WARNING -  * Debugger is active!
+2025-03-02 15:13:59,137 - INFO -  * Debugger PIN: 102-041-039
+2025-03-02 15:14:05,428 - ERROR - Redis error in rate limiting
+2025-03-02 15:14:05,429 - ERROR - Error in generate_wallet: 'WalletGenerationRequest' object has no attribute 'wallet_name'
+2025-03-02 15:14:05,433 - ERROR - Unexpected error: 'WalletGenerationRequest' object has no attribute 'wallet_name'
+Traceback (most recent call last):
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 730, in _connect
+    raise err
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\security\validators.py", line 38, in wrapped
+    current = redis_client.get(key)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\commands\core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 1422, in get_connection
+    connection.connect()
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\redis\connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\kozmos teknoloji\Desktop\CC\utils\error_handlers.py", line 78, in decorated_function
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kozmos teknoloji\Desktop\CC\app.py", line 118, in generate_wallet
+    wallet_name = body.wallet_name
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\kozmos teknoloji\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 811, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'WalletGenerationRequest' object has no attribute 'wallet_name'. Did you mean: 'WalletName'?
+2025-03-02 15:14:05,472 - INFO - 127.0.0.1 - - [02/Mar/2025 15:14:05] "[35m[1mPOST /generate-wallet HTTP/1.1[0m" 500 -
+2025-03-02 15:15:46,843 - INFO -  * Detected change in 'c:\\Users\\kozmos teknoloji\\Desktop\\CC\\app.py', reloading
