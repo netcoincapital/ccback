@@ -25,6 +25,14 @@ from .api_schemas import (
     GasFeeResponse
 )
 
+from .balance_schemas import (
+    UserBalanceRequest,
+    UserBalanceResponse,
+    TokenBalanceItem,
+    BalanceUpdateEvent,
+    BalancePollingStatusResponse
+)
+
 __all__ = [
     'WalletGenerationRequest',
     'WalletGenerationResponse',
@@ -49,5 +57,11 @@ __all__ = [
     'ReceiveTransactionRequest',
     'TransactionDetails',
     'ReceiveTransactionResponse',
-    'GasFeeResponse'
+    'GasFeeResponse',
+    # Balance schemas
+    'UserBalanceRequest',
+    'UserBalanceResponse',
+    'TokenBalanceItem',
+    'BalanceUpdateEvent',
+    'BalancePollingStatusResponse'
 ] 

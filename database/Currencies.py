@@ -20,9 +20,6 @@ class Currencies(Base):
     # رابطه با Blockchains
     blockchains = relationship('Blockchains', back_populates='currencies')
 
-    # رابطه با UserHolding
-    user_holdings = relationship('UserHolding', back_populates='currency')
-
     def __repr__(self):
         return f"<Currencies(CurrencyID={self.CurrencyID}, CurrencyName='{self.CurrencyName}')>"
         

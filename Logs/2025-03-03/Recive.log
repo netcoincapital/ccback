@@ -34,3 +34,5 @@ AttributeError: type object 'Blockchains' has no attribute 'Name'
 2025-03-03 09:21:23,100 - Recive - DEBUG - Processing transaction receive request for user: 6572f6f2-4a22-43b6-90b5-5bdbdf417cd3 on blockchain symbol: BNB
 2025-03-03 09:21:23,122 - Recive - DEBUG - Available blockchain symbols: ['ETH', 'TRX', 'BNB', 'BTC', 'MATIC', 'ARB', 'XRP', 'SOL', 'AVAX', 'DOT']
 2025-03-03 09:21:23,129 - Recive - INFO - Successfully processed transaction receive for user: 6572f6f2-4a22-43b6-90b5-5bdbdf417cd3 on blockchain symbol: BNB
+2025-03-03 18:28:07,991 - Recive - INFO - Initializing receive transaction module
+2025-03-03 18:28:16,088 - Recive - INFO - Initializing receive transaction module

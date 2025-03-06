@@ -12,16 +12,30 @@ if sys.version_info >= (3, 11):
     import inspect
     inspect.getargspec = inspect.getfullargspec
 
-
 from flask import Flask, after_this_request, jsonify, request
 from flask_cors import CORS
 from flask_wtf.csrf import CSRFProtect, CSRFError
 from flask_openapi3 import OpenAPI, Info
-from database import init_db, SessionLocal
+from flask_socketio import SocketIO
+
+# Import all database models first
+from database import (
+    init_db, 
+    SessionLocal,
+    Users,
+    Wallets,
+    Address,
+    Blockchains,
+    Currencies,
+    UserHolding,
+    Base
+)
+
 from generate import generate_bp
-from WI import import_bp
-from CU import CUpdate_bp, CPost_bp
-from TA import phrase_key_bp, receive_bp, gasfee_bp
+from ImportWallet import import_bp
+from Currencies import CUpdate_bp, CPost_bp
+from Transactions import receive_bp, gasfee_bp
+from balance import balance_bp, init_balance_service
 from security.validators import SecurityUtils, ValidationError
 from schemas import WalletGenerationResponse, WalletGenerationRequest
 import logging
@@ -63,17 +77,25 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['WTF_CSRF_ENABLED'] = False  # Disable CSRF globally for API usage
 csrf = CSRFProtect(app)
 
+# Initialize database
+init_db()
+
+# Initialize balance service
+#init_balance_service()
+
 # Register blueprints
 app.register_blueprint(generate_bp, url_prefix='/generate')
 app.register_blueprint(import_bp, url_prefix='')
 app.register_blueprint(CUpdate_bp, url_prefix='')
 app.register_blueprint(CPost_bp, url_prefix='')
-app.register_blueprint(phrase_key_bp, url_prefix='')
 app.register_blueprint(receive_bp, url_prefix='')
 app.register_blueprint(gasfee_bp, url_prefix='')
+app.register_blueprint(balance_bp, url_prefix='')
 
-# Initialize database
-init_db()
+# Initialize SocketIO
+socketio = SocketIO(app, cors_allowed_origins="*")
+from balance.balance import initialize_socketio
+initialize_socketio(app)
 
 # Register Swagger UI
 register_swagger(app)
