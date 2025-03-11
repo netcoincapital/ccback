@@ -158,6 +158,11 @@ def generate_wallet(body: WalletGenerationRequest):
         if rabbitmq_available:
             # Send task to RabbitMQ
             try:
+                # Get user IP and device info
+                user_ip = request.remote_addr
+                user_device = request.headers.get('User-Agent', 'Unknown Device')
+                logger.info(f"Generate wallet request from IP: {user_ip}, Device: {user_device}")
+                
                 connection = get_rabbitmq_connection()
                 channel = connection.channel()
                 
@@ -167,7 +172,9 @@ def generate_wallet(body: WalletGenerationRequest):
                     routing_key='wallet_generation',
                     body=json.dumps({
                         'task_id': task_id,
-                        'wallet_name': wallet_name
+                        'wallet_name': wallet_name,
+                        'user_ip': user_ip,
+                        'user_device': user_device
                     })
                 )
                 
@@ -190,12 +197,18 @@ def generate_wallet(body: WalletGenerationRequest):
         # If RabbitMQ is not available, process synchronously
         if not rabbitmq_available:
             logger.info(f"Processing wallet generation synchronously for {wallet_name}")
+            
+            # Get user IP and device info
+            user_ip = request.remote_addr
+            user_device = request.headers.get('User-Agent', 'Unknown Device')
+            logger.info(f"Generate wallet request from IP: {user_ip}, Device: {user_device}")
+            
             session = SessionLocal()
             try:
                 # Use service to create wallet
                 wallet_service = WalletService(session)
                 with session.begin():
-                    user_id, mnemonic, addresses = wallet_service.create_wallet(wallet_name)
+                    user_id, mnemonic, addresses = wallet_service.create_wallet(wallet_name, 5, user_ip, user_device)
 
                 # Log success
                 logger.info(f"Wallet generated synchronously for user {user_id}")
@@ -203,7 +216,6 @@ def generate_wallet(body: WalletGenerationRequest):
                 return jsonify({
                     'UserID': user_id,
                     'Mnemonic': mnemonic,
-                    'Addresses': addresses,
                     'success': True
                 }), 201
             finally:

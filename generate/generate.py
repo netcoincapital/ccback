@@ -73,13 +73,19 @@ def generate_wallet():
             pattern=r'^[a-zA-Z0-9_\- ]+$'
         )
         
+        # Get user IP and device info
+        user_ip = request.remote_addr
+        user_device = request.headers.get('User-Agent', 'Unknown Device')
+        
+        logger.info(f"Generate wallet request from IP: {user_ip}, Device: {user_device}")
+        
         # Generate wallet synchronously
         session = SessionLocal()
         try:
             # Use service to create wallet
             wallet_service = WalletService(session)
             with session.begin():
-                user_id, mnemonic, addresses = wallet_service.create_wallet(wallet_name)
+                user_id, mnemonic, addresses = wallet_service.create_wallet(wallet_name, 5, user_ip, user_device)
 
             # Log success
             logger.info(f"Wallet generated for user {user_id}")
@@ -93,6 +99,17 @@ def generate_wallet():
         finally:
             session.close()
 
+    except ValidationError as e:
+        # Log validation error
+        logger.warning(f"Validation error in generate_wallet: {str(e)}")
+        return jsonify({
+            'message': str(e),
+            'success': False
+        }), 400
     except Exception as e:
+        # Log other errors
         logger.error(f"Error in generate_wallet: {str(e)}")
-        raise
+        return jsonify({
+            'message': f"An unexpected error occurred: {str(e)}",
+            'success': False
+        }), 500

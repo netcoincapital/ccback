@@ -21,20 +21,48 @@ class WalletService:
         self.signer = TransactionSignerService()
         self.contract = SmartContractService()
 
-    def create_wallet(self, wallet_name: str, address_count: int = 5) -> Tuple[str, str, Dict]:
+    def create_wallet(self, wallet_name: str, address_count: int = 5, user_ip: str = None, user_device: str = None) -> Tuple[str, str, Dict]:
         """
         Create a new HD wallet with multiple addresses per chain
+        wallet_name: نام کیف پول
+        address_count: تعداد آدرس‌ها برای هر بلاکچین
+        user_ip: آدرس IP کاربر
+        user_device: اطلاعات دستگاه کاربر
         returns: (user_id, mnemonic, addresses)
         """
         try:
             # Create user record
             user_id = str(uuid.uuid4())
-            user = Users(UserID=user_id)
+            user = Users(
+                UserID=user_id,
+                IP=user_ip,
+                Device=user_device
+            )
             self.session.add(user)
+            logging.info(f"Created new user {user_id} with IP={user_ip}, Device={user_device}")
             
-            # Generate mnemonic
-            mnemonic = Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_24)
-            mnemonic_str = mnemonic.ToStr()
+            # Test different word counts
+            try:
+                # Try with 12 words
+                mnemonic12 = Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_12)
+                mnemonic12_str = mnemonic12.ToStr()
+                word_count12 = len(mnemonic12_str.split())
+                logging.info(f"Generated 12-word mnemonic with {word_count12} words: {mnemonic12_str}")
+                
+                # Try with 24 words
+                mnemonic24 = Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_24)
+                mnemonic24_str = mnemonic24.ToStr()
+                word_count24 = len(mnemonic24_str.split())
+                logging.info(f"Generated 24-word mnemonic with {word_count24} words: {mnemonic24_str}")
+                
+                # Use the 12-word mnemonic
+                mnemonic = mnemonic12
+                mnemonic_str = mnemonic12_str
+            except Exception as e:
+                logging.error(f"Error testing mnemonic generation: {str(e)}")
+                # Fallback to 24 words if 12 words fails
+                mnemonic = Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_24)
+                mnemonic_str = mnemonic.ToStr()
             
             # Create wallet record
             wallet_id = str(uuid.uuid4())
@@ -56,40 +84,133 @@ class WalletService:
             logging.error(f"Error creating wallet: {str(e)}")
             raise
 
-    def import_wallet(self, mnemonic: str) -> Tuple[str, Dict]:
+    def import_wallet(self, mnemonic: str, user_ip: str = None, user_device: str = None) -> Tuple[str, str, Dict, str]:
         """
-        وارد کردن کیف پول با استفاده از عبارت بازیابی
+        ایمپورت کیف پول موجود با استفاده از عبارت بازیابی
         mnemonic: عبارت بازیابی
-        returns: (wallet_id, addresses)
+        user_ip: آدرس IP کاربر
+        user_device: اطلاعات دستگاه کاربر
+        returns: (wallet_id, user_id, addresses, mnemonic)
         """
         try:
             # اعتبارسنجی عبارت بازیابی
             if not self.validate_mnemonic(mnemonic):
-                raise ValueError("عبارت بازیابی نامعتبر است")
+                raise ValueError("Invalid mnemonic phrase. Please check your recovery phrase and try again.")
+            
+            # تولید آدرس‌ها از Mnemonic
+            address_generator = BlockchainAddressGenerator.from_mnemonic(mnemonic)
+            blockchain_addresses = address_generator.generate_all_addresses()
+            
+            if not blockchain_addresses:
+                raise ValueError("Failed to generate any addresses from this mnemonic")
+            
+            # بررسی آیا این آدرس‌ها قبلاً در سیستم وجود دارند
+            # برای این کار، آدرس اتریوم را به عنوان شناسه اصلی استفاده می‌کنیم
+            eth_address = None
+            if "Ethereum" in blockchain_addresses:
+                eth_address = blockchain_addresses["Ethereum"].public_address
+            
+            if not eth_address:
+                raise ValueError("Could not generate Ethereum address from this mnemonic")
+            
+            # بررسی آیا این آدرس قبلاً در سیستم وجود دارد
+            existing_address = self.session.query(Address).filter_by(PublicAddress=eth_address).first()
+            
+            if existing_address:
+                # اگر آدرس قبلاً وجود داشته باشد، کیف پول و کاربر مربوطه را بازیابی می‌کنیم
+                wallet_id = existing_address.WalletID
+                wallet = self.session.query(Wallets).filter_by(WalletID=wallet_id).first()
                 
-            # ایجاد کاربر جدید
-            user_id = str(uuid.uuid4())
-            user = Users(UserID=user_id)
-            self.session.add(user)
-            
-            # ایجاد کیف پول
-            wallet_id = str(uuid.uuid4())
-            wallet = Wallets(
-                WalletID=wallet_id, 
-                UserID=user_id, 
-                IsMultiSig=False,
-                RequiredSignatures="1"
-            )
-            self.session.add(wallet)
-            
-            # تولید آدرس‌ها
-            addresses = self._generate_addresses(wallet_id, mnemonic)
-            
-            return wallet_id, addresses
+                if not wallet:
+                    raise ValueError("Wallet not found for the existing address")
+                
+                user_id = wallet.UserID
+                
+                # به‌روزرسانی اطلاعات IP و Device کاربر اگر ارائه شده باشند
+                if user_ip or user_device:
+                    user = self.session.query(Users).filter_by(UserID=user_id).first()
+                    if user:
+                        if user_ip:
+                            user.IP = user_ip
+                        if user_device:
+                            user.Device = user_device
+                        logging.info(f"Updated user info for existing user {user_id}: IP={user_ip}, Device={user_device}")
+                
+                logging.info(f"Found existing wallet with ID {wallet_id} for user {user_id}")
+                
+                # بازیابی تمام آدرس‌های مرتبط با این کیف پول
+                addresses = {}
+                wallet_addresses = self.session.query(Address, Blockchains).join(
+                    Blockchains, Address.BlockchainID == Blockchains.BlockchainID
+                ).filter(Address.WalletID == wallet_id).all()
+                
+                for addr, blockchain in wallet_addresses:
+                    addresses[blockchain.BlockchainName] = addr.PublicAddress
+                
+                return wallet_id, user_id, addresses, mnemonic
+            else:
+                # اگر آدرس قبلاً وجود نداشته باشد، یک کاربر و کیف پول جدید ایجاد می‌کنیم
+                user_id = str(uuid.uuid4())
+                user = Users(
+                    UserID=user_id,
+                    IP=user_ip,
+                    Device=user_device
+                )
+                self.session.add(user)
+                logging.info(f"Created new user {user_id} with IP={user_ip}, Device={user_device}")
+                
+                wallet_id = str(uuid.uuid4())
+                wallet = Wallets(
+                    WalletID=wallet_id, 
+                    UserID=user_id, 
+                    IsMultiSig=False,
+                    RequiredSignatures="1"
+                )
+                self.session.add(wallet)
+                
+                # ذخیره آدرس‌ها در دیتابیس
+                addresses = {}
+                blockchains = self.session.query(Blockchains).all()
+                blockchain_map = {bc.BlockchainName: bc for bc in blockchains}
+                
+                for bc_name, address_obj in blockchain_addresses.items():
+                    if bc_name in blockchain_map:
+                        bc = blockchain_map[bc_name]
+                        
+                        # رمزنگاری کلیدها
+                        encrypted_priv = encrypt_private_key_aes(address_obj.private_key)
+                        encrypted_mnemonic = encrypt_mnemonic_aes(mnemonic)
+                        
+                        # ذخیره آدرس
+                        new_addr = Address(
+                            WalletID=wallet_id,
+                            BlockchainID=bc.BlockchainID,
+                            PublicAddress=address_obj.public_address,
+                            PrivateKey=encrypted_priv,
+                            PhraseKey=encrypted_mnemonic,
+                            CreatedAt=datetime.utcnow()
+                        )
+                        self.session.add(new_addr)
+                        addresses[bc_name] = address_obj.public_address
+                        
+                        logging.info(f"Address created for {bc_name}: {address_obj.public_address}")
+                
+                if not addresses:
+                    raise ValueError("Failed to create any addresses in the database")
+                
+                logging.info(f"Successfully imported wallet with ID {wallet_id} for new user {user_id}")
+                return wallet_id, user_id, addresses, mnemonic
 
         except Exception as e:
             logging.error(f"Error in import_wallet: {str(e)}")
-            raise
+            # Rollback session to prevent partial imports
+            self.session.rollback()
+            
+            # Re-raise the exception to be handled by the caller
+            if isinstance(e, ValueError):
+                raise
+            else:
+                raise ValueError(f"Failed to import wallet: {str(e)}")
 
     def validate_mnemonic(self, mnemonic: str) -> bool:
         """
@@ -100,11 +221,44 @@ class WalletService:
             # بررسی تعداد کلمات
             words = mnemonic.split()
             if len(words) not in [12, 18, 24]:
+                logging.warning(f"Invalid mnemonic word count: {len(words)}")
                 return False
                 
             # استفاده از کتابخانه bip_utils برای اعتبارسنجی
             validator = Bip39MnemonicValidator()
-            return validator.IsValid(mnemonic)
+            is_valid = validator.IsValid(mnemonic)
+            
+            if not is_valid:
+                logging.warning("Mnemonic failed BIP39 validation")
+                return False
+                
+            # تست تولید آدرس‌ها برای اطمینان از صحت
+            try:
+                address_generator = BlockchainAddressGenerator.from_mnemonic(mnemonic)
+                addresses = address_generator.generate_all_addresses()
+                
+                # حداقل باید یک آدرس معتبر تولید شود
+                if not addresses:
+                    logging.warning("Mnemonic did not generate any valid addresses")
+                    return False
+                    
+                # بررسی آدرس اتریوم به عنوان تست اصلی
+                if "Ethereum" not in addresses:
+                    logging.warning("Mnemonic did not generate a valid Ethereum address")
+                    return False
+                    
+                eth_address = addresses["Ethereum"].public_address
+                if not eth_address or not eth_address.startswith("0x"):
+                    logging.warning(f"Invalid Ethereum address format: {eth_address}")
+                    return False
+                    
+                logging.info(f"Mnemonic validated successfully, generated {len(addresses)} addresses")
+                return True
+                
+            except Exception as e:
+                logging.error(f"Error testing address generation: {str(e)}")
+                return False
+                
         except Exception as e:
             logging.error(f"Error validating mnemonic: {str(e)}")
             return False
@@ -115,44 +269,66 @@ class WalletService:
             address_generator = BlockchainAddressGenerator.from_mnemonic(mnemonic)
             blockchain_addresses = address_generator.generate_all_addresses()
             
+            if not blockchain_addresses:
+                logging.error("Failed to generate any blockchain addresses")
+                raise ValueError("Failed to generate blockchain addresses")
+            
             addresses = {}
             blockchains = self.session.query(Blockchains).all()
             
             # اضافه کردن لاگ برای دیباگ
             logging.debug(f"Generated blockchain addresses: {list(blockchain_addresses.keys())}")
             logging.debug(f"Database blockchains: {[bc.BlockchainName for bc in blockchains]}")
+            
+            # شمارنده برای تعداد آدرس‌های موفق
+            successful_addresses = 0
 
             for bc in blockchains:
                 bc_name = bc.BlockchainName
                 if bc_name in blockchain_addresses:
-                    address = blockchain_addresses[bc_name]
-                    
-                    # رمزنگاری کلیدها
-                    encrypted_priv = encrypt_private_key_aes(address.private_key)
-                    encrypted_mnemonic = encrypt_mnemonic_aes(mnemonic)
+                    try:
+                        address = blockchain_addresses[bc_name]
+                        
+                        # رمزنگاری کلیدها
+                        encrypted_priv = encrypt_private_key_aes(address.private_key)
+                        encrypted_mnemonic = encrypt_mnemonic_aes(mnemonic)
 
-                    # ذخیره آدرس
-                    new_addr = Address(
-                        WalletID=wallet_id,
-                        BlockchainID=bc.BlockchainID,
-                        PublicAddress=address.public_address,
-                        PrivateKey=encrypted_priv,
-                        PhraseKey=encrypted_mnemonic,
-                        CreatedAt=datetime.utcnow()
-                    )
-                    self.session.add(new_addr)
-                    addresses[bc_name] = address.public_address
-                    
-                    logging.info(f"Address created for {bc_name}")
+                        # ذخیره آدرس
+                        new_addr = Address(
+                            WalletID=wallet_id,
+                            BlockchainID=bc.BlockchainID,
+                            PublicAddress=address.public_address,
+                            PrivateKey=encrypted_priv,
+                            PhraseKey=encrypted_mnemonic,
+                            CreatedAt=datetime.utcnow()
+                        )
+                        self.session.add(new_addr)
+                        addresses[bc_name] = address.public_address
+                        successful_addresses += 1
+                        
+                        logging.info(f"Address created for {bc_name}: {address.public_address}")
+                    except Exception as e:
+                        logging.error(f"Error creating address for {bc_name}: {str(e)}")
+                        # ادامه دادن با بلاکچین بعدی در صورت خطا
+                        continue
                 else:
                     logging.warning(f"No address generated for blockchain {bc_name}")
 
             # اطمینان از اینکه آدرس بایننس در خروجی وجود دارد
             if "Binance Smart Chain" in blockchain_addresses and "Binance Smart Chain" not in addresses:
-                binance_address = blockchain_addresses["Binance Smart Chain"]
-                addresses["Binance Smart Chain"] = binance_address.public_address
-                logging.info(f"Added Binance Smart Chain address to response: {binance_address.public_address}")
-
+                try:
+                    binance_address = blockchain_addresses["Binance Smart Chain"]
+                    addresses["Binance Smart Chain"] = binance_address.public_address
+                    logging.info(f"Added Binance Smart Chain address to response: {binance_address.public_address}")
+                except Exception as e:
+                    logging.error(f"Error adding Binance Smart Chain address to response: {str(e)}")
+            
+            # اگر هیچ آدرسی با موفقیت ایجاد نشد، خطا بده
+            if successful_addresses == 0:
+                logging.error("Failed to create any addresses in the database")
+                raise ValueError("Failed to create any blockchain addresses")
+                
+            logging.info(f"Successfully generated {successful_addresses} addresses for wallet {wallet_id}")
             return addresses
 
         except Exception as e:

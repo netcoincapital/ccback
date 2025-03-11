@@ -556,123 +556,35 @@ def run_balance_monitor():
                 balance_service = BalanceService(session)
                 balance_service.initialize_web3_providers()
                 
-                # Get all holdings
-                holdings = session.query(UserHolding).all()
+                # Get all users
+                users = session.query(Users).all()
+                logger.info(f"Found {len(users)} users to check balances")
                 
-                for holding in holdings:
+                for user in users:
                     try:
-                        # Get wallet addresses for the user
-                        addresses = (
-                            session.query(Address)
-                            .join(Wallets)
-                            .filter(Wallets.UserID == holding.UserID)
-                            .all()
-                        )
+                        # Update user balance
+                        result = balance_service.update_user_balance(user.UserID)
                         
-                        if not addresses:
-                            continue
-
-                        # Store new balances
-                        new_tokens_data = []
-                        
-                        # Parse existing tokens
-                        tokens_lines = holding.Tokens.split('\n')
-                        i = 0
-                        while i < len(tokens_lines):
-                            if ':' not in tokens_lines[i]:
-                                i += 1
-                                continue
-                                
-                            currency_line = tokens_lines[i]
-                            blockchain_line = tokens_lines[i + 1] if i + 1 < len(tokens_lines) else None
+                        if result['success']:
+                            logger.info(f"Successfully updated balance for user {user.UserID}")
                             
-                            if not blockchain_line or 'Blockchain :' not in blockchain_line:
-                                i += 1
-                                continue
-                                
-                            symbol = currency_line.split(':')[0].strip()
-                            blockchain_name = blockchain_line.split(':')[1].strip()
-                            
-                            # Get currency info
-                            currency = session.query(Currencies).filter(
-                                Currencies.Symbol == symbol
-                            ).first()
-                            
-                            if currency:
-                                total_balance = Decimal('0')
-                                
-                                for address in addresses:
-                                    if currency.IsToken:
-                                        balance = balance_service.get_token_balance(
-                                            address.PublicAddress,
-                                            currency.SmartContractAddress,
-                                            blockchain_name
-                                        )
-                                    else:
-                                        balance = balance_service.get_native_balance(
-                                            address.PublicAddress,
-                                            blockchain_name
-                                        )
-                                    total_balance += balance
-                                
-                                # Only add tokens with positive balance
-                                if total_balance > 0:
-                                    new_tokens_data.append(f"{symbol} : {total_balance}")
-                                    new_tokens_data.append(f"Blockchain : {blockchain_name}")
-                            
-                            i += 2
-                        
-                        # Update holding if balances changed
-                        if new_tokens_data:
-                            new_tokens_str = "\n".join(new_tokens_data)
-                            if new_tokens_str != holding.Tokens:
-                                holding.Tokens = new_tokens_str
-                                holding.LastUpdated = datetime.utcnow()
-                                session.commit()
-                                
-                                # Emit update via WebSocket
-                                if holding.UserID in active_connections:
-                                    balance_data = {
-                                        'UserID': holding.UserID,
-                                        'Tokens': {},
-                                        'success': True
-                                    }
-                                    
-                                    # Parse tokens for response
-                                    i = 0
-                                    while i < len(new_tokens_data):
-                                        if i + 1 < len(new_tokens_data):
-                                            token_line = new_tokens_data[i]
-                                            blockchain_line = new_tokens_data[i + 1]
-                                            
-                                            symbol = token_line.split(':')[0].strip()
-                                            balance = token_line.split(':')[1].strip()
-                                            blockchain = blockchain_line.split(':')[1].strip()
-                                            
-                                            balance_data['Tokens'][symbol] = {
-                                                'balance': balance,
-                                                'blockchain': blockchain
-                                            }
-                                        i += 2
-                                    
-                                    socketio.emit('balance_update', balance_data, room=holding.UserID)
+                            # Emit update via WebSocket if user is connected
+                            if user.UserID in active_connections:
+                                socketio.emit('balance_update', result, room=user.UserID)
+                                logger.info(f"Emitted balance update for user {user.UserID}")
                         else:
-                            # Delete holding if no positive balances
-                            session.delete(holding)
-                            session.commit()
-                    
+                            logger.warning(f"Failed to update balance for user {user.UserID}: {result.get('message', 'Unknown error')}")
                     except Exception as e:
-                        logger.error(f"Error updating balance for holding {holding.HoldingID}: {str(e)}")
+                        logger.error(f"Error updating balance for user {user.UserID}: {str(e)}")
                         continue
                 
             except Exception as e:
                 logger.error(f"Error in balance monitor: {str(e)}")
-                session.rollback()
             finally:
                 session.close()
                 
-            # Wait before next update
-            time.sleep(30)  # Update every 30 seconds
+            # Wait before next check
+            time.sleep(60)  # Check every minute
             
         except Exception as e:
             logger.error(f"Critical error in balance monitor: {str(e)}")

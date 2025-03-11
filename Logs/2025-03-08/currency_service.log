@@ -1,0 +1,2 @@
+2025-03-08 15:23:44,117 - currency_service - INFO - Loaded 7207 currencies into memory. Processing time: 0.19 seconds
+2025-03-08 15:23:44,123 - currency_service - INFO - Sending currencies batch: offset=0, batch_size=5000, sent=5000, remaining=2207

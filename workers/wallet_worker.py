@@ -4,6 +4,7 @@ from services.wallet_service import WalletService
 from database import SessionLocal
 from datetime import timedelta
 import logging
+from config.cache import redis_client
 
 def process_wallet_generation(ch, method, properties, body):
     data = json.loads(body)
@@ -11,14 +12,31 @@ def process_wallet_generation(ch, method, properties, body):
     
     try:
         wallet_service = WalletService(session)
-        result = wallet_service.create_wallet(data['wallet_name'])
+        
+        # Get IP and device info from the message if available
+        user_ip = data.get('user_ip', None)
+        user_device = data.get('user_device', None)
+        
+        # Create wallet with IP and device info
+        user_id, mnemonic, addresses = wallet_service.create_wallet(
+            data['wallet_name'], 
+            5, 
+            user_ip, 
+            user_device
+        )
         
         # ذخیره نتیجه در Redis برای بازیابی بعدی
         redis_client.setex(
             f"wallet_result:{data['task_id']}",
             timedelta(hours=1),
-            json.dumps(result)
+            json.dumps({
+                'UserID': user_id,
+                'Mnemonic': mnemonic,
+                'success': True
+            })
         )
+        
+        logging.info(f"Wallet generated asynchronously for user {user_id}")
         
     except Exception as e:
         logging.error(f"Error processing wallet generation: {e}")

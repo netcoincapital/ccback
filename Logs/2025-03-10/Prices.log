@@ -1,0 +1,21 @@
+2025-03-10 01:31:28,768 - Prices - INFO - Initializing currency update module
+2025-03-10 01:31:37,720 - Prices - INFO - Initializing currency update module
+2025-03-10 01:35:59,728 - Prices - INFO - Initializing currency update module
+2025-03-10 01:36:08,107 - Prices - INFO - Initializing currency update module
+2025-03-10 01:59:00,011 - Prices - INFO - Initializing currency update module
+2025-03-10 01:59:08,352 - Prices - INFO - Initializing currency update module
+2025-03-10 02:05:25,250 - Prices - INFO - Initializing currency update module
+2025-03-10 02:05:44,402 - Prices - INFO - Initializing currency update module
+2025-03-10 02:05:56,270 - Prices - INFO - Initializing currency update module
+2025-03-10 02:07:10,567 - Prices - INFO - Initializing currency update module
+2025-03-10 02:07:18,892 - Prices - INFO - Initializing currency update module
+2025-03-10 17:35:22,825 - Prices - INFO - Initializing currency update module
+2025-03-10 17:35:31,381 - Prices - INFO - Initializing currency update module
+2025-03-10 17:38:49,622 - Prices - INFO - Fetching prices for currencies: ['ETH', 'SHIB'] in fiats: ['KWD', 'INR', 'GBP']
+2025-03-10 17:38:49,647 - Prices - DEBUG - Fetching latest prices for ['ETH', 'SHIB'] in KWD
+2025-03-10 17:38:50,253 - Prices - DEBUG - Fetching 24h changes for ['ETH', 'SHIB'] in KWD
+2025-03-10 17:38:50,930 - Prices - DEBUG - Fetching latest prices for ['ETH', 'SHIB'] in INR
+2025-03-10 17:38:51,103 - Prices - DEBUG - Fetching 24h changes for ['ETH', 'SHIB'] in INR
+2025-03-10 17:38:51,282 - Prices - DEBUG - Fetching latest prices for ['ETH', 'SHIB'] in GBP
+2025-03-10 17:38:51,466 - Prices - DEBUG - Fetching 24h changes for ['ETH', 'SHIB'] in GBP
+2025-03-10 17:38:51,648 - Prices - INFO - Successfully retrieved prices for 2 currencies in 3 fiat currencies

@@ -8,6 +8,7 @@ from web3 import Web3
 import requests
 from utils.logging_config import get_logger
 from dotenv import load_dotenv
+from config.api_config import Web3Manager, ERC20_ABI, EXTERNAL_APIS
 
 # Load environment variables
 load_dotenv()
@@ -20,29 +21,13 @@ class BalanceService:
     
     def __init__(self, session: Session):
         self.session = session
-        self.web3_providers = {}  # Store Web3 connections for different blockchains
+        self.web3_providers = {}
+        self.erc20_abi = ERC20_ABI
         
     def initialize_web3_providers(self):
         """Initialize Web3 connections for different blockchains"""
         try:
-            infura_api_key = os.getenv('INFURA_API_KEY')
-            if not infura_api_key:
-                logger.error("INFURA_API_KEY not found in environment variables")
-                return
-
-            # Initialize providers for each blockchain
-            self.web3_providers = {
-                "Ethereum": Web3(Web3.HTTPProvider(f"https://mainnet.infura.io/v3/{infura_api_key}")),
-                "Polygon": Web3(Web3.HTTPProvider(f"https://polygon-mainnet.infura.io/v3/{infura_api_key}")),
-                "Arbitrum": Web3(Web3.HTTPProvider(f"https://arbitrum-mainnet.infura.io/v3/{infura_api_key}")),
-                "Avalanche": Web3(Web3.HTTPProvider("https://api.avax.network/ext/bc/C/rpc")),
-                "Binance": Web3(Web3.HTTPProvider("https://bsc-dataseed.binance.org/")),
-                "Tron": None,  # Tron doesn't use Web3
-                "Solana": None,  # Solana doesn't use Web3
-                "Polkadot": None,  # Polkadot doesn't use Web3
-                "XRP": None  # XRP doesn't use Web3
-            }
-            
+            self.web3_providers = Web3Manager.get_web3_providers()
             logger.info(f"Initialized Web3 providers for {len(self.web3_providers)} blockchains")
         except Exception as e:
             logger.error(f"Error initializing Web3 providers: {str(e)}")
@@ -51,59 +36,98 @@ class BalanceService:
     def get_token_balance(self, address: str, contract_address: str, blockchain_name: str) -> Decimal:
         """Get token balance for an address"""
         try:
-            # For non-EVM blockchains, use specific methods
-            if blockchain_name == "Tron":
-                return self.get_tron_token_balance(address, contract_address)
-            elif blockchain_name == "Solana":
-                return self.get_solana_token_balance(address, contract_address)
-            elif blockchain_name == "Polkadot":
-                return self.get_polkadot_token_balance(address, contract_address)
-            elif blockchain_name == "XRP":
-                return self.get_xrp_token_balance(address, contract_address)
-            
-            # For EVM-compatible blockchains
-            if blockchain_name not in self.web3_providers:
-                logger.warning(f"No Web3 provider for blockchain: {blockchain_name}")
+            # Skip if address format doesn't match the blockchain
+            if not self._is_valid_address_for_blockchain(address, blockchain_name):
+                logger.debug(f"Skipping token balance check for {address} on {blockchain_name} - invalid address format")
                 return Decimal('0')
-                
-            web3 = self.web3_providers[blockchain_name]
-            
-            # Standard ABI for balanceOf functions in ERC20 tokens
-            abi = [
-                {
-                    "constant": True,
-                    "inputs": [{"name": "_owner", "type": "address"}],
-                    "name": "balanceOf",
-                    "outputs": [{"name": "balance", "type": "uint256"}],
-                    "type": "function"
-                },
-                {
-                    "constant": True,
-                    "inputs": [],
-                    "name": "decimals",
-                    "outputs": [{"name": "", "type": "uint8"}],
-                    "type": "function"
-                }
-            ]
-            
-            # Create contract object
-            contract = web3.eth.contract(address=Web3.to_checksum_address(contract_address), abi=abi)
-            
-            # Get balance and decimals
-            balance = contract.functions.balanceOf(Web3.to_checksum_address(address)).call()
-            decimals = contract.functions.decimals().call()
-            
-            # Convert to actual value
-            actual_balance = Decimal(balance) / Decimal(10 ** decimals)
-            
-            return actual_balance
+
+            # Handle different blockchain types
+            if blockchain_name.lower() in ['ethereum', 'binance smart chain', 'polygon', 'avalanche', 'arbitrum']:
+                if not Web3.is_address(address):
+                    logger.debug(f"Invalid EVM address format: {address}")
+                    return Decimal('0')
+                    
+                # Get the appropriate Web3 provider
+                w3 = self.web3_providers.get(blockchain_name.lower())
+                if not w3:
+                    logger.error(f"No Web3 provider for {blockchain_name}")
+                    return Decimal('0')
+
+                # Get token contract
+                token_contract = w3.eth.contract(
+                    address=Web3.to_checksum_address(contract_address),
+                    abi=self.erc20_abi
+                )
+
+                # Get balance
+                balance = token_contract.functions.balanceOf(
+                    Web3.to_checksum_address(address)
+                ).call()
+
+                return Decimal(str(balance))
+
+            elif blockchain_name.lower() == 'tron':
+                return self._get_tron_token_balance(address, contract_address)
+            elif blockchain_name.lower() == 'solana':
+                return self._get_solana_token_balance(address, contract_address)
+            elif blockchain_name.lower() == 'polkadot':
+                return self._get_polkadot_token_balance(address, contract_address)
+            elif blockchain_name.lower() == 'xrp':
+                return self._get_xrp_token_balance(address, contract_address)
+            else:
+                logger.warning(f"Unsupported blockchain for token balance: {blockchain_name}")
+                return Decimal('0')
+
         except Exception as e:
             logger.error(f"Error getting token balance for {address} on {blockchain_name}: {str(e)}")
             return Decimal('0')
     
+    def _is_valid_address_for_blockchain(self, address: str, blockchain_name: str) -> bool:
+        """Validate if address format matches the blockchain type"""
+        try:
+            blockchain_name = blockchain_name.lower()
+            
+            # EVM-compatible chains (Ethereum, BSC, Polygon, etc.)
+            if blockchain_name in ['ethereum', 'binance smart chain', 'polygon', 'avalanche', 'arbitrum']:
+                return Web3.is_address(address)
+            
+            # Bitcoin addresses start with 1, 3, or bc1
+            elif blockchain_name == 'bitcoin':
+                return address.startswith(('1', '3', 'bc1'))
+            
+            # XRP addresses start with r
+            elif blockchain_name == 'xrp':
+                return address.startswith('r')
+            
+            # Solana addresses are 32-44 characters long base58 strings
+            elif blockchain_name == 'solana':
+                return len(address) >= 32 and len(address) <= 44
+            
+            # Tron addresses start with T
+            elif blockchain_name == 'tron':
+                return address.startswith('T')
+            
+            # Polkadot addresses are 47-48 characters long
+            elif blockchain_name == 'polkadot':
+                return len(address) in [47, 48]
+            
+            # Default case
+            else:
+                logger.warning(f"No address validation rule for blockchain: {blockchain_name}")
+                return True
+                
+        except Exception as e:
+            logger.error(f"Error validating address format: {str(e)}")
+            return False
+    
     def get_native_balance(self, address: str, blockchain_name: str) -> Decimal:
         """Get native balance for a blockchain address"""
         try:
+            # First, validate the address for the given blockchain
+            if not self._is_valid_address_for_blockchain(address, blockchain_name):
+                logger.debug(f"Address {address} is not valid for blockchain {blockchain_name}")
+                return Decimal('0')
+                
             # For non-EVM blockchains, use specific methods
             if blockchain_name == "Bitcoin":
                 return self.get_bitcoin_balance(address)
@@ -123,13 +147,25 @@ class BalanceService:
                 
             web3 = self.web3_providers[blockchain_name]
             
-            # Get balance
-            balance_wei = web3.eth.get_balance(Web3.to_checksum_address(address))
-            
-            # Convert to ETH (or native currency similar to ETH)
-            balance = Decimal(balance_wei) / Decimal(10 ** 18)
-            
-            return balance
+            # Double-check that the address is a valid EVM address
+            if not web3.is_address(address):
+                logger.debug(f"Invalid EVM address format for {address} on {blockchain_name}")
+                return Decimal('0')
+                
+            try:
+                # Convert address to checksum format
+                checksum_address = Web3.to_checksum_address(address)
+                
+                # Get balance
+                balance_wei = web3.eth.get_balance(checksum_address)
+                
+                # Convert to ETH (or native currency similar to ETH)
+                balance = Decimal(balance_wei) / Decimal(10 ** 18)
+                
+                return balance
+            except ValueError as ve:
+                logger.debug(f"Invalid hex address format: {str(ve)}")
+                return Decimal('0')
         except Exception as e:
             logger.error(f"Error getting native balance for {address} on {blockchain_name}: {str(e)}")
             return Decimal('0')
@@ -137,9 +173,10 @@ class BalanceService:
     def get_bitcoin_balance(self, address: str) -> Decimal:
         """Get Bitcoin balance for an address"""
         try:
-            # Use blockchain API to get Bitcoin balance
-            api_key = os.getenv('BLOCKCYPHER_API_KEY', '')
-            url = f"https://api.blockcypher.com/v1/btc/main/addrs/{address}/balance"
+            api_config = EXTERNAL_APIS["Bitcoin"]
+            api_key = os.getenv(api_config["key_env"], '')
+            url = api_config["url"].format(address=address)
+            
             if api_key:
                 url += f"?token={api_key}"
                 
@@ -158,8 +195,10 @@ class BalanceService:
     def get_tron_native_balance(self, address: str) -> Decimal:
         """Get Tron (TRX) balance for an address"""
         try:
-            api_key = os.getenv('TRONGRID_API_KEY', '')
-            url = f"https://api.trongrid.io/v1/accounts/{address}"
+            api_config = EXTERNAL_APIS["Tron"]
+            api_key = os.getenv(api_config["key_env"], '')
+            url = api_config["url"].format(address=address)
+            
             headers = {}
             if api_key:
                 headers["TRON-PRO-API-KEY"] = api_key
@@ -183,9 +222,11 @@ class BalanceService:
     def get_tron_token_balance(self, address: str, contract_address: str) -> Decimal:
         """Get Tron token (TRC20) balance for an address"""
         try:
-            api_key = os.getenv('TRONGRID_API_KEY', '')
-            url = f"https://api.trongrid.io/v1/accounts/{address}/trc20"
+            api_config = EXTERNAL_APIS["Tron"]
+            api_key = os.getenv(api_config["key_env"], '')
+            url = api_config["token_url"].format(address=address)
             params = {"contract_address": contract_address}
+            
             headers = {}
             if api_key:
                 headers["TRON-PRO-API-KEY"] = api_key
@@ -215,7 +256,9 @@ class BalanceService:
     def get_solana_native_balance(self, address: str) -> Decimal:
         """Get Solana (SOL) balance for an address"""
         try:
-            rpc_url = os.getenv('SOLANA_RPC_URL', 'https://api.mainnet-beta.solana.com')
+            api_config = EXTERNAL_APIS["Solana"]
+            rpc_url = api_config["url"]
+            
             payload = {
                 "jsonrpc": "2.0",
                 "id": 1,
@@ -242,9 +285,9 @@ class BalanceService:
     def get_solana_token_balance(self, address: str, token_mint: str) -> Decimal:
         """Get Solana token (SPL) balance for an address"""
         try:
-            rpc_url = os.getenv('SOLANA_RPC_URL', 'https://api.mainnet-beta.solana.com')
+            api_config = EXTERNAL_APIS["Solana"]
+            rpc_url = api_config["url"]
             
-            # First, find the token account
             payload = {
                 "jsonrpc": "2.0",
                 "id": 1,
@@ -260,17 +303,19 @@ class BalanceService:
             data = response.json()
             
             # Get token balance
-            balance = Decimal('0')
+            balance_raw = 0
+            decimals = 9  # Default decimals for SPL tokens
             
             if "result" in data and "value" in data["result"]:
                 for account in data["result"]["value"]:
                     info = account.get("account", {}).get("data", {}).get("parsed", {}).get("info", {})
                     if info.get("mint") == token_mint:
-                        token_amount = info.get("tokenAmount", {})
-                        amount = token_amount.get("amount", "0")
-                        decimals = token_amount.get("decimals", 0)
-                        balance = Decimal(amount) / Decimal(10 ** decimals)
+                        balance_raw = int(info.get("tokenAmount", {}).get("amount", 0))
+                        decimals = int(info.get("tokenAmount", {}).get("decimals", 9))
                         break
+            
+            # Convert to actual value
+            balance = Decimal(balance_raw) / Decimal(10 ** decimals)
             
             return balance
         except Exception as e:
@@ -280,9 +325,10 @@ class BalanceService:
     def get_polkadot_native_balance(self, address: str) -> Decimal:
         """Get Polkadot (DOT) balance for an address"""
         try:
-            api_key = os.getenv('POLKADOT_API_KEY', '')
-            # Using Subscan API for Polkadot
-            url = "https://polkadot.api.subscan.io/api/scan/account"
+            api_config = EXTERNAL_APIS["Polkadot"]
+            api_key = os.getenv(api_config["key_env"], '')
+            url = api_config["url"]
+            
             headers = {"Content-Type": "application/json"}
             if api_key:
                 headers["X-API-Key"] = api_key
@@ -305,19 +351,48 @@ class BalanceService:
             logger.error(f"Error getting Polkadot balance for {address}: {str(e)}")
             return Decimal('0')
     
-    def get_polkadot_token_balance(self, address: str, token_id: str) -> Decimal:
+    def get_polkadot_token_balance(self, address: str, asset_id: str) -> Decimal:
         """Get Polkadot token balance for an address"""
-        # Polkadot doesn't have tokens in the same way as Ethereum
-        # This is a placeholder for future implementation
-        logger.warning(f"Polkadot token balance retrieval not fully implemented for {address}")
-        return Decimal('0')
+        try:
+            api_config = EXTERNAL_APIS["Polkadot"]
+            api_key = os.getenv(api_config["key_env"], '')
+            url = api_config["token_url"]
+            
+            headers = {"Content-Type": "application/json"}
+            if api_key:
+                headers["X-API-Key"] = api_key
+                
+            payload = {
+                "address": address,
+                "asset_id": asset_id
+            }
+            
+            response = requests.post(url, json=payload, headers=headers)
+            data = response.json()
+            
+            # Get token balance
+            balance_raw = 0
+            decimals = 12  # Default decimals for Polkadot tokens
+            
+            if data.get("code") == 0 and "data" in data:
+                balance_raw = int(data["data"].get("balance", 0))
+                decimals = int(data["data"].get("decimals", 12))
+            
+            # Convert to actual value
+            balance = Decimal(balance_raw) / Decimal(10 ** decimals)
+            
+            return balance
+        except Exception as e:
+            logger.error(f"Error getting Polkadot token balance for {address}: {str(e)}")
+            return Decimal('0')
     
     def get_xrp_native_balance(self, address: str) -> Decimal:
         """Get XRP balance for an address"""
         try:
-            api_key = os.getenv('RIPPLE_API_KEY', '')
-            # Using XRPL API
-            url = "https://xrplcluster.com/"
+            api_config = EXTERNAL_APIS["XRP"]
+            url = api_config["url"]
+            api_key = os.getenv(api_config["key_env"], '')
+            
             payload = {
                 "method": "account_info",
                 "params": [
@@ -352,17 +427,16 @@ class BalanceService:
     def get_xrp_token_balance(self, address: str, token_id: str) -> Decimal:
         """Get XRP token balance for an address"""
         try:
-            api_key = os.getenv('RIPPLE_API_KEY', '')
-            # Using XRPL API
-            url = "https://xrplcluster.com/"
+            api_config = EXTERNAL_APIS["XRP"]
+            url = api_config["url"]
+            api_key = os.getenv(api_config["key_env"], '')
+            
             payload = {
                 "method": "account_lines",
-                "params": [
-                    {
-                        "account": address,
-                        "ledger_index": "current"
-                    }
-                ]
+                "params": [{
+                    "account": address,
+                    "ledger_index": "current"
+                }]
             }
             
             headers = {}
@@ -378,7 +452,8 @@ class BalanceService:
             if "result" in data and "lines" in data["result"]:
                 for line in data["result"]["lines"]:
                     if line.get("currency") == token_id:
-                        balance += Decimal(line.get("balance", "0"))
+                        balance = Decimal(line.get("balance", "0"))
+                        break
             
             return balance
         except Exception as e:
@@ -478,6 +553,13 @@ class BalanceService:
             blockchains = self.session.query(Blockchains).all()
             blockchain_dict = {b.BlockchainID: b for b in blockchains}
             
+            # Group currencies by blockchain
+            blockchain_currencies = {}
+            for currency in currencies:
+                if currency.BlockchainID not in blockchain_currencies:
+                    blockchain_currencies[currency.BlockchainID] = []
+                blockchain_currencies[currency.BlockchainID].append(currency)
+            
             logger.info(f"Found {len(currencies)} currencies and {len(blockchains)} blockchains")
             
             # Store balances
@@ -496,20 +578,16 @@ class BalanceService:
                         continue
                         
                     logger.info(f"Processing {blockchain.BlockchainName} address: {address.PublicAddress}")
-                        
-                    # Check native currency balance for blockchain
-                    native_currency = None
-                    for currency in currencies:
-                        if currency.BlockchainID == blockchain.BlockchainID and not currency.IsToken:
-                            native_currency = currency
-                            break
+                    
+                    # Get currencies for this blockchain
+                    blockchain_specific_currencies = blockchain_currencies.get(blockchain.BlockchainID, [])
+                    
+                    # Check native currency balance
+                    native_currency = next((c for c in blockchain_specific_currencies if not c.IsToken), None)
                     
                     if native_currency:
                         # Get native currency balance
-                        if blockchain.BlockchainName == "Bitcoin":
-                            balance = self.get_bitcoin_balance(address.PublicAddress)
-                        else:
-                            balance = self.get_native_balance(address.PublicAddress, blockchain.BlockchainName)
+                        balance = self.get_native_balance(address.PublicAddress, blockchain.BlockchainName)
                         
                         if balance > 0:
                             logger.info(f"Found native balance {balance} for {blockchain.BlockchainName}")
@@ -518,9 +596,9 @@ class BalanceService:
                             else:
                                 holdings[native_currency.CurrencyID] = balance
                     
-                    # Check token balances
-                    for currency in currencies:
-                        if currency.BlockchainID == blockchain.BlockchainID and currency.IsToken and currency.SmartContractAddress:
+                    # Check token balances only for tokens of this blockchain
+                    for currency in blockchain_specific_currencies:
+                        if currency.IsToken and currency.SmartContractAddress:
                             balance = self.get_token_balance(
                                 address.PublicAddress, 
                                 currency.SmartContractAddress, 
@@ -545,7 +623,13 @@ class BalanceService:
             for currency_id, balance in holdings.items():
                 if balance > 0:
                     # Convert to string for column Tokens
-                    tokens_str = f"{currency_id} : {balance}"
+                    currency = currency_dict.get(currency_id)
+                    blockchain = blockchain_dict.get(currency.BlockchainID) if currency else None
+                    
+                    tokens_str = (
+                        f"{currency.Symbol if currency else currency_id} : {balance}\n"
+                        f"Blockchain : {blockchain.BlockchainName if blockchain else 'Unknown'}"
+                    )
                     
                     # Create new record in UserHolding
                     new_holding = UserHolding(
@@ -557,11 +641,8 @@ class BalanceService:
                     self.session.add(new_holding)
                     logger.info(f"Added new holding for currency {currency_id} with balance {balance}")
                     
-                    # Get currency information for response
-                    currency = currency_dict.get(currency_id)
+                    # Add to response dictionary
                     if currency:
-                        blockchain = blockchain_dict.get(currency.BlockchainID)
-                        
                         tokens_dict[currency.Symbol] = {
                             'balance': str(balance),
                             'currency_name': currency.CurrencyName,

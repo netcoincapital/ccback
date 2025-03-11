@@ -9,7 +9,7 @@ class UserHolding(Base):
     HoldingID = Column(BigInteger, primary_key=True, autoincrement=True)
     UserID = Column(String(36), ForeignKey('Users.UserID'), nullable=False)
     Balance = Column(DECIMAL(20,10), nullable=True)  # مقدار عددی و قابل null
-    Tokens = Column(Text(length=4294967295), nullable=True)  # ذخیره‌ی رشته‌ای مانند "ETH : 1 , TRX : 200"
+    Tokens = Column(Text().with_variant(Text, 'mysql').with_variant(Text, 'postgresql'), nullable=True)  # ذخیره‌ی رشته‌ای مانند "ETH : 1 , TRX : 200"
     LastUpdated = Column(TIMESTAMP, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
     # رابطه با Users

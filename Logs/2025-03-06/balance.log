@@ -3507,3 +3507,5 @@
 2025-03-06 18:33:58,894 - balance - ERROR - Error getting token balance for 14vBvuoMQMXpizoD6KT5F5h6Ay2i4NwcrPEgswsjEk1ZBAEn on Ethereum: when sending a str, it must be a hex string. Got: '14vBvuoMQMXpizoD6KT5F5h6Ay2i4NwcrPEgswsjEk1ZBAEn'
 2025-03-06 18:34:01,650 - balance - ERROR - Error getting token balance for 0xDd969d02b3B63a8b9bDf042533db9c5395309147 on Ethereum: 402 Client Error: Payment Required for url: https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7
 2025-03-06 18:34:01,652 - balance - ERROR - Error getting token balance for TDitJmiTuWhsEitUVQtSTbhmChrb1Mi94c on Ethereum: when sending a str, it must be a hex string. Got: 'TDitJmiTuWhsEitUVQtSTbhmChrb1Mi94c'
+2025-03-06 18:46:33,286 - balance - INFO - Initializing balance module
+2025-03-06 18:46:41,615 - balance - INFO - Initializing balance module

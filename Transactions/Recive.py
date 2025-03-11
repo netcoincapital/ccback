@@ -121,23 +121,23 @@ def receive_transaction():
         # Get user's public address from database
         public_address = get_user_address(session, user_id, blockchain_symbol)
 
-        transaction = {
-            'address': public_address,
-            'network': blockchain_symbol,
-            'status': 'success'
-        }
-
         logger.info(f"Successfully processed transaction receive for user: {user_id} on blockchain symbol: {blockchain_symbol}")
         return jsonify({
-            'transaction': transaction,
+            'PublicAddress': public_address,
             'success': True
         }), 200
 
     except ValidationError as e:
         logger.warning(f"Validation error in receive_transaction: {str(e)}")
-        raise
+        return jsonify({
+            'message': str(e),
+            'success': False
+        }), 400
     except Exception as e:
         logger.error(f"Error in receive_transaction: {str(e)}", exc_info=True)
-        raise
+        return jsonify({
+            'message': f"An unexpected error occurred: {str(e)}",
+            'success': False
+        }), 500
     finally:
         session.close()

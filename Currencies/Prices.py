@@ -184,7 +184,10 @@ def update_currency_prices():
 
     except Exception as e:
         logger.error(f"Error updating currency prices: {str(e)}", exc_info=True)
-        raise
+        return jsonify({
+            "message": f"An unexpected error occurred: {str(e)}",
+            "success": False
+        }), 500
     finally:
         session.close()
 
@@ -343,10 +346,16 @@ def get_currency_price():
                         "change_24h": change_str
                     }
                 else:
-                    final_prices[symbol][fiat] = None
+                    final_prices[symbol][fiat] = {
+                        "price": "0.00",
+                        "change_24h": "0.00%"
+                    }
 
         logger.info(f"Successfully retrieved prices for {len(symbols)} currencies in {len(fiat_currencies)} fiat currencies")
-        return jsonify({"success": True, "prices": final_prices}), 200
+        return jsonify({
+            "prices": final_prices,
+            "success": True
+        }), 200
 
     except ValidationError as e:
         logger.warning(f"Validation error in get_currency_price: {str(e)}")
@@ -355,10 +364,16 @@ def get_currency_price():
             request.endpoint,
             str(e)
         )
-        raise
+        return jsonify({
+            "message": str(e),
+            "success": False
+        }), 400
     except Exception as e:
         logger.error(f"Error in get_currency_price: {str(e)}", exc_info=True)
-        raise
+        return jsonify({
+            "message": f"An unexpected error occurred: {str(e)}",
+            "success": False
+        }), 500
     finally:
         if db_session:
             db_session.close()

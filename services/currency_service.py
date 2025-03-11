@@ -11,7 +11,7 @@ class CurrencyService:
     
     def __init__(self, session: Session):
         self.session = session
-
+        
     def get_all_currencies(self, page: int, per_page: int) -> list:
         """Get paginated list of currencies"""
         cache_key = f"currencies:page:{page}:per_page:{per_page}"
