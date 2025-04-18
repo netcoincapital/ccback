@@ -1,0 +1,144 @@
+2025-03-24 19:20:12,360 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:20:20,880 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:27:58,668 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:28:07,341 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:34:25,669 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:34:34,152 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:35:35,638 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:35:44,278 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:36:58,990 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:37:07,569 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:39:30,731 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:39:39,599 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:39:58,460 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:39:58,747 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TREAT']
+2025-03-24 19:39:58,762 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:39:58,989 - balance - INFO - Processing symbol: ETH, found in database
+2025-03-24 19:39:58,995 - balance - INFO - Getting token balance for ETH (contract: 0xC94729d93cB660BB346ce0084393015F99810919)
+2025-03-24 19:39:59,193 - balance - INFO - Token balance for ETH: 0.000100000000000000
+2025-03-24 19:39:59,194 - balance - INFO - Processing symbol: TREAT, found in database
+2025-03-24 19:39:59,197 - balance - INFO - Getting token balance for TREAT (contract: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b)
+2025-03-24 19:39:59,398 - balance - INFO - Token balance for TREAT: 0.000100000000000000
+2025-03-24 19:40:12,098 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:40:19,542 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX']
+2025-03-24 19:40:19,560 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:40:19,754 - balance - INFO - Processing symbol: ETH, found in database
+2025-03-24 19:40:19,760 - balance - INFO - Getting token balance for ETH (contract: 0xC94729d93cB660BB346ce0084393015F99810919)
+2025-03-24 19:40:19,761 - balance - INFO - Getting token balance for chain: ETH, contract: 0xC94729d93cB660BB346ce0084393015F99810919, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:40:20,028 - balance - INFO - Converted token balance from 0.0001 to 1e-22
+2025-03-24 19:40:20,029 - balance - INFO - Token balance for ETH: 0.000000000000000000
+2025-03-24 19:40:20,029 - balance - INFO - Processing symbol: TRX, found in database
+2025-03-24 19:40:20,034 - balance - INFO - Getting token balance for TRX (contract: 0x50327c6c5a14dcade707abad2e27eb517df87ab5)
+2025-03-24 19:40:20,035 - balance - ERROR - Unsupported chain for token balance: TRX
+2025-03-24 19:40:20,035 - balance - INFO - Token balance for TRX is zero or negative: 0.0
+2025-03-24 19:40:50,306 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:40:54,596 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX']
+2025-03-24 19:40:54,611 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:40:54,817 - balance - INFO - Processing symbol: ETH, found in database
+2025-03-24 19:40:54,823 - balance - INFO - Getting token balance for ETH (contract: 0xC94729d93cB660BB346ce0084393015F99810919)
+2025-03-24 19:40:54,824 - balance - INFO - Getting token balance for chain: ETH, contract: 0xC94729d93cB660BB346ce0084393015F99810919, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:40:55,081 - balance - INFO - Converted token balance from 0.0001 to 1e-22
+2025-03-24 19:40:55,082 - balance - INFO - Token balance for ETH: 0.000000000000000000
+2025-03-24 19:40:55,084 - balance - INFO - Processing symbol: TRX, found in database
+2025-03-24 19:40:55,088 - balance - INFO - Getting token balance for TRX (contract: 0x50327c6c5a14dcade707abad2e27eb517df87ab5)
+2025-03-24 19:40:55,088 - balance - ERROR - Unsupported chain for token balance: TRX
+2025-03-24 19:40:55,089 - balance - INFO - Token balance for TRX is zero or negative: 0.0
+2025-03-24 19:43:12,816 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:43:21,605 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:43:24,831 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX']
+2025-03-24 19:43:24,843 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:43:25,032 - balance - INFO - ETH detected as native currency for ETH
+2025-03-24 19:43:25,036 - balance - INFO - Getting balance for native coin ETH on chain ETH for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:43:25,037 - balance - INFO - Calling Tatum API with path: /v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for ETH
+2025-03-24 19:43:25,289 - balance - INFO - Mapped chain symbol ETH to coin symbol ETH
+2025-03-24 19:43:25,290 - balance - INFO - Found balance for ETH: 1e-22
+2025-03-24 19:43:25,291 - balance - INFO - Found native coin balance for ETH: 0.000000000000000000
+2025-03-24 19:43:25,292 - balance - INFO - TRX detected as native currency for TRON
+2025-03-24 19:47:48,547 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:47:56,976 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:48:00,809 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX']
+2025-03-24 19:48:00,826 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:48:01,027 - balance - INFO - Found address for BTC: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-24 19:48:01,031 - balance - INFO - Found address for ETH: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:48:01,035 - balance - INFO - Found address for MATIC: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:48:01,038 - balance - INFO - Found address for AVAX: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:48:01,043 - balance - INFO - Found address for XRP: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-24 19:48:01,046 - balance - INFO - Found address for DOT: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-24 19:48:01,051 - balance - INFO - Found address for SOL: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-24 19:48:01,053 - balance - INFO - ETH is native coin for ETH
+2025-03-24 19:48:01,054 - balance - INFO - Calling Tatum API for ETH, path: /v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:48:01,272 - balance - INFO - Found ETH balance: 1e-22
+2025-03-24 19:48:01,273 - balance - INFO - Added ETH balance: 0.000000000000000000
+2025-03-24 19:48:01,274 - balance - INFO - TRX is native coin for TRON
+2025-03-24 19:53:43,547 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:53:52,172 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:54:13,060 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX']
+2025-03-24 19:54:13,073 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:54:13,271 - balance - INFO - Found address for BTC: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-24 19:54:13,275 - balance - INFO - Found address for ETH: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:13,279 - balance - INFO - Found address for MATIC: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:13,282 - balance - INFO - Found address for AVAX: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:13,286 - balance - INFO - Found address for XRP: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-24 19:54:13,289 - balance - INFO - Found address for DOT: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-24 19:54:13,293 - balance - INFO - Found address for SOL: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-24 19:54:13,295 - balance - INFO - ETH is native coin for ETH
+2025-03-24 19:54:13,296 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:13,681 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-24 19:54:13,682 - balance - INFO - ETH/EVM compatible raw balance: 0.0001
+2025-03-24 19:54:13,682 - balance - INFO - Added ETH balance directly: 0.0001
+2025-03-24 19:54:13,683 - balance - INFO - TRX is native coin for TRON
+2025-03-24 19:54:46,223 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TREAT']
+2025-03-24 19:54:46,226 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:54:46,467 - balance - INFO - Found address for BTC: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-24 19:54:46,471 - balance - INFO - Found address for ETH: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:46,475 - balance - INFO - Found address for MATIC: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:46,478 - balance - INFO - Found address for AVAX: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:46,481 - balance - INFO - Found address for XRP: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-24 19:54:46,483 - balance - INFO - Found address for DOT: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-24 19:54:46,485 - balance - INFO - Found address for SOL: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-24 19:54:46,486 - balance - INFO - ETH is native coin for ETH
+2025-03-24 19:54:46,487 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:46,710 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-24 19:54:46,710 - balance - INFO - ETH/EVM compatible raw balance: 0.0001
+2025-03-24 19:54:46,711 - balance - INFO - Added ETH balance directly: 0.0001
+2025-03-24 19:54:46,714 - balance - INFO - Getting token balance for ETH, contract: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:54:46,895 - balance - ERROR - Error fetching token balance. Status code: 404, Response: {"statusCode":404,"message":"Cannot GET /v3/blockchain/token/balance?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b&address=0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A"}
+2025-03-24 19:56:22,167 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:57:02,797 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:57:33,001 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:58:17,231 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-24 19:58:20,958 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TREAT']
+2025-03-24 19:58:20,971 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:58:21,180 - balance - INFO - Found address for BTC: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-24 19:58:21,185 - balance - INFO - Found address for ETH: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:21,189 - balance - INFO - Found address for MATIC: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:21,193 - balance - INFO - Found address for AVAX: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:21,198 - balance - INFO - Found address for XRP: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-24 19:58:21,202 - balance - INFO - Found address for DOT: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-24 19:58:21,205 - balance - INFO - Found address for SOL: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-24 19:58:21,206 - balance - INFO - ETH is native coin for ETH
+2025-03-24 19:58:21,207 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:21,405 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-24 19:58:21,405 - balance - INFO - ETH/EVM compatible raw balance: 0.0001
+2025-03-24 19:58:21,406 - balance - INFO - Added ETH balance directly: 0.0001
+2025-03-24 19:58:21,409 - balance - INFO - Getting token balance for ETH, contract: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:21,410 - balance - INFO - Calling Tatum API: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A with contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-24 19:58:21,612 - balance - INFO - Raw EVM token balance response: {'balance': '0.0001'}
+2025-03-24 19:58:21,614 - balance - INFO - Added token TREAT balance directly: 0.0001
+2025-03-24 19:58:21,615 - balance - INFO - Processed networks: {'ETH'}
+2025-03-24 19:58:35,033 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX']
+2025-03-24 19:58:35,036 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-24 19:58:35,311 - balance - INFO - Found address for BTC: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-24 19:58:35,315 - balance - INFO - Found address for ETH: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:35,328 - balance - INFO - Found address for MATIC: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:35,332 - balance - INFO - Found address for AVAX: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:35,338 - balance - INFO - Found address for XRP: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-24 19:58:35,341 - balance - INFO - Found address for DOT: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-24 19:58:35,344 - balance - INFO - Found address for SOL: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-24 19:58:35,346 - balance - INFO - ETH is native coin for ETH
+2025-03-24 19:58:35,346 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-24 19:58:35,629 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-24 19:58:35,631 - balance - INFO - ETH/EVM compatible raw balance: 0.0001
+2025-03-24 19:58:35,632 - balance - INFO - Added ETH balance directly: 0.0001
+2025-03-24 19:58:35,633 - balance - INFO - TRX is native coin for TRON
+2025-03-24 19:58:35,634 - balance - INFO - Processed networks: {'ETH'}

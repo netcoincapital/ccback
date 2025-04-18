@@ -1,0 +1,188 @@
+2025-03-28 23:18:46,747 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-28 23:18:46,748 - balance - INFO - Added new common token: MASK on ETH
+2025-03-28 23:18:46,748 - balance - INFO - Added new common token: UNI on ETH
+2025-03-28 23:18:46,749 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-28 23:18:51,136 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-28 23:18:55,374 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-28 23:18:55,374 - balance - INFO - Added new common token: MASK on ETH
+2025-03-28 23:18:55,374 - balance - INFO - Added new common token: UNI on ETH
+2025-03-28 23:18:55,375 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-28 23:18:59,784 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-28 23:19:05,993 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX', 'TREAT']
+2025-03-28 23:19:06,006 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-28 23:19:31,384 - balance - INFO - User addresses by chain: {'ETH': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'TRX': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'TRON': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'BNB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BSC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BTC': 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 'MATIC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARBITRUM': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'XRP': 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 'SOL': '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 'AVAX': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'DOT': '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-28 23:19:31,384 - balance - INFO - User addresses by blockchain ID: {1: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 2: 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 3: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 4: 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 5: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 6: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 11: 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 12: '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 13: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 14: '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-28 23:19:31,385 - balance - INFO - Processing symbol: ETH
+2025-03-28 23:19:31,385 - balance - INFO - ETH is a main coin on network ETH
+2025-03-28 23:19:31,386 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:31,386 - balance - INFO - Calling Tatum API for ETH: /v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:31,386 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:31,386 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:32,210 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-28 23:19:32,210 - balance - INFO - Processing balance for ETH with type eth
+2025-03-28 23:19:32,211 - balance - INFO - ETH/EVM compatible raw balance: 0.0001
+2025-03-28 23:19:32,211 - balance - INFO - Final result dictionary for ETH: {'ETH': '0.0001'}
+2025-03-28 23:19:32,211 - balance - INFO - Processing symbol: TRX
+2025-03-28 23:19:32,212 - balance - INFO - TRX is a main coin on network TRON
+2025-03-28 23:19:32,212 - balance - INFO - Getting balance for TRON, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-28 23:19:32,212 - balance - INFO - Calling Tatum API for TRON: /v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-28 23:19:32,213 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-28 23:19:32,213 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-28 23:19:32,646 - balance - INFO - Raw API response for TRON: {'balance': 3900003, 'createTime': 1741976538000, 'trc10': [], 'trc20': [], 'freeNetLimit': 600, 'bandwidth': 600}
+2025-03-28 23:19:32,648 - balance - INFO - Processing balance for TRON with type tron
+2025-03-28 23:19:32,649 - balance - INFO - Found direct balance in TRON response: 3900003
+2025-03-28 23:19:32,649 - balance - INFO - TRON raw balance: 3900003
+2025-03-28 23:19:32,650 - balance - INFO - Found TRC20 tokens: []
+2025-03-28 23:19:32,651 - balance - INFO - Final result dictionary for TRON: {'TRX': 3900003}
+2025-03-28 23:19:32,652 - balance - INFO - Processing symbol: TREAT
+2025-03-28 23:19:32,653 - balance - INFO - Symbol TREAT is not a main coin, searching as token
+2025-03-28 23:19:32,653 - balance - INFO - Searching for token with symbol: TREAT
+2025-03-28 23:19:32,654 - balance - INFO - Available currency keys: ['BITCOIN', 'BTC', 'XRP', 'HOLO', 'HOT', 'MILC PLATFORM', 'MLT', 'HOLORIDE', 'RIDE', 'UBXS TOKEN', 'UBXS', 'DUST PROTOCOL', 'DUST', 'CHIRPLEY', 'CHRP', 'LIGHTLINK', 'LL', 'GEMACH', 'GMAC', 'BLOCX.']...
+2025-03-28 23:19:32,655 - balance - INFO - Found token directly with symbol: TREAT
+2025-03-28 23:19:32,655 - balance - INFO - Found currency: TREAT, CurrencyName: Treat, IsToken: True
+2025-03-28 23:19:32,656 - balance - INFO - Raw SmartContractAddress from database for TREAT: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,657 - balance - INFO - Contract address after removing whitespace: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,657 - balance - INFO - Original contract address to be used: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,658 - balance - INFO - Original contract address before formatting: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,658 - balance - INFO - Contract address unchanged during formatting: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,658 - balance - INFO - Formatted contract address for DOT: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,658 - balance - INFO - Formatted contract address using specialized function: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,659 - balance - INFO - Verifying contract address: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b' for chain DOT
+2025-03-28 23:19:32,659 - balance - INFO - Contract address verification complete: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b' (unchanged)
+2025-03-28 23:19:32,659 - balance - INFO - Verified contract address for TREAT: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,659 - balance - INFO - Using original contract address from database: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,659 - balance - INFO - Currency TREAT - BlockchainID: 1, SmartContractAddress: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,660 - balance - INFO - Blockchain for currency TREAT: ChainCode=ETH
+2025-03-28 23:19:32,660 - balance - INFO - Found wallet address by BlockchainID: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:32,660 - balance - INFO - Calling get_token_balance for TREAT with: chain_symbol=ETH, contract_address=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b, address=0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:32,660 - balance - INFO - Sending contract address to Tatum: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,660 - balance - INFO - Getting token balance for ETH, symbol: TREAT, contract: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:32,660 - balance - INFO - Using original contract address after simple cleaning: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,661 - balance - INFO - Final contract address for API call: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,661 - balance - INFO - Using chain name 'ETH' for API calls based on chain symbol ETH
+2025-03-28 23:19:32,661 - balance - INFO - Preparing API call to fetch token balance for TREAT on ETH
+2025-03-28 23:19:32,661 - balance - INFO - Contract address to send to Tatum: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:32,661 - balance - INFO - Wallet address to send to Tatum: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'
+2025-03-28 23:19:32,662 - balance - INFO - Calling Tatum dedicated token API: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,662 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,662 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,975 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b"}
+2025-03-28 23:19:32,976 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,978 - balance - INFO - No response from traditional API path. Trying updated API path...
+2025-03-28 23:19:32,979 - balance - INFO - Calling Tatum with updated API path: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,980 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:32,981 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,300 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b"}
+2025-03-28 23:19:33,301 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,302 - balance - INFO - No response from updated API path. Trying newest API path...
+2025-03-28 23:19:33,303 - balance - INFO - Calling Tatum with newest API path: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,304 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,304 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,637 - balance - ERROR - Tatum call failed: 403 {"statusCode":403,"errorCode":"erc20.get.error","message":"Get operation failed","cause":"Failed to get token balance","dashboardLog":"https://dashboard.tatum.io/logs?id=67e70453d3d4683d6cce6116"}
+2025-03-28 23:19:33,638 - balance - INFO - All attempts with original address failed. Trying with formatted address...
+2025-03-28 23:19:33,639 - balance - ERROR - No response from Tatum API for token TREAT on ETH after trying all API paths
+2025-03-28 23:19:33,640 - balance - INFO - get_token_balance returned: 0 for TREAT
+2025-03-28 23:19:33,640 - balance - INFO - Retrying with lowercase contract address: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:33,641 - balance - INFO - Getting token balance for ETH, symbol: TREAT, contract: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:33,642 - balance - INFO - Using original contract address after simple cleaning: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:33,642 - balance - INFO - Final contract address for API call: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,642 - balance - INFO - Using chain name 'ETH' for API calls based on chain symbol ETH
+2025-03-28 23:19:33,643 - balance - INFO - Preparing API call to fetch token balance for TREAT on ETH
+2025-03-28 23:19:33,643 - balance - INFO - Contract address to send to Tatum: '0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b'
+2025-03-28 23:19:33,643 - balance - INFO - Wallet address to send to Tatum: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'
+2025-03-28 23:19:33,643 - balance - INFO - Calling Tatum dedicated token API: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,644 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,644 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,900 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b"}
+2025-03-28 23:19:33,900 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,901 - balance - INFO - No response from traditional API path. Trying updated API path...
+2025-03-28 23:19:33,902 - balance - INFO - Calling Tatum with updated API path: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,902 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:33,903 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:34,152 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b"}
+2025-03-28 23:19:34,153 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:34,153 - balance - INFO - No response from updated API path. Trying newest API path...
+2025-03-28 23:19:34,154 - balance - INFO - Calling Tatum with newest API path: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:34,154 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:34,155 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-28 23:19:34,444 - balance - ERROR - Tatum call failed: 403 {"statusCode":403,"errorCode":"erc20.get.error","message":"Get operation failed","cause":"Failed to get token balance","dashboardLog":"https://dashboard.tatum.io/logs?id=67e70454248ab0b065cd843a"}
+2025-03-28 23:19:34,445 - balance - INFO - All attempts with original address failed. Trying with formatted address...
+2025-03-28 23:19:34,445 - balance - ERROR - No response from Tatum API for token TREAT on ETH after trying all API paths
+2025-03-28 23:19:34,445 - balance - INFO - Lowercase attempt returned: 0
+2025-03-28 23:19:34,446 - balance - INFO - Retrying with uppercase contract address: '0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B'
+2025-03-28 23:19:34,446 - balance - INFO - Getting token balance for ETH, symbol: TREAT, contract: 0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:34,446 - balance - INFO - Using original contract address after simple cleaning: '0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B'
+2025-03-28 23:19:34,446 - balance - INFO - Final contract address for API call: 0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:34,447 - balance - INFO - Using chain name 'ETH' for API calls based on chain symbol ETH
+2025-03-28 23:19:34,447 - balance - INFO - Preparing API call to fetch token balance for TREAT on ETH
+2025-03-28 23:19:34,447 - balance - INFO - Contract address to send to Tatum: '0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B'
+2025-03-28 23:19:34,447 - balance - INFO - Wallet address to send to Tatum: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'
+2025-03-28 23:19:34,447 - balance - INFO - Calling Tatum dedicated token API: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:34,448 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:34,448 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:34,765 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B"}
+2025-03-28 23:19:34,766 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:34,767 - balance - INFO - No response from traditional API path. Trying updated API path...
+2025-03-28 23:19:34,768 - balance - INFO - Calling Tatum with updated API path: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:34,768 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:34,769 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:35,118 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B"}
+2025-03-28 23:19:35,120 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:35,121 - balance - INFO - No response from updated API path. Trying newest API path...
+2025-03-28 23:19:35,122 - balance - INFO - Calling Tatum with newest API path: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:35,123 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:35,123 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:35,435 - balance - ERROR - Tatum call failed: 400 {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["address must be a valid ETH address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. "],"dashboardLog":"https://dashboard.tatum.io/logs?id=67e70455248ab0b065cd8441"}
+2025-03-28 23:19:35,436 - balance - ERROR - Bad Request (400) error. Message: Request validation failed. Please see data for additional information.
+2025-03-28 23:19:35,437 - balance - ERROR - Validation errors: ['address must be a valid ETH address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. ']
+2025-03-28 23:19:35,439 - balance - INFO - All attempts with original address failed. Trying with formatted address...
+2025-03-28 23:19:35,439 - balance - INFO - Using formatted contract address for retry: '0x0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B'
+2025-03-28 23:19:35,440 - balance - INFO - Final retry with formatted address: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:35,441 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:35,441 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x0XFBD5FD3F85E9F4C5E8B40EEC9F8B8AB1CAAA146B
+2025-03-28 23:19:35,806 - balance - ERROR - Tatum call failed: 400 {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["address must be a valid ETH address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. "],"dashboardLog":"https://dashboard.tatum.io/logs?id=67e70456d5ad2433b12e69c2"}
+2025-03-28 23:19:35,808 - balance - ERROR - Bad Request (400) error. Message: Request validation failed. Please see data for additional information.
+2025-03-28 23:19:35,809 - balance - ERROR - Validation errors: ['address must be a valid ETH address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. ']
+2025-03-28 23:19:35,810 - balance - ERROR - No response from Tatum API for token TREAT on ETH after trying all API paths
+2025-03-28 23:19:35,811 - balance - INFO - Uppercase attempt returned: 0
+2025-03-28 23:19:35,812 - balance - INFO - Searching for common token: TREAT on chain: ETH
+2025-03-28 23:19:35,813 - balance - INFO - Found exact match for TREAT on ETH: 0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:35,813 - balance - INFO - Selected TREAT on requested chain ETH
+2025-03-28 23:19:35,813 - balance - INFO - Trying one last time with common token address: '0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4'
+2025-03-28 23:19:35,814 - balance - INFO - Getting token balance for ETH, symbol: TREAT, contract: 0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-28 23:19:35,814 - balance - INFO - Using original contract address after simple cleaning: '0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4'
+2025-03-28 23:19:35,814 - balance - INFO - Final contract address for API call: 0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:35,815 - balance - INFO - Using chain name 'ETH' for API calls based on chain symbol ETH
+2025-03-28 23:19:35,815 - balance - INFO - Preparing API call to fetch token balance for TREAT on ETH
+2025-03-28 23:19:35,816 - balance - INFO - Contract address to send to Tatum: '0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4'
+2025-03-28 23:19:35,816 - balance - INFO - Wallet address to send to Tatum: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'
+2025-03-28 23:19:35,816 - balance - INFO - Calling Tatum dedicated token API: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:35,817 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:35,817 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,200 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4"}
+2025-03-28 23:19:36,201 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,201 - balance - INFO - No response from traditional API path. Trying updated API path...
+2025-03-28 23:19:36,202 - balance - INFO - Calling Tatum with updated API path: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,202 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,202 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,483 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4"}
+2025-03-28 23:19:36,484 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,486 - balance - INFO - No response from updated API path. Trying newest API path...
+2025-03-28 23:19:36,486 - balance - INFO - Calling Tatum with newest API path: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,487 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,488 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xa02c49da76a085e4e1ee60a6b920ddbc8db599f4
+2025-03-28 23:19:36,782 - balance - ERROR - Tatum call failed: 403 {"statusCode":403,"errorCode":"erc20.get.error","message":"Get operation failed","cause":"Failed to get token balance","dashboardLog":"https://dashboard.tatum.io/logs?id=67e7045764f21f5796fd285c"}
+2025-03-28 23:19:36,784 - balance - INFO - All attempts with original address failed. Trying with formatted address...
+2025-03-28 23:19:36,785 - balance - ERROR - No response from Tatum API for token TREAT on ETH after trying all API paths
+2025-03-28 23:19:36,786 - balance - INFO - Final attempt with common token returned: 0
+2025-03-28 23:19:36,787 - balance - WARNING - All attempts failed. Zero or empty balance returned for token TREAT
+2025-03-28 23:25:33,150 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-28 23:25:33,151 - balance - INFO - Added new common token: MASK on ETH
+2025-03-28 23:25:33,151 - balance - INFO - Added new common token: UNI on ETH
+2025-03-28 23:25:33,151 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-28 23:25:37,545 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-28 23:25:41,688 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-28 23:25:41,688 - balance - INFO - Added new common token: MASK on ETH
+2025-03-28 23:25:41,688 - balance - INFO - Added new common token: UNI on ETH
+2025-03-28 23:25:41,689 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-28 23:25:46,086 - balance - INFO - Initializing Socket.IO for balance updates

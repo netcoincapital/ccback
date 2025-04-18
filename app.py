@@ -16,45 +16,61 @@ from flask import Flask, after_this_request, jsonify, request
 from flask_cors import CORS
 from flask_wtf.csrf import CSRFProtect, CSRFError
 from flask_openapi3 import OpenAPI, Info
-from flask_socketio import SocketIO
-
-# Import all database models first
-from database import (
-    init_db, 
-    SessionLocal,
-    Users,
-    Wallets,
-    Address,
-    Blockchains,
-    Currencies,
-    UserHolding,
-    Base
-)
-
-from generate import generate_bp
-from ImportWallet import import_bp
-from Currencies import CUpdate_bp, CPost_bp
-from Transactions import receive_bp, gasfee_bp
-from balance import balance_bp, init_balance_service
-from security.validators import SecurityUtils, ValidationError
-from schemas import WalletGenerationResponse, WalletGenerationRequest
 import logging
 import os
 from datetime import datetime, timezone
-from utils.error_handlers import APIErrorHandler, handle_api_errors
-from pydantic import Field
+import traceback
 import json
 import uuid
-from services.wallet_service import WalletService
-from config.queue import get_rabbitmq_connection
-from config.swagger import register_swagger
-from utils.logging_config import get_logger
+import importlib
+from sqlalchemy import text
 
-# Configure logging
+# Configure logging first
+from utils.logging_config import get_logger
 logger = get_logger(__file__)
 logger.info("Starting IronWallet application")
 
-# Check if RabbitMQ is available
+# Import error handlers first (before database)
+from utils.error_handlers import APIErrorHandler, handle_api_errors
+from security.validators import SecurityUtils, ValidationError
+from pydantic import Field
+
+# Import all database models
+try:
+    from database import (
+        init_db, 
+        SessionLocal,
+        Users,
+        Wallets,
+        Address,
+        Blockchains,
+        Currencies,
+        UserHolding,
+        Transfers,
+        Base,
+        engine
+    )
+    
+    # Test database connection immediately
+    logger.info("Testing database connection...")
+    with engine.connect() as connection:
+        result = connection.execute(text("SELECT 1"))
+        scalar_result = result.scalar()
+        logger.info(f"Database connection successful: {scalar_result}")
+
+except Exception as db_import_error:
+    logger.critical(f"Failed to connect to database: {str(db_import_error)}")
+    logger.critical(traceback.format_exc())
+    # Continue without crashing - API will return database errors when needed
+
+# Import services and config
+from config.queue import get_rabbitmq_connection
+from config.swagger import register_swagger
+
+# Import schemas after services
+from schemas import WalletGenerationResponse, WalletGenerationRequest
+
+# Check RabbitMQ availability
 rabbitmq_available = True
 try:
     connection = get_rabbitmq_connection()
@@ -64,6 +80,7 @@ except Exception as e:
     logger.warning(f"RabbitMQ server is not available. Using synchronous processing instead: {str(e)}")
     rabbitmq_available = False
 
+# Create the Flask app
 info = Info(title="IronWallet API", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 
@@ -71,34 +88,141 @@ app = OpenAPI(__name__, info=info)
 app.secret_key = os.environ.get('SECRET_KEY', 'ironwallet-dev-secret-key')
 
 # Enable CORS
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
-# Enable CSRF protection but disable it for API endpoints
+# Set additional Flask configurations for proper routing
 app.config['WTF_CSRF_ENABLED'] = False  # Disable CSRF globally for API usage
+app.config['JSON_SORT_KEYS'] = False  # Preserve JSON key order in responses
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False  # Don't pretty-print JSON in production
+app.config['TRAP_HTTP_EXCEPTIONS'] = True  # Trap HTTP exceptions for custom handling
+app.config['TRAP_BAD_REQUEST_ERRORS'] = True  # Trap bad request errors
 csrf = CSRFProtect(app)
 
 # Initialize database
-init_db()
+try:
+    init_db()
+    logger.info("Database initialized successfully")
+except Exception as db_init_error:
+    logger.critical(f"Failed to initialize database: {str(db_init_error)}")
+    # Continue without database to allow API to start but return errors on DB operations
 
-# Initialize balance service
-#init_balance_service()
-
-# Register blueprints
-app.register_blueprint(generate_bp, url_prefix='/generate')
-app.register_blueprint(import_bp, url_prefix='')
-app.register_blueprint(CUpdate_bp, url_prefix='')
-app.register_blueprint(CPost_bp, url_prefix='')
-app.register_blueprint(receive_bp, url_prefix='')
-app.register_blueprint(gasfee_bp, url_prefix='')
-app.register_blueprint(balance_bp, url_prefix='')
-
-# Initialize SocketIO
-socketio = SocketIO(app, cors_allowed_origins="*")
-from balance.balance import initialize_socketio
-initialize_socketio(app)
+# Import blueprints after app creation to avoid circular imports
+try:
+    from generate import generate_bp
+    from ImportWallet import import_bp
+    from Currencies import Prices_bp, CPost_bp
+    from Transactions import receive_bp, gasfee_bp
+    from Send import send_bp
+    from balance import balance_api
+    # from Ethereum import auth_bp, phrase_key_bp  # Commented out missing module
+    from UserTransactions import transactions_bp
+    
+    # Register blueprints - RESTORING ORIGINAL WORKING PREFIXES
+    logger.info("Registering blueprints")
+    app.register_blueprint(generate_bp, url_prefix='/generate')
+    logger.info("Registered generate_bp")
+    app.register_blueprint(import_bp, url_prefix='')
+    logger.info("Registered import_bp")
+    app.register_blueprint(Prices_bp, url_prefix='')
+    logger.info(f"Registered Prices_bp - contains {len(Prices_bp.deferred_functions)} routes")
+    app.register_blueprint(CPost_bp, url_prefix='')
+    logger.info("Registered CPost_bp")
+    app.register_blueprint(receive_bp, url_prefix='')
+    logger.info("Registered receive_bp")
+    app.register_blueprint(gasfee_bp, url_prefix='')
+    logger.info("Registered gasfee_bp")
+    app.register_blueprint(balance_api, url_prefix='')
+    logger.info(f"Registered balance_api - contains {len(balance_api.deferred_functions)} routes")
+    app.register_blueprint(send_bp, url_prefix='')
+    logger.info("Registered send_bp")
+    app.register_blueprint(transactions_bp, url_prefix='')
+    logger.info("Registered transactions_bp")
+    # app.register_blueprint(auth_bp)  # Commented out missing blueprint
+    # app.register_blueprint(phrase_key_bp)  # Commented out missing blueprint
+    logger.info("All blueprints registered successfully")
+except Exception as e:
+    logger.error(f"Error registering blueprints: {str(e)}", exc_info=True)
+    raise
 
 # Register Swagger UI
 register_swagger(app)
+
+# Now all blueprints are registered, import the wallet service
+# This is to avoid circular imports
+from services.wallet_service import WalletService
+
+# Import webhook module
+from webhook import init_app as init_webhook
+from webhook.webhook_handler import get_user_addresses_from_db
+from webhook.tatum_subscription import create_batched_blockchain_subscriptions, group_addresses_by_blockchain, list_subscriptions
+
+# Initialize webhook blueprint
+init_webhook(app)
+logger.info("Webhook blueprint registered successfully")
+
+# Setup webhook subscriptions automatically
+def setup_webhook_subscriptions():
+    """Setup webhook subscriptions for all user addresses automatically"""
+    try:
+        logger.info("Starting automatic webhook subscription setup")
+        
+        # Check existing subscriptions first
+        existing_subscriptions = list_subscriptions()
+        existing_batch_count = sum(1 for sub in existing_subscriptions 
+                                 if sub.get('type') == 'ADDRESS_TRANSACTION' 
+                                 and 'addresses' in sub.get('attr', {}))
+        
+        # Get all user addresses
+        user_addresses = get_user_addresses_from_db()
+        
+        if not user_addresses:
+            logger.warning("No user addresses found in database for webhook setup")
+            return
+            
+        # Group addresses by blockchain
+        grouped_addresses = group_addresses_by_blockchain(user_addresses)
+        total_addresses = sum(len(addresses) for addresses in grouped_addresses.values())
+        
+        # Log the address counts by blockchain
+        for blockchain, addresses in grouped_addresses.items():
+            logger.info(f"Found {len(addresses)} addresses for {blockchain}")
+            
+        # If we already have batch subscriptions, check if we need to update
+        if existing_batch_count > 0:
+            logger.info(f"Found {existing_batch_count} existing batch subscriptions")
+            
+            # Only proceed if force update is enabled or there are many new addresses
+            # Here we use a threshold - if more than 20% new addresses, update subscriptions
+            # This logic can be adjusted based on requirements
+            if os.environ.get('FORCE_WEBHOOK_UPDATE', '').lower() == 'true':
+                logger.info("Force webhook update enabled, proceeding with subscription creation")
+            else:
+                logger.info("Existing subscriptions found, skipping automatic update")
+                # You could implement more sophisticated checking here
+                return
+        
+        # Create batch subscriptions
+        logger.info(f"Creating batch subscriptions for {total_addresses} addresses across {len(grouped_addresses)} blockchains")
+        results = create_batched_blockchain_subscriptions(user_addresses)
+        
+        # Log the results
+        total_subscriptions = sum(len(subs) for subs in results.values())
+        logger.info(f"Successfully created {total_subscriptions} batch subscriptions")
+        
+        # Save results to a file for reference
+        import json
+        import os
+        results_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "webhook", "batch_subscriptions.json")
+        with open(results_file, 'w') as f:
+            json.dump(results, f, indent=2)
+        logger.info(f"Saved subscription results to {results_file}")
+        
+    except Exception as e:
+        logger.error(f"Error setting up webhook subscriptions: {str(e)}", exc_info=True)
+        # Continue with application startup even if webhook setup fails
+        
+# Run the webhook setup
+setup_webhook_subscriptions()
 
 @app.route('/')
 def index():
@@ -218,6 +342,9 @@ def generate_wallet(body: WalletGenerationRequest):
                     'Mnemonic': mnemonic,
                     'success': True
                 }), 201
+            except Exception as session_error:
+                logger.error(f"Database error in generate_wallet: {str(session_error)}")
+                raise
             finally:
                 session.close()
         
@@ -225,33 +352,120 @@ def generate_wallet(body: WalletGenerationRequest):
         logger.error(f"Error in generate_wallet: {str(e)}")
         raise
 
+@app.route('/test-db', methods=['GET'])
+def test_db_connection():
+    """Test database connection"""
+    try:
+        session = SessionLocal()
+        try:
+            # Try to execute a simple query
+            result = session.execute(text("SELECT 1")).scalar()
+            
+            # Check if tables exist
+            table_status = {}
+            from sqlalchemy import inspect
+            inspector = inspect(engine)
+            all_tables = inspector.get_table_names()
+            
+            # Check status of important tables
+            required_tables = ['Users', 'Wallets', 'Address', 'Blockchains', 'Currencies', 'UserHolding', 'Transfers']
+            for table in required_tables:
+                table_status[table] = table in all_tables
+            
+            return jsonify({
+                "success": True,
+                "message": "Database connection successful",
+                "result": result,
+                "tables": table_status,
+                "all_tables": all_tables
+            })
+        finally:
+            session.close()
+    except Exception as e:
+        logger.error(f"Database connection error: {str(e)}")
+        return jsonify({
+            "success": False,
+            "error_type": "database_error", 
+            "message": f"Database connection failed: {str(e)}"
+        }), 500
+
+@app.route('/test-api', methods=['GET'])
+def test_api():
+    """Test API endpoint for basic functionality"""
+    try:
+        return jsonify({
+            "success": True,
+            "message": "API is operating correctly",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "service": "IronWallet API",
+            "environment": os.environ.get('FLASK_ENV', 'development')
+        })
+    except Exception as e:
+        logger.error(f"Error in test_api: {str(e)}")
+        return jsonify({
+            "success": False,
+            "error_type": "api_error",
+            "message": f"API error: {str(e)}"
+        }), 500
+
+@app.route('/api/app-health', methods=['GET'])
+def app_health():
+    """Application health check"""
+    try:
+        # Check database connection first
+        db_status = "ok"
+        try:
+            session = SessionLocal()
+            try:
+                session.execute("SELECT 1").scalar()
+            finally:
+                session.close()
+        except Exception as db_error:
+            db_status = f"error: {str(db_error)}"
+            logger.error(f"Database health check failed: {str(db_error)}")
+        
+        # Check RabbitMQ if needed
+        rabbitmq_status = "ok" if rabbitmq_available else "unavailable"
+        
+        return jsonify({
+            "status": "healthy",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "services": {
+                "api": "ok",
+                "database": db_status,
+                "rabbitmq": rabbitmq_status
+            },
+            "version": "1.0.0"
+        })
+    except Exception as e:
+        logger.error(f"Health check failed: {str(e)}")
+        return jsonify({
+            "status": "unhealthy",
+            "error": str(e),
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }), 500
+
 @app.after_request
 def add_security_headers(response):
     """Add security headers to all responses"""
-    # Content Security Policy
-    response.headers['Content-Security-Policy'] = "default-src 'self'"
-    
-    # Prevent MIME type sniffing
     response.headers['X-Content-Type-Options'] = 'nosniff'
-    
-    # XSS Protection
-    response.headers['X-XSS-Protection'] = '1; mode=block'
-    
-    # Prevent clickjacking
     response.headers['X-Frame-Options'] = 'DENY'
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
     
-    # HTTP Strict Transport Security
-    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    # Ensure JSON is returned with correct content type
+    if response.mimetype == 'application/json':
+        response.headers['Content-Type'] = 'application/json; charset=utf-8'
     
     return response
 
 @app.after_request
 def add_keep_alive_headers(response):
-    """Add keep-alive headers to all responses"""
+    """Add keep-alive headers to responses"""
     response.headers['Connection'] = 'keep-alive'
-    response.headers['Keep-Alive'] = 'timeout=5, max=1000'
     return response
 
+# Register global error handlers
 @app.errorhandler(ValidationError)
 @app.errorhandler(CSRFError)
 @app.errorhandler(Exception)
@@ -259,5 +473,196 @@ def handle_error(e):
     """Global error handler"""
     return APIErrorHandler.handle_error(e, request)
 
+@app.route('/debug-api', methods=['GET'])
+def debug_api():
+    """Special debug endpoint that returns information about the Flask application configuration"""
+    try:
+        # Get registered blueprint information
+        blueprint_data = {}
+        for name, bp in app.blueprints.items():
+            blueprint_data[name] = {
+                "name": bp.name,
+                "import_name": bp.import_name,
+                "url_map": str(app.url_map),
+                "deferred_functions": len(bp.deferred_functions) if hasattr(bp, 'deferred_functions') else 0
+            }
+        
+        # Get registered routes
+        routes = []
+        for rule in app.url_map.iter_rules():
+            routes.append({
+                "endpoint": rule.endpoint,
+                "methods": list(rule.methods),
+                "rule": str(rule)
+            })
+        
+        # Return comprehensive debug data
+        return jsonify({
+            "app_name": app.name,
+            "debug": app.debug,
+            "blueprints": blueprint_data,
+            "routes": routes,
+            "server_info": {
+                "timestamp": datetime.now().isoformat(),
+                "flask_version": Flask.__version__
+            }
+        })
+    except Exception as e:
+        logger.error(f"Error in debug endpoint: {str(e)}", exc_info=True)
+        return jsonify({
+            "error": str(e),
+            "traceback": str(traceback.format_exc())
+        }), 500
+
+# Add Flask error handler for debugging
+@app.errorhandler(500)
+def handle_500_error(e):
+    """Custom error handler for 500 Internal Server Error"""
+    logger.error(f"500 error caught by custom handler: {str(e)}", exc_info=True)
+    
+    # Collect information about the request
+    endpoint = request.endpoint
+    path = request.path
+    method = request.method
+    
+    return jsonify({
+        "error_type": "internal_error",
+        "message": "Internal server error caught by custom handler",
+        "debug_info": {
+            "endpoint": endpoint,
+            "path": path,
+            "method": method,
+            "error": str(e)
+        },
+        "success": False
+    }), 500
+
+@app.route('/api/database-test')
+def test_database():
+    """API endpoint to test database connection and report problems"""
+    from utils.logging_config import get_logger
+    logger = get_logger("database_test")
+    
+    try:
+        # Test database connection
+        logger.info("Testing database connection...")
+        with engine.connect() as connection:
+            result = connection.execute(text("SELECT 1"))
+            scalar_result = result.scalar()
+            
+            # Try to query tables
+            tables = []
+            try:
+                table_query = connection.execute(text("SELECT name FROM sqlite_master WHERE type='table'"))
+                for table in table_query:
+                    tables.append(table[0])
+            except Exception as table_err:
+                logger.error(f"Error querying tables: {str(table_err)}")
+            
+            return jsonify({
+                'success': True,
+                'database_connection': 'ok',
+                'test_query_result': scalar_result,
+                'tables_count': len(tables),
+                'tables': tables,
+                'message': 'Database connection test was successful'
+            })
+            
+    except Exception as e:
+        logger.error(f"Database test failed: {str(e)}", exc_info=True)
+        return jsonify({
+            'success': False,
+            'error_type': 'database_error',
+            'message': str(e),
+            'recommendation': 'Check DATABASE_URL environment variable and make sure database server is running'
+        }), 500
+
+# Add another test endpoint for API key testing
+@app.route('/api/config-test')
+def test_config():
+    """API endpoint to test configuration variables without exposing sensitive data"""
+    from utils.logging_config import get_logger
+    logger = get_logger("config_test")
+    
+    # Check environment variables (without revealing full values)
+    env_checks = {}
+    critical_vars = [
+        'DATABASE_URL', 'AES_SECRET_KEY', 'FLASK_ENV', 
+        'RABBITMQ_HOST', 'RABBITMQ_PORT', 'RABBITMQ_USER'
+    ]
+    
+    for var in critical_vars:
+        value = os.environ.get(var)
+        if value:
+            # Only show first and last few characters of sensitive data
+            if var in ['DATABASE_URL', 'AES_SECRET_KEY']:
+                masked_value = f"{value[:5]}...{value[-5:]}" if len(value) > 10 else "***" 
+                env_checks[var] = {
+                    'status': 'set',
+                    'masked_value': masked_value,
+                    'length': len(value)
+                }
+            else:
+                env_checks[var] = {
+                    'status': 'set',
+                    'value': value
+                }
+        else:
+            env_checks[var] = {
+                'status': 'missing',
+                'recommendation': 'Set this environment variable'
+            }
+    
+    return jsonify({
+        'success': True,
+        'environment_checks': env_checks,
+        'python_version': sys.version,
+        'message': 'Configuration test completed'
+    })
+
+def create_app():
+    app_instance = Flask(__name__)
+    
+    # Enable CORS
+    CORS(app_instance, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+    
+    # Set configurations
+    app_instance.secret_key = os.environ.get('SECRET_KEY', 'ironwallet-dev-secret-key')
+    app_instance.config['WTF_CSRF_ENABLED'] = False
+    app_instance.config['JSON_SORT_KEYS'] = False
+    app_instance.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
+    app_instance.config['TRAP_HTTP_EXCEPTIONS'] = True
+    app_instance.config['TRAP_BAD_REQUEST_ERRORS'] = True
+    
+    # Initialize database
+    init_db()
+    
+    # Register blueprints
+    from generate import generate_bp
+    from ImportWallet import import_bp
+    from Currencies import Prices_bp, CPost_bp
+    from Transactions import receive_bp, gasfee_bp
+    from Send import send_bp
+    from balance import balance_api
+    # from Ethereum import auth_bp, phrase_key_bp  # Commented out missing module
+    from UserTransactions import transactions_bp
+    
+    app_instance.register_blueprint(generate_bp, url_prefix='/generate')
+    app_instance.register_blueprint(import_bp, url_prefix='')
+    app_instance.register_blueprint(Prices_bp, url_prefix='')
+    app_instance.register_blueprint(CPost_bp, url_prefix='')
+    app_instance.register_blueprint(receive_bp, url_prefix='')
+    app_instance.register_blueprint(gasfee_bp, url_prefix='')
+    app_instance.register_blueprint(balance_api, url_prefix='')
+    app_instance.register_blueprint(send_bp, url_prefix='')
+    app_instance.register_blueprint(transactions_bp, url_prefix='')
+    # app_instance.register_blueprint(auth_bp)  # Commented out missing blueprint
+    # app_instance.register_blueprint(phrase_key_bp)  # Commented out missing blueprint
+    
+    # Initialize webhook routes
+    init_webhook(app_instance)
+    
+    return app_instance
+
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 3000)))
+    app.run(debug=True, host='0.0.0.0', port=5000)

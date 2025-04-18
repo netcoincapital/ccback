@@ -1,0 +1,6 @@
+2025-03-19 10:40:18,799 - Send - INFO - Initializing send transaction module
+2025-03-19 10:40:27,346 - Send - INFO - Initializing send transaction module
+2025-03-19 10:41:11,096 - Send - INFO - Currency: TRX, Blockchain: Tron, BlockchainID: 2
+2025-03-19 10:41:11,688 - Send - INFO - Using blockchain service for Tron, service type: TronBlockchainService
+2025-03-19 10:41:11,688 - Send - INFO - TRX is a main coin, not using smart contract address
+2025-03-19 10:41:29,493 - Send - INFO - TRX is a main coin, not using smart contract address in confirmation

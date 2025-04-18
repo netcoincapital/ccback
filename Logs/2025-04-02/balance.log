@@ -1,0 +1,44 @@
+2025-04-02 07:20:56,382 - balance - INFO - Getting balances for user d7fd960c-0b3b-4f0c-8963-baa6b365953d for currencies: ['Ethereum', 'Shiba Inu']
+2025-04-02 07:20:56,397 - balance - INFO - Found wallet 080e1614-cfd7-4e68-ad60-a3e583321963 for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-04-02 07:20:56,398 - balance - INFO - Processing currency: Ethereum
+2025-04-02 07:20:56,403 - balance - WARNING - Currency 'Ethereum' not found in database with exact name match
+2025-04-02 07:20:56,404 - balance - INFO - Processing currency: Shiba Inu
+2025-04-02 07:20:56,406 - balance - WARNING - Currency 'Shiba Inu' not found in database with exact name match
+2025-04-02 07:20:56,406 - balance - INFO - Completed processing all currencies, returning 0 items
+2025-04-02 07:52:40,367 - balance - INFO - Getting balances for user d7fd960c-0b3b-4f0c-8963-baa6b365953d for currencies: ['Polygon']
+2025-04-02 07:52:40,382 - balance - INFO - Found wallet 080e1614-cfd7-4e68-ad60-a3e583321963 for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-04-02 07:52:40,383 - balance - INFO - Processing currency: Polygon
+2025-04-02 07:52:40,387 - balance - INFO - Found currency in database: Polygon (Symbol: MATIC)
+2025-04-02 07:52:40,390 - balance - INFO - Found blockchain Binance Smart Chain for currency Polygon
+2025-04-02 07:52:40,398 - balance - INFO - Found address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for user on blockchain Binance Smart Chain
+2025-04-02 07:52:40,398 - balance - INFO - Getting token balance for MATIC at address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A with contract 0xcc42724c6683b7e57334c4e856f4c9965ed682bd
+2025-04-02 07:52:40,399 - balance - INFO - Calling Tatum API for token balance on bnb: https://api.tatum.io/v3/bnb/token/balance/0xcc42724c6683b7e57334c4e856f4c9965ed682bd/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-02 07:52:40,774 - balance - ERROR - Error from Tatum API: 404 - {"statusCode":404,"message":"Cannot GET /v3/bnb/token/balance/0xcc42724c6683b7e57334c4e856f4c9965ed682bd/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A"}
+2025-04-02 07:52:40,775 - balance - INFO - Token balance for MATIC: 0
+2025-04-02 07:52:40,775 - balance - INFO - Added Polygon to response with balance 0
+2025-04-02 07:52:40,775 - balance - INFO - Completed processing all currencies, returning 1 items
+2025-04-02 07:57:23,146 - balance - INFO - Getting balances for user d7fd960c-0b3b-4f0c-8963-baa6b365953d for currencies: ['Polygon']
+2025-04-02 07:57:23,159 - balance - INFO - Found wallet 080e1614-cfd7-4e68-ad60-a3e583321963 for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-04-02 07:57:23,160 - balance - INFO - Processing currency: Polygon
+2025-04-02 07:57:23,166 - balance - INFO - Found currency in database: Polygon (Symbol: MATIC)
+2025-04-02 07:57:23,169 - balance - INFO - Found blockchain Binance Smart Chain for currency Polygon
+2025-04-02 07:57:23,172 - balance - INFO - Found address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for user on blockchain Binance Smart Chain
+2025-04-02 07:57:23,173 - balance - INFO - Getting token balance for MATIC at address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A with contract 0xcc42724c6683b7e57334c4e856f4c9965ed682bd on bsc
+2025-04-02 07:57:23,173 - balance - INFO - Mapped blockchain code bsc to Tatum chain name: bsc
+2025-04-02 07:57:23,174 - balance - INFO - Calling Tatum API for token balance on bsc: https://api.tatum.io/v3/bsc/token/balance/0xcc42724c6683b7e57334c4e856f4c9965ed682bd/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-02 07:57:23,294 - balance - ERROR - Error from Tatum API: 404 - {"statusCode":404,"message":"Cannot GET /v3/bsc/token/balance/0xcc42724c6683b7e57334c4e856f4c9965ed682bd/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A"}
+2025-04-02 07:57:23,296 - balance - INFO - Token balance for MATIC: 0
+2025-04-02 07:57:23,296 - balance - INFO - Added Polygon to response with balance 0
+2025-04-02 07:57:23,296 - balance - INFO - Completed processing all currencies, returning 1 items
+2025-04-02 08:00:56,852 - balance - INFO - Getting balances for user d7fd960c-0b3b-4f0c-8963-baa6b365953d for currencies: ['Polygon']
+2025-04-02 08:00:56,866 - balance - INFO - Found wallet 080e1614-cfd7-4e68-ad60-a3e583321963 for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-04-02 08:00:56,866 - balance - INFO - Processing currency: Polygon
+2025-04-02 08:00:56,867 - balance - INFO - Recognized Polygon as a native coin with symbol MATIC
+2025-04-02 08:00:56,871 - balance - INFO - Found blockchain Polygon for native coin Polygon
+2025-04-02 08:00:56,875 - balance - INFO - Found address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for native coin Polygon
+2025-04-02 08:00:56,876 - balance - INFO - Mapped blockchain code polygon to Tatum chain name: polygon
+2025-04-02 08:00:56,877 - balance - INFO - Calling Tatum API for polygon: https://api.tatum.io/v3/polygon/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-02 08:00:57,332 - balance - DEBUG - Tatum API response for polygon: {'balance': '9.206907331361321586'}
+2025-04-02 08:00:57,333 - balance - INFO - Retrieved polygon balance: 9.206907331361321586
+2025-04-02 08:00:57,334 - balance - INFO - Retrieved balance for native coin Polygon: 9.206907331361321586
+2025-04-02 08:00:57,335 - balance - INFO - Completed processing all currencies, returning 1 items

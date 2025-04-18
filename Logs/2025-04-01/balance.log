@@ -1,0 +1,38 @@
+2025-04-01 18:58:53,046 - balance - INFO - Added new common token: TREAT on ETH
+2025-04-01 18:58:53,047 - balance - INFO - Added new common token: MASK on ETH
+2025-04-01 18:58:53,048 - balance - INFO - Added new common token: UNI on ETH
+2025-04-01 18:58:53,048 - balance - INFO - Added new common token: AAVE on ETH
+2025-04-01 18:59:01,297 - balance - INFO - Added new common token: TREAT on ETH
+2025-04-01 18:59:01,297 - balance - INFO - Added new common token: MASK on ETH
+2025-04-01 18:59:01,298 - balance - INFO - Added new common token: UNI on ETH
+2025-04-01 18:59:01,298 - balance - INFO - Added new common token: AAVE on ETH
+2025-04-01 19:01:17,365 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, CurrencyName: ['Ethereum', 'Shiba Inu']
+2025-04-01 19:01:17,381 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-04-01 19:01:20,098 - balance - INFO - User addresses by chain: {'ETH': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'TRX': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'TRON': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'BNB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BSC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BTC': 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 'MATIC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARBITRUM': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'XRP': 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 'SOL': '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 'AVAX': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'DOT': '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-04-01 19:01:20,098 - balance - INFO - User addresses by blockchain ID: {1: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 2: 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 3: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 4: 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 5: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 6: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 11: 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 12: '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 13: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 14: '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-04-01 19:01:20,098 - balance - INFO - Processing currency name: ETHEREUM
+2025-04-01 19:01:20,098 - balance - INFO - Looking up token for ETHEREUM in database
+2025-04-01 19:01:20,103 - balance - WARNING - Token ETHEREUM not found in database
+2025-04-01 19:01:20,103 - balance - INFO - Processing currency name: SHIBA INU
+2025-04-01 19:01:20,103 - balance - INFO - Looking up token for SHIBA INU in database
+2025-04-01 19:01:20,108 - balance - WARNING - Token SHIBA INU not found in database
+2025-04-01 19:03:27,327 - balance - INFO - Added new common token: TREAT on ETH
+2025-04-01 19:03:27,327 - balance - INFO - Added new common token: MASK on ETH
+2025-04-01 19:03:27,328 - balance - INFO - Added new common token: UNI on ETH
+2025-04-01 19:03:27,328 - balance - INFO - Added new common token: AAVE on ETH
+2025-04-01 19:03:31,557 - balance - INFO - Initializing Socket.IO for balance updates
+2025-04-01 19:03:36,097 - balance - INFO - Added new common token: TREAT on ETH
+2025-04-01 19:03:36,097 - balance - INFO - Added new common token: MASK on ETH
+2025-04-01 19:03:36,097 - balance - INFO - Added new common token: UNI on ETH
+2025-04-01 19:03:36,097 - balance - INFO - Added new common token: AAVE on ETH
+2025-04-01 19:03:40,315 - balance - INFO - Initializing Socket.IO for balance updates
+2025-04-01 19:03:54,351 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, CurrencyName: ['Ethereum', 'Shiba Inu']
+2025-04-01 19:03:54,365 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-04-01 19:03:57,331 - balance - INFO - User addresses by chain: {'ETH': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'TRX': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'TRON': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'BNB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BSC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BTC': 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 'MATIC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARBITRUM': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'XRP': 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 'SOL': '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 'AVAX': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'DOT': '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-04-01 19:03:57,332 - balance - INFO - User addresses by blockchain ID: {1: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 2: 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 3: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 4: 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 5: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 6: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 11: 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 12: '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 13: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 14: '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-04-01 19:03:57,332 - balance - INFO - Processing currency name: ETHEREUM
+2025-04-01 19:03:57,333 - balance - INFO - Looking up token for ETHEREUM in database
+2025-04-01 19:03:57,337 - balance - WARNING - Token ETHEREUM not found in database
+2025-04-01 19:03:57,338 - balance - INFO - Processing currency name: SHIBA INU
+2025-04-01 19:03:57,338 - balance - INFO - Looking up token for SHIBA INU in database
+2025-04-01 19:03:57,341 - balance - WARNING - Token SHIBA INU not found in database

@@ -1,0 +1,313 @@
+2025-03-30 19:43:46,858 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 19:43:46,858 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 19:43:46,859 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 19:43:46,860 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 19:43:51,356 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 19:43:55,546 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 19:43:55,547 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 19:43:55,547 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 19:43:55,547 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 19:43:59,957 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 19:44:18,398 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX', 'BNB']
+2025-03-30 19:44:18,411 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-30 19:44:21,551 - balance - INFO - User addresses by chain: {'ETH': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'TRX': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'TRON': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'BNB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BSC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BTC': 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 'MATIC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARBITRUM': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'XRP': 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 'SOL': '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 'AVAX': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'DOT': '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-30 19:44:21,552 - balance - INFO - User addresses by blockchain ID: {1: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 2: 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 3: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 4: 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 5: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 6: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 11: 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 12: '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 13: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 14: '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-30 19:44:21,552 - balance - INFO - Processing symbol: ETH
+2025-03-30 19:44:21,552 - balance - INFO - ETH is a main coin on network ETH
+2025-03-30 19:44:21,552 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:21,553 - balance - INFO - Calling Tatum API with new path for ETH: /v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:21,553 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:21,553 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:21,881 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 19:44:21,882 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:21,883 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:21,884 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:21,884 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:21,885 - balance - INFO - First attempt failed. Trying alternative path 1 for ETH: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 19:44:21,886 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 19:44:21,886 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 19:44:22,106 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH'}
+2025-03-30 19:44:22,108 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 19:44:22,109 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:22,109 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 19:44:22,110 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:22,111 - balance - INFO - Second attempt failed. Trying alternative path 2 for ETH: /v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:22,112 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:22,112 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:22,307 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 19:44:22,307 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:22,308 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:22,308 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:22,309 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:22,310 - balance - INFO - All new paths failed. Trying legacy path for ETH: /v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:22,310 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:22,311 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:22,660 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-30 19:44:22,661 - balance - INFO - Processing balance for ETH with type eth
+2025-03-30 19:44:22,662 - balance - INFO - ETH balance found with key 'balance': 0.0001
+2025-03-30 19:44:22,663 - balance - INFO - Processing symbol: TRX
+2025-03-30 19:44:22,664 - balance - INFO - TRX is a main coin on network TRON
+2025-03-30 19:44:22,665 - balance - INFO - Getting balance for TRON, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:22,665 - balance - INFO - Calling Tatum API with new path for TRON: /v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:22,666 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:22,666 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:22,869 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx'}
+2025-03-30 19:44:22,870 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:22,872 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:22,872 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:22,874 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:22,875 - balance - INFO - First attempt failed. Trying alternative path 1 for TRON: /v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 19:44:22,875 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 19:44:22,875 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 19:44:23,080 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON'}
+2025-03-30 19:44:23,081 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 19:44:23,082 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:23,083 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 19:44:23,084 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:23,085 - balance - INFO - Second attempt failed. Trying alternative path 2 for TRON: /v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:23,085 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:23,086 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:23,285 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx'}
+2025-03-30 19:44:23,285 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:23,286 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:23,286 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:23,286 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:23,287 - balance - INFO - All new paths failed. Trying legacy path for TRON: /v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:23,287 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:23,287 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 19:44:23,571 - balance - INFO - Raw API response for TRON: {'balance': 3900003, 'createTime': 1741976538000, 'trc10': [], 'trc20': [], 'freeNetLimit': 600, 'bandwidth': 600}
+2025-03-30 19:44:23,572 - balance - INFO - Processing balance for TRON with type tron
+2025-03-30 19:44:23,573 - balance - INFO - TRON balance found with key 'balance': 3900003
+2025-03-30 19:44:23,573 - balance - INFO - Processing symbol: BNB
+2025-03-30 19:44:23,574 - balance - INFO - BNB is a main coin on network BSC
+2025-03-30 19:44:23,574 - balance - INFO - Getting balance for BSC, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:23,574 - balance - INFO - Calling Tatum API with new path for BSC: /v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:23,575 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:23,575 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:23,759 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 19:44:23,762 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:23,763 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:23,763 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:23,764 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:23,765 - balance - INFO - First attempt failed. Trying alternative path 1 for BSC: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 19:44:23,765 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 19:44:23,766 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 19:44:23,973 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC'}
+2025-03-30 19:44:23,974 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 19:44:23,974 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:23,975 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 19:44:23,975 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:23,976 - balance - INFO - Second attempt failed. Trying alternative path 2 for BSC: /v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:23,976 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:23,977 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:24,175 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 19:44:24,176 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:24,177 - balance - ERROR - Tatum status code: 404
+2025-03-30 19:44:24,177 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:24,178 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 19:44:24,180 - balance - INFO - All new paths failed. Trying legacy path for BSC: /v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:24,181 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:24,181 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 19:44:24,966 - balance - INFO - Raw API response for BSC: {'balance': '0.003478355830569349'}
+2025-03-30 19:44:24,967 - balance - INFO - Processing balance for BSC with type eth
+2025-03-30 19:44:24,967 - balance - INFO - BSC balance found with key 'balance': 0.003478355830569349
+2025-03-30 23:11:57,046 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX', 'BNB', 'MATIC']
+2025-03-30 23:11:57,050 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-30 23:12:00,081 - balance - INFO - User addresses by chain: {'ETH': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'TRX': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'TRON': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'BNB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BSC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BTC': 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 'MATIC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARBITRUM': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'XRP': 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 'SOL': '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 'AVAX': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'DOT': '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-30 23:12:00,081 - balance - INFO - User addresses by blockchain ID: {1: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 2: 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 3: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 4: 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 5: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 6: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 11: 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 12: '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 13: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 14: '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-30 23:12:00,082 - balance - INFO - Processing symbol: ETH
+2025-03-30 23:12:00,082 - balance - INFO - ETH is a main coin on network ETH
+2025-03-30 23:12:00,082 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,083 - balance - INFO - Calling Tatum API with new path for ETH: /v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,083 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,083 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,334 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 23:12:00,335 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,335 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:00,336 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,337 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:00,337 - balance - INFO - First attempt failed. Trying alternative path 1 for ETH: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 23:12:00,338 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 23:12:00,338 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 23:12:00,531 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH'}
+2025-03-30 23:12:00,532 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 23:12:00,533 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:00,533 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH
+2025-03-30 23:12:00,533 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:00,534 - balance - INFO - Second attempt failed. Trying alternative path 2 for ETH: /v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,535 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,535 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,732 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 23:12:00,733 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,733 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:00,733 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/address/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,733 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:00,734 - balance - INFO - All new paths failed. Trying legacy path for ETH: /v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,734 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:00,735 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:01,101 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-30 23:12:01,102 - balance - INFO - Processing balance for ETH with type eth
+2025-03-30 23:12:01,103 - balance - INFO - ETH balance found with key 'balance': 0.0001
+2025-03-30 23:12:01,104 - balance - INFO - Processing symbol: TRX
+2025-03-30 23:12:01,106 - balance - INFO - TRX is a main coin on network TRON
+2025-03-30 23:12:01,107 - balance - INFO - Getting balance for TRON, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,108 - balance - INFO - Calling Tatum API with new path for TRON: /v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,109 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,110 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,307 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx'}
+2025-03-30 23:12:01,309 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,309 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:01,310 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,311 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:01,311 - balance - INFO - First attempt failed. Trying alternative path 1 for TRON: /v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 23:12:01,312 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 23:12:01,313 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 23:12:01,511 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON'}
+2025-03-30 23:12:01,512 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 23:12:01,513 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:01,513 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx?chain=TRON
+2025-03-30 23:12:01,514 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:01,515 - balance - INFO - Second attempt failed. Trying alternative path 2 for TRON: /v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,516 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,517 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,723 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx'}
+2025-03-30 23:12:01,724 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,725 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:01,726 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/address/balance/TRON/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,727 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:01,728 - balance - INFO - All new paths failed. Trying legacy path for TRON: /v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,729 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:01,729 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-30 23:12:02,014 - balance - INFO - Raw API response for TRON: {'balance': 3900003, 'createTime': 1741976538000, 'trc10': [], 'trc20': [], 'freeNetLimit': 600, 'bandwidth': 600}
+2025-03-30 23:12:02,015 - balance - INFO - Processing balance for TRON with type tron
+2025-03-30 23:12:02,016 - balance - INFO - TRON balance found with key 'balance': 3900003
+2025-03-30 23:12:02,017 - balance - INFO - Processing symbol: BNB
+2025-03-30 23:12:02,017 - balance - INFO - BNB is a main coin on network BSC
+2025-03-30 23:12:02,018 - balance - INFO - Getting balance for BSC, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,018 - balance - INFO - Calling Tatum API with new path for BSC: /v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,018 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,019 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,207 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 23:12:02,208 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,209 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:02,209 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,210 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:02,211 - balance - INFO - First attempt failed. Trying alternative path 1 for BSC: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 23:12:02,212 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 23:12:02,213 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 23:12:02,410 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC'}
+2025-03-30 23:12:02,411 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 23:12:02,411 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:02,412 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=BSC
+2025-03-30 23:12:02,413 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:02,413 - balance - INFO - Second attempt failed. Trying alternative path 2 for BSC: /v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,414 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,414 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,613 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 23:12:02,614 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,615 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:02,615 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/address/balance/BSC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,616 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:02,617 - balance - INFO - All new paths failed. Trying legacy path for BSC: /v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,617 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,618 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,988 - balance - INFO - Raw API response for BSC: {'balance': '0.003478355830569349'}
+2025-03-30 23:12:02,989 - balance - INFO - Processing balance for BSC with type eth
+2025-03-30 23:12:02,990 - balance - INFO - BSC balance found with key 'balance': 0.003478355830569349
+2025-03-30 23:12:02,991 - balance - INFO - Processing symbol: MATIC
+2025-03-30 23:12:02,992 - balance - INFO - MATIC is a main coin on network MATIC
+2025-03-30 23:12:02,993 - balance - INFO - Getting balance for MATIC, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,993 - balance - INFO - Calling Tatum API with new path for MATIC: /v3/blockchain/account/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,994 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:02,995 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,188 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 23:12:03,188 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,189 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:03,189 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,190 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:03,191 - balance - INFO - First attempt failed. Trying alternative path 1 for MATIC: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=MATIC
+2025-03-30 23:12:03,191 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=MATIC
+2025-03-30 23:12:03,191 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=MATIC
+2025-03-30 23:12:03,444 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=MATIC'}
+2025-03-30 23:12:03,445 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=MATIC
+2025-03-30 23:12:03,446 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:03,447 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=MATIC
+2025-03-30 23:12:03,449 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:03,451 - balance - INFO - Second attempt failed. Trying alternative path 2 for MATIC: /v3/blockchain/address/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,451 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,451 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/address/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,675 - balance - ERROR - Tatum call failed: 404. Response: {'statusCode': 404, 'message': 'Cannot GET /v3/blockchain/address/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'}
+2025-03-30 23:12:03,676 - balance - ERROR - Tatum error message: Cannot GET /v3/blockchain/address/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,676 - balance - ERROR - Tatum status code: 404
+2025-03-30 23:12:03,677 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/address/balance/MATIC/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,678 - balance - ERROR - This might indicate that the API endpoint has changed. Check Tatum documentation for updates.
+2025-03-30 23:12:03,678 - balance - INFO - All new paths failed. Trying legacy path for MATIC: /v3/polygon/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,679 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/polygon/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,680 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/polygon/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-30 23:12:03,962 - balance - INFO - Raw API response for MATIC: {'balance': '9.206907331361321586'}
+2025-03-30 23:12:03,962 - balance - INFO - Processing balance for MATIC with type eth
+2025-03-30 23:12:03,963 - balance - INFO - MATIC balance found with key 'balance': 9.206907331361321586
+2025-03-30 23:16:08,364 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:16:08,365 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:16:08,365 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:16:08,365 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:16:41,000 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:16:41,001 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:16:41,001 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:16:41,001 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:16:45,412 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:16:49,597 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:16:49,598 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:16:49,598 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:16:49,598 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:16:53,987 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:25:00,333 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:25:00,334 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:25:00,334 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:25:00,335 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:25:04,749 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:25:09,046 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:25:09,047 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:25:09,047 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:25:09,047 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:25:13,457 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:27:38,089 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:27:38,089 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:27:38,089 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:27:38,089 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:27:42,479 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:27:46,674 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:27:46,674 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:27:46,674 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:27:46,675 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:27:51,051 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:31:23,589 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:31:23,589 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:31:23,589 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:31:23,589 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:31:27,994 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:31:32,097 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:31:32,097 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:31:32,098 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:31:32,098 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:31:36,507 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:38:33,747 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:38:33,747 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:38:33,747 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:38:33,747 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:38:38,140 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:38:42,363 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:38:42,364 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:38:42,364 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:38:42,364 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:38:46,708 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:59:19,671 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:59:19,672 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:59:19,672 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:59:19,673 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:59:24,119 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-30 23:59:28,316 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-30 23:59:28,316 - balance - INFO - Added new common token: MASK on ETH
+2025-03-30 23:59:28,316 - balance - INFO - Added new common token: UNI on ETH
+2025-03-30 23:59:28,316 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-30 23:59:32,755 - balance - INFO - Initializing Socket.IO for balance updates

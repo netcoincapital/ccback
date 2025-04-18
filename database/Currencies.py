@@ -16,15 +16,15 @@ class Currencies(Base):
     SmartContractAddress = Column(String(255), nullable=True)
     CreatedAt = Column(TIMESTAMP, default=datetime.utcnow, nullable=False)
     UpdatedAt = Column(TIMESTAMP, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+    CMC_ID = Column(Integer, nullable=True)
 
-    # رابطه با Blockchains
+    prices = relationship('Price', back_populates='currency_ref')
     blockchains = relationship('Blockchains', back_populates='currencies')
 
     def __repr__(self):
         return f"<Currencies(CurrencyID={self.CurrencyID}, CurrencyName='{self.CurrencyName}')>"
-        
+
     def to_dict(self):
-        """Convert currency object to dictionary for serialization"""
         return {
             'CurrencyID': self.CurrencyID,
             'CurrencyName': self.CurrencyName,
@@ -33,5 +33,6 @@ class Currencies(Base):
             'BlockchainID': self.BlockchainID,
             'DecimalPlaces': self.DecimalPlaces,
             'IsToken': self.IsToken,
-            'SmartContractAddress': self.SmartContractAddress
+            'SmartContractAddress': self.SmartContractAddress,
+            'CMC_ID': self.CMC_ID  # اضافه کردن برای سریال‌سازی
         }

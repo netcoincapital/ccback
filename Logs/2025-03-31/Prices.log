@@ -1,0 +1,46 @@
+2025-03-31 08:29:23,457 - Prices - INFO - Initializing currency update module
+2025-03-31 08:29:32,685 - Prices - INFO - Initializing currency update module
+2025-03-31 08:29:44,696 - Prices - INFO - Fetching prices directly from CoinMarketCap for symbols: ['BTC', 'ETH', 'MATIC'] in fiats: ['USD', 'EUR', 'IRR']
+2025-03-31 08:29:44,696 - Prices - INFO - Making API request for symbols: ['BTC', 'ETH', 'MATIC'] in fiat: USD
+2025-03-31 08:29:44,697 - Prices - DEBUG - Fetching latest prices for ['BTC', 'ETH', 'MATIC'] in USD
+2025-03-31 08:29:45,314 - Prices - DEBUG - Fetching 24h changes for ['BTC', 'ETH', 'MATIC'] in USD
+2025-03-31 08:29:45,814 - Prices - DEBUG - Prices response for USD: {'BTC': 82247.30579184317, 'ETH': 1811.728396490494, 'MATIC': None}
+2025-03-31 08:29:45,817 - Prices - DEBUG - Changes response for USD: {'BTC': -1.10338821, 'ETH': -1.72136492, 'MATIC': 2.78247204}
+2025-03-31 08:29:45,818 - Prices - INFO - Making API request for symbols: ['BTC', 'ETH', 'MATIC'] in fiat: EUR
+2025-03-31 08:29:45,819 - Prices - DEBUG - Fetching latest prices for ['BTC', 'ETH', 'MATIC'] in EUR
+2025-03-31 08:29:46,009 - Prices - DEBUG - Fetching 24h changes for ['BTC', 'ETH', 'MATIC'] in EUR
+2025-03-31 08:29:46,468 - Prices - DEBUG - Prices response for EUR: {'BTC': 75869.02722768606, 'ETH': 1671.2288593426633, 'MATIC': None}
+2025-03-31 08:29:46,469 - Prices - DEBUG - Changes response for EUR: {'BTC': -1.10338821, 'ETH': -1.72136492, 'MATIC': 2.78247204}
+2025-03-31 08:29:46,471 - Prices - INFO - Making API request for symbols: ['BTC', 'ETH', 'MATIC'] in fiat: IRR
+2025-03-31 08:29:46,472 - Prices - DEBUG - Fetching latest prices for ['BTC', 'ETH', 'MATIC'] in IRR
+2025-03-31 08:29:46,661 - Prices - DEBUG - Fetching 24h changes for ['BTC', 'ETH', 'MATIC'] in IRR
+2025-03-31 08:29:46,849 - Prices - DEBUG - Prices response for IRR: {'BTC': 3462611574.002803, 'ETH': 76273765.49591094, 'MATIC': None}
+2025-03-31 08:29:46,850 - Prices - DEBUG - Changes response for IRR: {'BTC': -1.10338821, 'ETH': -1.72136492, 'MATIC': 2.78247204}
+2025-03-31 08:29:46,851 - Prices - INFO - Successfully retrieved prices for 3 symbols in 3 fiat currencies
+2025-03-31 09:51:00,931 - Prices - INFO - Initializing currency update module
+2025-03-31 09:51:09,631 - Prices - INFO - Initializing currency update module
+2025-03-31 09:51:21,825 - Prices - INFO - Fetching prices directly from CoinMarketCap for symbols: ['BTC', 'ETH', 'MATIC'] in fiats: ['USD', 'EUR', 'IRR']
+2025-03-31 09:51:21,826 - Prices - INFO - Making API request for symbols: ['BTC', 'ETH', 'MATIC'] in fiat: USD
+2025-03-31 09:51:21,827 - Prices - DEBUG - Fetching latest prices for ['BTC', 'ETH', 'MATIC'] in USD
+2025-03-31 09:51:22,290 - Prices - DEBUG - Fetching 24h changes for ['BTC', 'ETH', 'MATIC'] in USD
+2025-03-31 09:51:22,747 - Prices - DEBUG - Prices response for USD: {'BTC': 82002.83230612101, 'ETH': 1803.4041331811734, 'MATIC': None}
+2025-03-31 09:51:22,748 - Prices - DEBUG - Changes response for USD: {'BTC': -1.44395987, 'ETH': -2.06801992, 'MATIC': 2.78247204}
+2025-03-31 09:51:22,749 - Prices - INFO - Making API request for symbols: ['BTC', 'ETH', 'MATIC'] in fiat: EUR
+2025-03-31 09:51:22,749 - Prices - DEBUG - Fetching latest prices for ['BTC', 'ETH', 'MATIC'] in EUR
+2025-03-31 09:51:22,969 - Prices - DEBUG - Fetching 24h changes for ['BTC', 'ETH', 'MATIC'] in EUR
+2025-03-31 09:51:23,166 - Prices - DEBUG - Prices response for EUR: {'BTC': 75636.62442286794, 'ETH': 1663.3986567057934, 'MATIC': None}
+2025-03-31 09:51:23,167 - Prices - DEBUG - Changes response for EUR: {'BTC': -1.44395987, 'ETH': -2.06801992, 'MATIC': 2.78247204}
+2025-03-31 09:51:23,167 - Prices - INFO - Making API request for symbols: ['BTC', 'ETH', 'MATIC'] in fiat: IRR
+2025-03-31 09:51:23,168 - Prices - DEBUG - Fetching latest prices for ['BTC', 'ETH', 'MATIC'] in IRR
+2025-03-31 09:51:23,369 - Prices - DEBUG - Fetching 24h changes for ['BTC', 'ETH', 'MATIC'] in IRR
+2025-03-31 09:51:23,568 - Prices - DEBUG - Prices response for IRR: {'BTC': 3452319240.2534056, 'ETH': 75923314.01057172, 'MATIC': None}
+2025-03-31 09:51:23,569 - Prices - DEBUG - Changes response for IRR: {'BTC': -1.44395987, 'ETH': -2.06801992, 'MATIC': 2.78247204}
+2025-03-31 09:51:23,570 - Prices - INFO - Successfully retrieved prices for 3 symbols in 3 fiat currencies
+2025-03-31 10:49:13,724 - Prices - INFO - Initializing currency update module
+2025-03-31 10:49:22,483 - Prices - INFO - Initializing currency update module
+2025-03-31 11:05:13,882 - Prices - INFO - Initializing currency update module
+2025-03-31 11:05:22,542 - Prices - INFO - Initializing currency update module
+2025-03-31 11:18:10,560 - Prices - INFO - Initializing currency update module
+2025-03-31 11:18:19,182 - Prices - INFO - Initializing currency update module
+2025-03-31 11:47:01,859 - Prices - INFO - Initializing currency update module
+2025-03-31 11:47:10,440 - Prices - INFO - Initializing currency update module

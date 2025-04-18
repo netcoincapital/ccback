@@ -1,0 +1,17 @@
+2025-03-19 10:41:11,106 - blockchain_service - INFO - Getting blockchain service for: Tron
+2025-03-19 10:41:11,455 - blockchain_service - INFO - TronGrid API key found and connection successful.
+2025-03-19 10:41:11,456 - blockchain_service - INFO - TronBlockchainService initialized successfully
+2025-03-19 10:41:11,457 - blockchain_service - INFO - Found service class for Tron: TronBlockchainService
+2025-03-19 10:41:11,683 - blockchain_service - INFO - TronGrid API key found and connection successful.
+2025-03-19 10:41:11,685 - blockchain_service - INFO - TronBlockchainService initialized successfully
+2025-03-19 10:41:11,688 - blockchain_service - INFO - Created service instance: TronBlockchainService
+2025-03-19 10:41:29,076 - blockchain_service - INFO - Getting blockchain service for: Tron
+2025-03-19 10:41:29,273 - blockchain_service - INFO - TronGrid API key found and connection successful.
+2025-03-19 10:41:29,274 - blockchain_service - INFO - TronBlockchainService initialized successfully
+2025-03-19 10:41:29,274 - blockchain_service - INFO - Found service class for Tron: TronBlockchainService
+2025-03-19 10:41:29,490 - blockchain_service - INFO - TronGrid API key found and connection successful.
+2025-03-19 10:41:29,491 - blockchain_service - INFO - TronBlockchainService initialized successfully
+2025-03-19 10:41:29,492 - blockchain_service - INFO - Created service instance: TronBlockchainService
+2025-03-19 10:41:29,497 - blockchain_service - INFO - Using build().sign() method for TransactionBuilder object
+2025-03-19 10:41:29,697 - blockchain_service - INFO - Transaction successfully broadcast with hash: 96c82fbf7ab4eb03f41f15242913723bcfb148e178ed324d7d973a1ffdab2965
+2025-03-19 10:41:29,748 - blockchain_service - WARNING - Could not get detailed transaction status: 

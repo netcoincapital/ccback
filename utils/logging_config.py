@@ -1,6 +1,20 @@
 import logging
 import os
+import sys
+from logging.handlers import RotatingFileHandler
 from datetime import datetime
+
+# تنظیم سطح لاگینگ اصلی
+DEFAULT_LOG_LEVEL = logging.DEBUG  # تغییر از INFO به DEBUG برای ثبت همه پیام‌ها
+
+# برای ذخیره لاگ‌ها در فایل
+LOG_DIR = 'logs'
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+# تنظیم فرمت لاگ
+LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 def get_log_directory():
     """
@@ -59,19 +73,86 @@ def setup_logger(name, level=logging.INFO):
     
     return logger
 
-def get_logger(module_path):
+def get_logger(name):
     """
-    Get a logger for a module based on its file path
+    ایجاد یک لاگر با تنظیمات پیشرفته
     
     Args:
-        module_path (str): Full path of the module
+        name: نام لاگر، معمولاً مسیر فایل (__file__)
         
     Returns:
-        logging.Logger: Configured logger instance
+        یک شیء لاگر نام‌گذاری شده
     """
-    # Extract module name without extension
-    module_name = os.path.basename(module_path)
-    if module_name.endswith('.py'):
-        module_name = module_name[:-3]  # Remove .py extension
+    # استخراج نام پایه فایل بدون مسیر کامل و پسوند
+    base_name = os.path.basename(name)
+    if base_name.endswith('.py'):
+        base_name = base_name[:-3]
+        
+    # ایجاد لاگر
+    logger = logging.getLogger(base_name)
     
-    return setup_logger(module_name, logging.DEBUG) 
+    # اگر از قبل تنظیم شده باشد، همان را برگردان
+    if logger.handlers:
+        return logger
+        
+    # تنظیم سطح لاگینگ
+    logger.setLevel(DEFAULT_LOG_LEVEL)
+    
+    # ایجاد هندلر کنسول
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(DEFAULT_LOG_LEVEL)
+    console_formatter = logging.Formatter(LOG_FORMAT, DATE_FORMAT)
+    console_handler.setFormatter(console_formatter)
+    logger.addHandler(console_handler)
+    
+    # ایجاد هندلر فایل
+    log_file = os.path.join(LOG_DIR, f"{base_name}.log")
+    file_handler = RotatingFileHandler(log_file, maxBytes=10*1024*1024, backupCount=5)  # 10MB
+    file_handler.setLevel(DEFAULT_LOG_LEVEL)
+    file_formatter = logging.Formatter(LOG_FORMAT, DATE_FORMAT)
+    file_handler.setFormatter(file_formatter)
+    logger.addHandler(file_handler)
+    
+    # اطمینان از عدم انتشار لاگ‌ها به لاگر والد
+    logger.propagate = False
+    
+    # اضافه کردن یک پیام تشخیصی
+    logger.debug(f"Logger initialized for {base_name} at level {logging.getLevelName(DEFAULT_LOG_LEVEL)}")
+    
+    return logger
+
+# تنظیم لاگر اصلی برای بخش‌هایی که از لاگر اختصاصی استفاده نمی‌کنند
+def setup_root_logger():
+    """تنظیم لاگر اصلی برای استفاده عمومی"""
+    root_logger = logging.getLogger()
+    root_logger.setLevel(DEFAULT_LOG_LEVEL)
+    
+    # پاک کردن هندلرهای موجود
+    if root_logger.handlers:
+        for handler in root_logger.handlers:
+            root_logger.removeHandler(handler)
+    
+    # تنظیم لاگ کنسول
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(DEFAULT_LOG_LEVEL)
+    console_formatter = logging.Formatter(LOG_FORMAT, DATE_FORMAT)
+    console_handler.setFormatter(console_formatter)
+    root_logger.addHandler(console_handler)
+    
+    # تنظیم لاگ فایل
+    log_file = os.path.join(LOG_DIR, "app.log")
+    file_handler = RotatingFileHandler(log_file, maxBytes=10*1024*1024, backupCount=5)  # 10MB
+    file_handler.setLevel(DEFAULT_LOG_LEVEL)
+    file_formatter = logging.Formatter(LOG_FORMAT, DATE_FORMAT)
+    file_handler.setFormatter(file_formatter)
+    root_logger.addHandler(file_handler)
+    
+    return root_logger
+
+# تنظیم لاگر اصلی در هنگام ورود ماژول
+setup_root_logger()
+
+# تنظیم کلیه لاگرهای کتابخانه‌های خارجی به سطح WARNING
+for log_name, log_obj in logging.Logger.manager.loggerDict.items():
+    if log_name != "root" and isinstance(log_obj, logging.Logger):
+        log_obj.setLevel(logging.WARNING) 

@@ -1,0 +1,36 @@
+2025-03-25 02:15:23,486 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-25 02:15:32,033 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-25 02:15:39,983 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX', 'TREAT']
+2025-03-25 02:15:39,998 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-25 02:15:40,220 - balance - INFO - User addresses by chain: {'ETH': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'TRX': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'TRON': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'BNB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BSC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BTC': 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 'MATIC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARBITRUM': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'XRP': 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 'SOL': '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 'AVAX': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'DOT': '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-25 02:15:40,221 - balance - INFO - User addresses by blockchain ID: {1: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 2: 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 3: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 4: 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 5: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 6: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 11: 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 12: '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 13: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 14: '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-25 02:15:40,222 - balance - INFO - Processing symbol: ETH
+2025-03-25 02:15:40,222 - balance - INFO - ETH is a main coin on network ETH
+2025-03-25 02:15:40,223 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-25 02:15:40,223 - balance - INFO - Calling Tatum API for ETH: /v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-25 02:15:40,555 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-25 02:15:40,557 - balance - INFO - Processing balance for ETH with type eth
+2025-03-25 02:15:40,557 - balance - INFO - ETH/EVM compatible raw balance: 0.0001
+2025-03-25 02:15:40,558 - balance - INFO - Final result dictionary for ETH: {'ETH': '0.0001'}
+2025-03-25 02:15:40,559 - balance - INFO - Processing symbol: TRX
+2025-03-25 02:15:40,560 - balance - INFO - TRX is a main coin on network TRON
+2025-03-25 02:15:40,561 - balance - INFO - Getting balance for TRON, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-25 02:15:40,562 - balance - INFO - Calling Tatum API for TRON: /v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-25 02:15:40,887 - balance - INFO - Raw API response for TRON: {'balance': 3900003, 'createTime': 1741976538000, 'trc10': [], 'trc20': [], 'freeNetLimit': 600, 'bandwidth': 600}
+2025-03-25 02:15:40,888 - balance - INFO - Processing balance for TRON with type tron
+2025-03-25 02:15:40,889 - balance - INFO - Found direct balance in TRON response: 3900003
+2025-03-25 02:15:40,889 - balance - INFO - TRON raw balance: 3900003
+2025-03-25 02:15:40,890 - balance - INFO - Found TRC20 tokens: []
+2025-03-25 02:15:40,890 - balance - INFO - Final result dictionary for TRON: {'TRX': 3900003}
+2025-03-25 02:15:40,891 - balance - INFO - Processing symbol: TREAT
+2025-03-25 02:15:40,892 - balance - INFO - Searching for token info: TREAT
+2025-03-25 02:15:40,893 - balance - INFO - Found token: TREAT, CurrencyName: Treat
+2025-03-25 02:15:40,893 - balance - INFO - Token TREAT - BlockchainID: 1, SmartContractAddress: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-25 02:15:40,894 - balance - INFO - Blockchain for token TREAT: ChainCode=ETH
+2025-03-25 02:15:40,894 - balance - INFO - Found wallet address by BlockchainID: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-25 02:15:40,895 - balance - INFO - Calling get_token_balance for TREAT with: chain_symbol=ETH, contract_address=0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b, address=0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-25 02:15:40,895 - balance - INFO - Getting token balance for ETH, symbol: TREAT, contract: 0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-25 02:15:40,895 - balance - INFO - Calling Tatum dedicated token API: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b
+2025-03-25 02:15:41,112 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0xfbd5fd3f85e9f4c5e8b40eec9f8b8ab1caaa146b"}
+2025-03-25 02:15:41,113 - balance - ERROR - No response from Tatum API for token TREAT on ETH
+2025-03-25 02:15:41,114 - balance - WARNING - Zero or empty balance returned for token TREAT

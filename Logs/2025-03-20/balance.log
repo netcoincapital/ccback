@@ -1,0 +1,16 @@
+2025-03-20 09:03:03,517 - balance - INFO - Initializing balance module
+2025-03-20 10:00:57,874 - balance - INFO - Initializing balance module
+2025-03-20 10:24:48,220 - balance - INFO - Initializing balance module
+2025-03-20 10:24:57,036 - balance - INFO - Initializing balance module
+2025-03-20 10:57:35,212 - balance - INFO - Starting wallet monitor service
+2025-03-20 10:57:35,212 - balance - INFO - Wallet monitor service started
+2025-03-20 10:57:35,225 - balance - INFO - Starting balance monitor service
+2025-03-20 10:57:35,225 - balance - INFO - Balance monitor service started
+2025-03-20 10:57:35,228 - balance - INFO - Initialized Web3 providers for 10 blockchains
+2025-03-20 10:57:35,252 - balance - INFO - Found 14 users to check balances
+2025-03-20 10:57:35,284 - balance - INFO - Found 1 wallets for user 0e827d03-6f6d-4838-b981-3bc041b100e3
+2025-03-20 10:57:35,289 - balance - INFO - Initialized Web3 providers for 10 blockchains
+2025-03-20 10:57:35,599 - balance - INFO - Found 8510 currencies and 10 blockchains
+2025-03-20 10:57:35,601 - balance - INFO - Found 8 addresses for wallet 8e8e89c4-524f-4e8c-85f3-c7965837af10
+2025-03-20 10:57:35,603 - balance - INFO - Processing Ethereum address: 0x1a8f6AcC4009E7485F6F46fcA79A4fD7B975691F
+2025-03-20 10:58:38,637 - balance - ERROR - Error getting token balance for 0x1a8f6AcC4009E7485F6F46fcA79A4fD7B975691F on Ethereum: ('execution reverted', 'no data')

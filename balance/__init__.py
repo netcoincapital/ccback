@@ -1,3 +1,3 @@
-from .balance import balance_bp, init_balance_service
+from .balance import balance_api
 
-__all__ = ['balance_bp', 'init_balance_service']
+__all__ = ['balance_api']

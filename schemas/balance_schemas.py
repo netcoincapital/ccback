@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Dict, Optional, Any
+from typing import Dict, Optional, Any, List
 
 class UserBalanceRequest(BaseModel):
     """Schema for user balance request"""
@@ -7,6 +7,16 @@ class UserBalanceRequest(BaseModel):
         ..., 
         description="Unique identifier for the user",
         example="123e4567-e89b-12d3-a456-426614174000"
+    )
+    CurrencyName: List[str] = Field(
+        ...,
+        description="List of currency names to fetch balances for",
+        example=["Bitcoin", "Ethereum"]
+    )
+    Blockchain: Optional[Dict[str, str]] = Field(
+        None,
+        description="Mapping of currency names to blockchain names",
+        example={"Shiba Inu": "Ethereum", "Netcoincapital": "Ethereum"}
     )
 
 class TokenBalanceItem(BaseModel):

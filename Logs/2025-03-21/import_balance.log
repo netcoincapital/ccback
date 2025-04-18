@@ -1,0 +1,396 @@
+2025-03-21 08:47:38,948 - import_balance - INFO - Initializing import_balance module
+2025-03-21 08:47:48,049 - import_balance - INFO - Initializing import_balance module
+2025-03-21 08:49:47,192 - import_balance - INFO - Received import-balance request with Content-Type: application/json
+2025-03-21 08:49:47,194 - import_balance - INFO - Raw request data: {
+    "UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d",
+}
+2025-03-21 08:49:47,195 - import_balance - ERROR - JSON parsing error: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 3 column 1 (char 58)
+2025-03-21 09:24:18,573 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:24:27,105 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:31:08,485 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:31:17,121 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:31:26,490 - import_balance - INFO - Received import-balance request with Content-Type: application/json
+2025-03-21 09:31:26,491 - import_balance - INFO - Raw request data: {
+    "UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d",
+}
+2025-03-21 09:31:26,492 - import_balance - ERROR - JSON parsing error: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 3 column 1 (char 58)
+2025-03-21 09:39:10,924 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:39:19,659 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:39:38,613 - import_balance - INFO - Received import-balance request with Content-Type: application/json
+2025-03-21 09:39:38,615 - import_balance - INFO - Raw request data: {
+    "UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d",
+}
+2025-03-21 09:39:38,615 - import_balance - ERROR - JSON parsing error: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 3 column 1 (char 58)
+2025-03-21 09:39:56,261 - import_balance - INFO - Received import-balance request with Content-Type: application/json
+2025-03-21 09:39:56,262 - import_balance - INFO - Raw request data: {
+    "UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d"
+}
+2025-03-21 09:39:56,262 - import_balance - INFO - Parsed request data: {'UserID': 'd7fd960c-0b3b-4f0c-8963-baa6b365953d'}
+2025-03-21 09:39:56,263 - import_balance - WARNING - Request missing user_id field
+2025-03-21 09:42:00,325 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:42:09,402 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:42:20,453 - import_balance - INFO - Received import-balance request with Content-Type: application/json
+2025-03-21 09:42:20,455 - import_balance - INFO - Raw request data: {
+    "UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d"
+}
+
+2025-03-21 09:42:20,456 - import_balance - INFO - Parsed request data: {'UserID': 'd7fd960c-0b3b-4f0c-8963-baa6b365953d'}
+2025-03-21 09:42:20,456 - import_balance - INFO - Processing import-balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:42:20,472 - import_balance - INFO - User found: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:42:20,474 - import_balance - INFO - Identifying supported blockchains for user: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:42:20,476 - import_balance - DEBUG - Executing query: SELECT `Address`.`AddressID` AS `Address_AddressID`, `Address`.`WalletID` AS `Address_WalletID`, `Address`.`BlockchainID` AS `Address_BlockchainID`, `Address`.`PublicAddress` AS `Address_PublicAddress`, `Address`.`PrivateKey` AS `Address_PrivateKey`, `Address`.`PhraseKey` AS `Address_PhraseKey`, `Address`.`CreatedAt` AS `Address_CreatedAt` 
+FROM `Address` INNER JOIN `Wallets` ON `Wallets`.`WalletID` = `Address`.`WalletID` 
+WHERE `Wallets`.`UserID` = %(UserID_1)s
+2025-03-21 09:42:20,480 - import_balance - INFO - Found 10 wallet addresses for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:42:20,484 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain ethereum
+2025-03-21 09:42:20,486 - import_balance - DEBUG - Processing address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx for blockchain tron
+2025-03-21 09:42:20,488 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain binance smart chain
+2025-03-21 09:42:20,490 - import_balance - DEBUG - Processing address bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm for blockchain bitcoin
+2025-03-21 09:42:20,492 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain polygon
+2025-03-21 09:42:20,494 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain arbitrum
+2025-03-21 09:42:20,498 - import_balance - DEBUG - Processing address rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u for blockchain xrp
+2025-03-21 09:42:20,500 - import_balance - DEBUG - Processing address 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D for blockchain solana
+2025-03-21 09:42:20,501 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain avalanche
+2025-03-21 09:42:20,503 - import_balance - DEBUG - Processing address 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv for blockchain polkadot
+2025-03-21 09:42:20,504 - import_balance - INFO - Identified 10 supported blockchains: ethereum, tron, binance smart chain, bitcoin, polygon, arbitrum, xrp, solana, avalanche, polkadot
+2025-03-21 09:42:20,505 - import_balance - INFO - Found 10 supported blockchains for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:42:20,505 - import_balance - INFO - Found blockchain ethereum with 1 addresses
+2025-03-21 09:42:20,506 - import_balance - INFO - Found blockchain tron with 1 addresses
+2025-03-21 09:42:20,506 - import_balance - INFO - Found blockchain binance smart chain with 1 addresses
+2025-03-21 09:42:20,506 - import_balance - INFO - Found blockchain bitcoin with 1 addresses
+2025-03-21 09:42:20,507 - import_balance - INFO - Found blockchain polygon with 1 addresses
+2025-03-21 09:42:20,507 - import_balance - INFO - Found blockchain arbitrum with 1 addresses
+2025-03-21 09:42:20,507 - import_balance - INFO - Found blockchain xrp with 1 addresses
+2025-03-21 09:42:20,507 - import_balance - INFO - Found blockchain solana with 1 addresses
+2025-03-21 09:42:20,508 - import_balance - INFO - Found blockchain avalanche with 1 addresses
+2025-03-21 09:42:20,508 - import_balance - INFO - Found blockchain polkadot with 1 addresses
+2025-03-21 09:42:20,508 - import_balance - INFO - Getting tokens for ethereum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:20,508 - import_balance - INFO - Getting tokens for blockchain: ethereum, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:20,509 - import_balance - DEBUG - Using chain info: {'moralis': 'eth', 'covalent': 1} for blockchain: ethereum
+2025-03-21 09:42:20,509 - import_balance - INFO - Trying Moralis API for ethereum
+2025-03-21 09:42:20,509 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain eth
+2025-03-21 09:42:20,509 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'eth'}
+2025-03-21 09:42:21,110 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:42:21,114 - import_balance - INFO - No tokens found via Moralis for ethereum
+2025-03-21 09:42:21,114 - import_balance - INFO - Trying Covalent API for ethereum
+2025-03-21 09:42:21,689 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:42:21,690 - import_balance - INFO - No tokens found via Covalent for ethereum
+2025-03-21 09:42:21,691 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for ethereum
+2025-03-21 09:42:21,691 - import_balance - INFO - Found 0 tokens for ethereum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:21,692 - import_balance - INFO - Getting tokens for tron address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:42:21,693 - import_balance - INFO - Getting tokens for blockchain: tron, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:42:21,693 - import_balance - INFO - Getting TRON tokens for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:42:22,412 - import_balance - INFO - Got 0 TRON tokens
+2025-03-21 09:42:22,413 - import_balance - INFO - Found 0 tokens for tron address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:42:22,413 - import_balance - INFO - Getting tokens for binance smart chain address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,414 - import_balance - INFO - Getting tokens for blockchain: binance smart chain, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,415 - import_balance - WARNING - Unsupported blockchain for token import: binance smart chain
+2025-03-21 09:42:22,415 - import_balance - INFO - Found 0 tokens for binance smart chain address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,416 - import_balance - INFO - Getting tokens for bitcoin address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:42:22,416 - import_balance - INFO - Getting tokens for blockchain: bitcoin, address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:42:22,417 - import_balance - WARNING - Unsupported blockchain for token import: bitcoin
+2025-03-21 09:42:22,417 - import_balance - INFO - Found 0 tokens for bitcoin address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:42:22,418 - import_balance - INFO - Getting tokens for polygon address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,418 - import_balance - INFO - Getting tokens for blockchain: polygon, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,418 - import_balance - DEBUG - Using chain info: {'moralis': 'polygon', 'covalent': 137} for blockchain: polygon
+2025-03-21 09:42:22,418 - import_balance - INFO - Trying Moralis API for polygon
+2025-03-21 09:42:22,418 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain polygon
+2025-03-21 09:42:22,418 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'polygon'}
+2025-03-21 09:42:22,583 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:42:22,585 - import_balance - INFO - No tokens found via Moralis for polygon
+2025-03-21 09:42:22,585 - import_balance - INFO - Trying Covalent API for polygon
+2025-03-21 09:42:22,820 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:42:22,822 - import_balance - INFO - No tokens found via Covalent for polygon
+2025-03-21 09:42:22,822 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for polygon
+2025-03-21 09:42:22,822 - import_balance - INFO - Found 0 tokens for polygon address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,824 - import_balance - INFO - Getting tokens for arbitrum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,824 - import_balance - INFO - Getting tokens for blockchain: arbitrum, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,825 - import_balance - WARNING - Unsupported blockchain for token import: arbitrum
+2025-03-21 09:42:22,825 - import_balance - INFO - Found 0 tokens for arbitrum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,826 - import_balance - INFO - Getting tokens for xrp address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:42:22,826 - import_balance - INFO - Getting tokens for blockchain: xrp, address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:42:22,826 - import_balance - WARNING - Unsupported blockchain for token import: xrp
+2025-03-21 09:42:22,827 - import_balance - INFO - Found 0 tokens for xrp address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:42:22,828 - import_balance - INFO - Getting tokens for solana address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:42:22,828 - import_balance - INFO - Getting tokens for blockchain: solana, address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:42:22,828 - import_balance - WARNING - Unsupported blockchain for token import: solana
+2025-03-21 09:42:22,829 - import_balance - INFO - Found 0 tokens for solana address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:42:22,829 - import_balance - INFO - Getting tokens for avalanche address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,829 - import_balance - INFO - Getting tokens for blockchain: avalanche, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:22,830 - import_balance - DEBUG - Using chain info: {'moralis': 'avalanche', 'covalent': 43114} for blockchain: avalanche
+2025-03-21 09:42:22,830 - import_balance - INFO - Trying Moralis API for avalanche
+2025-03-21 09:42:22,830 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain avalanche
+2025-03-21 09:42:22,831 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'avalanche'}
+2025-03-21 09:42:22,997 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:42:22,998 - import_balance - INFO - No tokens found via Moralis for avalanche
+2025-03-21 09:42:22,999 - import_balance - INFO - Trying Covalent API for avalanche
+2025-03-21 09:42:23,211 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:42:23,212 - import_balance - INFO - No tokens found via Covalent for avalanche
+2025-03-21 09:42:23,212 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for avalanche
+2025-03-21 09:42:23,213 - import_balance - INFO - Found 0 tokens for avalanche address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:42:23,213 - import_balance - INFO - Getting tokens for polkadot address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:42:23,214 - import_balance - INFO - Getting tokens for blockchain: polkadot, address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:42:23,214 - import_balance - WARNING - Unsupported blockchain for token import: polkadot
+2025-03-21 09:42:23,215 - import_balance - INFO - Found 0 tokens for polkadot address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:42:23,215 - import_balance - INFO - Total tokens found: 0
+2025-03-21 09:47:32,089 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:47:40,901 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:47:52,324 - import_balance - INFO - Received import-balance request with Content-Type: application/json
+2025-03-21 09:47:52,326 - import_balance - INFO - Raw request data: {
+    "UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d"
+}
+
+2025-03-21 09:47:52,327 - import_balance - INFO - Request is JSON format
+2025-03-21 09:47:52,327 - import_balance - INFO - Parsed request data: {'UserID': 'd7fd960c-0b3b-4f0c-8963-baa6b365953d'}
+2025-03-21 09:47:52,328 - import_balance - INFO - Found UserID in request: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:47:52,328 - import_balance - INFO - Processing import-balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:47:52,344 - import_balance - INFO - User found: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:47:52,345 - import_balance - INFO - Identifying supported blockchains for user: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:47:52,348 - import_balance - DEBUG - Executing query: SELECT `Address`.`AddressID` AS `Address_AddressID`, `Address`.`WalletID` AS `Address_WalletID`, `Address`.`BlockchainID` AS `Address_BlockchainID`, `Address`.`PublicAddress` AS `Address_PublicAddress`, `Address`.`PrivateKey` AS `Address_PrivateKey`, `Address`.`PhraseKey` AS `Address_PhraseKey`, `Address`.`CreatedAt` AS `Address_CreatedAt` 
+FROM `Address` INNER JOIN `Wallets` ON `Wallets`.`WalletID` = `Address`.`WalletID` 
+WHERE `Wallets`.`UserID` = %(UserID_1)s
+2025-03-21 09:47:52,351 - import_balance - INFO - Found 10 wallet addresses for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:47:52,353 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain ethereum
+2025-03-21 09:47:52,354 - import_balance - DEBUG - Processing address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx for blockchain tron
+2025-03-21 09:47:52,355 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain binance smart chain
+2025-03-21 09:47:52,357 - import_balance - DEBUG - Processing address bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm for blockchain bitcoin
+2025-03-21 09:47:52,359 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain polygon
+2025-03-21 09:47:52,361 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain arbitrum
+2025-03-21 09:47:52,362 - import_balance - DEBUG - Processing address rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u for blockchain xrp
+2025-03-21 09:47:52,364 - import_balance - DEBUG - Processing address 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D for blockchain solana
+2025-03-21 09:47:52,365 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain avalanche
+2025-03-21 09:47:52,367 - import_balance - DEBUG - Processing address 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv for blockchain polkadot
+2025-03-21 09:47:52,368 - import_balance - INFO - Identified 10 supported blockchains: ethereum, tron, binance smart chain, bitcoin, polygon, arbitrum, xrp, solana, avalanche, polkadot
+2025-03-21 09:47:52,369 - import_balance - INFO - Found 10 supported blockchains for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:47:52,369 - import_balance - INFO - Found blockchain ethereum with 1 addresses
+2025-03-21 09:47:52,369 - import_balance - INFO - Found blockchain tron with 1 addresses
+2025-03-21 09:47:52,370 - import_balance - INFO - Found blockchain binance smart chain with 1 addresses
+2025-03-21 09:47:52,370 - import_balance - INFO - Found blockchain bitcoin with 1 addresses
+2025-03-21 09:47:52,370 - import_balance - INFO - Found blockchain polygon with 1 addresses
+2025-03-21 09:47:52,370 - import_balance - INFO - Found blockchain arbitrum with 1 addresses
+2025-03-21 09:47:52,370 - import_balance - INFO - Found blockchain xrp with 1 addresses
+2025-03-21 09:47:52,371 - import_balance - INFO - Found blockchain solana with 1 addresses
+2025-03-21 09:47:52,371 - import_balance - INFO - Found blockchain avalanche with 1 addresses
+2025-03-21 09:47:52,371 - import_balance - INFO - Found blockchain polkadot with 1 addresses
+2025-03-21 09:47:52,371 - import_balance - INFO - Getting tokens for ethereum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:52,372 - import_balance - INFO - Getting tokens for blockchain: ethereum, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:52,372 - import_balance - DEBUG - Using chain info: {'moralis': 'eth', 'covalent': 1} for blockchain: ethereum
+2025-03-21 09:47:52,372 - import_balance - INFO - Trying Moralis API for ethereum
+2025-03-21 09:47:52,372 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain eth
+2025-03-21 09:47:52,372 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'eth'}
+2025-03-21 09:47:52,956 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:47:52,957 - import_balance - INFO - No tokens found via Moralis for ethereum
+2025-03-21 09:47:52,957 - import_balance - INFO - Trying Covalent API for ethereum
+2025-03-21 09:47:53,528 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:47:53,529 - import_balance - INFO - No tokens found via Covalent for ethereum
+2025-03-21 09:47:53,530 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for ethereum
+2025-03-21 09:47:53,530 - import_balance - INFO - Found 0 tokens for ethereum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:53,531 - import_balance - INFO - Getting tokens for tron address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:47:53,531 - import_balance - INFO - Getting tokens for blockchain: tron, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:47:53,532 - import_balance - INFO - Getting TRON tokens for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:47:54,167 - import_balance - INFO - Got 0 TRON tokens
+2025-03-21 09:47:54,168 - import_balance - INFO - Found 0 tokens for tron address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:47:54,169 - import_balance - INFO - Getting tokens for binance smart chain address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,170 - import_balance - INFO - Getting tokens for blockchain: binance smart chain, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,171 - import_balance - WARNING - Unsupported blockchain for token import: binance smart chain
+2025-03-21 09:47:54,171 - import_balance - INFO - Found 0 tokens for binance smart chain address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,172 - import_balance - INFO - Getting tokens for bitcoin address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:47:54,173 - import_balance - INFO - Getting tokens for blockchain: bitcoin, address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:47:54,173 - import_balance - WARNING - Unsupported blockchain for token import: bitcoin
+2025-03-21 09:47:54,173 - import_balance - INFO - Found 0 tokens for bitcoin address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:47:54,174 - import_balance - INFO - Getting tokens for polygon address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,174 - import_balance - INFO - Getting tokens for blockchain: polygon, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,174 - import_balance - DEBUG - Using chain info: {'moralis': 'polygon', 'covalent': 137} for blockchain: polygon
+2025-03-21 09:47:54,175 - import_balance - INFO - Trying Moralis API for polygon
+2025-03-21 09:47:54,175 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain polygon
+2025-03-21 09:47:54,175 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'polygon'}
+2025-03-21 09:47:54,337 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:47:54,339 - import_balance - INFO - No tokens found via Moralis for polygon
+2025-03-21 09:47:54,340 - import_balance - INFO - Trying Covalent API for polygon
+2025-03-21 09:47:54,848 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:47:54,849 - import_balance - INFO - No tokens found via Covalent for polygon
+2025-03-21 09:47:54,850 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for polygon
+2025-03-21 09:47:54,850 - import_balance - INFO - Found 0 tokens for polygon address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,851 - import_balance - INFO - Getting tokens for arbitrum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,852 - import_balance - INFO - Getting tokens for blockchain: arbitrum, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,852 - import_balance - WARNING - Unsupported blockchain for token import: arbitrum
+2025-03-21 09:47:54,853 - import_balance - INFO - Found 0 tokens for arbitrum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,853 - import_balance - INFO - Getting tokens for xrp address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:47:54,853 - import_balance - INFO - Getting tokens for blockchain: xrp, address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:47:54,854 - import_balance - WARNING - Unsupported blockchain for token import: xrp
+2025-03-21 09:47:54,854 - import_balance - INFO - Found 0 tokens for xrp address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:47:54,854 - import_balance - INFO - Getting tokens for solana address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:47:54,855 - import_balance - INFO - Getting tokens for blockchain: solana, address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:47:54,855 - import_balance - WARNING - Unsupported blockchain for token import: solana
+2025-03-21 09:47:54,855 - import_balance - INFO - Found 0 tokens for solana address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:47:54,855 - import_balance - INFO - Getting tokens for avalanche address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,856 - import_balance - INFO - Getting tokens for blockchain: avalanche, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:54,856 - import_balance - DEBUG - Using chain info: {'moralis': 'avalanche', 'covalent': 43114} for blockchain: avalanche
+2025-03-21 09:47:54,856 - import_balance - INFO - Trying Moralis API for avalanche
+2025-03-21 09:47:54,856 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain avalanche
+2025-03-21 09:47:54,857 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'avalanche'}
+2025-03-21 09:47:55,011 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:47:55,012 - import_balance - INFO - No tokens found via Moralis for avalanche
+2025-03-21 09:47:55,013 - import_balance - INFO - Trying Covalent API for avalanche
+2025-03-21 09:47:55,516 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:47:55,517 - import_balance - INFO - No tokens found via Covalent for avalanche
+2025-03-21 09:47:55,518 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for avalanche
+2025-03-21 09:47:55,519 - import_balance - INFO - Found 0 tokens for avalanche address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:47:55,520 - import_balance - INFO - Getting tokens for polkadot address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:47:55,521 - import_balance - INFO - Getting tokens for blockchain: polkadot, address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:47:55,521 - import_balance - WARNING - Unsupported blockchain for token import: polkadot
+2025-03-21 09:47:55,522 - import_balance - INFO - Found 0 tokens for polkadot address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:47:55,522 - import_balance - INFO - Total tokens found: 0
+2025-03-21 09:49:26,310 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:49:32,428 - import_balance - INFO - Received import-balance request with Content-Type: application/json
+2025-03-21 09:49:32,432 - import_balance - INFO - Raw request data: {
+    "UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d"
+}
+
+2025-03-21 09:49:32,433 - import_balance - INFO - Request is JSON format
+2025-03-21 09:49:32,434 - import_balance - INFO - Parsed request data: {'UserID': 'd7fd960c-0b3b-4f0c-8963-baa6b365953d'}
+2025-03-21 09:49:32,434 - import_balance - INFO - Found UserID in request: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:49:32,435 - import_balance - INFO - Processing import-balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:49:32,455 - import_balance - INFO - User found: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:49:32,456 - import_balance - INFO - Identifying supported blockchains for user: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:49:32,458 - import_balance - DEBUG - Executing query: SELECT `Address`.`AddressID` AS `Address_AddressID`, `Address`.`WalletID` AS `Address_WalletID`, `Address`.`BlockchainID` AS `Address_BlockchainID`, `Address`.`PublicAddress` AS `Address_PublicAddress`, `Address`.`PrivateKey` AS `Address_PrivateKey`, `Address`.`PhraseKey` AS `Address_PhraseKey`, `Address`.`CreatedAt` AS `Address_CreatedAt` 
+FROM `Address` INNER JOIN `Wallets` ON `Wallets`.`WalletID` = `Address`.`WalletID` 
+WHERE `Wallets`.`UserID` = %(UserID_1)s
+2025-03-21 09:49:32,461 - import_balance - INFO - Found 10 wallet addresses for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:49:32,465 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain ethereum
+2025-03-21 09:49:32,467 - import_balance - DEBUG - Processing address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx for blockchain tron
+2025-03-21 09:49:32,469 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain binance smart chain
+2025-03-21 09:49:32,471 - import_balance - DEBUG - Processing address bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm for blockchain bitcoin
+2025-03-21 09:49:32,473 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain polygon
+2025-03-21 09:49:32,474 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain arbitrum
+2025-03-21 09:49:32,476 - import_balance - DEBUG - Processing address rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u for blockchain xrp
+2025-03-21 09:49:32,477 - import_balance - DEBUG - Processing address 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D for blockchain solana
+2025-03-21 09:49:32,478 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain avalanche
+2025-03-21 09:49:32,480 - import_balance - DEBUG - Processing address 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv for blockchain polkadot
+2025-03-21 09:49:32,481 - import_balance - INFO - Identified 10 supported blockchains: ethereum, tron, binance smart chain, bitcoin, polygon, arbitrum, xrp, solana, avalanche, polkadot
+2025-03-21 09:49:32,482 - import_balance - INFO - Found 10 supported blockchains for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:49:32,483 - import_balance - INFO - Found blockchain ethereum with 1 addresses
+2025-03-21 09:49:32,484 - import_balance - INFO - Found blockchain tron with 1 addresses
+2025-03-21 09:49:32,484 - import_balance - INFO - Found blockchain binance smart chain with 1 addresses
+2025-03-21 09:49:32,485 - import_balance - INFO - Found blockchain bitcoin with 1 addresses
+2025-03-21 09:49:32,485 - import_balance - INFO - Found blockchain polygon with 1 addresses
+2025-03-21 09:49:32,485 - import_balance - INFO - Found blockchain arbitrum with 1 addresses
+2025-03-21 09:49:32,486 - import_balance - INFO - Found blockchain xrp with 1 addresses
+2025-03-21 09:49:32,486 - import_balance - INFO - Found blockchain solana with 1 addresses
+2025-03-21 09:49:32,486 - import_balance - INFO - Found blockchain avalanche with 1 addresses
+2025-03-21 09:49:32,486 - import_balance - INFO - Found blockchain polkadot with 1 addresses
+2025-03-21 09:49:32,487 - import_balance - INFO - Getting tokens for ethereum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:49:32,487 - import_balance - INFO - Getting tokens for blockchain: ethereum, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:49:32,487 - import_balance - DEBUG - Using chain info: {'moralis': 'eth', 'covalent': 1} for blockchain: ethereum
+2025-03-21 09:49:32,488 - import_balance - INFO - Trying Moralis API for ethereum
+2025-03-21 09:49:32,488 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain eth
+2025-03-21 09:49:32,488 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'eth'}
+2025-03-21 09:49:37,377 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:50:46,877 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:50:55,393 - import_balance - INFO - Initializing import_balance module
+2025-03-21 09:51:02,995 - import_balance - INFO - Received import-balance request with Content-Type: application/json
+2025-03-21 09:51:02,997 - import_balance - INFO - Raw request data: {
+    "UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d"
+}
+
+2025-03-21 09:51:02,997 - import_balance - INFO - Request is JSON format
+2025-03-21 09:51:02,998 - import_balance - INFO - Parsed request data: {'UserID': 'd7fd960c-0b3b-4f0c-8963-baa6b365953d'}
+2025-03-21 09:51:02,998 - import_balance - INFO - Found UserID in request: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:51:02,998 - import_balance - INFO - Processing import-balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:51:03,011 - import_balance - INFO - User found: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:51:03,012 - import_balance - INFO - Identifying supported blockchains for user: d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:51:03,014 - import_balance - DEBUG - Executing query: SELECT `Address`.`AddressID` AS `Address_AddressID`, `Address`.`WalletID` AS `Address_WalletID`, `Address`.`BlockchainID` AS `Address_BlockchainID`, `Address`.`PublicAddress` AS `Address_PublicAddress`, `Address`.`PrivateKey` AS `Address_PrivateKey`, `Address`.`PhraseKey` AS `Address_PhraseKey`, `Address`.`CreatedAt` AS `Address_CreatedAt` 
+FROM `Address` INNER JOIN `Wallets` ON `Wallets`.`WalletID` = `Address`.`WalletID` 
+WHERE `Wallets`.`UserID` = %(UserID_1)s
+2025-03-21 09:51:03,016 - import_balance - INFO - Found 10 wallet addresses for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:51:03,019 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain ethereum
+2025-03-21 09:51:03,020 - import_balance - DEBUG - Processing address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx for blockchain tron
+2025-03-21 09:51:03,022 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain binance smart chain
+2025-03-21 09:51:03,024 - import_balance - DEBUG - Processing address bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm for blockchain bitcoin
+2025-03-21 09:51:03,026 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain polygon
+2025-03-21 09:51:03,028 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain arbitrum
+2025-03-21 09:51:03,029 - import_balance - DEBUG - Processing address rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u for blockchain xrp
+2025-03-21 09:51:03,031 - import_balance - DEBUG - Processing address 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D for blockchain solana
+2025-03-21 09:51:03,033 - import_balance - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A for blockchain avalanche
+2025-03-21 09:51:03,034 - import_balance - DEBUG - Processing address 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv for blockchain polkadot
+2025-03-21 09:51:03,034 - import_balance - INFO - Identified 10 supported blockchains: ethereum, tron, binance smart chain, bitcoin, polygon, arbitrum, xrp, solana, avalanche, polkadot
+2025-03-21 09:51:03,035 - import_balance - INFO - Found 10 supported blockchains for user d7fd960c-0b3b-4f0c-8963-baa6b365953d
+2025-03-21 09:51:03,035 - import_balance - INFO - Found blockchain ethereum with 1 addresses
+2025-03-21 09:51:03,035 - import_balance - INFO - Found blockchain tron with 1 addresses
+2025-03-21 09:51:03,035 - import_balance - INFO - Found blockchain binance smart chain with 1 addresses
+2025-03-21 09:51:03,035 - import_balance - INFO - Found blockchain bitcoin with 1 addresses
+2025-03-21 09:51:03,036 - import_balance - INFO - Found blockchain polygon with 1 addresses
+2025-03-21 09:51:03,036 - import_balance - INFO - Found blockchain arbitrum with 1 addresses
+2025-03-21 09:51:03,036 - import_balance - INFO - Found blockchain xrp with 1 addresses
+2025-03-21 09:51:03,036 - import_balance - INFO - Found blockchain solana with 1 addresses
+2025-03-21 09:51:03,037 - import_balance - INFO - Found blockchain avalanche with 1 addresses
+2025-03-21 09:51:03,037 - import_balance - INFO - Found blockchain polkadot with 1 addresses
+2025-03-21 09:51:03,037 - import_balance - INFO - Getting tokens for ethereum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:03,037 - import_balance - INFO - Getting tokens for blockchain: ethereum, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:03,038 - import_balance - DEBUG - Using chain info: {'moralis': 'eth', 'covalent': 1} for blockchain: ethereum
+2025-03-21 09:51:03,038 - import_balance - INFO - Trying Moralis API for ethereum
+2025-03-21 09:51:03,038 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain eth
+2025-03-21 09:51:03,039 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'eth'}
+2025-03-21 09:51:03,508 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:51:03,510 - import_balance - INFO - No tokens found via Moralis for ethereum
+2025-03-21 09:51:03,511 - import_balance - INFO - Trying Covalent API for ethereum
+2025-03-21 09:51:04,002 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:51:04,003 - import_balance - INFO - No tokens found via Covalent for ethereum
+2025-03-21 09:51:04,004 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for ethereum
+2025-03-21 09:51:04,004 - import_balance - INFO - Found 0 tokens for ethereum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:04,005 - import_balance - INFO - Getting tokens for tron address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:51:04,005 - import_balance - INFO - Getting tokens for blockchain: tron, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:51:04,006 - import_balance - INFO - Getting TRON tokens for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:51:04,624 - import_balance - INFO - Got 0 TRON tokens
+2025-03-21 09:51:04,625 - import_balance - INFO - Found 0 tokens for tron address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-21 09:51:04,625 - import_balance - INFO - Getting tokens for binance smart chain address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:04,626 - import_balance - INFO - Getting tokens for blockchain: binance smart chain, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:04,627 - import_balance - WARNING - Unsupported blockchain for token import: binance smart chain
+2025-03-21 09:51:04,628 - import_balance - INFO - Found 0 tokens for binance smart chain address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:04,628 - import_balance - INFO - Getting tokens for bitcoin address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:51:04,629 - import_balance - INFO - Getting tokens for blockchain: bitcoin, address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:51:04,630 - import_balance - WARNING - Unsupported blockchain for token import: bitcoin
+2025-03-21 09:51:04,630 - import_balance - INFO - Found 0 tokens for bitcoin address: bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm
+2025-03-21 09:51:04,630 - import_balance - INFO - Getting tokens for polygon address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:04,630 - import_balance - INFO - Getting tokens for blockchain: polygon, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:04,631 - import_balance - DEBUG - Using chain info: {'moralis': 'polygon', 'covalent': 137} for blockchain: polygon
+2025-03-21 09:51:04,631 - import_balance - INFO - Trying Moralis API for polygon
+2025-03-21 09:51:04,631 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain polygon
+2025-03-21 09:51:04,631 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'polygon'}
+2025-03-21 09:51:04,822 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:51:04,823 - import_balance - INFO - No tokens found via Moralis for polygon
+2025-03-21 09:51:04,824 - import_balance - INFO - Trying Covalent API for polygon
+2025-03-21 09:51:05,341 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:51:05,342 - import_balance - INFO - No tokens found via Covalent for polygon
+2025-03-21 09:51:05,343 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for polygon
+2025-03-21 09:51:05,344 - import_balance - INFO - Found 0 tokens for polygon address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:05,344 - import_balance - INFO - Getting tokens for arbitrum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:05,345 - import_balance - INFO - Getting tokens for blockchain: arbitrum, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:05,345 - import_balance - WARNING - Unsupported blockchain for token import: arbitrum
+2025-03-21 09:51:05,345 - import_balance - INFO - Found 0 tokens for arbitrum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:05,346 - import_balance - INFO - Getting tokens for xrp address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:51:05,346 - import_balance - INFO - Getting tokens for blockchain: xrp, address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:51:05,347 - import_balance - WARNING - Unsupported blockchain for token import: xrp
+2025-03-21 09:51:05,347 - import_balance - INFO - Found 0 tokens for xrp address: rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u
+2025-03-21 09:51:05,347 - import_balance - INFO - Getting tokens for solana address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:51:05,347 - import_balance - INFO - Getting tokens for blockchain: solana, address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:51:05,348 - import_balance - WARNING - Unsupported blockchain for token import: solana
+2025-03-21 09:51:05,348 - import_balance - INFO - Found 0 tokens for solana address: 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D
+2025-03-21 09:51:05,348 - import_balance - INFO - Getting tokens for avalanche address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:05,348 - import_balance - INFO - Getting tokens for blockchain: avalanche, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:05,348 - import_balance - DEBUG - Using chain info: {'moralis': 'avalanche', 'covalent': 43114} for blockchain: avalanche
+2025-03-21 09:51:05,349 - import_balance - INFO - Trying Moralis API for avalanche
+2025-03-21 09:51:05,349 - import_balance - INFO - Getting tokens from Moralis for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on chain avalanche
+2025-03-21 09:51:05,349 - import_balance - DEBUG - Making Moralis API request to https://deep-index.moralis.io/api/v2/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/erc20 with params {'chain': 'avalanche'}
+2025-03-21 09:51:05,555 - import_balance - ERROR - Moralis API error: 401, {"message":"select \"s0\".* from \"secrets\" as \"s0\" where \"s0\".\"nonce\" = '1234567890' and \"s0\".\"status\" is not null limit 1 - invalid input syntax for type uuid: \"1234567890\""}
+2025-03-21 09:51:05,556 - import_balance - INFO - No tokens found via Moralis for avalanche
+2025-03-21 09:51:05,557 - import_balance - INFO - Trying Covalent API for avalanche
+2025-03-21 09:51:06,054 - import_balance - ERROR - Covalent API error: Unable to authenticate request.
+2025-03-21 09:51:06,056 - import_balance - INFO - No tokens found via Covalent for avalanche
+2025-03-21 09:51:06,057 - import_balance - WARNING - Failed to get tokens from both Moralis and Covalent for avalanche
+2025-03-21 09:51:06,058 - import_balance - INFO - Found 0 tokens for avalanche address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-21 09:51:06,059 - import_balance - INFO - Getting tokens for polkadot address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:51:06,059 - import_balance - INFO - Getting tokens for blockchain: polkadot, address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:51:06,060 - import_balance - WARNING - Unsupported blockchain for token import: polkadot
+2025-03-21 09:51:06,060 - import_balance - INFO - Found 0 tokens for polkadot address: 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv
+2025-03-21 09:51:06,061 - import_balance - INFO - Total tokens found: 0

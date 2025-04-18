@@ -8,6 +8,7 @@ from database.Address import Address
 from database.Blockchains import Blockchains
 from security.validators import InputValidator, SecurityUtils, ValidationError
 from services.transaction_service import TransactionService
+from services.transfer_service import TransferService
 from utils.error_handlers import handle_api_errors
 from utils.logging_config import get_logger
 from schemas import (
@@ -26,43 +27,42 @@ receive_bp = Blueprint('receive', __name__)
 def get_user_address(session, user_id, blockchain_symbol):
     """Get user's public address from database"""
     try:
-        # First, find the wallet associated with the user
+        # Find the blockchain ID
+        blockchain = session.query(Blockchains).filter(
+            Blockchains.ChainCode.ilike(blockchain_symbol)
+        ).first()
+        
+        if not blockchain:
+            logger.warning(f"Blockchain not found for symbol: {blockchain_symbol}")
+            return None
+            
+        # Find the user's wallet
         wallet = session.query(Wallets).filter(
             Wallets.UserID == user_id
         ).first()
         
         if not wallet:
-            logger.warning(f"No wallet found for user: {user_id}")
-            raise ValidationError("No wallet found for this user")
-
-        # Debug: List all available blockchains
-        available_blockchains = session.query(Blockchains).all()
-        logger.debug(f"Available blockchain symbols: {[chain.Symbol for chain in available_blockchains]}")
-
-        # Get blockchain ID from blockchain symbol
-        blockchain = session.query(Blockchains).filter(
-            Blockchains.Symbol == blockchain_symbol
+            logger.warning(f"Wallet not found for user: {user_id}")
+            return None
+            
+        # Find the user's address for this blockchain
+        address = session.query(Address).filter(
+            and_(
+                Address.WalletID == wallet.WalletID,
+                Address.BlockchainID == blockchain.BlockchainID
+            )
         ).first()
         
-        if not blockchain:
-            logger.warning(f"Invalid blockchain symbol: {blockchain_symbol}. Available symbols are: {[chain.Symbol for chain in available_blockchains]}")
-            raise ValidationError(f"Invalid blockchain symbol. Available symbols are: {[chain.Symbol for chain in available_blockchains]}")
-
-        # Get the address for this wallet and blockchain
-        address = session.query(Address).filter(and_(
-            Address.WalletID == wallet.WalletID,
-            Address.BlockchainID == blockchain.BlockchainID
-        )).first()
-        
         if not address:
-            logger.warning(f"No address found for wallet {wallet.WalletID} on blockchain {blockchain_symbol}")
-            raise ValidationError(f"No address found for {blockchain_symbol}")
-
+            logger.warning(f"Address not found for user: {user_id} on blockchain: {blockchain_symbol}")
+            return None
+            
+        # Return the public address
         return address.PublicAddress
-
+        
     except Exception as e:
-        logger.error(f"Error getting address from database: {str(e)}")
-        raise
+        logger.error(f"Error in get_user_address: {str(e)}")
+        return None
 
 @receive_bp.route('/Recive', methods=['POST'])
 @SecurityUtils.rate_limit(requests=50, window=60)
@@ -135,6 +135,143 @@ def receive_transaction():
         }), 400
     except Exception as e:
         logger.error(f"Error in receive_transaction: {str(e)}", exc_info=True)
+        return jsonify({
+            'message': f"An unexpected error occurred: {str(e)}",
+            'success': False
+        }), 500
+    finally:
+        session.close()
+
+@receive_bp.route('/record-deposit', methods=['POST'])
+@SecurityUtils.rate_limit(requests=20, window=60)
+@handle_api_errors
+def record_deposit():
+    """
+    Record an incoming deposit/transfer
+    ---
+    tags:
+      - Transactions
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - TxHash
+              - BlockchainName
+              - RecipientAddress
+              - SenderAddress
+              - Amount
+              - TokenSymbol
+            properties:
+              TxHash:
+                type: string
+                description: Transaction hash
+              BlockchainName:
+                type: string
+                description: Blockchain name
+              RecipientAddress:
+                type: string
+                description: Recipient address
+              SenderAddress:
+                type: string
+                description: Sender address
+              Amount:
+                type: string
+                description: Amount received
+              TokenSymbol:
+                type: string
+                description: Token symbol
+              AssetType:
+                type: string
+                enum: [native, token]
+                default: native
+                description: Asset type (native or token)
+              TokenContract:
+                type: string
+                description: Token contract address (for tokens)
+              ExplorerUrl:
+                type: string
+                description: URL to view transaction on blockchain explorer
+    responses:
+      201:
+        description: Deposit recorded successfully
+      400:
+        description: Invalid input data
+      500:
+        description: Server error
+    """
+    session = SessionLocal()
+    try:
+        data = request.get_json()
+        if not data:
+            logger.warning("Invalid request data in record_deposit")
+            raise ValidationError("Invalid request data")
+
+        # Validate required fields
+        tx_hash = InputValidator.validate_string(
+            data.get('TxHash', ''),
+            "TxHash"
+        )
+        blockchain_name = InputValidator.validate_string(
+            data.get('BlockchainName', ''),
+            "BlockchainName"
+        )
+        recipient_address = InputValidator.validate_string(
+            data.get('RecipientAddress', ''),
+            "RecipientAddress"
+        )
+        sender_address = InputValidator.validate_string(
+            data.get('SenderAddress', ''),
+            "SenderAddress"
+        )
+        amount = InputValidator.validate_string(
+            data.get('Amount', ''),
+            "Amount"
+        )
+        token_symbol = InputValidator.validate_string(
+            data.get('TokenSymbol', ''),
+            "TokenSymbol"
+        )
+        
+        # Optional fields
+        asset_type = data.get('AssetType', 'native')
+        token_contract = data.get('TokenContract')
+        explorer_url = data.get('ExplorerUrl')
+        
+        # Create transfer service
+        transfer_service = TransferService(session)
+        
+        # Record the incoming transaction
+        transfer = transfer_service.record_incoming_transaction(
+            tx_hash=tx_hash,
+            blockchain_name=blockchain_name,
+            recipient_address=recipient_address,
+            sender_address=sender_address,
+            amount=amount,
+            token_symbol=token_symbol,
+            asset_type=asset_type,
+            token_contract=token_contract,
+            explorer_url=explorer_url
+        )
+        
+        logger.info(f"Successfully recorded incoming transaction with ID: {transfer.TransferID}")
+        
+        return jsonify({
+            'TransferID': transfer.TransferID,
+            'success': True,
+            'message': 'Deposit recorded successfully'
+        }), 201
+        
+    except ValidationError as e:
+        logger.warning(f"Validation error in record_deposit: {str(e)}")
+        return jsonify({
+            'message': str(e),
+            'success': False
+        }), 400
+    except Exception as e:
+        logger.error(f"Error in record_deposit: {str(e)}", exc_info=True)
         return jsonify({
             'message': f"An unexpected error occurred: {str(e)}",
             'success': False

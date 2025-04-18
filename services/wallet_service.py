@@ -2,8 +2,23 @@ from typing import Tuple, Dict, List, Any
 from datetime import datetime
 import uuid
 import logging
+import os
+import json
 from sqlalchemy.orm import Session
 from bip_utils import Bip39MnemonicGenerator, Bip39WordsNum, Bip39MnemonicValidator
+from uuid import uuid4
+from sqlalchemy import func
+from errors.common_errors import ResourceAlreadyExists
+from services.blockchain_service import BlockchainService
+from services.hd_wallet_service import HDWalletService
+from dotenv import load_dotenv
+from webhook.tatum_subscription import register_new_addresses_for_webhook
+
+# Setup logging
+logger = logging.getLogger(__name__)
+
+# Load environment variables
+load_dotenv()
 
 from database.users import Users
 from database.wallets import Wallets
@@ -20,6 +35,10 @@ class WalletService:
         self.session = session
         self.signer = TransactionSignerService()
         self.contract = SmartContractService()
+        self.blockchain_service = BlockchainService(session=self.session)
+        
+        # Get supported blockchains
+        self.supported_blockchains = self.blockchain_service.get_supported_blockchains()
 
     def create_wallet(self, wallet_name: str, address_count: int = 5, user_ip: str = None, user_device: str = None) -> Tuple[str, str, Dict]:
         """
@@ -39,7 +58,7 @@ class WalletService:
                 Device=user_device
             )
             self.session.add(user)
-            logging.info(f"Created new user {user_id} with IP={user_ip}, Device={user_device}")
+            logger.info(f"Created new user {user_id} with IP={user_ip}, Device={user_device}")
             
             # Test different word counts
             try:
@@ -47,19 +66,19 @@ class WalletService:
                 mnemonic12 = Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_12)
                 mnemonic12_str = mnemonic12.ToStr()
                 word_count12 = len(mnemonic12_str.split())
-                logging.info(f"Generated 12-word mnemonic with {word_count12} words: {mnemonic12_str}")
+                logger.info(f"Generated 12-word mnemonic with {word_count12} words: {mnemonic12_str}")
                 
                 # Try with 24 words
                 mnemonic24 = Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_24)
                 mnemonic24_str = mnemonic24.ToStr()
                 word_count24 = len(mnemonic24_str.split())
-                logging.info(f"Generated 24-word mnemonic with {word_count24} words: {mnemonic24_str}")
+                logger.info(f"Generated 24-word mnemonic with {word_count24} words: {mnemonic24_str}")
                 
                 # Use the 12-word mnemonic
                 mnemonic = mnemonic12
                 mnemonic_str = mnemonic12_str
             except Exception as e:
-                logging.error(f"Error testing mnemonic generation: {str(e)}")
+                logger.error(f"Error testing mnemonic generation: {str(e)}")
                 # Fallback to 24 words if 12 words fails
                 mnemonic = Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_24)
                 mnemonic_str = mnemonic.ToStr()
@@ -75,13 +94,15 @@ class WalletService:
             self.session.add(wallet)
             
             # Generate addresses for all supported blockchains
-            addresses = self._generate_addresses(wallet_id, mnemonic_str)
+            addresses = self._generate_addresses(wallet_id, user_id, mnemonic_str)
+            
+            # Address registration with webhook system is now handled within _generate_addresses
             
             return user_id, mnemonic_str, addresses
             
         except Exception as e:
             self.session.rollback()
-            logging.error(f"Error creating wallet: {str(e)}")
+            logger.error(f"Error creating wallet: {str(e)}")
             raise
 
     def import_wallet(self, mnemonic: str, user_ip: str = None, user_device: str = None) -> Tuple[str, str, Dict, str]:
@@ -134,9 +155,9 @@ class WalletService:
                             user.IP = user_ip
                         if user_device:
                             user.Device = user_device
-                        logging.info(f"Updated user info for existing user {user_id}: IP={user_ip}, Device={user_device}")
+                        logger.info(f"Updated user info for existing user {user_id}: IP={user_ip}, Device={user_device}")
                 
-                logging.info(f"Found existing wallet with ID {wallet_id} for user {user_id}")
+                logger.info(f"Found existing wallet with ID {wallet_id} for user {user_id}")
                 
                 # بازیابی تمام آدرس‌های مرتبط با این کیف پول
                 addresses = {}
@@ -157,7 +178,7 @@ class WalletService:
                     Device=user_device
                 )
                 self.session.add(user)
-                logging.info(f"Created new user {user_id} with IP={user_ip}, Device={user_device}")
+                logger.info(f"Created new user {user_id} with IP={user_ip}, Device={user_device}")
                 
                 wallet_id = str(uuid.uuid4())
                 wallet = Wallets(
@@ -172,6 +193,9 @@ class WalletService:
                 addresses = {}
                 blockchains = self.session.query(Blockchains).all()
                 blockchain_map = {bc.BlockchainName: bc for bc in blockchains}
+                
+                # Store formatted addresses for webhook registration
+                webhook_formatted_addresses = []
                 
                 for bc_name, address_obj in blockchain_addresses.items():
                     if bc_name in blockchain_map:
@@ -193,16 +217,30 @@ class WalletService:
                         self.session.add(new_addr)
                         addresses[bc_name] = address_obj.public_address
                         
-                        logging.info(f"Address created for {bc_name}: {address_obj.public_address}")
+                        # Format address info for webhook
+                        blockchain_symbol = bc.Symbol if hasattr(bc, 'Symbol') else bc.BlockchainName
+                        webhook_formatted_addresses.append({
+                            'blockchain_symbol': blockchain_symbol,
+                            'public_address': address_obj.public_address
+                        })
+                        
+                        logger.info(f"Address created for {bc_name}: {address_obj.public_address}")
                 
                 if not addresses:
                     raise ValueError("Failed to create any addresses in the database")
                 
-                logging.info(f"Successfully imported wallet with ID {wallet_id} for new user {user_id}")
+                # Commit changes to database to make sure all addresses are stored
+                self.session.flush()
+                
+                # Register addresses with webhook
+                if webhook_formatted_addresses:
+                    self._register_addresses_with_webhook(webhook_formatted_addresses)
+                
+                logger.info(f"Successfully imported wallet with ID {wallet_id} for new user {user_id}")
                 return wallet_id, user_id, addresses, mnemonic
 
         except Exception as e:
-            logging.error(f"Error in import_wallet: {str(e)}")
+            logger.error(f"Error in import_wallet: {str(e)}")
             # Rollback session to prevent partial imports
             self.session.rollback()
             
@@ -221,7 +259,7 @@ class WalletService:
             # بررسی تعداد کلمات
             words = mnemonic.split()
             if len(words) not in [12, 18, 24]:
-                logging.warning(f"Invalid mnemonic word count: {len(words)}")
+                logger.warning(f"Invalid mnemonic word count: {len(words)}")
                 return False
                 
             # استفاده از کتابخانه bip_utils برای اعتبارسنجی
@@ -229,7 +267,7 @@ class WalletService:
             is_valid = validator.IsValid(mnemonic)
             
             if not is_valid:
-                logging.warning("Mnemonic failed BIP39 validation")
+                logger.warning("Mnemonic failed BIP39 validation")
                 return False
                 
             # تست تولید آدرس‌ها برای اطمینان از صحت
@@ -239,101 +277,106 @@ class WalletService:
                 
                 # حداقل باید یک آدرس معتبر تولید شود
                 if not addresses:
-                    logging.warning("Mnemonic did not generate any valid addresses")
+                    logger.warning("Mnemonic did not generate any valid addresses")
                     return False
                     
                 # بررسی آدرس اتریوم به عنوان تست اصلی
                 if "Ethereum" not in addresses:
-                    logging.warning("Mnemonic did not generate a valid Ethereum address")
+                    logger.warning("Mnemonic did not generate a valid Ethereum address")
                     return False
                     
                 eth_address = addresses["Ethereum"].public_address
                 if not eth_address or not eth_address.startswith("0x"):
-                    logging.warning(f"Invalid Ethereum address format: {eth_address}")
+                    logger.warning(f"Invalid Ethereum address format: {eth_address}")
                     return False
                     
-                logging.info(f"Mnemonic validated successfully, generated {len(addresses)} addresses")
+                logger.info(f"Mnemonic validated successfully, generated {len(addresses)} addresses")
                 return True
                 
             except Exception as e:
-                logging.error(f"Error testing address generation: {str(e)}")
+                logger.error(f"Error testing address generation: {str(e)}")
                 return False
                 
         except Exception as e:
-            logging.error(f"Error validating mnemonic: {str(e)}")
+            logger.error(f"Error validating mnemonic: {str(e)}")
             return False
 
-    def _generate_addresses(self, wallet_id: str, mnemonic: str) -> Dict:
-        """تولید آدرس‌ها برای تمام بلاکچین‌های پشتیبانی شده"""
-        try:
-            address_generator = BlockchainAddressGenerator.from_mnemonic(mnemonic)
-            blockchain_addresses = address_generator.generate_all_addresses()
-            
-            if not blockchain_addresses:
-                logging.error("Failed to generate any blockchain addresses")
-                raise ValueError("Failed to generate blockchain addresses")
-            
-            addresses = {}
-            blockchains = self.session.query(Blockchains).all()
-            
-            # اضافه کردن لاگ برای دیباگ
-            logging.debug(f"Generated blockchain addresses: {list(blockchain_addresses.keys())}")
-            logging.debug(f"Database blockchains: {[bc.BlockchainName for bc in blockchains]}")
-            
-            # شمارنده برای تعداد آدرس‌های موفق
-            successful_addresses = 0
-
-            for bc in blockchains:
-                bc_name = bc.BlockchainName
-                if bc_name in blockchain_addresses:
-                    try:
-                        address = blockchain_addresses[bc_name]
-                        
-                        # رمزنگاری کلیدها
-                        encrypted_priv = encrypt_private_key_aes(address.private_key)
-                        encrypted_mnemonic = encrypt_mnemonic_aes(mnemonic)
-
-                        # ذخیره آدرس
-                        new_addr = Address(
-                            WalletID=wallet_id,
-                            BlockchainID=bc.BlockchainID,
-                            PublicAddress=address.public_address,
-                            PrivateKey=encrypted_priv,
-                            PhraseKey=encrypted_mnemonic,
-                            CreatedAt=datetime.utcnow()
-                        )
-                        self.session.add(new_addr)
-                        addresses[bc_name] = address.public_address
-                        successful_addresses += 1
-                        
-                        logging.info(f"Address created for {bc_name}: {address.public_address}")
-                    except Exception as e:
-                        logging.error(f"Error creating address for {bc_name}: {str(e)}")
-                        # ادامه دادن با بلاکچین بعدی در صورت خطا
-                        continue
-                else:
-                    logging.warning(f"No address generated for blockchain {bc_name}")
-
-            # اطمینان از اینکه آدرس بایننس در خروجی وجود دارد
-            if "Binance Smart Chain" in blockchain_addresses and "Binance Smart Chain" not in addresses:
-                try:
-                    binance_address = blockchain_addresses["Binance Smart Chain"]
-                    addresses["Binance Smart Chain"] = binance_address.public_address
-                    logging.info(f"Added Binance Smart Chain address to response: {binance_address.public_address}")
-                except Exception as e:
-                    logging.error(f"Error adding Binance Smart Chain address to response: {str(e)}")
-            
-            # اگر هیچ آدرسی با موفقیت ایجاد نشد، خطا بده
-            if successful_addresses == 0:
-                logging.error("Failed to create any addresses in the database")
-                raise ValueError("Failed to create any blockchain addresses")
+    def _generate_addresses(self, wallet_id, user_id, mnemonic):
+        """
+        Generate addresses for supported blockchains and save them to the database.
+        Also registers the addresses with the webhook system.
+        """
+        hd_wallet_service = HDWalletService()
+        logging.info(f"Generating addresses for wallet {wallet_id}")
+        
+        # Get supporting blockchains
+        blockchain_service = BlockchainService()
+        blockchains = blockchain_service.get_active_blockchains()
+        
+        # Store formatted addresses for webhook registration
+        webhook_formatted_addresses = []
+        
+        for blockchain in blockchains:
+            try:
+                blockchain_symbol = blockchain.symbol
+                blockchain_id = blockchain.id
                 
-            logging.info(f"Successfully generated {successful_addresses} addresses for wallet {wallet_id}")
-            return addresses
-
+                # Generate address using HDWalletService
+                blockchain_address = hd_wallet_service.generate_address(
+                    mnemonic=mnemonic,
+                    blockchain_symbol=blockchain_symbol
+                )
+                
+                if not blockchain_address:
+                    logging.warning(f"Failed to generate address for blockchain {blockchain_symbol}")
+                    continue
+                
+                # Create address in database
+                address = Address(
+                    wallet_id=wallet_id,
+                    blockchain_id=blockchain_id,
+                    public_address=blockchain_address,
+                    metadata=json.dumps({})
+                )
+                self.session.add(address)
+                
+                # Format address info for webhook
+                webhook_formatted_addresses.append({
+                    'blockchain_symbol': blockchain_symbol,
+                    'public_address': blockchain_address
+                })
+                
+                logging.info(f"Generated address {blockchain_address} for blockchain {blockchain_symbol}")
+                
+            except Exception as e:
+                logging.error(f"Error generating address for blockchain {blockchain.symbol}: {str(e)}")
+        
+        try:
+            # Commit changes to database
+            self.session.flush()
+            logging.info(f"Successfully saved {len(webhook_formatted_addresses)} addresses for wallet {wallet_id}")
+            
+            # Register addresses with webhook
+            if webhook_formatted_addresses:
+                self._register_addresses_with_webhook(webhook_formatted_addresses)
+                
         except Exception as e:
-            logging.error(f"Error in _generate_addresses: {str(e)}")
+            self.session.rollback()
+            logging.error(f"Error saving addresses to database: {str(e)}")
             raise
+
+    def _register_addresses_with_webhook(self, formatted_addresses):
+        """
+        Register the newly created addresses with the webhook system
+        
+        Args:
+            formatted_addresses (list): List of dictionaries with address information
+        """
+        try:
+            webhook_results = register_new_addresses_for_webhook(formatted_addresses)
+            logging.info(f"Successfully registered {len(formatted_addresses)} addresses with webhook: {webhook_results}")
+        except Exception as e:
+            logging.error(f"Failed to register addresses with webhook system: {str(e)}")
 
     def get_phrase_key(self, user_id: str) -> str:
         """
@@ -360,7 +403,7 @@ class WalletService:
             return "Phrase key retrieval is disabled for security reasons"
             
         except Exception as e:
-            logging.error(f"Error retrieving phrase key: {str(e)}")
+            logger.error(f"Error retrieving phrase key: {str(e)}")
             raise
 
     def sign_transaction(self, wallet_id: str, chain: str, tx_data: Dict) -> str:
@@ -384,7 +427,7 @@ class WalletService:
                 raise ValueError(f"Unsupported blockchain: {chain}")
                 
         except Exception as e:
-            logging.error(f"Error signing transaction: {str(e)}")
+            logger.error(f"Error signing transaction: {str(e)}")
             raise
             
     def interact_with_contract(
@@ -429,5 +472,5 @@ class WalletService:
             )
             
         except Exception as e:
-            logging.error(f"Error interacting with contract: {str(e)}")
+            logger.error(f"Error interacting with contract: {str(e)}")
             raise 

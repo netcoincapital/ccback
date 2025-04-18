@@ -1,0 +1,186 @@
+2025-03-29 02:48:23,157 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-29 02:48:23,157 - balance - INFO - Added new common token: MASK on ETH
+2025-03-29 02:48:23,158 - balance - INFO - Added new common token: UNI on ETH
+2025-03-29 02:48:23,158 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-29 02:48:27,641 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-29 02:48:32,157 - balance - INFO - Added new common token: TREAT on ETH
+2025-03-29 02:48:32,157 - balance - INFO - Added new common token: MASK on ETH
+2025-03-29 02:48:32,158 - balance - INFO - Added new common token: UNI on ETH
+2025-03-29 02:48:32,158 - balance - INFO - Added new common token: AAVE on ETH
+2025-03-29 02:48:36,620 - balance - INFO - Initializing Socket.IO for balance updates
+2025-03-29 02:48:44,938 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX', 'SHIB']
+2025-03-29 02:48:44,951 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-29 02:48:45,142 - balance - INFO - User addresses by chain: {'ETH': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'TRX': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'TRON': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'BNB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BSC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BTC': 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 'MATIC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARBITRUM': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'XRP': 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 'SOL': '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 'AVAX': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'DOT': '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-29 02:48:45,142 - balance - INFO - User addresses by blockchain ID: {1: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 2: 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 3: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 4: 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 5: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 6: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 11: 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 12: '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 13: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 14: '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-29 02:48:45,143 - balance - INFO - Processing symbol: ETH
+2025-03-29 02:48:45,143 - balance - INFO - ETH is a main coin on network ETH
+2025-03-29 02:48:45,143 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:45,144 - balance - INFO - Calling Tatum API for ETH: /v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:45,144 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:45,144 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:45,559 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-29 02:48:45,560 - balance - INFO - Processing balance for ETH with type eth
+2025-03-29 02:48:45,561 - balance - INFO - ETH/EVM compatible raw balance: 0.0001
+2025-03-29 02:48:45,562 - balance - INFO - Final result dictionary for ETH: {'ETH': '0.0001'}
+2025-03-29 02:48:45,562 - balance - INFO - Processing symbol: TRX
+2025-03-29 02:48:45,563 - balance - INFO - TRX is a main coin on network TRON
+2025-03-29 02:48:45,564 - balance - INFO - Getting balance for TRON, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-29 02:48:45,564 - balance - INFO - Calling Tatum API for TRON: /v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-29 02:48:45,565 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-29 02:48:45,566 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-29 02:48:45,838 - balance - INFO - Raw API response for TRON: {'balance': 3900003, 'createTime': 1741976538000, 'trc10': [], 'trc20': [], 'freeNetLimit': 600, 'bandwidth': 600}
+2025-03-29 02:48:45,839 - balance - INFO - Processing balance for TRON with type tron
+2025-03-29 02:48:45,840 - balance - INFO - Found direct balance in TRON response: 3900003
+2025-03-29 02:48:45,840 - balance - INFO - TRON raw balance: 3900003
+2025-03-29 02:48:45,841 - balance - INFO - Found TRC20 tokens: []
+2025-03-29 02:48:45,841 - balance - INFO - Final result dictionary for TRON: {'TRX': 3900003}
+2025-03-29 02:48:45,842 - balance - INFO - Processing symbol: SHIB
+2025-03-29 02:48:45,842 - balance - INFO - Symbol SHIB is not a main coin, searching as token
+2025-03-29 02:48:45,842 - balance - INFO - Searching for token with symbol: SHIB
+2025-03-29 02:48:45,843 - balance - INFO - Available currency keys: ['BITCOIN', 'BTC', 'XRP', 'USDT', 'ARBITRUM', 'ARB', 'DOGE', 'SHIB', 'ETHEREUM', 'ETH', 'BNB', 'NCC', 'POLYGON', 'MATIC', 'TRON', 'TRX', 'SOLANA', 'SOL', 'POLKADOT', 'DOT']...
+2025-03-29 02:48:45,843 - balance - INFO - Found token directly with symbol: SHIB
+2025-03-29 02:48:45,843 - balance - INFO - Found currency: SHIB, CurrencyName: SHIB, IsToken: True
+2025-03-29 02:48:45,844 - balance - INFO - Raw SmartContractAddress from database for SHIB: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,844 - balance - INFO - Contract address after removing whitespace: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,844 - balance - INFO - Original contract address to be used: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,844 - balance - INFO - Original contract address before formatting: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,844 - balance - INFO - Contract address unchanged during formatting: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,844 - balance - INFO - Formatted contract address for DOT: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:45,845 - balance - INFO - Formatted contract address using specialized function: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,845 - balance - INFO - Verifying contract address: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce' for chain DOT
+2025-03-29 02:48:45,845 - balance - INFO - Contract address verification complete: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce' (unchanged)
+2025-03-29 02:48:45,845 - balance - INFO - Verified contract address for SHIB: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,845 - balance - INFO - Using original contract address from database: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,845 - balance - INFO - Currency SHIB - BlockchainID: 1, SmartContractAddress: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:45,846 - balance - INFO - Blockchain for currency SHIB: ChainCode=ETH
+2025-03-29 02:48:45,846 - balance - INFO - Found wallet address by BlockchainID: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:45,846 - balance - INFO - Calling get_token_balance for SHIB with: chain_symbol=ETH, contract_address=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce, address=0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:45,847 - balance - INFO - Sending contract address to Tatum: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,847 - balance - INFO - Getting token balance for ETH, symbol: SHIB, contract: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:45,847 - balance - INFO - Using original contract address after simple cleaning: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,847 - balance - INFO - Final contract address for API call: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:45,848 - balance - INFO - Using chain name 'ETH' for API calls based on chain symbol ETH
+2025-03-29 02:48:45,848 - balance - INFO - Preparing API call to fetch token balance for SHIB on ETH
+2025-03-29 02:48:45,848 - balance - INFO - Contract address to send to Tatum: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:45,849 - balance - INFO - Wallet address to send to Tatum: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'
+2025-03-29 02:48:45,849 - balance - INFO - Calling Tatum dedicated token API: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:45,849 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:45,849 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,044 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"}
+2025-03-29 02:48:46,046 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,046 - balance - INFO - No response from traditional API path. Trying updated API path...
+2025-03-29 02:48:46,047 - balance - INFO - Calling Tatum with updated API path: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,047 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,047 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,234 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"}
+2025-03-29 02:48:46,235 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,236 - balance - INFO - No response from updated API path. Trying newest API path...
+2025-03-29 02:48:46,236 - balance - INFO - Calling Tatum with newest API path: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,236 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,237 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,484 - balance - ERROR - Tatum call failed: 403 {"statusCode":403,"errorCode":"erc20.get.error","message":"Get operation failed","cause":"Failed to get token balance","dashboardLog":"https://dashboard.tatum.io/logs?id=67e7355cd5ad2433b12f8826"}
+2025-03-29 02:48:46,485 - balance - INFO - All attempts with original address failed. Trying with formatted address...
+2025-03-29 02:48:46,486 - balance - ERROR - No response from Tatum API for token SHIB on ETH after trying all API paths
+2025-03-29 02:48:46,486 - balance - INFO - get_token_balance returned: 0 for SHIB
+2025-03-29 02:48:46,487 - balance - INFO - Retrying with lowercase contract address: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:46,487 - balance - INFO - Getting token balance for ETH, symbol: SHIB, contract: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:46,488 - balance - INFO - Using original contract address after simple cleaning: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:46,488 - balance - INFO - Final contract address for API call: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,488 - balance - INFO - Using chain name 'ETH' for API calls based on chain symbol ETH
+2025-03-29 02:48:46,488 - balance - INFO - Preparing API call to fetch token balance for SHIB on ETH
+2025-03-29 02:48:46,489 - balance - INFO - Contract address to send to Tatum: '0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce'
+2025-03-29 02:48:46,489 - balance - INFO - Wallet address to send to Tatum: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'
+2025-03-29 02:48:46,489 - balance - INFO - Calling Tatum dedicated token API: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,489 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,489 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,679 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"}
+2025-03-29 02:48:46,680 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,682 - balance - INFO - No response from traditional API path. Trying updated API path...
+2025-03-29 02:48:46,683 - balance - INFO - Calling Tatum with updated API path: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,684 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,685 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,885 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"}
+2025-03-29 02:48:46,886 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,887 - balance - INFO - No response from updated API path. Trying newest API path...
+2025-03-29 02:48:46,888 - balance - INFO - Calling Tatum with newest API path: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,888 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:46,889 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-03-29 02:48:47,126 - balance - ERROR - Tatum call failed: 403 {"statusCode":403,"errorCode":"erc20.get.error","message":"Get operation failed","cause":"Failed to get token balance","dashboardLog":"https://dashboard.tatum.io/logs?id=67e7355dd5ad2433b12f882a"}
+2025-03-29 02:48:47,127 - balance - INFO - All attempts with original address failed. Trying with formatted address...
+2025-03-29 02:48:47,128 - balance - ERROR - No response from Tatum API for token SHIB on ETH after trying all API paths
+2025-03-29 02:48:47,129 - balance - INFO - Lowercase attempt returned: 0
+2025-03-29 02:48:47,130 - balance - INFO - Retrying with uppercase contract address: '0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE'
+2025-03-29 02:48:47,130 - balance - INFO - Getting token balance for ETH, symbol: SHIB, contract: 0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:48:47,131 - balance - INFO - Using original contract address after simple cleaning: '0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE'
+2025-03-29 02:48:47,132 - balance - INFO - Final contract address for API call: 0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,132 - balance - INFO - Using chain name 'ETH' for API calls based on chain symbol ETH
+2025-03-29 02:48:47,133 - balance - INFO - Preparing API call to fetch token balance for SHIB on ETH
+2025-03-29 02:48:47,134 - balance - INFO - Contract address to send to Tatum: '0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE'
+2025-03-29 02:48:47,134 - balance - INFO - Wallet address to send to Tatum: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A'
+2025-03-29 02:48:47,134 - balance - INFO - Calling Tatum dedicated token API: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,134 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,135 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,377 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE"}
+2025-03-29 02:48:47,378 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/ethereum/account/balance/erc20/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,378 - balance - INFO - No response from traditional API path. Trying updated API path...
+2025-03-29 02:48:47,380 - balance - INFO - Calling Tatum with updated API path: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,380 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,381 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,637 - balance - ERROR - Tatum call failed: 404 {"statusCode":404,"message":"Cannot GET /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE"}
+2025-03-29 02:48:47,638 - balance - ERROR - Not Found (404) error. API path may be incorrect: /v3/blockchain/token/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A?chain=ETH&contractAddress=0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,638 - balance - INFO - No response from updated API path. Trying newest API path...
+2025-03-29 02:48:47,639 - balance - INFO - Calling Tatum with newest API path: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,639 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,639 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,832 - balance - ERROR - Tatum call failed: 400 {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["address must be a valid ETH address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. "],"dashboardLog":"https://dashboard.tatum.io/logs?id=67e7355d96a50218fe0dcbd2"}
+2025-03-29 02:48:47,833 - balance - ERROR - Bad Request (400) error. Message: Request validation failed. Please see data for additional information.
+2025-03-29 02:48:47,834 - balance - ERROR - Validation errors: ['address must be a valid ETH address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. ']
+2025-03-29 02:48:47,835 - balance - INFO - All attempts with original address failed. Trying with formatted address...
+2025-03-29 02:48:47,835 - balance - INFO - Using formatted contract address for retry: '0x0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE'
+2025-03-29 02:48:47,835 - balance - INFO - Final retry with formatted address: /v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,836 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:47,836 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/blockchain/token/balance/ETH/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A/0x0X95AD61B0A150D79219DCF64E1E6CC01F0B64C4CE
+2025-03-29 02:48:48,030 - balance - ERROR - Tatum call failed: 400 {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["address must be a valid ETH address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. "],"dashboardLog":"https://dashboard.tatum.io/logs?id=67e7355e96a50218fe0dcbd4"}
+2025-03-29 02:48:48,032 - balance - ERROR - Bad Request (400) error. Message: Request validation failed. Please see data for additional information.
+2025-03-29 02:48:48,033 - balance - ERROR - Validation errors: ['address must be a valid ETH address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. ']
+2025-03-29 02:48:48,034 - balance - ERROR - No response from Tatum API for token SHIB on ETH after trying all API paths
+2025-03-29 02:48:48,035 - balance - INFO - Uppercase attempt returned: 0
+2025-03-29 02:48:48,036 - balance - INFO - Searching for common token: SHIB on chain: ETH
+2025-03-29 02:48:48,037 - balance - WARNING - No common token found for symbol: SHIB
+2025-03-29 02:48:48,037 - balance - WARNING - Zero or empty balance returned for token SHIB
+2025-03-29 02:49:34,676 - balance - INFO - Fetching balance for UserID: d7fd960c-0b3b-4f0c-8963-baa6b365953d, Symbols: ['ETH', 'TRX', 'BNB']
+2025-03-29 02:49:34,679 - balance - INFO - Found wallet with ID: 080e1614-cfd7-4e68-ad60-a3e583321963
+2025-03-29 02:49:34,728 - balance - INFO - User addresses by chain: {'ETH': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'TRX': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'TRON': 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 'BNB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BSC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'BTC': 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 'MATIC': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARB': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'ARBITRUM': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'XRP': 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 'SOL': '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 'AVAX': '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 'DOT': '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-29 02:49:34,729 - balance - INFO - User addresses by blockchain ID: {1: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 2: 'TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx', 3: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 4: 'bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm', 5: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 6: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 11: 'rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u', 12: '3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D', 13: '0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A', 14: '13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv'}
+2025-03-29 02:49:34,729 - balance - INFO - Processing symbol: ETH
+2025-03-29 02:49:34,729 - balance - INFO - ETH is a main coin on network ETH
+2025-03-29 02:49:34,730 - balance - INFO - Getting balance for ETH, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:49:34,730 - balance - INFO - Calling Tatum API for ETH: /v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:49:34,730 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:49:34,730 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/ethereum/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:49:34,943 - balance - INFO - Raw API response for ETH: {'balance': '0.0001'}
+2025-03-29 02:49:34,944 - balance - INFO - Processing balance for ETH with type eth
+2025-03-29 02:49:34,945 - balance - INFO - ETH/EVM compatible raw balance: 0.0001
+2025-03-29 02:49:34,946 - balance - INFO - Final result dictionary for ETH: {'ETH': '0.0001'}
+2025-03-29 02:49:34,947 - balance - INFO - Processing symbol: TRX
+2025-03-29 02:49:34,948 - balance - INFO - TRX is a main coin on network TRON
+2025-03-29 02:49:34,948 - balance - INFO - Getting balance for TRON, address: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-29 02:49:34,949 - balance - INFO - Calling Tatum API for TRON: /v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-29 02:49:34,949 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-29 02:49:34,950 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/tron/account/TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-03-29 02:49:35,266 - balance - INFO - Raw API response for TRON: {'balance': 3900003, 'createTime': 1741976538000, 'trc10': [], 'trc20': [], 'freeNetLimit': 600, 'bandwidth': 600}
+2025-03-29 02:49:35,267 - balance - INFO - Processing balance for TRON with type tron
+2025-03-29 02:49:35,268 - balance - INFO - Found direct balance in TRON response: 3900003
+2025-03-29 02:49:35,269 - balance - INFO - TRON raw balance: 3900003
+2025-03-29 02:49:35,269 - balance - INFO - Found TRC20 tokens: []
+2025-03-29 02:49:35,270 - balance - INFO - Final result dictionary for TRON: {'TRX': 3900003}
+2025-03-29 02:49:35,271 - balance - INFO - Processing symbol: BNB
+2025-03-29 02:49:35,271 - balance - INFO - BNB is a main coin on network BSC
+2025-03-29 02:49:35,271 - balance - INFO - Getting balance for BSC, address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:49:35,272 - balance - INFO - Calling Tatum API for BSC: /v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:49:35,272 - balance - INFO - Original Tatum API call URL: https://api.tatum.io/v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:49:35,272 - balance - INFO - Final Tatum API call URL: https://api.tatum.io/v3/bsc/account/balance/0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-03-29 02:49:35,668 - balance - INFO - Raw API response for BSC: {'balance': '0.003478355830569349'}
+2025-03-29 02:49:35,668 - balance - INFO - Processing balance for BSC with type eth
+2025-03-29 02:49:35,669 - balance - INFO - ETH/EVM compatible raw balance: 0.003478355830569349
+2025-03-29 02:49:35,670 - balance - INFO - Final result dictionary for BSC: {'BSC': '0.003478355830569349'}

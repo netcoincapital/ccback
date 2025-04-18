@@ -1,9 +1,6 @@
 import os
 import requests
 
-# تنظیمات پایگاه داده
-DATABASE_URL = "mysql+mysqlconnector://root:Q#-76(12Kji09?@localhost/IronWallet"
-
 # پیکربندی API‌ها
 ETHERSCAN_API_URL = 'https://api.etherscan.io/api'
 ETHERSCAN_API_KEY = '77D1W3AMVN6ZGUXQ7116ECFQC2M9M3WFKY'
@@ -16,6 +13,9 @@ BNBSCAN_API_KEY = 'AXZ8211BAB2GVKKMMUVU24ERT858ZGE3SJ'
 
 COINMARKETCAP_API_URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
 COINMARKETCAP_API_KEY = 'bbae831b-bd1b-4949-8945-2b5ab0b9456d'
+
+# تنظیمات Webhook
+WEBHOOK_BASE_URL = os.getenv('WEBHOOK_BASE_URL', 'https://coinceeper.com')
 
 
 class BaseConfig:
