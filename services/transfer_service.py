@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from database import Transfers, Blockchains, Address, Wallets
+from database import Transfers, Blockchains, Address, Wallets, Price, Currencies
 from decimal import Decimal
 from datetime import datetime
 import logging
@@ -49,6 +49,73 @@ class TransferService:
     def __init__(self, session: Session):
         self.session = session
     
+    def _get_token_price(self, token_symbol: str, blockchain_id=None, asset_type=None) -> Decimal:
+        """
+        Get the current price for a token or currency
+        
+        Args:
+            token_symbol: Token symbol to look up
+            blockchain_id: Optional blockchain ID for native assets
+            asset_type: Optional asset type ('native', 'token')
+            
+        Returns:
+            Current price or None if not found
+        """
+        try:
+            logger.info(f"Looking up price for token: {token_symbol}, asset_type: {asset_type}, blockchain_id: {blockchain_id}")
+            
+            # First try to query by token symbol directly
+            price_record = self.session.query(Price).join(
+                Currencies, 
+                Price.crypto_id == Currencies.CurrencyID
+            ).filter(
+                Currencies.Symbol == token_symbol,
+                Price.currency == 'USD'  # Default to USD
+            ).first()
+            
+            if price_record:
+                logger.info(f"Found price for {token_symbol} by direct symbol match: {price_record.price}")
+                return price_record.price
+            
+            # If no price found and this is a native asset, try to find by blockchain
+            if not price_record and asset_type == 'native' and blockchain_id:
+                logger.info(f"No direct price found, trying to find native asset price for blockchain_id: {blockchain_id}")
+                
+                # Try to find the native currency for this blockchain
+                blockchain_currency = self.session.query(Currencies).filter(
+                    Currencies.BlockchainID == blockchain_id,
+                    Currencies.IsToken == False
+                ).first()
+                
+                if blockchain_currency:
+                    logger.info(f"Found native currency for blockchain: {blockchain_currency.Symbol}")
+                    
+                    # Try to get price for the native currency
+                    native_price = self.session.query(Price).filter(
+                        Price.crypto_id == blockchain_currency.CurrencyID,
+                        Price.currency == 'USD'
+                    ).first()
+                    
+                    if native_price:
+                        logger.info(f"Found price for native currency {blockchain_currency.Symbol}: {native_price.price}")
+                        return native_price.price
+                    else:
+                        logger.warning(f"No price found for native currency {blockchain_currency.Symbol}")
+                else:
+                    logger.warning(f"No native currency found for blockchain_id {blockchain_id}")
+            
+            # Check the total number of price records for debugging
+            total_prices = self.session.query(Price).count()
+            logger.info(f"Total price records in database: {total_prices}")
+            
+            # If we still don't have a price, log more details and return None
+            logger.warning(f"No price found for {token_symbol} after all attempts")
+            return None
+            
+        except Exception as e:
+            logger.error(f"Error getting price for {token_symbol}: {str(e)}", exc_info=True)
+            return None
+    
     def create_transfer(self, 
                         tx_hash: str,
                         blockchain_id: int,
@@ -91,6 +158,18 @@ class TransferService:
             Created transfer record
         """
         try:
+            # Get current price for the token
+            current_price = self._get_token_price(token_symbol, blockchain_id, asset_type)
+            
+            # If still no price found, use a default value of 0
+            if current_price is None:
+                logger.warning(f"Using default price of 0 for {token_symbol}")
+                current_price = Decimal('0')
+                
+            # Calculate the value of the transaction (amount * price)
+            transaction_value = amount * current_price
+            logger.info(f"Calculated transaction value: {amount} * {current_price} = {transaction_value}")
+            
             # Create new transfer record
             transfer = Transfers(
                 BlockchainID=blockchain_id,
@@ -102,6 +181,7 @@ class TransferService:
                 FromAddress=from_address,
                 ToAddress=to_address,
                 Amount=amount,
+                Price=transaction_value,  # Store the calculated value (amount * price)
                 TokenSymbol=token_symbol,
                 TokenContract=token_contract,
                 AssetType=asset_type,

@@ -3,12 +3,12 @@ from sqlalchemy.orm import relationship
 from .base import Base
 
 class UserHolding(Base):
-    __tablename__ = 'UserHolding'
+    __tablename__ = 'userholding'
 
     HoldingID = Column(BigInteger, primary_key=True, autoincrement=True)
     
-    UserID = Column(String(36), ForeignKey('Users.UserID'), nullable=False)
-    CurrencyID = Column(String(10), ForeignKey('Currencies.CurrencyID'), nullable=False)
+    UserID = Column(String(36), ForeignKey('users.UserID'), nullable=False)
+    CurrencyID = Column(String(10), ForeignKey('currencies.CurrencyID'), nullable=False)
     
     Balance = Column(DECIMAL(38, 18), nullable=False, default=0)
     Symbol = Column(String(20), nullable=False)

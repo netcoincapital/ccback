@@ -6,7 +6,7 @@ class Price(Base):
     __tablename__ = 'prices'
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
-    crypto_id = Column(String(10), ForeignKey('Currencies.CurrencyID'), nullable=False)
+    crypto_id = Column(String(10), ForeignKey('currencies.CurrencyID'), nullable=False)
 
     currency = Column(String(10), nullable=False, default='USD')
     price = Column(DECIMAL(20, 8), nullable=False)

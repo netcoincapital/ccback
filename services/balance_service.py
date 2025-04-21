@@ -10,6 +10,10 @@ from config.api_config import Web3Manager, ERC20_ABI, EXTERNAL_APIS
 from sqlalchemy import func
 from datetime import datetime
 import concurrent.futures
+from sqlalchemy.sql import text
+import json
+import time
+import traceback
 
 # Configure logging
 logger = get_logger(__file__)
@@ -941,106 +945,309 @@ class BalanceService:
     def apply_transfer_to_user_holding(self, transfer: Transfers):
         """
         Apply a transfer to update user holdings
-        Simplified version for debugging that logs but doesn't make API calls
         
         Args:
             transfer: Transfer object to apply
+            
+        Returns:
+            bool: True if successful, False otherwise
         """
         try:
-            logger.info(f"Applying transfer {transfer.TransferID} to user holdings (simplified version)")
+            logger.info(f"Applying transfer {transfer.TransferID} to user holdings")
             
-            # Get wallet
-            wallet = self.session.query(Wallets).filter(Wallets.WalletID == transfer.WalletID).first()
-            if not wallet:
-                logger.error(f"Wallet {transfer.WalletID} not found for transfer {transfer.TransferID}")
-                return
+            # قفل گذاری تراکنش برای جلوگیری از پردازش همزمان
+            lock_query = text("""
+                SELECT GET_LOCK(:lock_key, 10) as locked
+            """)
             
-            # Log transfer details but don't actually apply changes
-            logger.info(f"Would apply transfer: ID={transfer.TransferID}, "
-                       f"Direction={transfer.Direction}, "
-                       f"Amount={transfer.Amount}, "
-                       f"Symbol={transfer.TokenSymbol}, "
-                       f"Blockchain={transfer.blockchain.BlockchainName if transfer.blockchain else 'Unknown'}")
+            lock_key = f"transfer_lock_{transfer.TxHash}_{transfer.WalletID}_{transfer.Direction}"
+            locked = self.session.execute(lock_query, {'lock_key': lock_key}).scalar()
             
-            logger.info("Transfer application skipped for debugging purposes")
-            return
-            
-            # Original implementation is commented out
-            """
-            # Get user and address
-            user_id = wallet.UserID
-            
-            # Determine currency details
-            blockchain_name = transfer.blockchain.BlockchainName
-            token_symbol = transfer.TokenSymbol
-            
-            # Find currency record
-            currency = self.session.query(Currencies).filter(
-                Currencies.Symbol == token_symbol,
-                Currencies.BlockchainID == transfer.BlockchainID
-            ).first()
-            
-            if not currency:
-                logger.warning(f"Currency {token_symbol} on {blockchain_name} not found, creating placeholder")
-                currency = Currencies(
-                    CurrencyID=f"{token_symbol.lower()}_{blockchain_name.lower().replace(' ', '_')}",
-                    Symbol=token_symbol,
-                    Name=token_symbol,
-                    BlockchainID=transfer.BlockchainID,
-                    TokenContract=transfer.TokenContract,
-                    IsToken=(transfer.AssetType == 'token'),
-                    Decimals=18,  # Default for most tokens
-                    CreatedAt=datetime.utcnow(),
-                    UpdatedAt=datetime.utcnow()
-                )
-                self.session.add(currency)
-                self.session.commit()
-            
-            # Find existing holding or create new one
-            holding = self.session.query(UserHolding).filter(
-                UserHolding.UserID == user_id,
-                UserHolding.Symbol == token_symbol,
-                UserHolding.Blockchain == blockchain_name
-            ).first()
-            
-            if not holding:
-                holding = UserHolding(
-                    UserID=user_id,
-                    CurrencyID=currency.CurrencyID,
-                    Balance=0,
-                    Symbol=token_symbol,
-                    Blockchain=blockchain_name,
-                    IsToken=(transfer.AssetType == 'token'),
-                    CreatedAt=datetime.utcnow(),
-                    UpdatedAt=datetime.utcnow(),
-                    LastUpdated=datetime.utcnow()
-                )
-                self.session.add(holding)
-            
-            # Update balance based on transfer direction
-            if transfer.Direction == 'inbound' and transfer.IsSuccessful:
-                # Increment balance for incoming transfers
-                holding.Balance += transfer.Amount
-                holding.UpdatedAt = datetime.utcnow()
-                holding.LastUpdated = datetime.utcnow()
-                logger.info(f"Added {transfer.Amount} {token_symbol} to user {user_id}")
-            elif transfer.Direction == 'outbound' and transfer.IsSuccessful:
-                # Decrement balance for outgoing transfers
-                if holding.Balance >= transfer.Amount:
-                    holding.Balance -= transfer.Amount
+            if not locked:
+                logger.warning(f"Could not acquire lock for transfer {transfer.TransferID}. Another process may be working on it.")
+                return False
+                
+            try:
+                # بررسی دقیق‌تر تراکنش قبلی - اول TxHash را بررسی می‌کنیم
+                check_processed_query = text("""
+                    SELECT COUNT(*) FROM balance_update_log 
+                    WHERE wallet_id = :wallet_id AND tx_id = :tx_id AND direction = :direction
+                """)
+                
+                try:
+                    processed_count = self.session.execute(check_processed_query, {
+                        'wallet_id': transfer.WalletID, 
+                        'tx_id': transfer.TxHash,
+                        'direction': transfer.Direction
+                    }).scalar()
+                    
+                    if processed_count > 0:
+                        logger.info(f"Transaction {transfer.TxHash} with direction {transfer.Direction} already processed for wallet {transfer.WalletID}. Skipping.")
+                        return True
+                        
+                    # همچنین بررسی می‌کنیم آیا این تراکنش قبلاً در جدول transfers ثبت شده و به روزرسانی شده است
+                    # این بررسی برای اطمینان بیشتر از عدم دوباره‌کاری است
+                    transaction_exists = self.session.query(Transfers).filter(
+                        Transfers.WalletID == transfer.WalletID,
+                        Transfers.TxHash == transfer.TxHash,
+                        Transfers.Direction == transfer.Direction,
+                        Transfers.TransferID != transfer.TransferID
+                    ).count() > 0
+                    
+                    if transaction_exists:
+                        logger.info(f"Transaction {transfer.TxHash} already exists in Transfers table with different ID. Skipping duplicate processing.")
+                        
+                        # دریافت اطلاعات بلاکچین برای لاگ
+                        blockchain_info = self.session.query(Blockchains).filter(
+                            Blockchains.BlockchainID == transfer.BlockchainID
+                        ).first()
+                        
+                        blockchain_name = blockchain_info.BlockchainName if blockchain_info else "Unknown"
+                        
+                        # ثبت در لاگ برای جلوگیری از پردازش مجدد در آینده
+                        log_query = text("""
+                            INSERT INTO balance_update_log 
+                            (wallet_id, tx_id, direction, amount, token_symbol, blockchain, created_at) 
+                            VALUES 
+                            (:wallet_id, :tx_id, :direction, :amount, :token_symbol, :blockchain, NOW())
+                        """)
+                        
+                        try:
+                            self.session.execute(log_query, {
+                                'wallet_id': transfer.WalletID,
+                                'tx_id': transfer.TxHash,
+                                'direction': transfer.Direction,
+                                'amount': str(transfer.Amount),
+                                'token_symbol': transfer.TokenSymbol,
+                                'blockchain': blockchain_name
+                            })
+                            self.session.commit()
+                        except Exception as log_e:
+                            logger.warning(f"Could not log duplicate transaction: {str(log_e)}")
+                            
+                        return True
+                        
+                except Exception as e:
+                    # If balance_update_log table doesn't exist, log and continue
+                    logger.warning(f"Error checking if transaction was already processed: {str(e)}")
+                    # We'll continue processing in this case
+                
+                # Get wallet
+                wallet = self.session.query(Wallets).filter(Wallets.WalletID == transfer.WalletID).first()
+                if not wallet:
+                    logger.error(f"Wallet {transfer.WalletID} not found for transfer {transfer.TransferID}")
+                    return False
+                
+                # Get user ID from wallet
+                user_id = wallet.UserID
+                
+                # Get blockchain name
+                blockchain = self.session.query(Blockchains).filter(Blockchains.BlockchainID == transfer.BlockchainID).first()
+                if not blockchain:
+                    logger.error(f"Blockchain {transfer.BlockchainID} not found for transfer {transfer.TransferID}")
+                    return False
+                    
+                blockchain_name = blockchain.BlockchainName
+                token_symbol = transfer.TokenSymbol
+                
+                # Find currency record
+                currency = self.session.query(Currencies).filter(
+                    Currencies.Symbol == token_symbol,
+                    Currencies.BlockchainID == transfer.BlockchainID
+                ).first()
+                
+                if not currency:
+                    logger.warning(f"Currency {token_symbol} on {blockchain_name} not found, creating placeholder")
+                    # Create a temporary currency ID for holding
+                    temp_currency_id = f"{token_symbol.lower()}_{blockchain_name.lower().replace(' ', '_')}"
+                    currency = Currencies(
+                        CurrencyID=temp_currency_id,
+                        CurrencyName=token_symbol,
+                        Symbol=token_symbol,
+                        BlockchainID=transfer.BlockchainID,
+                        SmartContractAddress=transfer.TokenContract,
+                        IsToken=(transfer.AssetType == 'token'),
+                        DecimalPlaces=18,  # Default for most tokens
+                        CreatedAt=datetime.utcnow(),
+                        UpdatedAt=datetime.utcnow()
+                    )
+                    self.session.add(currency)
+                    self.session.flush()  # Flush to get the ID without commaitting yet
+                
+                # Find existing holding or create new one
+                holding = self.session.query(UserHolding).filter(
+                    UserHolding.UserID == user_id,
+                    UserHolding.Symbol == token_symbol,
+                    UserHolding.Blockchain == blockchain_name
+                ).first()
+                
+                if not holding:
+                    logger.info(f"Creating new holding for user {user_id}, symbol {token_symbol}, blockchain {blockchain_name}")
+                    
+                    # Retrieve all user wallets to calculate complete balance
+                    wallet_ids = [w.WalletID for w in self.session.query(Wallets).filter(Wallets.UserID == user_id).all()]
+                    
+                    # روش جدید: محاسبه موجودی با استفاده از تمام تراکنش‌ها به جز تراکنش فعلی
+                    all_transfers = self.session.query(Transfers).filter(
+                        Transfers.WalletID.in_(wallet_ids),
+                        Transfers.TokenSymbol == token_symbol,
+                        Transfers.BlockchainID == transfer.BlockchainID,
+                        Transfers.IsSuccessful == True,
+                        Transfers.TransferID != transfer.TransferID  # به جز تراکنش فعلی
+                    ).all()
+                    
+                    # محاسبه موجودی با ترکیب همه تراکنش‌ها
+                    logger.info(f"Calculating initial balance from {len(all_transfers)} previous transfers")
+                    initial_balance = Decimal('0')
+                    
+                    # لاگ دقیق اطلاعات تراکنش فعلی برای تشخیص مشکل
+                    logger.info(f"Current transfer being processed - ID: {transfer.TransferID}, TxHash: {transfer.TxHash}, Amount: {transfer.Amount}, Direction: {transfer.Direction}")
+                    
+                    # لاگ تمام تراکنش‌های مورد استفاده در محاسبه موجودی اولیه
+                    for i, t in enumerate(all_transfers):
+                        logger.debug(f"Previous transfer #{i+1} - ID: {t.TransferID}, TxHash: {t.TxHash}, Amount: {t.Amount}, Direction: {t.Direction}")
+                        if t.Direction == 'inbound':
+                            initial_balance += t.Amount
+                        elif t.Direction == 'outbound':
+                            initial_balance -= t.Amount
+                    
+                    # اطمینان از عدم منفی شدن موجودی
+                    initial_balance = max(initial_balance, Decimal('0'))
+                    logger.info(f"Final calculated initial balance (before applying current transfer): {initial_balance}")
+                    
+                    # ایجاد رکورد موجودی جدید
+                    holding = UserHolding(
+                        UserID=user_id,
+                        CurrencyID=currency.CurrencyID,
+                        Balance=initial_balance,  # شروع با موجودی محاسبه شده از تراکنش‌های قبلی
+                        Symbol=token_symbol,
+                        Blockchain=blockchain_name,
+                        IsToken=(transfer.AssetType == 'token'),
+                        CreatedAt=datetime.utcnow(),
+                        UpdatedAt=datetime.utcnow(),
+                        LastUpdated=datetime.utcnow()
+                    )
+                    self.session.add(holding)
+                    self.session.flush()
+                    
+                    logger.info(f"Created new holding with initial balance {initial_balance} calculated from previous transfers")
+                else:
+                    # بررسی صحت موجودی فعلی در صورت وجود رکورد
+                    logger.info(f"Found existing holding for {token_symbol} with balance {holding.Balance}")
+                    
+                    # بررسی اختیاری: آیا موجودی فعلی با تاریخچه تراکنش‌ها هماهنگی دارد؟
+                    if transfer.Direction == 'inbound' and transfer.IsSuccessful:
+                        # فقط یک بررسی لاگ برای تشخیص مشکل
+                        wallet_ids = [w.WalletID for w in self.session.query(Wallets).filter(Wallets.UserID == user_id).all()]
+                        inbound_sum = self.session.query(func.sum(Transfers.Amount)).filter(
+                            Transfers.WalletID.in_(wallet_ids),
+                            Transfers.TokenSymbol == token_symbol,
+                            Transfers.BlockchainID == transfer.BlockchainID,
+                            Transfers.Direction == 'inbound',
+                            Transfers.IsSuccessful == True,
+                            Transfers.TransferID != transfer.TransferID
+                        ).scalar() or Decimal('0')
+                        
+                        outbound_sum = self.session.query(func.sum(Transfers.Amount)).filter(
+                            Transfers.WalletID.in_(wallet_ids),
+                            Transfers.TokenSymbol == token_symbol,
+                            Transfers.BlockchainID == transfer.BlockchainID,
+                            Transfers.Direction == 'outbound',
+                            Transfers.IsSuccessful == True
+                        ).scalar() or Decimal('0')
+                        
+                        expected_balance = max(inbound_sum - outbound_sum, Decimal('0'))
+                        logger.info(f"Expected balance based on transfers: {expected_balance}, Actual holding balance: {holding.Balance}")
+                        
+                        if abs(expected_balance - holding.Balance) > Decimal('0.00000001'):
+                            logger.warning(f"Balance inconsistency detected! Expected: {expected_balance}, Actual: {holding.Balance}")
+                            
+                            # آیا نیاز به اصلاح موجودی داریم؟
+                            fix_inconsistency = False  # تنظیم به True برای فعال کردن اصلاح خودکار
+                            
+                            if fix_inconsistency:
+                                logger.info(f"Fixing balance inconsistency. Setting balance to {expected_balance}")
+                                holding.Balance = expected_balance
+                                holding.UpdatedAt = datetime.utcnow()
+                                holding.LastUpdated = datetime.utcnow()
+                                
+                                # ثبت اصلاح در لاگ
+                                correction_log_query = text("""
+                                    INSERT INTO balance_update_log 
+                                    (wallet_id, tx_id, direction, amount, token_symbol, blockchain, created_at) 
+                                    VALUES 
+                                    (:wallet_id, :tx_id, :direction, :amount, :token_symbol, :blockchain, NOW())
+                                """)
+                                
+                                try:
+                                    self.session.execute(correction_log_query, {
+                                        'wallet_id': transfer.WalletID,
+                                        'tx_id': f"CORRECTION_{transfer.TxHash}",
+                                        'direction': 'correction',
+                                        'amount': str(expected_balance - holding.Balance),
+                                        'token_symbol': token_symbol,
+                                        'blockchain': blockchain_name
+                                    })
+                                except Exception as log_e:
+                                    logger.warning(f"Could not log balance correction: {str(log_e)}")
+                
+                # ذخیره موجودی قبلی برای گزارش‌دهی
+                previous_balance = holding.Balance
+                
+                # به‌روزرسانی موجودی بر اساس جهت تراکنش فعلی
+                if transfer.Direction == 'inbound' and transfer.IsSuccessful:
+                    holding.Balance += transfer.Amount
                     holding.UpdatedAt = datetime.utcnow()
                     holding.LastUpdated = datetime.utcnow()
-                    logger.info(f"Subtracted {transfer.Amount} {token_symbol} from user {user_id}")
-                else:
-                    logger.warning(f"Insufficient balance for user {user_id}: {holding.Balance} {token_symbol} < {transfer.Amount}")
-            
-            # Commit changes
-            self.session.commit()
-            logger.info(f"Successfully applied transfer {transfer.TransferID}")
-            """
+                    logger.info(f"Added {transfer.Amount} {token_symbol} to user {user_id}, new balance: {holding.Balance}")
+                elif transfer.Direction == 'outbound' and transfer.IsSuccessful:
+                    # Ensure balance never goes below zero
+                    if holding.Balance >= transfer.Amount:
+                        holding.Balance -= transfer.Amount
+                    else:
+                        logger.warning(f"Insufficient balance for user {user_id}: {holding.Balance} {token_symbol} < {transfer.Amount}")
+                        holding.Balance = Decimal('0')  # تنظیم به صفر به جای منفی
+                    
+                    holding.UpdatedAt = datetime.utcnow()
+                    holding.LastUpdated = datetime.utcnow()
+                    logger.info(f"Updated balance after outbound transfer, new balance: {holding.Balance}")
+                
+                # Record this transaction in balance_update_log to prevent duplicate processing
+                log_query = text("""
+                    INSERT INTO balance_update_log 
+                    (wallet_id, tx_id, direction, amount, token_symbol, blockchain, created_at) 
+                    VALUES 
+                    (:wallet_id, :tx_id, :direction, :amount, :token_symbol, :blockchain, NOW())
+                """)
+                
+                try:
+                    self.session.execute(log_query, {
+                        'wallet_id': transfer.WalletID,
+                        'tx_id': transfer.TxHash,
+                        'direction': transfer.Direction,
+                        'amount': str(transfer.Amount),
+                        'token_symbol': token_symbol,
+                        'blockchain': blockchain_name
+                    })
+                except Exception as e:
+                    # If balance_update_log table doesn't exist, log and continue
+                    logger.warning(f"Could not log transaction in balance_update_log: {str(e)}")
+                
+                # Commit changes
+                self.session.commit()
+                logger.info(f"Successfully applied transfer {transfer.TransferID}. Balance changed from {previous_balance} to {holding.Balance}")
+                return True
+                
+            finally:
+                # آزادسازی قفل
+                release_query = text("SELECT RELEASE_LOCK(:lock_key)")
+                self.session.execute(release_query, {'lock_key': lock_key})
+                logger.debug(f"Released lock for transfer {transfer.TransferID}")
+                
         except Exception as e:
-            logger.error(f"Error applying transfer {transfer.TransferID}: {str(e)}")
-            # Don't propagate the exception to avoid breaking the caller
+            logger.error(f"Error applying transfer {transfer.TransferID}: {str(e)}", exc_info=True)
+            self.session.rollback()
+            return False
     
     def check_balance_changes(self, user_id: str, last_balance: Dict[str, Any]) -> Dict[str, Any]:
         """Check balance changes for a user"""

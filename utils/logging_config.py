@@ -8,13 +8,45 @@ from datetime import datetime
 DEFAULT_LOG_LEVEL = logging.DEBUG  # تغییر از INFO به DEBUG برای ثبت همه پیام‌ها
 
 # برای ذخیره لاگ‌ها در فایل
-LOG_DIR = 'logs'
+LOG_DIR = 'Logs'
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
 
 # تنظیم فرمت لاگ
 LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+# تابع setup_logging برای استفاده در اسکریپت‌های اجرایی
+def setup_logging(level=DEFAULT_LOG_LEVEL):
+    """
+    تنظیم لاگینگ برای اسکریپت‌های اجرایی
+    
+    Args:
+        level: سطح لاگینگ، پیش‌فرض DEFAULT_LOG_LEVEL
+    """
+    # تنظیم لاگر اصلی
+    log_dir = get_log_directory()
+    logging.basicConfig(
+        level=level,
+        format=LOG_FORMAT,
+        datefmt=DATE_FORMAT,
+        handlers=[
+            logging.StreamHandler(sys.stdout),
+            RotatingFileHandler(
+                os.path.join(log_dir, "script.log"),
+                maxBytes=10*1024*1024,
+                backupCount=5
+            )
+        ]
+    )
+    
+    # تنظیم سطح لاگرهای کتابخانه‌های خارجی به WARNING
+    for log_name, log_obj in logging.Logger.manager.loggerDict.items():
+        if log_name != "root" and isinstance(log_obj, logging.Logger):
+            log_obj.setLevel(logging.WARNING)
+    
+    logging.info("Logging setup complete")
+    return logging.getLogger()
 
 def get_log_directory():
     """
@@ -106,7 +138,8 @@ def get_logger(name):
     logger.addHandler(console_handler)
     
     # ایجاد هندلر فایل
-    log_file = os.path.join(LOG_DIR, f"{base_name}.log")
+    log_dir = get_log_directory()
+    log_file = os.path.join(log_dir, f"{base_name}.log")
     file_handler = RotatingFileHandler(log_file, maxBytes=10*1024*1024, backupCount=5)  # 10MB
     file_handler.setLevel(DEFAULT_LOG_LEVEL)
     file_formatter = logging.Formatter(LOG_FORMAT, DATE_FORMAT)
@@ -140,7 +173,8 @@ def setup_root_logger():
     root_logger.addHandler(console_handler)
     
     # تنظیم لاگ فایل
-    log_file = os.path.join(LOG_DIR, "app.log")
+    log_dir = get_log_directory()
+    log_file = os.path.join(log_dir, "app.log")
     file_handler = RotatingFileHandler(log_file, maxBytes=10*1024*1024, backupCount=5)  # 10MB
     file_handler.setLevel(DEFAULT_LOG_LEVEL)
     file_formatter = logging.Formatter(LOG_FORMAT, DATE_FORMAT)

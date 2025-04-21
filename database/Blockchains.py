@@ -4,7 +4,7 @@ from datetime import datetime
 from .base import Base
 
 class Blockchains(Base):
-    __tablename__ = 'Blockchains'
+    __tablename__ = 'blockchains'
 
     BlockchainID = Column(Integer, primary_key=True, autoincrement=True)
     BlockchainName = Column(String(100), nullable=False, unique=True)
@@ -16,7 +16,9 @@ class Blockchains(Base):
     # Fix back_populates relationship for Address
     addresses = relationship('Address', back_populates='blockchains')
 
-    currencies = relationship('Currencies', back_populates='blockchains')
+    currencies = relationship('Currencies', back_populates='blockchains', foreign_keys='Currencies.BlockchainID')
+
+    transfers = relationship('Transfers', back_populates='blockchain')
 
     def __repr__(self):
         return f"<Blockchains(BlockchainID={self.BlockchainID}, BlockchainName='{self.BlockchainName}')>"

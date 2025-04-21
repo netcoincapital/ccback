@@ -19,7 +19,7 @@ logger.info("Initializing currency price service module")
 # ارزهای فیات پشتیبانی شده و نماد آنها
 fiat_symbols = {
     "USD": "$", "CAD": "CA$", "AUD": "AU$", "GBP": "£", "EUR": "€",
-    "KWD": "KD", "TRY": "₺", "IRR": "﷼", "SAR": "﷼", "CNY": "¥",
+    "KWD": "KD", "TRY": "₺", "SAR": "﷼", "CNY": "¥",
     "KRW": "₩", "JPY": "¥", "INR": "₹", "RUB": "₽", "IQD": "ع.د",
     "TND": "د.ت", "BHD": "ب.د"
 }

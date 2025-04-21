@@ -4,13 +4,13 @@ from datetime import datetime
 from .base import Base
 
 class Currencies(Base):
-    __tablename__ = 'Currencies'
+    __tablename__ = 'currencies'
 
     CurrencyID = Column(String, primary_key=True)
     CurrencyName = Column(String(255), nullable=False)
     Icon = Column(String(255), nullable=False)
     Symbol = Column(String(50), nullable=False)
-    BlockchainID = Column(Integer, ForeignKey('Blockchains.BlockchainID'), nullable=False)
+    BlockchainID = Column(Integer, ForeignKey('blockchains.BlockchainID'), nullable=False)
     DecimalPlaces = Column(Integer, nullable=False)
     IsToken = Column(Boolean, nullable=False, default=False)
     SmartContractAddress = Column(String(255), nullable=True)

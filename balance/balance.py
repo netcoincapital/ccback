@@ -11,6 +11,7 @@ from schemas.balance_schemas import UserBalanceRequest, UserBalanceResponse, Tok
 from security.validators import SecurityUtils, InputValidator, ValidationError
 from utils.logging_config import get_logger
 from services.balance_service import BalanceService
+from workers.rebuild_user_holdings import rebuild_user_holdings
 
 # Configure logging
 logger = get_logger(__file__)
@@ -509,6 +510,108 @@ def test_update_balance():
         return jsonify({
             "error_type": "server_error", 
             "message": f"Server error in test: {str(e)}", 
+            "traceback": error_details, 
+            "success": False
+        }), 500
+
+@balance_api.route('/rebuild-holdings', methods=['POST'])
+@SecurityUtils.rate_limit(requests=1, window=300)  # Rate limit: 1 request per 5 minutes (heavy operation)
+def rebuild_user_holdings_api():
+    """
+    بازسازی دارایی‌های کاربر با استفاده از تاریخچه تراکنش‌ها
+    این عملیات سنگین است و ممکن است مدتی طول بکشد
+    """
+    try:
+        # Validate request data
+        if not request.is_json:
+            logger.warning("Received rebuild-holdings request with non-JSON content type")
+            raise ValidationError("Content-Type must be application/json", 415)
+
+        data = request.get_json()
+        
+        # Validate user ID
+        if not isinstance(data.get('UserID'), str):
+            logger.warning(f"Invalid UserID type in rebuild-holdings request: {type(data.get('UserID'))}")
+            raise ValidationError("UserID must be a string", 400)
+        
+        user_id = InputValidator.validate_uuid(data.get('UserID'), "UserID")
+        
+        # Optional parameters
+        days_back = data.get('DaysBack')
+        if days_back is not None:
+            try:
+                days_back = int(days_back)
+                if days_back < 0:
+                    raise ValueError("DaysBack must be a positive integer")
+            except ValueError:
+                raise ValidationError("DaysBack must be a valid positive integer", 400)
+        
+        force_rebuild = data.get('ForceRebuild', False)
+        if not isinstance(force_rebuild, bool):
+            raise ValidationError("ForceRebuild must be a boolean", 400)
+        
+        logger.info(f"Received holdings rebuild request for UserID={user_id}, DaysBack={days_back}, ForceRebuild={force_rebuild}")
+        
+        # Check if user exists before proceeding
+        session = SessionLocal()
+        try:
+            user = session.query(Users).filter(Users.UserID == user_id).first()
+            if not user:
+                logger.warning(f"User not found for holdings rebuild: {user_id}")
+                return jsonify({
+                    "success": False,
+                    "error_type": "not_found",
+                    "message": "User not found"
+                }), 404
+            
+            # بجای استفاده از threading، مستقیما از تابع استفاده می‌کنیم (اگر خطای threading داشت)
+            try:
+                import threading
+                # Begin the rebuild process in a background thread to avoid API timeout
+                rebuild_thread = threading.Thread(
+                    target=rebuild_user_holdings,
+                    kwargs={
+                        'user_id': user_id,
+                        'days_back': days_back,
+                        'force_rebuild': force_rebuild
+                    }
+                )
+                rebuild_thread.daemon = True
+                rebuild_thread.start()
+                
+                logger.info(f"Started rebuild process in background thread for user {user_id}")
+            except Exception as thread_error:
+                # در صورت خطا در Threading، به صورت مستقیم فراخوانی می‌کنیم
+                logger.warning(f"Could not start thread for rebuild: {str(thread_error)}. Using direct call.")
+                # اجرای مستقیم و غیر همزمان
+                rebuild_user_holdings(
+                    user_id=user_id,
+                    days_back=days_back,
+                    force_rebuild=force_rebuild
+                )
+                logger.info(f"Completed direct rebuild process for user {user_id}")
+            
+            return jsonify({
+                "success": True,
+                "message": "Holdings rebuild process started",
+                "UserID": user_id,
+                "DaysBack": days_back,
+                "ForceRebuild": force_rebuild
+            }), 202  # Accepted, processing will continue asynchronously
+            
+        finally:
+            session.close()
+            
+    except ValidationError as ve:
+        logger.warning(f"Validation error in rebuild-holdings: {ve.message}")
+        return jsonify({"error_type": "validation_error", "message": ve.message, "success": False}), ve.status_code
+    except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
+        logger.error(f"Error processing holdings rebuild request: {str(e)}\n{error_details}")
+        return jsonify({
+            "error_type": "internal_error", 
+            "message": f"Internal server error: {str(e)}", 
             "traceback": error_details, 
             "success": False
         }), 500

@@ -4,13 +4,13 @@ from datetime import datetime
 from .base import Base
 
 class Transfers(Base):
-    __tablename__ = 'Transfers'
+    __tablename__ = 'transfers'
 
     TransferID = Column(BigInteger, primary_key=True, autoincrement=True)
 
-    BlockchainID = Column(Integer, ForeignKey('Blockchains.BlockchainID'), nullable=False)
-    AddressID = Column(Integer, ForeignKey('Address.AddressID'), nullable=False)
-    WalletID = Column(Integer, ForeignKey('Wallets.WalletID'), nullable=False)
+    BlockchainID = Column(Integer, ForeignKey('blockchains.BlockchainID'), nullable=False)
+    AddressID = Column(Integer, ForeignKey('address.AddressID'), nullable=False)
+    WalletID = Column(String(50), ForeignKey('wallets.WalletID'), nullable=False)
 
     TxHash = Column(String(100), nullable=False, index=True)
     BlockNumber = Column(BigInteger, nullable=True)
@@ -19,6 +19,7 @@ class Transfers(Base):
     FromAddress = Column(String(100), nullable=True)
     ToAddress = Column(String(100), nullable=True)
     Amount = Column(DECIMAL(38, 18), nullable=False, default=0)
+    Price = Column(DECIMAL(38, 18), nullable=True)
 
     TokenSymbol = Column(String(20), nullable=True)
     TokenContract = Column(String(100), nullable=True)
@@ -34,9 +35,9 @@ class Transfers(Base):
     UpdatedAt = Column(TIMESTAMP, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
     # روابط
-    blockchain = relationship('Blockchains')
-    address = relationship('Address')
-    wallet = relationship('Wallets')
+    blockchain = relationship('Blockchains', back_populates='transfers')
+    address = relationship('Address', back_populates='transfers')
+    wallet = relationship('Wallets', back_populates='transfers')
 
     def __repr__(self):
         return f"<Transfer(TxHash={self.TxHash}, Amount={self.Amount}, Direction={self.Direction})>"

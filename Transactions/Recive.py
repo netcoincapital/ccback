@@ -27,13 +27,30 @@ receive_bp = Blueprint('receive', __name__)
 def get_user_address(session, user_id, blockchain_symbol):
     """Get user's public address from database"""
     try:
-        # Find the blockchain ID
+        # Find the blockchain ID - search by all possible fields
         blockchain = session.query(Blockchains).filter(
             Blockchains.ChainCode.ilike(blockchain_symbol)
         ).first()
         
+        # اگر با ChainCode پیدا نشد، با BlockchainName جستجو کن
         if not blockchain:
-            logger.warning(f"Blockchain not found for symbol: {blockchain_symbol}")
+            blockchain = session.query(Blockchains).filter(
+                Blockchains.BlockchainName.ilike(blockchain_symbol)
+            ).first()
+        
+        # اگر با BlockchainName هم پیدا نشد، با Symbol جستجو کن
+        if not blockchain:
+            blockchain = session.query(Blockchains).filter(
+                Blockchains.Symbol.ilike(blockchain_symbol)
+            ).first()
+        
+        if not blockchain:
+            logger.warning(f"Blockchain not found for any of [ChainCode, BlockchainName, Symbol]: {blockchain_symbol}")
+            # نمایش همه بلاکچین‌های موجود برای دیباگ
+            all_chains = session.query(Blockchains).all()
+            if all_chains:
+                chain_info = [f"{chain.BlockchainName}(Symbol:{chain.Symbol}, ChainCode:{chain.ChainCode})" for chain in all_chains]
+                logger.info(f"Available blockchains: {', '.join(chain_info)}")
             return None
             
         # Find the user's wallet

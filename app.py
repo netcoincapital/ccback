@@ -133,7 +133,7 @@ try:
     logger.info("Registered gasfee_bp")
     app.register_blueprint(balance_api, url_prefix='')
     logger.info(f"Registered balance_api - contains {len(balance_api.deferred_functions)} routes")
-    app.register_blueprint(send_bp, url_prefix='')
+    app.register_blueprint(send_bp, url_prefix='/send')
     logger.info("Registered send_bp")
     app.register_blueprint(transactions_bp, url_prefix='')
     logger.info("Registered transactions_bp")
@@ -153,7 +153,7 @@ from services.wallet_service import WalletService
 
 # Import webhook module
 from webhook import init_app as init_webhook
-from webhook.webhook_handler import get_user_addresses_from_db
+from webhook.database_operations import DatabaseOperations
 from webhook.tatum_subscription import create_batched_blockchain_subscriptions, group_addresses_by_blockchain, list_subscriptions
 
 # Initialize webhook blueprint
@@ -173,7 +173,8 @@ def setup_webhook_subscriptions():
                                  and 'addresses' in sub.get('attr', {}))
         
         # Get all user addresses
-        user_addresses = get_user_addresses_from_db()
+        db_operations = DatabaseOperations()
+        user_addresses = db_operations.get_user_addresses()
         
         if not user_addresses:
             logger.warning("No user addresses found in database for webhook setup")
@@ -206,7 +207,7 @@ def setup_webhook_subscriptions():
         results = create_batched_blockchain_subscriptions(user_addresses)
         
         # Log the results
-        total_subscriptions = sum(len(subs) for subs in results.values())
+        total_subscriptions = sum(len(subs) for subs in results)
         logger.info(f"Successfully created {total_subscriptions} batch subscriptions")
         
         # Save results to a file for reference
@@ -223,6 +224,54 @@ def setup_webhook_subscriptions():
         
 # Run the webhook setup
 setup_webhook_subscriptions()
+
+# Check price scheduler status
+try:
+    # Import the price scheduler
+    from Currencies.price_scheduler import run_scheduler
+    
+    # Create a thread for the price scheduler if it's not already running
+    import threading
+    scheduler_thread = None
+    
+    for thread in threading.enumerate():
+        if thread.name.startswith("Package-") or thread.name == "PriceScheduler":
+            scheduler_thread = thread
+            app.logger.info(f"Price scheduler is already running in thread: {thread.name}")
+            break
+    
+    if not scheduler_thread:
+        app.logger.info("Starting price scheduler...")
+        scheduler_thread = threading.Thread(target=run_scheduler, daemon=True, name="PriceScheduler")
+        scheduler_thread.start()
+        app.logger.info("Price scheduler started successfully")
+    
+except Exception as scheduler_error:
+    app.logger.error(f"Error starting price scheduler: {str(scheduler_error)}", exc_info=True)
+
+# اضافه کردن شبیه‌ساز قیمت NCC
+try:
+    # بررسی اینکه شبیه‌ساز NCC از قبل در حال اجرا نباشد
+    ncc_simulator_thread = None
+    
+    for thread in threading.enumerate():
+        if thread.name == "NCCPriceSimulator":
+            ncc_simulator_thread = thread
+            app.logger.info(f"NCC price simulator is already running in thread: {thread.name}")
+            break
+    
+    if not ncc_simulator_thread:
+        from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+        app.logger.info("Starting NCC price simulator...")
+        ncc_simulator_thread = threading.Thread(target=ncc_price_simulator, daemon=True, name="NCCPriceSimulator")
+        ncc_simulator_thread.start()
+        app.logger.info("NCC price simulator started successfully")
+    
+except Exception as ncc_error:
+    app.logger.error(f"Error starting NCC price simulator: {str(ncc_error)}", exc_info=True)
+    # نمایش جزئیات خطا برای عیب‌یابی
+    app.logger.error(f"NCC price simulator error details: {traceback.format_exc()}")
+    # در صورت خطا برنامه ادامه پیدا می‌کند
 
 @app.route('/')
 def index():
@@ -644,7 +693,6 @@ def create_app():
     from Transactions import receive_bp, gasfee_bp
     from Send import send_bp
     from balance import balance_api
-    # from Ethereum import auth_bp, phrase_key_bp  # Commented out missing module
     from UserTransactions import transactions_bp
     
     app_instance.register_blueprint(generate_bp, url_prefix='/generate')
@@ -654,10 +702,8 @@ def create_app():
     app_instance.register_blueprint(receive_bp, url_prefix='')
     app_instance.register_blueprint(gasfee_bp, url_prefix='')
     app_instance.register_blueprint(balance_api, url_prefix='')
-    app_instance.register_blueprint(send_bp, url_prefix='')
+    app_instance.register_blueprint(send_bp, url_prefix='/send')
     app_instance.register_blueprint(transactions_bp, url_prefix='')
-    # app_instance.register_blueprint(auth_bp)  # Commented out missing blueprint
-    # app_instance.register_blueprint(phrase_key_bp)  # Commented out missing blueprint
     
     # Initialize webhook routes
     init_webhook(app_instance)
