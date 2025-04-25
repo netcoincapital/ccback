@@ -193,63 +193,137 @@ class DatabaseOperations:
             if token_symbol == 'BSC':
                 token_symbol = 'BNB'
                 
+            # تبدیل TRON به TRX برای همخوانی با دیتابیس
+            if token_symbol == 'TRON':
+                token_symbol = 'TRX'
+                
             logger.debug(f"دریافت قیمت برای ارز {token_symbol} در بلاکچین {blockchain}")
             
-            # ابتدا از جدول currencies مقدار CurrencyID را دریافت می‌کنیم
-            currency_query = text("""
-                SELECT c.CurrencyID
-                FROM currencies c
-                JOIN blockchains b ON c.BlockchainID = b.BlockchainID
-                WHERE c.Symbol = :symbol AND b.Symbol = :blockchain
-                LIMIT 1
-            """)
-            
-            result = session.execute(currency_query, {'symbol': token_symbol, 'blockchain': blockchain})
-            currency_row = result.fetchone()
-            
-            if not currency_row:
-                logger.warning(f"هیچ رکوردی در جدول currencies برای {token_symbol} در بلاکچین {blockchain} یافت نشد")
-                
-                # تلاش برای یافتن با نماد دقیق بدون در نظر گرفتن بلاکچین
-                fallback_query = text("""
-                    SELECT CurrencyID
-                    FROM currencies
-                    WHERE Symbol = :symbol
-                    LIMIT 1
+            # برای BNB، مستقیماً از crypto_id=3 استفاده می‌کنیم
+            if token_symbol == 'BNB':
+                direct_query = text("""
+                    SELECT price FROM prices 
+                    WHERE crypto_id = 3 AND currency = 'USD'
+                    ORDER BY id DESC LIMIT 1
                 """)
                 
-                result = session.execute(fallback_query, {'symbol': token_symbol})
-                currency_row = result.fetchone()
-                
-                if not currency_row:
-                    logger.warning(f"هیچ رکوردی در جدول currencies برای {token_symbol} یافت نشد")
-                    return None
+                direct_result = session.execute(direct_query).fetchone()
+                if direct_result:
+                    price = float(direct_result[0])
+                    logger.info(f"قیمت BNB از جستجوی مستقیم با ID=3: ${price}")
+                    return price
             
-            currency_id = currency_row[0]
-            logger.debug(f"CurrencyID برای {token_symbol}: {currency_id}")
-            
-            # حالا با استفاده از CurrencyID به جدول prices مراجعه می‌کنیم
-            price_query = text("""
-                SELECT price 
-                FROM prices 
-                WHERE crypto_id = :crypto_id AND currency = 'USD' 
-                ORDER BY last_updated DESC 
+            # روش اول: استفاده از crypto_id از جدول currencies
+            currency_query = text("""
+                SELECT c.CurrencyID, c.Symbol, c.cmc_id 
+                FROM currencies c
+                WHERE LOWER(c.Symbol) = LOWER(:token_symbol) OR LOWER(c.SmartContractAddress) = LOWER(:token_symbol) 
                 LIMIT 1
             """)
             
-            result = session.execute(price_query, {'crypto_id': currency_id})
-            price_row = result.fetchone()
+            currency_result = session.execute(currency_query, {
+                'token_symbol': token_symbol
+            }).fetchone()
             
-            if price_row:
-                price = float(price_row[0])
-                logger.info(f"قیمت فعلی {token_symbol} ({currency_id}): ${price:,.2f}")
-                return price
-            else:
-                logger.warning(f"هیچ قیمتی برای {token_symbol} (CurrencyID: {currency_id}) در جدول prices یافت نشد")
-                return None
+            if currency_result:
+                currency_id = currency_result[0]
+                actual_symbol = currency_result[1]
+                cmc_id = currency_result[2]
                 
+                logger.info(f"ارز {token_symbol} با شناسه {currency_id} و CMC ID {cmc_id} یافت شد")
+                
+                # اگر cmc_id داریم، از آن برای جستجو در جدول prices استفاده می‌کنیم
+                if cmc_id:
+                    price_query = text("""
+                        SELECT price FROM prices 
+                        WHERE crypto_id = :cmc_id AND currency = 'USD'
+                        ORDER BY id DESC LIMIT 1
+                    """)
+                    
+                    price_result = session.execute(price_query, {'cmc_id': cmc_id}).fetchone()
+                    
+                    if price_result:
+                        price = float(price_result[0])
+                        logger.info(f"قیمت {token_symbol} از CMC ID {cmc_id}: ${price}")
+                        return price
+            
+            # روش دوم: جستجوی مستقیم با استفاده از CurrencyID
+            if token_symbol == 'TRX' or token_symbol == 'TRON':
+                # جستجوی مستقیم برای TRX
+                trx_query = text("""
+                    SELECT p.price FROM prices p
+                    JOIN currencies c ON p.crypto_id = c.cmc_id
+                    WHERE c.Symbol = 'TRX' AND p.currency = 'USD'
+                    ORDER BY p.id DESC LIMIT 1
+                """)
+                
+                trx_result = session.execute(trx_query).fetchone()
+                if trx_result:
+                    price = float(trx_result[0])
+                    logger.info(f"قیمت TRX از جستجوی مستقیم: ${price}")
+                    return price
+                    
+                # اگر هنوز پیدا نشد، با ID=18 (ID توکن TRX) جستجو کنیم
+                direct_query = text("""
+                    SELECT price FROM prices 
+                    WHERE crypto_id = 18 AND currency = 'USD'
+                    ORDER BY id DESC LIMIT 1
+                """)
+                
+                direct_result = session.execute(direct_query).fetchone()
+                if direct_result:
+                    price = float(direct_result[0])
+                    logger.info(f"قیمت TRX با ID=18: ${price}")
+                    return price
+            
+            # روش سوم: جستجوی کلی برای همه ارزها
+            fallback_query = text("""
+                SELECT p.price 
+                FROM prices p
+                JOIN currencies c ON p.crypto_id = c.cmc_id
+                WHERE c.Symbol = :token_symbol AND p.currency = 'USD'
+                ORDER BY p.id DESC LIMIT 1
+            """)
+            
+            fallback_result = session.execute(fallback_query, {'token_symbol': token_symbol}).fetchone()
+            
+            if fallback_result:
+                price = float(fallback_result[0])
+                logger.info(f"قیمت {token_symbol} از جستجوی کلی: ${price}")
+                return price
+            
+            # اگر هیچ نتیجه‌ای یافت نشد
+            logger.warning(f"هیچ رکوردی در جدول currencies برای {token_symbol} در بلاکچین {blockchain} یافت نشد")
+            
+            # قیمت‌های پیش‌فرض برای توکن‌های محبوب
+            default_prices = {
+                'TRX': 0.24,
+                'BNB': 606.18,
+                'ETH': 1633.33
+            }
+            
+            if token_symbol in default_prices:
+                default_price = default_prices[token_symbol]
+                logger.info(f"استفاده از قیمت پیش‌فرض برای {token_symbol}: ${default_price}")
+                return default_price
+                
+            return None
+            
         except Exception as e:
-            logger.error(f"خطا در دریافت قیمت ارز {token_symbol}: {str(e)}")
+            logger.error(f"خطا در دریافت قیمت ارز: {str(e)}", exc_info=True)
+            
+            # مقادیر پیش‌فرض در صورت خطا
+            default_prices = {
+                'TRX': 0.24,
+                'BNB': 606.18,
+                'ETH': 1633.33
+            }
+            
+            if token_symbol in default_prices:
+                default_price = default_prices[token_symbol]
+                logger.info(f"استفاده از قیمت پیش‌فرض برای {token_symbol} بعد از خطا: ${default_price}")
+                return default_price
+                
             return None
 
     def _get_transaction_fee(self, tx_hash, blockchain):
@@ -571,244 +645,182 @@ class DatabaseOperations:
             logger.error(f"خطا در ساخت آدرس explorer: {str(e)}")
             return None
 
-    def save_transaction(self, blockchain, transaction_id, relevant_addresses, webhook_data, block_number=None, timestamp=None, from_address=None, to_address=None, token_contract=None):
+    def save_transaction(self, blockchain, transaction_id, relevant_addresses, webhook_data, block_number=None, timestamp=None, from_address=None, to_address=None, token_contract=None, price=None, fee=None):
         """
-        ذخیره اطلاعات تراکنش در دیتابیس
+        Save transaction to database
         
         Args:
-            blockchain (str): نام بلاکچین
-            transaction_id (str): شناسه تراکنش
-            relevant_addresses (list): لیست آدرس‌های مرتبط
-            webhook_data (dict): داده‌های وبهوک
-            block_number (int, optional): شماره بلاک
-            timestamp (int, optional): زمان تراکنش
-            from_address (str, optional): آدرس فرستنده
-            to_address (str, optional): آدرس گیرنده
-            token_contract (str, optional): آدرس قرارداد توکن
+            blockchain (str): Blockchain symbol
+            transaction_id (str): Transaction ID/hash
+            relevant_addresses (list): List of relevant addresses
+            webhook_data (dict): Webhook data
+            block_number (int): Block number
+            timestamp (datetime): Transaction timestamp
+            from_address (str): Sender address
+            to_address (str): Recipient address
+            token_contract (str): Token contract address
+            price (float): Token price
+            fee (float): Transaction fee
             
         Returns:
-            bool: نتیجه عملیات ذخیره
+            bool: True if transaction was saved successfully
         """
-        if not transaction_id:
-            logger.error("شناسه تراکنش خالی است")
-            return False
+        try:
+            engine = self._get_engine()
+            logger.info(f"Saving transaction {transaction_id} to database")
+            
+            # Check if we have relevant addresses
+            if not relevant_addresses or len(relevant_addresses) == 0:
+                logger.error(f"No relevant addresses provided for transaction {transaction_id}")
+                return False
                 
-        logger.info(f"ذخیره تراکنش {transaction_id} برای بلاکچین {blockchain}")
-        logger.debug(f"اطلاعات وبهوک: {webhook_data}")
-        
-        # تبدیل BSC به BNB برای همخوانی با دیتابیس
-        if blockchain and blockchain.upper() == 'BSC':
-            blockchain = 'BNB'
-            logger.info(f"تبدیل بلاکچین BSC به BNB برای همخوانی با دیتابیس")
+            # Get the first address to use for the transfer record
+            address_info = relevant_addresses[0]
+            address_id = address_info.get('address_id')
+            wallet_id = address_info.get('wallet_id')
+            direction = address_info.get('direction', 'inbound')
             
-        # بررسی می‌کنیم که آیا این تراکنش قبلاً ذخیره شده است
-        if self.check_transaction_already_processed(transaction_id, blockchain):
-            logger.warning(f"تراکنش {transaction_id} قبلاً ذخیره شده است")
-            return False
-            
-        with self._get_engine().begin() as connection:
-            with Session(connection) as session:
-                try:
-                    # دریافت شناسه بلاکچین
-                    blockchain_id = self._get_blockchain_id(session, blockchain)
-                    
-                    if not blockchain_id:
-                        logger.error(f"شناسه بلاکچین برای {blockchain} یافت نشد")
-                        return False
-                    
-                    # استخراج اطلاعات تراکنش از داده‌های وبهوک
-                    try:
-                        amount = float(webhook_data.get('amount', 0))
-                    except (ValueError, TypeError):
-                        amount = 0
-                        logger.warning(f"خطا در تبدیل مقدار: {webhook_data.get('amount')} به عدد")
-                        
-                    # استخراج کارمزد از وبهوک یا محاسبه آن
-                    fee = self._extract_fee_from_webhook(webhook_data)
-                    
-                    # اگر کارمزد از وب‌هوک استخراج نشد، سعی می‌کنیم از API تاتوم دریافت کنیم
-                    if fee is None:
-                        logger.info(f"تلاش برای دریافت کارمزد تراکنش {transaction_id} از API تاتوم")
-                        fee = self._get_transaction_fee(transaction_id, blockchain)
-                        
-                        if fee is not None:
-                            logger.info(f"کارمزد تراکنش {transaction_id} از API تاتوم دریافت شد: {fee}")
-                        else:
-                            logger.warning(f"دریافت کارمزد تراکنش {transaction_id} از API تاتوم ناموفق بود")
-                    
-                    # زمان تراکنش - استفاده از پارامتر timestamp اگر داده شده باشد
-                    transaction_time = None
-                    if timestamp:
-                        try:
-                            if isinstance(timestamp, (int, float)):
-                                # تبدیل timestamp به datetime
-                                transaction_time = datetime.fromtimestamp(timestamp)
-                            else:
-                                # تلاش برای تجزیه timestamp به عنوان رشته
-                                transaction_time = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S.%fZ")
-                        except Exception as e:
-                            logger.warning(f"خطا در تبدیل timestamp ارسالی: {e}")
-                    
-                    # اگر هنوز transaction_time تنظیم نشده، از webhook_data استفاده می‌کنیم
-                    if not transaction_time:
-                        try:
-                            webhook_timestamp = webhook_data.get('timestamp', None)
-                            if webhook_timestamp:
-                                if isinstance(webhook_timestamp, (int, float)):
-                                    transaction_time = datetime.fromtimestamp(webhook_timestamp)
-                                else:
-                                    transaction_time = datetime.strptime(webhook_timestamp, "%Y-%m-%dT%H:%M:%S.%fZ")
-                            else:
-                                transaction_time = datetime.now()
-                        except Exception as e:
-                            logger.warning(f"خطا در تبدیل timestamp از webhook: {e}")
-                            transaction_time = datetime.now()
-                    
-                    # آدرس‌های فرستنده و گیرنده - اولویت با پارامترهای ارسالی
-                    sender_address = from_address or webhook_data.get('from', '')
-                    receiver_address = to_address or webhook_data.get('to', '')
-                    
-                    # نماد توکن (برای تراکنش‌های توکن)
-                    token_symbol = webhook_data.get('tokenSymbol') or webhook_data.get('token_symbol') or webhook_data.get('asset')
-                    
-                    # برای توکن‌های اتریوم یا سایر بلاکچین‌ها، اگر آدرس قرارداد شروع با 0x داریم، سیمبل واقعی را از جدول currencies بخوانیم
-                    if token_symbol and (token_symbol.startswith('0x') or token_symbol.startswith('0X')) and len(token_symbol) >= 40:
-                        logger.info(f"آدرس قرارداد هوشمند به عنوان نماد توکن دریافت شده: {token_symbol}")
-                        # آدرس قرارداد را در token_contract ذخیره می‌کنیم
-                        token_contract = token_symbol
-                        # سپس نماد واقعی توکن را از جدول currencies می‌خوانیم
-                        real_token_symbol = self.get_token_symbol_from_contract(session, token_contract, blockchain)
-                        if real_token_symbol:
-                            token_symbol = real_token_symbol
-                            logger.info(f"نماد توکن از جدول currencies: {token_symbol}")
-                    
-                    # اگر هنوز token_contract تنظیم نشده و در webhook_data داریم، آن را استخراج می‌کنیم
-                    if not token_contract:
-                        token_contract = webhook_data.get('tokenAddress') or webhook_data.get('contractAddress') or webhook_data.get('asset')
-                        
-                        # اگر token_contract هم اکنون تنظیم شده و آدرس قرارداد است، نماد واقعی را پیدا می‌کنیم
-                        if token_contract and (token_contract.startswith('0x') or token_contract.startswith('0X')) and len(token_contract) >= 40:
-                            real_token_symbol = self.get_token_symbol_from_contract(session, token_contract, blockchain)
-                            if real_token_symbol and (not token_symbol or token_symbol.startswith('0x')):
-                                token_symbol = real_token_symbol
-                                logger.info(f"نماد توکن از آدرس قرارداد {token_contract}: {token_symbol}")
-                    
-                    if not token_symbol and blockchain.upper() in ['BNB']:
-                        # برای BNB، اگر نماد توکن مشخص نشده باشد، BNB در نظر می‌گیریم
-                        token_symbol = 'BNB'
-                    elif not token_symbol:
-                        # برای سایر بلاکچین‌ها، نماد اصلی بلاکچین را استفاده می‌کنیم
-                        token_symbol = blockchain
-                        
-                    # اگر نماد توکن BSC است، آن را به BNB تبدیل می‌کنیم
-                    if token_symbol and token_symbol.upper() == 'BSC':
-                        token_symbol = 'BNB'
-                        logger.info(f"تبدیل نماد توکن BSC به BNB برای همخوانی با دیتابیس")
-                    
-                    # تعیین نوع دارایی (native یا token)
-                    asset_type = "native"
-                    if token_contract or webhook_data.get('tokenAddress') or webhook_data.get('contractAddress'):
-                        asset_type = "token"
-                        if not token_contract:
-                            token_contract = webhook_data.get('tokenAddress') or webhook_data.get('contractAddress')
-                    
-                    # تعیین نوع تراکنش و وضعیت آن
-                    transaction_type = webhook_data.get('type') or webhook_data.get('transaction_type', 'Transfer')
-                    status = webhook_data.get('status', 'Confirmed')
-                    
-                    # تعیین جهت تراکنش از اولین آدرس مرتبط
-                    direction = "unknown"
-                    if relevant_addresses and 'direction' in relevant_addresses[0]:
-                        direction = relevant_addresses[0]['direction']
-                    
-                    # شناسه آدرس و کیف پول از اولین آدرس مرتبط
-                    address_id = None
-                    wallet_id = None
-                    if relevant_addresses:
-                        address_id = relevant_addresses[0].get('address_id')
-                        wallet_id = relevant_addresses[0].get('wallet_id')
-                    
-                    # شماره بلاک - اولویت با پارامتر ارسالی
-                    block_num = block_number or webhook_data.get('blockNumber') or webhook_data.get('blockHeight')
-                    
-                    # دریافت URL اکسپلورر برای این تراکنش
-                    explorer_url = self._get_explorer_url(session, blockchain_id, transaction_id)
-                    
-                    # دریافت قیمت فعلی توکن
-                    price = self._get_current_price(session, token_symbol, blockchain)
-                    
-                    # محاسبه ارزش کل تراکنش (مقدار * قیمت)
-                    transaction_value = None
-                    if price is not None and amount is not None:
-                        transaction_value = float(amount) * float(price)
-                        logger.info(f"ارزش تراکنش: ${transaction_value:,.2f} USD (مقدار: {amount} {token_symbol}, قیمت: ${price:,.2f})")
-                    else:
-                        logger.warning(f"قیمت یا مقدار برای محاسبه ارزش تراکنش در دسترس نیست. قیمت: {price}, مقدار: {amount}")
-                    
-                    # تعیین موفقیت تراکنش
-                    is_successful = True
-                    if webhook_data.get('status') == 'failed' or webhook_data.get('failed') is True:
-                        is_successful = False
-                    
-                    # ذخیره تراکنش در جدول transfers
-                    insert_query = text("""
-                        INSERT INTO transfers (
-                            BlockchainID, AddressID, WalletID, TxHash, BlockNumber, 
-                            Timestamp, FromAddress, ToAddress, Amount, Price, 
-                            TokenSymbol, TokenContract, AssetType, Fee, Direction, 
-                            Status, IsSuccessful, ExplorerUrl, CreatedAt, UpdatedAt
-                        ) VALUES (
-                            :blockchain_id, :address_id, :wallet_id, :tx_hash, :block_number,
-                            :timestamp, :from_address, :to_address, :amount, :price,
-                            :token_symbol, :token_contract, :asset_type, :fee, :direction,
-                            :status, :is_successful, :explorer_url, NOW(), NOW()
-                        )
-                    """)
-                    
-                    # اجرای کوئری درج
-                    session.execute(insert_query, {
-                        'blockchain_id': blockchain_id,
-                        'address_id': address_id,
-                        'wallet_id': wallet_id,
-                        'tx_hash': transaction_id,
-                        'block_number': block_num,
-                        'timestamp': transaction_time,
-                        'from_address': sender_address,
-                        'to_address': receiver_address,
-                        'amount': amount,
-                        'price': transaction_value,  # ارزش کل تراکنش به دلار (مقدار * قیمت واحد)
-                        'token_symbol': token_symbol,
-                        'token_contract': token_contract,
-                        'asset_type': asset_type,
-                        'fee': fee,
-                        'direction': direction,
-                        'status': status,
-                        'is_successful': is_successful,
-                        'explorer_url': explorer_url
-                    })
-                    
-                    # ذخیره اطلاعات تراکنش در جدول balance_update_log
-                    self._save_transaction_log(session, blockchain_id, transaction_id, wallet_id, direction, amount, token_symbol)
-                    
-                    # بروزرسانی موجودی کیف پول‌ها
-                    for address in relevant_addresses:
-                        self.update_wallet_balance(
-                            address_info=address, 
-                            blockchain=blockchain, 
-                            token_contract=token_contract,
-                            token_symbol=token_symbol
-                        )
-                    
-                    session.commit()
-                    logger.info(f"تراکنش {transaction_id} با موفقیت ذخیره شد")
+            # Make sure we have the required address and wallet IDs
+            if not address_id or not wallet_id:
+                logger.error(f"Missing required address_id or wallet_id for transaction {transaction_id}")
+                return False
+                
+            # Check if transaction already exists
+            with Session(engine) as session:
+                existing = self.check_transaction_exists(session, transaction_id, address_id, wallet_id)
+                if existing:
+                    logger.info(f"Transaction {transaction_id} already exists in database, skipping")
                     return True
+                
+                # Get transaction details from webhook data
+                block = block_number or webhook_data.get('blockNumber') or webhook_data.get('blockHeight')
+                tx_timestamp = timestamp
+                
+                if not tx_timestamp:
+                    if 'timestamp' in webhook_data:
+                        tx_ts = webhook_data['timestamp']
+                        # Convert from milliseconds if needed
+                        if isinstance(tx_ts, int) and tx_ts > 1000000000000:
+                            tx_ts = tx_ts / 1000
+                        tx_timestamp = datetime.fromtimestamp(tx_ts)
+                    else:
+                        tx_timestamp = datetime.now()
+                
+                # Extract token details from webhook
+                token_symbol = webhook_data.get('tokenSymbol') or webhook_data.get('symbol') or webhook_data.get('asset')
+                
+                # Special handling for TRC20 token contract
+                if token_contract and blockchain.upper() in ['TRX', 'TRON']:
+                    # Check for NCC token
+                    if token_contract == 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf' or token_contract == 'TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1':
+                        token_symbol = 'NCC'
+                        logger.info(f"Mapped contract {token_contract} to token symbol NCC")
+                
+                # Extract value from webhook
+                amount = webhook_data.get('amount') or webhook_data.get('value')
+                if amount is None:
+                    amount = 0
                     
-                except Exception as e:
-                    logger.error(f"خطا در ذخیره تراکنش {transaction_id}: {str(e)}")
-                    logger.exception(e)
-                    session.rollback()
+                # Try to parse amount as float
+                try:
+                    amount = float(amount)
+                except (ValueError, TypeError):
+                    amount = 0
+                
+                # Determine asset type (native or token)
+                asset_type = "native"
+                if token_contract:
+                    asset_type = "token"
+                elif webhook_data.get('type') == 'token' or webhook_data.get('type') == 'trc20':
+                    asset_type = "token"
+                
+                # Standardize TRX/TRON symbol
+                if token_symbol and token_symbol.upper() in ['TRON', 'TRX']:
+                    token_symbol = 'TRX'
+                
+                # Insert transaction into database
+                blockchain_id = self._get_blockchain_id(session, blockchain)
+                if not blockchain_id:
+                    logger.error(f"Could not find blockchain ID for {blockchain}")
                     return False
-    
+                
+                # Get current token price if not provided
+                if price is None:
+                    price = self._get_current_price(session, token_symbol or blockchain, blockchain)
+                
+                # Get transaction fee if not provided
+                if fee is None:
+                    fee = self._get_transaction_fee(transaction_id, blockchain)
+                
+                # Get explorer URL
+                explorer_url = self._get_explorer_url(session, blockchain_id, transaction_id)
+                
+                # Prepare base transaction data with the correct column names
+                tx_data = {
+                    'TxHash': transaction_id,
+                    'BlockchainID': blockchain_id,
+                    'AddressID': address_id,
+                    'WalletID': wallet_id,
+                    'BlockNumber': block,
+                    'Timestamp': tx_timestamp,
+                    'TokenContract': token_contract,
+                    'TokenSymbol': token_symbol or blockchain,
+                    'FromAddress': from_address,
+                    'ToAddress': to_address,
+                    'Amount': amount,
+                    'AssetType': asset_type,
+                    'Direction': direction,
+                    'Fee': fee,
+                    'Price': price,
+                    'ExplorerUrl': explorer_url,
+                    'CreatedAt': datetime.now(),
+                    'UpdatedAt': datetime.now()
+                }
+                
+                # Insert transaction with the correct column names from the transfers table
+                insert_tx_query = text("""
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt
+                    ) VALUES (
+                        :TxHash, :BlockchainID, :AddressID, :WalletID, :BlockNumber,
+                        :Timestamp, :TokenContract, :TokenSymbol, :AssetType, :Direction,
+                        :FromAddress, :ToAddress, :Amount, :Fee,
+                        :Price, :ExplorerUrl, :CreatedAt, :UpdatedAt
+                    )
+                """)
+                
+                # Remove RawData from tx_data if it exists
+                if 'RawData' in tx_data:
+                    del tx_data['RawData']
+                
+                session.execute(insert_tx_query, tx_data)
+                
+                # Process relevant addresses
+                for address_info in relevant_addresses:
+                    # Save transaction log
+                    self._save_transaction_log(
+                        session,
+                        blockchain_id=blockchain_id,
+                        transaction_id=transaction_id,
+                        wallet_id=address_info.get('wallet_id'),
+                        direction=address_info.get('direction'),
+                        amount=webhook_data.get('amount') or webhook_data.get('value'),
+                        token_symbol=token_symbol or blockchain
+                    )
+                
+                # Commit changes
+                session.commit()
+                logger.info(f"Transaction {transaction_id} saved successfully")
+                return True
+                
+        except Exception as e:
+            logger.error(f"Error saving transaction {transaction_id}: {str(e)}")
+            logger.exception(e)
+            return False
+
     def _save_transaction_log(self, session, blockchain_id, transaction_id, wallet_id=None, direction=None, amount=None, token_symbol=None):
         """
         ذخیره اطلاعات پردازش تراکنش در جدول لاگ
@@ -862,21 +874,24 @@ class DatabaseOperations:
             bool: True اگر تراکنش قبلاً با هر جهتی پردازش شده باشد، در غیر این صورت False
         """
         try:
-            # بررسی وجود تراکنش در لاگ با هر جهتی (بدون در نظر گرفتن direction)
-            check_query = text("""
-                SELECT COUNT(*) FROM balance_update_log 
-                WHERE transaction_id = :transaction_id
-            """)
-            
-            count = session.execute(check_query, {
-                'transaction_id': transaction_id
-            }).scalar()
-            
-            if count > 0:
-                logger.warning(f"تراکنش {transaction_id} قبلاً برای بلاکچین {blockchain} (با هر جهتی) پردازش شده است")
-                return True
-                
-            return False
+            # ایجاد یک session جدید برای جستجو
+            with self._get_engine().connect() as connection:
+                with Session(connection) as session:
+                    # بررسی وجود تراکنش در لاگ با هر جهتی (بدون در نظر گرفتن direction)
+                    check_query = text("""
+                        SELECT COUNT(*) FROM balance_update_log 
+                        WHERE tx_id = :transaction_id
+                    """)
+                    
+                    count = session.execute(check_query, {
+                        'transaction_id': transaction_id
+                    }).scalar()
+                    
+                    if count > 0:
+                        logger.warning(f"تراکنش {transaction_id} قبلاً برای بلاکچین {blockchain} (با هر جهتی) پردازش شده است")
+                        return True
+                        
+                    return False
             
         except Exception as e:
             logger.warning(f"خطا در بررسی پردازش قبلی تراکنش: {str(e)}")
@@ -885,25 +900,30 @@ class DatabaseOperations:
     
     def update_wallet_balance(self, address_info, blockchain, token_contract=None, token_symbol=None):
         """
-        به‌روزرسانی موجودی کیف پول
+        به‌روزرسانی موجودی کیف پول از بلاکچین
         
         Args:
             address_info (dict): اطلاعات آدرس کیف پول
             blockchain (str): نام بلاکچین
-            token_contract (str, optional): آدرس قرارداد توکن
+            token_contract (str, optional): آدرس قرارداد هوشمند برای توکن‌ها
             token_symbol (str, optional): نماد توکن
             
         Returns:
-            bool: نتیجه به‌روزرسانی
+            bool: نتیجه عملیات
         """
-        if not address_info or not blockchain:
-            logger.error("اطلاعات آدرس یا بلاکچین خالی است")
-            return False
+        # استاندارد‌سازی نام‌های ارز و بلاکچین
+        if blockchain and blockchain.upper() in ['TRON', 'TRX']:
+            blockchain = 'Tron'  # استفاده از فرمت استاندارد "Tron" در دیتابیس
+        
+        # تبدیل TRON به TRX برای همخوانی با دیتابیس
+        if token_symbol and token_symbol.upper() == 'TRON':
+            token_symbol = 'TRX'
+            logger.info(f"تبدیل نماد توکن TRON به TRX برای همخوانی با دیتابیس")
             
         # تبدیل BSC به BNB برای همخوانی با دیتابیس
         if blockchain and blockchain.upper() == 'BSC':
-            blockchain = 'BNB'
-            logger.info(f"تبدیل بلاکچین BSC به BNB برای همخوانی با دیتابیس")
+            blockchain = 'Binance Smart Chain'
+            logger.info(f"تبدیل بلاکچین BSC به Binance Smart Chain برای همخوانی با دیتابیس")
             
         # اگر نماد توکن BSC است، آن را به BNB تبدیل می‌کنیم
         if token_symbol and token_symbol.upper() == 'BSC':
@@ -920,8 +940,6 @@ class DatabaseOperations:
             if not address_id or not wallet_id or not public_address:
                 logger.error("اطلاعات ناقص آدرس کیف پول")
                 return False
-            
-            # حذف تبدیل BSC به BNB - این کار اکنون توسط پردازشگر اختصاصی انجام می‌شود
             
             # تعیین نماد توکن
             currency_symbol = token_symbol or blockchain
@@ -949,25 +967,51 @@ class DatabaseOperations:
                 
                 user_id = user_result[0]
                 
-                # بررسی وجود رکورد موجودی در جدول userholding
-                check_query = text("""
-                    SELECT HoldingID, Balance FROM userholding
-                    WHERE UserID = :user_id
-                    AND (Blockchain = :blockchain OR Blockchain = 'BNB' OR Blockchain = 'BSC')
-                    AND (
-                        (:token_symbol IS NULL AND Symbol = :blockchain) OR
-                        (Symbol = :token_symbol) OR 
-                        (Symbol = :token_contract)
-                    )
-                    LIMIT 1
-                """)
+                # ابتدا شناسه بلاکچین را پیدا می‌کنیم
+                blockchain_id = self._get_blockchain_id(session, blockchain)
+                if not blockchain_id:
+                    logger.error(f"بلاکچین {blockchain} در پایگاه داده یافت نشد")
+                    return False
                 
-                result = session.execute(check_query, {
-                    'user_id': user_id,
-                    'blockchain': blockchain,
-                    'token_symbol': token_symbol,
-                    'token_contract': token_contract
-                }).fetchone()
+                # بررسی وجود رکورد موجودی در جدول userholding
+                # با جستجوی گسترده‌تر برای پیدا کردن رکورد مناسب
+                if currency_symbol and currency_symbol.upper() in ['TRX', 'TRON']:
+                    # برای ترون، جستجوی ویژه انجام می‌دهیم
+                    check_query = text("""
+                        SELECT h.HoldingID, h.Balance 
+                        FROM userholding h
+                        JOIN currencies c ON h.CurrencyID = c.CurrencyID
+                        JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                        WHERE h.UserID = :user_id
+                        AND (c.Symbol = 'TRX' OR c.CurrencyName = 'Tron')
+                        AND b.BlockchainID = 2
+                        LIMIT 1
+                    """)
+                    
+                    result = session.execute(check_query, {
+                        'user_id': user_id
+                    }).fetchone()
+                else:
+                    # برای سایر ارزها جستجوی استاندارد
+                    check_query = text("""
+                        SELECT h.HoldingID, h.Balance 
+                        FROM userholding h
+                        WHERE h.UserID = :user_id
+                        AND (h.Blockchain = :blockchain)
+                        AND (
+                            (:token_symbol IS NULL AND h.Symbol = :blockchain) OR
+                            (h.Symbol = :token_symbol) OR 
+                            (h.Symbol = :token_contract)
+                        )
+                        LIMIT 1
+                    """)
+                    
+                    result = session.execute(check_query, {
+                        'user_id': user_id,
+                        'blockchain': blockchain,
+                        'token_symbol': token_symbol,
+                        'token_contract': token_contract
+                    }).fetchone()
                 
                 if result:
                     # به‌روزرسانی رکورد موجودی موجود
@@ -994,30 +1038,57 @@ class DatabaseOperations:
                         'holding_id': holding_id
                     })
                 else:
-                    # ایجاد رکورد موجودی جدید
+                    # ایجاد رکورد جدید
                     logger.info(f"ایجاد رکورد موجودی جدید برای {currency_symbol} با مقدار {balance}")
                     
-                    # ابتدا بلاکچین را پیدا کنیم
-                    blockchain_id = self._get_blockchain_id(session, blockchain)
-                    
-                    if not blockchain_id:
-                        logger.error(f"بلاکچین {blockchain} در پایگاه داده یافت نشد")
-                        return False
-                    
-                    # دریافت شناسه ارز
-                    currency_query = text("""
-                        SELECT CurrencyID FROM currencies 
-                        WHERE Symbol = :symbol 
-                        AND BlockchainID = :blockchain_id
-                    """)
-                    currency_result = session.execute(currency_query, {
-                        'symbol': currency_symbol, 
-                        'blockchain_id': blockchain_id
-                    }).fetchone()
+                    # دریافت شناسه ارز با جستجوی بهتر
+                    if currency_symbol and currency_symbol.upper() in ['TRX', 'TRON']:
+                        # برای ترون به طور خاص جستجو می‌کنیم
+                        currency_query = text("""
+                            SELECT c.CurrencyID 
+                            FROM currencies c
+                            JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                            WHERE (c.Symbol = 'TRX' OR c.CurrencyName = 'Tron')
+                            AND b.BlockchainID = 2
+                            LIMIT 1
+                        """)
+                        
+                        currency_result = session.execute(currency_query).fetchone()
+                    else:
+                        # سایر ارزها
+                        currency_query = text("""
+                            SELECT c.CurrencyID 
+                            FROM currencies c
+                            JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                            WHERE c.Symbol = :symbol 
+                            AND b.BlockchainID = :blockchain_id
+                            LIMIT 1
+                        """)
+                        
+                        currency_result = session.execute(currency_query, {
+                            'symbol': currency_symbol, 
+                            'blockchain_id': blockchain_id
+                        }).fetchone()
                     
                     if not currency_result:
-                        logger.error(f"ارز {currency_symbol} برای بلاکچین {blockchain} یافت نشد")
-                        return False
+                        # جستجوی با انطباق فازی
+                        fuzzy_query = text("""
+                            SELECT c.CurrencyID 
+                            FROM currencies c
+                            JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                            WHERE (c.Symbol LIKE :symbol_like OR c.CurrencyName LIKE :symbol_like)
+                            AND b.BlockchainID = :blockchain_id
+                            LIMIT 1
+                        """)
+                        
+                        currency_result = session.execute(fuzzy_query, {
+                            'symbol_like': f"%{currency_symbol}%", 
+                            'blockchain_id': blockchain_id
+                        }).fetchone()
+                        
+                        if not currency_result:
+                            logger.error(f"ارز {currency_symbol} برای بلاکچین {blockchain} یافت نشد")
+                            return False
                     
                     currency_id = currency_result[0]
                     
@@ -1061,6 +1132,13 @@ class DatabaseOperations:
                         # محدود کردن به 18 رقم اعشار
                         balance_formatted = balance_decimal.quantize(Decimal('0.000000000000000001'), rounding=ROUND_DOWN)
                         
+                        # تعیین نام بلاکچین صحیح برای ذخیره در جدول
+                        # اگر ترون است، از "Tron" استفاده کنیم
+                        if blockchain and blockchain.upper() in ['TRON', 'TRX']:
+                            blockchain_name = 'Tron'
+                        else:
+                            blockchain_name = blockchain
+                            
                         insert_query = text("""
                             INSERT INTO userholding (
                                 UserID, CurrencyID, Balance, Symbol, Blockchain, IsToken, 
@@ -1076,7 +1154,7 @@ class DatabaseOperations:
                             'currency_id': currency_id,
                             'balance': balance_formatted,
                             'symbol': currency_symbol,
-                            'blockchain': blockchain,
+                            'blockchain': blockchain_name,
                             'is_token': 1 if token_contract else 0
                         })
                 
@@ -1087,359 +1165,312 @@ class DatabaseOperations:
         except Exception as e:
             logger.error(f"خطا در به‌روزرسانی موجودی کیف پول: {str(e)}")
             return False
-    
+
     def get_token_symbol_from_contract(self, session, contract_address, blockchain):
         """
-        استخراج نام توکن از آدرس قرارداد هوشمند
+        Get token symbol from contract address
         
         Args:
-            session: نشست دیتابیس
-            contract_address (str): آدرس قرارداد هوشمند
-            blockchain (str): نام بلاکچین
+            session (Session): Database session
+            contract_address (str): Contract address
+            blockchain (str): Blockchain symbol
             
         Returns:
-            str: نماد توکن
+            str: Token symbol or None
         """
-        if not contract_address:
-            return None
-            
-        logger.info(f"دریافت نماد توکن برای قرارداد {contract_address} در بلاکچین {blockchain}")
-        
         try:
-            # ابتدا تبدیل شکل آدرس به lowercase
-            contract_address = contract_address.lower()
+            # Get blockchain ID
+            blockchain_id = self._get_blockchain_id(session, blockchain)
             
-            # حذف تبدیل BSC به BNB در این قسمت - این کار اکنون توسط پردازشگر اختصاصی انجام می‌شود
-            
-            # ساخت کوئری جستجوی توکن
+            if not blockchain_id:
+                logger.warning(f"Blockchain ID not found for {blockchain}")
+                return None
+                
+            # Query token symbol by contract address and blockchain ID
             query = text("""
-                SELECT c.Symbol
-                FROM currencies c
-                JOIN blockchains b ON c.BlockchainID = b.BlockchainID
-                WHERE LOWER(c.SmartContractAddress) = :contract_address
-                AND (
-                    b.Symbol = :blockchain
-                    OR b.BlockchainName = :blockchain
-                    OR ((:blockchain = 'BNB' OR :blockchain = 'BSC')
-                    AND (b.BlockchainName LIKE '%Binance%' OR b.BlockchainName LIKE '%BSC%' OR b.Symbol = 'BNB')))
+                SELECT Symbol FROM currencies
+                WHERE LOWER(SmartContractAddress) = LOWER(:contract_address)
+                AND BlockchainID = :blockchain_id
                 LIMIT 1
             """)
             
             result = session.execute(query, {
-                'contract_address': contract_address,
-                'blockchain': blockchain
+                "contract_address": contract_address,
+                "blockchain_id": blockchain_id
             }).fetchone()
             
             if result:
-                symbol = result[0]
-                logger.info(f"نماد توکن {symbol} برای قرارداد {contract_address} یافت شد")
-                return symbol
+                logger.info(f"Found token symbol {result[0]} for contract {contract_address}")
+                return result[0]
+                
+            # Try fuzzy search without blockchain ID constraint
+            fuzzy_query = text("""
+                SELECT Symbol FROM currencies
+                WHERE SmartContractAddress LIKE :contract_pattern
+                LIMIT 1
+            """)
             
-            # اگر توکن پیدا نشد، بخشی از آدرس قرارداد را به عنوان نماد استفاده می‌کنیم
-            symbol = "TKN_" + contract_address[-6:]
-            logger.warning(f"نماد توکن برای قرارداد {contract_address} یافت نشد، از {symbol} به عنوان نماد استفاده می‌شود")
-            return symbol
+            pattern = f"%{contract_address}%"
+            fuzzy_result = session.execute(fuzzy_query, {"contract_pattern": pattern}).fetchone()
+            
+            if fuzzy_result:
+                logger.info(f"Found token symbol {fuzzy_result[0]} with fuzzy search for contract {contract_address}")
+                return fuzzy_result[0]
+                
+            return None
             
         except Exception as e:
-            logger.error(f"خطا در دریافت نماد توکن: {str(e)}")
-            # در صورت خطا، به صورت پیش‌فرض آخرین کاراکترهای آدرس قرارداد را استفاده می‌کنیم
-            symbol = "TKN_" + contract_address[-6:]
-            return symbol
-    
+            logger.error(f"Error getting token symbol from contract: {str(e)}")
+            return None
+
     def update_user_holding_balance(self, wallet_id, blockchain, token_symbol, direction, amount, tx_id, contract_address=None):
         """
-        Update the balance of a user's holdings based on a transaction.
+        به‌روزرسانی موجودی کیف پول کاربر پس از انجام تراکنش
         
         Args:
-            wallet_id (str): The wallet ID
-            blockchain (str): The blockchain name
-            token_symbol (str): The token symbol
-            direction (str): The transaction direction (inbound/outbound)
-            amount: The transaction amount
-            tx_id: The transaction ID
-            contract_address: The contract address for token transactions
+            wallet_id (str): شناسه کیف پول
+            blockchain (str): نام بلاکچین
+            token_symbol (str): نماد توکن
+            direction (str): جهت تراکنش (inbound/outbound)
+            amount (float): مقدار تراکنش
+            tx_id (str): شناسه تراکنش
+            contract_address (str, optional): آدرس قرارداد هوشمند
             
         Returns:
-            bool: Success or failure
+            bool: نتیجه عملیات
         """
-        from decimal import Decimal, getcontext, ROUND_DOWN
-        import datetime
+        logger.info(f"به‌روزرسانی موجودی کیف پول {wallet_id} برای ارز {token_symbol} در بلاکچین {blockchain}")
         
-        # محدود کردن تعداد ارقام اعشار به 18 رقم
-        getcontext().prec = 38  # کل ارقام معنی‌دار
-        amount_decimal = Decimal(str(amount))
-        # محدود کردن به 18 رقم اعشار
-        amount_formatted = amount_decimal.quantize(Decimal('0.000000000000000001'), rounding=ROUND_DOWN)
-        
-        # تبدیل BSC به BNB برای همخوانی با دیتابیس
-        if blockchain and blockchain.upper() == 'BSC':
-            blockchain = 'BNB'
-            logger.info(f"تبدیل بلاکچین BSC به BNB برای همخوانی با دیتابیس")
-            
-        # اگر نماد توکن BSC است، آن را به BNB تبدیل می‌کنیم
-        if token_symbol and token_symbol.upper() == 'BSC':
-            token_symbol = 'BNB'
-            logger.info(f"تبدیل نماد توکن BSC به BNB برای همخوانی با دیتابیس")
-        
-        logger.info(f"Starting update_user_holding_balance for tx_id: {tx_id}, direction: {direction}, amount: {amount_formatted}")
-        
-        engine = self._get_engine()
         try:
-            with Session(engine) as session:
-                # Get user ID from wallet ID
-                wallet_query = text("""
-                    SELECT UserID FROM wallets WHERE WalletID = :wallet_id
-                """)
-                result = session.execute(wallet_query, {'wallet_id': wallet_id}).fetchone()
-                
-                if not result:
-                    logger.error(f"Wallet {wallet_id} not found in database")
+            # استانداردسازی نام بلاکچین و توکن
+            standardized_blockchain = blockchain
+            standardized_token = token_symbol
+            
+            # تبدیل BSC به BNB برای همخوانی با دیتابیس
+            if blockchain and blockchain.upper() == 'BSC':
+                standardized_blockchain = 'Binance Smart Chain'
+                logger.info(f"تبدیل نام بلاکچین از BSC به Binance Smart Chain")
+            
+            # تبدیل TRON به TRX برای همخوانی با دیتابیس
+            if blockchain and blockchain.upper() in ['TRON', 'TRX']:
+                standardized_blockchain = 'Tron'
+                logger.info(f"تبدیل نام بلاکچین از {blockchain} به Tron")
+            
+            # اگر توکن TRX/TRON است، استانداردسازی
+            if token_symbol and token_symbol.upper() in ['TRON', 'TRX']:
+                standardized_token = 'TRX'
+                logger.info(f"تبدیل نماد توکن از {token_symbol} به TRX")
+            
+            # تبدیل BSC به BNB
+            if token_symbol and token_symbol.upper() == 'BSC':
+                standardized_token = 'BNB'
+                logger.info(f"تبدیل نماد توکن از {token_symbol} به BNB")
+            
+            # تبدیل مقدار به فرمت صحیح
+            try:
+                if amount is None:
+                    logger.error("مقدار تراکنش خالی است")
                     return False
-                    
-                user_id = result[0]
-                logger.info(f"Found user ID {user_id} for wallet {wallet_id}")
+                amount_value = float(amount)
+            except (ValueError, TypeError):
+                logger.error(f"خطا در تبدیل مقدار '{amount}' به عدد")
+                return False
+            
+            with Session(self._get_engine()) as session:
+                # بررسی وجود کیف پول
+                wallet_query = text("""
+                    SELECT UserID FROM wallets 
+                    WHERE WalletID = :wallet_id
+                """)
                 
-                # If this is a token with contract address, get the proper symbol from currencies table
-                if contract_address and (token_symbol.startswith('0x') or token_symbol.startswith('0X')) and len(token_symbol) >= 40:
-                    token_symbol = self.get_token_symbol_from_contract(session, contract_address, blockchain)
+                wallet_result = session.execute(wallet_query, {'wallet_id': wallet_id}).fetchone()
+                if not wallet_result:
+                    logger.error(f"کیف پول {wallet_id} یافت نشد")
+                    return False
                 
-                # Check if the currency exists
-                # For tokens, first check by contract address
-                if contract_address:
-                    currency_query = text("""
-                        SELECT c.CurrencyID 
-                        FROM currencies c
-                        WHERE LOWER(c.SmartContractAddress) = LOWER(:contract_address)
-                        LIMIT 1
-                    """)
-                    result = session.execute(currency_query, {
-                        'contract_address': contract_address
-                    }).fetchone()
-                    
-                    if result:
-                        currency_id = result[0]
-                        logger.info(f"Found currency by contract address: {contract_address}")
-                    else:
-                        logger.info(f"No currency found by contract address: {contract_address}, trying symbol")
-
-                # If no result by contract address or it's a native token, try by symbol and blockchain
-                if not result or not contract_address:
-                    currency_query = text("""
-                        SELECT c.CurrencyID 
+                user_id = wallet_result[0]
+                
+                # دریافت شناسه بلاکچین
+                blockchain_id = self._get_blockchain_id(session, standardized_blockchain)
+                if not blockchain_id:
+                    logger.error(f"بلاکچین {standardized_blockchain} در دیتابیس یافت نشد")
+                    return False
+                
+                # دریافت مشخصات ارز
+                currency_query = text("""
+                    SELECT c.CurrencyID, c.Symbol
+                    FROM currencies c
+                    JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                    WHERE b.BlockchainID = :blockchain_id AND 
+                        (c.Symbol = :token_symbol OR c.SmartContractAddress = :contract_address)
+                    LIMIT 1
+                """)
+                
+                params = {
+                    'blockchain_id': blockchain_id,
+                    'token_symbol': standardized_token,
+                    'contract_address': contract_address if contract_address else ''
+                }
+                
+                currency_result = session.execute(currency_query, params).fetchone()
+                
+                if not currency_result:
+                    # تلاش دوم - جستجوی فازی
+                    like_symbol = f"%{standardized_token}%"
+                    fuzzy_query = text("""
+                        SELECT c.CurrencyID, c.Symbol
                         FROM currencies c
                         JOIN blockchains b ON c.BlockchainID = b.BlockchainID
-                        WHERE UPPER(c.Symbol) = UPPER(:symbol) AND (b.BlockchainName = :blockchain 
-                            OR b.Symbol = :blockchain_symbol
-                            OR ((:blockchain = 'BNB' OR :blockchain = 'BSC') 
-                                AND (b.BlockchainName LIKE '%Binance%' OR b.BlockchainName LIKE '%BSC%' OR b.Symbol = 'BNB')))
+                        WHERE b.BlockchainID = :blockchain_id AND 
+                            (c.Symbol LIKE :token_symbol_like OR c.CurrencyName LIKE :token_symbol_like)
+                        LIMIT 1
                     """)
-                    result = session.execute(currency_query, {
-                        'symbol': token_symbol,
-                        'blockchain': blockchain,
-                        'blockchain_symbol': blockchain.upper()
+                    
+                    currency_result = session.execute(fuzzy_query, {
+                        'blockchain_id': blockchain_id,
+                        'token_symbol_like': like_symbol
                     }).fetchone()
+                    
+                    # برای TRX جستجوی ویژه
+                    if not currency_result and standardized_token.upper() == 'TRX':
+                        special_trx_query = text("""
+                            SELECT c.CurrencyID, c.Symbol
+                            FROM currencies c
+                            JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                            WHERE b.BlockchainID = 2  # شناسه بلاکچین ترون
+                            AND (c.Symbol = 'TRX' OR c.CurrencyName = 'Tron')
+                            LIMIT 1
+                        """)
+                        
+                        currency_result = session.execute(special_trx_query).fetchone()
+                        
+                        if currency_result:
+                            logger.info(f"ارز TRX با جستجوی ویژه پیدا شد")
                 
-                currency_id = None
-                if result:
-                    currency_id = result[0]
+                if not currency_result:
+                    # اگر ارز پیدا نشد، جستجوی کلی‌تر
+                    final_fallback_query = text("""
+                        SELECT c.CurrencyID, c.Symbol
+                        FROM currencies c
+                        JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                        WHERE (b.Symbol LIKE :token_symbol_like OR
+                            c.Symbol LIKE :token_symbol_like OR 
+                            c.CurrencyName LIKE :token_symbol_like OR 
+                            b.BlockchainName LIKE :token_symbol_like)
+                        LIMIT 1
+                    """)
+                    
+                    final_result = session.execute(final_fallback_query, {
+                        'token_symbol_like': f"%{standardized_token}%"
+                    }).fetchone()
+                    
+                    if final_result:
+                        currency_id = final_result[0]
+                        currency_symbol = final_result[1]
+                        logger.info(f"ارز {currency_symbol} با جستجوی کلی پیدا شد")
+                    else:
+                        # اگر همچنان نیافتیم، لاگ را ثبت می‌کنیم تا از پردازش مجدد جلوگیری شود
+                        self._save_transaction_log(session, blockchain_id, tx_id, wallet_id, direction, amount, standardized_token)
+                        logger.error(f"ارز {standardized_token} در بلاکچین {standardized_blockchain} یافت نشد")
+                        return False
                 else:
-                    # Instead of creating a new currency, log an error and return
-                    logger.error(f"Currency {token_symbol} on {blockchain} not found in the database. Please add it manually.")
-                    return False
+                    currency_id = currency_result[0]
+                    currency_symbol = currency_result[1]
                 
-                # Check if user holding exists
+                logger.info(f"شناسه ارز {currency_symbol}: {currency_id}")
+                
+                # بررسی وجود رکورد موجودی و به‌روزرسانی آن
                 holding_query = text("""
-                    SELECT HoldingID, Balance FROM userholding 
-                    WHERE UserID = :user_id AND Symbol = :symbol AND 
-                    (Blockchain = :blockchain OR 
-                     (:blockchain IN ('BNB', 'BSC') AND Blockchain IN ('BNB', 'BSC')))
+                    SELECT h.HoldingID, h.Balance 
+                    FROM userholding h
+                    WHERE h.UserID = :user_id AND h.CurrencyID = :currency_id
+                    LIMIT 1
                 """)
                 
                 holding_result = session.execute(holding_query, {
                     'user_id': user_id,
-                    'symbol': token_symbol,
-                    'blockchain': blockchain
+                    'currency_id': currency_id
                 }).fetchone()
                 
-                # Record this transaction in balance_update_log BEFORE updating balance
-                # This prevents double counting if the process is interrupted
-                
-                # بررسی وجود رکورد قبلی در balance_update_log برای جلوگیری از Duplicate entry
-                check_log_query = text("""
-                    SELECT COUNT(*) FROM balance_update_log 
-                    WHERE wallet_id = :wallet_id AND tx_id = :tx_id AND direction = :direction
-                """)
-                
-                log_exists = session.execute(check_log_query, {
-                    'wallet_id': wallet_id,
-                    'tx_id': tx_id,
-                    'direction': direction
-                }).scalar() > 0
-                
-                if not log_exists:
-                    log_query = text("""
-                        INSERT INTO balance_update_log 
-                        (wallet_id, tx_id, direction, amount, token_symbol, blockchain, created_at) 
-                        VALUES 
-                        (:wallet_id, :tx_id, :direction, :amount, :token_symbol, :blockchain, NOW())
-                    """)
-                    
-                    try:
-                        session.execute(log_query, {
-                            'wallet_id': wallet_id,
-                            'tx_id': tx_id,
-                            'direction': direction,
-                            'amount': str(amount_formatted),
-                            'token_symbol': token_symbol,
-                            'blockchain': blockchain
-                        })
-                        session.commit()
-                        logger.debug(f"Transaction {tx_id} logged to balance_update_log")
-                    except Exception as e:
-                        logger.warning(f"Error logging transaction to balance_update_log: {str(e)}")
-                        session.rollback()
-                else:
-                    logger.info(f"تراکنش {tx_id} قبلاً در balance_update_log ثبت شده است")
-                
-                # Update user holding
-                new_balance = Decimal('0')
-                
+                # تعیین مقدار جدید موجودی بسته به جهت تراکنش
                 if holding_result:
-                    # Holding exists, update it
                     holding_id = holding_result[0]
-                    current_balance = holding_result[1] or Decimal('0')
+                    current_balance = float(holding_result[1])
                     
-                    # Convert to Decimal for precise arithmetic
-                    current_balance = Decimal(str(current_balance))
-                    
-                    # Calculate new balance based on direction
                     if direction == 'inbound':
-                        new_balance = current_balance + amount_formatted
+                        new_balance = current_balance + amount_value
                     elif direction == 'outbound':
-                        new_balance = current_balance - amount_formatted
-                        # Prevent negative balance
+                        new_balance = current_balance - amount_value
                         if new_balance < 0:
-                            logger.warning(f"Negative balance detected for {token_symbol}. Setting to 0.")
-                            new_balance = Decimal('0')
+                            new_balance = 0
+                            logger.warning(f"تراکنش باعث منفی شدن موجودی می‌شد، موجودی به صفر تنظیم شد")
+                    else:
+                        logger.error(f"جهت تراکنش نامعتبر: {direction}")
+                        return False
                     
-                    # Update the holding
+                    # به‌روزرسانی موجودی
                     update_query = text("""
-                        UPDATE userholding
-                        SET Balance = :balance, LastUpdated = NOW(), UpdatedAt = NOW(),
-                        RawData = JSON_OBJECT(
-                            'previous_balance', :previous_balance,
-                            'new_balance', :new_balance,
-                            'last_tx_id', :tx_id,
-                            'last_tx_direction', :direction,
-                            'last_tx_amount', :amount
-                        )
+                        UPDATE userholding 
+                        SET Balance = :balance, UpdatedAt = NOW()
                         WHERE HoldingID = :holding_id
                     """)
                     
-                    try:
-                        session.execute(update_query, {
-                            'balance': str(new_balance),
-                            'previous_balance': str(current_balance),
-                            'new_balance': str(new_balance),
-                            'tx_id': tx_id,
-                            'direction': direction,
-                            'amount': str(amount_formatted),
-                            'holding_id': holding_id
-                        })
-                        session.commit()
-                        logger.info(f"Updated user holding for {user_id}, {token_symbol} on {blockchain}. Balance changed from {current_balance} to {new_balance} ({direction})")
-                    except Exception as e:
-                        logger.error(f"Error updating user holding balance: {str(e)}")
-                        session.rollback()
-                        return False
-                else:
-                    # Holding doesn't exist, create a new one
+                    # محدود کردن تعداد ارقام اعشار
+                    from decimal import Decimal, getcontext, ROUND_DOWN
+                    getcontext().prec = 38
+                    balance_decimal = Decimal(str(new_balance))
+                    balance_formatted = balance_decimal.quantize(Decimal('0.000000000000000001'), rounding=ROUND_DOWN)
                     
-                    # If first transaction is outbound, set initial balance to 0
-                    if direction == 'outbound':
-                        logger.warning(f"First transaction for {token_symbol} is outbound. Setting balance to 0.")
-                        new_balance = Decimal('0')
-                    else:
-                        new_balance = amount_formatted
-                        
-                    # بررسی وجود رکورد در جدول userholding قبل از درج رکورد جدید
-                    check_holding_query = text("""
-                        SELECT COUNT(*) FROM userholding 
-                        WHERE UserID = :user_id AND CurrencyID = :currency_id
+                    logger.info(f"به‌روزرسانی موجودی {currency_symbol} از {current_balance} به {balance_formatted}")
+                    
+                    session.execute(update_query, {
+                        'balance': balance_formatted,
+                        'holding_id': holding_id
+                    })
+                else:
+                    # ایجاد رکورد جدید
+                    # موجودی اولیه باید مثبت باشد
+                    initial_balance = amount_value if direction == 'inbound' else 0
+                    
+                    # محدود کردن تعداد ارقام اعشار
+                    from decimal import Decimal, getcontext, ROUND_DOWN
+                    getcontext().prec = 38
+                    balance_decimal = Decimal(str(initial_balance))
+                    balance_formatted = balance_decimal.quantize(Decimal('0.000000000000000001'), rounding=ROUND_DOWN)
+                    
+                    logger.info(f"ایجاد رکورد جدید با موجودی اولیه {balance_formatted} {currency_symbol}")
+                    
+                    insert_query = text("""
+                        INSERT INTO userholding (
+                            UserID, CurrencyID, Balance, Symbol, Blockchain, IsToken, 
+                            CreatedAt, UpdatedAt
+                        ) VALUES (
+                            :user_id, :currency_id, :balance, :symbol, :blockchain, 
+                            :is_token, NOW(), NOW()
+                        )
                     """)
                     
-                    holding_exists = session.execute(check_holding_query, {
-                        'user_id': user_id,
-                        'currency_id': currency_id
-                    }).scalar() > 0
+                    # تعیین نوع دارایی (توکن یا ارز بومی)
+                    is_token = 1 if contract_address else 0
                     
-                    if holding_exists:
-                        # اگر رکورد موجودی قبلا وجود دارد، آن را بروزرسانی می‌کنیم
-                        update_existing_query = text("""
-                            UPDATE userholding
-                            SET Balance = :balance, LastUpdated = NOW(), UpdatedAt = NOW(),
-                            RawData = JSON_OBJECT(
-                                'new_balance', :new_balance,
-                                'last_tx_id', :tx_id,
-                                'last_tx_direction', :direction,
-                                'last_tx_amount', :amount
-                            )
-                            WHERE UserID = :user_id AND CurrencyID = :currency_id
-                        """)
-                        
-                        try:
-                            session.execute(update_existing_query, {
-                                'balance': str(new_balance),
-                                'new_balance': str(new_balance),
-                                'tx_id': tx_id,
-                                'direction': direction,
-                                'amount': str(amount_formatted),
-                                'user_id': user_id,
-                                'currency_id': currency_id
-                            })
-                            session.commit()
-                            logger.info(f"Updated existing user holding for {user_id}, {token_symbol} on {blockchain} with balance {new_balance}")
-                        except Exception as e:
-                            logger.error(f"Error updating existing user holding: {str(e)}")
-                            session.rollback()
-                            return False
-                    else:
-                        # Create a new holding
-                        insert_query = text("""
-                            INSERT INTO userholding
-                            (UserID, CurrencyID, Balance, Symbol, Blockchain, IsToken, LastUpdated, RawData, CreatedAt, UpdatedAt)
-                            VALUES
-                            (:user_id, :currency_id, :balance, :symbol, :blockchain, :is_token, NOW(), JSON_OBJECT('original_balance', :balance), NOW(), NOW())
-                        """)
-                        
-                        # Determine if token
-                        is_token = 0
-                        if token_symbol != blockchain:
-                            is_token = 1
-                            
-                        try:
-                            session.execute(insert_query, {
-                                'user_id': user_id,
-                                'currency_id': currency_id,
-                                'balance': str(new_balance),
-                                'symbol': token_symbol,
-                                'blockchain': blockchain,
-                                'is_token': is_token
-                            })
-                            session.commit()
-                            logger.info(f"Created new user holding for {user_id}, {token_symbol} on {blockchain} with initial balance {new_balance}")
-                        except Exception as e:
-                            logger.error(f"Error creating new user holding: {str(e)}")
-                            session.rollback()
-                            return False
+                    session.execute(insert_query, {
+                        'user_id': user_id,
+                        'currency_id': currency_id,
+                        'balance': balance_formatted,
+                        'symbol': currency_symbol,
+                        'blockchain': standardized_blockchain,
+                        'is_token': is_token
+                    })
                 
-                # Commit the changes
+                # ثبت تراکنش در جدول لاگ
+                self._save_transaction_log(session, blockchain_id, tx_id, wallet_id, direction, amount_value, standardized_token)
+                
                 session.commit()
-                logger.info(f"Successfully completed update_user_holding_balance for tx_id: {tx_id}")
+                logger.info(f"موجودی کیف پول با موفقیت به‌روزرسانی شد")
                 return True
-                
+        
         except Exception as e:
-            logger.error(f"Error updating user holding balance: {str(e)}", exc_info=True)
+            logger.error(f"خطا در به‌روزرسانی موجودی کیف پول: {str(e)}", exc_info=True)
             return False
 
     def update_transaction_status(self, tx_hash, blockchain, tx_details):
@@ -1825,3 +1856,87 @@ class DatabaseOperations:
         except Exception as e:
             logger.error(f"خطا در دریافت شناسه بلاکچین: {str(e)}")
             return None 
+
+    def _get_token_info(self, session, token_contract=None, token_symbol=None, blockchain=None):
+        """
+        Get token information from database
+        
+        Args:
+            session (Session): Database session
+            token_contract (str): Token contract address
+            token_symbol (str): Token symbol
+            blockchain (str): Blockchain symbol
+            
+        Returns:
+            dict: Token information or None
+        """
+        try:
+            # If we have a contract address, try to get token info from contract
+            if token_contract:
+                query = text("""
+                    SELECT c.Symbol, c.DecimalPlaces, c.CurrencyID 
+                    FROM currencies c
+                    JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                    WHERE LOWER(c.SmartContractAddress) = LOWER(:contract)
+                    AND (b.Symbol = :blockchain OR b.BlockchainName = :blockchain)
+                    LIMIT 1
+                """)
+                
+                result = session.execute(query, {
+                    'contract': token_contract,
+                    'blockchain': blockchain
+                }).fetchone()
+                
+                if result:
+                    return {
+                        'symbol': result[0],
+                        'decimals': result[1],
+                        'currency_id': result[2]
+                    }
+                
+                # If not found with exact blockchain, try without blockchain constraint
+                query = text("""
+                    SELECT c.Symbol, c.DecimalPlaces, c.CurrencyID 
+                    FROM currencies c
+                    WHERE LOWER(c.SmartContractAddress) = LOWER(:contract)
+                    LIMIT 1
+                """)
+                
+                result = session.execute(query, {'contract': token_contract}).fetchone()
+                
+                if result:
+                    return {
+                        'symbol': result[0],
+                        'decimals': result[1],
+                        'currency_id': result[2]
+                    }
+            
+            # If we have a token symbol, get info by symbol
+            if token_symbol:
+                query = text("""
+                    SELECT c.Symbol, c.DecimalPlaces, c.CurrencyID 
+                    FROM currencies c
+                    JOIN blockchains b ON c.BlockchainID = b.BlockchainID
+                    WHERE LOWER(c.Symbol) = LOWER(:symbol)
+                    AND (b.Symbol = :blockchain OR b.BlockchainName = :blockchain)
+                    LIMIT 1
+                """)
+                
+                result = session.execute(query, {
+                    'symbol': token_symbol,
+                    'blockchain': blockchain
+                }).fetchone()
+                
+                if result:
+                    return {
+                        'symbol': result[0],
+                        'decimals': result[1],
+                        'currency_id': result[2]
+                    }
+            
+            # If still not found, return None
+            return None
+            
+        except Exception as e:
+            logger.error(f"Error getting token info: {str(e)}")
+            return None

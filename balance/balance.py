@@ -58,9 +58,16 @@ def get_balance():
             # Create balance service
             balance_service = BalanceService(session)
             
-            # Get user balance using simplified method (doesn't use external APIs)
-            # This is temporarily used for debugging instead of the original method
-            result = balance_service.get_simple_user_balance(user_id)
+            # استخراج پارامترهای فیلتر از درخواست
+            currency_names = request_data.CurrencyName if hasattr(request_data, 'CurrencyName') else []
+            blockchain_filter = request_data.Blockchain if hasattr(request_data, 'Blockchain') else {}
+            
+            # Get user balance using simplified method with filter parameters
+            result = balance_service.get_simple_user_balance(
+                user_id,
+                currency_names=currency_names,
+                blockchain_filter=blockchain_filter
+            )
             
             # Return the response
             return jsonify(result), 200

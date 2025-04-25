@@ -1273,13 +1273,15 @@ class BalanceService:
             logger.error(f"Error checking balance changes for user {user_id}: {str(e)}")
             return last_balance
     
-    def get_simple_user_balance(self, user_id: str):
+    def get_simple_user_balance(self, user_id: str, currency_names=None, blockchain_filter=None):
         """
         Simplified version of get_user_balance that doesn't rely on external APIs
         This is used for debugging when external APIs might be causing issues
         
         Args:
             user_id: User ID
+            currency_names: Optional list of currency names to filter by
+            blockchain_filter: Optional dictionary to filter by blockchain
             
         Returns:
             Dictionary with user balance information
@@ -1303,6 +1305,17 @@ class BalanceService:
             balances = []
             
             for holding in holdings:
+                # فیلتر کردن بر اساس نام ارز اگر درخواست شده باشد
+                if currency_names and holding.Symbol not in currency_names:
+                    continue
+                    
+                # فیلتر کردن بر اساس بلاکچین اگر درخواست شده باشد
+                if blockchain_filter:
+                    # اگر یک بلاکچین خاص درخواست شده باشد
+                    blockchain_keys = [k.lower() for k in blockchain_filter.keys()]
+                    if blockchain_keys and holding.Blockchain.lower() not in blockchain_keys:
+                        continue
+                
                 balances.append({
                     "Symbol": holding.Symbol,
                     "Blockchain": holding.Blockchain,

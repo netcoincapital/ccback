@@ -36,7 +36,7 @@ def parse_tron_contract_data(contract_data, contract_type):
             # تبدیل به ترکس (تقسیم بر 1,000,000)
             trx_amount = float(amount) / 1000000
             result['amount'] = trx_amount
-            result['asset'] = 'TRX'
+            result['asset'] = 'TRX'  # استفاده از TRX به جای TRON
         
     elif contract_type == 'TriggerSmartContract':
         # فراخوانی قرارداد هوشمند
@@ -79,6 +79,11 @@ def parse_tron_contract_data(contract_data, contract_type):
         
         result['from_address'] = owner_address
         result['to_address'] = to_address
+        
+        # استانداردسازی نام دارایی
+        if asset_name and asset_name.upper() == 'TRON':
+            asset_name = 'TRX'
+            
         result['asset'] = asset_name
         
         if amount:

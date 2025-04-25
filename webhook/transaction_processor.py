@@ -100,8 +100,8 @@ class TransactionProcessor:
             logger.info(f"⏭️ تراکنش {transaction_id} از نوع 'fee' است و پردازش نمی‌شود")
             return {"status": "نادیده گرفته شد", "reason": "تراکنش از نوع fee است"}
             
-        # فقط تراکنش‌های با نوع "native", "token", و "" و "address_transaction" را پردازش می‌کنیم
-        if transaction_type not in ['native', 'token', '', 'address_transaction']:
+        # فقط تراکنش‌های با نوع "native", "token", و "" و "address_transaction" و "trc20" و "trc10" را پردازش می‌کنیم
+        if transaction_type not in ['native', 'token', '', 'address_transaction', 'trc20', 'trc10']:
             logger.info(f"⏭️ تراکنش {transaction_id} از نوع '{transaction_type}' است و پردازش نمی‌شود")
             return {"status": "نادیده گرفته شد", "reason": f"تراکنش از نوع {transaction_type} است"}
             
@@ -184,7 +184,7 @@ class TransactionProcessor:
             # این یک رویداد قرارداد هوشمند است
             return self._process_contract_event(blockchain, webhook_data, transaction_id)
             
-        elif webhook_type == 'ADDRESS_TRANSACTION' or subscription_type == 'ADDRESS_TRANSACTION' or webhook_type == 'native' or webhook_type == 'token':
+        elif webhook_type == 'ADDRESS_TRANSACTION' or subscription_type == 'ADDRESS_TRANSACTION' or webhook_type in ['native', 'token', 'trc20', 'trc10']:
             # این یک تراکنش آدرس کیف پول یا تراکنش ارز بومی یا توکن است
             return self._process_address_transaction(blockchain, from_address, to_address, value, transaction_id, webhook_data)
         
@@ -449,9 +449,27 @@ class TransactionProcessor:
             asset_type = "native"
             token_contract = None
             
-            if webhook_data.get('type') == 'token':
+            if webhook_data.get('type') == 'token' or webhook_data.get('type') == 'trc20' or webhook_data.get('type') == 'trc10':
                 asset_type = "token"
                 token_contract = webhook_data.get('tokenAddress') or webhook_data.get('contractAddress')
+                
+                # Special handling for TRC20 tokens where asset might be the contract address
+                if blockchain.upper() in ['TRX', 'TRON'] and webhook_data.get('asset') and webhook_data.get('asset').startswith('T') and len(webhook_data.get('asset')) > 30:
+                    # This is likely a contract address in the asset field
+                    contract_address = webhook_data.get('asset')
+                    token_contract = contract_address
+                    
+                    # Check known tokens map for TRC20
+                    known_tokens = {
+                        'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf': 'NCC',
+                        'TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1': 'NCC',
+                        'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t': 'USDT',
+                        'TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8': 'USDC',
+                    }
+                    
+                    if contract_address in known_tokens:
+                        token_symbol = known_tokens[contract_address]
+                        logger.info(f"Mapped TRC20 contract {contract_address} to token symbol {token_symbol}")
                 
                 # If token_symbol is not provided but we have a contract address
                 if not token_symbol and token_contract:
@@ -469,12 +487,42 @@ class TransactionProcessor:
                                 token_symbol = result[0]
                                 logger.info(f"Found token symbol {token_symbol} for contract {token_contract}")
                             else:
-                                # If we still don't have a symbol, use contract address as symbol
-                                logger.warning("Token transaction without symbol, using contract address as symbol")
-                                token_symbol = token_contract
+                                # اگر در ترون هستیم، بررسی می‌کنیم که آیا این توکن در `known_tokens` وجود دارد
+                                if blockchain.upper() == 'TRX' or blockchain.upper() == 'TRON':
+                                    known_tokens = {
+                                        'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf': 'NCC',
+                                        'TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1': 'NCC',
+                                        'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t': 'USDT',
+                                        'TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8': 'USDC',
+                                    }
+                                    
+                                    if token_contract in known_tokens:
+                                        token_symbol = known_tokens[token_contract]
+                                        logger.info(f"Using predefined token symbol {token_symbol} for contract {token_contract}")
+                                    else:
+                                        # جستجوی فازی برای یافتن توکن با اسمارت کانترکت مشابه
+                                        fuzzy_query = text("""
+                                            SELECT Symbol FROM currencies 
+                                            WHERE SmartContractAddress LIKE :contract_address_pattern
+                                            LIMIT 1
+                                        """)
+                                        
+                                        contract_pattern = f"%{token_contract}%"
+                                        fuzzy_result = db_session.execute(fuzzy_query, {'contract_address_pattern': contract_pattern}).fetchone()
+                                        
+                                        if fuzzy_result:
+                                            token_symbol = fuzzy_result[0]
+                                            logger.info(f"Found token symbol {token_symbol} with fuzzy matching for contract {token_contract}")
+                                        else:
+                                            logger.warning("Token transaction without symbol, using UNKNOWN symbol")
+                                            token_symbol = 'UNKNOWN'  # استفاده از UNKNOWN به جای آدرس قرارداد
+                                else:
+                                    # If we still don't have a symbol, use UNKNOWN as symbol
+                                    logger.warning("Token transaction without symbol, using UNKNOWN symbol")
+                                    token_symbol = 'UNKNOWN'  # استفاده از UNKNOWN به جای آدرس قرارداد
                     except Exception as e:
                         logger.error(f"Error querying token symbol: {str(e)}")
-                        token_symbol = token_contract
+                        token_symbol = 'UNKNOWN'  # استفاده از UNKNOWN به جای آدرس قرارداد
             
             # If token_symbol starts with 0x and is long, it's likely a contract address
             if token_symbol and (token_symbol.startswith('0x') or token_symbol.startswith('0X')) and len(token_symbol) >= 40:
@@ -482,6 +530,9 @@ class TransactionProcessor:
                 if not token_contract:
                     token_contract = token_symbol
                     asset_type = "token"  # Since we have a contract address, it's a token
+                # استفاده از UNKNOWN به جای آدرس قرارداد
+                token_symbol = 'UNKNOWN'
+                logger.warning(f"Token symbol is a contract address, replacing with UNKNOWN")
             
             # Construct relevant_addresses for save_transaction
             relevant_addresses = [{
@@ -491,6 +542,16 @@ class TransactionProcessor:
                 'direction': direction,
                 'currency_symbol': token_symbol or blockchain
             }]
+            
+            # Extract price and fee from webhook_data if available
+            price = webhook_data.get('price')
+            fee = webhook_data.get('fee')
+            
+            # Log for debugging
+            if price:
+                logger.info(f"Price extracted from webhook data: ${price}")
+            if fee:
+                logger.info(f"Fee extracted from webhook data: {fee} {blockchain}")
             
             # Save transaction to database
             save_result = self.db_operations.save_transaction(
@@ -502,11 +563,27 @@ class TransactionProcessor:
                 timestamp=webhook_data.get('timestamp'),
                 from_address=real_from_address,  # استفاده از آدرس‌های اصلاح شده
                 to_address=real_to_address,      # استفاده از آدرس‌های اصلاح شده
-                token_contract=token_contract    # اضافه کردن token_contract به پارامترهای ارسالی
+                token_contract=token_contract,   # اضافه کردن token_contract به پارامترهای ارسالی
+                price=price,                     # اضافه کردن قیمت به پارامترهای ارسالی
+                fee=fee                          # اضافه کردن کارمزد به پارامترهای ارسالی
             )
             
             if save_result:
                 logger.info(f"Transaction {transaction_id} successfully saved to database")
+                
+                # تبدیل TRON به TRX قبل از به‌روزرسانی موجودی
+                if token_symbol and token_symbol.upper() == 'TRON':
+                    token_symbol = 'TRX'
+                    logger.info(f"Converted token symbol from TRON to TRX for consistency")
+                    
+                if blockchain.upper() in ['TRON', 'TRX']:
+                    blockchain = 'TRX'
+                    logger.info(f"Standardized blockchain name to TRX")
+                    
+                # اگر ارز بلاکچین native است و سمبل آن تنظیم نشده، از نام بلاکچین استفاده می‌کنیم
+                if asset_type == 'native' and not token_symbol:
+                    token_symbol = blockchain
+                    logger.info(f"Set token symbol to blockchain name: {blockchain} for native asset")
                 
                 # Update wallet balance
                 if token_symbol and token_contract and asset_type == "token":
@@ -518,6 +595,12 @@ class TransactionProcessor:
                         token_symbol=token_symbol
                     )
                     
+                    # Standardize token symbol for TRX/TRON before updating user holding
+                    if blockchain.upper() in ['TRX', 'TRON']:
+                        if token_symbol and token_symbol.upper() in ['TRON', 'TRX']:
+                            token_symbol = 'TRX'
+                        blockchain = 'TRX'
+                        
                     # Update user holding balance in database for tokens
                     self.db_operations.update_user_holding_balance(
                         wallet_id=wallet_id,
@@ -536,6 +619,12 @@ class TransactionProcessor:
                         token_symbol=token_symbol or blockchain
                     )
                     
+                    # Standardize token symbol for TRX/TRON before updating user holding
+                    if blockchain.upper() in ['TRX', 'TRON']:
+                        if token_symbol and token_symbol.upper() in ['TRON', 'TRX']:
+                            token_symbol = 'TRX'
+                        blockchain = 'TRX'
+                        
                     # Update user holding balance in database for native coins
                     self.db_operations.update_user_holding_balance(
                         wallet_id=wallet_id,
