@@ -104,27 +104,28 @@ class TatumService:
         try:
             chain = self._get_chain_name(blockchain_name)
             
-            # Use different endpoints based on blockchain
-            if chain == "bsc":
-                if not address.startswith("0x"):
-                    return None, "Invalid BSC address format"
-                    
-                # For BSC native token (BNB)
+            # ✅ مسیر صحیح برای ETH
+            if chain == "eth":
+                endpoint = f"/ethereum/account/balance/{address}"
+            
+            # ✅ مسیر صحیح برای BSC
+            elif chain == "bsc":
                 endpoint = f"/bsc/account/balance/{address}"
-                
+            
+            # ✅ مسیر پیش‌فرض برای بقیه
             else:
-                # For other blockchains
                 endpoint = f"/ledger/account/{chain}/{address}/balance"
             
             logger.debug(f"Getting balance from endpoint: {endpoint}")
             return self._make_request('get', endpoint)
-            
+
         except ValueError as e:
             return None, str(e)
         except Exception as e:
             error_msg = f"Error getting balance: {str(e)}"
             logger.error(error_msg)
             return None, error_msg
+
     
     def validate_address(self, blockchain_name: str, address: str) -> bool:
         """Validate if an address is valid for a specific blockchain"""
@@ -156,7 +157,29 @@ class TatumService:
     def get_transaction(self, blockchain_name: str, tx_hash: str) -> Tuple[Optional[Dict], Optional[str]]:
         """Get transaction details by hash"""
         chain = self._get_chain_name(blockchain_name)
-        endpoint = f"/{chain}/transaction/{tx_hash}"
+        
+        # Use complete blockchain names in endpoint URLs
+        if chain == "eth":
+            endpoint = f"/ethereum/transaction/{tx_hash}"
+        elif chain == "bsc":
+            endpoint = f"/Binance Smart Chain/transaction/{tx_hash}"
+        elif chain == "btc":
+            endpoint = f"/bitcoin/transaction/{tx_hash}"
+        elif chain == "polygon":
+            endpoint = f"/polygon/transaction/{tx_hash}"
+        elif chain == "tron":
+            endpoint = f"/tron/transaction/{tx_hash}"
+        elif chain == "solana":
+            endpoint = f"/solana/transaction/{tx_hash}"
+        elif chain == "xrp":
+            endpoint = f"/xrp/transaction/{tx_hash}"
+        elif chain == "avalanche":
+            endpoint = f"/avalanche/transaction/{tx_hash}"
+        elif chain == "arbitrum":
+            endpoint = f"/arbitrum/transaction/{tx_hash}"
+        else:
+            # For other chains, use the chain identifier
+            endpoint = f"/{chain}/transaction/{tx_hash}"
         
         return self._make_request('get', endpoint)
     
@@ -199,8 +222,8 @@ class TatumService:
                     gas_price = gas_data.get('gasPrice', '5')
                     estimated_fee = str(float(gas_price) * float(gas_limit) / 1e9)
 
-                # Use the correct endpoint for BSC transaction (without duplicate v3)
-                endpoint = "/bsc/transaction"
+                # Use the complete blockchain name for BSC endpoint
+                endpoint = "/Binance Smart Chain/transaction"
                 
                 # Prepare request data based on transaction type
                 if smart_contract_address:
@@ -228,8 +251,93 @@ class TatumService:
                             "gasPrice": gas_price
                         }
                     }
-                
+            elif chain == "eth":
+                # Use the complete blockchain name for Ethereum endpoint
+                endpoint = "/ethereum/transaction"
+                request_data = {
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "ETH",
+                    "fee": {
+                        "gasLimit": "21000",
+                        "gasPrice": "20"
+                    }
+                }
+                estimated_fee = "0.00042"  # Default estimate for ETH
+            elif chain == "polygon":
+                # Use the complete blockchain name for Polygon endpoint
+                endpoint = "/polygon/transaction"
+                request_data = {
+                    "to": recipient_address,
+                    "amount": amount, 
+                    "fromPrivateKey": private_key,
+                    "currency": "MATIC"
+                }
+                estimated_fee = "0.0001"  # Default estimate
+            elif chain == "tron":
+                # Use the complete blockchain name for Tron endpoint
+                endpoint = "/tron/transaction"
+                request_data = {
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "TRON"
+                }
+                estimated_fee = "0.0001"  # Default estimate
+            elif chain == "btc":
+                # Use the complete blockchain name for Bitcoin endpoint
+                endpoint = "/bitcoin/transaction"
+                request_data = {
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "BTC"
+                }
+                estimated_fee = "0.0001"  # Default estimate
+            elif chain == "solana":
+                # Use the complete blockchain name for Solana endpoint
+                endpoint = "/solana/transaction"
+                request_data = {
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "SOL"
+                }
+                estimated_fee = "0.000005"  # Default estimate
+            elif chain == "xrp":
+                # Use the complete blockchain name for XRP endpoint
+                endpoint = "/xrp/transaction" 
+                request_data = {
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "XRP"
+                }
+                estimated_fee = "0.00001"  # Default estimate
+            elif chain == "avalanche":
+                # Use the complete blockchain name for Avalanche endpoint
+                endpoint = "/avalanche/transaction"
+                request_data = {
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "AVAX"
+                }
+                estimated_fee = "0.0001"  # Default estimate
+            elif chain == "arbitrum":
+                # Use the complete blockchain name for Arbitrum endpoint
+                endpoint = "/arbitrum/transaction"
+                request_data = {
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "ARB"
+                }
+                estimated_fee = "0.0001"  # Default estimate
             else:
+                # For other chains, use the full name format
+                # Convert abbreviated chain name to full endpoint name
                 endpoint = f"/{chain}/transaction"
                 request_data = {
                     "to": recipient_address,
@@ -266,7 +374,7 @@ class TatumService:
                 "sender_address": sender_address,
                 "recipient_address": recipient_address,
                 "amount": amount,
-                "currency": "BSC",
+                "currency": blockchain_name.upper(),
                 "transaction_hash": transaction_hash,
                 "is_token": bool(smart_contract_address),
                 "contract_address": smart_contract_address,
@@ -316,7 +424,7 @@ class TatumService:
                 
                 # Set endpoint and add chain-specific parameters
                 if chain == "bsc":
-                    endpoint = "/bsc/transaction"
+                    endpoint = "/Binance Smart Chain/transaction"
                     if tx_details.get('is_token'):
                         request_data["contractAddress"] = tx_details.get('contract_address')
                     else:
@@ -334,6 +442,7 @@ class TatumService:
                             "gasPrice": "20"
                         }
                 else:
+                    # For other chains, use the chain identifier
                     endpoint = f"/{chain}/transaction"
                     if tx_details.get('is_token'):
                         request_data["contractAddress"] = tx_details.get('contract_address')

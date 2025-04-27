@@ -1,0 +1,398 @@
+2025-04-26 01:32:01 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-04-26 05:24:00 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-04-26 05:24:00 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-04-26 14:12:54 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-04-26 18:14:30 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:14:30 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 18:15:24 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:15:24 - balance_service - INFO - Starting balance update for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 18:15:24 - balance_service - INFO - Found 1 wallets for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 18:15:24 - balance_service - INFO - Initializing Web3 providers for blockchain connections
+2025-04-26 18:15:24 - balance_service - INFO - Starting Web3 provider initialization for all blockchains
+2025-04-26 18:15:24 - balance_service - INFO - Received Web3 providers from Web3Manager: ['ethereum', 'binance smart chain', 'polygon', 'avalanche', 'arbitrum', 'eth', 'bsc', 'bnb', 'matic', 'avax', 'arb']
+2025-04-26 18:15:24 - balance_service - DEBUG - Added alias 'eth' for ethereum provider
+2025-04-26 18:15:24 - balance_service - DEBUG - Added aliases 'bsc' and 'bnb' for binance smart chain provider
+2025-04-26 18:15:24 - balance_service - DEBUG - Added alias 'matic' for polygon provider
+2025-04-26 18:15:24 - balance_service - DEBUG - Added alias 'avax' for avalanche provider
+2025-04-26 18:15:24 - balance_service - DEBUG - Added alias 'arb' for arbitrum provider
+2025-04-26 18:15:24 - balance_service - INFO - Initialized Web3 providers for 5 unique blockchains: ['avalanche', 'eth', 'matic', 'ethereum', 'arb', 'polygon', 'bsc', 'binance smart chain', 'arbitrum', 'bnb', 'avax']
+2025-04-26 18:15:24 - balance_service - INFO - Found 14 currencies and 10 blockchains
+2025-04-26 18:15:24 - balance_service - DEBUG - Available blockchains: ['Ethereum', 'Tron', 'Binance Smart Chain', 'Bitcoin', 'Polygon', 'Arbitrum', 'XRP', 'Solana', 'Avalanche', 'Polkadot']
+2025-04-26 18:15:24 - balance_service - INFO - Found 10 addresses for wallet 76e0be3c-f42b-41af-ae11-273252418503
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm on blockchain Bitcoin
+2025-04-26 18:15:24 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Bitcoin
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check native balance for ETH at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for NCC at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for BTC at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for SHIB at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for SHIB at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for ETH at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for BTC at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for ETH at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 7 token check tasks for blockchain Ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on blockchain Tron
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check native balance for TRX at TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for NCC at TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check token balance for NCC at TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 2 token check tasks for blockchain Tron
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Binance Smart Chain
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check native balance for BNB at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Binance Smart Chain
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Polygon
+2025-04-26 18:15:24 - balance_service - DEBUG - Added task to check native balance for MATIC at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Polygon
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Avalanche
+2025-04-26 18:15:24 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Avalanche
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Arbitrum
+2025-04-26 18:15:24 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Arbitrum
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv on blockchain Polkadot
+2025-04-26 18:15:24 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Polkadot
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u on blockchain XRP
+2025-04-26 18:15:24 - balance_service - WARNING - No native currency found for blockchain XRP
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain XRP
+2025-04-26 18:15:24 - balance_service - DEBUG - Processing address 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D on blockchain Solana
+2025-04-26 18:15:24 - balance_service - WARNING - No native currency found for blockchain Solana
+2025-04-26 18:15:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Solana
+2025-04-26 18:15:24 - balance_service - INFO - Prepared 4 native currency checks and 9 token checks
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum
+2025-04-26 18:15:24 - balance_service - INFO - Getting native balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name for native balance: ethereum -> ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Using Web3 provider for ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking native balance for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron
+2025-04-26 18:15:24 - balance_service - INFO - Getting native balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on blockchain Tron (normalized to tron)
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: tron
+2025-04-26 18:15:24 - balance_service - DEBUG - Tron address validation: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Binance Smart Chain
+2025-04-26 18:15:24 - balance_service - INFO - Getting native balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Binance Smart Chain (normalized to binance smart chain)
+2025-04-26 18:15:24 - balance_service - DEBUG - Converted to checksum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Polygon
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: binance smart chain
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for binance smart chain: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - INFO - Getting native balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Polygon (normalized to polygon)
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name for native balance: binance smart chain -> binance smart chain
+2025-04-26 18:15:24 - balance_service - DEBUG - Using Web3 provider for binance smart chain
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: polygon
+2025-04-26 18:15:24 - balance_service - DEBUG - Converted to checksum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Calling get_balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Calling get_balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for polygon: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name for native balance: polygon -> polygon
+2025-04-26 18:15:24 - balance_service - DEBUG - Using Web3 provider for polygon
+2025-04-26 18:15:24 - balance_service - DEBUG - Converted to checksum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - DEBUG - Calling get_balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:24 - balance_service - INFO - Native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Polygon: 0 (raw: 0)
+2025-04-26 18:15:24 - balance_service - DEBUG - Zero native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Polygon
+2025-04-26 18:15:24 - balance_service - INFO - Added native balance 0.032 for currency 18 on Tron
+2025-04-26 18:15:24 - balance_service - INFO - Native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Binance Smart Chain: 0.013095685830569349 (raw: 13095685830569349)
+2025-04-26 18:15:24 - balance_service - INFO - Added native balance 0.013095685830569349 for currency 3 on Binance Smart Chain
+2025-04-26 18:15:24 - balance_service - INFO - Native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0.001069068898864606 (raw: 1069068898864606)
+2025-04-26 18:15:24 - balance_service - INFO - Added native balance 0.001069068898864606 for currency 16 on Ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x3386F545a78eAa832946b59EA10FfDA34275A479)
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x7099aB9E42Fa7327a6b15E0a0c120c3e50d11BeC)
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce)
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0xF4b7B9ab55A2eeb3bD6123B8f45B0abfFd5089c7)
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x5e21d1ee5cf0077b314c381720273ae82378d613)
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x300e0d87f8c95d90cfe4b809baa3a6c90e83b850)
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 18:15:24 - balance_service - DEBUG - Creating token contract instance for 0x7099aB9E42Fa7327a6b15E0a0c120c3e50d11BeC
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0xC94729d93cB660BB346ce0084393015F99810919)
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron (contract: TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1)
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 18:15:24 - balance_service - DEBUG - Creating token contract instance for 0x3386F545a78eAa832946b59EA10FfDA34275A479
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking token balance for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron (contract: T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf)
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on blockchain Tron (normalized to tron)
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 18:15:24 - balance_service - INFO - Getting token balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on blockchain Tron (normalized to tron)
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: tron
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: tron
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Tron address validation: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Tron address validation: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 18:15:24 - balance_service - DEBUG - Creating token contract instance for 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: tron -> tron
+2025-04-26 18:15:24 - balance_service - DEBUG - Creating token contract instance for 0xF4b7B9ab55A2eeb3bD6123B8f45B0abfFd5089c7
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 18:15:24 - balance_service - DEBUG - Standardized blockchain name: tron -> tron
+2025-04-26 18:15:24 - balance_service - DEBUG - Creating token contract instance for 0x5e21d1ee5cf0077b314c381720273ae82378d613
+2025-04-26 18:15:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 18:15:24 - balance_service - DEBUG - Creating token contract instance for 0xC94729d93cB660BB346ce0084393015F99810919
+2025-04-26 18:15:24 - balance_service - DEBUG - Creating token contract instance for 0x300e0d87f8c95d90cfe4b809baa3a6c90e83b850
+2025-04-26 18:15:24 - balance_service - DEBUG - Zero token balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron (contract: TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1)
+2025-04-26 18:15:24 - balance_service - DEBUG - Zero token balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron (contract: T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf)
+2025-04-26 18:15:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:25 - balance_service - DEBUG - Getting token decimals
+2025-04-26 18:15:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 18:15:25 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 9)
+2025-04-26 18:15:25 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x7099aB9E42Fa7327a6b15E0a0c120c3e50d11BeC)
+2025-04-26 18:15:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 18:15:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 18:15:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 18:15:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 18:15:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 18:15:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 18:15:26 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 52891.566265 (raw: 52891566265000000000000, decimals: 18)
+2025-04-26 18:15:26 - balance_service - INFO - Added token balance 52891.566265 for currency SHIB (27) on Ethereum
+2025-04-26 18:15:26 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 6)
+2025-04-26 18:15:26 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x3386F545a78eAa832946b59EA10FfDA34275A479)
+2025-04-26 18:15:26 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 18)
+2025-04-26 18:15:26 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0xC94729d93cB660BB346ce0084393015F99810919)
+2025-04-26 18:15:27 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 9)
+2025-04-26 18:15:27 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0xF4b7B9ab55A2eeb3bD6123B8f45B0abfFd5089c7)
+2025-04-26 18:15:27 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 18)
+2025-04-26 18:15:27 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x5e21d1ee5cf0077b314c381720273ae82378d613)
+2025-04-26 18:15:27 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 9)
+2025-04-26 18:15:27 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x300e0d87f8c95d90cfe4b809baa3a6c90e83b850)
+2025-04-26 18:15:27 - balance_service - INFO - Found 4 holdings with non-zero balances for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 18:15:27 - balance_service - INFO - Deleted 5 previous holdings for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 18:15:27 - balance_service - INFO - Added new holding for currency TRX with balance 0.032 on Tron
+2025-04-26 18:15:27 - balance_service - INFO - Added new holding for currency BNB with balance 0.013095685830569349 on Binance Smart Chain
+2025-04-26 18:15:27 - balance_service - INFO - Added new holding for currency ETH with balance 0.001069068898864606 on Ethereum
+2025-04-26 18:15:27 - balance_service - INFO - Added new holding for currency SHIB with balance 52891.566265 on Ethereum
+2025-04-26 18:15:27 - balance_service - INFO - Successfully committed 4 holdings for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 18:19:12 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:19:12 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 18:19:18 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:19:18 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 18:19:44 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:19:44 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 18:19:56 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:19:56 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 18:34:58 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:34:58 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 18:54:31 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:54:31 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 18:54:36 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:54:36 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 18:54:43 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 18:54:43 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 22:02:02 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 22:02:02 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 22:02:03 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 22:02:03 - balance_service - INFO - Getting simplified balance for user 2700a04f-146a-47ef-b191-dbda1377ca1b (no external APIs)
+2025-04-26 22:12:24 - balance_service - INFO - Loaded 11 API keys from config
+2025-04-26 22:12:24 - balance_service - INFO - Starting balance update for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 22:12:24 - balance_service - INFO - Found 1 wallets for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 22:12:24 - balance_service - INFO - Initializing Web3 providers for blockchain connections
+2025-04-26 22:12:24 - balance_service - INFO - Starting Web3 provider initialization for all blockchains
+2025-04-26 22:12:24 - balance_service - INFO - Received Web3 providers from Web3Manager: ['ethereum', 'binance smart chain', 'polygon', 'avalanche', 'arbitrum', 'eth', 'bsc', 'bnb', 'matic', 'avax', 'arb']
+2025-04-26 22:12:24 - balance_service - DEBUG - Added alias 'eth' for ethereum provider
+2025-04-26 22:12:24 - balance_service - DEBUG - Added aliases 'bsc' and 'bnb' for binance smart chain provider
+2025-04-26 22:12:24 - balance_service - DEBUG - Added alias 'matic' for polygon provider
+2025-04-26 22:12:24 - balance_service - DEBUG - Added alias 'avax' for avalanche provider
+2025-04-26 22:12:24 - balance_service - DEBUG - Added alias 'arb' for arbitrum provider
+2025-04-26 22:12:24 - balance_service - INFO - Initialized Web3 providers for 5 unique blockchains: ['avalanche', 'eth', 'matic', 'ethereum', 'arb', 'polygon', 'bsc', 'binance smart chain', 'arbitrum', 'bnb', 'avax']
+2025-04-26 22:12:24 - balance_service - INFO - Found 14 currencies and 10 blockchains
+2025-04-26 22:12:24 - balance_service - DEBUG - Available blockchains: ['Ethereum', 'Tron', 'Binance Smart Chain', 'Bitcoin', 'Polygon', 'Arbitrum', 'XRP', 'Solana', 'Avalanche', 'Polkadot']
+2025-04-26 22:12:24 - balance_service - INFO - Found 10 addresses for wallet 76e0be3c-f42b-41af-ae11-273252418503
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address bc1qsjgpcszqwjcujrleh3r4ucyg2zkl6k0a9s5dkm on blockchain Bitcoin
+2025-04-26 22:12:24 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Bitcoin
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check native balance for ETH at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for NCC at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for BTC at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for SHIB at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for SHIB at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for ETH at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for BTC at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for ETH at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 7 token check tasks for blockchain Ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on blockchain Tron
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check native balance for TRX at TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for NCC at TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check token balance for NCC at TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 2 token check tasks for blockchain Tron
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Binance Smart Chain
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check native balance for BNB at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Binance Smart Chain
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Polygon
+2025-04-26 22:12:24 - balance_service - DEBUG - Added task to check native balance for MATIC at 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Polygon
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Avalanche
+2025-04-26 22:12:24 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Avalanche
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Arbitrum
+2025-04-26 22:12:24 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Arbitrum
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address 13VDwe5MzrHiCTzwgbMnoiQgk9X93Pwt36eKUgC3kssRfkqv on blockchain Polkadot
+2025-04-26 22:12:24 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Polkadot
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address rGSKzVMCKpZDZNvRm3pwHKoZnYEhKsAk1u on blockchain XRP
+2025-04-26 22:12:24 - balance_service - WARNING - No native currency found for blockchain XRP
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain XRP
+2025-04-26 22:12:24 - balance_service - DEBUG - Processing address 3zVobQ7svvd1L7cQH1mzCfLnBEku3UaLdRP6BAmtTa7D on blockchain Solana
+2025-04-26 22:12:24 - balance_service - WARNING - No native currency found for blockchain Solana
+2025-04-26 22:12:24 - balance_service - DEBUG - Added 0 token check tasks for blockchain Solana
+2025-04-26 22:12:24 - balance_service - INFO - Prepared 4 native currency checks and 9 token checks
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking native balance for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Binance Smart Chain
+2025-04-26 22:12:24 - balance_service - INFO - Getting native balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 22:12:24 - balance_service - INFO - Getting native balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on blockchain Tron (normalized to tron)
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: tron
+2025-04-26 22:12:24 - balance_service - DEBUG - Tron address validation: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 22:12:24 - balance_service - INFO - Getting native balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Binance Smart Chain (normalized to binance smart chain)
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: binance smart chain
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name for native balance: ethereum -> ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for binance smart chain: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Polygon
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name for native balance: binance smart chain -> binance smart chain
+2025-04-26 22:12:24 - balance_service - DEBUG - Using Web3 provider for ethereum
+2025-04-26 22:12:24 - balance_service - INFO - Getting native balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Polygon (normalized to polygon)
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: polygon
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for polygon: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name for native balance: polygon -> polygon
+2025-04-26 22:12:24 - balance_service - DEBUG - Using Web3 provider for polygon
+2025-04-26 22:12:24 - balance_service - DEBUG - Using Web3 provider for binance smart chain
+2025-04-26 22:12:24 - balance_service - DEBUG - Converted to checksum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Converted to checksum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Calling get_balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Calling get_balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Converted to checksum address: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - DEBUG - Calling get_balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:24 - balance_service - INFO - Native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Polygon: 0 (raw: 0)
+2025-04-26 22:12:24 - balance_service - DEBUG - Zero native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Polygon
+2025-04-26 22:12:24 - balance_service - INFO - Added native balance 0.032 for currency 18 on Tron
+2025-04-26 22:12:24 - balance_service - INFO - Native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Binance Smart Chain: 0.013095685830569349 (raw: 13095685830569349)
+2025-04-26 22:12:24 - balance_service - INFO - Added native balance 0.013095685830569349 for currency 3 on Binance Smart Chain
+2025-04-26 22:12:24 - balance_service - INFO - Native balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0.001069068898864606 (raw: 1069068898864606)
+2025-04-26 22:12:24 - balance_service - INFO - Added native balance 0.001069068898864606 for currency 16 on Ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x3386F545a78eAa832946b59EA10FfDA34275A479)
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 22:12:24 - balance_service - DEBUG - Creating token contract instance for 0x3386F545a78eAa832946b59EA10FfDA34275A479
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x7099aB9E42Fa7327a6b15E0a0c120c3e50d11BeC)
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce)
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0xF4b7B9ab55A2eeb3bD6123B8f45B0abfFd5089c7)
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x5e21d1ee5cf0077b314c381720273ae82378d613)
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0xC94729d93cB660BB346ce0084393015F99810919)
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 22:12:24 - balance_service - DEBUG - Creating token contract instance for 0xC94729d93cB660BB346ce0084393015F99810919
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x300e0d87f8c95d90cfe4b809baa3a6c90e83b850)
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on blockchain Ethereum (normalized to ethereum)
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 22:12:24 - balance_service - DEBUG - Creating token contract instance for 0x300e0d87f8c95d90cfe4b809baa3a6c90e83b850
+2025-04-26 22:12:24 - balance_service - DEBUG - EVM address validation for ethereum: 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 22:12:24 - balance_service - DEBUG - Creating token contract instance for 0x7099aB9E42Fa7327a6b15E0a0c120c3e50d11BeC
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 22:12:24 - balance_service - DEBUG - Creating token contract instance for 0x5e21d1ee5cf0077b314c381720273ae82378d613
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: ethereum -> ethereum
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron (contract: T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf)
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking token balance for TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron (contract: TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1)
+2025-04-26 22:12:24 - balance_service - DEBUG - Creating token contract instance for 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+2025-04-26 22:12:24 - balance_service - DEBUG - Checking web3 provider for ethereum: Found
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on blockchain Tron (normalized to tron)
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: tron
+2025-04-26 22:12:24 - balance_service - DEBUG - Creating token contract instance for 0xF4b7B9ab55A2eeb3bD6123B8f45B0abfFd5089c7
+2025-04-26 22:12:24 - balance_service - INFO - Getting token balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on blockchain Tron (normalized to tron)
+2025-04-26 22:12:24 - balance_service - DEBUG - Tron address validation: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: tron -> tron
+2025-04-26 22:12:24 - balance_service - DEBUG - Validating address format for blockchain: tron
+2025-04-26 22:12:24 - balance_service - DEBUG - Tron address validation: TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx is valid
+2025-04-26 22:12:24 - balance_service - DEBUG - Standardized blockchain name: tron -> tron
+2025-04-26 22:12:25 - balance_service - DEBUG - Zero token balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron (contract: T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf)
+2025-04-26 22:12:25 - balance_service - DEBUG - Zero token balance for address TVBLMXUejZXsA1PWS49gjgeqY39H3MDkpx on Tron (contract: TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1)
+2025-04-26 22:12:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:25 - balance_service - DEBUG - Calling balanceOf for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A
+2025-04-26 22:12:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 22:12:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 22:12:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 22:12:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 22:12:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 22:12:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 22:12:26 - balance_service - DEBUG - Getting token decimals
+2025-04-26 22:12:26 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 6)
+2025-04-26 22:12:26 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x3386F545a78eAa832946b59EA10FfDA34275A479)
+2025-04-26 22:12:26 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 18)
+2025-04-26 22:12:26 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0xC94729d93cB660BB346ce0084393015F99810919)
+2025-04-26 22:12:26 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 9)
+2025-04-26 22:12:26 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0xF4b7B9ab55A2eeb3bD6123B8f45B0abfFd5089c7)
+2025-04-26 22:12:27 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 9)
+2025-04-26 22:12:27 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x7099aB9E42Fa7327a6b15E0a0c120c3e50d11BeC)
+2025-04-26 22:12:27 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 9)
+2025-04-26 22:12:27 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x300e0d87f8c95d90cfe4b809baa3a6c90e83b850)
+2025-04-26 22:12:27 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 0 (raw: 0, decimals: 18)
+2025-04-26 22:12:27 - balance_service - DEBUG - Zero token balance for address 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum (contract: 0x5e21d1ee5cf0077b314c381720273ae82378d613)
+2025-04-26 22:12:27 - balance_service - INFO - Token balance for 0xb944f84569b9F32fF12443Fbdc6FF38A605C4e2A on Ethereum: 52891.566265 (raw: 52891566265000000000000, decimals: 18)
+2025-04-26 22:12:27 - balance_service - INFO - Added token balance 52891.566265 for currency SHIB (27) on Ethereum
+2025-04-26 22:12:27 - balance_service - INFO - Found 4 holdings with non-zero balances for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 22:12:27 - balance_service - INFO - Deleted 4 previous holdings for user 2700a04f-146a-47ef-b191-dbda1377ca1b
+2025-04-26 22:12:27 - balance_service - INFO - Added new holding for currency TRX with balance 0.032 on Tron
+2025-04-26 22:12:27 - balance_service - INFO - Added new holding for currency BNB with balance 0.013095685830569349 on Binance Smart Chain
+2025-04-26 22:12:27 - balance_service - INFO - Added new holding for currency ETH with balance 0.001069068898864606 on Ethereum
+2025-04-26 22:12:27 - balance_service - INFO - Added new holding for currency SHIB with balance 52891.566265 on Ethereum
+2025-04-26 22:12:27 - balance_service - INFO - Successfully committed 4 holdings for user 2700a04f-146a-47ef-b191-dbda1377ca1b

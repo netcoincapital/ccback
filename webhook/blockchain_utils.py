@@ -311,7 +311,14 @@ class BlockchainUtils:
             elif blockchain.upper() == "TRX":
                 # برای ترون
                 if token_contract:
+                    # اطلاعات بیشتر برای دیباگ
+                    logger.info(f"درخواست موجودی توکن TRC20 برای آدرس {normalized_address} و قرارداد {token_contract}")
+                    
+                    # استفاده از API مسیر صحیح برای TRC20
                     endpoint = f"{TATUM_API_BASE_URL}/tron/account/balance/trc20/{normalized_address}?contractAddress={token_contract}"
+                    
+                    # بررسی یک مسیر جایگزین اگر API تغییر کرده باشد
+                    alternative_endpoint = f"{TATUM_API_BASE_URL}/tron/account/balance/{normalized_address}/trc20"
                 else:
                     endpoint = f"{TATUM_API_BASE_URL}/tron/account/balance/{normalized_address}"
             elif blockchain.upper() == "SOL":
@@ -352,8 +359,70 @@ class BlockchainUtils:
                     # برای بیت‌کوین
                     balance = float(data.get('incoming', '0')) - float(data.get('outgoing', '0'))
                 elif blockchain.upper() == "TRX":
-                    # برای ترون
-                    balance = float(data.get('balance', '0')) / 1e6  # تبدیل به TRX
+                    if token_contract:
+                        # برای توکن‌های TRC20
+                        # لاگ کامل پاسخ برای دیباگ
+                        logger.debug(f"پاسخ TRC20 کامل: {data}")
+                        
+                        # ساختار جدید تاتوم برای توکن‌های TRC20 ترون
+                        if 'trc20' in data:
+                            # قالب جدید API V3
+                            for token in data.get('trc20', []):
+                                if token.get('tokenAddress', '').lower() == token_contract.lower():
+                                    raw_balance = token.get('balance', '0')
+                                    decimals = token.get('decimals', 18)
+                                    try:
+                                        decimals = int(decimals)
+                                        balance = float(raw_balance) / (10 ** decimals)
+                                        logger.info(f"موجودی توکن TRC20 (قالب جدید): {balance}")
+                                        return balance
+                                    except (ValueError, TypeError) as e:
+                                        logger.error(f"خطا در تبدیل موجودی TRC20: {str(e)}")
+                        
+                        # ساختار قدیمی
+                        if 'balance' in data:
+                            # قالب ساده
+                            try:
+                                raw_balance = data.get('balance', '0')
+                                # تلاش برای دریافت decimals از پاسخ
+                                decimals = data.get('decimals', 18)
+                                try:
+                                    decimals = int(decimals)
+                                except (ValueError, TypeError):
+                                    decimals = 18  # مقدار پیش‌فرض
+                                
+                                balance = float(raw_balance) / (10 ** decimals)
+                                logger.info(f"موجودی توکن TRC20 (قالب ساده): {balance}")
+                                return balance
+                            except (ValueError, TypeError) as e:
+                                logger.error(f"خطا در تبدیل موجودی TRC20: {str(e)}")
+                        
+                        # ساختار جایگزین
+                        token_data = data.get('tokens', [])
+                        if token_data:
+                            for token in token_data:
+                                token_id = token.get('tokenId', '')
+                                token_address = token.get('address', '')
+                                
+                                # بررسی تطابق آدرس قرارداد
+                                if token_address.lower() == token_contract.lower() or token_id.lower() == token_contract.lower():
+                                    raw_balance = token.get('balance', '0')
+                                    decimals = token.get('decimals', 18)
+                                    try:
+                                        decimals = int(decimals)
+                                        balance = float(raw_balance) / (10 ** decimals)
+                                        logger.info(f"موجودی توکن TRC20 (قالب جایگزین): {balance}")
+                                        return balance
+                                    except (ValueError, TypeError) as e:
+                                        logger.error(f"خطا در تبدیل موجودی TRC20: {str(e)}")
+                                        
+                        # اگر هیچ‌کدام از ساختارها یافت نشد، لاگ هشدار
+                        logger.warning(f"ساختار داده TRC20 ناشناخته: {data}")
+                        # موجودی صفر برگردانده می‌شود
+                        return 0
+                    else:
+                        # برای ارز اصلی ترون (TRX)
+                        balance = float(data.get('balance', '0')) / 1e6  # تبدیل به TRX
                 elif blockchain.upper() == "SOL":
                     # برای سولانا
                     balance = float(data.get('balance', '0'))
@@ -367,6 +436,39 @@ class BlockchainUtils:
                 return balance
             else:
                 logger.error(f"خطا در دریافت موجودی: {response.status_code} - {response.text}")
+                # بررسی خطای 404 برای ترون
+                if blockchain.upper() == "TRX" and token_contract and response.status_code == 404:
+                    # تلاش با استفاده از API جایگزین برای ترون
+                    logger.info(f"تلاش با مسیر API جایگزین برای توکن TRC20: {alternative_endpoint}")
+                    
+                    try:
+                        response_alt = requests.get(alternative_endpoint, headers=headers)
+                        if response_alt.status_code == 200:
+                            data_alt = response_alt.json()
+                            logger.info(f"پاسخ API جایگزین دریافت شد: {data_alt}")
+                            
+                            # بررسی آیا توکن در لیست موجود است
+                            if isinstance(data_alt, list):
+                                for token in data_alt:
+                                    if token.get('tokenAddress', '').lower() == token_contract.lower() or token.get('address', '').lower() == token_contract.lower():
+                                        balance_raw = token.get('balance', 0)
+                                        decimals = token.get('decimals', 18)
+                                        balance = float(balance_raw) / (10 ** int(decimals))
+                                        logger.info(f"موجودی توکن TRC20 با روش جایگزین: {balance}")
+                                        return balance
+                            elif isinstance(data_alt, dict) and 'tokens' in data_alt:
+                                for token in data_alt['tokens']:
+                                    if token.get('tokenAddress', '').lower() == token_contract.lower() or token.get('address', '').lower() == token_contract.lower():
+                                        balance_raw = token.get('balance', 0)
+                                        decimals = token.get('decimals', 18)
+                                        balance = float(balance_raw) / (10 ** int(decimals))
+                                        logger.info(f"موجودی توکن TRC20 با روش جایگزین: {balance}")
+                                        return balance
+                        else:
+                            logger.error(f"خطا در API جایگزین: {response_alt.status_code} - {response_alt.text}")
+                    except Exception as alt_e:
+                        logger.error(f"خطا در استفاده از API جایگزین: {str(alt_e)}")
+                
                 # یک مقدار موجودی پیش‌فرض برمی‌گردانیم تا فرآیند ادامه پیدا کند
                 return 0
                 
