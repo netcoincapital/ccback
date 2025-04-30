@@ -9,10 +9,12 @@ from bip_utils import Bip39MnemonicGenerator, Bip39WordsNum, Bip39MnemonicValida
 from uuid import uuid4
 from sqlalchemy import func
 from errors.common_errors import ResourceAlreadyExists
-from services.blockchain_service import BlockchainService
+from services.blockchain_service import get_blockchain_service
 from services.hd_wallet_service import HDWalletService
 from dotenv import load_dotenv
 from webhook.tatum_subscription import register_new_addresses_for_webhook
+import threading
+import concurrent.futures
 
 # Setup logging
 logger = logging.getLogger(__name__)
@@ -35,11 +37,7 @@ class WalletService:
         self.session = session
         self.signer = TransactionSignerService()
         self.contract = SmartContractService()
-        self.blockchain_service = BlockchainService(session=self.session)
         
-        # Get supported blockchains
-        self.supported_blockchains = self.blockchain_service.get_supported_blockchains()
-
     def create_wallet(self, wallet_name: str, address_count: int = 5, user_ip: str = None, user_device: str = None) -> Tuple[str, str, Dict]:
         """
         Create a new HD wallet with multiple addresses per chain
@@ -96,7 +94,8 @@ class WalletService:
             # Generate addresses for all supported blockchains
             addresses = self._generate_addresses(wallet_id, user_id, mnemonic_str)
             
-            # Address registration with webhook system is now handled within _generate_addresses
+            # Address registration with webhook system is now handled asynchronously
+            # _register_addresses_with_webhook is called in a new thread inside _generate_addresses
             
             return user_id, mnemonic_str, addresses
             
@@ -301,69 +300,140 @@ class WalletService:
             logger.error(f"Error validating mnemonic: {str(e)}")
             return False
 
-    def _generate_addresses(self, wallet_id, user_id, mnemonic):
+    def _generate_addresses(self, wallet_id: str, user_id: str, mnemonic: str) -> Dict[str, str]:
         """
         Generate addresses for supported blockchains and save them to the database.
-        Also registers the addresses with the webhook system.
+        Also registers the addresses with the webhook system asynchronously.
         """
-        hd_wallet_service = HDWalletService()
-        logging.info(f"Generating addresses for wallet {wallet_id}")
-        
-        # Get supporting blockchains
-        blockchain_service = BlockchainService()
-        blockchains = blockchain_service.get_active_blockchains()
-        
-        # Store formatted addresses for webhook registration
-        webhook_formatted_addresses = []
-        
-        for blockchain in blockchains:
-            try:
-                blockchain_symbol = blockchain.symbol
-                blockchain_id = blockchain.id
-                
-                # Generate address using HDWalletService
-                blockchain_address = hd_wallet_service.generate_address(
-                    mnemonic=mnemonic,
-                    blockchain_symbol=blockchain_symbol
-                )
-                
-                if not blockchain_address:
-                    logging.warning(f"Failed to generate address for blockchain {blockchain_symbol}")
-                    continue
-                
-                # Create address in database
-                address = Address(
-                    wallet_id=wallet_id,
-                    blockchain_id=blockchain_id,
-                    public_address=blockchain_address,
-                    metadata=json.dumps({})
-                )
-                self.session.add(address)
-                
-                # Format address info for webhook
-                webhook_formatted_addresses.append({
-                    'blockchain_symbol': blockchain_symbol,
-                    'public_address': blockchain_address
-                })
-                
-                logging.info(f"Generated address {blockchain_address} for blockchain {blockchain_symbol}")
-                
-            except Exception as e:
-                logging.error(f"Error generating address for blockchain {blockchain.symbol}: {str(e)}")
-        
         try:
-            # Commit changes to database
-            self.session.flush()
-            logging.info(f"Successfully saved {len(webhook_formatted_addresses)} addresses for wallet {wallet_id}")
+            logger.info(f"Generating addresses for wallet {wallet_id}")
             
-            # Register addresses with webhook
-            if webhook_formatted_addresses:
-                self._register_addresses_with_webhook(webhook_formatted_addresses)
+            # استفاده از BlockchainAddressGenerator برای تولید آدرس‌ها
+            address_generator = BlockchainAddressGenerator.from_mnemonic(mnemonic)
+            blockchain_addresses = address_generator.generate_all_addresses()
+            
+            if not blockchain_addresses:
+                raise ValueError("Failed to generate any addresses from this mnemonic")
+            
+            # دریافت لیست بلاک‌چین‌های فعال در سیستم
+            blockchains = self.session.query(Blockchains).all()
+            blockchain_map = {bc.BlockchainName: bc for bc in blockchains}
+            
+            # Store formatted addresses for webhook registration
+            webhook_formatted_addresses = []
+            
+            # Store addresses by blockchain name for return value
+            addresses_by_chain = {}
+            
+            # موازی‌سازی تولید آدرس‌ها با استفاده از ThreadPoolExecutor
+            def process_blockchain(bc_name, address_obj):
+                result = {}
+                try:
+                    if bc_name in blockchain_map:
+                        bc = blockchain_map[bc_name]
+                        
+                        # استفاده از get_blockchain_service برای دریافت سرویس مناسب برای هر بلاک‌چین
+                        try:
+                            blockchain_service = get_blockchain_service(bc_name)
+                            logger.info(f"Successfully created blockchain service for {bc_name}")
+                        except Exception as bc_error:
+                            logger.warning(f"Could not create blockchain service for {bc_name}: {str(bc_error)}")
+                            # عدم موفقیت در ساخت سرویس بلاک‌چین نباید مانع ادامه کار شود
+                        
+                        # حل مشکل #3: رمزنگاری کلیدها
+                        encrypted_priv = encrypt_private_key_aes(address_obj.private_key)
+                        encrypted_mnemonic = encrypt_mnemonic_aes(mnemonic)
+                        
+                        # حل مشکل #2: استفاده از نام‌های فیلد درست در مدل Address
+                        new_addr = Address(
+                            WalletID=wallet_id,
+                            BlockchainID=bc.BlockchainID,
+                            PublicAddress=address_obj.public_address,
+                            PrivateKey=encrypted_priv,
+                            PhraseKey=encrypted_mnemonic,
+                            CreatedAt=datetime.utcnow()
+                        )
+                        
+                        # آدرس را برمی‌گردانیم تا بعدا در تابع اصلی به دیتابیس اضافه شود
+                        result = {
+                            'address': new_addr,
+                            'bc_name': bc_name,
+                            'public_address': address_obj.public_address,
+                            'blockchain_symbol': bc.Symbol if hasattr(bc, 'Symbol') else bc.BlockchainName
+                        }
+                        
+                        logger.info(f"Generated address {address_obj.public_address} for blockchain {bc_name}")
+                except Exception as e:
+                    logger.error(f"Error processing blockchain {bc_name}: {str(e)}")
                 
+                return result
+            
+            # موازی‌سازی پردازش بلاک‌چین‌ها
+            with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+                # ارسال کارها به ThreadPoolExecutor
+                future_to_bc = {
+                    executor.submit(process_blockchain, bc_name, address_obj): bc_name
+                    for bc_name, address_obj in blockchain_addresses.items()
+                }
+                
+                # جمع‌آوری نتایج
+                for future in concurrent.futures.as_completed(future_to_bc):
+                    bc_name = future_to_bc[future]
+                    try:
+                        result = future.result()
+                        if result:
+                            # اضافه کردن آدرس به دیتابیس
+                            self.session.add(result['address'])
+                            addresses_by_chain[result['bc_name']] = result['public_address']
+                            
+                            # اضافه کردن به لیست آدرس‌های وب‌هوک
+                            webhook_formatted_addresses.append({
+                                'blockchain_symbol': result['blockchain_symbol'],
+                                'public_address': result['public_address']
+                            })
+                    except Exception as e:
+                        logger.error(f"Error processing result for {bc_name}: {str(e)}")
+            
+            # Commit changes to database to make sure all addresses are stored
+            self.session.flush()
+            
+            # Register addresses with webhook system asynchronously
+            if webhook_formatted_addresses:
+                # ثبت آدرس‌ها در وب‌هوک به صورت آسنکرون در ترد جداگانه
+                webhook_thread = threading.Thread(
+                    target=self._register_addresses_with_webhook_async,
+                    args=(webhook_formatted_addresses,),
+                    daemon=True
+                )
+                webhook_thread.start()
+                logger.info(f"Started asynchronous webhook registration for {len(webhook_formatted_addresses)} addresses")
+                
+            logger.info(f"Successfully generated {len(addresses_by_chain)} addresses for wallet {wallet_id}")
+            return addresses_by_chain
+            
         except Exception as e:
-            self.session.rollback()
-            logging.error(f"Error saving addresses to database: {str(e)}")
+            logger.error(f"Error generating addresses: {str(e)}")
             raise
+
+    def _register_addresses_with_webhook_async(self, formatted_addresses):
+        """
+        Register addresses with webhook system asynchronously.
+        This method is called in a separate thread.
+        
+        Args:
+            formatted_addresses (list): List of dictionaries with address information
+        """
+        try:
+            if not formatted_addresses:
+                logger.warning("No addresses to register with webhook system")
+                return
+                
+            # این تابع در یک ترد جداگانه اجرا می‌شود
+            webhook_results = register_new_addresses_for_webhook(formatted_addresses)
+            logger.info(f"Successfully registered {len(formatted_addresses)} addresses with webhook: {webhook_results}")
+        except Exception as e:
+            # خطا در ثبت آدرس‌ها در وب‌هوک نباید مانع ادامه کار شود
+            logger.error(f"Failed to register addresses with webhook system: {str(e)}")
 
     def _register_addresses_with_webhook(self, formatted_addresses):
         """
@@ -373,10 +443,16 @@ class WalletService:
             formatted_addresses (list): List of dictionaries with address information
         """
         try:
+            if not formatted_addresses:
+                logger.warning("No addresses to register with webhook system")
+                return
+                
             webhook_results = register_new_addresses_for_webhook(formatted_addresses)
-            logging.info(f"Successfully registered {len(formatted_addresses)} addresses with webhook: {webhook_results}")
+            logger.info(f"Successfully registered {len(formatted_addresses)} addresses with webhook: {webhook_results}")
         except Exception as e:
-            logging.error(f"Failed to register addresses with webhook system: {str(e)}")
+            # نمی‌گذاریم این خطا باعث شکست عملیات اصلی شود
+            logger.error(f"Failed to register addresses with webhook system: {str(e)}")
+            # نباید خطایی پرتاب کنیم تا کل فرآیند متوقف نشود
 
     def get_phrase_key(self, user_id: str) -> str:
         """

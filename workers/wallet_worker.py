@@ -16,10 +16,11 @@ def process_wallet_generation(ch, method, properties, body):
         # Get IP and device info from the message if available
         user_ip = data.get('user_ip', None)
         user_device = data.get('user_device', None)
+        wallet_name = data.get('wallet_name', 'Unnamed Wallet')
         
         # Create wallet with IP and device info
         user_id, mnemonic, addresses = wallet_service.create_wallet(
-            data['wallet_name'], 
+            wallet_name, 
             5, 
             user_ip, 
             user_device
@@ -32,6 +33,7 @@ def process_wallet_generation(ch, method, properties, body):
             json.dumps({
                 'UserID': user_id,
                 'Mnemonic': mnemonic,
+                'Addresses': addresses,
                 'success': True
             })
         )
@@ -40,6 +42,15 @@ def process_wallet_generation(ch, method, properties, body):
         
     except Exception as e:
         logging.error(f"Error processing wallet generation: {e}")
+        # ذخیره خطا در Redis
+        redis_client.setex(
+            f"wallet_result:{data['task_id']}",
+            timedelta(hours=1),
+            json.dumps({
+                'error': str(e),
+                'success': False
+            })
+        )
     finally:
         session.close()
         ch.basic_ack(delivery_tag=method.delivery_tag)

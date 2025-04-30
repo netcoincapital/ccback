@@ -20,12 +20,13 @@ from utils.logging_config import get_logger
 logger = get_logger(__file__)
 logger.info("Initializing wallet generation module")
 
-generate_bp = Blueprint('generate_wallet', __name__)
+# Изменяем имя blueprint и URL, чтобы не конфликтовал с функцией в app.py
+generate_bp = Blueprint('generate_wallet_v1', __name__)
 
-@generate_bp.route('/generate-wallet', methods=['POST'])
+@generate_bp.route('/generate-wallet-v1', methods=['POST'])
 @SecurityUtils.rate_limit(requests=3, window=300)
 @handle_api_errors
-def generate_wallet():
+def generate_wallet_v1():
     """
     Generate a new wallet
     ---

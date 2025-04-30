@@ -60,10 +60,22 @@ class TatumService:
     
     def _get_chain_name(self, blockchain_name: str) -> str:
         """Convert blockchain name to Tatum chain identifier"""
-        chain = self.chain_mapping.get(blockchain_name.lower())
+        name = blockchain_name.lower()
+        
+        # Special handling for BSC variations
+        if name in ["bnb", "bsc", "binance smart chain", "bnb chain"]:
+            return "bsc"
+            
+        chain = self.chain_mapping.get(name)
         if not chain:
-            self.logger.error(f"Unsupported blockchain: {blockchain_name}")
-            raise ValueError(f"Unsupported blockchain: {blockchain_name}")
+            supported_chains = [
+                "ethereum", "bitcoin", "bsc", "polygon", "tron", "solana", 
+                "xrp", "cardano", "polkadot", "cosmos", "dogecoin", 
+                "litecoin", "tezos", "stellar"
+            ]
+            error_msg = f"Unsupported blockchain: {blockchain_name}. Supported: {', '.join(supported_chains)}"
+            self.logger.error(error_msg)
+            raise ValueError(error_msg)
         return chain
     
     def _get_bsc_currency(self, contract_address: str = None) -> str:
@@ -297,29 +309,57 @@ class TatumService:
                 return {}, f"Invalid recipient address format for {blockchain_name}"
             
             # Get current balance
-            balance_data, error = await self._make_request('get', f"{blockchain_name.lower()}/account/balance/{sender_address}")
+            balance_data, error = await self._make_request('get', f"{chain}/account/balance/{sender_address}")
             if error:
                 return {}, f"Error getting sender balance: {error}"
             
             sender_balance_before = balance_data.get('balance', '0')
             
-            # Get gas estimation
-            gas_data, gas_error = await self._make_request('post', f"/{blockchain_name.lower()}/gas", data={
-                "from": sender_address,
-                "to": recipient_address,
-                "amount": amount,  # Use cleaned amount
-                "data": "" if not smart_contract_address else "0xa9059cbb"  # Transfer method ID for tokens
-            })
+            # Initialize default gas values
+            gas_limit = "21000"
+            gas_price = "5"
+            estimated_fee = "0.0001"
+            usd_price = "0"
             
-            # Set default gas values if estimation failed
-            if gas_error:
-                gas_limit = "21000"
-                gas_price = "5"
-                estimated_fee = "0.0001"
+            # Check if blockchain is supported for internal gas calculation
+            if chain in ['eth', 'bsc']:
+                # Get gas estimation from Tatum
+                gas_data, gas_error = await self._make_request('post', f"/{chain}/gas", data={
+                    "from": sender_address,
+                    "to": recipient_address,
+                    "amount": amount,
+                    "data": "" if not smart_contract_address else "0xa9059cbb"  # Transfer method ID for tokens
+                })
+                
+                if not gas_error:
+                    gas_limit = gas_data.get("gasLimit", "21000")
+                    gas_price = gas_data.get("gasPrice", "5")
+                    estimated_fee = str(round(float(gas_price) * float(gas_limit) / 1e9, 18))
             else:
-                gas_limit = gas_data.get("gasLimit", "21000")
-                gas_price = gas_data.get("gasPrice", "5")
-                estimated_fee = str(round(float(gas_price) * float(gas_limit) / 1e9, 18))
+                # Call coinceeper.com API for gas estimation
+                try:
+                    async with aiohttp.ClientSession() as session:
+                        async with session.post(
+                            "https://coinceeper.com/api/estimate-fee",
+                            json={
+                                "blockchain": blockchain_name,
+                                "from_address": sender_address,
+                                "to_address": recipient_address,
+                                "amount": amount,
+                                "token_contract": smart_contract_address
+                            }
+                        ) as response:
+                            if response.status == 200:
+                                data = await response.json()
+                                gas_limit = str(data.get("gas_limit", "21000"))
+                                gas_price = str(data.get("gas_price", "5"))
+                                estimated_fee = str(data.get("fee", "0.0001"))
+                                usd_price = str(data.get("usd_price", "0"))
+                            else:
+                                self.logger.warning(f"Failed to get gas estimation from coinceeper.com: {response.status}")
+                except Exception as e:
+                    self.logger.error(f"Error calling coinceeper.com API: {str(e)}")
+                    # Use default values if API call fails
             
             # Calculate estimated balance after
             try:
@@ -341,7 +381,8 @@ class TatumService:
                 "sender_balance_after": sender_balance_after,
                 "contract_address": smart_contract_address,
                 "currency": blockchain_name.upper(),
-                "is_token": bool(smart_contract_address)
+                "is_token": bool(smart_contract_address),
+                "usd_price": usd_price
             }
             
             # Return flat response structure
@@ -736,10 +777,11 @@ class TatumService:
         Returns:
             Tuple of (gas_price_in_wei, error_message)
         """
-        endpoint = f"{blockchain.lower()}/gas"
-        url = f"{self.base_url.rstrip('/')}/{endpoint}"
-
         try:
+            chain = self._get_chain_name(blockchain)
+            endpoint = f"{chain}/gas"
+            url = f"{self.base_url.rstrip('/')}/{endpoint}"
+
             self.logger.debug(f"Getting gas price for blockchain: {blockchain}")
             self.logger.debug(f"Request URL: {url}")
             
@@ -756,10 +798,8 @@ class TatumService:
                     self.logger.debug(f"Successfully got gas price: {gas_price}")
                     return gas_price, None
                     
-        except aiohttp.ClientError as e:
-            error_msg = f"Network error while getting gas price: {str(e)}"
-            self.logger.error(error_msg)
-            return 0, error_msg
+        except ValueError as e:
+            return 0, str(e)
         except Exception as e:
             error_msg = f"Exception getting gas price: {str(e)}"
             self.logger.error(error_msg)

@@ -70,6 +70,7 @@ except Exception as db_import_error:
 # Import services and config
 from config.queue import get_rabbitmq_connection
 from config.swagger import register_swagger
+from services.wallet_service import WalletService
 
 # Import schemas after services
 from schemas import WalletGenerationResponse, WalletGenerationRequest
@@ -123,7 +124,12 @@ try:
     
     # Register blueprints - RESTORING ORIGINAL WORKING PREFIXES
     logger.info("Registering blueprints")
-    app.register_blueprint(generate_bp, url_prefix='/generate')
+    
+    # Примечание: Теперь в системе есть два эндпоинта для генерации кошельков:
+    # 1. /generate-wallet - основной эндпоинт, определенный в app.py
+    # 2. /generate-wallet-v1 - альтернативный эндпоинт из blueprint generate_bp
+    # Оба используют одинаковый WalletService для создания кошельков
+    app.register_blueprint(generate_bp, url_prefix='')
     logger.info("Registered generate_bp")
     app.register_blueprint(import_bp, url_prefix='')
     logger.info("Registered import_bp")
@@ -388,9 +394,11 @@ def generate_wallet(body: WalletGenerationRequest):
                 # Log success
                 logger.info(f"Wallet generated synchronously for user {user_id}")
 
+                # Исправление структуры ответа, добавляя поле Addresses для соответствия с другими endpoint
                 return jsonify({
                     'UserID': user_id,
                     'Mnemonic': mnemonic,
+                    'Addresses': addresses,
                     'success': True
                 }), 201
             except Exception as session_error:
