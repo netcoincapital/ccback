@@ -55,8 +55,11 @@ def get_log_directory():
     Returns:
         str: Path to the log directory for today
     """
+    # Get the project root directory (where CC folder is located)
+    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    
     # Create main Logs directory
-    logs_dir = os.path.join(os.getcwd(), "Logs")
+    logs_dir = os.path.join(project_root, "Logs")
     os.makedirs(logs_dir, exist_ok=True)
     
     # Create date-specific directory

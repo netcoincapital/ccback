@@ -1,5 +1,10 @@
 # Add compatibility patch for Python 3.12
 import sys
+import os
+
+# Set up project path
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
 if sys.version_info >= (3, 10):
     import collections
     import collections.abc
@@ -17,7 +22,6 @@ from flask_cors import CORS
 from flask_wtf.csrf import CSRFProtect, CSRFError
 from flask_openapi3 import OpenAPI, Info
 import logging
-import os
 from datetime import datetime, timezone
 import traceback
 import json
@@ -114,8 +118,8 @@ try:
     from Transactions import receive_bp, gasfee_bp
     from Send import send_bp
     from balance import balance_api
-    # from Ethereum import auth_bp, phrase_key_bp  # Commented out missing module
     from UserTransactions import transactions_bp
+    from fee_estimator.api import fee_estimator_bp
     
     # Register blueprints - RESTORING ORIGINAL WORKING PREFIXES
     logger.info("Registering blueprints")
@@ -137,8 +141,11 @@ try:
     logger.info("Registered send_bp")
     app.register_blueprint(transactions_bp, url_prefix='')
     logger.info("Registered transactions_bp")
-    # app.register_blueprint(auth_bp)  # Commented out missing blueprint
-    # app.register_blueprint(phrase_key_bp)  # Commented out missing blueprint
+    
+    # Register Fee Estimator endpoints with a prefix
+    app.register_blueprint(fee_estimator_bp, url_prefix='')
+    logger.info("Registered Fee Estimator endpoints")
+    
     logger.info("All blueprints registered successfully")
 except Exception as e:
     logger.error(f"Error registering blueprints: {str(e)}", exc_info=True)
@@ -147,18 +154,13 @@ except Exception as e:
 # Register Swagger UI
 register_swagger(app)
 
-# Now all blueprints are registered, import the wallet service
-# This is to avoid circular imports
-from services.wallet_service import WalletService
-
-# Import webhook module
+# Initialize webhook blueprint
 from webhook import init_app as init_webhook
 from webhook.database_operations import DatabaseOperations
 from webhook.tatum_subscription import create_batched_blockchain_subscriptions, group_addresses_by_blockchain, list_subscriptions
 
-# Initialize webhook blueprint
+# Register the webhook blueprint
 init_webhook(app)
-logger.info("Webhook blueprint registered successfully")
 
 # Setup webhook subscriptions automatically
 def setup_webhook_subscriptions():
@@ -668,47 +670,6 @@ def test_config():
         'python_version': sys.version,
         'message': 'Configuration test completed'
     })
-
-def create_app():
-    app_instance = Flask(__name__)
-    
-    # Enable CORS
-    CORS(app_instance, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
-    
-    # Set configurations
-    app_instance.secret_key = os.environ.get('SECRET_KEY', 'ironwallet-dev-secret-key')
-    app_instance.config['WTF_CSRF_ENABLED'] = False
-    app_instance.config['JSON_SORT_KEYS'] = False
-    app_instance.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
-    app_instance.config['TRAP_HTTP_EXCEPTIONS'] = True
-    app_instance.config['TRAP_BAD_REQUEST_ERRORS'] = True
-    
-    # Initialize database
-    init_db()
-    
-    # Register blueprints
-    from generate import generate_bp
-    from ImportWallet import import_bp
-    from Currencies import Prices_bp, CPost_bp
-    from Transactions import receive_bp, gasfee_bp
-    from Send import send_bp
-    from balance import balance_api
-    from UserTransactions import transactions_bp
-    
-    app_instance.register_blueprint(generate_bp, url_prefix='/generate')
-    app_instance.register_blueprint(import_bp, url_prefix='')
-    app_instance.register_blueprint(Prices_bp, url_prefix='')
-    app_instance.register_blueprint(CPost_bp, url_prefix='')
-    app_instance.register_blueprint(receive_bp, url_prefix='')
-    app_instance.register_blueprint(gasfee_bp, url_prefix='')
-    app_instance.register_blueprint(balance_api, url_prefix='')
-    app_instance.register_blueprint(send_bp, url_prefix='/send')
-    app_instance.register_blueprint(transactions_bp, url_prefix='')
-    
-    # Initialize webhook routes
-    init_webhook(app_instance)
-    
-    return app_instance
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

@@ -3,21 +3,33 @@ import logging
 import json
 from datetime import datetime
 from typing import Dict, Any, Tuple, Optional
+import uuid
+import aiohttp
+import os
+import sys
+from decimal import Decimal
+from utils.logging_config import get_logger
 
-# Configure logging
-logger = logging.getLogger(__name__)
+# Add the project root directory to Python path
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, project_root)
+
 
 class TatumService:
     """Service class for interacting with Tatum API"""
     
-    def __init__(self, api_key):
-        """Initialize with Tatum API key"""
-        self.api_key = api_key
+    def __init__(self):
+        self.api_key = os.getenv('TATUM_API_KEY')
+        if not self.api_key:
+            raise RuntimeError("TATUM_API_KEY environment variable is not set")
+
         self.base_url = "https://api.tatum.io/v3"
         self.headers = {
             "x-api-key": self.api_key,
             "Content-Type": "application/json"
         }
+
+        self.logger = get_logger(__file__)
         
         # Mapping blockchain names to Tatum chain identifiers
         self.chain_mapping = {
@@ -50,7 +62,7 @@ class TatumService:
         """Convert blockchain name to Tatum chain identifier"""
         chain = self.chain_mapping.get(blockchain_name.lower())
         if not chain:
-            logger.error(f"Unsupported blockchain: {blockchain_name}")
+            self.logger.error(f"Unsupported blockchain: {blockchain_name}")
             raise ValueError(f"Unsupported blockchain: {blockchain_name}")
         return chain
     
@@ -64,18 +76,78 @@ class TatumService:
         currency = self.bsc_token_mapping.get(contract_address)
         
         if not currency:
-            logger.warning(f"Unknown BSC token contract: {contract_address}, defaulting to BSC")
+            self.logger.warning(f"Unknown BSC token contract: {contract_address}, defaulting to BSC")
             return "BSC"
             
         return currency
 
-    def _make_request(self, method: str, endpoint: str, params=None, data=None) -> Tuple[Optional[Dict], Optional[str]]:
-        """Make request to Tatum API"""
+    def _clean_decimals(self, obj):
+        """
+        Recursively convert all Decimal instances to float in a dictionary or list
+        
+        Args:
+            obj: Object to clean (dict, list, or any other type)
+            
+        Returns:
+            Object with all Decimals converted to float
+        """
+        if isinstance(obj, dict):
+            return {k: self._clean_decimals(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [self._clean_decimals(i) for i in obj]
+        elif isinstance(obj, Decimal):
+            return float(obj)
+        return obj
+
+    async def _make_request(self, method: str, endpoint: str, data: Optional[Dict] = None) -> Tuple[Dict, Optional[str]]:
+        """
+        Make an async HTTP request to Tatum API
+        
+        Args:
+            method: HTTP method (GET, POST, etc.)
+            endpoint: API endpoint
+            data: Request body for POST requests
+            
+        Returns:
+            Tuple of (response_data, error_message)
+        """
+        url = f"{self.base_url.rstrip('/')}/{endpoint}"
+        try:
+            # Clean any Decimal values in the request data
+            if data:
+                data = self._clean_decimals(data)
+                
+            async with aiohttp.ClientSession() as session:
+                async with session.request(method, url, headers=self.headers, json=data) as response:
+                    content_type = response.headers.get('Content-Type', '')
+                    if response.status != 200:
+                        text = await response.text()
+                        error_msg = f"Tatum API error: {response.status} - {text}"
+                        self.logger.error(error_msg)
+                        return {}, error_msg
+                    if 'application/json' not in content_type:
+                        text = await response.text()
+                        error_msg = f"Unexpected MIME type: {content_type}, response: {text}"
+                        self.logger.error(error_msg)
+                        return {}, error_msg
+                    return await response.json(), None
+        except Exception as e:
+            error_msg = f"Error making request to Tatum API: {str(e)}"
+            self.logger.error(error_msg)
+            return {}, error_msg
+
+    def _make_request_sync(self, method: str, endpoint: str, params=None, data=None) -> Tuple[Optional[Dict], Optional[str]]:
+        """Make request to Tatum API (synchronous version)"""
         url = f"{self.base_url}{endpoint}"
         
         try:
-            logger.debug(f"Making {method} request to {url}")
-            logger.debug(f"Request data: {data}")
+            self.logger.debug(f"Making {method} request to {url}")
+            
+            # Clean any Decimal values in the request data
+            if data:
+                data = self._clean_decimals(data)
+            
+            self.logger.debug(f"Request data: {data}")
             
             if method.lower() == 'get':
                 response = requests.get(url, headers=self.headers, params=params)
@@ -84,21 +156,21 @@ class TatumService:
             else:
                 return None, f"Unsupported HTTP method: {method}"
             
-            logger.debug(f"Response status code: {response.status_code}")
-            logger.debug(f"Response body: {response.text}")
+            self.logger.debug(f"Response status code: {response.status_code}")
+            self.logger.debug(f"Response body: {response.text}")
                 
             if response.status_code == 200:
                 return response.json(), None
             else:
                 error_msg = f"Tatum API error: {response.status_code}, {response.text}"
-                logger.error(error_msg)
+                self.logger.error(error_msg)
                 return None, error_msg
                 
         except Exception as e:
             error_msg = f"Error calling Tatum API: {str(e)}"
-            logger.error(error_msg)
+            self.logger.error(error_msg)
             return None, error_msg
-    
+
     def get_balance(self, blockchain_name: str, address: str) -> Tuple[Optional[Dict], Optional[str]]:
         """Get balance for an address"""
         try:
@@ -116,14 +188,14 @@ class TatumService:
             else:
                 endpoint = f"/ledger/account/{chain}/{address}/balance"
             
-            logger.debug(f"Getting balance from endpoint: {endpoint}")
+            self.logger.debug(f"Getting balance from endpoint: {endpoint}")
             return self._make_request('get', endpoint)
 
         except ValueError as e:
             return None, str(e)
         except Exception as e:
             error_msg = f"Error getting balance: {str(e)}"
-            logger.error(error_msg)
+            self.logger.error(error_msg)
             return None, error_msg
 
     
@@ -183,9 +255,37 @@ class TatumService:
         
         return self._make_request('get', endpoint)
     
-    def prepare_transaction(self, blockchain_name: str, sender_address: str, private_key: str, 
-                           recipient_address: str, amount: str, smart_contract_address=None) -> Tuple[Dict, Optional[str]]:
-        """Prepare a transaction for sending using Tatum API"""
+    async def prepare_transaction(self, blockchain_name: str, sender_address: str, recipient_address: str, 
+                                amount: str, smart_contract_address: Optional[str] = None) -> Tuple[Dict, Optional[str]]:
+        """
+        Prepare transaction parameters and estimates without broadcasting
+        
+        Args:
+            blockchain_name: Name of the blockchain (e.g., "ethereum", "bsc")
+            sender_address: Address sending the transaction
+            recipient_address: Address receiving the transaction
+            amount: Amount to send
+            smart_contract_address: Optional contract address for token transfers
+            
+        Returns:
+            Tuple of (response_data, error_message)
+        """
+        # Validate and clean amount
+        try:
+            if not amount:
+                return {}, "Amount must not be empty"
+            
+            # Convert to float and validate
+            amount_float = float(amount)
+            if amount_float <= 0:
+                return {}, "Amount must be a positive number"
+            
+            # Convert back to string with 18 decimal precision
+            amount = str(round(amount_float, 18))
+            
+        except ValueError:
+            return {}, "Amount must be a valid number"
+
         try:
             # Get chain name and validate addresses
             chain = self._get_chain_name(blockchain_name)
@@ -196,202 +296,67 @@ class TatumService:
             if not self.validate_address(blockchain_name, recipient_address):
                 return {}, f"Invalid recipient address format for {blockchain_name}"
             
-            # Get current balance first
-            balance_data, error = self.get_balance(blockchain_name, sender_address)
+            # Get current balance
+            balance_data, error = await self._make_request('get', f"{blockchain_name.lower()}/account/balance/{sender_address}")
             if error:
                 return {}, f"Error getting sender balance: {error}"
             
             sender_balance_before = balance_data.get('balance', '0')
             
-            # Set endpoint and add chain-specific parameters
-            if chain == "bsc":
-                # First get gas estimate
-                gas_data, gas_error = self._make_request('post', "/bsc/gas", data={
-                    "from": sender_address,
-                    "to": recipient_address,
-                    "amount": amount,
-                    "data": "" if not smart_contract_address else "0xa9059cbb"  # Transfer method ID for tokens
-                })
-                
-                if gas_error:
-                    estimated_fee = "0.0001"  # Default estimate for BSC
-                    gas_limit = "21000"
-                    gas_price = "5"
-                else:
-                    gas_limit = gas_data.get('gasLimit', '21000')
-                    gas_price = gas_data.get('gasPrice', '5')
-                    estimated_fee = str(float(gas_price) * float(gas_limit) / 1e9)
-
-                # Use the complete blockchain name for BSC endpoint
-                endpoint = "/Binance Smart Chain/transaction"
-                
-                # Prepare request data based on transaction type
-                if smart_contract_address:
-                    # For token transfers
-                    request_data = {
-                        "to": recipient_address,
-                        "amount": amount,
-                        "fromPrivateKey": private_key,
-                        "currency": "BSC",
-                        "contractAddress": smart_contract_address,
-                        "fee": {
-                            "gasLimit": gas_limit,
-                            "gasPrice": gas_price
-                        }
-                    }
-                else:
-                    # For native BNB transfer
-                    request_data = {
-                        "to": recipient_address,
-                        "amount": amount,
-                        "fromPrivateKey": private_key,
-                        "currency": "BSC",
-                        "fee": {
-                            "gasLimit": gas_limit,
-                            "gasPrice": gas_price
-                        }
-                    }
-            elif chain == "eth":
-                # Use the complete blockchain name for Ethereum endpoint
-                endpoint = "/ethereum/transaction"
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": "ETH",
-                    "fee": {
-                        "gasLimit": "21000",
-                        "gasPrice": "20"
-                    }
-                }
-                estimated_fee = "0.00042"  # Default estimate for ETH
-            elif chain == "polygon":
-                # Use the complete blockchain name for Polygon endpoint
-                endpoint = "/polygon/transaction"
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount, 
-                    "fromPrivateKey": private_key,
-                    "currency": "MATIC"
-                }
-                estimated_fee = "0.0001"  # Default estimate
-            elif chain == "tron":
-                # Use the complete blockchain name for Tron endpoint
-                endpoint = "/tron/transaction"
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": "TRON"
-                }
-                estimated_fee = "0.0001"  # Default estimate
-            elif chain == "btc":
-                # Use the complete blockchain name for Bitcoin endpoint
-                endpoint = "/bitcoin/transaction"
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": "BTC"
-                }
-                estimated_fee = "0.0001"  # Default estimate
-            elif chain == "solana":
-                # Use the complete blockchain name for Solana endpoint
-                endpoint = "/solana/transaction"
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": "SOL"
-                }
-                estimated_fee = "0.000005"  # Default estimate
-            elif chain == "xrp":
-                # Use the complete blockchain name for XRP endpoint
-                endpoint = "/xrp/transaction" 
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": "XRP"
-                }
-                estimated_fee = "0.00001"  # Default estimate
-            elif chain == "avalanche":
-                # Use the complete blockchain name for Avalanche endpoint
-                endpoint = "/avalanche/transaction"
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": "AVAX"
-                }
-                estimated_fee = "0.0001"  # Default estimate
-            elif chain == "arbitrum":
-                # Use the complete blockchain name for Arbitrum endpoint
-                endpoint = "/arbitrum/transaction"
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": "ARB"
-                }
-                estimated_fee = "0.0001"  # Default estimate
+            # Get gas estimation
+            gas_data, gas_error = await self._make_request('post', f"/{blockchain_name.lower()}/gas", data={
+                "from": sender_address,
+                "to": recipient_address,
+                "amount": amount,  # Use cleaned amount
+                "data": "" if not smart_contract_address else "0xa9059cbb"  # Transfer method ID for tokens
+            })
+            
+            # Set default gas values if estimation failed
+            if gas_error:
+                gas_limit = "21000"
+                gas_price = "5"
+                estimated_fee = "0.0001"
             else:
-                # For other chains, use the full name format
-                # Convert abbreviated chain name to full endpoint name
-                endpoint = f"/{chain}/transaction"
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": blockchain_name.upper()
-                }
-                estimated_fee = "0.0001"  # Default estimate
-            
-            # Make request to Tatum API
-            logger.debug(f"Preparing {chain} transaction")
-            logger.debug(f"Request data: {request_data}")
-            logger.debug(f"Endpoint: {endpoint}")
-            
-            response_data, error = self._make_request('post', endpoint, data=request_data)
-            
-            if error:
-                return {}, f"Error preparing transaction: {error}"
-            
-            # Get transaction hash from response
-            transaction_hash = response_data.get('txId')
-            if not transaction_hash:
-                return {}, "Transaction hash not found in response"
+                gas_limit = gas_data.get("gasLimit", "21000")
+                gas_price = gas_data.get("gasPrice", "5")
+                estimated_fee = str(round(float(gas_price) * float(gas_limit) / 1e9, 18))
             
             # Calculate estimated balance after
             try:
                 balance_after = float(sender_balance_before) - float(amount) - float(estimated_fee)
-                sender_balance_after = str(max(0, balance_after))
+                sender_balance_after = str(round(balance_after, 18))
             except (ValueError, TypeError):
                 sender_balance_after = "Unknown"
             
-            # Prepare transaction details
-            tx_details = {
-                "sender_address": sender_address,
-                "recipient_address": recipient_address,
+            # Prepare details dictionary with all required fields
+            details = {
                 "amount": amount,
-                "currency": blockchain_name.upper(),
-                "transaction_hash": transaction_hash,
-                "is_token": bool(smart_contract_address),
-                "contract_address": smart_contract_address,
+                "sender": sender_address,
+                "recipient": recipient_address,
                 "chain": chain,
-                "prepared_data": response_data,
                 "estimated_fee": estimated_fee,
+                "gas_limit": str(gas_limit),
+                "gas_price": str(gas_price),
                 "sender_balance_before": sender_balance_before,
-                "sender_balance_after": sender_balance_after
+                "sender_balance_after": sender_balance_after,
+                "contract_address": smart_contract_address,
+                "currency": blockchain_name.upper(),
+                "is_token": bool(smart_contract_address)
             }
             
-            return tx_details, None
+            # Return flat response structure
+            return {
+                "success": True,
+                "details": details,
+                "transaction_id": None,
+                "expires_at": None
+            }, None
             
         except ValueError as e:
             return {}, str(e)
         except Exception as e:
             error_msg = f"Error preparing transaction: {str(e)}"
-            logger.error(error_msg)
+            self.logger.error(error_msg)
             return {}, error_msg
     
     def send_transaction(self, blockchain_name: str, sender_address: str, private_key: str, 
@@ -448,8 +413,8 @@ class TatumService:
                         request_data["contractAddress"] = tx_details.get('contract_address')
             
             # Log request details
-            logger.debug(f"Sending {chain} transaction")
-            logger.debug(f"Request data: {request_data}")
+            self.logger.debug(f"Sending {chain} transaction")
+            self.logger.debug(f"Request data: {request_data}")
             
             # Send transaction
             response_data, error = self._make_request('post', endpoint, data=request_data)
@@ -485,7 +450,7 @@ class TatumService:
             return {}, str(e)
         except Exception as e:
             error_msg = f"Error sending transaction: {str(e)}"
-            logger.error(error_msg)
+            self.logger.error(error_msg)
             return {}, error_msg
     
     def check_transaction_status(self, blockchain_name: str, tx_hash: str) -> Tuple[str, str]:
@@ -523,5 +488,279 @@ class TatumService:
             
         except Exception as e:
             error_msg = f"Error checking transaction status: {str(e)}"
-            logger.error(error_msg)
-            return "Unknown", error_msg 
+            self.logger.error(error_msg)
+            return "Unknown", error_msg
+    
+    def sign_transaction(self, blockchain_name: str, sender_address: str, private_key: str, 
+                        recipient_address: str, amount: str, smart_contract_address=None) -> Tuple[Dict, Optional[str]]:
+        """Sign a transaction without broadcasting using Tatum API"""
+        try:
+            # Get chain name and validate addresses
+            chain = self._get_chain_name(blockchain_name)
+            
+            if not self.validate_address(blockchain_name, sender_address):
+                return {}, f"Invalid sender address format for {blockchain_name}"
+                
+            if not self.validate_address(blockchain_name, recipient_address):
+                return {}, f"Invalid recipient address format for {blockchain_name}"
+            
+            # Get current balance first
+            balance_data, error = self.get_balance(blockchain_name, sender_address)
+            if error:
+                return {}, f"Error getting sender balance: {error}"
+            
+            sender_balance_before = balance_data.get('balance', '0')
+            
+            # Prepare request data based on blockchain
+            if chain == "bsc":
+                # First get gas estimate
+                gas_data, gas_error = self._make_request('post', "/bsc/gas", data={
+                    "from": sender_address,
+                    "to": recipient_address,
+                    "amount": amount,
+                    "data": "" if not smart_contract_address else "0xa9059cbb"  # Transfer method ID for tokens
+                })
+                
+                if gas_error:
+                    estimated_fee = "0.0001"  # Default estimate for BSC
+                    gas_limit = "21000"
+                    gas_price = "5"
+                else:
+                    gas_limit = gas_data.get('gasLimit', '21000')
+                    gas_price = gas_data.get('gasPrice', '5')
+                    estimated_fee = str(float(gas_price) * float(gas_limit) / 1e9)
+                
+                # Prepare request data
+                request_data = {
+                    "from": sender_address,
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "BSC"
+                }
+                
+                if smart_contract_address:
+                    request_data["contractAddress"] = smart_contract_address
+                
+                request_data["fee"] = {
+                    "gasLimit": str(gas_limit),
+                    "gasPrice": str(gas_price)
+                }
+                
+            elif chain == "eth":
+                estimated_fee = "0.00042"  # Default estimate for ETH
+                request_data = {
+                    "from": sender_address,
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "ETH",
+                    "fee": {
+                        "gasLimit": "21000",
+                        "gasPrice": "20"
+                    }
+                }
+                
+                if smart_contract_address:
+                    request_data["contractAddress"] = smart_contract_address
+                
+            else:
+                # For other chains
+                estimated_fee = "0.0001"  # Default estimate
+                request_data = {
+                    "from": sender_address,
+                    "to": recipient_address,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": blockchain_name.upper()
+                }
+                
+                if smart_contract_address:
+                    request_data["contractAddress"] = smart_contract_address
+            
+            # Use transaction/sign endpoint to only sign the transaction
+            endpoint = "/transaction/sign"
+            
+            # Make request to Tatum API
+            self.logger.debug(f"Signing {chain} transaction")
+            self.logger.debug(f"Request data: {request_data}")
+            
+            response_data, error = self._make_request('post', endpoint, data=request_data)
+            
+            if error:
+                return {}, f"Error signing transaction: {error}"
+            
+            # Get signed transaction from response
+            signed_tx = response_data.get('signedTx')
+            if not signed_tx:
+                return {}, "Signed transaction data not found in response"
+            
+            # Calculate estimated balance after
+            try:
+                balance_after = float(sender_balance_before) - float(amount) - float(estimated_fee)
+                sender_balance_after = str(max(0, balance_after))
+            except (ValueError, TypeError):
+                sender_balance_after = "Unknown"
+            
+            # Generate a unique transaction ID
+            transaction_id = response_data.get('txId', str(uuid.uuid4()))
+            
+            # Prepare transaction details
+            tx_details = {
+                "sender_address": sender_address,
+                "recipient_address": recipient_address,
+                "amount": amount,
+                "currency": blockchain_name.upper(),
+                "transaction_id": transaction_id,
+                "is_token": bool(smart_contract_address),
+                "contract_address": smart_contract_address,
+                "chain": chain,
+                "signed_tx": signed_tx,
+                "estimated_fee": estimated_fee,
+                "sender_balance_before": sender_balance_before,
+                "sender_balance_after": sender_balance_after
+            }
+            
+            return tx_details, None
+            
+        except ValueError as e:
+            return {}, str(e)
+        except Exception as e:
+            error_msg = f"Error signing transaction: {str(e)}"
+            self.logger.error(error_msg)
+            return {}, error_msg
+    
+    def broadcast_transaction(self, blockchain_name: str, signed_tx: str) -> Tuple[Dict, Optional[str]]:
+        """Broadcast a signed transaction to the blockchain"""
+        try:
+            chain = self._get_chain_name(blockchain_name)
+            
+            # Prepare request data
+            request_data = {
+                "txData": signed_tx,
+                "chain": chain
+            }
+            
+            # Use transaction/broadcast endpoint
+            endpoint = "/transaction/broadcast"
+            
+            # Log request details
+            self.logger.debug(f"Broadcasting {chain} transaction")
+            self.logger.debug(f"Request data: {request_data}")
+            
+            # Send transaction
+            response_data, error = self._make_request('post', endpoint, data=request_data)
+            
+            if error:
+                return {}, error
+            
+            # Extract transaction hash from response
+            tx_hash = response_data.get('txId')
+            
+            if not tx_hash:
+                error_msg = "Failed to broadcast transaction: Transaction ID not found in response"
+                self.logger.error(error_msg)
+                self.logger.error(f"Broadcast response data: {response_data}")
+                return {}, error_msg
+            
+            # Prepare result
+            result = {
+                "transaction_hash": tx_hash,
+                "actual_fee": response_data.get('fee', "Unknown"),
+                "status": "Unconfirmed",
+                "description": "Transaction has been submitted to the blockchain network and is waiting to be processed."
+            }
+            
+            return result, None
+            
+        except ValueError as e:
+            return {}, str(e)
+        except Exception as e:
+            error_msg = f"Error broadcasting transaction: {str(e)}"
+            self.logger.error(error_msg)
+            return {}, error_msg
+
+    async def get_transaction_count(self, address: str) -> Tuple[int, Optional[str]]:
+        """
+        Get transaction count (nonce) from Tatum API
+        
+        Args:
+            address: Ethereum address to get nonce for
+            
+        Returns:
+            Tuple of (nonce, error_message)
+        """
+        endpoint = f"ethereum/transaction/count/{address}"
+        url = f"{self.base_url.rstrip('/')}/{endpoint}"
+
+        try:
+            self.logger.debug(f"Getting transaction count for address: {address}")
+            self.logger.debug(f"Request URL: {url}")
+            
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, headers=self.headers) as response:
+                    if response.status != 200:
+                        text = await response.text()
+                        error_msg = f"Unexpected response: {response.status}, content: {text}"
+                        self.logger.error(error_msg)
+                        return 0, error_msg
+
+                    text = await response.text()
+                    self.logger.debug(f"Raw response text: {text}")
+                    
+                    try:
+                        nonce = int(text)
+                        self.logger.debug(f"Successfully parsed nonce: {nonce}")
+                        return nonce, None
+                    except ValueError:
+                        error_msg = f"Invalid nonce format from Tatum: {text}"
+                        self.logger.error(error_msg)
+                        return 0, error_msg
+                        
+        except aiohttp.ClientError as e:
+            error_msg = f"Network error while getting nonce: {str(e)}"
+            self.logger.error(error_msg)
+            return 0, error_msg
+        except Exception as e:
+            error_msg = f"Unexpected error while getting nonce: {str(e)}"
+            self.logger.error(error_msg)
+            return 0, error_msg
+
+    async def get_gas_price(self, blockchain: str = "ethereum") -> Tuple[int, Optional[str]]:
+        """
+        Get current gas price from Tatum API
+        
+        Args:
+            blockchain: Name of the blockchain (e.g., "ethereum", "bsc")
+            
+        Returns:
+            Tuple of (gas_price_in_wei, error_message)
+        """
+        endpoint = f"{blockchain.lower()}/gas"
+        url = f"{self.base_url.rstrip('/')}/{endpoint}"
+
+        try:
+            self.logger.debug(f"Getting gas price for blockchain: {blockchain}")
+            self.logger.debug(f"Request URL: {url}")
+            
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, headers=self.headers) as response:
+                    if response.status != 200:
+                        text = await response.text()
+                        error_msg = f"Error getting gas price: {text}"
+                        self.logger.error(error_msg)
+                        return 0, error_msg
+                        
+                    json_data = await response.json()
+                    gas_price = int(json_data.get('gasPrice', 0))
+                    self.logger.debug(f"Successfully got gas price: {gas_price}")
+                    return gas_price, None
+                    
+        except aiohttp.ClientError as e:
+            error_msg = f"Network error while getting gas price: {str(e)}"
+            self.logger.error(error_msg)
+            return 0, error_msg
+        except Exception as e:
+            error_msg = f"Exception getting gas price: {str(e)}"
+            self.logger.error(error_msg)
+            return 0, error_msg 

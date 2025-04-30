@@ -1024,9 +1024,6 @@ class BalanceService:
                     logger.error(f"Error processing holding {holding.HoldingID}: {str(e)}")
                     continue
             
-            # Remove duplicate tokens with same blockchain/symbol and merge their balances
-            balances_list = self._merge_duplicate_holdings(balances_list)
-            
             logger.info(f"Found {len(balances_list)} tokens with balances for user {user_id}")
             
             return {
@@ -1042,92 +1039,6 @@ class BalanceService:
                 'error_type': 'server_error',
                 'message': f'Error retrieving balance data: {str(e)}'
             }
-            
-    def _merge_duplicate_holdings(self, balances_list):
-        """
-        Merge duplicate holdings with the same blockchain and symbol
-        
-        Args:
-            balances_list (list): List of balance dictionaries
-            
-        Returns:
-            list: Deduplicated list
-        """
-        try:
-            # Use a dictionary to identify unique blockchain/symbol combinations
-            unique_holdings = {}
-            
-            for balance_info in balances_list:
-                # Create a unique key for each blockchain/symbol pair
-                key = f"{balance_info['blockchain']}_{balance_info['symbol']}"
-                
-                if key in unique_holdings:
-                    # Log the duplicate
-                    logger.warning(f"Found duplicate holding for {balance_info['symbol']} on {balance_info['blockchain']}")
-                    
-                    existing_balance = unique_holdings[key]
-                    
-                    # If we're dealing with NCC on Tron, just take the maximum value to handle the case
-                    if balance_info['symbol'] == 'NCC' and balance_info['blockchain'] == 'Tron':
-                        # For NCC, just take the entry without merging
-                        # This handles our specific case where we have duplicate 7000 entries
-                        continue
-                    
-                    # For other tokens, try to merge balances by adding them
-                    try:
-                        # Convert both balances to Decimal for accurate calculation
-                        existing_value = Decimal(existing_balance['balance'])
-                        new_value = Decimal(balance_info['balance'])
-                        
-                        # Sum the balances
-                        total_value = existing_value + new_value
-                        
-                        # Format the result
-                        existing_balance['balance'] = self._format_token_balance(
-                            total_value, 
-                            balance_info['symbol'], 
-                            balance_info['blockchain']
-                        )
-                        
-                        logger.info(f"Merged balances for {balance_info['symbol']} on {balance_info['blockchain']}: {existing_value} + {new_value} = {total_value}")
-                    except Exception as e:
-                        logger.error(f"Error merging balances: {str(e)}")
-                        # Keep the existing value if merging fails
-                else:
-                    # First time seeing this combination
-                    unique_holdings[key] = balance_info
-            
-            # Fix for duplicate NCC tokens - clean database if needed
-            if any(info['symbol'] == 'NCC' and info['blockchain'] == 'Tron' for info in balances_list):
-                # Schedule a database cleanup to fix duplicates
-                self._schedule_duplicate_cleanup(balances_list)
-            
-            # Convert back to a list
-            return list(unique_holdings.values())
-        except Exception as e:
-            logger.error(f"Error merging duplicate holdings: {str(e)}")
-            return balances_list
-            
-    def _schedule_duplicate_cleanup(self, balances_list):
-        """
-        Schedule a database cleanup for duplicate holdings
-        This function logs the issue and will schedule a cleanup job
-        
-        Args:
-            balances_list (list): List of balance dictionaries
-        """
-        try:
-            # Count occurrences of NCC on Tron
-            ncc_count = sum(1 for balance in balances_list 
-                          if balance['symbol'] == 'NCC' and balance['blockchain'] == 'Tron')
-            
-            if ncc_count > 1:
-                logger.warning(f"Found {ncc_count} duplicate NCC records. Database cleanup needed.")
-                
-                # The actual cleanup will be implemented separately as a maintenance task
-                # This just logs the issue for now
-        except Exception as e:
-            logger.error(f"Error scheduling cleanup: {str(e)}")
     
     def _format_token_balance(self, balance, symbol, blockchain_name):
         """

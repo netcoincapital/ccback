@@ -22,3 +22,5 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # تابعی برای ساخت جداول در دیتابیس
 def init_db():
     Base.metadata.create_all(bind=engine)
+
+"""Database package initialization."""

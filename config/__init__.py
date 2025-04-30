@@ -27,4 +27,6 @@ __all__ = [
     'swagger_config',
     'DATABASE_URL',
     'WEBHOOK_BASE_URL'
-] 
+]
+
+"""Config package initialization.""" 

@@ -1,3 +1,5 @@
+"""Schemas package initialization."""
+
 from .api_schemas import (
     WalletGenerationRequest,
     WalletGenerationResponse,

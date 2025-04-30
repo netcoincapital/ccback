@@ -1,0 +1,79 @@
+2025-04-30 08:44:48 - error_handlers - DEBUG - Logger initialized for error_handlers at level DEBUG
+2025-04-30 08:44:48 - error_handlers - INFO - Initializing error handling module
+2025-04-30 08:44:48 - error_handlers - DEBUG - Logger initialized for error_handlers at level DEBUG
+2025-04-30 08:44:48 - error_handlers - INFO - Initializing error handling module
+2025-04-30 08:44:49 - error_handlers - DEBUG - Logger initialized for error_handlers at level DEBUG
+2025-04-30 08:44:49 - error_handlers - INFO - Initializing error handling module
+2025-04-30 08:44:54 - error_handlers - INFO - Initializing error handling module
+2025-04-30 08:44:54 - error_handlers - INFO - Initializing error handling module
+2025-04-30 08:44:54 - error_handlers - INFO - Initializing error handling module
+2025-04-30 08:45:02 - error_handlers - ERROR - Unexpected error: Install Flask with the 'async' extra in order to use async views.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 976, in ensure_sync
+    return self.async_to_sync(func)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 997, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+2025-04-30 08:45:02 - error_handlers - ERROR - Error traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 976, in ensure_sync
+    return self.async_to_sync(func)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 997, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+
+2025-04-30 08:45:29 - error_handlers - ERROR - Unexpected error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.9/site-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-04-30 08:45:29 - error_handlers - ERROR - Error traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.9/site-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+2025-04-30 08:46:47 - error_handlers - ERROR - Unexpected error: Install Flask with the 'async' extra in order to use async views.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 976, in ensure_sync
+    return self.async_to_sync(func)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 997, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+2025-04-30 08:46:47 - error_handlers - ERROR - Error traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 976, in ensure_sync
+    return self.async_to_sync(func)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 997, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+
