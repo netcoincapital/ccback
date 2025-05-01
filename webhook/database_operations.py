@@ -1277,6 +1277,26 @@ class DatabaseOperations:
                 return False
             
             with Session(self._get_engine()) as session:
+                # بررسی آیا این تراکنش قبلاً برای این کیف پول و ارز پردازش شده است
+                duplicate_check_query = text("""
+                    SELECT COUNT(*) FROM balance_update_log
+                    WHERE tx_id = :tx_id 
+                    AND wallet_id = :wallet_id 
+                    AND token_symbol = :token_symbol
+                """)
+                
+                params = {
+                    'tx_id': tx_id,
+                    'wallet_id': wallet_id,
+                    'token_symbol': standardized_token
+                }
+                
+                duplicate_count = session.execute(duplicate_check_query, params).scalar()
+                
+                if duplicate_count > 0:
+                    logger.warning(f"تراکنش تکراری: {tx_id} قبلاً برای کیف پول {wallet_id} و ارز {standardized_token} پردازش شده است. عدم پردازش مجدد.")
+                    return False
+                
                 # بررسی وجود کیف پول
                 wallet_query = text("""
                     SELECT UserID FROM wallets 
