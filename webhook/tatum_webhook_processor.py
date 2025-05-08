@@ -370,6 +370,7 @@ class TatumWebhookProcessor:
             direction (str): جهت تراکنش (inbound/outbound)
         """
         from database.Transfers import Transfers
+        from services.transfer_service import _register_transfer_created
         
         # تبدیل timestamp به datetime اگر رشته است
         tx_time = timestamp
@@ -403,7 +404,50 @@ class TatumWebhookProcessor:
         )
         
         session.add(transfer)
+        session.flush()  # فلاش برای گرفتن TransferID
+        
         self.logger.debug(f"رکورد انتقال برای تراکنش {tx_hash} با جهت {direction} ایجاد شد")
+        
+        # کامیت تغییرات
+        session.commit()
+        
+        # فراخوانی هندلر ثبت تراکنش برای به‌روزرسانی موجودی و اعلان‌ها
+        if hasattr(transfer, 'TransferID'):
+            _register_transfer_created(transfer.TransferID)
+            
+            # همچنین ارسال اعلان از طریق سرویس اعلان‌ها
+            from webhook.notification_service import NotificationService
+            
+            # آماده‌سازی داده‌های وب‌هوک
+            webhook_data = {
+                'txId': tx_hash,
+                'blockNumber': block_number,
+                'timestamp': tx_time.isoformat() if hasattr(tx_time, 'isoformat') else tx_time,
+                'amount': amount,
+                'from': from_address,
+                'to': to_address,
+                'token': token_symbol,
+                'blockchain': token_symbol,  # درصورت نیاز می‌توان از جدول بلاکچین هم نام بلاکچین را گرفت
+                'direction': 'inbound' if to_address == user_public_address else 'outbound'  # تعیین جهت تراکنش
+            }
+            
+            # آماده‌سازی اطلاعات آدرس
+            relevant_addresses = [{
+                'address_id': address_id,
+                'wallet_id': wallet_id,
+                'public_address': to_address if direction == 'inbound' else from_address
+            }]
+            
+            # ارسال اعلان
+            notification_service = NotificationService()
+            notification_service.notify(
+                transaction_type='address_transaction',
+                transaction_id=tx_hash,
+                relevant_addresses=relevant_addresses,
+                webhook_data=webhook_data
+            )
+        
+        return transfer
     
     def _determine_asset_type(self, transaction_info):
         """

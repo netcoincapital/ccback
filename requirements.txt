@@ -31,3 +31,4 @@ PyMySQL
 grequests
 flask_sqlalchemy
 celery
+firebase-admin>=6.0.0

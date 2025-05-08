@@ -6,7 +6,7 @@ import logging
 from utils.logging_config import get_logger
 
 # Configure logging
-logger = get_logger(__file__)
+logger = get_logger('firebase')  # Use firebase logger for notifications
 
 # Function to register transfer for processing - defined locally to avoid circular imports
 def _register_transfer_created(transfer_id: int):
@@ -22,6 +22,45 @@ def _register_transfer_created(transfer_id: int):
     try:
         # Log the transfer creation but don't process it for now
         logger.info(f"Transfer {transfer_id} created - further processing disabled for debugging")
+        
+        # Import firebase here to avoid circular imports
+        from config.firebase import send_notification
+        
+        # Get the transfer details
+        from database import SessionLocal, Transfers
+        session = SessionLocal()
+        try:
+            transfer = session.query(Transfers).filter(Transfers.TransferID == transfer_id).first()
+            if transfer:
+                # Get user's device token
+                from database import UserDevices
+                device = session.query(UserDevices).filter(UserDevices.WalletID == transfer.WalletID).first()
+                if device and device.DeviceToken:
+                    # Prepare notification message
+                    title = "New Transaction"
+                    body = f"Received {transfer.Amount} {transfer.TokenSymbol} from {transfer.FromAddress}"
+                    if transfer.Direction == 'outbound':
+                        body = f"Sent {transfer.Amount} {transfer.TokenSymbol} to {transfer.ToAddress}"
+                    
+                    # Send notification
+                    logger.info(f"Sending notification for transfer {transfer_id} to device {device.DeviceToken}")
+                    send_notification(
+                        token=device.DeviceToken,
+                        title=title,
+                        body=body,
+                        data={
+                            'transfer_id': str(transfer.TransferID),
+                            'tx_hash': transfer.TxHash,
+                            'amount': str(transfer.Amount),
+                            'token_symbol': transfer.TokenSymbol,
+                            'direction': transfer.Direction
+                        }
+                    )
+                    logger.info(f"Notification sent successfully for transfer {transfer_id}")
+                else:
+                    logger.warning(f"No device token found for wallet {transfer.WalletID}")
+        finally:
+            session.close()
         
         # Actual implementation is commented out to avoid circular imports
         # In a future update, this should be moved to a proper event system
@@ -158,6 +197,11 @@ class TransferService:
             Created transfer record
         """
         try:
+            # Check if token_symbol is BSC and change it to BNB
+            if token_symbol.upper() == 'BSC':
+                token_symbol = 'BNB'
+                logger.info(f"Changed token symbol from BSC to BNB for transfer {tx_hash}")
+            
             # Get current price for the token
             current_price = self._get_token_price(token_symbol, blockchain_id, asset_type)
             
@@ -196,22 +240,20 @@ class TransferService:
             
             # Add to session and commit
             self.session.add(transfer)
+            self.session.flush()  # فلاش برای گرفتن TransferID
+            
+            # کامیت تغییرات
             self.session.commit()
             
-            # Get the transfer ID from the newly created record
-            transfer_id = transfer.TransferID
-            
-            logger.info(f"Created new transfer record with ID {transfer_id} for tx {tx_hash}")
-            
-            # Trigger the event handler for new transfers
-            # This will update user holdings based on the transfer
-            _register_transfer_created(transfer_id)
+            # فراخوانی هندلر ثبت تراکنش برای به‌روزرسانی موجودی و اعلان‌ها
+            if hasattr(transfer, 'TransferID'):
+                _register_transfer_created(transfer.TransferID)
             
             return transfer
             
         except Exception as e:
             self.session.rollback()
-            logger.error(f"Error creating transfer record: {str(e)}")
+            logger.error(f"خطا در ایجاد رکورد انتقال: {str(e)}", exc_info=True)
             raise
     
     def record_outgoing_transaction(self, 

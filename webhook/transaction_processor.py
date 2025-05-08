@@ -8,6 +8,7 @@ import time
 import json
 from sqlalchemy import text
 from sqlalchemy.orm import Session
+import math
 
 # تنظیم لاگر
 logger = get_logger(__file__)
@@ -39,11 +40,19 @@ class TransactionProcessor:
             value (str or float): Transaction value
             
         Returns:
-            float: Normalized transaction value
+            float: Normalized transaction value or None if invalid
         """
+        # Check for None or NaN
+        if value is None or (isinstance(value, float) and math.isnan(value)):
+            logger.error("Amount is invalid: NaN or None")
+            return None
+            
         try:
-            # If value is already a float or int, return it directly
+            # If value is already a float or int, validate it
             if isinstance(value, (float, int)):
+                if math.isnan(value) or math.isinf(value):
+                    logger.error(f"Amount is invalid: {value}")
+                    return None
                 return float(value)
                 
             # If value is a string, try to convert it
@@ -53,15 +62,20 @@ class TransactionProcessor:
                 # Remove any non-numeric characters except dots and minus sign
                 value = ''.join(c for c in value if c.isdigit() or c == '.' or c == '-')
                 
-                # Convert to float
-                return float(value)
+                # Convert to float and validate
+                result = float(value)
+                if math.isnan(result) or math.isinf(result):
+                    logger.error(f"Amount is invalid after conversion: {result}")
+                    return None
+                return result
                 
-            # If value is None or other type
-            return 0.0
+            # If value is other type
+            logger.error(f"Amount is of unsupported type: {type(value)}")
+            return None
             
         except (ValueError, TypeError) as e:
             logger.error(f"Error normalizing transaction value: {str(e)}")
-            return 0.0
+            return None
         
     def _clean_processed_tx_cache(self):
         """
@@ -430,6 +444,10 @@ class TransactionProcessor:
         
         try:
             amount = self._normalize_transaction_value(value)
+            if amount is None:
+                logger.error(f"Invalid transaction amount: {value}")
+                return {"status": "error", "message": "Invalid transaction amount"}
+                
             address_id = None
             wallet_id = None
             
@@ -640,7 +658,14 @@ class TransactionProcessor:
                     transaction_type='address_transaction',
                     transaction_id=transaction_id,
                     relevant_addresses=relevant_addresses,
-                    webhook_data=webhook_data
+                    webhook_data={
+                        **webhook_data,  # حفظ داده‌های موجود
+                        'direction': direction,  # اضافه کردن جهت تراکنش
+                        'amount': amount,
+                        'token': token_symbol or blockchain,
+                        'from': from_address,
+                        'to': to_address
+                    }
                 )
                 
                 return {

@@ -11,6 +11,7 @@ from .UserHolding import UserHolding
 from .Transfers import Transfers
 from .prices import Price
 from .BalanceUpdateLog import BalanceUpdateLog
+from .UserDevices import UserDevices
 from config import DATABASE_URL
 
 # ایجاد موتور دیتابیس

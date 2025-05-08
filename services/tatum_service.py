@@ -1,7 +1,7 @@
 import requests
 import logging
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict, Any, Tuple, Optional
 import uuid
 import aiohttp
@@ -9,11 +9,67 @@ import os
 import sys
 from decimal import Decimal
 from utils.logging_config import get_logger
+from sqlalchemy.orm import Session
+from sqlalchemy import func
+from database.Address import Address
+from database.UserHolding import UserHolding
+from database.base import SessionLocal
+from database.Blockchains import Blockchains
+from database.wallets import Wallets
+from database.Currencies import Currencies
 
 # Add the project root directory to Python path
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, project_root)
 
+
+class TransactionManager:
+    """Manages pending transactions in memory"""
+    def __init__(self):
+        self._pending_transactions = {}
+        self.logger = get_logger(__file__)
+
+    def store_transaction(self, transaction_id: str, transaction_data: Dict) -> None:
+        """Store a pending transaction"""
+        self._pending_transactions[transaction_id] = {
+            'data': transaction_data,
+            'created_at': datetime.now(),
+            'expires_at': datetime.now() + timedelta(minutes=30)  # 30 minutes expiry
+        }
+        self.logger.info(f"Stored pending transaction: {transaction_id}")
+        self.logger.debug(f"Current pending transactions: {list(self._pending_transactions.keys())}")
+
+    def get_transaction(self, transaction_id: str) -> Optional[Dict]:
+        """Get a pending transaction"""
+        if transaction_id not in self._pending_transactions:
+            self.logger.warning(f"Transaction not found: {transaction_id}")
+            self.logger.debug(f"Available transactions: {list(self._pending_transactions.keys())}")
+            return None
+        
+        transaction = self._pending_transactions[transaction_id]
+        if datetime.now() > transaction['expires_at']:
+            self.logger.warning(f"Transaction {transaction_id} has expired")
+            del self._pending_transactions[transaction_id]
+            return None
+        
+        self.logger.debug(f"Retrieved transaction: {transaction_id}")
+        return transaction['data']
+
+    def remove_transaction(self, transaction_id: str) -> None:
+        """Remove a pending transaction"""
+        if transaction_id in self._pending_transactions:
+            del self._pending_transactions[transaction_id]
+            self.logger.info(f"Removed pending transaction: {transaction_id}")
+        else:
+            self.logger.warning(f"Attempted to remove non-existent transaction: {transaction_id}")
+            
+    @property
+    def pending_transactions(self) -> Dict:
+        """Get all pending transactions (for debugging only)"""
+        return self._pending_transactions
+
+# Initialize transaction manager
+transaction_manager = TransactionManager()
 
 class TatumService:
     """Service class for interacting with Tatum API"""
@@ -34,6 +90,7 @@ class TatumService:
         # Mapping blockchain names to Tatum chain identifiers
         self.chain_mapping = {
             "ethereum": "eth",
+            "eth": "eth",
             "bitcoin": "btc",
             "tron": "tron",
             "binance smart chain": "bsc",
@@ -57,26 +114,49 @@ class TatumService:
             "0x2170ed0880ac9a755fd29b2688956bd959f933f8": "BETH",      # ETH
             "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c": "WBNB"       # WBNB
         }
+
+        self.SUPPORTED_BLOCKCHAINS = [
+            'ethereum', 'eth', 'bsc', 'polygon', 'avalanche', 'arbitrum', 'optimism',
+            'tron',
+            'bitcoin', 'litecoin', 'dogecoin',
+            'solana', 'cardano', 'xrp', 'stellar', 'polkadot', 'tezos'
+        ]
     
     def _get_chain_name(self, blockchain_name: str) -> str:
         """Convert blockchain name to Tatum chain identifier"""
-        name = blockchain_name.lower()
+        if not blockchain_name:
+            error_msg = "Empty blockchain name provided"
+            self.logger.error(error_msg)
+            raise ValueError(error_msg)
+            
+        name = blockchain_name.lower().strip()
+        self.logger.debug(f"Normalizing blockchain name: '{blockchain_name}' -> '{name}' (lowercase)")
         
         # Special handling for BSC variations
         if name in ["bnb", "bsc", "binance smart chain", "bnb chain"]:
+            self.logger.debug(f"Special case: '{name}' -> 'bsc'")
             return "bsc"
             
         chain = self.chain_mapping.get(name)
-        if not chain:
-            supported_chains = [
-                "ethereum", "bitcoin", "bsc", "polygon", "tron", "solana", 
-                "xrp", "cardano", "polkadot", "cosmos", "dogecoin", 
-                "litecoin", "tezos", "stellar"
-            ]
-            error_msg = f"Unsupported blockchain: {blockchain_name}. Supported: {', '.join(supported_chains)}"
-            self.logger.error(error_msg)
-            raise ValueError(error_msg)
-        return chain
+        if chain:
+            self.logger.debug(f"Mapped using chain_mapping: '{name}' -> '{chain}'")
+            return chain
+            
+        # If the name is already in canonical form, return it
+        for canonical in self.SUPPORTED_BLOCKCHAINS:
+            if name == canonical.lower():
+                self.logger.debug(f"Found direct match with supported blockchain: '{name}'")
+                return self.chain_mapping.get(canonical.lower(), name)
+        
+        # If we get here, no mapping was found
+        supported_chains = [
+            "ethereum", "eth", "bitcoin", "btc", "bsc", "polygon", "matic", 
+            "tron", "solana", "xrp", "cardano", "polkadot", "cosmos", "dogecoin", 
+            "litecoin", "tezos", "stellar"
+        ]
+        error_msg = f"Unsupported blockchain: {blockchain_name}. Supported: {', '.join(supported_chains)}"
+        self.logger.error(error_msg)
+        raise ValueError(error_msg)
     
     def _get_bsc_currency(self, contract_address: str = None) -> str:
         """Get the appropriate currency code for BSC transactions"""
@@ -170,7 +250,22 @@ class TatumService:
             
             self.logger.debug(f"Response status code: {response.status_code}")
             self.logger.debug(f"Response body: {response.text}")
+            
+            # Special handling for TRON responses
+            if "tron" in endpoint.lower():
+                # If 404 error with "Cannot POST /v3/tron/gas" message, it's a known issue
+                if response.status_code == 404 and "Cannot POST /v3/tron/gas" in response.text:
+                    self.logger.warning("Tatum API missing TRON gas endpoint, using default values")
+                    # Return empty object for gas estimation
+                    if "/tron/gas" in endpoint:
+                        return {"gasPrice": "0", "gasLimit": "0"}, None
                 
+                # For other TRON endpoints, if we get an error but the operation might have succeeded
+                if response.status_code != 200:
+                    error_msg = f"Tatum API error with TRON: {response.status_code}, {response.text}"
+                    self.logger.error(error_msg)
+                    return None, error_msg
+            
             if response.status_code == 200:
                 return response.json(), None
             else:
@@ -178,6 +273,14 @@ class TatumService:
                 self.logger.error(error_msg)
                 return None, error_msg
                 
+        except requests.exceptions.ConnectionError as e:
+            error_msg = f"Connection error to Tatum API: {str(e)}"
+            self.logger.error(error_msg)
+            return None, error_msg
+        except requests.exceptions.Timeout as e:
+            error_msg = f"Timeout connecting to Tatum API: {str(e)}"
+            self.logger.error(error_msg)
+            return None, error_msg
         except Exception as e:
             error_msg = f"Error calling Tatum API: {str(e)}"
             self.logger.error(error_msg)
@@ -267,212 +370,354 @@ class TatumService:
         
         return self._make_request('get', endpoint)
     
-    async def prepare_transaction(self, blockchain_name: str, sender_address: str, recipient_address: str, 
+    def prepare_transaction_sync(self, blockchain_name: str, sender_address: str, recipient_address: str, 
                                 amount: str, smart_contract_address: Optional[str] = None) -> Tuple[Dict, Optional[str]]:
-        """
-        Prepare transaction parameters and estimates without broadcasting
+        """Synchronous version of prepare_transaction for direct usage with Flask"""
+        # Generate a unique transaction ID upfront
+        transaction_id = str(uuid.uuid4())
+        self.logger.debug(f"Generated transaction ID: {transaction_id} for {blockchain_name} transaction")
         
-        Args:
-            blockchain_name: Name of the blockchain (e.g., "ethereum", "bsc")
-            sender_address: Address sending the transaction
-            recipient_address: Address receiving the transaction
-            amount: Amount to send
-            smart_contract_address: Optional contract address for token transfers
-            
-        Returns:
-            Tuple of (response_data, error_message)
-        """
-        # Validate and clean amount
         try:
-            if not amount:
-                return {}, "Amount must not be empty"
-            
-            # Convert to float and validate
-            amount_float = float(amount)
-            if amount_float <= 0:
-                return {}, "Amount must be a positive number"
-            
-            # Convert back to string with 18 decimal precision
-            amount = str(round(amount_float, 18))
-            
-        except ValueError:
-            return {}, "Amount must be a valid number"
-
-        try:
-            # Get chain name and validate addresses
             chain = self._get_chain_name(blockchain_name)
             
-            if not self.validate_address(blockchain_name, sender_address):
-                return {}, f"Invalid sender address format for {blockchain_name}"
-                
-            if not self.validate_address(blockchain_name, recipient_address):
-                return {}, f"Invalid recipient address format for {blockchain_name}"
-            
-            # Get current balance
-            balance_data, error = await self._make_request('get', f"{chain}/account/balance/{sender_address}")
-            if error:
-                return {}, f"Error getting sender balance: {error}"
-            
-            sender_balance_before = balance_data.get('balance', '0')
-            
-            # Initialize default gas values
-            gas_limit = "21000"
-            gas_price = "5"
-            estimated_fee = "0.0001"
-            usd_price = "0"
-            
-            # Check if blockchain is supported for internal gas calculation
-            if chain in ['eth', 'bsc']:
-                # Get gas estimation from Tatum
-                gas_data, gas_error = await self._make_request('post', f"/{chain}/gas", data={
-                    "from": sender_address,
-                    "to": recipient_address,
-                    "amount": amount,
-                    "data": "" if not smart_contract_address else "0xa9059cbb"  # Transfer method ID for tokens
-                })
-                
-                if not gas_error:
-                    gas_limit = gas_data.get("gasLimit", "21000")
-                    gas_price = gas_data.get("gasPrice", "5")
-                    estimated_fee = str(round(float(gas_price) * float(gas_limit) / 1e9, 18))
-            else:
-                # Call coinceeper.com API for gas estimation
+            # Update the gas estimation for TRON blockchain
+            if chain.lower() == "tron":
+                # For TRON, we don't need to estimate gas as it uses bandwidth/energy system
+                # that's different from gas-based blockchains
+                session = SessionLocal()
                 try:
-                    async with aiohttp.ClientSession() as session:
-                        async with session.post(
-                            "https://coinceeper.com/api/estimate-fee",
-                            json={
-                                "blockchain": blockchain_name,
-                                "from_address": sender_address,
-                                "to_address": recipient_address,
-                                "amount": amount,
-                                "token_contract": smart_contract_address
-                            }
-                        ) as response:
-                            if response.status == 200:
-                                data = await response.json()
-                                gas_limit = str(data.get("gas_limit", "21000"))
-                                gas_price = str(data.get("gas_price", "5"))
-                                estimated_fee = str(data.get("fee", "0.0001"))
-                                usd_price = str(data.get("usd_price", "0"))
-                            else:
-                                self.logger.warning(f"Failed to get gas estimation from coinceeper.com: {response.status}")
-                except Exception as e:
-                    self.logger.error(f"Error calling coinceeper.com API: {str(e)}")
-                    # Use default values if API call fails
-            
-            # Calculate estimated balance after
-            try:
-                balance_after = float(sender_balance_before) - float(amount) - float(estimated_fee)
-                sender_balance_after = str(round(balance_after, 18))
-            except (ValueError, TypeError):
-                sender_balance_after = "Unknown"
-            
-            # Prepare details dictionary with all required fields
-            details = {
-                "amount": amount,
-                "sender": sender_address,
-                "recipient": recipient_address,
-                "chain": chain,
-                "estimated_fee": estimated_fee,
-                "gas_limit": str(gas_limit),
-                "gas_price": str(gas_price),
-                "sender_balance_before": sender_balance_before,
-                "sender_balance_after": sender_balance_after,
-                "contract_address": smart_contract_address,
-                "currency": blockchain_name.upper(),
-                "is_token": bool(smart_contract_address),
-                "usd_price": usd_price
-            }
-            
-            # Return flat response structure
-            return {
-                "success": True,
-                "details": details,
-                "transaction_id": None,
-                "expires_at": None
-            }, None
-            
-        except ValueError as e:
-            return {}, str(e)
+                    # Get balance
+                    balance_data, error = self.get_balance(blockchain_name, sender_address)
+                    if error:
+                        return {"transaction_id": transaction_id, "success": False, "message": f"Error getting sender balance: {error}"}, f"Error getting sender balance: {error}"
+                    
+                    sender_balance_before = balance_data.get('balance', '0')
+                    
+                    # For TRON, network fee is usually 0 for simple transactions
+                    estimated_fee = "0"
+                    gas_limit = "0"
+                    gas_price = "0"
+                    
+                    # Check if balance is sufficient
+                    try:
+                        if float(sender_balance_before) < float(amount):
+                            return {"transaction_id": transaction_id, "success": False, "message": "Insufficient balance for transaction"}, "Insufficient balance for transaction"
+                        sender_balance_after = str(float(sender_balance_before) - float(amount))
+                    except ValueError:
+                        return {"transaction_id": transaction_id, "success": False, "message": "Error calculating balance after transaction"}, "Error calculating balance after transaction"
+                    
+                    # Store transaction data
+                    tx_data = {
+                        "blockchain_name": blockchain_name,
+                        "sender_address": sender_address,
+                        "recipient_address": recipient_address,
+                        "amount": amount,
+                        "smart_contract_address": smart_contract_address,
+                        "tx_details": {
+                            "amount": amount,
+                            "sender": sender_address,
+                            "recipient": recipient_address,
+                            "estimated_fee": estimated_fee,
+                            "currency": "TRX"
+                        }
+                    }
+                    transaction_manager.store_transaction(transaction_id, tx_data)
+                    
+                    # Prepare response
+                    details = {
+                        "amount": amount,
+                        "sender": sender_address,
+                        "recipient": recipient_address,
+                        "chain": chain,
+                        "estimated_fee": estimated_fee,
+                        "gas_limit": gas_limit,
+                        "gas_price": gas_price,
+                        "sender_balance_before": sender_balance_before,
+                        "sender_balance_after": sender_balance_after,
+                        "contract_address": smart_contract_address,
+                        "currency": blockchain_name.upper(),
+                        "is_token": bool(smart_contract_address)
+                    }
+                    
+                    return {
+                        "success": True,
+                        "details": details,
+                        "transaction_id": transaction_id,
+                        "expires_at": (datetime.now() + timedelta(minutes=10)).isoformat(),
+                        "message": "Transaction prepared successfully"
+                    }, None
+                
+                finally:
+                    session.close()
+            else:
+                # For other chains, use similar logic but with gas estimation
+                session = SessionLocal()
+                try:
+                    # Get blockchain details
+                    blockchain_row = session.query(Blockchains).filter(
+                        func.lower(Blockchains.BlockchainName) == blockchain_name.lower()
+                    ).first()
+                    if not blockchain_row:
+                        return {"transaction_id": transaction_id, "success": False, "message": f"Blockchain {blockchain_name} not found in database"}, f"Blockchain {blockchain_name} not found in database"
+                    
+                    # Get balance
+                    holding_query = session.query(UserHolding).filter(
+                        func.lower(UserHolding.Blockchain) == blockchain_name.lower()
+                    )
+                    
+                    holding = holding_query.first()
+                    if not holding:
+                        return {"transaction_id": transaction_id, "success": False, "message": f"No balance found for {sender_address} on {blockchain_name}"}, f"No balance found for {sender_address} on {blockchain_name}"
+                    
+                    sender_balance_before = str(holding.Balance)
+                    
+                    # For non-TRON, estimate network fee
+                    estimated_fee = "0.0001"  # Default
+                    gas_limit = "21000"       # Default
+                    gas_price = "5"           # Default (in Gwei)
+                    
+                    # Calculate balance after
+                    try:
+                        balance_after = float(sender_balance_before) - float(amount) - float(estimated_fee)
+                        if balance_after < 0:
+                            return {"transaction_id": transaction_id, "success": False, "message": "Insufficient balance for transaction"}, "Insufficient balance for transaction"
+                        sender_balance_after = str(balance_after)
+                    except ValueError:
+                        return {"transaction_id": transaction_id, "success": False, "message": "Error calculating balance after transaction"}, "Error calculating balance after transaction"
+                    
+                    # Store transaction data
+                    tx_data = {
+                        "blockchain_name": blockchain_name,
+                        "sender_address": sender_address,
+                        "recipient_address": recipient_address,
+                        "amount": amount,
+                        "smart_contract_address": smart_contract_address,
+                        "tx_details": {
+                            "amount": amount,
+                            "sender": sender_address,
+                            "recipient": recipient_address,
+                            "estimated_fee": estimated_fee,
+                            "currency": blockchain_name.upper(),
+                            "gas_limit": gas_limit,
+                            "gas_price": gas_price
+                        }
+                    }
+                    transaction_manager.store_transaction(transaction_id, tx_data)
+                    
+                    # Prepare response
+                    details = {
+                        "amount": amount,
+                        "sender": sender_address,
+                        "recipient": recipient_address,
+                        "chain": chain,
+                        "estimated_fee": estimated_fee,
+                        "gas_limit": gas_limit,
+                        "gas_price": gas_price,
+                        "sender_balance_before": sender_balance_before,
+                        "sender_balance_after": sender_balance_after,
+                        "contract_address": smart_contract_address,
+                        "currency": blockchain_name.upper(),
+                        "is_token": bool(smart_contract_address)
+                    }
+                    
+                    return {
+                        "success": True,
+                        "details": details,
+                        "transaction_id": transaction_id,
+                        "expires_at": (datetime.now() + timedelta(minutes=10)).isoformat(),
+                        "message": "Transaction prepared successfully"
+                    }, None
+                    
+                finally:
+                    session.close()
+        
         except Exception as e:
             error_msg = f"Error preparing transaction: {str(e)}"
             self.logger.error(error_msg)
-            return {}, error_msg
-    
-    def send_transaction(self, blockchain_name: str, sender_address: str, private_key: str, 
-                        recipient_address: str, amount: str, tx_details: Dict) -> Tuple[Dict, Optional[str]]:
-        """Send a transaction using Tatum API"""
+            return {"transaction_id": transaction_id, "success": False, "message": error_msg}, error_msg
+
+    def send_transaction_by_id(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
+        """Send a transaction using stored transaction data and provided private key"""
         try:
-            chain = self._get_chain_name(blockchain_name)
+            # Get stored transaction data
+            tx_data = transaction_manager.get_transaction(transaction_id)
+            if not tx_data:
+                self.logger.error(f"Transaction {transaction_id} not found or expired. Available IDs: {list(transaction_manager._pending_transactions.keys())}")
+                return {}, "Transaction not found or expired"
             
-            # Validate addresses
-            if not self.validate_address(blockchain_name, sender_address):
-                return {}, f"Invalid sender address format for {blockchain_name}"
+            self.logger.debug(f"Sending transaction with ID: {transaction_id}")
+            self.logger.debug(f"Transaction data: {json.dumps({k: v for k, v in tx_data.items() if k != 'private_key'}, indent=2)}")
+            
+            # Decrypt private key if needed (implement your decryption logic here)
+            decrypted_private_key = private_key  # Replace with actual decryption
+            
+            # Make sure we normalize the blockchain name
+            original_blockchain = tx_data["blockchain_name"]
+            try:
+                chain = self._get_chain_name(original_blockchain)
+                self.logger.debug(f"Normalized blockchain {original_blockchain} to chain code: {chain}")
+            except ValueError as e:
+                self.logger.error(f"Error normalizing blockchain name: {str(e)}")
+                return {}, f"Unsupported blockchain: {original_blockchain}"
+            
+            # Prepare request data
+            request_data = {
+                "from": tx_data["sender_address"],
+                "to": tx_data["recipient_address"],
+                "amount": tx_data["amount"],
+                "fromPrivateKey": decrypted_private_key
+            }
+            
+            # Special handling for TRON
+            if chain.lower() == "tron":
+                self.logger.debug(f"Processing TRON transaction for send_transaction_by_id")
+                endpoint = "/tron/transaction"
                 
-            if not self.validate_address(blockchain_name, recipient_address):
-                return {}, f"Invalid recipient address format for {blockchain_name}"
+                # TRON transactions don't use gas like Ethereum-based chains
+                # We just need the basic transaction parameters
+                if tx_data.get("smart_contract_address"):
+                    request_data["tokenAddress"] = tx_data["smart_contract_address"]
+                
+                # Make sure amount is formatted correctly for TRON
+                # TRON expects amount as a string with at most 6 decimal places
+                try:
+                    amount_float = float(tx_data["amount"])
+                    request_data["amount"] = f"{amount_float:.6f}"
+                except (ValueError, TypeError):
+                    self.logger.warning(f"Couldn't parse amount as float: {tx_data['amount']}, using as is")
             
-            # If we have a signature ID, use KMS endpoint
-            if tx_details.get('signature_id'):
-                endpoint = f"/kms/{tx_details['signature_id']}"
-                request_data = {
-                    "fromPrivateKey": private_key
+            # Add blockchain-specific parameters for other chains
+            elif chain == "bsc":
+                endpoint = "/bsc/transaction"
+                if tx_data.get("smart_contract_address"):
+                    request_data["contractAddress"] = tx_data["smart_contract_address"]
+                request_data["fee"] = {
+                    "gasLimit": "21000",
+                    "gasPrice": "5"
+                }
+            elif chain == "eth":
+                endpoint = "/ethereum/transaction"
+                if tx_data.get("smart_contract_address"):
+                    request_data["contractAddress"] = tx_data["smart_contract_address"]
+                request_data["fee"] = {
+                    "gasLimit": "21000",
+                    "gasPrice": "20"
                 }
             else:
-                # Prepare request data
-                request_data = {
-                    "to": recipient_address,
-                    "amount": amount,
-                    "fromPrivateKey": private_key,
-                    "currency": tx_details.get('currency')
-                }
-                
-                # Set endpoint and add chain-specific parameters
-                if chain == "bsc":
-                    endpoint = "/Binance Smart Chain/transaction"
-                    if tx_details.get('is_token'):
-                        request_data["contractAddress"] = tx_details.get('contract_address')
-                    else:
-                        request_data["fee"] = {
-                            "gasLimit": "21000",
-                            "gasPrice": "5"
-                        }
-                elif chain == "eth":
-                    endpoint = "/ethereum/transaction"
-                    if tx_details.get('is_token'):
-                        request_data["contractAddress"] = tx_details.get('contract_address')
-                    else:
-                        request_data["fee"] = {
-                            "gasLimit": "21000",
-                            "gasPrice": "20"
-                        }
-                else:
-                    # For other chains, use the chain identifier
-                    endpoint = f"/{chain}/transaction"
-                    if tx_details.get('is_token'):
-                        request_data["contractAddress"] = tx_details.get('contract_address')
+                endpoint = f"/{chain}/transaction"
+                if tx_data.get("smart_contract_address"):
+                    request_data["contractAddress"] = tx_data["smart_contract_address"]
             
-            # Log request details
+            # Log request (without private key)
+            safe_request_data = request_data.copy()
+            safe_request_data['fromPrivateKey'] = '***'
             self.logger.debug(f"Sending {chain} transaction")
-            self.logger.debug(f"Request data: {request_data}")
+            self.logger.debug(f"Request data: {json.dumps(safe_request_data, indent=2)}")
+            self.logger.debug(f"Endpoint: {endpoint}")
             
-            # Send transaction
-            response_data, error = self._make_request('post', endpoint, data=request_data)
-            
+            # Send transaction using synchronous request
+            response_data, error = self._make_request_sync('post', endpoint, data=request_data)
             if error:
+                self.logger.error(f"Error sending transaction: {error}")
                 return {}, error
             
-            # Extract transaction hash from response
             tx_hash = response_data.get('txId')
-            
             if not tx_hash:
-                return {}, "Transaction hash not found in response"
+                error_msg = "Transaction hash not found in response"
+                self.logger.error(error_msg)
+                self.logger.error(f"Response data: {json.dumps(response_data, indent=2)}")
+                return {}, error_msg
+            
+            # Get updated balance using synchronous request
+            balance_data, error = self.get_balance(tx_data["blockchain_name"], tx_data["sender_address"])
+            sender_balance_after = "Unknown"
+            if not error and balance_data:
+                sender_balance_after = balance_data.get('balance', 'Unknown')
+            
+            # Remove transaction from pending
+            transaction_manager.remove_transaction(transaction_id)
+            
+            # Prepare result
+            result = {
+                "transaction_hash": tx_hash,
+                "actual_fee": response_data.get('fee', "0"),
+                "sender_balance_after": sender_balance_after,
+                "status": "Unconfirmed",
+                "description": "Transaction has been submitted to the blockchain network and is waiting to be processed."
+            }
+            
+            # Log success (without sensitive data)
+            self.logger.info(f"Transaction sent successfully: {tx_hash}")
+            self.logger.info(f"Result: {json.dumps(result, indent=2)}")
+            return result, None
+            
+        except Exception as e:
+            error_msg = f"Error sending transaction: {str(e)}"
+            self.logger.error(error_msg)
+            import traceback
+            self.logger.error(f"Traceback: {traceback.format_exc()}")
+            return {}, error_msg
+
+    def send_transaction(self, blockchain_name: str, sender_address: str, private_key: str, 
+                         recipient_address: str, amount: str, tx_details: Dict) -> Tuple[Dict, Optional[str]]:
+        """Send a transaction with the provided details using Tatum API"""
+        try:
+            # Decrypt private key if needed (implement your decryption logic here)
+            decrypted_private_key = private_key  # Replace with actual decryption
+            
+            chain = self._get_chain_name(blockchain_name)
+            
+            # Prepare request data
+            request_data = {
+                "from": sender_address,
+                "to": recipient_address,
+                "amount": amount,
+                "fromPrivateKey": decrypted_private_key
+            }
+            
+            # Add blockchain-specific parameters
+            if chain == "bsc":
+                endpoint = "/bsc/transaction"
+                if tx_details.get("contract_address"):
+                    request_data["contractAddress"] = tx_details["contract_address"]
+                request_data["fee"] = {
+                    "gasLimit": tx_details.get("gas_limit", "21000"),
+                    "gasPrice": tx_details.get("gas_price", "5")
+                }
+            elif chain == "eth":
+                endpoint = "/ethereum/transaction"
+                if tx_details.get("contract_address"):
+                    request_data["contractAddress"] = tx_details["contract_address"]
+                request_data["fee"] = {
+                    "gasLimit": tx_details.get("gas_limit", "21000"),
+                    "gasPrice": tx_details.get("gas_price", "20")
+                }
+            else:
+                endpoint = f"/{chain}/transaction"
+                if tx_details.get("contract_address"):
+                    request_data["contractAddress"] = tx_details["contract_address"]
+            
+            # Log request (without private key)
+            safe_request_data = request_data.copy()
+            safe_request_data['fromPrivateKey'] = '***'
+            self.logger.debug(f"Sending {chain} transaction with direct parameters")
+            self.logger.debug(f"Request data: {safe_request_data}")
+            
+            # Send transaction
+            response_data, error = self._make_request_sync('post', endpoint, data=request_data)
+            if error:
+                self.logger.error(f"Error sending transaction: {error}")
+                return {}, error
+            
+            tx_hash = response_data.get('txId')
+            if not tx_hash:
+                error_msg = "Transaction hash not found in response"
+                self.logger.error(error_msg)
+                return {}, error_msg
             
             # Get updated balance
             balance_data, error = self.get_balance(blockchain_name, sender_address)
             sender_balance_after = "Unknown"
-            
             if not error and balance_data:
                 sender_balance_after = balance_data.get('balance', 'Unknown')
             
@@ -485,15 +730,15 @@ class TatumService:
                 "description": "Transaction has been submitted to the blockchain network and is waiting to be processed."
             }
             
+            # Log success (without sensitive data)
+            self.logger.info(f"Transaction sent successfully: {tx_hash}")
             return result, None
             
-        except ValueError as e:
-            return {}, str(e)
         except Exception as e:
             error_msg = f"Error sending transaction: {str(e)}"
             self.logger.error(error_msg)
             return {}, error_msg
-    
+
     def check_transaction_status(self, blockchain_name: str, tx_hash: str) -> Tuple[str, str]:
         """Check the status of a transaction"""
         chain = self._get_chain_name(blockchain_name)
@@ -803,4 +1048,17 @@ class TatumService:
         except Exception as e:
             error_msg = f"Exception getting gas price: {str(e)}"
             self.logger.error(error_msg)
-            return 0, error_msg 
+            return 0, error_msg
+
+    # API compatibility wrapper for the original async method
+    def prepare_transaction(self, blockchain_name: str, sender_address: str, recipient_address: str, 
+                         amount: str, smart_contract_address: Optional[str] = None) -> Tuple[Dict, Optional[str]]:
+        """Prepare a transaction - compatibility wrapper for the sync version"""
+        self.logger.debug(f"Called prepare_transaction with params: {blockchain_name}, {sender_address}, {recipient_address}, {amount}")
+        return self.prepare_transaction_sync(
+            blockchain_name=blockchain_name,
+            sender_address=sender_address,
+            recipient_address=recipient_address,
+            amount=amount,
+            smart_contract_address=smart_contract_address
+        ) 

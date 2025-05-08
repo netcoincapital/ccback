@@ -71,6 +71,7 @@ except Exception as db_import_error:
 from config.queue import get_rabbitmq_connection
 from config.swagger import register_swagger
 from services.wallet_service import WalletService
+from config.firebase import initialize_firebase
 
 # Import schemas after services
 from schemas import WalletGenerationResponse, WalletGenerationRequest
@@ -111,6 +112,15 @@ except Exception as db_init_error:
     logger.critical(f"Failed to initialize database: {str(db_init_error)}")
     # Continue without database to allow API to start but return errors on DB operations
 
+# Initialize Firebase
+try:
+    if initialize_firebase():
+        logger.info("Firebase initialized successfully")
+    else:
+        logger.warning("Firebase initialization failed. Push notifications will be disabled.")
+except Exception as e:
+    logger.error(f"Error initializing Firebase: {str(e)}", exc_info=True)
+
 # Import blueprints after app creation to avoid circular imports
 try:
     from generate import generate_bp
@@ -121,14 +131,11 @@ try:
     from balance import balance_api
     from UserTransactions import transactions_bp
     from fee_estimator.api import fee_estimator_bp
+    from api.notification_api import notification_api
     
-    # Register blueprints - RESTORING ORIGINAL WORKING PREFIXES
+    # Register blueprints
     logger.info("Registering blueprints")
     
-    # Примечание: Теперь в системе есть два эндпоинта для генерации кошельков:
-    # 1. /generate-wallet - основной эндпоинт, определенный в app.py
-    # 2. /generate-wallet-v1 - альтернативный эндпоинт из blueprint generate_bp
-    # Оба используют одинаковый WalletService для создания кошельков
     app.register_blueprint(generate_bp, url_prefix='')
     logger.info("Registered generate_bp")
     app.register_blueprint(import_bp, url_prefix='')
@@ -147,8 +154,10 @@ try:
     logger.info("Registered send_bp")
     app.register_blueprint(transactions_bp, url_prefix='')
     logger.info("Registered transactions_bp")
+    app.register_blueprint(notification_api, url_prefix='/api')
+    logger.info("Registered notification_api with prefix /api")
     
-    # Register Fee Estimator endpoints with a prefix
+    # Register Fee Estimator endpoints
     app.register_blueprint(fee_estimator_bp, url_prefix='')
     logger.info("Registered Fee Estimator endpoints")
     
