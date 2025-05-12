@@ -133,10 +133,17 @@ def receive_transaction():
             pattern=r'^[a-zA-Z0-9_]+$'
         )
 
+        # Normalize blockchain name
+        blockchain_name = blockchain_symbol.lower().strip()
+        
+        # Special handling for Binance Smart Chain
+        if blockchain_name in ["bsc", "binance smart chain", "binancesmartchain"]:
+            blockchain_name = "binance smart chain"
+
         logger.debug(f"Processing transaction receive request for user: {user_id} on blockchain symbol: {blockchain_symbol}")
         
         # Get user's public address from database
-        public_address = get_user_address(session, user_id, blockchain_symbol)
+        public_address = get_user_address(session, user_id, blockchain_name)
 
         logger.info(f"Successfully processed transaction receive for user: {user_id} on blockchain symbol: {blockchain_symbol}")
         return jsonify({

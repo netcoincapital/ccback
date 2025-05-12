@@ -34,33 +34,36 @@ load_dotenv()
 
 def create_subscription(args):
     """Create a new subscription"""
-    if args.type == 'contract':
-        logger.info(f"Creating contract subscription for address {args.address} on chain {args.chain}")
-        result = create_contract_subscription(
-            contract_address=args.address,
-            chain=args.chain,
-            webhook_url=args.webhook_url
-        )
-    elif args.type == 'address':
-        logger.info(f"Creating address subscription for wallet {args.address} on chain {args.chain}")
-        result = create_address_subscription(
-            wallet_address=args.address,
-            chain=args.chain,
-            webhook_url=args.webhook_url
-        )
-    else:
-        logger.error(f"Invalid subscription type: {args.type}")
-        sys.exit(1)
-    
-    if result:
-        logger.info(f"Successfully created {args.type} subscription with ID: {result.get('id')}")
-        print(f"✅ Successfully created {args.type} subscription")
-        print(f"📋 Subscription ID: {result.get('id')}")
-        print(f"📝 Details: {json.dumps(result, indent=2)}")
-    else:
-        logger.error(f"Failed to create {args.type} subscription for {args.address} on {args.chain}")
-        print(f"❌ Failed to create {args.type} subscription")
-        sys.exit(1)
+    try:
+        if args.type == 'contract':
+            logger.info(f"Creating contract subscription for address {args.address} on chain {args.chain}")
+            result = create_contract_subscription(
+                address=args.address,
+                chain=args.chain,
+                webhook_url=args.webhook_url
+            )
+        elif args.type == 'address':
+            logger.info(f"Creating address subscription for wallet {args.address} on chain {args.chain}")
+            result = create_address_subscription(
+                address=args.address,
+                chain=args.chain,
+                webhook_url=args.webhook_url
+            )
+        else:
+            logger.error(f"Invalid subscription type: {args.type}")
+            print(f"❌ Invalid subscription type: {args.type}")
+            return
+            
+        if result and 'id' in result:
+            logger.info(f"Successfully created {args.type} subscription with ID: {result.get('id')}")
+            print(f"✅ Successfully created {args.type} subscription")
+            print(f"📋 Subscription ID: {result.get('id')}")
+        else:
+            logger.error(f"Failed to create {args.type} subscription for {args.address} on {args.chain}")
+            print(f"❌ Failed to create {args.type} subscription")
+    except Exception as e:
+        logger.error(f"Error creating subscription: {str(e)}")
+        print(f"❌ Error: {str(e)}")
 
 def list_all_subscriptions(args):
     """List all active subscriptions"""
@@ -204,16 +207,17 @@ def batch_address_create(args):
 def main():
     """Main entry point for the webhook manager"""
     logger.info("Starting Webhook Manager")
-    parser = argparse.ArgumentParser(description='Tatum Webhook Manager')
+    parser = argparse.ArgumentParser(description='Webhook Manager - A tool for managing Tatum smart contract subscriptions')
     subparsers = parser.add_subparsers(dest='command', help='Command to execute')
     
     # Create subscription command
     create_parser = subparsers.add_parser('create', help='Create a new subscription')
-    create_parser.add_argument('--type', choices=['contract', 'address'], required=True,
-                              help='Type of subscription to create')
-    create_parser.add_argument('--address', required=True, help='Contract or wallet address')
-    create_parser.add_argument('--chain', required=True, help='Blockchain to monitor (ETH, BSC, etc.)')
-    create_parser.add_argument('--webhook-url', help='Custom webhook URL (optional)')
+    create_parser.add_argument('--type', required=True, choices=['contract', 'address'],
+                             help='Type of subscription to create')
+    create_parser.add_argument('--chain', required=True, 
+                             help='Blockchain to monitor (Ethereum, Binance Smart Chain, etc.)')
+    create_parser.add_argument('--address', required=True, help='Contract or wallet address to monitor')
+    create_parser.add_argument('--webhook-url', required=True, help='Webhook URL to receive notifications')
     create_parser.set_defaults(func=create_subscription)
     
     # List subscriptions command

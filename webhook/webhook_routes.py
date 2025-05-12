@@ -64,8 +64,8 @@ def handle_tatum_transaction():
             processor = ltc_processor
         elif blockchain == 'cardano' or currency == 'ada':
             processor = ada_processor
-        elif blockchain == 'bsc' or currency == 'bnb' or blockchain == 'binance':
-            # استفاده از پردازشگر مخصوص BNB
+        elif blockchain == 'binance smart chain' or currency == 'bnb':
+            # استفاده از پردازشگر مخصوص Binance Smart Chain
             processor = bnb_processor
         else:
             # در صورت عدم تشخیص بلاکچین، از پردازشگر پیش‌فرض استفاده می‌کنیم
@@ -111,8 +111,8 @@ def manual_update_transaction(blockchain, tx_hash):
             processor = ltc_processor
         elif blockchain.lower() == 'cardano' or blockchain.lower() == 'ada':
             processor = ada_processor
-        elif blockchain.lower() == 'bsc' or blockchain.lower() == 'bnb' or blockchain.lower() == 'binance':
-            # استفاده از پردازشگر مخصوص BNB
+        elif blockchain.lower() == 'binance smart chain' or blockchain.lower() == 'bnb':
+            # استفاده از پردازشگر مخصوص Binance Smart Chain
             processor = bnb_processor
         else:
             # در صورت عدم تشخیص بلاکچین، از پردازشگر پیش‌فرض استفاده می‌کنیم

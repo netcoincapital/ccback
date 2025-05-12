@@ -59,8 +59,8 @@ class CurrencyPriceService:
         Returns:
             str: Valid API key
         """
-        # Get key with at least 1 second interval between uses of the same key
-        api_key = self.api_key_manager.get_api_key('coinmarketcap', min_interval_seconds=1)
+        # Get key with at least 5 seconds interval between uses of the same key
+        api_key = self.api_key_manager.get_api_key('coinmarketcap', min_interval_seconds=5)
         if not api_key:
             logger.error("No CoinMarketCap API key available")
             # Fallback to default key if no key is available from the manager
@@ -107,12 +107,21 @@ class CurrencyPriceService:
             # Check for API rate limit errors
             if response.status_code == 429:
                 logger.warning(f"Rate limit hit with API key {api_key[:8]}...")
-                # Try with a different API key
-                time.sleep(1)  # Wait a bit before trying again
+                # Try with a different API key after a longer delay
+                time.sleep(5)  # Wait 5 seconds before trying again
                 api_key = self.get_api_key()
                 headers["X-CMC_PRO_API_KEY"] = api_key
                 logger.debug(f"Retrying with API key: {api_key[:8]}...")
                 response = requests.get(url, headers=headers, params=params)
+                
+                # If still getting rate limit error, wait even longer
+                if response.status_code == 429:
+                    logger.warning(f"Rate limit hit again with API key {api_key[:8]}...")
+                    time.sleep(15)  # Wait 15 seconds before final attempt
+                    api_key = self.get_api_key()
+                    headers["X-CMC_PRO_API_KEY"] = api_key
+                    logger.debug(f"Final retry with API key: {api_key[:8]}...")
+                    response = requests.get(url, headers=headers, params=params)
             
             data = response.json()
             
@@ -172,12 +181,21 @@ class CurrencyPriceService:
             # Check for API rate limit errors
             if response.status_code == 429:
                 logger.warning(f"Rate limit hit with API key {api_key[:8]}...")
-                # Try with a different API key
-                time.sleep(1)  # Wait a bit before trying again
+                # Try with a different API key after a longer delay
+                time.sleep(5)  # Wait 5 seconds before trying again
                 api_key = self.get_api_key()
                 headers["X-CMC_PRO_API_KEY"] = api_key
                 logger.debug(f"Retrying with API key: {api_key[:8]}...")
                 response = requests.get(url, headers=headers, params=params)
+                
+                # If still getting rate limit error, wait even longer
+                if response.status_code == 429:
+                    logger.warning(f"Rate limit hit again with API key {api_key[:8]}...")
+                    time.sleep(15)  # Wait 15 seconds before final attempt
+                    api_key = self.get_api_key()
+                    headers["X-CMC_PRO_API_KEY"] = api_key
+                    logger.debug(f"Final retry with API key: {api_key[:8]}...")
+                    response = requests.get(url, headers=headers, params=params)
             
             data = response.json()
             

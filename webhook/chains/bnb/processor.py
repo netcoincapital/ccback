@@ -5,15 +5,15 @@ from webhook.chains.bnb.utils import parse_bnb_input_data, calculate_bnb_fee, is
 logger = get_logger(__name__)
 
 class BNBProcessor(TransactionProcessor):
-    """پردازشگر وب‌هوک‌های مخصوص بایننس اسمارت چین (BNB)"""
+    """پردازشگر وب‌هوک‌های مخصوص Binance Smart Chain (BNB)"""
     
     def __init__(self):
         super().__init__()
-        logger.info("پردازشگر بایننس اسمارت چین راه‌اندازی شد")
+        logger.info("پردازشگر Binance Smart Chain راه‌اندازی شد")
     
     def process_webhook(self, webhook_data):
         """
-        پردازش وب‌هوک بایننس اسمارت چین
+        پردازش وب‌هوک Binance Smart Chain
         این متد منطق خاص BSC را اجرا می‌کند
         
         Args:
@@ -22,7 +22,7 @@ class BNBProcessor(TransactionProcessor):
         Returns:
             dict: نتیجه پردازش
         """
-        logger.info("پردازش وب‌هوک بایننس اسمارت چین")
+        logger.info("پردازش وب‌هوک Binance Smart Chain")
         
         # نرمال‌سازی داده‌های وب‌هوک
         self._normalize_webhook_data(webhook_data)
@@ -63,7 +63,7 @@ class BNBProcessor(TransactionProcessor):
             webhook_data['asset_type'] = 'native'
         
         # افزودن اطلاعات تکمیلی به داده‌های وب‌هوک
-        webhook_data['chain'] = 'bsc'
+        webhook_data['chain'] = 'binance smart chain'
         if 'currency' not in webhook_data:
             webhook_data['currency'] = 'bnb'
             

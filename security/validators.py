@@ -9,7 +9,6 @@ import time
 from datetime import datetime
 import redis
 from flask_wtf.csrf import CSRFProtect
-import jwt
 
 # Redis connection
 try:

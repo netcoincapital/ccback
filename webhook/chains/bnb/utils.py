@@ -4,7 +4,7 @@ logger = get_logger(__name__)
 
 def parse_bnb_input_data(input_data):
     """
-    تجزیه و تحلیل داده‌های ورودی تراکنش بایننس اسمارت چین
+    تجزیه و تحلیل داده‌های ورودی تراکنش Binance Smart Chain
     
     Args:
         input_data (str): داده‌های ورودی تراکنش
@@ -59,10 +59,10 @@ def parse_bnb_input_data(input_data):
 
 def format_bnb_address(address):
     """
-    فرمت‌سازی آدرس بایننس (تبدیل به فرمت استاندارد با حروف کوچک)
+    فرمت‌سازی آدرس Binance Smart Chain (تبدیل به فرمت استاندارد با حروف کوچک)
     
     Args:
-        address (str): آدرس بایننس
+        address (str): آدرس Binance Smart Chain
         
     Returns:
         str: آدرس فرمت شده
@@ -79,10 +79,10 @@ def format_bnb_address(address):
 
 def is_valid_bnb_address(address):
     """
-    اعتبارسنجی آدرس بایننس اسمارت چین
+    اعتبارسنجی آدرس Binance Smart Chain
     
     Args:
-        address (str): آدرس بایننس
+        address (str): آدرس Binance Smart Chain
         
     Returns:
         bool: آیا آدرس معتبر است
