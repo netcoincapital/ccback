@@ -4,6 +4,7 @@ from typing import Tuple, Dict, Any
 from functools import wraps
 import traceback
 from sqlalchemy.exc import SQLAlchemyError, OperationalError, DisconnectionError, TimeoutError, InvalidRequestError, NoSuchModuleError
+import json
 
 from database import SessionLocal
 from security.validators import InputValidator, SecurityUtils, ValidationError
@@ -121,3 +122,36 @@ def handle_api_errors(f):
             error_data, status_code = APIErrorHandler.handle_error(e, request)
             return jsonify(error_data), status_code
     return decorated_function
+
+# Add specialized TRON error handler
+def handle_tron_errors(func):
+    """Decorator for handling TRON-specific errors"""
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        try:
+            # Call the original function
+            return func(*args, **kwargs)
+        except Exception as e:
+            # Get logger
+            logger = get_logger("tron_error_handler")
+            
+            # Log the error with as much detail as possible
+            logger.exception(f"TRON API error: {str(e)}")
+            
+            # Get detailed error info
+            error_info = {
+                "error_type": type(e).__name__,
+                "error_message": str(e),
+                "traceback": traceback.format_exc()
+            }
+            
+            # Log detailed error info
+            logger.critical(f"TRON Error Details: {json.dumps(error_info, indent=2)}")
+            
+            # Return a formatted error response
+            return {
+                "success": False,
+                "error": str(e),
+                "error_type": type(e).__name__
+            }, f"TRON API error: {str(e)}"
+    return wrapper

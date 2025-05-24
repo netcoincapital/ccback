@@ -23,11 +23,30 @@ class RippleService(BaseBlockchainService):
         super().__init__()
         self.logger = get_logger(__file__)
         
-        # Initialize Ripple node URL
-        self.ripple_node_url = os.getenv('RIPPLE_NODE_URL', 'wss://xrplcluster.com')
+        # Default Ripple node URLs if environment variable is not set
+        DEFAULT_RIPPLE_NODES = [
+            'wss://xrplcluster.com',
+            'wss://s2.ripple.com',
+            'wss://s1.ripple.com'
+        ]
         
-        # Initialize Ripple client
-        self.client = JsonRpcClient(self.ripple_node_url)
+        # Initialize Ripple node URL
+        self.ripple_node_url = os.getenv('RIPPLE_NODE_URL')
+        if not self.ripple_node_url:
+            self.ripple_node_url = DEFAULT_RIPPLE_NODES[0]
+            self.logger.warning(
+                f"RIPPLE_NODE_URL environment variable is not set. "
+                f"Using default Ripple node: {self.ripple_node_url}"
+            )
+        
+        try:
+            # Initialize Ripple client
+            self.client = JsonRpcClient(self.ripple_node_url)
+            self.ripple_available = True
+        except Exception as e:
+            self.logger.error(f"Failed to initialize Ripple client: {str(e)}")
+            self.ripple_available = False
+            self.client = None
         
         # Initialize Tatum helper for fallback
         self.tatum = TatumHelper()
@@ -37,6 +56,9 @@ class RippleService(BaseBlockchainService):
                           private_key: str = None) -> Tuple[Dict, Optional[str]]:
         """Prepare a Ripple transaction"""
         try:
+            if not self.ripple_available:
+                return None, "Ripple blockchain service is not available"
+                
             # Validate addresses
             if not self.validate_address(sender):
                 return None, "Invalid sender address"
@@ -97,6 +119,9 @@ class RippleService(BaseBlockchainService):
     def send_transaction(self, transaction_id: str) -> Tuple[Dict, Optional[str]]:
         """Send a prepared Ripple transaction"""
         try:
+            if not self.ripple_available:
+                return None, "Ripple blockchain service is not available"
+                
             # Get stored transaction
             tx_data = self._get_stored_transaction(transaction_id)
             if not tx_data:
@@ -191,6 +216,10 @@ class RippleService(BaseBlockchainService):
     def estimate_fee(self, sender: str, recipient: str, amount: Decimal) -> Tuple[Decimal, Optional[str]]:
         """Estimate Ripple transaction fee"""
         try:
+            if not self.ripple_available:
+                # Return a default fee if service is not available
+                return Decimal('0.00001'), None
+                
             # Get server info for current fee
             server_info = self.client.request(xrpl.models.requests.ServerInfo())
             fee = Decimal(drops_to_xrp(server_info.result['info']['validated_ledger']['base_fee_xrp']))
@@ -199,24 +228,26 @@ class RippleService(BaseBlockchainService):
             
         except Exception as e:
             self.logger.error(f"Error estimating fee: {str(e)}")
-            return Decimal('0'), str(e)
+            # Return a default fee as fallback
+            return Decimal('0.00001'), str(e)
             
     @handle_api_errors
     def get_balance(self, address: str) -> Tuple[Decimal, Optional[str]]:
         """Get Ripple balance"""
         try:
             # Try Ripple client first
-            account_info = self.client.request(xrpl.models.requests.AccountInfo(
-                account=address,
-                ledger_index="validated",
-                strict=True
-            ))
-            
-            balance = Decimal(drops_to_xrp(account_info.result['account_data']['Balance']))
-            return balance, None
-            
-        except Exception as e:
-            self.logger.error(f"Error getting balance via Ripple client: {str(e)}")
+            if self.ripple_available:
+                try:
+                    account_info = self.client.request(xrpl.models.requests.AccountInfo(
+                        account=address,
+                        ledger_index="validated",
+                        strict=True
+                    ))
+                    
+                    balance = Decimal(drops_to_xrp(account_info.result['account_data']['Balance']))
+                    return balance, None
+                except Exception as e:
+                    self.logger.error(f"Error getting balance via Ripple client: {str(e)}")
             
             # Fallback to Tatum
             balance, error = self.tatum.get_balance('ripple', address)
@@ -225,43 +256,56 @@ class RippleService(BaseBlockchainService):
                 
             return Decimal(balance), None
             
+        except Exception as e:
+            self.logger.error(f"Error getting balance: {str(e)}")
+            return Decimal('0'), str(e)
+            
     def validate_address(self, address: str) -> bool:
         """Validate Ripple address"""
         try:
-            # Check if address is a valid base58 string
-            if not address or len(address) != 25:
+            # Check if address is a valid format (basic validation)
+            if not address or len(address) < 25:
                 return False
                 
-            # Try to get account info
-            account_info = self.client.request(xrpl.models.requests.AccountInfo(
-                account=address,
-                ledger_index="validated",
-                strict=True
-            ))
-            return True
+            if self.ripple_available:
+                try:
+                    # Try to get account info
+                    account_info = self.client.request(xrpl.models.requests.AccountInfo(
+                        account=address,
+                        ledger_index="validated",
+                        strict=True
+                    ))
+                    return True
+                except Exception:
+                    # If that fails, do basic validation
+                    return address.startswith('r') and len(address) >= 25
+            else:
+                # Basic validation as fallback
+                return address.startswith('r') and len(address) >= 25
             
         except:
-            return False
+            return address.startswith('r') and len(address) >= 25
             
     @handle_api_errors
     def get_transaction_status(self, tx_hash: str) -> Tuple[str, Optional[str]]:
         """Get Ripple transaction status"""
         try:
             # Try Ripple client first
-            try:
-                tx_info = self.client.request(xrpl.models.requests.Tx(
-                    transaction=tx_hash
-                ))
-                
-                if tx_info.result['validated']:
-                    if tx_info.result['meta']['TransactionResult'] == 'tesSUCCESS':
-                        return 'confirmed', None
-                    return 'failed', None
-                return 'pending', None
-                
-            except:
-                pass
-                
+            if self.ripple_available:
+                try:
+                    tx = self.client.request(xrpl.models.requests.Tx(
+                        transaction=tx_hash,
+                        binary=False
+                    ))
+                    
+                    if tx.is_successful():
+                        status = tx.result.get('validated', False)
+                        if status:
+                            return 'confirmed', None
+                        return 'pending', None
+                except Exception as e:
+                    self.logger.error(f"Error getting transaction status via Ripple client: {str(e)}")
+            
             # Fallback to Tatum
             status, error = self.tatum.check_transaction_status('ripple', tx_hash)
             if error:
@@ -278,26 +322,25 @@ class RippleService(BaseBlockchainService):
         """Get Ripple transaction details"""
         try:
             # Try Ripple client first
-            try:
-                tx_info = self.client.request(xrpl.models.requests.Tx(
-                    transaction=tx_hash
-                ))
-                
-                if tx_info.result['validated']:
-                    return {
-                        'hash': tx_hash,
-                        'from': tx_info.result['Account'],
-                        'to': tx_info.result['Destination'],
-                        'value': str(Decimal(drops_to_xrp(tx_info.result['Amount']))),
-                        'status': 'confirmed' if tx_info.result['meta']['TransactionResult'] == 'tesSUCCESS' else 'failed',
-                        'ledger_index': tx_info.result['ledger_index'],
-                        'timestamp': datetime.fromtimestamp(
-                            tx_info.result['date']
-                        ).isoformat()
-                    }, None
-            except:
-                pass
-                
+            if self.ripple_available:
+                try:
+                    tx = self.client.request(xrpl.models.requests.Tx(
+                        transaction=tx_hash,
+                        binary=False
+                    ))
+                    
+                    if tx.is_successful():
+                        return {
+                            'hash': tx_hash,
+                            'from': tx.result.get('Account', ''),
+                            'to': tx.result.get('Destination', ''),
+                            'value': str(drops_to_xrp(tx.result.get('Amount', '0'))),
+                            'status': 'confirmed' if tx.result.get('validated', False) else 'pending',
+                            'timestamp': datetime.utcfromtimestamp(tx.result.get('date', 0) + 946684800).isoformat()
+                        }, None
+                except Exception as e:
+                    self.logger.error(f"Error getting transaction details via Ripple client: {str(e)}")
+            
             # Fallback to Tatum
             details, error = self.tatum.get_transaction('ripple', tx_hash)
             if error:

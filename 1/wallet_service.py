@@ -38,14 +38,14 @@ class WalletService:
         self.signer = TransactionSignerService()
         self.contract = SmartContractService()
         
-    def create_wallet(self, wallet_name: str, address_count: int = 5, user_ip: str = None, user_device: str = None) -> Tuple[str, str, str, Dict]:
+    def create_wallet(self, wallet_name: str, address_count: int = 5, user_ip: str = None, user_device: str = None) -> Tuple[str, str, Dict]:
         """
         Create a new HD wallet with multiple addresses per chain
         wallet_name: نام کیف پول
         address_count: تعداد آدرس‌ها برای هر بلاکچین
         user_ip: آدرس IP کاربر
         user_device: اطلاعات دستگاه کاربر
-        returns: (user_id, wallet_id, mnemonic, addresses)
+        returns: (user_id, mnemonic, addresses)
         """
         try:
             # Create user record
@@ -97,7 +97,7 @@ class WalletService:
             # Address registration with webhook system is now handled asynchronously
             # _register_addresses_with_webhook is called in a new thread inside _generate_addresses
             
-            return user_id, wallet_id, mnemonic_str, addresses
+            return user_id, mnemonic_str, addresses
             
         except Exception as e:
             self.session.rollback()
@@ -303,6 +303,7 @@ class WalletService:
     def _generate_addresses(self, wallet_id: str, user_id: str, mnemonic: str) -> Dict[str, str]:
         """
         Generate addresses for supported blockchains and save them to the database.
+        Also registers the addresses with the webhook system asynchronously.
         """
         try:
             logger.info(f"Generating addresses for wallet {wallet_id}")
@@ -318,57 +319,121 @@ class WalletService:
             blockchains = self.session.query(Blockchains).all()
             blockchain_map = {bc.BlockchainName: bc for bc in blockchains}
             
+            # Store formatted addresses for webhook registration
+            webhook_formatted_addresses = []
+            
             # Store addresses by blockchain name for return value
             addresses_by_chain = {}
             
-            # Process each blockchain synchronously
-            for bc_name, address_obj in blockchain_addresses.items():
-                if bc_name in blockchain_map:
-                    bc = blockchain_map[bc_name]
-                    
-                    # رمزنگاری کلیدها
-                    encrypted_priv = encrypt_private_key_aes(address_obj.private_key)
-                    encrypted_mnemonic = encrypt_mnemonic_aes(mnemonic)
-                    
-                    # ذخیره آدرس
-                    new_addr = Address(
-                        WalletID=wallet_id,
-                        BlockchainID=bc.BlockchainID,
-                        PublicAddress=address_obj.public_address,
-                        PrivateKey=encrypted_priv,
-                        PhraseKey=encrypted_mnemonic,
-                        CreatedAt=datetime.utcnow()
-                    )
-                    self.session.add(new_addr)
-                    addresses_by_chain[bc_name] = address_obj.public_address
-                    
-                    logger.info(f"Address created for {bc_name}: {address_obj.public_address}")
+            # موازی‌سازی تولید آدرس‌ها با استفاده از ThreadPoolExecutor
+            def process_blockchain(bc_name, address_obj):
+                result = {}
+                try:
+                    if bc_name in blockchain_map:
+                        bc = blockchain_map[bc_name]
+                        
+                        # استفاده از get_blockchain_service برای دریافت سرویس مناسب برای هر بلاک‌چین
+                        try:
+                            blockchain_service = get_blockchain_service(bc_name)
+                            logger.info(f"Successfully created blockchain service for {bc_name}")
+                        except Exception as bc_error:
+                            logger.warning(f"Could not create blockchain service for {bc_name}: {str(bc_error)}")
+                            # عدم موفقیت در ساخت سرویس بلاک‌چین نباید مانع ادامه کار شود
+                        
+                        # حل مشکل #3: رمزنگاری کلیدها
+                        encrypted_priv = encrypt_private_key_aes(address_obj.private_key)
+                        encrypted_mnemonic = encrypt_mnemonic_aes(mnemonic)
+                        
+                        # حل مشکل #2: استفاده از نام‌های فیلد درست در مدل Address
+                        new_addr = Address(
+                            WalletID=wallet_id,
+                            BlockchainID=bc.BlockchainID,
+                            PublicAddress=address_obj.public_address,
+                            PrivateKey=encrypted_priv,
+                            PhraseKey=encrypted_mnemonic,
+                            CreatedAt=datetime.utcnow()
+                        )
+                        
+                        # آدرس را برمی‌گردانیم تا بعدا در تابع اصلی به دیتابیس اضافه شود
+                        result = {
+                            'address': new_addr,
+                            'bc_name': bc_name,
+                            'public_address': address_obj.public_address,
+                            'blockchain_symbol': bc.Symbol if hasattr(bc, 'Symbol') else bc.BlockchainName
+                        }
+                        
+                        logger.info(f"Generated address {address_obj.public_address} for blockchain {bc_name}")
+                except Exception as e:
+                    logger.error(f"Error processing blockchain {bc_name}: {str(e)}")
+                
+                return result
             
-            if not addresses_by_chain:
-                raise ValueError("Failed to create any addresses in the database")
+            # موازی‌سازی پردازش بلاک‌چین‌ها
+            with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+                # ارسال کارها به ThreadPoolExecutor
+                future_to_bc = {
+                    executor.submit(process_blockchain, bc_name, address_obj): bc_name
+                    for bc_name, address_obj in blockchain_addresses.items()
+                }
+                
+                # جمع‌آوری نتایج
+                for future in concurrent.futures.as_completed(future_to_bc):
+                    bc_name = future_to_bc[future]
+                    try:
+                        result = future.result()
+                        if result:
+                            # اضافه کردن آدرس به دیتابیس
+                            self.session.add(result['address'])
+                            addresses_by_chain[result['bc_name']] = result['public_address']
+                            
+                            # اضافه کردن به لیست آدرس‌های وب‌هوک
+                            webhook_formatted_addresses.append({
+                                'blockchain_symbol': result['blockchain_symbol'],
+                                'public_address': result['public_address']
+                            })
+                    except Exception as e:
+                        logger.error(f"Error processing result for {bc_name}: {str(e)}")
             
-            # Commit changes to database
+            # Commit changes to database to make sure all addresses are stored
             self.session.flush()
             
-            # Register addresses with webhook system synchronously
-            webhook_formatted_addresses = [
-                {
-                    'blockchain_symbol': bc.Symbol if hasattr(bc, 'Symbol') else bc.BlockchainName,
-                    'public_address': addresses_by_chain[bc_name]
-                }
-                for bc_name, bc in blockchain_map.items()
-                if bc_name in addresses_by_chain
-            ]
-            
+            # Register addresses with webhook system asynchronously
             if webhook_formatted_addresses:
-                self._register_addresses_with_webhook(webhook_formatted_addresses)
-            
+                # ثبت آدرس‌ها در وب‌هوک به صورت آسنکرون در ترد جداگانه
+                webhook_thread = threading.Thread(
+                    target=self._register_addresses_with_webhook_async,
+                    args=(webhook_formatted_addresses,),
+                    daemon=True
+                )
+                webhook_thread.start()
+                logger.info(f"Started asynchronous webhook registration for {len(webhook_formatted_addresses)} addresses")
+                
             logger.info(f"Successfully generated {len(addresses_by_chain)} addresses for wallet {wallet_id}")
             return addresses_by_chain
             
         except Exception as e:
             logger.error(f"Error generating addresses: {str(e)}")
             raise
+
+    def _register_addresses_with_webhook_async(self, formatted_addresses):
+        """
+        Register addresses with webhook system asynchronously.
+        This method is called in a separate thread.
+        
+        Args:
+            formatted_addresses (list): List of dictionaries with address information
+        """
+        try:
+            if not formatted_addresses:
+                logger.warning("No addresses to register with webhook system")
+                return
+                
+            # این تابع در یک ترد جداگانه اجرا می‌شود
+            webhook_results = register_new_addresses_for_webhook(formatted_addresses)
+            logger.info(f"Successfully registered {len(formatted_addresses)} addresses with webhook: {webhook_results}")
+        except Exception as e:
+            # خطا در ثبت آدرس‌ها در وب‌هوک نباید مانع ادامه کار شود
+            logger.error(f"Failed to register addresses with webhook system: {str(e)}")
 
     def _register_addresses_with_webhook(self, formatted_addresses):
         """

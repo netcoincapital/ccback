@@ -1,0 +1,152 @@
+{
+  "blockchains": [
+    {
+      "name": "ethereum",
+      "display_name": "Ethereum",
+      "service_class": "services.blockchains.ethereum_service.EthereumService",
+      "name_variants": ["eth"],
+      "enabled": true,
+      "currency_symbol": "ETH",
+      "chain_id": 1,
+      "decimal_places": 18,
+      "network_fee_currency": "ETH",
+      "explorer_url": "https://etherscan.io"
+    },
+    {
+      "name": "bsc",
+      "display_name": "Binance Smart Chain",
+      "service_class": "services.blockchains.bsc_service.BSCService",
+      "name_variants": ["binance", "binance-smart-chain", "bnb"],
+      "enabled": true,
+      "currency_symbol": "BNB",
+      "chain_id": 56,
+      "decimal_places": 18,
+      "network_fee_currency": "BNB",
+      "explorer_url": "https://bscscan.com"
+    },
+    {
+      "name": "bitcoin",
+      "display_name": "Bitcoin",
+      "service_class": "services.blockchains.bitcoin_service.BitcoinService",
+      "name_variants": ["btc"],
+      "enabled": true,
+      "currency_symbol": "BTC",
+      "decimal_places": 8,
+      "network_fee_currency": "BTC",
+      "explorer_url": "https://blockchain.com/explorer"
+    },
+    {
+      "name": "tron",
+      "display_name": "TRON",
+      "service_class": "services.blockchains.tron_service.TronService",
+      "name_variants": ["trx"],
+      "enabled": true,
+      "currency_symbol": "TRX",
+      "decimal_places": 6,
+      "network_fee_currency": "TRX",
+      "explorer_url": "https://tronscan.org"
+    },
+    {
+      "name": "polygon",
+      "display_name": "Polygon",
+      "service_class": "services.blockchains.polygon_service.PolygonService",
+      "name_variants": ["matic"],
+      "enabled": true,
+      "currency_symbol": "MATIC",
+      "chain_id": 137,
+      "decimal_places": 18,
+      "network_fee_currency": "MATIC",
+      "explorer_url": "https://polygonscan.com"
+    },
+    {
+      "name": "ripple",
+      "display_name": "Ripple",
+      "service_class": "services.blockchains.xrp_service.XRPService",
+      "name_variants": ["xrp"],
+      "enabled": true,
+      "currency_symbol": "XRP",
+      "decimal_places": 6,
+      "network_fee_currency": "XRP",
+      "explorer_url": "https://xrpscan.com"
+    },
+    {
+      "name": "solana",
+      "display_name": "Solana",
+      "service_class": "services.blockchains.solana_service.SolanaService",
+      "name_variants": ["sol"],
+      "enabled": true,
+      "currency_symbol": "SOL",
+      "decimal_places": 9,
+      "network_fee_currency": "SOL",
+      "explorer_url": "https://explorer.solana.com"
+    },
+    {
+      "name": "polkadot",
+      "display_name": "Polkadot",
+      "service_class": "services.blockchains.polkadot_service.PolkadotService",
+      "name_variants": ["dot"],
+      "enabled": true,
+      "currency_symbol": "DOT",
+      "decimal_places": 10,
+      "network_fee_currency": "DOT",
+      "explorer_url": "https://polkascan.io"
+    },
+    {
+      "name": "litecoin",
+      "display_name": "Litecoin",
+      "service_class": "services.blockchains.litecoin_service.LitecoinService",
+      "name_variants": ["ltc"],
+      "enabled": true,
+      "currency_symbol": "LTC",
+      "decimal_places": 8,
+      "network_fee_currency": "LTC",
+      "explorer_url": "https://blockchair.com/litecoin"
+    },
+    {
+      "name": "dogecoin",
+      "display_name": "Dogecoin",
+      "service_class": "services.blockchains.dogecoin_service.DogecoinService",
+      "name_variants": ["doge"],
+      "enabled": true,
+      "currency_symbol": "DOGE",
+      "decimal_places": 8,
+      "network_fee_currency": "DOGE",
+      "explorer_url": "https://dogechain.info"
+    },
+    {
+      "name": "dash",
+      "display_name": "Dash",
+      "service_class": "services.blockchains.dash_service.DashService",
+      "name_variants": [],
+      "enabled": true,
+      "currency_symbol": "DASH",
+      "decimal_places": 8,
+      "network_fee_currency": "DASH",
+      "explorer_url": "https://dashblockexplorer.com"
+    },
+    {
+      "name": "arbitrum",
+      "display_name": "Arbitrum",
+      "service_class": "services.blockchains.arbitrum_service.ArbitrumService",
+      "name_variants": ["arb"],
+      "enabled": true,
+      "currency_symbol": "ETH",
+      "chain_id": 42161,
+      "decimal_places": 18,
+      "network_fee_currency": "ETH",
+      "explorer_url": "https://arbiscan.io"
+    },
+    {
+      "name": "avalanche",
+      "display_name": "Avalanche",
+      "service_class": "services.blockchains.avalanche_service.AvalancheService",
+      "name_variants": ["avax"],
+      "enabled": true,
+      "currency_symbol": "AVAX",
+      "chain_id": 43114,
+      "decimal_places": 18,
+      "network_fee_currency": "AVAX",
+      "explorer_url": "https://snowtrace.io"
+    }
+  ]
+} 

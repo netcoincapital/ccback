@@ -14,7 +14,7 @@ class BaseBlockchainService(ABC):
         self.storage = TransactionStorage()
         
     @abstractmethod
-    def prepare_transaction(self, sender: str, recipient: str, amount: Decimal, 
+    def prepare_transaction(self, sender: str, recipient: str, amount: str, 
                           private_key: str = None) -> Tuple[Dict, Optional[str]]:
         """
         Prepare a transaction for sending.
@@ -22,7 +22,7 @@ class BaseBlockchainService(ABC):
         Args:
             sender: Sender's address
             recipient: Recipient's address
-            amount: Amount to send
+            amount: Amount to send (as a string)
             private_key: Optional private key for signing
             
         Returns:
@@ -31,12 +31,13 @@ class BaseBlockchainService(ABC):
         pass
         
     @abstractmethod
-    def send_transaction(self, transaction_id: str) -> Tuple[Dict, Optional[str]]:
+    def send_transaction(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
         """
         Send a prepared transaction.
         
         Args:
             transaction_id: ID of the prepared transaction
+            private_key: Private key for signing the transaction
             
         Returns:
             Tuple of (transaction result dict, error message if any)

@@ -55,11 +55,17 @@ def get_log_directory():
     Returns:
         str: Path to the log directory for today
     """
-    # Get the project root directory (where CC folder is located)
-    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    # تعریف مسیر ثابت اصلی برای Logs
+    # اگر در محیط توسعه هستیم (ویندوز)، از پوشه محلی استفاده می‌کنیم
+    if sys.platform.startswith('win'):
+        # برای محیط ویندوز، پوشه Logs را در مسیر CC ایجاد می‌کنیم
+        project_root = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+        logs_dir = os.path.join(project_root, "Logs")
+    else:
+        # در محیط سرور (لینوکس)، از مسیر مشخص شده استفاده می‌کنیم
+        logs_dir = "/www/wwwroot/coinceeper.com/CC/Logs"
     
     # Create main Logs directory
-    logs_dir = os.path.join(project_root, "Logs")
     os.makedirs(logs_dir, exist_ok=True)
     
     # Create date-specific directory

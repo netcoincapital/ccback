@@ -3,8 +3,8 @@ from typing import Dict, Optional, Tuple, Any
 import os
 import json
 import uuid
-from datetime import datetime, timedelta
 import requests
+from datetime import datetime, timedelta
 from web3 import Web3
 from web3.exceptions import TransactionNotFound
 from eth_account import Account
@@ -26,7 +26,7 @@ class ArbitrumService(BaseBlockchainService):
         if not self.arbitrum_node_url:
             raise RuntimeError("ARBITRUM_NODE_URL environment variable is not set")
             
-        self.web3 = Web3(Web3.HTTPProvider(self.arbitrum_node_url))
+        self.w3 = Web3(Web3.HTTPProvider(self.arbitrum_node_url))
         
         # Initialize Tatum helper for fallback
         self.tatum = TatumHelper()
@@ -44,7 +44,7 @@ class ArbitrumService(BaseBlockchainService):
                 return price
                 
         # Fetch new gas price
-        price = self.web3.eth.gas_price
+        price = self.w3.eth.gas_price
         self._gas_price_cache['price'] = (now, price)
         return price
         
@@ -115,66 +115,156 @@ class ArbitrumService(BaseBlockchainService):
             return None, str(e)
             
     @handle_api_errors
-    def send_transaction(self, transaction_id: str) -> Tuple[Dict, Optional[str]]:
-        """Send a prepared Arbitrum transaction"""
+    def send_transaction(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
+        """Send a prepared Arbitrum transaction using Tatum API broadcast endpoint"""
         try:
             # Get stored transaction
             tx_data = self._get_stored_transaction(transaction_id)
             if not tx_data:
                 return None, "Transaction not found or expired"
                 
+            # Extract transaction details
+            sender = tx_data.get('details', {}).get('sender')
+            recipient = tx_data.get('details', {}).get('recipient')
+            amount_str = tx_data.get('details', {}).get('amount')
+            
+            if not all([sender, recipient, amount_str]):
+                self.logger.error(f"Transaction data is incomplete: {tx_data}")
+                return None, "Transaction data is incomplete"
+                
+            # Convert amount to Decimal for calculations
+            try:
+                amount = Decimal(amount_str)
+            except Exception as e:
+                self.logger.error(f"Error converting amount to Decimal: {str(e)}")
+                return None, f"Invalid amount format: {amount_str}"
+                
             # Prepare transaction parameters
             params = {
-                'from': tx_data['sender'],
-                'to': tx_data['recipient'],
-                'value': self.web3.to_wei(Decimal(tx_data['amount']), 'ether'),
-                'gas': 21000,  # Standard gas limit for ETH transfers
+                'from': sender,
+                'to': recipient,
+                'value': self.w3.to_wei(amount, 'ether'),
+                'gas': 21000,  # Standard gas limit for ETH transfers on Arbitrum
                 'gasPrice': self._get_cached_gas_price(),
-                'nonce': self.web3.eth.get_transaction_count(tx_data['sender']),
-                'chainId': 42161  # Arbitrum One mainnet chain ID
+                'nonce': self.w3.eth.get_transaction_count(sender),
+                'chainId': 42161  # Arbitrum mainnet
             }
             
             try:
-                # Sign and send transaction
-                signed_tx = self.web3.eth.account.sign_transaction(params, private_key)
-                tx_hash = self.web3.eth.send_raw_transaction(signed_tx.rawTransaction)
+                # Sign transaction
+                self.logger.debug("Signing Arbitrum transaction with private key")
+                signed_tx = self.w3.eth.account.sign_transaction(params, private_key)
                 
-                # Update transaction data
-                tx_data.update({
-                    'tx_hash': tx_hash.hex(),
-                    'status': 'sent',
-                    'sent_at': datetime.now().isoformat()
-                })
-                self._store_transaction(transaction_id, tx_data)
+                # Get raw transaction data
+                raw_tx = signed_tx.rawTransaction.hex()
+                if not raw_tx.startswith('0x'):
+                    raw_tx = '0x' + raw_tx
                 
-                # Log sending
-                self._log_transaction(transaction_id, 'sent', {
-                    'tx_hash': tx_hash.hex()
-                })
+                self.logger.debug(f"Signed transaction raw data: {raw_tx[:10]}...")
                 
-                return {
-                    'transaction_id': transaction_id,
-                    'tx_hash': tx_hash.hex(),
-                    'status': 'sent'
-                }, None
+                # Use Tatum broadcast endpoint
+                url = f"{self.tatum.base_url}/arb/broadcast"
+                self.logger.debug(f"Making Arbitrum broadcast request to {url}")
+                
+                broadcast_data = {
+                    "txData": raw_tx
+                }
+                
+                self.logger.debug(f"Broadcast request data: {broadcast_data}")
+                
+                # Send to Tatum API
+                response = requests.post(
+                    url, 
+                    headers=self.tatum.headers, 
+                    json=broadcast_data
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    self.logger.debug(f"Arbitrum broadcast response: {result}")
+                    
+                    tx_hash = result.get('txId')
+                    if not tx_hash:
+                        self.logger.error(f"Missing transaction hash in response: {result}")
+                        return None, "Missing transaction hash in response"
+                        
+                    # Update transaction data
+                    tx_data.update({
+                        'tx_hash': tx_hash,
+                        'status': 'sent',
+                        'sent_at': datetime.now().isoformat(),
+                        'sent_via': 'tatum_broadcast'
+                    })
+                    self._store_transaction(transaction_id, tx_data)
+                    
+                    # Log sending
+                    self._log_transaction(transaction_id, 'sent', {
+                        'tx_hash': tx_hash,
+                        'sent_via': 'tatum_broadcast'
+                    })
+                    
+                    return {
+                        'transaction_id': transaction_id,
+                        'tx_hash': tx_hash,
+                        'transaction_hash': tx_hash,
+                        'status': 'sent'
+                    }, None
+                else:
+                    error_msg = f"Tatum Arbitrum broadcast error: {response.status_code} - {response.text}"
+                    self.logger.error(error_msg)
+                    
+                    # Try direct Web3 broadcast as fallback
+                    self.logger.debug("Falling back to direct Web3 broadcast")
+                    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+                    tx_hash_hex = tx_hash.hex()
+                    
+                    # Update transaction data
+                    tx_data.update({
+                        'tx_hash': tx_hash_hex,
+                        'status': 'sent',
+                        'sent_at': datetime.now().isoformat(),
+                        'sent_via': 'web3'
+                    })
+                    self._store_transaction(transaction_id, tx_data)
+                    
+                    # Log sending
+                    self._log_transaction(transaction_id, 'sent', {
+                        'tx_hash': tx_hash_hex,
+                        'sent_via': 'web3'
+                    })
+                    
+                    return {
+                        'transaction_id': transaction_id,
+                        'tx_hash': tx_hash_hex,
+                        'transaction_hash': tx_hash_hex,
+                        'status': 'sent'
+                    }, None
                 
             except Exception as e:
-                self.logger.error(f"Error sending transaction via Web3: {str(e)}")
+                self.logger.error(f"Error sending transaction via Web3 or Tatum broadcast: {str(e)}")
                 
-                # Fallback to Tatum
+                # Final fallback to Tatum generic send
+                self.logger.debug("Falling back to Tatum generic send_transaction")
                 result, error = self.tatum.send_transaction(
                     'arbitrum',
-                    tx_data['sender'],
-                    tx_data['recipient'],
-                    tx_data['amount']
+                    sender,
+                    recipient,
+                    amount_str,  # Use string form for Tatum API
+                    private_key
                 )
                 
                 if error:
                     return None, f"Failed to send transaction: {error}"
                     
+                # Get transaction hash from result
+                tx_hash = result.get('txId') or result.get('transaction_hash')
+                if not tx_hash:
+                    self.logger.error(f"Missing transaction hash in Tatum response: {result}")
+                    return None, "Missing transaction hash in response"
+                    
                 # Update transaction data
                 tx_data.update({
-                    'tx_hash': result['txId'],
+                    'tx_hash': tx_hash,
                     'status': 'sent',
                     'sent_at': datetime.now().isoformat(),
                     'sent_via': 'tatum'
@@ -183,13 +273,14 @@ class ArbitrumService(BaseBlockchainService):
                 
                 # Log sending
                 self._log_transaction(transaction_id, 'sent', {
-                    'tx_hash': result['txId'],
+                    'tx_hash': tx_hash,
                     'sent_via': 'tatum'
                 })
                 
                 return {
                     'transaction_id': transaction_id,
-                    'tx_hash': result['txId'],
+                    'tx_hash': tx_hash,
+                    'transaction_hash': tx_hash,
                     'status': 'sent'
                 }, None
                 
@@ -221,7 +312,7 @@ class ArbitrumService(BaseBlockchainService):
         """Get Arbitrum balance"""
         try:
             # Try Web3 first
-            balance = self.web3.eth.get_balance(address)
+            balance = self.w3.eth.get_balance(address)
             return Decimal(balance) / Decimal(10**18), None
             
         except Exception as e:
@@ -236,7 +327,7 @@ class ArbitrumService(BaseBlockchainService):
             
     def validate_address(self, address: str) -> bool:
         """Validate Arbitrum address"""
-        return self.web3.is_address(address)
+        return self.w3.is_address(address)
         
     @handle_api_errors
     def get_transaction_status(self, tx_hash: str) -> Tuple[str, Optional[str]]:
@@ -244,7 +335,7 @@ class ArbitrumService(BaseBlockchainService):
         try:
             # Try Web3 first
             try:
-                receipt = self.web3.eth.get_transaction_receipt(tx_hash)
+                receipt = self.w3.eth.get_transaction_receipt(tx_hash)
                 if receipt:
                     return 'confirmed' if receipt['status'] == 1 else 'failed', None
             except TransactionNotFound:
@@ -252,7 +343,7 @@ class ArbitrumService(BaseBlockchainService):
                 
             # Check if transaction exists
             try:
-                tx = self.web3.eth.get_transaction(tx_hash)
+                tx = self.w3.eth.get_transaction(tx_hash)
                 if tx:
                     return 'pending', None
             except TransactionNotFound:
@@ -275,8 +366,8 @@ class ArbitrumService(BaseBlockchainService):
         try:
             # Try Web3 first
             try:
-                tx = self.web3.eth.get_transaction(tx_hash)
-                receipt = self.web3.eth.get_transaction_receipt(tx_hash)
+                tx = self.w3.eth.get_transaction(tx_hash)
+                receipt = self.w3.eth.get_transaction_receipt(tx_hash)
                 
                 if tx and receipt:
                     return {
@@ -289,7 +380,7 @@ class ArbitrumService(BaseBlockchainService):
                         'status': 'confirmed' if receipt['status'] == 1 else 'failed',
                         'block_number': receipt['blockNumber'],
                         'timestamp': datetime.fromtimestamp(
-                            self.web3.eth.get_block(receipt['blockNumber'])['timestamp']
+                            self.w3.eth.get_block(receipt['blockNumber'])['timestamp']
                         ).isoformat()
                     }, None
             except TransactionNotFound:

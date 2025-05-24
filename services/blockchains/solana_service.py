@@ -3,8 +3,8 @@ from typing import Dict, Optional, Tuple, Any
 import os
 import json
 import uuid
-from datetime import datetime, timedelta
 import requests
+from datetime import datetime, timedelta
 from solana.rpc.api import Client
 from solana.transaction import Transaction
 from solana.keypair import Keypair
@@ -94,91 +94,217 @@ class SolanaService(BaseBlockchainService):
             return None, str(e)
             
     @handle_api_errors
-    def send_transaction(self, transaction_id: str) -> Tuple[Dict, Optional[str]]:
-        """Send a prepared Solana transaction"""
+    def send_transaction(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
+        """Send a prepared Solana transaction using Tatum API broadcast endpoint"""
         try:
             # Get stored transaction
             tx_data = self._get_stored_transaction(transaction_id)
             if not tx_data:
                 return None, "Transaction not found or expired"
                 
+            # Extract transaction details
+            sender = tx_data.get('details', {}).get('sender')
+            recipient = tx_data.get('details', {}).get('recipient')
+            amount_str = tx_data.get('details', {}).get('amount')
+            
+            if not all([sender, recipient, amount_str]):
+                self.logger.error(f"Transaction data is incomplete: {tx_data}")
+                return None, "Transaction data is incomplete"
+                
+            # Convert amount to Decimal for calculations
             try:
-                # Create keypair from private key
-                keypair = Keypair.from_secret_key(bytes.fromhex(private_key))
-                
-                # Create transaction
-                transaction = Transaction()
-                transaction.add(
-                    self.client.transfer(
-                        from_pubkey=keypair.public_key,
-                        to_pubkey=tx_data['recipient'],
-                        lamports=int(Decimal(tx_data['amount']) * Decimal(10**9))  # Convert to lamports
-                    )
-                )
-                
-                # Sign and send transaction
-                result = self.client.send_transaction(
-                    transaction,
-                    keypair,
-                    opts={"skip_confirmation": False, "preflight_commitment": Confirmed}
-                )
-                
-                # Update transaction data
-                tx_data.update({
-                    'tx_hash': result['result'],
-                    'status': 'sent',
-                    'sent_at': datetime.now().isoformat()
-                })
-                self._store_transaction(transaction_id, tx_data)
-                
-                # Log sending
-                self._log_transaction(transaction_id, 'sent', {
-                    'tx_hash': result['result']
-                })
-                
-                return {
-                    'transaction_id': transaction_id,
-                    'tx_hash': result['result'],
-                    'status': 'sent'
-                }, None
-                
+                amount = Decimal(amount_str)
             except Exception as e:
-                self.logger.error(f"Error sending transaction via Solana client: {str(e)}")
+                self.logger.error(f"Error converting amount to Decimal: {str(e)}")
+                return None, f"Invalid amount format: {amount_str}"
+            
+            # Try direct Solana client to sign transaction first
+            signed_tx_raw = None
+            if self.client_available:
+                try:
+                    self.logger.info(f"Signing Solana transaction using direct client")
+                    
+                    # Load private key
+                    from solana.keypair import Keypair
+                    from solana.transaction import Transaction
+                    from solana.system_program import TransferParams, transfer
+                    
+                    # Decode private key
+                    keypair = Keypair.from_secret_key(bytes.fromhex(private_key))
+                    
+                    # Create transaction instruction
+                    transfer_instruction = transfer(
+                        TransferParams(
+                            from_pubkey=keypair.public_key,
+                            to_pubkey=recipient,
+                            lamports=int(amount * 10**9)  # Convert SOL to lamports
+                        )
+                    )
+                    
+                    # Create and sign transaction
+                    transaction = Transaction().add(transfer_instruction)
+                    transaction.sign(keypair)
+                    
+                    # Get raw signed transaction
+                    signed_tx_raw = transaction.serialize()
+                    self.logger.debug(f"Successfully signed Solana transaction")
+                except Exception as e:
+                    self.logger.warning(f"Error signing transaction via Solana client: {str(e)}")
+            
+            # Use Tatum broadcast endpoint
+            if self.tatum:
+                try:
+                    self.logger.info(f"Broadcasting Solana transaction via Tatum broadcast endpoint")
+                    
+                    # For Solana we need to use a special endpoint that includes /confirm
+                    url = f"{self.tatum.base_url}/solana/broadcast/confirm"
+                    self.logger.debug(f"Making Solana broadcast request to {url}")
+                    
+                    # If we have a raw signed tx, use it. Otherwise, let Tatum sign it
+                    if signed_tx_raw:
+                        broadcast_data = {
+                            "txData": signed_tx_raw.hex()
+                        }
+                    else:
+                        # Let Tatum handle the signing
+                        broadcast_data = {
+                            "from": sender,
+                            "to": recipient,
+                            "amount": str(amount),
+                            "fromPrivateKey": private_key
+                        }
+                    
+                    self.logger.debug(f"Broadcast request data: {broadcast_data}")
+                    
+                    response = requests.post(
+                        url, 
+                        headers=self.tatum.headers, 
+                        json=broadcast_data
+                    )
+                    
+                    if response.status_code == 200:
+                        result = response.json()
+                        self.logger.debug(f"Solana broadcast response: {result}")
+                        
+                        tx_hash = result.get("txId")
+                        if not tx_hash:
+                            self.logger.error(f"Missing transaction hash in response: {result}")
+                            return None, "Missing transaction hash in response"
+                            
+                        # Update transaction data
+                        tx_data.update({
+                            'tx_hash': tx_hash,
+                            'status': 'sent',
+                            'sent_at': datetime.now().isoformat(),
+                            'sent_via': 'tatum_broadcast'
+                        })
+                        self._store_transaction(transaction_id, tx_data)
+                        
+                        # Log sending
+                        self._log_transaction(transaction_id, 'sent', {
+                            'tx_hash': tx_hash,
+                            'sent_via': 'tatum_broadcast'
+                        })
+                        
+                        return {
+                            'transaction_id': transaction_id,
+                            'tx_hash': tx_hash,
+                            'transaction_hash': tx_hash,
+                            'status': 'sent'
+                        }, None
+                    else:
+                        error_msg = f"Tatum Solana broadcast error: {response.status_code} - {response.text}"
+                        self.logger.error(error_msg)
+                except Exception as e:
+                    self.logger.error(f"Error broadcasting Solana transaction via Tatum: {str(e)}")
+            
+            # Try direct client as fallback
+            if self.client_available:
+                try:
+                    self.logger.info(f"Attempting to send Solana transaction via direct client")
+                    
+                    # Reuse or create keypair
+                    from solana.keypair import Keypair
+                    keypair = Keypair.from_secret_key(bytes.fromhex(private_key))
+                    
+                    # Try to send transaction (if we already built it above)
+                    if signed_tx_raw:
+                        from solana.rpc.api import Client
+                        client = Client(self.solana_node_url)
+                        result = client.send_raw_transaction(signed_tx_raw)
+                        tx_hash = result['result']
+                        
+                        # Update transaction data
+                        tx_data.update({
+                            'tx_hash': tx_hash,
+                            'status': 'sent',
+                            'sent_at': datetime.now().isoformat(),
+                            'sent_via': 'solana_client'
+                        })
+                        self._store_transaction(transaction_id, tx_data)
+                        
+                        # Log sending
+                        self._log_transaction(transaction_id, 'sent', {
+                            'tx_hash': tx_hash,
+                            'sent_via': 'solana_client'
+                        })
+                        
+                        return {
+                            'transaction_id': transaction_id,
+                            'tx_hash': tx_hash,
+                            'transaction_hash': tx_hash,
+                            'status': 'sent'
+                        }, None
+                except Exception as e:
+                    self.logger.warning(f"Error sending transaction via Solana client: {str(e)}")
+            
+            # Final fallback to Tatum generic transaction endpoint
+            if self.tatum:
+                self.logger.info(f"Attempting to send Solana transaction via Tatum transaction endpoint")
                 
-                # Fallback to Tatum
                 result, error = self.tatum.send_transaction(
                     'solana',
-                    tx_data['sender'],
-                    tx_data['recipient'],
-                    tx_data['amount']
+                    sender,
+                    recipient,
+                    amount_str,  # Use string form for Tatum API
+                    private_key
                 )
                 
                 if error:
                     return None, f"Failed to send transaction: {error}"
+                
+                # Get transaction hash from result
+                tx_hash = result.get('txId') or result.get('transaction_hash')
+                if not tx_hash:
+                    self.logger.error(f"Missing transaction hash in Tatum response: {result}")
+                    return None, "Missing transaction hash in response"
                     
                 # Update transaction data
                 tx_data.update({
-                    'tx_hash': result['txId'],
+                    'tx_hash': tx_hash,
                     'status': 'sent',
                     'sent_at': datetime.now().isoformat(),
-                    'sent_via': 'tatum'
+                    'sent_via': 'tatum_transaction'
                 })
                 self._store_transaction(transaction_id, tx_data)
                 
                 # Log sending
                 self._log_transaction(transaction_id, 'sent', {
-                    'tx_hash': result['txId'],
-                    'sent_via': 'tatum'
+                    'tx_hash': tx_hash,
+                    'sent_via': 'tatum_transaction'
                 })
                 
                 return {
                     'transaction_id': transaction_id,
-                    'tx_hash': result['txId'],
+                    'tx_hash': tx_hash,
+                    'transaction_hash': tx_hash,
                     'status': 'sent'
                 }, None
+            
+            return None, "Failed to send transaction: all methods failed"
                 
         except Exception as e:
-            self.logger.error(f"Error sending transaction: {str(e)}")
+            self.logger.error(f"Error sending Solana transaction: {str(e)}")
             return None, str(e)
             
     @handle_api_errors

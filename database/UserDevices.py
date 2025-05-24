@@ -9,7 +9,7 @@ class UserDevices(Base):
     DeviceID = Column(Integer, primary_key=True, autoincrement=True)
     UserID = Column(String(36), ForeignKey('users.UserID', ondelete='CASCADE'), nullable=False)
     WalletID = Column(String(50), ForeignKey('wallets.WalletID', ondelete='CASCADE'), nullable=False)
-    DeviceToken = Column(String(255), nullable=False, unique=True)
+    DeviceToken = Column(String(500), nullable=False, unique=True)
     DeviceName = Column(String(100), nullable=True)
     DeviceType = Column(String(50), nullable=True)  # android, ios
     CreatedAt = Column(TIMESTAMP, default=datetime.utcnow, nullable=False)

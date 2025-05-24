@@ -54,29 +54,11 @@ class WalletGenerationStatusResponse(BaseModel):
 
 class WalletGenerationSyncResponse(BaseModel):
     """Schema for synchronous wallet generation response"""
-    UserID: str = Field(
-        ..., 
-        description="Unique identifier for the user",
-        example="123e4567-e89b-12d3-a456-426614174000"
-    )
-    Mnemonic: str = Field(
-        ..., 
-        description="Mnemonic recovery phrase",
-        example="abandon ability able about above absent absorb abstract absurd abuse access accident"
-    )
-    Addresses: Dict[str, str] = Field(
-        ..., 
-        description="Generated addresses for each blockchain",
-        example={
-            "Bitcoin": "bc1q5c9vlt5uq9u4njr5j3spdcmwgaazr6uhv5xrm0",
-            "Ethereum": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F"
-        }
-    )
-    success: bool = Field(
-        ...,
-        description="Whether the request was successful",
-        example=True
-    )
+    success: bool = Field(..., description="Whether the request was successful")
+    UserID: Optional[str] = Field(None, description="The ID of the user who owns the wallet", example="123e4567-e89b-12d3-a456-426614174000")
+    WalletID: Optional[str] = Field(None, description="The ID of the generated wallet", example="123e4567-e89b-12d3-a456-426614174000")
+    Mnemonic: Optional[str] = Field(None, description="The mnemonic phrase for the wallet", example="word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12")
+    message: Optional[str] = Field(None, description="A message about the wallet generation status")
 
 # Wallet Import Schemas
 class WalletImportRequest(BaseModel):

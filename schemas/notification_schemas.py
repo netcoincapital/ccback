@@ -32,7 +32,7 @@ class DeviceRegistrationRequest(BaseModel):
     
     @validator('DeviceToken')
     def validate_device_token(cls, v):
-        pattern = r'^[a-zA-Z0-9_-]{152,}$'
+        pattern = r'^[a-zA-Z0-9:_\-]+$'
         if not re.match(pattern, v):
             raise ValueError('فرمت توکن دستگاه نامعتبر است')
         return v

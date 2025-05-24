@@ -118,59 +118,132 @@ class PolygonService(BaseBlockchainService):
             
     @handle_api_errors
     def send_transaction(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
-        """Send a Polygon transaction"""
+        """Send a Polygon transaction using Tatum API broadcast endpoint"""
         try:
             # Get transaction details from storage
             tx_data = self._get_stored_transaction(transaction_id)
             if not tx_data:
                 return {}, "Transaction not found or expired"
                 
+            # Extract transaction details
+            sender = tx_data.get("details", {}).get("sender")
+            recipient = tx_data.get("details", {}).get("recipient")
+            amount_str = tx_data.get("details", {}).get("amount")
+            smart_contract_address = tx_data.get("smart_contract_address")
+            
+            if not all([sender, recipient, amount_str]):
+                self.logger.error(f"Transaction data is incomplete: {tx_data}")
+                return {}, "Transaction data is incomplete"
+                
+            # Convert amount to Decimal for calculations
+            try:
+                amount = Decimal(amount_str)
+            except Exception as e:
+                self.logger.error(f"Error converting amount to Decimal: {str(e)}")
+                return {}, f"Invalid amount format: {amount_str}"
+                
             # Prepare transaction parameters
             params = {
-                "from": tx_data["sender_address"],
-                "to": tx_data["recipient_address"],
-                "value": self.web3.to_wei(tx_data["amount"], "ether"),
+                "from": sender,
+                "to": recipient,
+                "value": self.web3.to_wei(amount, "ether"),
                 "gas": 21000,  # Default gas limit for MATIC transfers
                 "gasPrice": self._get_cached_gas_price(),
-                "nonce": self.web3.eth.get_transaction_count(tx_data["sender_address"]),
+                "nonce": self.web3.eth.get_transaction_count(sender),
                 "chainId": 137  # Polygon mainnet chain ID
             }
             
             # Add contract data if it's a token transfer
-            if tx_data.get("smart_contract_address"):
-                # TODO: Implement ERC20 token transfer data
+            if smart_contract_address:
+                # TODO: Implement ERC20 token transfer
                 pass
                 
-            # Sign and send transaction
             try:
+                # Sign transaction
+                self.logger.debug("Signing Polygon transaction with private key")
                 signed_tx = self.web3.eth.account.sign_transaction(params, private_key)
-                tx_hash = self.web3.eth.send_raw_transaction(signed_tx.rawTransaction)
                 
-                # Log transaction
-                self._log_transaction("send", {
-                    "transaction_id": transaction_id,
-                    "tx_hash": tx_hash.hex()
-                })
+                # Get raw transaction data
+                raw_tx = signed_tx.rawTransaction.hex()
+                if not raw_tx.startswith('0x'):
+                    raw_tx = '0x' + raw_tx
                 
-                return {
-                    "transaction_hash": tx_hash.hex(),
-                    "status": "pending"
-                }, None
+                self.logger.debug(f"Signed transaction raw data: {raw_tx[:10]}...")
                 
+                # Use Tatum broadcast endpoint for Polygon
+                url = f"{self.tatum.base_url}/polygon/broadcast"
+                self.logger.debug(f"Making Polygon broadcast request to {url}")
+                
+                broadcast_data = {
+                    "txData": raw_tx
+                }
+                
+                self.logger.debug(f"Broadcast request data: {broadcast_data}")
+                
+                response = requests.post(
+                    url, 
+                    headers=self.tatum.headers, 
+                    json=broadcast_data
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    self.logger.debug(f"Polygon broadcast response: {result}")
+                    
+                    tx_hash = result.get("txId")
+                    if not tx_hash:
+                        self.logger.error(f"Missing transaction hash in response: {result}")
+                        return {}, "Missing transaction hash in response"
+                        
+                    # Log transaction
+                    self._log_transaction(transaction_id, "sent", {
+                        "tx_hash": tx_hash
+                    })
+                    
+                    return {
+                        "transaction_hash": tx_hash,
+                        "tx_hash": tx_hash,
+                        "status": "pending"
+                    }, None
+                else:
+                    error_msg = f"Tatum Polygon broadcast error: {response.status_code} - {response.text}"
+                    self.logger.error(error_msg)
+                    
+                    # Try direct Web3 broadcast as first fallback
+                    try:
+                        self.logger.debug("Attempting direct Web3 broadcast")
+                        tx_hash = self.web3.eth.send_raw_transaction(signed_tx.rawTransaction)
+                        
+                        return {
+                            "transaction_hash": tx_hash.hex(),
+                            "tx_hash": tx_hash.hex(),
+                            "status": "pending"
+                        }, None
+                    except Exception as web3_error:
+                        self.logger.error(f"Direct Web3 broadcast failed: {str(web3_error)}")
+                        
+                        # Try generic fallback as last resort
+                        return self.tatum.send_transaction(
+                            "polygon",
+                            sender,
+                            recipient,
+                            amount_str,  # Use string form for Tatum API
+                            private_key
+                        )
             except Exception as e:
-                # Fallback to Tatum if Web3 fails
-                self.logger.warning(f"Web3 transaction failed, falling back to Tatum: {str(e)}")
+                self.logger.error(f"Error in Polygon transaction broadcast: {str(e)}")
+                
+                # Final fallback to the generic method
                 return self.tatum.send_transaction(
                     "polygon",
-                    tx_data["sender_address"],
-                    private_key,
-                    tx_data["recipient_address"],
-                    tx_data["amount"],
-                    tx_data
+                    sender,
+                    recipient,
+                    amount_str,
+                    private_key
                 )
                 
         except Exception as e:
-            error_msg = f"Error sending transaction: {str(e)}"
+            error_msg = f"Error sending Polygon transaction: {str(e)}"
             self.logger.error(error_msg)
             return {}, error_msg
             

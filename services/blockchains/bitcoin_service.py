@@ -1,5 +1,5 @@
 from decimal import Decimal
-from typing import Dict, Optional, Tuple, Any
+from typing import Dict, Optional, Tuple, Any, List
 import os
 import json
 import uuid
@@ -8,6 +8,7 @@ import requests
 from bitcoinlib.transactions import Transaction
 from bitcoinlib.keys import Key
 from bitcoinlib.scripts import Script
+import traceback
 
 from services.blockchains.base_blockchain_service import BaseBlockchainService
 from services.tatum_helper import TatumHelper
@@ -91,107 +92,60 @@ class BitcoinService(BaseBlockchainService):
             return None, str(e)
             
     @handle_api_errors
-    def send_transaction(self, transaction_id: str) -> Tuple[Dict, Optional[str]]:
-        """Send a prepared Bitcoin transaction"""
+    def send_transaction(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
+        """Send a prepared Bitcoin transaction using Tatum API broadcast endpoint"""
         try:
             # Get stored transaction
             tx_data = self._get_stored_transaction(transaction_id)
             if not tx_data:
                 return None, "Transaction not found or expired"
                 
-            try:
-                # Create key from private key
-                key = Key(private_key)
+            # Extract transaction details
+            sender = tx_data.get('details', {}).get('sender')
+            recipient = tx_data.get('details', {}).get('recipient')
+            amount_str = tx_data.get('details', {}).get('amount')
+            signed_tx = tx_data.get('signed_tx')
+            
+            if not all([sender, recipient, amount_str]):
+                self.logger.error(f"Transaction data is incomplete: {tx_data}")
+                return None, "Transaction data is incomplete"
                 
-                # Create transaction
-                tx = Transaction()
+            # If we have a signed transaction already (from prepare_transaction), use it
+            if signed_tx:
+                # Use Tatum API to broadcast the transaction
+                tatum_url = f"{self.tatum_api_url}/v3/bitcoin/broadcast"
+                headers = {
+                    "Content-Type": "application/json",
+                    "x-api-key": self.tatum_api_key
+                }
+                payload = {
+                    "txData": signed_tx
+                }
                 
-                # Add inputs (UTXOs)
-                utxos, error = self._get_utxos(tx_data['sender'])
-                if error:
-                    return None, f"Error getting UTXOs: {error}"
+                self.logger.info(f"Broadcasting Bitcoin transaction via Tatum API")
+                response = requests.post(tatum_url, headers=headers, json=payload)
+                
+                if response.status_code == 200:
+                    tx_hash = response.json()
                     
-                for utxo in utxos:
-                    tx.add_input(utxo['txid'], utxo['vout'])
+                    # Update transaction record with the transaction hash
+                    tx_data['hash'] = tx_hash
+                    tx_data['status'] = 'SENT'
+                    self._update_transaction(transaction_id, tx_data)
                     
-                # Add output
-                tx.add_output(
-                    tx_data['recipient'],
-                    int(Decimal(tx_data['amount']) * Decimal(10**8))  # Convert to satoshis
-                )
-                
-                # Add change output if needed
-                total_input = sum(utxo['amount'] for utxo in utxos)
-                change_amount = total_input - Decimal(tx_data['amount']) - Decimal(tx_data['fee'])
-                if change_amount > 0:
-                    tx.add_output(
-                        tx_data['sender'],
-                        int(change_amount * Decimal(10**8))
-                    )
-                    
-                # Sign transaction
-                tx.sign(key)
-                
-                # Send transaction
-                result = self._broadcast_transaction(tx.serialize())
-                
-                # Update transaction data
-                tx_data.update({
-                    'tx_hash': result['txid'],
-                    'status': 'sent',
-                    'sent_at': datetime.now().isoformat()
-                })
-                self._store_transaction(transaction_id, tx_data)
-                
-                # Log sending
-                self._log_transaction(transaction_id, 'sent', {
-                    'tx_hash': result['txid']
-                })
-                
-                return {
-                    'transaction_id': transaction_id,
-                    'tx_hash': result['txid'],
-                    'status': 'sent'
-                }, None
-                
-            except Exception as e:
-                self.logger.error(f"Error sending transaction via Bitcoin client: {str(e)}")
-                
-                # Fallback to Tatum
-                result, error = self.tatum.send_transaction(
-                    'bitcoin',
-                    tx_data['sender'],
-                    tx_data['recipient'],
-                    tx_data['amount']
-                )
-                
-                if error:
-                    return None, f"Failed to send transaction: {error}"
-                    
-                # Update transaction data
-                tx_data.update({
-                    'tx_hash': result['txId'],
-                    'status': 'sent',
-                    'sent_at': datetime.now().isoformat(),
-                    'sent_via': 'tatum'
-                })
-                self._store_transaction(transaction_id, tx_data)
-                
-                # Log sending
-                self._log_transaction(transaction_id, 'sent', {
-                    'tx_hash': result['txId'],
-                    'sent_via': 'tatum'
-                })
-                
-                return {
-                    'transaction_id': transaction_id,
-                    'tx_hash': result['txId'],
-                    'status': 'sent'
-                }, None
+                    self.logger.info(f"Bitcoin transaction sent successfully: {tx_hash}")
+                    return {'txId': tx_hash}, None
+                else:
+                    error_msg = f"Failed to broadcast Bitcoin transaction: {response.text}"
+                    self.logger.error(error_msg)
+                    return None, error_msg
+            else:
+                return None, "Transaction was not properly signed during preparation"
                 
         except Exception as e:
-            self.logger.error(f"Error sending transaction: {str(e)}")
-            return None, str(e)
+            self.logger.error(f"Error sending Bitcoin transaction: {str(e)}")
+            self.logger.error(traceback.format_exc())
+            return None, f"Error sending Bitcoin transaction: {str(e)}"
             
     @handle_api_errors
     def estimate_fee(self, sender: str, recipient: str, amount: Decimal) -> Tuple[Decimal, Optional[str]]:

@@ -21,12 +21,26 @@ class EthereumService(BaseBlockchainService):
         super().__init__()
         self.logger = get_logger(__file__)
         
+        # Default Ethereum node URLs if environment variable is not set
+        DEFAULT_ETH_NODES = [
+            "https://eth.llamarpc.com",
+            "https://ethereum.publicnode.com",
+            "https://rpc.ankr.com/eth",
+            "https://1rpc.io/eth",
+            "https://cloudflare-eth.com"
+        ]
+        
         # Initialize Web3
         infura_api_key = os.getenv('INFURA_API_KEY')
         if not infura_api_key:
-            raise RuntimeError("INFURA_API_KEY environment variable not set")
+            self.logger.warning(
+                "INFURA_API_KEY environment variable not set. "
+                "Using public Ethereum RPC node instead."
+            )
+            self.w3 = Web3(Web3.HTTPProvider(DEFAULT_ETH_NODES[0]))
+        else:
+            self.w3 = Web3(Web3.HTTPProvider(f'https://mainnet.infura.io/v3/{infura_api_key}'))
             
-        self.w3 = Web3(Web3.HTTPProvider(f'https://mainnet.infura.io/v3/{infura_api_key}'))
         self.tatum = TatumHelper()
         
         # Cache for gas prices (30 second expiration)
@@ -93,86 +107,101 @@ class EthereumService(BaseBlockchainService):
             self.logger.error(f"Error preparing transaction: {str(e)}")
             return None, str(e)
             
-    def send_transaction(self, transaction_id: str) -> Tuple[Dict, Optional[str]]:
-        """Send a prepared Ethereum transaction"""
+    def send_transaction(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
+        """Send a prepared Ethereum transaction using Tatum API broadcast endpoint"""
         try:
             # Get stored transaction
             tx_data = self._get_stored_transaction(transaction_id)
             if not tx_data:
-                return None, "Transaction not found or expired"
+                return {}, "Transaction not found or expired"
+                
+            # Extract transaction details
+            sender = tx_data.get('details', {}).get('sender')
+            recipient = tx_data.get('details', {}).get('recipient')
+            amount_str = tx_data.get('details', {}).get('amount')
+            
+            if not all([sender, recipient, amount_str]):
+                self.logger.error(f"Transaction data is incomplete")
+                return {}, "Transaction data is incomplete"
+                
+            try:
+                amount = Decimal(amount_str)
+            except Exception as e:
+                self.logger.error(f"Error converting amount to Decimal: {str(e)}")
+                return {}, f"Invalid amount format: {amount_str}"
                 
             # Prepare transaction parameters
             params = {
-                'from': tx_data['sender'],
-                'to': tx_data['recipient'],
-                'value': self.w3.to_wei(Decimal(tx_data['amount']), 'ether'),
+                'from': sender,
+                'to': recipient,
+                'value': self.w3.to_wei(amount, 'ether'),
                 'gas': 21000,  # Standard gas limit for ETH transfers
                 'gasPrice': self._get_cached_gas_price(),
-                'nonce': self.w3.eth.get_transaction_count(tx_data['sender'])
+                'nonce': self.w3.eth.get_transaction_count(sender),
+                'chainId': 1  # Ethereum mainnet
             }
             
+            # Sign transaction locally
+            self.logger.debug("Signing Ethereum transaction with private key")
             try:
-                # Sign and send transaction
                 signed_tx = self.w3.eth.account.sign_transaction(params, private_key)
-                tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+                
+                # Get raw transaction data
+                raw_tx = signed_tx.rawTransaction.hex()
+                if not raw_tx.startswith('0x'):
+                    raw_tx = '0x' + raw_tx
+                
+                self.logger.debug(f"Successfully signed transaction")
+                
+                # Use Tatum helper to broadcast the transaction
+                result, error = self.tatum.send_transaction(
+                    'ethereum',
+                    sender,
+                    recipient,
+                    amount_str,
+                    private_key,
+                    {'signed_tx': raw_tx}
+                )
+                
+                if error:
+                    self.logger.error(f"Error broadcasting transaction: {error}")
+                    return {}, f"Error broadcasting transaction: {error}"
+                    
+                # Get transaction hash
+                tx_hash = result.get('transaction_hash') or result.get('txId')
+                if not tx_hash:
+                    self.logger.error(f"Missing transaction hash in response")
+                    return {}, "Missing transaction hash in response"
                 
                 # Update transaction data
                 tx_data.update({
-                    'tx_hash': tx_hash.hex(),
+                    'tx_hash': tx_hash,
                     'status': 'sent',
-                    'sent_at': datetime.now().isoformat()
+                    'sent_at': datetime.now().isoformat(),
+                    'sent_via': 'tatum_broadcast'
                 })
                 self._store_transaction(transaction_id, tx_data)
                 
                 # Log sending
                 self._log_transaction(transaction_id, 'sent', {
-                    'tx_hash': tx_hash.hex()
+                    'tx_hash': tx_hash,
+                    'sent_via': 'tatum_broadcast'
                 })
                 
                 return {
                     'transaction_id': transaction_id,
-                    'tx_hash': tx_hash.hex(),
+                    'tx_hash': tx_hash,
+                    'transaction_hash': tx_hash,
                     'status': 'sent'
                 }, None
                 
             except Exception as e:
-                self.logger.error(f"Error sending transaction via Web3: {str(e)}")
-                
-                # Fallback to Tatum
-                result, error = self.tatum.send_transaction(
-                    'ethereum',
-                    tx_data['sender'],
-                    tx_data['recipient'],
-                    tx_data['amount']
-                )
-                
-                if error:
-                    return None, f"Failed to send transaction: {error}"
-                    
-                # Update transaction data
-                tx_data.update({
-                    'tx_hash': result['txId'],
-                    'status': 'sent',
-                    'sent_at': datetime.now().isoformat(),
-                    'sent_via': 'tatum'
-                })
-                self._store_transaction(transaction_id, tx_data)
-                
-                # Log sending
-                self._log_transaction(transaction_id, 'sent', {
-                    'tx_hash': result['txId'],
-                    'sent_via': 'tatum'
-                })
-                
-                return {
-                    'transaction_id': transaction_id,
-                    'tx_hash': result['txId'],
-                    'status': 'sent'
-                }, None
+                self.logger.error(f"Error signing/broadcasting transaction: {str(e)}")
+                return {}, f"Error signing/broadcasting transaction: {str(e)}"
                 
         except Exception as e:
             self.logger.error(f"Error sending transaction: {str(e)}")
-            return None, str(e)
+            return {}, str(e)
             
     def estimate_fee(self, sender: str, recipient: str, amount: Decimal) -> Tuple[Decimal, Optional[str]]:
         """Estimate Ethereum transaction fee"""

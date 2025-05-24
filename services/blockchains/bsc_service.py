@@ -3,8 +3,9 @@ from typing import Dict, Optional, Tuple, Any
 import os
 import json
 import uuid
-from datetime import datetime, timedelta
 import requests
+import traceback
+from datetime import datetime, timedelta
 from web3 import Web3
 from web3.exceptions import TransactionNotFound
 from eth_account import Account
@@ -21,12 +22,25 @@ class BSCService(BaseBlockchainService):
         super().__init__()
         self.logger = get_logger(__file__)
         
+        # Default BSC node URLs if environment variable is not set
+        DEFAULT_BSC_NODES = [
+            "https://bsc-dataseed.binance.org",
+            "https://bsc-dataseed1.binance.org",
+            "https://bsc-dataseed2.binance.org",
+            "https://bsc-dataseed3.binance.org",
+            "https://bsc-dataseed4.binance.org"
+        ]
+        
         # Initialize Web3 with BSC node
         self.bsc_node_url = os.getenv('BSC_NODE_URL')
         if not self.bsc_node_url:
-            raise RuntimeError("BSC_NODE_URL environment variable is not set")
-            
-        self.web3 = Web3(Web3.HTTPProvider(self.bsc_node_url))
+            self.bsc_node_url = DEFAULT_BSC_NODES[0]
+            self.logger.warning(
+                f"BSC_NODE_URL environment variable is not set. "
+                f"Using default BSC node: {self.bsc_node_url}"
+            )
+        
+        self.w3 = Web3(Web3.HTTPProvider(self.bsc_node_url))
         
         # Initialize Tatum helper for fallback
         self.tatum = TatumHelper()
@@ -44,9 +58,14 @@ class BSCService(BaseBlockchainService):
                 return price
                 
         # Fetch new gas price
-        price = self.web3.eth.gas_price
-        self._gas_price_cache['price'] = (now, price)
-        return price
+        try:
+            price = self.w3.eth.gas_price
+            self._gas_price_cache['price'] = (now, price)
+            return price
+        except Exception as e:
+            self.logger.error(f"Error getting gas price: {str(e)}")
+            # Return a default gas price in case of error (5 Gwei)
+            return 5 * 10**9
         
     def _update_gas_price_cache(self, price: Decimal) -> None:
         """Update gas price cache"""
@@ -85,12 +104,12 @@ class BSCService(BaseBlockchainService):
             # Calculate balance after transaction
             balance_after = balance - amount_decimal - fee
             
-            # Prepare transaction details
+            # Prepare transaction detailsً
             tx_details = {
                 "transaction_id": transaction_id,
                 "details": {
                     "amount": amount,
-                    "blockchain": "bsc",
+                    "blockchain": "Bsc",
                     "estimated_fee": str(fee),
                     "explorer_url": f"https://bscscan.com/tx/{transaction_id}",
                     "recipient": recipient_address,
@@ -118,78 +137,155 @@ class BSCService(BaseBlockchainService):
             
     @handle_api_errors
     def send_transaction(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
-        """Send a BSC transaction"""
+        """Send a prepared BSC transaction using Tatum API broadcast endpoint"""
         try:
-            # Get transaction details from storage
+            # Get stored transaction
             tx_data = self._get_stored_transaction(transaction_id)
             if not tx_data:
-                return {}, "Transaction not found or expired"
+                return None, "Transaction not found or expired"
                 
-            # Prepare transaction parameters
-            params = {
-                "from": tx_data["sender_address"],
-                "to": tx_data["recipient_address"],
-                "value": self.web3.to_wei(tx_data["amount"], "ether"),
-                "gas": 21000,  # Default gas limit for BNB transfers
-                "gasPrice": self._get_cached_gas_price(),
-                "nonce": self.web3.eth.get_transaction_count(tx_data["sender_address"]),
-                "chainId": 56  # BSC mainnet chain ID
+            # Extract transaction details
+            sender = tx_data.get('details', {}).get('sender')
+            recipient = tx_data.get('details', {}).get('recipient')
+            amount_str = tx_data.get('details', {}).get('amount')
+            
+            if not all([sender, recipient, amount_str]):
+                self.logger.error(f"Transaction data is incomplete: {tx_data}")
+                return None, "Transaction data is incomplete"
+                
+            # If this is a token transfer
+            if tx_data.get('token_address'):
+                # Create signed transaction for token transfer
+                token_address = tx_data.get('token_address')
+                contract_abi = self._get_token_abi(token_address)
+                contract = self.w3.eth.contract(address=token_address, abi=contract_abi)
+                
+                # Convert amount to token units based on decimals
+                token_decimals = contract.functions.decimals().call()
+                amount = int(float(amount_str) * 10**token_decimals)
+                
+                # Build token transfer transaction
+                gas_price = self._get_cached_gas_price()
+                nonce = self.w3.eth.get_transaction_count(sender)
+                
+                tx = contract.functions.transfer(
+                    recipient,
+                    amount
+                ).build_transaction({
+                    'from': sender,
+                    'gas': 100000,  # Estimated gas limit for token transfers
+                    'gasPrice': gas_price,
+                    'nonce': nonce,
+                    'chainId': 56  # BSC mainnet
+                })
+            else:
+                # Create signed transaction for native token (BNB) transfer
+                amount = self.w3.to_wei(float(amount_str), 'ether')
+                gas_price = self._get_cached_gas_price()
+                nonce = self.w3.eth.get_transaction_count(sender)
+                
+                tx = {
+                    'from': sender,
+                    'to': recipient,
+                    'value': amount,
+                    'gas': 21000,  # Standard gas limit for BNB transfers
+                    'gasPrice': gas_price,
+                    'nonce': nonce,
+                    'chainId': 56  # BSC mainnet
+                }
+            
+            # Sign the transaction
+            signed_tx = self.w3.eth.account.sign_transaction(tx, private_key)
+            
+            # Use Tatum API to broadcast the transaction
+            tatum_url = f"{self.tatum.base_url}/v3/bsc/broadcast"
+            headers = {
+                "Content-Type": "application/json",
+                "x-api-key": self.tatum.api_key
+            }
+            payload = {
+                "txData": signed_tx.rawTransaction.hex()
             }
             
-            # Add contract data if it's a token transfer
-            if tx_data.get("smart_contract_address"):
-                # TODO: Implement BEP20 token transfer data
-                pass
+            self.logger.info(f"Broadcasting BSC transaction via Tatum API")
+            response = requests.post(tatum_url, headers=headers, json=payload)
+            
+            if response.status_code == 200:
+                tx_hash = response.json()
                 
-            # Sign and send transaction
-            try:
-                signed_tx = self.web3.eth.account.sign_transaction(params, private_key)
-                tx_hash = self.web3.eth.send_raw_transaction(signed_tx.rawTransaction)
+                # Update transaction record with the transaction hash
+                tx_data['hash'] = tx_hash
+                tx_data['status'] = 'SENT'
+                self._update_transaction(transaction_id, tx_data)
                 
-                # Log transaction
-                self._log_transaction("send", {
-                    "transaction_id": transaction_id,
-                    "tx_hash": tx_hash.hex()
-                })
-                
-                return {
-                    "transaction_hash": tx_hash.hex(),
-                    "status": "pending"
-                }, None
-                
-            except Exception as e:
-                # Fallback to Tatum if Web3 fails
-                self.logger.warning(f"Web3 transaction failed, falling back to Tatum: {str(e)}")
-                return self.tatum.send_transaction(
-                    "binance smart chain",
-                    tx_data["sender_address"],
-                    private_key,
-                    tx_data["recipient_address"],
-                    tx_data["amount"],
-                    tx_data
-                )
+                self.logger.info(f"BSC transaction sent successfully: {tx_hash}")
+                return {'txId': tx_hash}, None
+            else:
+                error_msg = f"Failed to broadcast BSC transaction: {response.text}"
+                self.logger.error(error_msg)
+                return None, error_msg
                 
         except Exception as e:
-            error_msg = f"Error sending transaction: {str(e)}"
-            self.logger.error(error_msg)
-            return {}, error_msg
+            self.logger.error(f"Error sending BSC transaction: {str(e)}")
+            self.logger.error(traceback.format_exc())
+            return None, f"Error sending BSC transaction: {str(e)}"
             
     @handle_api_errors
     def estimate_fee(self, sender_address: str, recipient_address: str,
                     amount: str, smart_contract_address: Optional[str] = None) -> Tuple[Decimal, Optional[str]]:
         """Estimate BSC transaction fee"""
         try:
+            # Try to use Tatum BSC-specific gas endpoint first
+            try:
+                # Prepare request data
+                data = {
+                    "from": sender_address,
+                    "to": recipient_address,
+                    "amount": amount
+                }
+                
+                # Add contract data if it's a token transfer
+                if smart_contract_address:
+                    data["contractAddress"] = smart_contract_address
+                
+                # Make direct request to BSC-specific endpoint
+                url = f"{self.tatum.base_url}/bsc/gas"
+                self.logger.debug(f"Making BSC gas estimation request to {url}")
+                self.logger.debug(f"Request data: {data}")
+                
+                response = requests.post(
+                    url, 
+                    headers=self.tatum.headers, 
+                    json=data
+                )
+                
+                if response.status_code == 200:
+                    gas_data = response.json()
+                    self.logger.debug(f"BSC gas response: {gas_data}")
+                    
+                    gas_price = Decimal(str(gas_data.get('gasPrice', '5000000000'))) / Decimal('1e9')  # Wei to Gwei
+                    gas_limit = Decimal(str(gas_data.get('gasLimit', '21000')))
+                    
+                    # Calculate and return fee in BNB
+                    fee = (gas_price * gas_limit) / Decimal('1e9')  # Gwei to BNB
+                    return fee, None
+                else:
+                    self.logger.warning(f"Tatum BSC gas endpoint returned error: {response.status_code} - {response.text}")
+            except Exception as e:
+                self.logger.warning(f"Error using Tatum BSC gas endpoint: {str(e)}")
+            
+            # Fallback to local estimation
             # Try to get cached gas price first
             gas_price = self._get_cached_gas_price()
             
             if not gas_price:
                 # Get gas price from Web3
                 try:
-                    gas_price = Decimal(str(self.web3.eth.gas_price)) / Decimal('1e9')  # Convert from Wei to Gwei
+                    gas_price = Decimal(str(self.w3.eth.gas_price)) / Decimal('1e9')  # Convert from Wei to Gwei
                     self._update_gas_price_cache(gas_price)
                 except Exception as e:
                     self.logger.warning(f"Failed to get gas price from Web3: {str(e)}")
-                    # Fallback to Tatum
+                    # Fallback to default
                     gas_price = Decimal('5')  # Default gas price in Gwei for BSC
                     
             # Estimate gas limit
@@ -213,7 +309,7 @@ class BSCService(BaseBlockchainService):
         try:
             # Try Web3 first
             try:
-                balance_wei = self.web3.eth.get_balance(address)
+                balance_wei = self.w3.eth.get_balance(address)
                 return Decimal(str(balance_wei)) / Decimal('1e18'), None
             except Exception as e:
                 self.logger.warning(f"Failed to get balance from Web3: {str(e)}")
@@ -232,7 +328,7 @@ class BSCService(BaseBlockchainService):
             
     def validate_address(self, address: str) -> bool:
         """Validate BSC address"""
-        return self.web3.is_address(address)
+        return self.w3.is_address(address)
         
     @handle_api_errors
     def get_transaction_status(self, tx_hash: str) -> Tuple[str, Optional[str]]:
@@ -240,11 +336,11 @@ class BSCService(BaseBlockchainService):
         try:
             # Try Web3 first
             try:
-                tx = self.web3.eth.get_transaction(tx_hash)
+                tx = self.w3.eth.get_transaction(tx_hash)
                 if not tx:
                     return "not_found", None
                     
-                receipt = self.web3.eth.get_transaction_receipt(tx_hash)
+                receipt = self.w3.eth.get_transaction_receipt(tx_hash)
                 if receipt:
                     return "confirmed" if receipt["status"] == 1 else "failed", None
                     
@@ -272,9 +368,9 @@ class BSCService(BaseBlockchainService):
         try:
             # Try Web3 first
             try:
-                tx = self.web3.eth.get_transaction(tx_hash)
+                tx = self.w3.eth.get_transaction(tx_hash)
                 if tx:
-                    receipt = self.web3.eth.get_transaction_receipt(tx_hash)
+                    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
                     
                     # Format transaction details
                     details = {
@@ -282,8 +378,8 @@ class BSCService(BaseBlockchainService):
                         "blockNumber": tx.get("blockNumber"),
                         "from": tx.get("from"),
                         "to": tx.get("to"),
-                        "value": str(self.web3.from_wei(tx.get("value", 0), "ether")),
-                        "gasPrice": str(self.web3.from_wei(tx.get("gasPrice", 0), "gwei")),
+                        "value": str(self.w3.from_wei(tx.get("value", 0), "ether")),
+                        "gasPrice": str(self.w3.from_wei(tx.get("gasPrice", 0), "gwei")),
                         "gas": tx.get("gas"),
                         "nonce": tx.get("nonce")
                     }
@@ -313,5 +409,57 @@ class BSCService(BaseBlockchainService):
             
     def _get_stored_transaction(self, transaction_id: str) -> Optional[Dict]:
         """Get stored transaction data"""
-        # TODO: Implement transaction storage/retrieval
-        return None 
+        try:
+            # Import transaction manager
+            from CC.Send.Send import transaction_manager
+            
+            # Get transaction from transaction manager
+            tx_data = transaction_manager.get_transaction(transaction_id)
+            if tx_data:
+                self.logger.debug(f"Retrieved BSC transaction {transaction_id} from storage")
+                return tx_data
+                
+            self.logger.warning(f"BSC transaction {transaction_id} not found in storage")
+            return None
+        except Exception as e:
+            self.logger.error(f"Error retrieving transaction {transaction_id}: {str(e)}")
+            return None
+
+    def _store_transaction(self, transaction_id: str, tx_details: Dict) -> None:
+        """Store transaction details"""
+        # Use transaction manager to store transaction data
+        from CC.Send.Send import transaction_manager
+        
+        transaction_data = {
+            "blockchain_name": "binance-smart-chain",
+            "api_chain_name": "bsc",
+            "sender_address": tx_details["details"]["sender"],
+            "recipient_address": tx_details["details"]["recipient"],
+            "amount": tx_details["details"]["amount"],
+            "smart_contract_address": tx_details.get("smart_contract_address", ""),
+            "created_at": datetime.now().isoformat()
+        }
+        
+        # Add additional BSC-specific data
+        transaction_data.update({
+            "chain_id": 56,  # BSC mainnet chain ID
+            "gas_price": str(self._get_cached_gas_price()),
+            "gas_limit": "21000"  # Default for BNB transfers
+        })
+        
+        # Store transaction
+        transaction_manager.store_transaction(transaction_id, transaction_data)
+        self.logger.debug(f"Stored BSC transaction {transaction_id}")
+        
+    def _log_transaction(self, transaction_id: str, action: str, details: Dict = None) -> None:
+        """Log transaction activity"""
+        log_data = {
+            "transaction_id": transaction_id,
+            "action": action,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        if details:
+            log_data["details"] = details
+            
+        self.logger.info(f"BSC transaction log: {json.dumps(log_data)}") 

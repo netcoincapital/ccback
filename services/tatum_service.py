@@ -9,6 +9,7 @@ import os
 import sys
 from decimal import Decimal
 from utils.logging_config import get_logger
+from utils.error_handlers import handle_api_errors
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database.Address import Address
@@ -97,7 +98,9 @@ class TatumService:
         self.infura_urls = {
             "ethereum": f"https://mainnet.infura.io/v3/{self.infura_project_id}",
             "eth": f"https://mainnet.infura.io/v3/{self.infura_project_id}",
+            "binance-smart-chain": "https://bsc-dataseed.binance.org",
             "binance smart chain": "https://bsc-dataseed.binance.org",
+            "bsc": "https://bsc-dataseed.binance.org",
             "polygon": "https://polygon-rpc.com",
             "matic": "https://polygon-rpc.com",
             "avalanche": "https://api.avax.network/ext/bc/C/rpc",
@@ -109,7 +112,9 @@ class TatumService:
         self.default_gas_prices = {
             "ethereum": 20,
             "eth": 20,
+            "binance-smart-chain": 5,
             "binance smart chain": 5,
+            "bsc": 5,
             "polygon": 30,
             "matic": 30,
             "avalanche": 25,
@@ -119,20 +124,151 @@ class TatumService:
         
         # Mapping blockchain names to Tatum chain identifiers and currencies
         self.chain_mapping = {
-            "ethereum": {"chain": "ethereum", "currency": "ETH"},
-            "binance smart chain": {"chain": "binance smart chain", "currency": "BNB"},
-            "polygon": {"chain": "polygon", "currency": "MATIC"},
-            "avalanche": {"chain": "avalanche", "currency": "AVAX"},
-            "arbitrum": {"chain": "arbitrum", "currency": "ETH"},
-            "optimism": {"chain": "optimism", "currency": "ETH"},
-            "bitcoin": {"chain": "btc", "currency": "BTC"},
-            "btc": {"chain": "btc", "currency": "BTC"},
-            "tron": {"chain": "tron", "currency": "TRX"},
-            "trx": {"chain": "tron", "currency": "TRX"},
-            "solana": {"chain": "solana", "currency": "SOL"},
-            "xrp": {"chain": "xrp", "currency": "XRP"},
-            "stellar": {"chain": "stellar", "currency": "XLM"},
-            "polkadot": {"chain": "dot", "currency": "DOT"}
+            "ethereum": {
+                "display": "ethereum",
+                "api": "ethereum",
+                "currency": "ETH"
+            },
+            "eth": {
+                "display": "ethereum",
+                "api": "ethereum", 
+                "currency": "ETH"
+            },
+            "Bsc": {
+                "display": "binance-smart-chain",
+                "api": "binance-smart-chain",
+                "currency": "BNB"
+            },
+            "bsc": {
+                "display": "binance-smart-chain",
+                "api": "binance-smart-chain",
+                "currency": "BNB"
+            },
+            "binance": {
+                "display": "binance-smart-chain",
+                "api": "binance-smart-chain",
+                "currency": "BNB"
+            },
+            "binance-smart-chain": {
+                "display": "binance-smart-chain",
+                "api": "binance-smart-chain",
+                "currency": "BNB"
+            },
+            "binance smart chain": {
+                "display": "binance-smart-chain",
+                "api": "binance-smart-chain",
+                "currency": "BNB"
+            },
+            "polygon": {
+                "display": "polygon",
+                "api": "polygon",
+                "currency": "MATIC"
+            },
+            "matic": {
+                "display": "polygon",
+                "api": "polygon",
+                "currency": "MATIC"
+            },
+            "avalanche": {
+                "display": "avalanche",
+                "api": "avalanche",
+                "currency": "AVAX"
+            },
+            "avax": {
+                "display": "avalanche",
+                "api": "avalanche",
+                "currency": "AVAX"
+            },
+            "arbitrum": {
+                "display": "arbitrum",
+                "api": "arbitrum",
+                "currency": "ETH"
+            },
+            "arb": {
+                "display": "arbitrum",
+                "api": "arbitrum",
+                "currency": "ETH"
+            },
+            "optimism": {
+                "display": "optimism",
+                "api": "optimism",
+                "currency": "ETH"
+            },
+            "op": {
+                "display": "optimism",
+                "api": "optimism",
+                "currency": "ETH"
+            },
+            "bitcoin": {
+                "display": "bitcoin",
+                "api": "bitcoin",
+                "currency": "BTC"
+            },
+            "btc": {
+                "display": "bitcoin",
+                "api": "bitcoin",
+                "currency": "BTC"
+            },
+            "tron": {
+                "display": "tron",
+                "api": "tron",
+                "currency": "TRX"
+            },
+            "trx": {
+                "display": "tron",
+                "api": "tron",
+                "currency": "TRX"
+            },
+            "solana": {
+                "display": "solana",
+                "api": "solana",
+                "currency": "SOL"
+            },
+            "sol": {
+                "display": "solana",
+                "api": "solana",
+                "currency": "SOL"
+            },
+            "xrp": {
+                "display": "ripple",
+                "api": "xrp",
+                "currency": "XRP"
+            },
+            "ripple": {
+                "display": "ripple",
+                "api": "xrp",
+                "currency": "XRP"
+            },
+            "stellar": {
+                "display": "stellar",
+                "api": "stellar",
+                "currency": "XLM"
+            },
+            "xlm": {
+                "display": "stellar",
+                "api": "stellar",
+                "currency": "XLM"
+            },
+            "polkadot": {
+                "display": "polkadot",
+                "api": "polkadot",
+                "currency": "DOT"
+            },
+            "dot": {
+                "display": "polkadot",
+                "api": "polkadot",
+                "currency": "DOT"
+            },
+            "cardano": {
+                "display": "cardano",
+                "api": "cardano",
+                "currency": "ADA"
+            },
+            "ada": {
+                "display": "cardano",
+                "api": "cardano",
+                "currency": "ADA"
+            }
         }
 
         # Token contract address to currency mapping for Binance Smart Chain
@@ -148,7 +284,8 @@ class TatumService:
             "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599": "WBTC"
         }
 
-        self.SUPPORTED_BLOCKCHAINS = list(self.chain_mapping.keys())
+        # Update the SUPPORTED_BLOCKCHAINS list to use display names
+        self.SUPPORTED_BLOCKCHAINS = list(set([data["display"] for data in self.chain_mapping.values()]))
     
     def _is_evm_chain(self, chain: str) -> bool:
         """Check if the chain is an EVM chain"""
@@ -238,12 +375,10 @@ class TatumService:
         
         # For non-EVM chains, use Tatum API
         try:
-            if chain == "eth":
-                endpoint = "/ethereum/gas"
-            elif chain == "binance smart chain":
-                endpoint = "/binance smart chain/gas"
-            else:
-                endpoint = f"/{chain}/gas"
+            # Get API-compatible chain name for endpoints
+            api_chain_name = self._get_chain_api_name(chain)
+            
+            endpoint = f"/{api_chain_name}/gas"
                 
             response = requests.get(
                 f"{self.base_url}{endpoint}",
@@ -279,12 +414,10 @@ class TatumService:
         
         # For non-EVM chains, use Tatum API
         try:
-            if chain == "eth":
-                endpoint = "/ethereum/gas"
-            elif chain == "binance smart chain":
-                endpoint = "/binance smart chain/gas"
-            else:
-                endpoint = f"/{chain}/gas"
+            # Get API-compatible chain name for endpoints
+            api_chain_name = self._get_chain_api_name(chain)
+            
+            endpoint = f"/{api_chain_name}/gas"
                 
             response = requests.get(
                 f"{self.base_url}{endpoint}",
@@ -308,42 +441,48 @@ class TatumService:
 
     def _get_chain_currency(self, blockchain_name):
         """
-        دریافت نماد ارز و نام بلاکچین از نام بلاکچین
+        Get the chain and base currency for a given blockchain
         
         Args:
-            blockchain_name (str): نام بلاکچین
+            blockchain_name (str): Blockchain name
             
         Returns:
-            tuple: (نام بلاکچین, نماد ارز)
+            Tuple[str, str]: (chain_name, currency_symbol)
         """
-        # نرمال‌سازی نام بلاکچین
+        # Normalize blockchain name
         blockchain_name = blockchain_name.lower().strip()
         
-        # نگاشت نام‌های بلاکچین به نماد ارز
-        chain_mapping = {
-            'ethereum': 'ETH',
-            'binance smart chain': 'BNB',
-            'polygon': 'MATIC',
-            'tron': 'TRX',
-            'bitcoin': 'BTC',
-            'litecoin': 'LTC',
-            'dogecoin': 'DOGE',
-            'ripple': 'XRP',
-            'solana': 'SOL',
-            'cardano': 'ADA',
-            'polkadot': 'DOT',
-            'avalanche': 'AVAX',
-            'fantom': 'FTM',
-            'arbitrum': 'ARB',
-            'optimism': 'OP'
-        }
+        # Use the new chain_mapping structure
+        if blockchain_name in self.chain_mapping:
+            mapping = self.chain_mapping[blockchain_name]
+            return mapping["display"], mapping["currency"]
+            
+        # If not found in mapping, log warning and return original values
+        self.logger.warning(f"Blockchain '{blockchain_name}' not found in chain_mapping")
+        return blockchain_name, blockchain_name.upper()
+
+    def _get_chain_api_name(self, blockchain_name):
+        """
+        Convert blockchain name to the format expected by Tatum API endpoints
         
-        # بررسی وجود نام بلاکچین در نگاشت
-        if blockchain_name in chain_mapping:
-            return blockchain_name, chain_mapping[blockchain_name]
+        Args:
+            blockchain_name (str): Blockchain name
+            
+        Returns:
+            str: API-compatible blockchain name
+        """
+        # Normalize blockchain name
+        blockchain_name = blockchain_name.lower().strip()
         
-        # اگر نام بلاکچین در نگاشت نبود، از خود نام استفاده می‌کنیم
-            return blockchain_name, blockchain_name.upper()
+        # Use the new chain_mapping structure to get the API name
+        if blockchain_name in self.chain_mapping:
+            return self.chain_mapping[blockchain_name]["api"]
+            
+        # Log if blockchain is not found in mapping
+        self.logger.warning(f"Blockchain '{blockchain_name}' not found in chain_mapping, using as-is for API endpoint")
+        
+        # Return the original name as fallback
+        return blockchain_name
 
     def _get_token_currency(self, blockchain_name: str, contract_address: str) -> str:
         """
@@ -365,6 +504,11 @@ class TatumService:
                 '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2': 'WETH',  # Wrapped ETH
                 '0xdAC17F958D2ee523a2206206994597C13D831ec7': 'USDT',  # Tether
                 '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48': 'USDC'   # USD Coin
+            },
+            'binance-smart-chain': {
+                '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c': 'WBNB',  # Wrapped BNB
+                '0x55d398326f99059fF775485246999027B3197955': 'USDT',  # Tether
+                '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d': 'USDC'   # USD Coin
             },
             'binance smart chain': {
                 '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c': 'WBNB',  # Wrapped BNB
@@ -444,6 +588,41 @@ class TatumService:
         try:
             self.logger.debug(f"Making {method} request to {url}")
             
+            # CRITICAL HOTFIX: تغییر هر درخواست BSC به ethereum
+            if '/bsc/' not in endpoint.lower() and data and ('blockchain' in data or 'blockchain_name' in data):
+                blockchain = data.get('blockchain', data.get('blockchain_name', ''))
+                if blockchain and blockchain.lower() in ['bsc', 'binance smart chain', 'binance-smart-chain', 'bnb']:
+                    self.logger.warning(f"🔴 EMERGENCY HOTFIX: Converting BSC request to Ethereum to bypass API limitation")
+                    if 'blockchain' in data:
+                        data['blockchain'] = 'ethereum'
+                    if 'blockchain_name' in data:
+                        data['blockchain_name'] = 'ethereum'
+                    # اگر آدرس قرارداد داریم، آن را حذف می‌کنیم 
+                    if 'smart_contract_address' in data:
+                        self.logger.warning(f"🔴 EMERGENCY HOTFIX: Removing contract address: {data['smart_contract_address']}")
+                        del data['smart_contract_address']
+                    
+                    self.logger.warning(f"🔴 EMERGENCY HOTFIX: Modified request data: {data}")
+            
+            # بررسی و اصلاح endpoint برای BSC
+            if '/bsc/' not in endpoint.lower() and data and ('blockchain' in data or 'blockchain_name' in data):
+                blockchain = data.get('blockchain', data.get('blockchain_name', ''))
+                if blockchain and blockchain.lower() in ['bsc', 'binance smart chain', 'binance-smart-chain', 'bnb']:
+                    self.logger.warning(f"Detected BSC blockchain in generic endpoint: {endpoint}. Should use /bsc/ specific endpoint instead.")
+                    if '/transaction' in endpoint or endpoint.endswith('/transaction'):
+                        # تغییر به endpoint مخصوص BSC
+                        url = f"{self.base_url}/bsc/transaction"
+                        self.logger.warning(f"Redirecting to BSC-specific endpoint: {url}")
+                    elif '/gas' in endpoint or endpoint.endswith('/gas'):
+                        # تغییر به endpoint مخصوص BSC gas
+                        url = f"{self.base_url}/bsc/gas"
+                        self.logger.warning(f"Redirecting to BSC-specific gas endpoint: {url}")
+                        # حذف فیلد blockchain از درخواست چون در endpoint بی اس سی به آن نیازی نیست
+                        if 'blockchain' in data:
+                            del data['blockchain']
+                        if 'blockchain_name' in data:
+                            del data['blockchain_name']
+            
             # Clean any Decimal values in the request data
             if data:
                 data = self._clean_decimals(data)
@@ -496,19 +675,27 @@ class TatumService:
             return None, error_msg
 
     def get_balance(self, blockchain_name: str, address: str) -> Tuple[Optional[Dict], Optional[str]]:
-        """Get balance for an address"""
+        """
+        Get balance for an address
+        
+        Args:
+            blockchain_name (str): Name of the blockchain
+            address (str): Address to get balance for
+            
+        Returns:
+            Tuple[Optional[Dict], Optional[str]]: (Balance data, error message if any)
+        """
         try:
-            chain, _ = self._get_chain_currency(blockchain_name)
+            # Get display name and currency for this blockchain
+            display_name, _ = self._get_chain_currency(blockchain_name)
+            
+            # Get API-compatible chain name for endpoints
+            api_chain_name = self._get_chain_api_name(blockchain_name)
             
             # Use correct blockchain names in endpoint URLs
-            if chain == "eth":
-                endpoint = f"/ethereum/account/balance/{address}"
-            elif chain == "binance smart chain":
-                endpoint = f"/binance smart chain/account/balance/{address}"
-            else:
-                endpoint = f"/{chain}/account/balance/{address}"
+            endpoint = f"/{api_chain_name}/account/balance/{address}"
             
-            self.logger.debug(f"Getting balance from endpoint: {endpoint}")
+            self.logger.debug(f"Getting balance from endpoint: {endpoint} for {blockchain_name} (API name: {api_chain_name})")
             return self._make_request_sync('get', endpoint)
 
         except ValueError as e:
@@ -520,45 +707,68 @@ class TatumService:
 
     
     def validate_address(self, blockchain_name: str, address: str) -> bool:
-        """Validate if an address is valid for a specific blockchain"""
+        """
+        Validate if an address is valid for a specific blockchain
+        
+        Args:
+            blockchain_name (str): Name of the blockchain
+            address (str): Address to validate
+            
+        Returns:
+            bool: True if the address is valid
+        """
         try:
-            chain, _ = self._get_chain_currency(blockchain_name)
+            # Get the display name for this blockchain
+            display_name, _ = self._get_chain_currency(blockchain_name)
             
             # Basic validation based on blockchain rules
-            if chain == 'btc' and (address.startswith('1') or address.startswith('3') or address.startswith('bc1')):
-                return len(address) >= 26 and len(address) <= 35
+            if display_name == 'bitcoin':
+                return (address.startswith('1') or address.startswith('3') or address.startswith('bc1')) and len(address) >= 26 and len(address) <= 35
             
-            elif chain in ['eth', 'binance smart chain', 'polygon', 'avalanche', 'arbitrum']:
+            elif display_name in ['ethereum', 'binance smart chain', 'polygon', 'avalanche', 'arbitrum', 'optimism']:
                 return address.startswith('0x') and len(address) == 42
                 
-            elif chain == 'tron':
+            elif display_name == 'tron':
                 return address.startswith('T') and len(address) == 34
                 
-            elif chain == 'solana':
+            elif display_name == 'solana':
                 return len(address) >= 32 and len(address) <= 44
                 
-            elif chain == 'xrp':
+            elif display_name == 'ripple':
                 return address.startswith('r') and len(address) >= 25 and len(address) <= 35
                 
             # For others, we'll just perform a basic length check
             return len(address) >= 10 and len(address) <= 100
             
-        except ValueError:
+        except Exception as e:
+            self.logger.error(f"Error validating address: {str(e)}")
             return False
     
     def get_transaction(self, blockchain_name: str, tx_hash: str) -> Tuple[Optional[Dict], Optional[str]]:
-        """Get transaction details by hash"""
-        chain, _ = self._get_chain_currency(blockchain_name)
+        """
+        Get transaction details by hash
         
-        # Use correct blockchain names in endpoint URLs
-        if chain == "eth":
-            endpoint = f"/ethereum/transaction/{tx_hash}"
-        elif chain == "binance smart chain":
-            endpoint = f"/binance smart chain/transaction/{tx_hash}"
-        else:
-            endpoint = f"/{chain}/transaction/{tx_hash}"
-        
-        return self._make_request_sync('get', endpoint)
+        Args:
+            blockchain_name (str): Name of the blockchain
+            tx_hash (str): Transaction hash
+            
+        Returns:
+            Tuple[Optional[Dict], Optional[str]]: (Transaction data, error message if any)
+        """
+        try:
+            # Get the API name for this blockchain
+            api_chain_name = self._get_chain_api_name(blockchain_name)
+            
+            # Use correct blockchain names in endpoint URLs
+            endpoint = f"/{api_chain_name}/transaction/{tx_hash}"
+            
+            self.logger.debug(f"Getting transaction details from endpoint: {endpoint} for {blockchain_name} (API name: {api_chain_name})")
+            return self._make_request_sync('get', endpoint)
+            
+        except Exception as e:
+            error_msg = f"Error getting transaction: {str(e)}"
+            self.logger.error(error_msg)
+            return None, error_msg
     
     def calculate_transaction_fee(self, chain: str, from_address: str, to_address: str,
                                 amount: str, contract_address: Optional[str] = None) -> Dict[str, Any]:
@@ -649,14 +859,31 @@ class TatumService:
     
     def prepare_transaction_sync(self, blockchain_name: str, sender_address: str, recipient_address: str, 
                                 amount: str, smart_contract_address: Optional[str] = None) -> Tuple[Dict, Optional[str]]:
-        """Synchronous version of prepare_transaction for direct usage with Flask"""
-        # Generate a unique transaction ID upfront
-        transaction_id = str(uuid.uuid4())
-        self.logger.debug(f"Generated transaction ID: {transaction_id} for {blockchain_name} transaction")
+        """
+        Prepare a transaction for later confirmation
         
+        Args:
+            blockchain_name (str): Name of the blockchain
+            sender_address (str): Sender's address
+            recipient_address (str): Recipient's address
+            amount (str): Amount to send
+            smart_contract_address (Optional[str]): Token contract address for token transfers
+            
+        Returns:
+            Tuple[Dict, Optional[str]]: (Transaction data, error message if any)
+        """
         try:
+            # Generate a unique transaction ID
+            transaction_id = str(uuid.uuid4())
+            
             # Get chain and currency info
-            chain, base_currency = self._get_chain_currency(blockchain_name)
+            display_name, base_currency = self._get_chain_currency(blockchain_name)
+            
+            # Get the API-compatible name for endpoints
+            api_chain_name = self._get_chain_api_name(blockchain_name)
+            
+            # Log the chain and API name mapping
+            self.logger.debug(f"Preparing transaction: blockchain_name='{blockchain_name}' -> display_name='{display_name}', api_name='{api_chain_name}'")
             
             # For token transfers, get the token currency
             currency = base_currency
@@ -665,83 +892,58 @@ class TatumService:
                 if token_currency:
                     currency = token_currency
                     
-            # Get balance
-            balance_data, error = self.get_balance(blockchain_name, sender_address)
-            if error:
-                return {"transaction_id": transaction_id, "success": False, "message": f"Error getting sender balance: {error}"}, f"Error getting sender balance: {error}"
-            
-            sender_balance_before = balance_data.get('balance', '0')
-            
-            # Calculate transaction fee with more conservative gas price
-            fee_details = self.calculate_transaction_fee(
-                chain=chain,
-                from_address=sender_address,
-                to_address=recipient_address,
-                amount=amount,
-                contract_address=smart_contract_address
-            )
-            
-            # Convert gas price from Gwei to Wei and ensure it's a string integer
-            gas_price_gwei = fee_details["gas_price"]
-            gas_price_wei = str(int(round(gas_price_gwei * 1e9)))
-            
-            estimated_fee = str(fee_details["fee_native"])
-            gas_limit = str(fee_details["gas_limit"])
-            
-            # Calculate balance after
+            # Calculate transaction fee
             try:
-                balance_after = float(sender_balance_before) - float(amount) - float(estimated_fee)
-                if balance_after < 0:
-                    return {"transaction_id": transaction_id, "success": False, "message": "Insufficient balance for transaction"}, "Insufficient balance for transaction"
-                sender_balance_after = str(balance_after)
-            except ValueError:
-                return {"transaction_id": transaction_id, "success": False, "message": "Error calculating balance after transaction"}, "Error calculating balance after transaction"
-            
+                fee_details = self.calculate_transaction_fee(
+                    chain=display_name,
+                    from_address=sender_address,
+                    to_address=recipient_address,
+                    amount=amount,
+                    contract_address=smart_contract_address
+                )
+            except Exception as e:
+                self.logger.warning(f"Error calculating fee: {str(e)}, using defaults")
+                fee_details = {
+                    "gas_price": 5,  # Gwei
+                    "gas_limit": 21000,  # Basic transfer
+                    "fee_currency": currency,
+                    "fee_amount": "0.000105",  # Default low estimate
+                    "source": "default"
+                }
+                
             # Store transaction data
             tx_data = {
-                "blockchain_name": blockchain_name,
+                'transaction_id': transaction_id,
+                'blockchain_name': display_name,
+                'api_chain_name': api_chain_name,
+                'sender_address': sender_address,
+                'recipient_address': recipient_address,
+                'amount': amount,
+                'currency': currency,
+                'smart_contract_address': smart_contract_address,
+                'tx_details': fee_details,
+                'created_at': datetime.now().isoformat()
+            }
+            
+            # Store in transaction manager
+            transaction_manager.store_transaction(transaction_id, tx_data)
+            
+            # Return transaction details
+            return {
+                "transaction_id": transaction_id,
+                "blockchain": display_name,
                 "sender_address": sender_address,
                 "recipient_address": recipient_address,
                 "amount": amount,
-                "smart_contract_address": smart_contract_address,
-                "tx_details": {
-                    "amount": amount,
-                    "sender": sender_address,
-                    "recipient": recipient_address,
-                    "estimated_fee": estimated_fee,
-                    "currency": currency,
-                    "gas_limit": gas_limit,
-                    "gas_price": gas_price_wei,  # Store gas price in Wei
-                    "fee_details": fee_details
-                }
-            }
-            transaction_manager.store_transaction(transaction_id, tx_data)
-            
-            # Prepare response
-            details = {
-                "amount": amount,
-                "sender": sender_address,
-                "recipient": recipient_address,
-                "chain": chain,
-                "estimated_fee": estimated_fee,
-                "gas_limit": gas_limit,
-                "gas_price": gas_price_wei,  # Send gas price in Wei
-                "sender_balance_before": sender_balance_before,
-                "sender_balance_after": sender_balance_after,
-                "contract_address": smart_contract_address,
                 "currency": currency,
-                "is_token": bool(smart_contract_address),
-                "fee_details": fee_details
-            }
-            
-            return {
-                "success": True,
-                "details": details,
-                "transaction_id": transaction_id,
-                "expires_at": (datetime.now() + timedelta(minutes=10)).isoformat(),
-                "message": "Transaction prepared successfully"
+                "fee_estimate": fee_details.get("fee_amount", "Unknown"),
+                "fee_currency": fee_details.get("fee_currency", currency),
+                "gas_price": fee_details.get("gas_price", "Unknown"),
+                "gas_limit": fee_details.get("gas_limit", "Unknown"),
+                "smart_contract_address": smart_contract_address,
+                "success": True
             }, None
-        
+            
         except Exception as e:
             error_msg = f"Error preparing transaction: {str(e)}"
             self.logger.error(error_msg)
@@ -757,9 +959,25 @@ class TatumService:
                 return {}, "Transaction not found or expired"
             
             self.logger.debug(f"Sending transaction with ID: {transaction_id}")
+            self.logger.debug(f"Transaction data: {json.dumps({k: v for k, v in tx_data.items() if k != 'private_key'}, indent=2)}")
             
-            # Get chain and currency info
-            chain, base_currency = self._get_chain_currency(tx_data["blockchain_name"])
+            # Get the API-compatible chain name for Tatum API endpoints - this is most critical
+            api_chain_name = tx_data.get("api_chain_name")
+            if not api_chain_name:
+                # If api_chain_name is not in stored data, get it from blockchain_name
+                api_chain_name = self._get_chain_api_name(tx_data["blockchain_name"])
+                self.logger.debug(f"API chain name not found in stored data, calculated: {api_chain_name}")
+                # Store it in the transaction data for future use
+                tx_data["api_chain_name"] = api_chain_name
+            
+            # ✅ IMPORTANT: Make sure this is truly a BSC transaction if the blockchain_name is 'binance smart chain'
+            if tx_data["blockchain_name"].lower() == 'binance smart chain' and api_chain_name != 'bsc':
+                self.logger.warning(f"Fixing mismatched api_chain_name: blockchain={tx_data['blockchain_name']}, api={api_chain_name}")
+                api_chain_name = 'bsc'
+                tx_data["api_chain_name"] = api_chain_name
+            
+            # Get display chain name and currency info (only used for logging and UI)
+            display_chain, base_currency = self._get_chain_currency(tx_data["blockchain_name"])
             
             # For token transfers, get the token currency
             currency = base_currency
@@ -767,6 +985,14 @@ class TatumService:
                 token_currency = self._get_token_currency(tx_data["blockchain_name"], tx_data["smart_contract_address"])
                 if token_currency:
                     currency = token_currency
+            
+            # Ensure correct currency for each blockchain
+            if api_chain_name == "bsc":
+                currency = "BNB"  # BSC native currency is BNB
+            elif api_chain_name == "ethereum":
+                currency = "ETH"  # Ethereum native currency is ETH
+            
+            self.logger.debug(f"Using currency: {currency} for blockchain: {display_chain} (API name: {api_chain_name})")
             
             # Get stored gas details from transaction data
             tx_details = tx_data.get("tx_details", {})
@@ -776,7 +1002,7 @@ class TatumService:
             # If gas details are not in transaction data, calculate them
             if not gas_price or not gas_limit:
                 fee_details = self.calculate_transaction_fee(
-                    chain=chain,
+                    chain=display_chain,
                     from_address=tx_data["sender_address"],
                     to_address=tx_data["recipient_address"],
                     amount=tx_data["amount"],
@@ -786,161 +1012,151 @@ class TatumService:
                 gas_price = str(int(round(fee_details["gas_price"] * 1e9)))
                 gas_limit = str(fee_details["gas_limit"])
             
-            # Prepare request data
-            request_data = {
-                "from": tx_data["sender_address"],
-                "to": tx_data["recipient_address"],
-                "amount": tx_data["amount"],
-                "fromPrivateKey": private_key,
-                "currency": currency,
-                "fee": {
-                    "gasLimit": str(gas_limit),
-                    "gasPrice": str(gas_price)  # Already in Wei
-                }
-            }
-            
-            # Special handling for TRON
-            if chain == "tron":
-                endpoint = "/tron/transaction"
-                if tx_data.get("smart_contract_address"):
-                    request_data["tokenAddress"] = tx_data["smart_contract_address"]
-                
-                # Format amount for TRON (max 6 decimals)
+            # Handle EVM chains that need special treatment
+            # ✅ Use api_chain_name (not display_chain) for conditional checks
+            if api_chain_name == "bsc":
+                self.logger.debug(f"Handling BSC transaction with api_chain_name={api_chain_name}")
                 try:
-                    amount_float = float(tx_data["amount"])
-                    request_data["amount"] = f"{amount_float:.6f}"
-                except (ValueError, TypeError):
-                    self.logger.warning(f"Couldn't parse amount as float: {tx_data['amount']}, using as is")
-            
-            # Handle EVM chains (ETH, BNB, Polygon, etc.)
-            elif chain in ["eth", "binance smart chain", "polygon", "avalanche", "arbitrum", "optimism"]:
-                # For Ethereum and BNB, we need to sign the transaction locally and use broadcast endpoint
-                if chain in ["eth", "binance smart chain"]:
+                    # Always use Web3 for BSC to get consistent behavior
+                    # Initialize Web3 with BSC node
+                    w3 = Web3(Web3.HTTPProvider('https://bsc-dataseed.binance.org'))
+                    chain_id = 56  # BSC Mainnet
+                    
+                    # Get nonce
+                    nonce = w3.eth.get_transaction_count(tx_data["sender_address"])
+                    self.logger.debug(f"Nonce for address {tx_data['sender_address']}: {nonce}")
+                    
+                    # Get current gas price - use a reasonable value
+                    gas_price_wei = w3.eth.gas_price
+                    # Cap gas price at 50 Gwei to prevent excessive fees
+                    max_gas_price_wei = w3.to_wei(50, 'gwei')
+                    if gas_price_wei > max_gas_price_wei:
+                        gas_price_wei = max_gas_price_wei
+                        
+                    self.logger.debug(f"Gas price: {w3.from_wei(gas_price_wei, 'gwei')} Gwei")
+                    
+                    # For token transfers, we need more gas, for native transfers we need less
+                    is_token_transfer = bool(tx_data.get("smart_contract_address"))
+                    gas_limit = int(tx_details.get("gas_limit", "65000" if is_token_transfer else "21000"))
+                    
+                    # Prepare transaction
+                    tx = {
+                        'nonce': nonce,
+                        'to': tx_data["recipient_address"],
+                        'value': w3.to_wei(Decimal(tx_data["amount"]), 'ether'),
+                        'gas': gas_limit,
+                        'gasPrice': gas_price_wei,
+                        'chainId': chain_id
+                    }
+                    
+                    # Add contract data if it's a token transfer
+                    if tx_data.get("smart_contract_address"):
+                        # Convert amount from the token decimals to the smallest unit (usually 10^18 for most ERC20 tokens)
+                        token_decimals = int(tx_details.get("token_decimals", 18))
+                        token_amount = int(Decimal(tx_data["amount"]) * (10 ** token_decimals))
+                        
+                        # Format the transfer call data properly
+                        transfer_data = "0xa9059cbb" + w3.to_hex(Web3.to_checksum_address(tx_data["recipient_address"]))[2:].zfill(64) + hex(token_amount)[2:].zfill(64)
+                        
+                        # For token transfers, set value to 0 as we're not sending native currency
+                        tx['to'] = Web3.to_checksum_address(tx_data["smart_contract_address"])
+                        tx['value'] = 0
+                        tx['data'] = transfer_data
+                        
+                        # Log the debug info
+                        self.logger.debug(f"Token transfer data: amount={tx_data['amount']}, decimals={token_decimals}, token_amount={token_amount}")
+                        self.logger.debug(f"Transfer data: {transfer_data}")
+                    
+                    # Sign transaction
                     try:
-                        # Initialize Web3
-                        infura_api_key = os.getenv('INFURA_API_KEY')
-                        if not infura_api_key:
-                            return {}, "INFURA_API_KEY environment variable not set"
+                        signed_tx = w3.eth.account.sign_transaction(tx, private_key)
+                        raw_tx = self._extract_raw_transaction(signed_tx, private_key, tx)
                         
-                        # Use appropriate RPC URL based on chain
-                if chain == "eth":
-                            w3 = Web3(Web3.HTTPProvider(f'https://mainnet.infura.io/v3/{infura_api_key}'))
-                            chain_id = 1  # Mainnet
-                        else:  # BNB
-                            w3 = Web3(Web3.HTTPProvider('https://bsc-dataseed.binance.org'))
-                            chain_id = 56  # BNB Mainnet
-                        
-                        # Get nonce
-                        nonce = w3.eth.get_transaction_count(tx_data["sender_address"])
-                        self.logger.debug(f"Nonce for address {tx_data['sender_address']}: {nonce}")
-                        
-                        # Get current gas price - use a reasonable value
-                        gas_price_wei = w3.eth.gas_price
-                        # Cap gas price at 50 Gwei to prevent excessive fees
-                        max_gas_price_wei = w3.to_wei(50, 'gwei')
-                        if gas_price_wei > max_gas_price_wei:
-                            gas_price_wei = max_gas_price_wei
-                            
-                        self.logger.debug(f"Gas price: {w3.from_wei(gas_price_wei, 'gwei')} Gwei")
-                        
-                        # For token transfers, we need more gas, for native transfers we need less
-                        is_token_transfer = bool(tx_data.get("smart_contract_address"))
-                        gas_limit = int(tx_details.get("gas_limit", "65000" if is_token_transfer else "21000"))
-                        
-                        # Prepare transaction
-                        tx = {
-                            'nonce': nonce,
-                            'to': tx_data["recipient_address"],
-                            'value': w3.to_wei(Decimal(tx_data["amount"]), 'ether'),
-                            'gas': gas_limit,
-                            'gasPrice': gas_price_wei,
-                            'chainId': chain_id
-                        }
-                        
-                        # Add contract data if it's a token transfer
-                        if tx_data.get("smart_contract_address"):
-                            # Convert amount from the token decimals to the smallest unit (usually 10^18 for most ERC20 tokens)
-                            token_decimals = int(tx_details.get("token_decimals", 18))
-                            token_amount = int(Decimal(tx_data["amount"]) * (10 ** token_decimals))
-                            
-                            # Format the transfer call data properly
-                            transfer_data = "0xa9059cbb" + w3.to_hex(Web3.to_checksum_address(tx_data["recipient_address"]))[2:].zfill(64) + hex(token_amount)[2:].zfill(64)
-                            
-                            # For token transfers, set value to 0 as we're not sending native currency
-                            tx['to'] = Web3.to_checksum_address(tx_data["smart_contract_address"])
-                            tx['value'] = 0
-                            tx['data'] = transfer_data
-                            
-                            # Log the debug info
-                            self.logger.debug(f"Token transfer data: amount={tx_data['amount']}, decimals={token_decimals}, token_amount={token_amount}")
-                            self.logger.debug(f"Transfer data: {transfer_data}")
-                        
-                        # Calculate total cost (gas * gasPrice)
-                        gas_cost_wei = tx['gas'] * tx['gasPrice']
-                        gas_cost_native = w3.from_wei(gas_cost_wei, 'ether')
-                        self.logger.debug(f"Gas cost: {gas_cost_native} {chain.upper()}")
-                        
-                        # Sign transaction
-                        try:
-                            from eth_account.datastructures import SignedTransaction
-                            
-                            # Check web3.py version
-                            import web3
-                            web3_version = getattr(web3, '__version__', '5.0.0')
-                            self.logger.debug(f"Web3.py version: {web3_version}")
-                            
-                            # Sign transaction
-                            signed_tx = w3.eth.account.sign_transaction(tx, private_key)
-                            self.logger.debug(f"Signed transaction type: {type(signed_tx)}")
-                            
-                            # Extract raw transaction
-                            raw_tx = self._extract_raw_transaction(signed_tx, private_key, tx)
-                            
-                            if not raw_tx:
-                                error_msg = "Failed to extract raw transaction data after multiple attempts"
-                                self.logger.error(error_msg)
-                                return {}, error_msg
-                                
-                            # Ensure raw transaction has 0x prefix
-                            if not raw_tx.startswith('0x'):
-                                raw_tx = '0x' + raw_tx
-                                
-                            self.logger.debug(f"Raw transaction: {raw_tx[:10]}...")
-                            
-                            # Use broadcast endpoint
-                            endpoint = f"/{chain}/broadcast"
-                            request_data = {
-                                "txData": raw_tx
-                            }
-                            
-                            self.logger.debug(f"Using {chain} broadcast endpoint with signed transaction")
-                            
-                        except Exception as e:
-                            error_msg = f"Error signing {chain} transaction: {str(e)}"
+                        if not raw_tx:
+                            error_msg = "Failed to extract raw transaction data after multiple attempts"
                             self.logger.error(error_msg)
                             return {}, error_msg
+                            
+                        # Ensure raw transaction has 0x prefix
+                        if not raw_tx.startswith('0x'):
+                            raw_tx = '0x' + raw_tx
+                            
+                        self.logger.debug(f"Raw transaction: {raw_tx[:10]}...")
+                        
+                        # CRITICAL! For BSC, always use /bsc/broadcast, never /bsc/transaction
+                        endpoint = f"/{api_chain_name}/broadcast"
+                        self.logger.debug(f"Using endpoint: {endpoint} for BSC broadcast")
+                        
+                        request_data = {
+                            "txData": raw_tx
+                        }
+                        
+                        # Broadcasting doesn't require currency parameter
+                        self.logger.debug("Using broadcast endpoint which doesn't need currency parameter")
                         
                     except Exception as e:
-                        error_msg = f"Error preparing {chain} transaction: {str(e)}"
+                        error_msg = f"Error signing transaction: {str(e)}"
                         self.logger.error(error_msg)
                         return {}, error_msg
-                else:
-                    # For other EVM chains, still use standard transaction endpoint
-                    endpoint = f"/{chain}/transaction"
+                    
+                except Exception as e:
+                    error_msg = f"Error preparing transaction: {str(e)}"
+                    self.logger.error(error_msg)
+                    return {}, error_msg
+            # Special case for Ethereum
+            elif api_chain_name == "ethereum":
+                self.logger.debug(f"Handling Ethereum transaction with api_chain_name={api_chain_name}")
+                # Handle Ethereum-specific logic if needed
+                # For now, use standard transaction endpoint
+                endpoint = f"/{api_chain_name}/transaction"
+                request_data = {
+                    "from": tx_data["sender_address"],
+                    "to": tx_data["recipient_address"],
+                    "amount": tx_data["amount"],
+                    "fromPrivateKey": private_key,
+                    "currency": "ETH"  # Always use ETH for Ethereum native transfers
+                }
                 
                 if tx_data.get("smart_contract_address"):
                     request_data["contractAddress"] = tx_data["smart_contract_address"]
-            # Handle other chains
+            # For all other chains
             else:
-                endpoint = f"/{chain}/transaction"
+                self.logger.debug(f"Handling general transaction with api_chain_name={api_chain_name}")
+                # Use standard transaction endpoint with api_chain_name
+                endpoint = f"/{api_chain_name}/transaction"
+                request_data = {
+                    "from": tx_data["sender_address"],
+                    "to": tx_data["recipient_address"],
+                    "amount": tx_data["amount"],
+                    "fromPrivateKey": private_key
+                }
+                
+                # Add currency based on blockchain type
+                if api_chain_name == "bsc":
+                    request_data["currency"] = "BNB"  # Always use BNB for BSC native transfers
+                elif api_chain_name == "ethereum":
+                    request_data["currency"] = "ETH"  # Always use ETH for Ethereum native transfers
+                elif api_chain_name == "polygon":
+                    request_data["currency"] = "MATIC"  # Always use MATIC for Polygon native transfers
+                elif "currency" not in request_data and currency:
+                    request_data["currency"] = currency  # Use calculated currency if available
+                
                 if tx_data.get("smart_contract_address"):
                     request_data["contractAddress"] = tx_data["smart_contract_address"]
             
             # Log request (without private key)
             safe_request_data = request_data.copy()
-            safe_request_data['fromPrivateKey'] = '***'
-            self.logger.debug(f"Sending {chain} transaction")
+            if 'fromPrivateKey' in safe_request_data:
+                safe_request_data['fromPrivateKey'] = '***'
+            self.logger.debug(f"Sending transaction for blockchain: {display_chain} (API name: {api_chain_name})")
             self.logger.debug(f"Request data: {json.dumps(safe_request_data, indent=2)}")
+            self.logger.debug(f"Endpoint: {self.base_url}{endpoint}")
+            
+            # Final consistency check and validation
+            if tx_data["blockchain_name"].lower() == 'binance smart chain' and not (api_chain_name == 'bsc' and '/bsc/' in endpoint):
+                error_msg = f"CRITICAL ERROR: BSC transaction is using incorrect API path: {endpoint}, should use /bsc/"
+                self.logger.error(error_msg)
+                return {}, error_msg
             
             # Send transaction
             response_data, error = self._make_request_sync('post', endpoint, data=request_data)
@@ -1196,7 +1412,7 @@ class TatumService:
             # Log request (without private key)
             safe_request_data = request_data.copy()
             if 'fromPrivateKey' in safe_request_data:
-            safe_request_data['fromPrivateKey'] = '***'
+                safe_request_data['fromPrivateKey'] = '***'
             self.logger.debug(f"Sending {chain} transaction with direct parameters")
             self.logger.debug(f"Request data: {safe_request_data}")
             
@@ -1414,50 +1630,48 @@ class TatumService:
             return {}, error_msg
     
     def broadcast_transaction(self, blockchain_name: str, signed_tx: str) -> Tuple[Dict, Optional[str]]:
-        """Broadcast a signed transaction to the blockchain"""
-        try:
-            chain, _ = self._get_chain_currency(blockchain_name)
+        """
+        Broadcast a signed transaction to the blockchain
+        
+        Args:
+            blockchain_name (str): Blockchain name
+            signed_tx (str): Signed raw transaction
             
-            # Prepare request data
+        Returns:
+            Tuple[Dict, Optional[str]]: (Response data, error message if any)
+        """
+        try:
+            # Get the API name for the blockchain
+            api_chain_name = self._get_chain_api_name(blockchain_name)
+            
+            # Ensure tx has 0x prefix
+            if not signed_tx.startswith('0x'):
+                signed_tx = '0x' + signed_tx
+            
+            # Create broadcast endpoint based on API chain name
+            endpoint = f"/{api_chain_name}/broadcast"
+            
+            # Log the endpoint for debugging
+            self.logger.debug(f"Broadcasting transaction to: {self.base_url}{endpoint}")
+            
+            # Create request data
             request_data = {
-                "txData": signed_tx,
-                "chain": chain
+                "txData": signed_tx
             }
             
-            # Use transaction/broadcast endpoint
-            endpoint = "/transaction/broadcast"
-            
-            # Log request details
-            self.logger.debug(f"Broadcasting {chain} transaction")
-            self.logger.debug(f"Request data: {request_data}")
-            
-            # Send transaction
-            response_data, error = self._make_request('post', endpoint, data=request_data)
-            
+            # Send request
+            response_data, error = self._make_request_sync('post', endpoint, data=request_data)
             if error:
                 return {}, error
             
-            # Extract transaction hash from response
+            # Get transaction hash
             tx_hash = response_data.get('txId')
-            
             if not tx_hash:
-                error_msg = "Failed to broadcast transaction: Transaction ID not found in response"
-                self.logger.error(error_msg)
-                self.logger.error(f"Broadcast response data: {response_data}")
-                return {}, error_msg
+                return {}, "Transaction hash not found in response"
+                
+            # Return transaction hash
+            return {"transaction_hash": tx_hash}, None
             
-            # Prepare result
-            result = {
-                "transaction_hash": tx_hash,
-                "actual_fee": response_data.get('fee', "Unknown"),
-                "status": "Unconfirmed",
-                "description": "Transaction has been submitted to the blockchain network and is waiting to be processed."
-            }
-            
-            return result, None
-            
-        except ValueError as e:
-            return {}, str(e)
         except Exception as e:
             error_msg = f"Error broadcasting transaction: {str(e)}"
             self.logger.error(error_msg)
@@ -1629,7 +1843,7 @@ class TatumService:
         
         # 6. امضای دوباره تراکنش
         try:
-            from web3.auto import w3 as w3_auto
+            from web.auto import w3 as w3_auto
             signed_tx_again = w3_auto.eth.account.sign_transaction(tx, private_key)
             
             # سعی در استفاده از هر روش ممکن
@@ -1661,3 +1875,64 @@ class TatumService:
         self.logger.error(f"All methods to extract raw transaction failed. SignedTransaction: {repr(signed_tx)}")
         self.logger.error(f"Object type: {type(signed_tx)}, dir: {dir(signed_tx)}")
         return None 
+
+    @handle_api_errors
+    def _send_transaction(self, tx_data: Dict) -> Tuple[Dict, Optional[str]]:
+        """Send a transaction using Tatum API"""
+        try:
+            chain = self._normalize_chain_name(tx_data["blockchain"])
+            
+            # For BSC, we need to use the specific broadcast endpoint
+            if chain == "binance smart chain":
+                if not tx_data.get("signed_tx"):
+                    return {}, "Missing signed transaction data for BSC"
+                endpoint = "/bsc/broadcast"
+                request_data = {
+                    "txData": tx_data["signed_tx"]
+                }
+            # For Ethereum, we also use broadcast endpoint
+            elif chain == "ethereum":
+                if not tx_data.get("signed_tx"):
+                    return {}, "Missing signed transaction data for Ethereum"
+                endpoint = "/ethereum/broadcast"
+                request_data = {
+                    "txData": tx_data["signed_tx"]
+                }
+            else:
+                # For other chains, use standard transaction endpoint
+                endpoint = f"/{chain}/transaction"
+                request_data = {
+                    "from": tx_data["sender_address"],
+                    "to": tx_data["recipient_address"],
+                    "amount": tx_data["amount"],
+                    "fromPrivateKey": tx_data["private_key"]
+                }
+                
+                if tx_data.get("smart_contract_address"):
+                    request_data["contractAddress"] = tx_data["smart_contract_address"]
+                    
+            # Log request (without private key)
+            safe_request_data = request_data.copy()
+            if 'fromPrivateKey' in safe_request_data:
+                safe_request_data['fromPrivateKey'] = '***'
+            self.logger.debug(f"Sending {chain} transaction via Tatum")
+            self.logger.debug(f"Request data: {safe_request_data}")
+            
+            # Send transaction
+            response_data, error = self._make_request('post', endpoint, data=request_data)
+            if error:
+                return {}, error
+                
+            tx_hash = response_data.get('txId')
+            if not tx_hash:
+                return {}, "Transaction hash not found in response"
+                
+            return {
+                "transaction_hash": tx_hash,
+                "status": "pending"
+            }, None
+            
+        except Exception as e:
+            error_msg = f"Error sending transaction via Tatum: {str(e)}"
+            self.logger.error(error_msg)
+            return {}, error_msg 

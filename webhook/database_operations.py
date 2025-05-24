@@ -785,7 +785,9 @@ class DatabaseOperations:
                     'Price': total_price,  # Store the calculated total price
                     'ExplorerUrl': explorer_url,
                     'CreatedAt': datetime.now(),
-                    'UpdatedAt': datetime.now()
+                    'UpdatedAt': datetime.now(),
+                    'IsSuccessful': True,  # Default to True for incoming transactions
+                    'Status': 'completed'  # Default status for incoming transactions
                 }
                 
                 # Insert transaction with the correct column names from the transfers table
@@ -794,12 +796,14 @@ class DatabaseOperations:
                         TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
                         Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
                         FromAddress, ToAddress, Amount, Fee,
-                        Price, ExplorerUrl, CreatedAt, UpdatedAt
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
                     ) VALUES (
                         :TxHash, :BlockchainID, :AddressID, :WalletID, :BlockNumber,
                         :Timestamp, :TokenContract, :TokenSymbol, :AssetType, :Direction,
                         :FromAddress, :ToAddress, :Amount, :Fee,
-                        :Price, :ExplorerUrl, :CreatedAt, :UpdatedAt
+                        :Price, :ExplorerUrl, :CreatedAt, :UpdatedAt,
+                        :IsSuccessful, :Status
                     )
                 """)
                 

@@ -14,7 +14,7 @@ from .blockchains.bitcoin_service import BitcoinService
 from .blockchains.litecoin_service import LitecoinService
 from .blockchains.dash_service import DashService
 from .blockchains.dogecoin_service import DogecoinService
-from .blockchains.ripple_service import RippleService
+from .blockchains.xrp_service import XRPService
 from .blockchains.polkadot_service import PolkadotService
 
 class BlockchainServiceRouter:
@@ -49,8 +49,8 @@ class BlockchainServiceRouter:
             'dash': DashService,
             'dogecoin': DogecoinService,
             'doge': DogecoinService,
-            'ripple': RippleService,
-            'xrp': RippleService,
+            'ripple': XRPService,
+            'xrp': XRPService,
             'polkadot': PolkadotService,
             'dot': PolkadotService
         }

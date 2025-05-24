@@ -27,26 +27,55 @@ receive_bp = Blueprint('receive', __name__)
 def get_user_address(session, user_id, blockchain_symbol):
     """Get user's public address from database"""
     try:
+        # Normalize blockchain symbol
+        blockchain_symbol = blockchain_symbol.lower().strip()
+        
+        # Map common variations to standard names
+        name_mapping = {
+            "eth": "ethereum",
+            "ethereum": "ethereum",
+            "bsc": "binance smart chain",
+            "binance": "binance smart chain",
+            "binance smart chain": "binance smart chain",
+            "bs": "binance smart chain",
+            "bnb": "binance smart chain",
+            "btc": "bitcoin",
+            "bitcoin": "bitcoin",
+            "trx": "tron",
+            "tron": "tron",
+            "matic": "polygon",
+            "polygon": "polygon",
+            "avax": "avalanche",
+            "avalanche": "avalanche",
+            "arb": "arbitrum",
+            "arbitrum": "arbitrum",
+            "op": "optimism",
+            "optimism": "optimism"
+        }
+        
+        # Get normalized blockchain name
+        normalized_blockchain = name_mapping.get(blockchain_symbol, blockchain_symbol)
+        
         # Find the blockchain ID - search by all possible fields
         blockchain = session.query(Blockchains).filter(
-            Blockchains.ChainCode.ilike(blockchain_symbol)
+            Blockchains.BlockchainName.ilike(normalized_blockchain)
         ).first()
         
-        # اگر با ChainCode پیدا نشد، با BlockchainName جستجو کن
+        # If not found by BlockchainName, try ChainCode
         if not blockchain:
             blockchain = session.query(Blockchains).filter(
-                Blockchains.BlockchainName.ilike(blockchain_symbol)
+                Blockchains.ChainCode.ilike(blockchain_symbol)
             ).first()
         
-        # اگر با BlockchainName هم پیدا نشد، با Symbol جستجو کن
+        # If still not found, try Symbol
         if not blockchain:
             blockchain = session.query(Blockchains).filter(
                 Blockchains.Symbol.ilike(blockchain_symbol)
             ).first()
         
         if not blockchain:
-            logger.warning(f"Blockchain not found for any of [ChainCode, BlockchainName, Symbol]: {blockchain_symbol}")
-            # نمایش همه بلاکچین‌های موجود برای دیباگ
+            logger.warning(f"Blockchain not found for symbol: {blockchain_symbol} (normalized: {normalized_blockchain})")
+            # Log available blockchains for debugging
             all_chains = session.query(Blockchains).all()
             if all_chains:
                 chain_info = [f"{chain.BlockchainName}(Symbol:{chain.Symbol}, ChainCode:{chain.ChainCode})" for chain in all_chains]
@@ -71,7 +100,7 @@ def get_user_address(session, user_id, blockchain_symbol):
         ).first()
         
         if not address:
-            logger.warning(f"Address not found for user: {user_id} on blockchain: {blockchain_symbol}")
+            logger.warning(f"Address not found for user: {user_id} on blockchain: {blockchain.BlockchainName}")
             return None
             
         # Return the public address
@@ -130,22 +159,22 @@ def receive_transaction():
         blockchain_symbol = InputValidator.validate_string(
             data.get('BlockchainName', ''),  # Keep the request parameter name same for backward compatibility
             "BlockchainName",
-            pattern=r'^[a-zA-Z0-9_]+$'
+            pattern=r'^[a-zA-Z0-9_\s]+$'  # Allow spaces in blockchain names
         )
 
-        # Normalize blockchain name
-        blockchain_name = blockchain_symbol.lower().strip()
-        
-        # Special handling for Binance Smart Chain
-        if blockchain_name in ["bsc", "binance smart chain", "binancesmartchain"]:
-            blockchain_name = "binance smart chain"
-
-        logger.debug(f"Processing transaction receive request for user: {user_id} on blockchain symbol: {blockchain_symbol}")
+        logger.debug(f"Processing transaction receive request for user: {user_id} on blockchain: {blockchain_symbol}")
         
         # Get user's public address from database
-        public_address = get_user_address(session, user_id, blockchain_name)
+        public_address = get_user_address(session, user_id, blockchain_symbol)
+        
+        if not public_address:
+            logger.warning(f"No address found for user {user_id} on blockchain {blockchain_symbol}")
+            return jsonify({
+                'message': f"Address not found for blockchain: {blockchain_symbol}",
+                'success': False
+            }), 404
 
-        logger.info(f"Successfully processed transaction receive for user: {user_id} on blockchain symbol: {blockchain_symbol}")
+        logger.info(f"Successfully processed transaction receive for user: {user_id} on blockchain: {blockchain_symbol}")
         return jsonify({
             'PublicAddress': public_address,
             'success': True

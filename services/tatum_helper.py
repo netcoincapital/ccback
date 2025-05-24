@@ -31,10 +31,10 @@ class TatumHelper:
             chain = self._normalize_chain_name(blockchain_name)
             
             # Use correct blockchain names in endpoint URLs
-            if chain == "eth":
+            if chain == "ethereum":
                 endpoint = f"/ethereum/account/balance/{address}"
-            elif chain == "bsc":
-                endpoint = f"/bsc/account/balance/{address}"
+            elif chain == "binance smart chain":
+                endpoint = f"/binance smart chain/account/balance/{address}"
             else:
                 endpoint = f"/{chain}/account/balance/{address}"
                 
@@ -47,60 +47,52 @@ class TatumHelper:
             return {}, error_msg
             
     @handle_api_errors
-    def send_transaction(self, blockchain_name: str, sender_address: str, private_key: str,
-                        recipient_address: str, amount: str, tx_details: Dict) -> Tuple[Dict, Optional[str]]:
-        """Send a transaction using Tatum API"""
+    def send_transaction(self, blockchain_name: str, sender_address: str, 
+                       recipient_address: str, amount: str, private_key: str = None,
+                       tx_details: Dict = None) -> Tuple[Dict, Optional[str]]:
+        """Send a transaction using Tatum API broadcast endpoints"""
         try:
+            if tx_details is None:
+                tx_details = {}
+            
+            # Make sure amount is a string, not Decimal
+            if not isinstance(amount, str):
+                self.logger.warning(f"Converting amount from {type(amount)} to string")
+                amount = str(amount)
+                
+            # Normalize blockchain name
             chain = self._normalize_chain_name(blockchain_name)
             
-            # Prepare request data
-            request_data = {
-                "from": sender_address,
-                "to": recipient_address,
-                "amount": amount,
-                "fromPrivateKey": private_key
-            }
+            # Get the appropriate broadcast endpoint for this blockchain
+            broadcast_endpoint, request_data = self._get_broadcast_params(
+                chain, 
+                sender_address, 
+                recipient_address, 
+                amount, 
+                private_key, 
+                tx_details
+            )
             
-            # Add blockchain-specific parameters
-            if chain == "bsc":
-                endpoint = "/bsc/transaction"
-                if tx_details.get("contract_address"):
-                    request_data["contractAddress"] = tx_details["contract_address"]
-                request_data["fee"] = {
-                    "gasLimit": tx_details.get("gas_limit", "21000"),
-                    "gasPrice": tx_details.get("gas_price", "5")
-                }
-            elif chain == "eth":
-                # For Ethereum, we expect a pre-signed transaction
-                if not tx_details.get("signed_tx"):
-                    return {}, "Missing signed transaction data for Ethereum"
-                endpoint = "/ethereum/broadcast"
-                request_data = {
-                    "txData": tx_details["signed_tx"]
-                }
-            else:
-                endpoint = f"/{chain}/transaction"
-                if tx_details.get("contract_address"):
-                    request_data["contractAddress"] = tx_details["contract_address"]
-                    
-            # Log request (without private key)
-            safe_request_data = request_data.copy()
-            if 'fromPrivateKey' in safe_request_data:
-                safe_request_data['fromPrivateKey'] = '***'
+            # Remove private key from request data before logging
+            safe_request_data = self._sanitize_request_data(request_data)
             self.logger.debug(f"Sending {chain} transaction via Tatum")
+            self.logger.debug(f"Using endpoint: {broadcast_endpoint}")
             self.logger.debug(f"Request data: {safe_request_data}")
             
             # Send transaction
-            response_data, error = self._make_request('post', endpoint, data=request_data)
+            response_data, error = self._make_request('post', broadcast_endpoint, data=request_data)
             if error:
                 return {}, error
                 
-            tx_hash = response_data.get('txId')
+            # Extract transaction hash from response
+            tx_hash = self._extract_tx_hash(response_data)
             if not tx_hash:
+                self.logger.error(f"Transaction hash not found in response: {response_data}")
                 return {}, "Transaction hash not found in response"
                 
             return {
                 "transaction_hash": tx_hash,
+                "txId": tx_hash,
                 "status": "pending"
             }, None
             
@@ -149,10 +141,10 @@ class TatumHelper:
             chain = self._normalize_chain_name(blockchain_name)
             
             # Use correct blockchain names in endpoint URLs
-            if chain == "eth":
+            if chain == "ethereum":
                 endpoint = f"/ethereum/transaction/{tx_hash}"
-            elif chain == "bsc":
-                endpoint = f"/bsc/transaction/{tx_hash}"
+            elif chain == "binance smart chain":
+                endpoint = f"/binance smart chain/transaction/{tx_hash}"
             else:
                 endpoint = f"/{chain}/transaction/{tx_hash}"
                 
@@ -169,6 +161,37 @@ class TatumHelper:
         
         try:
             self.logger.debug(f"Making {method} request to {url}")
+            
+            # CRITICAL BSC DEBUG: یافتن خطای BSC
+            if data and ('blockchain' in data or 'blockchain_name' in data):
+                blockchain = data.get('blockchain', data.get('blockchain_name', ''))
+                if blockchain and blockchain.lower() in ['bsc', 'binance smart chain', 'binance-smart-chain', 'bnb']:
+                    self.logger.warning(f"🔎 BSC DEBUG: BSC request detected in tatum_helper._make_request")
+                    self.logger.warning(f"🔎 BSC DEBUG: Endpoint: {endpoint}")
+                    self.logger.warning(f"🔎 BSC DEBUG: Data: {data}")
+                    
+                    # اگر BSC در endpoint عمومی استفاده شده، آن را به اتریوم تغییر می‌دهیم
+                    if '/bsc/' not in endpoint.lower():
+                        self.logger.warning(f"🔴 EMERGENCY HOTFIX: Converting BSC request to Ethereum in tatum_helper")
+                        if 'blockchain' in data:
+                            data['blockchain'] = 'ethereum'
+                        if 'blockchain_name' in data:
+                            data['blockchain_name'] = 'ethereum'
+            
+            # بررسی و اصلاح endpoint برای BSC
+            if '/bsc/' not in endpoint.lower() and 'blockchain' in (data or {}) and (data.get('blockchain', '').lower() == 'bsc' or data.get('blockchain_name', '').lower() == 'bsc'):
+                self.logger.warning(f"Detected BSC blockchain in generic endpoint. Should use /bsc/ specific endpoint instead.")
+                if '/transaction' in endpoint:
+                    # تغییر به endpoint مخصوص BSC
+                    url = f"{self.base_url}/bsc/transaction"
+                    self.logger.warning(f"Redirecting to BSC-specific endpoint: {url}")
+                elif '/gas' in endpoint:
+                    # تغییر به endpoint مخصوص BSC gas
+                    url = f"{self.base_url}/bsc/gas"
+                    self.logger.warning(f"Redirecting to BSC-specific gas endpoint: {url}")
+                    # حذف فیلد blockchain از درخواست چون در endpoint بی اس سی به آن نیازی نیست
+                    if data and 'blockchain' in data:
+                        del data['blockchain']
             
             if method.lower() == 'get':
                 response = requests.get(url, headers=self.headers)
@@ -200,19 +223,27 @@ class TatumHelper:
         """Normalize blockchain name for Tatum API"""
         name = blockchain_name.lower().strip()
         
-        # Map common names to Tatum API names
-        name_map = {
-            "ethereum": "eth",
-            "binance smart chain": "binance smart chain",
-            "bsc": "binance smart chain",
-            "bnb": "binance smart chain",
-            "polygon": "polygon",
+        # Map of common variations to standard names
+        name_mapping = {
+            "eth": "ethereum",
+            "btc": "bitcoin",
+            "bnb": "binance-smart-chain",
+            "binance": "binance-smart-chain",
+            "bsc": "binance-smart-chain",
+            "bnb smart chain": "binance-smart-chain",
+            "binance smart chain": "binance-smart-chain",
+            "binancecoin": "binance-smart-chain",
             "matic": "polygon",
-            "tron": "tron",
+            "xrp": "ripple",
+            "xlm": "stellar",
+            "avax": "avalanche",
+            "arb": "arbitrum",
+            "dot": "polkadot",
+            "ada": "cardano",
             "trx": "tron"
         }
         
-        return name_map.get(name, name)
+        return name_mapping.get(name, name)
 
     def get_chain_currency(self, blockchain_name: str) -> str:
         """Get the currency code for a blockchain"""
@@ -220,7 +251,7 @@ class TatumHelper:
         blockchain_name = blockchain_name.lower().strip()
         
         # Special handling for Binance Smart Chain
-        if blockchain_name in ["bsc", "binance smart chain", "binancesmartchain"]:
+        if blockchain_name in ["bsc", "binance-smart-chain", "binancesmartchain"]:
             return "BNB"
         
         # Map common names to Tatum API names
@@ -230,4 +261,93 @@ class TatumHelper:
             "tron": "TRX"
         }
         
-        return name_map.get(blockchain_name, blockchain_name.upper()) 
+        return name_map.get(blockchain_name, blockchain_name.upper())
+
+    def _sanitize_request_data(self, request_data: Dict) -> Dict:
+        """Remove sensitive data from request data for logging"""
+        if not request_data:
+            return {}
+            
+        safe_data = request_data.copy()
+        sensitive_fields = ['fromPrivateKey', 'privateKey', 'fromSecret', 'secret', 'password']
+        
+        for field in sensitive_fields:
+            if field in safe_data:
+                safe_data[field] = '***'
+                
+        return safe_data
+        
+    def _get_broadcast_params(self, chain: str, sender: str, recipient: str, 
+                             amount: str, private_key: str, tx_details: Dict) -> Tuple[str, Dict]:
+        """Get the broadcast endpoint and request data for a specific blockchain"""
+        # Default structure for most blockchains
+        signed_tx = tx_details.get("signed_tx")
+        
+        # Define broadcast endpoints for each blockchain
+        endpoints = {
+            "ethereum": "/ethereum/broadcast",
+            "binance-smart-chain": "/bsc/broadcast",
+            "tron": "/tron/broadcast",
+            "bitcoin": "/bitcoin/broadcast",
+            "polygon": "/polygon/broadcast",
+            "ripple": "/xrp/broadcast",
+            "solana": "/solana/broadcast/confirm",
+            "avalanche": "/avalanche/broadcast",
+            "arbitrum": "/arb/broadcast"
+        }
+        
+        # Get the correct endpoint
+        endpoint = endpoints.get(chain)
+        if not endpoint:
+            endpoint = f"/{chain}/broadcast" 
+            self.logger.warning(f"Using default broadcast endpoint pattern for {chain}")
+            
+        # For blockchains that need raw transaction data
+        if signed_tx:
+            return endpoint, {"txData": signed_tx}
+            
+        # Some blockchains have different request formats for broadcasting
+        if chain == "ripple" or chain == "xrp":
+            request_data = {
+                "from": sender,
+                "to": recipient,
+                "amount": amount,
+                "fromSecret": private_key
+            }
+        elif chain == "solana":
+            request_data = {
+                "signatureId": tx_details.get("signature_id"),
+                "serializedTransaction": tx_details.get("serialized_tx")
+            }
+        else:
+            # Standard request format
+            request_data = {
+                "from": sender,
+                "to": recipient,
+                "amount": amount,
+                "fromPrivateKey": private_key
+            }
+            
+            # Add contract address for token transfers
+            if tx_details.get("contract_address"):
+                request_data["contractAddress"] = tx_details.get("contract_address")
+                
+        return endpoint, request_data
+        
+    def _extract_tx_hash(self, response_data: Dict) -> Optional[str]:
+        """Extract transaction hash from Tatum API response"""
+        if not response_data:
+            return None
+            
+        # Different API endpoints use different field names
+        hash_fields = ['txId', 'transactionHash', 'hash', 'id', 'result']
+        
+        for field in hash_fields:
+            if field in response_data:
+                tx_hash = response_data[field]
+                if isinstance(tx_hash, str):
+                    return tx_hash
+                elif isinstance(tx_hash, dict) and 'txId' in tx_hash:
+                    return tx_hash['txId']
+                    
+        return None 

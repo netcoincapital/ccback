@@ -99,6 +99,194 @@ python workers/wallet_worker.py
 - `POST /update-prices` - Update currency prices
 - `POST /prices` - Get current prices for specified currencies
 
+### Blockchain Transaction API
+
+The system now uses RESTful blockchain-specific endpoints for transaction operations:
+
+#### Prepare Transaction
+
+```
+POST /api/{blockchain}/prepare
+```
+
+Prepares a transaction for the specified blockchain. Replace `{blockchain}` with the blockchain identifier (e.g., `ethereum`, `bitcoin`, `bsc`).
+
+Request body:
+```json
+{
+  "sender_address": "0x...",
+  "recipient_address": "0x...",
+  "amount": "0.01",
+  "smart_contract_address": "0x..." // optional, for token transfers
+}
+```
+
+Response:
+```json
+{
+  "transaction_id": "550e8400-e29b-41d4-a716-446655440000",
+  "details": {
+    "amount": "0.01",
+    "blockchain": "Ethereum",
+    "estimated_fee": "0.0021",
+    "explorer_url": "https://etherscan.io/tx/...",
+    "recipient": "0x...",
+    "sender": "0x...",
+    "sender_balance_after": "0.9879",
+    "sender_balance_before": "1.0"
+  },
+  "expires_at": "2023-07-22T15:30:00.000Z",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+```
+
+#### Confirm Transaction
+
+```
+POST /api/{blockchain}/confirm
+```
+
+Confirms and sends a prepared transaction. Replace `{blockchain}` with the blockchain identifier.
+
+Request body:
+```json
+{
+  "transaction_id": "550e8400-e29b-41d4-a716-446655440000",
+  "private_key": "0x..."
+}
+```
+
+Response:
+```json
+{
+  "success": true,
+  "transaction_hash": "0x...",
+  "status": "pending",
+  "message": "Transaction sent successfully"
+}
+```
+
+#### Get Blockchain Information
+
+```
+GET /api/blockchains
+```
+
+Returns information about all supported blockchains.
+
+Response:
+```json
+{
+  "success": true,
+  "blockchains": [
+    {
+      "name": "ethereum",
+      "display_name": "Ethereum",
+      "currency_symbol": "ETH",
+      "chain_id": 1,
+      "decimal_places": 18,
+      "explorer_url": "https://etherscan.io"
+    },
+    {
+      "name": "bsc",
+      "display_name": "Binance Smart Chain",
+      "currency_symbol": "BNB",
+      "chain_id": 56,
+      "decimal_places": 18,
+      "explorer_url": "https://bscscan.com"
+    },
+    // other blockchains...
+  ]
+}
+```
+
+#### Get Supported Blockchains
+
+```
+GET /api/test
+```
+
+Returns a simple list of supported blockchain identifiers.
+
+Response:
+```json
+{
+  "success": true,
+  "message": "Blockchain API is working",
+  "available_blockchains": [
+    "ethereum",
+    "bsc",
+    "bitcoin",
+    "tron",
+    // other blockchains...
+  ]
+}
+```
+
+### Legacy API Endpoints (Backward Compatibility)
+
+For backward compatibility, the following endpoints are still available but will be redirected to the blockchain-specific endpoints:
+
+```
+POST /send/prepare
+POST /send/confirm
+```
+
+These endpoints require a `blockchain` parameter in the request body to determine which blockchain-specific endpoint to use.
+
+## JavaScript Client Library
+
+A JavaScript client library is provided for easy integration:
+
+```javascript
+// Initialize the client
+const api = new BlockchainApi();
+
+// Prepare a transaction
+const txDetails = await api.prepareTransaction('ethereum', {
+  sender_address: '0x...',
+  recipient_address: '0x...',
+  amount: '0.01'
+});
+
+// Confirm a transaction
+const result = await api.confirmTransaction('ethereum', {
+  transaction_id: txDetails.transaction_id,
+  private_key: '0x...'
+});
+
+// Get supported blockchains
+const blockchains = await api.getSupportedBlockchains();
+
+// Get blockchain details
+const details = await api.getBlockchainDetails();
+
+// Get explorer URL for a transaction
+const url = await api.getExplorerUrl('ethereum', '0x...');
+```
+
+## Adding New Blockchain Support
+
+To add support for a new blockchain:
+
+1. Create a new service class in `services/blockchains/` that extends `BaseBlockchainService`
+2. Implement all required methods in the service class
+3. Add the blockchain configuration to `utils/blockchain_config.json`
+4. Register the service in `utils/blockchain_service_factory.py`
+
+The system will automatically generate API endpoints for the new blockchain.
+
+## Environment Variables
+
+The following environment variables are required:
+
+- `TATUM_API_KEY`: API key for Tatum
+- `SECRET_KEY`: Secret key for Flask sessions
+- `DATABASE_URL`: PostgreSQL database URL
+- `REDIS_URL`: Redis URL for transaction storage
+- `INFURA_PROJECT_ID`: Infura project ID for Ethereum and EVM-compatible chains
+
 ## License
 
 Proprietary - All rights reserved 

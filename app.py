@@ -74,7 +74,7 @@ from services.wallet_service import WalletService
 from config.firebase import initialize_firebase
 
 # Import schemas after services
-from schemas import WalletGenerationResponse, WalletGenerationRequest
+from schemas import WalletGenerationResponse, WalletGenerationRequest, WalletGenerationSyncResponse
 
 # Check RabbitMQ availability
 rabbitmq_available = True
@@ -108,6 +108,18 @@ csrf = CSRFProtect(app)
 try:
     init_db()
     logger.info("Database initialized successfully")
+    
+    # Run migration to increase DeviceToken field length
+    try:
+        from migrations.add_user_device_token_length import run_migration
+        migration_result = run_migration()
+        if migration_result:
+            logger.info("DeviceToken field length migration completed successfully")
+        else:
+            logger.warning("DeviceToken field length migration was not needed or failed")
+    except Exception as migration_error:
+        logger.error(f"Error running DeviceToken migration: {str(migration_error)}", exc_info=True)
+        
 except Exception as db_init_error:
     logger.critical(f"Failed to initialize database: {str(db_init_error)}")
     # Continue without database to allow API to start but return errors on DB operations
@@ -132,6 +144,8 @@ try:
     from UserTransactions import transactions_bp
     from fee_estimator.api import fee_estimator_bp
     from api.notification_api import notification_api
+    from api import init_api_routes
+    from api.middleware import debug_auth_middleware
     
     # Register blueprints
     logger.info("Registering blueprints")
@@ -154,12 +168,25 @@ try:
     logger.info("Registered send_bp")
     app.register_blueprint(transactions_bp, url_prefix='')
     logger.info("Registered transactions_bp")
-    app.register_blueprint(notification_api, url_prefix='/api')
-    logger.info("Registered notification_api with prefix /api")
+    app.register_blueprint(notification_api, url_prefix='')
+    logger.info("Registered notification_api without prefix")
+    
+    # نمایش تمام مسیرهای ثبت شده
+    logger.info("Registered routes:")
+    for rule in app.url_map.iter_rules():
+        logger.info(f"Route: {rule.rule}, Methods: {rule.methods}, Endpoint: {rule.endpoint}")
     
     # Register Fee Estimator endpoints
     app.register_blueprint(fee_estimator_bp, url_prefix='')
     logger.info("Registered Fee Estimator endpoints")
+    
+    # Register blockchain API endpoints
+    init_api_routes(app)
+    logger.info("Registered blockchain API endpoints")
+    
+    # Apply middleware for debugging authentication errors
+    app = debug_auth_middleware(app)
+    logger.info("Applied debug authentication middleware")
     
     logger.info("All blueprints registered successfully")
 except Exception as e:
@@ -301,12 +328,12 @@ def index():
         'timestamp': datetime.now(timezone.utc).isoformat()
     })
 
-@app.post("/generate-wallet", responses={"202": WalletGenerationResponse})
+@app.post("/generate-wallet", responses={"201": WalletGenerationSyncResponse})
 @SecurityUtils.rate_limit(requests=3, window=300)
 @handle_api_errors
 def generate_wallet(body: WalletGenerationRequest):
     """
-    Generate a new wallet asynchronously
+    Generate a new wallet synchronously
     ---
     tags:
       - Wallet Management
@@ -317,12 +344,12 @@ def generate_wallet(body: WalletGenerationRequest):
           schema:
             $ref: '#/components/schemas/WalletGenerationRequest'
     responses:
-      202:
-        description: Wallet generation started
+      201:
+        description: Wallet generated successfully
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/WalletGenerationResponse'
+              $ref: '#/components/schemas/WalletGenerationSyncResponse'
       400:
         description: Invalid input data
         content:
@@ -336,89 +363,44 @@ def generate_wallet(body: WalletGenerationRequest):
             schema:
               $ref: '#/components/schemas/ErrorResponse'
     """
-    global rabbitmq_available
-    
     try:
         # Validate input
         wallet_name = body.WalletName
         
-        # Generate a task ID
-        task_id = str(uuid.uuid4())
+        # Get user IP and device info
+        user_ip = request.remote_addr
+        user_device = request.headers.get('User-Agent', 'Unknown Device')
+        logger.info(f"Generate wallet request from IP: {user_ip}, Device: {user_device}")
         
-        if rabbitmq_available:
-            # Send task to RabbitMQ
-            try:
-                # Get user IP and device info
-                user_ip = request.remote_addr
-                user_device = request.headers.get('User-Agent', 'Unknown Device')
-                logger.info(f"Generate wallet request from IP: {user_ip}, Device: {user_device}")
-                
-                connection = get_rabbitmq_connection()
-                channel = connection.channel()
-                
-                channel.queue_declare(queue='wallet_generation')
-                channel.basic_publish(
-                    exchange='',
-                    routing_key='wallet_generation',
-                    body=json.dumps({
-                        'task_id': task_id,
-                        'wallet_name': wallet_name,
-                        'user_ip': user_ip,
-                        'user_device': user_device
-                    })
-                )
-                
-                connection.close()
-                
-                logger.info(f"Wallet generation task {task_id} queued for processing")
-                
-                # Return response with task ID
-                return jsonify({
-                    'task_id': task_id,
-                    'status': 'processing',
-                    'message': 'Wallet generation in progress',
-                    'success': True
-                }), 202
-            except Exception as e:
-                logger.error(f"Error connecting to RabbitMQ: {str(e)}")
-                # Fall back to synchronous processing
-                rabbitmq_available = False
-        
-        # If RabbitMQ is not available, process synchronously
-        if not rabbitmq_available:
-            logger.info(f"Processing wallet generation synchronously for {wallet_name}")
-            
-            # Get user IP and device info
-            user_ip = request.remote_addr
-            user_device = request.headers.get('User-Agent', 'Unknown Device')
-            logger.info(f"Generate wallet request from IP: {user_ip}, Device: {user_device}")
-            
-            session = SessionLocal()
-            try:
-                # Use service to create wallet
-                wallet_service = WalletService(session)
-                with session.begin():
-                    user_id, mnemonic, addresses = wallet_service.create_wallet(wallet_name, 5, user_ip, user_device)
+        session = SessionLocal()
+        try:
+            # Use service to create wallet
+            wallet_service = WalletService(session)
+            with session.begin():
+                user_id, wallet_id, mnemonic, addresses = wallet_service.create_wallet(wallet_name, 5, user_ip, user_device)
 
-                # Log success
-                logger.info(f"Wallet generated synchronously for user {user_id}")
+            # Log success
+            logger.info(f"Wallet generated for user {user_id} with wallet {wallet_id}")
 
-                # Исправление структуры ответа, добавляя поле Addresses для соответствия с другими endpoint
-                return jsonify({
-                    'UserID': user_id,
-                    'Mnemonic': mnemonic,
-                    'Addresses': addresses,
-                    'success': True
-                }), 201
-            except Exception as session_error:
-                logger.error(f"Database error in generate_wallet: {str(session_error)}")
-                raise
-            finally:
-                session.close()
-        
+            return jsonify({
+                'success': True,
+                'UserID': user_id,
+                'WalletID': wallet_id,
+                'Mnemonic': mnemonic,
+                'message': 'Wallet generated successfully'
+            }), 201
+        finally:
+            session.close()
+            
     except Exception as e:
         logger.error(f"Error in generate_wallet: {str(e)}")
-        raise
+        return jsonify({
+            'success': False,
+            'UserID': None,
+            'WalletID': None,
+            'Mnemonic': None,
+            'message': str(e)
+        }), 400
 
 @app.route('/test-db', methods=['GET'])
 def test_db_connection():
@@ -687,6 +669,35 @@ def test_config():
         'python_version': sys.version,
         'message': 'Configuration test completed'
     })
+
+# Add this code after the line importing BlockchainServiceFactory
+from utils.blockchain_service_factory import BlockchainServiceFactory
+try:
+    # Print detailed information about the blockchain registry
+    app.logger.info("Initializing blockchain services registry...")
+    app.logger.info(f"Registered blockchain classes: {list(BlockchainServiceFactory._service_classes.keys())}")
+    app.logger.info(f"Name mappings available: {BlockchainServiceFactory._name_mapping}")
+    
+    # Test BSC specifically since it's causing issues
+    bsc_mapping = BlockchainServiceFactory.normalize_name('bsc')
+    app.logger.info(f"BSC name mapping test: 'bsc' -> '{bsc_mapping}'")
+    
+    binance_mapping = BlockchainServiceFactory.normalize_name('binance-smart-chain')
+    app.logger.info(f"BSC name mapping test: 'binance-smart-chain' -> '{binance_mapping}'")
+    
+    # Initialize all blockchain services and handle any initialization errors
+    service_status = BlockchainServiceFactory.initialize_all_services()
+    for blockchain, status in service_status.items():
+        if status != "ok":
+            app.logger.warning(f"Blockchain service {blockchain} is disabled: {status}")
+        else:
+            app.logger.info(f"Blockchain service {blockchain} initialized successfully")
+    
+    # Check which services are now available
+    app.logger.info(f"Available blockchain services: {BlockchainServiceFactory.get_supported_blockchains()}")
+except Exception as e:
+    app.logger.error(f"Error initializing blockchain services: {str(e)}")
+    # Continue with application startup even if some services failed to initialize
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
