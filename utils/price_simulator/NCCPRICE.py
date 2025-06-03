@@ -1,5 +1,9 @@
-import os
-import sys
+import sys, os
+# اضافه کردن مسیر اصلی پروژه به sys.path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, '../../..'))
+sys.path.append(project_root)
+
 import time
 import random
 import numpy as np
@@ -9,9 +13,9 @@ import schedule
 from decimal import Decimal
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from utils.logging_config import get_logger
-from database.Currencies import Currencies
-from database.prices import Price
+from CC.database.Currencies import Currencies
+from CC.database.prices import Price
+from CC.utils.logging_config import get_logger
 
 # تنظیم مسیر برای import از ماژول‌های دیگر پروژه
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -55,9 +59,9 @@ FIAT_EXCHANGE_RATES = {
 }
 
 DATABASE_URL = os.getenv("DATABASE_URL", "mysql+mysqlconnector://coincee:09387270277Mn!!??@localhost/coincee")
-NCC_SMART_CONTRACT_ETH = "0x3386F545a78eAa832946b59EA10FfDA34275A479"
-NCC_SMART_CONTRACT_TRX = "T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf"
-NCC_CURRENCY_IDS = []
+NCC_SMART_CONTRACT_1 = "TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1"
+NCC_SMART_CONTRACT_2 = "T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf"
+NCC_CURRENCY_IDS_TO_FIND = [8517, 8519]  # هر دو شناسه NCC
 price_history = []  # تاریخچه قیمت مشترک - یک لیست از تاپل (زمان، قیمت)
 last_updated = None  # آخرین زمان به‌روزرسانی مشترک برای همه توکن‌ها
 
@@ -66,41 +70,33 @@ Session = sessionmaker(bind=engine)
 
 def init_ncc():
     """
-    مقداردهی اولیه توکن‌های NCC از دیتابیس
-    
-    Returns:
-        bool: نتیجه مقداردهی اولیه
+    مقداردهی اولیه توکن‌های NCC - جستجو برای هر دو آیدی 8517 و 8519
     """
     global NCC_CURRENCY_IDS
     session = Session()
+    found_currencies = []
     
-    logger.info("🔍 جستجوی توکن‌های NCC در دیتابیس")
+    logger.info("🔍 جستجوی توکن‌های NCC در دیتابیس...")
     
-    # جستجو برای توکن ETH
-    eth_token = session.query(Currencies).filter(
-        Currencies.SmartContractAddress == NCC_SMART_CONTRACT_ETH
-    ).first()
+    for currency_id in NCC_CURRENCY_IDS_TO_FIND:
+        ncc_token = session.query(Currencies).filter(Currencies.CurrencyID == str(currency_id)).first()
+        if ncc_token:
+            found_currencies.append(currency_id)
+            logger.info(f"✅ توکن NCC با آیدی {currency_id} یافت شد - شناسه ارز: {currency_id}")
+        else:
+            logger.warning(f"⚠️ توکن NCC با آیدی {currency_id} در دیتابیس یافت نشد")
     
-    # جستجو برای توکن TRX
-    trx_token = session.query(Currencies).filter(
-        Currencies.SmartContractAddress == NCC_SMART_CONTRACT_TRX
-    ).first()
-
-    if not eth_token and not trx_token:
+    if found_currencies:
+        NCC_CURRENCY_IDS = found_currencies
+        logger.info(f"✅ تعداد {len(NCC_CURRENCY_IDS)} توکن NCC یافت شد: {NCC_CURRENCY_IDS}")
+    else:
+        NCC_CURRENCY_IDS = []
         logger.error("❌ هیچ توکن NCC در دیتابیس یافت نشد")
         session.close()
         return False
-
-    if eth_token:
-        NCC_CURRENCY_IDS.append(eth_token.CurrencyID)
-        logger.info(f"✅ توکن NCC اتریوم یافت شد - شناسه ارز: {eth_token.CurrencyID}")
-        
-    if trx_token:
-        NCC_CURRENCY_IDS.append(trx_token.CurrencyID)
-        logger.info(f"✅ توکن NCC ترون یافت شد - شناسه ارز: {trx_token.CurrencyID}")
     
     session.close()
-    return len(NCC_CURRENCY_IDS) > 0
+    return True
 
 def get_current_price(fiat="USD"):
     """
@@ -117,18 +113,19 @@ def get_current_price(fiat="USD"):
         return None
         
     session = Session()
-    # استفاده از اولین شناسه ارز برای دریافت قیمت
+    # استفاده از اولین شناسه ارز برای دریافت قیمت - تبدیل به string
+    currency_id_str = str(NCC_CURRENCY_IDS[0])
     price = session.query(Price).filter(
-        Price.crypto_id == NCC_CURRENCY_IDS[0],
+        Price.crypto_id == currency_id_str,
         Price.currency == fiat
     ).order_by(Price.last_updated.desc()).first()
     session.close()
     
     if price:
-        logger.debug(f"📊 قیمت فعلی برای NCC به {fiat}: {float(price.price)} {FIAT_CURRENCIES.get(fiat, '')}")
+        logger.debug(f"📊 قیمت فعلی برای NCC (ID: {currency_id_str}) به {fiat}: {float(price.price)} {FIAT_CURRENCIES.get(fiat, '')}")
         return float(price.price)
     else:
-        logger.debug(f"⚠️ هیچ قیمتی برای NCC به {fiat} در دیتابیس پیدا نشد")
+        logger.debug(f"⚠️ هیچ قیمتی برای NCC (ID: {currency_id_str}) به {fiat} در دیتابیس پیدا نشد")
         return None
 
 def get_price_24h_ago(fiat="USD"):
@@ -149,9 +146,11 @@ def get_price_24h_ago(fiat="USD"):
     session = Session()
     
     try:
+        # استفاده از اولین شناسه ارز - تبدیل به string
+        currency_id_str = str(NCC_CURRENCY_IDS[0])
         # روش اول: جستجو برای قیمت بین 23 تا 25 ساعت قبل
         price = session.query(Price).filter(
-            Price.crypto_id == NCC_CURRENCY_IDS[0],
+            Price.crypto_id == currency_id_str,
             Price.currency == fiat,
             Price.last_updated < now - timedelta(hours=23),
             Price.last_updated > now - timedelta(hours=25)
@@ -160,7 +159,7 @@ def get_price_24h_ago(fiat="USD"):
         # اگر نتیجه‌ای نداشت، قدیمی‌ترین قیمت موجود را برگردان
         if not price:
             price = session.query(Price).filter(
-                Price.crypto_id == NCC_CURRENCY_IDS[0],
+                Price.crypto_id == currency_id_str,
                 Price.currency == fiat
             ).order_by(Price.last_updated.asc()).first()
             
@@ -168,10 +167,10 @@ def get_price_24h_ago(fiat="USD"):
                 logger.debug(f"📊 قیمت دقیقاً 24 ساعت قبل یافت نشد، از قدیمی‌ترین قیمت موجود استفاده می‌شود")
                 
         if price:
-            logger.debug(f"📊 قیمت 24 ساعت قبل برای NCC به {fiat}: {float(price.price)} {FIAT_CURRENCIES.get(fiat, '')}")
+            logger.debug(f"📊 قیمت 24 ساعت قبل برای NCC (ID: {currency_id_str}) به {fiat}: {float(price.price)} {FIAT_CURRENCIES.get(fiat, '')}")
             return float(price.price)
         else:
-            logger.debug(f"⚠️ هیچ قیمتی برای 24 ساعت قبل NCC به {fiat} پیدا نشد")
+            logger.debug(f"⚠️ هیچ قیمتی برای 24 ساعت قبل NCC (ID: {currency_id_str}) به {fiat} پیدا نشد")
             # اگر هیچ قیمتی یافت نشد، از قیمت پایه با یک اختلاف کوچک استفاده می‌کنیم
             return INITIAL_PRICE * 0.99  # 1٪ کمتر از قیمت پایه
     finally:
@@ -188,29 +187,20 @@ def generate_price():
     now = datetime.now()
 
     if not price_history:
-        # دریافت قیمت فعلی از دیتابیس
-        current_price = get_current_price()
-        
-        # بررسی منبع قیمت (دیتابیس یا قیمت پیش‌فرض)
-        if current_price:
-            base = current_price
-            logger.info(f"🔄 استفاده از قیمت موجود در دیتابیس برای ادامه روند: ${base:.8f}")
-        else:
-            base = INITIAL_PRICE
-            logger.info(f"🆕 هیچ قیمتی در دیتابیس یافت نشد، شروع از قیمت پایه: ${base:.8f}")
+        base = get_current_price("USD") or INITIAL_PRICE
+        logger.info(f"🆕 شروع جدید شبیه‌ساز قیمت NCC از قیمت پایه: ${base:.8f}")
         
         price_history.append((now, base))
         last_updated = now
         
-        # برای اولین قیمت، تغییر را به صورت مصنوعی بین -2% تا +3% تنظیم می‌کنیم
-        # تا صفر نباشد و طبیعی‌تر به نظر برسد
-        change_24h = random.uniform(-2.0, 3.0)
-        logger.info(f"🆕 شروع ثبت تاریخچه قیمت برای NCC با قیمت پایه: ${base:.8f} و تغییر {change_24h:.2f}%")
+        # برای اولین قیمت، تغییر را صفر تنظیم می‌کنیم
+        change_24h = 0.0
+        logger.info(f"🆕 ثبت قیمت پایه NCC: ${base:.8f} (تغییر: {change_24h:.2f}%)")
         return base, change_24h
 
     last_price = price_history[-1][1]
     days_passed = (now - last_updated).total_seconds() / (60 * 60 * 24)
-    total_days = random.randint(MIN_MONTHS * 30, MAX_MONTHS * 30)
+    total_days = 12 * 30  # یعنی 360 روز
     drift = (TARGET_PRICE - INITIAL_PRICE) / total_days
     volatility = 0.02
 
@@ -219,19 +209,31 @@ def generate_price():
     new_price = last_price + drift_component + random_component
     new_price = max(new_price, INITIAL_PRICE)
 
-    price_24h = get_price_24h_ago()
+    # احتمالات پامپ و دامپ
+    pump_chance = 0.05  # احتمال 5% برای پامپ
+    dump_chance = 0.05  # احتمال 5% برای دامپ
     
-    # اگر قیمت 24 ساعت قبل وجود نداشت، از قیمت قبلی در تاریخچه استفاده می‌کنیم
-    if not price_24h and len(price_history) > 1:
-        price_24h = price_history[-2][1]
-        logger.debug(f"استفاده از قیمت قبلی در تاریخچه به عنوان قیمت 24 ساعت قبل: ${price_24h:.8f}")
+    if random.random() < pump_chance:
+        pump_factor = random.uniform(1.10, 1.30)  # افزایش 10% تا 30%
+        old_price = new_price
+        new_price *= pump_factor
+        logger.warning(f"🚀 پامپ! قیمت از ${old_price:.8f} به ${new_price:.8f} ({((pump_factor-1)*100):.1f}% افزایش)")
         
-    # محاسبه درصد تغییر
-    if price_24h:
+    elif random.random() < dump_chance:
+        dump_factor = random.uniform(0.70, 0.90)  # کاهش 10% تا 30%
+        old_price = new_price
+        new_price *= dump_factor
+        logger.warning(f"💥 دامپ! قیمت از ${old_price:.8f} به ${new_price:.8f} ({((1-dump_factor)*100):.1f}% کاهش)")
+
+    # محاسبه درصد تغییر بر اساس تاریخچه داخلی
+    if len(price_history) > 1:
+        # استفاده از قیمت قبلی در تاریخچه به عنوان قیمت 24 ساعت قبل
+        price_24h = price_history[-2][1] if len(price_history) > 1 else price_history[0][1]
         change_24h = ((new_price / price_24h - 1) * 100)
+        logger.debug(f"محاسبه تغییر بر اساس تاریخچه داخلی: ${price_24h:.8f} -> ${new_price:.8f}")
     else:
-        # اگر هیچ قیمت قبلی نداریم، یک تغییر تصادفی معقول تنظیم می‌کنیم
-        change_24h = random.uniform(-3.0, 4.0)
+        # اگر فقط یک قیمت در تاریخچه داریم، تغییر کوچکی تولید می‌کنیم
+        change_24h = random.uniform(-1.0, 2.0)
         logger.debug(f"تنظیم تغییر 24 ساعته به صورت تصادفی: {change_24h:.2f}%")
 
     price_history.append((now, new_price))
@@ -268,41 +270,30 @@ def calculate_fiat_price(usd_price, fiat):
 
 def update_price(usd_price, change_24h):
     """
-    به‌روزرسانی قیمت تمام توکن‌های NCC در دیتابیس برای تمام ارزهای فیات
-    
-    Args:
-        usd_price: قیمت جدید به دلار آمریکا
-        change_24h: درصد تغییر 24 ساعته
-        
-    Returns:
-        bool: نتیجه به‌روزرسانی
+    به‌روزرسانی قیمت برای همه توکن‌های NCC (8517 و 8519)
     """
     if not NCC_CURRENCY_IDS:
         logger.warning("⚠️ هیچ شناسه ارز NCC برای به‌روزرسانی وجود ندارد")
         return False
-        
+    logger.info(f"NCC_CURRENCY_IDS at start: {NCC_CURRENCY_IDS}")
     session = Session()
     success = True
     now = datetime.now()
-    
     try:
-        # مقادیر مشترک برای همه رکوردها
         volume = 400000 + random.random() * 200000
         market_cap = usd_price * 100000000
         change_1h = change_24h / 24
-        
-        # به‌روزرسانی قیمت برای تمام توکن‌های NCC در تمام ارزهای فیات
         for currency_id in NCC_CURRENCY_IDS:
+            logger.info(f"Trying to update price for currency_id: {currency_id}")
             for fiat in FIAT_CURRENCIES.keys():
                 try:
-                    # محاسبه قیمت برای هر ارز فیات
                     fiat_price = calculate_fiat_price(usd_price, fiat)
-                    
+                    # تبدیل currency_id به string برای کوئری دیتابیس
+                    currency_id_str = str(currency_id)
                     price = session.query(Price).filter(
-                        Price.crypto_id == currency_id,
+                        Price.crypto_id == currency_id_str,
                         Price.currency == fiat
                     ).first()
-
                     if price:
                         price.price = Decimal(str(fiat_price))
                         price.change_24h = Decimal(str(change_24h))
@@ -313,7 +304,7 @@ def update_price(usd_price, change_24h):
                         logger.debug(f"✅ [ID: {currency_id}] رکورد قیمت NCC به {fiat} به‌روزرسانی شد")
                     else:
                         new_entry = Price(
-                            crypto_id=currency_id,
+                            crypto_id=currency_id_str,
                             currency=fiat,
                             price=Decimal(str(fiat_price)),
                             change_24h=Decimal(str(change_24h)),
@@ -328,10 +319,6 @@ def update_price(usd_price, change_24h):
                 except Exception as e:
                     logger.error(f"❌ خطا در به‌روزرسانی قیمت ارز {currency_id} به {fiat}: {str(e)}")
                     success = False
-                    # ادامه به‌روزرسانی سایر رکوردها
-            
-            logger.info(f"✅ به‌روزرسانی قیمت NCC برای ارز با شناسه {currency_id} در تمام واحدهای پولی انجام شد")
-        
         session.commit()
         return success
     except Exception as e:
@@ -343,7 +330,7 @@ def update_price(usd_price, change_24h):
 
 def run_price_update():
     """
-    اجرای فرآیند به‌روزرسانی قیمت برای همه ارزهای NCC
+    اجرای فرآیند به‌روزرسانی قیمت برای همه توکن‌های NCC (8517 و 8519)
     """
     logger.info("🔄 شروع به‌روزرسانی قیمت NCC برای تمام واحدهای پولی...")
     try:
@@ -355,6 +342,42 @@ def run_price_update():
     except Exception as e:
         logger.error(f"❌ خطا در فرآیند به‌روزرسانی قیمت NCC: {str(e)}")
 
+def reset_price_simulator():
+    """
+    ریست کردن شبیه‌ساز قیمت NCC به حالت اولیه (5 سنت)
+    """
+    global price_history, last_updated
+    logger.info("🔄 ریست کردن شبیه‌ساز قیمت NCC به حالت اولیه...")
+
+    # پاک کردن تاریخچه قیمت
+    price_history = []
+    last_updated = None
+
+    # حذف همه قیمت‌های قبلی NCC از دیتابیس
+    session = Session()
+    try:
+        for currency_id in NCC_CURRENCY_IDS:
+            # تبدیل currency_id به string برای کوئری دیتابیس
+            currency_id_str = str(currency_id)
+            deleted = session.query(Price).filter(Price.crypto_id == currency_id_str).delete()
+            logger.info(f"🗑️ {deleted} رکورد قیمت قبلی برای NCC با شناسه {currency_id} حذف شد")
+        session.commit()
+    except Exception as e:
+        logger.error(f"❌ خطا در حذف قیمت‌های قبلی NCC: {str(e)}")
+        session.rollback()
+    finally:
+        session.close()
+
+    # ثبت قیمت اولیه (۵ سنت) بدون استفاده از generate_price
+    usd_price = INITIAL_PRICE
+    change = 0.0
+    if update_price(usd_price, change):
+        logger.info(f"✅ شبیه‌ساز قیمت NCC با موفقیت ریست شد - قیمت جدید: ${usd_price:.8f}")
+        return True
+    else:
+        logger.error("❌ خطا در ریست کردن شبیه‌ساز قیمت NCC")
+        return False
+
 def main():
     """
     تابع اصلی برنامه
@@ -364,6 +387,48 @@ def main():
         if not init_ncc():
             logger.error("❌ مقداردهی اولیه NCC با شکست مواجه شد - خروج از برنامه")
             return
+        
+        # بررسی آرگومان‌های خط فرمان برای ریست
+        if len(sys.argv) > 1 and sys.argv[1] == "--reset":
+            if reset_price_simulator():
+                logger.info("✅ شبیه‌ساز قیمت با موفقیت ریست شد")
+            else:
+                logger.error("❌ خطا در ریست کردن شبیه‌ساز قیمت")
+            return
+        
+        # بررسی وجود قیمت‌های متفاوت برای دو NCC و ریست خودکار در صورت لزوم
+        logger.info("🔍 بررسی همسانی قیمت‌های NCC...")
+        session = Session()
+        try:
+            prices_8517 = session.query(Price).filter(Price.crypto_id == '8517', Price.currency == 'USD').first()
+            prices_8519 = session.query(Price).filter(Price.crypto_id == '8519', Price.currency == 'USD').first()
+            
+            # اگر قیمت‌ها متفاوت هستند یا از 5 سنت فاصله دارند، ریست کن
+            need_reset = False
+            if prices_8517 and prices_8519:
+                price_8517 = float(prices_8517.price)
+                price_8519 = float(prices_8519.price)
+                if abs(price_8517 - price_8519) > 0.001 or abs(price_8517 - INITIAL_PRICE) > 0.001:
+                    logger.warning(f"⚠️ قیمت‌های NCC متفاوت هستند: 8517=${price_8517:.8f}, 8519=${price_8519:.8f}")
+                    need_reset = True
+            elif prices_8517 or prices_8519:
+                logger.warning("⚠️ تنها یکی از توکن‌های NCC قیمت دارد")
+                need_reset = True
+                
+            if need_reset:
+                logger.info("🔄 ریست خودکار شبیه‌ساز برای همسان‌سازی قیمت‌ها...")
+                session.close()
+                if reset_price_simulator():
+                    logger.info("✅ ریست خودکار موفقیت‌آمیز بود")
+                else:
+                    logger.error("❌ خطا در ریست خودکار")
+                    return
+            else:
+                session.close()
+                logger.info("✅ قیمت‌های NCC همسان هستند")
+        except Exception as e:
+            session.close()
+            logger.error(f"❌ خطا در بررسی قیمت‌ها: {str(e)}")
         
         # اجرای اولیه
         run_price_update()

@@ -768,26 +768,26 @@ class DatabaseOperations:
                 
                 # Prepare base transaction data with the correct column names
                 tx_data = {
-                    'TxHash': transaction_id,
+                    'TxHash': str(transaction_id).strip()[:100],  # Ensure TxHash doesn't exceed 100 chars
                     'BlockchainID': blockchain_id,
                     'AddressID': address_id,
-                    'WalletID': wallet_id,
+                    'WalletID': str(wallet_id).strip()[:50],  # Ensure WalletID doesn't exceed 50 chars
                     'BlockNumber': block,
                     'Timestamp': tx_timestamp,
-                    'TokenContract': token_contract,
-                    'TokenSymbol': token_symbol or blockchain,
-                    'FromAddress': from_address,
-                    'ToAddress': to_address,
+                    'TokenContract': str(token_contract).strip()[:100] if token_contract else None,
+                    'TokenSymbol': str(token_symbol or blockchain).strip()[:20],  # Ensure TokenSymbol doesn't exceed 20 chars
+                    'FromAddress': str(from_address).strip()[:100] if from_address else None,
+                    'ToAddress': str(to_address).strip()[:100] if to_address else None,
                     'Amount': amount,
-                    'AssetType': asset_type,
-                    'Direction': direction,
+                    'AssetType': str(asset_type).strip()[:20] if asset_type else 'native',  # Ensure AssetType doesn't exceed 20 chars
+                    'Direction': str(direction).strip()[:10],  # Ensure Direction doesn't exceed 10 chars
                     'Fee': fee,
                     'Price': total_price,  # Store the calculated total price
                     'ExplorerUrl': explorer_url,
                     'CreatedAt': datetime.now(),
                     'UpdatedAt': datetime.now(),
                     'IsSuccessful': True,  # Default to True for incoming transactions
-                    'Status': 'completed'  # Default status for incoming transactions
+                    'Status': 'confirmed'  # Use 'confirmed' instead of 'completed' and ensure it doesn't exceed 20 chars
                 }
                 
                 # Insert transaction with the correct column names from the transfers table

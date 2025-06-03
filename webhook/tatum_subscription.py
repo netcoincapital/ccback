@@ -33,17 +33,17 @@ WEBHOOK_ENDPOINT = "/webhook/tatum/transaction"  # آدرس صحیح وب‌هو
 # Map our internal blockchain names to Tatum's expected chain values
 BLOCKCHAIN_MAPPING = {
     # Internal name -> Tatum API name
-    "ETH": "ETH",
-    "BTC": "BTC",
-    "MATIC": "MATIC", 
-    "BSC": "BSC",
-    "AVAX": "AVAX",
-    "SOL": "SOL",
-    "TRX": "TRON",
+    "ETH": "ethereum-mainnet",
+    "BTC": "bitcoin-mainnet",
+    "MATIC": "polygon-mainnet", 
+    "BSC": "bsc-mainnet",
+    "AVAX": "avax-mainnet",
+    "SOL": "solana-mainnet",
+    "TRX": "tron-mainnet",
     "DOT": None,  # Polkadot not supported in the new API format
-    "XRP": "XRP",
-    "BNB": "BNB",  # BNB now has its own mapping separate from BSC
-    "ARB": "ETH_ARB"
+    "XRP": "ripple-mainnet",
+    "BNB": "bsc-mainnet",  # BNB uses BSC mainnet
+    "ARB": "arb-one-mainnet"
 }
 
 # Define which blockchains use EVM addresses
@@ -67,38 +67,46 @@ def normalize_blockchain_name(chain):
         chain (str): Our internal blockchain name
         
     Returns:
-        str: Normalized blockchain name for Tatum API
+        str: Normalized blockchain name for Tatum API or None if unsupported
     """
     if not chain:
         logger.warning("Empty blockchain name provided")
-        return ""
+        return None
         
     chain_upper = chain.upper().strip()
+    
+    # Check if blockchain is explicitly not supported
+    if chain_upper == "DOT":
+        logger.warning(f"Blockchain {chain} is not supported by Tatum API")
+        return None
+    
     tatum_chain = BLOCKCHAIN_MAPPING.get(chain_upper)
     
     if tatum_chain is None:
-        # Handle unsupported blockchains
-        logger.warning(f"Blockchain {chain} is not supported by Tatum API")
-        return None
-    elif not tatum_chain:
         # Try to find a close match
-        if chain_upper in ["BINANCE", "BINANCESMARTCHAIN"]:
-            tatum_chain = BLOCKCHAIN_MAPPING.get("BNB")  # Use BNB mapping instead of BSC
-            logger.info(f"Mapped {chain_upper} to BNB for Tatum API")
+        if chain_upper in ["BINANCE", "BINANCESMARTCHAIN", "BINANCECOIN"]:
+            tatum_chain = "bsc-mainnet"
+            logger.info(f"Mapped {chain_upper} to bsc-mainnet for Tatum API")
         elif chain_upper in ["POLYGON"]:
-            tatum_chain = BLOCKCHAIN_MAPPING.get("MATIC")
+            tatum_chain = "polygon-mainnet"
         elif chain_upper in ["AVALANCHE"]:
-            tatum_chain = BLOCKCHAIN_MAPPING.get("AVAX")
+            tatum_chain = "avax-mainnet"
         elif chain_upper in ["ETHEREUM"]:
-            tatum_chain = BLOCKCHAIN_MAPPING.get("ETH")
+            tatum_chain = "ethereum-mainnet"
         elif chain_upper in ["ARBITRUM"]:
-            tatum_chain = BLOCKCHAIN_MAPPING.get("ARB")
+            tatum_chain = "arb-one-mainnet"
         elif chain_upper in ["TRON"]:
-            tatum_chain = "TRON"
+            tatum_chain = "tron-mainnet"
+        elif chain_upper in ["BITCOIN"]:
+            tatum_chain = "bitcoin-mainnet"
+        elif chain_upper in ["RIPPLE"]:
+            tatum_chain = "ripple-mainnet"
+        elif chain_upper in ["SOLANA"]:
+            tatum_chain = "solana-mainnet"
         else:
-            # Fall back to the original input
-            tatum_chain = chain
-            logger.warning(f"No mapping found for blockchain name: {chain}")
+            # Handle unsupported blockchains
+            logger.warning(f"Blockchain {chain} is not supported by Tatum API")
+            return None
     
     logger.debug(f"Normalized blockchain name: {chain} -> {tatum_chain}")
     return tatum_chain

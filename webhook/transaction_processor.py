@@ -294,16 +294,24 @@ class TransactionProcessor:
                 
                 # به‌روزرسانی موجودی کیف پول‌ها
                 for address_info in relevant_addresses:
-                    logger.debug(f"به‌روزرسانی موجودی برای آدرس {address_info['public_address']}")
-                    self.db_operations.update_wallet_balance(address_info, blockchain)
+                    try:
+                        logger.debug(f"به‌روزرسانی موجودی برای آدرس {address_info['public_address']}")
+                        self.db_operations.update_wallet_balance(address_info, blockchain)
+                    except Exception as balance_error:
+                        logger.error(f"خطا در به‌روزرسانی موجودی برای آدرس {address_info['public_address']}: {str(balance_error)}")
+                        # ادامه پردازش حتی اگر به‌روزرسانی موجودی ناموفق باشد
                 
                 # ارسال اعلان به فرانت‌اند
-                self.notification_service.notify(
-                    transaction_type='contract_event',
-                    transaction_id=transaction_id,
-                    relevant_addresses=relevant_addresses,
-                    webhook_data=webhook_data
-                )
+                try:
+                    self.notification_service.notify(
+                        transaction_type='contract_event',
+                        transaction_id=transaction_id,
+                        relevant_addresses=relevant_addresses,
+                        webhook_data=webhook_data
+                    )
+                except Exception as notify_error:
+                    logger.error(f"خطا در ارسال اعلان برای تراکنش {transaction_id}: {str(notify_error)}")
+                    # ادامه پردازش حتی اگر ارسال اعلان ناموفق باشد
                 
                 return {"status": "پردازش شد", "relevant": True, "saved": True}
             else:
@@ -587,7 +595,7 @@ class TransactionProcessor:
             )
             
             if save_result:
-                logger.info(f"Transaction {transaction_id} successfully saved to database")
+                logger.info(f"تراکنش {transaction_id} با موفقیت در جدول Transfers ذخیره شد")
                 
                 # تبدیل TRON به TRX قبل از به‌روزرسانی موجودی
                 if token_symbol and token_symbol.upper() == 'TRON':
@@ -653,20 +661,17 @@ class TransactionProcessor:
                         tx_id=transaction_id
                     )
                 
-                # Send notification
-                self.notification_service.notify(
-                    transaction_type='address_transaction',
-                    transaction_id=transaction_id,
-                    relevant_addresses=relevant_addresses,
-                    webhook_data={
-                        **webhook_data,  # حفظ داده‌های موجود
-                        'direction': direction,  # اضافه کردن جهت تراکنش
-                        'amount': amount,
-                        'token': token_symbol or blockchain,
-                        'from': from_address,
-                        'to': to_address
-                    }
-                )
+                # ارسال اعلان به فرانت‌اند
+                try:
+                    self.notification_service.notify(
+                        transaction_type='address_transaction',
+                        transaction_id=transaction_id,
+                        relevant_addresses=relevant_addresses,
+                        webhook_data=webhook_data
+                    )
+                except Exception as notify_error:
+                    logger.error(f"خطا در ارسال اعلان برای تراکنش {transaction_id}: {str(notify_error)}")
+                    # ادامه پردازش حتی اگر ارسال اعلان ناموفق باشد
                 
                 return {
                     "status": "success",
@@ -676,8 +681,8 @@ class TransactionProcessor:
                     "token": token_symbol or blockchain
                 }
             else:
-                logger.error(f"Error saving transaction {transaction_id} to database")
-                return {"status": "error", "message": "Error saving transaction to database"}
+                logger.error(f"Error saving transaction {transaction_id} to database - check database_operations.log for more details")
+                return {"status": "error", "message": "Error saving transaction to database - check database_operations.log for more details"}
                 
         except Exception as e:
             logger.error(f"Error processing transaction {transaction_id}: {str(e)}")

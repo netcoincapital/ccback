@@ -1,0 +1,334 @@
+2025-06-03 11:02:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:02:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:02:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:02:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:02:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:18:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:20:48 - database_operations - ERROR - Error saving transaction 0x64c5c1a3130fded891edeafe4bd7762ab52991190dc797fb6e38e739d9ab6b9d: (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x64c5c1a3130fded891edeafe4bd7762ab52991190dc797fb6e38e739d9ab6b9d', 'BlockchainID': 3, 'AddressID': 11275, 'WalletID': 'dcf38f17-5902-4ebb-ab07-cf35709f14a2', 'BlockNumber': 50803831, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 20, 48, 70320), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x07dca612dfaa035ec31450913e51bfa64af3beda', 'Amount': 3e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.019984027077, 'ExplorerUrl': 'https://bscscan.com/tx/0x64c5c1a3130fded891edeafe4bd7762ab52991190dc797fb6e38e739d9ab6b9d', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 20, 48, 170709), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 20, 48, 170714), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-06-03 11:20:48 - database_operations - ERROR - (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x64c5c1a3130fded891edeafe4bd7762ab52991190dc797fb6e38e739d9ab6b9d', 'BlockchainID': 3, 'AddressID': 11275, 'WalletID': 'dcf38f17-5902-4ebb-ab07-cf35709f14a2', 'BlockNumber': 50803831, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 20, 48, 70320), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x07dca612dfaa035ec31450913e51bfa64af3beda', 'Amount': 3e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.019984027077, 'ExplorerUrl': 'https://bscscan.com/tx/0x64c5c1a3130fded891edeafe4bd7762ab52991190dc797fb6e38e739d9ab6b9d', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 20, 48, 170709), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 20, 48, 170714), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Data truncated for column 'Status' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 356, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1265 (01000): Data truncated for column 'Status' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 814, in save_transaction
+    session.execute(insert_tx_query, tx_data)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 356, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x64c5c1a3130fded891edeafe4bd7762ab52991190dc797fb6e38e739d9ab6b9d', 'BlockchainID': 3, 'AddressID': 11275, 'WalletID': 'dcf38f17-5902-4ebb-ab07-cf35709f14a2', 'BlockNumber': 50803831, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 20, 48, 70320), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x07dca612dfaa035ec31450913e51bfa64af3beda', 'Amount': 3e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.019984027077, 'ExplorerUrl': 'https://bscscan.com/tx/0x64c5c1a3130fded891edeafe4bd7762ab52991190dc797fb6e38e739d9ab6b9d', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 20, 48, 170709), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 20, 48, 170714), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-06-03 11:26:47 - database_operations - ERROR - Error saving transaction 0x18f18ff13b2c8a3246eeb309ea251607d8ce00e45a99c8d8ae5c963346057664: (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x18f18ff13b2c8a3246eeb309ea251607d8ce00e45a99c8d8ae5c963346057664', 'BlockchainID': 3, 'AddressID': 11275, 'WalletID': 'dcf38f17-5902-4ebb-ab07-cf35709f14a2', 'BlockNumber': 50804071, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 26, 47, 678609), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x07dca612dfaa035ec31450913e51bfa64af3beda', 'Amount': 2e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.013311071036200002, 'ExplorerUrl': 'https://bscscan.com/tx/0x18f18ff13b2c8a3246eeb309ea251607d8ce00e45a99c8d8ae5c963346057664', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 26, 47, 939536), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 26, 47, 939543), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-06-03 11:26:47 - database_operations - ERROR - (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x18f18ff13b2c8a3246eeb309ea251607d8ce00e45a99c8d8ae5c963346057664', 'BlockchainID': 3, 'AddressID': 11275, 'WalletID': 'dcf38f17-5902-4ebb-ab07-cf35709f14a2', 'BlockNumber': 50804071, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 26, 47, 678609), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x07dca612dfaa035ec31450913e51bfa64af3beda', 'Amount': 2e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.013311071036200002, 'ExplorerUrl': 'https://bscscan.com/tx/0x18f18ff13b2c8a3246eeb309ea251607d8ce00e45a99c8d8ae5c963346057664', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 26, 47, 939536), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 26, 47, 939543), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Data truncated for column 'Status' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 356, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1265 (01000): Data truncated for column 'Status' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 814, in save_transaction
+    session.execute(insert_tx_query, tx_data)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 356, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x18f18ff13b2c8a3246eeb309ea251607d8ce00e45a99c8d8ae5c963346057664', 'BlockchainID': 3, 'AddressID': 11275, 'WalletID': 'dcf38f17-5902-4ebb-ab07-cf35709f14a2', 'BlockNumber': 50804071, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 26, 47, 678609), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x07dca612dfaa035ec31450913e51bfa64af3beda', 'Amount': 2e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.013311071036200002, 'ExplorerUrl': 'https://bscscan.com/tx/0x18f18ff13b2c8a3246eeb309ea251607d8ce00e45a99c8d8ae5c963346057664', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 26, 47, 939536), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 26, 47, 939543), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-06-03 11:33:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:46:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:46:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:46:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:46:45 - database_operations - WARNING - هیچ آدرسی از دیتابیس دریافت نشد.
+2025-06-03 11:46:45 - database_operations - WARNING - تعداد کل رکوردهای جدول address: 0
+2025-06-03 11:46:45 - database_operations - WARNING - هیچ آدرسی از دیتابیس دریافت نشد.
+2025-06-03 11:46:45 - database_operations - WARNING - تعداد کل رکوردهای جدول address: 0
+2025-06-03 11:46:45 - database_operations - WARNING - هیچ آدرسی از دیتابیس دریافت نشد.
+2025-06-03 11:46:45 - database_operations - WARNING - تعداد کل رکوردهای جدول address: 0
+2025-06-03 11:47:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:47:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:47:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-06-03 11:55:28 - database_operations - ERROR - Error saving transaction 0x5d3ed9c5df8595f7411eba35edca9ddda9fd14c490b9226cf29542241ac9ef35: (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x5d3ed9c5df8595f7411eba35edca9ddda9fd14c490b9226cf29542241ac9ef35', 'BlockchainID': 3, 'AddressID': 11295, 'WalletID': '7bb423e8-0f73-4af7-bf03-1df70aa64ae0', 'BlockNumber': 50805216, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 55, 27, 921025), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x5856fd10f3b665816b16eb1b89a0e0259e9c07c1', 'Amount': 2e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.0133086334758, 'ExplorerUrl': 'https://bscscan.com/tx/0x5d3ed9c5df8595f7411eba35edca9ddda9fd14c490b9226cf29542241ac9ef35', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 55, 28, 148670), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 55, 28, 148677), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-06-03 11:55:28 - database_operations - ERROR - (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x5d3ed9c5df8595f7411eba35edca9ddda9fd14c490b9226cf29542241ac9ef35', 'BlockchainID': 3, 'AddressID': 11295, 'WalletID': '7bb423e8-0f73-4af7-bf03-1df70aa64ae0', 'BlockNumber': 50805216, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 55, 27, 921025), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x5856fd10f3b665816b16eb1b89a0e0259e9c07c1', 'Amount': 2e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.0133086334758, 'ExplorerUrl': 'https://bscscan.com/tx/0x5d3ed9c5df8595f7411eba35edca9ddda9fd14c490b9226cf29542241ac9ef35', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 55, 28, 148670), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 55, 28, 148677), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Data truncated for column 'Status' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 356, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1265 (01000): Data truncated for column 'Status' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 814, in save_transaction
+    session.execute(insert_tx_query, tx_data)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 356, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 1265 (01000): Data truncated for column 'Status' at row 1
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x5d3ed9c5df8595f7411eba35edca9ddda9fd14c490b9226cf29542241ac9ef35', 'BlockchainID': 3, 'AddressID': 11295, 'WalletID': '7bb423e8-0f73-4af7-bf03-1df70aa64ae0', 'BlockNumber': 50805216, 'Timestamp': datetime.datetime(2025, 6, 3, 11, 55, 27, 921025), 'TokenContract': None, 'TokenSymbol': 'BNB', 'AssetType': 'native', 'Direction': 'inbound', 'FromAddress': '0x8bd30e0c2d06f7e06dc7b7b9afa7a26d8aebf410', 'ToAddress': '0x5856fd10f3b665816b16eb1b89a0e0259e9c07c1', 'Amount': 2e-05, 'Fee': 2.1000000000000002e-06, 'Price': 0.0133086334758, 'ExplorerUrl': 'https://bscscan.com/tx/0x5d3ed9c5df8595f7411eba35edca9ddda9fd14c490b9226cf29542241ac9ef35', 'CreatedAt': datetime.datetime(2025, 6, 3, 11, 55, 28, 148670), 'UpdatedAt': datetime.datetime(2025, 6, 3, 11, 55, 28, 148677), 'IsSuccessful': True, 'Status': 'completed'}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

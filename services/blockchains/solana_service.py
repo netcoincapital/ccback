@@ -6,8 +6,8 @@ import uuid
 import requests
 from datetime import datetime, timedelta
 from solana.rpc.api import Client
-from solana.transaction import Transaction
-from solana.keypair import Keypair
+from solders.transaction import Transaction
+from solders.keypair import Keypair
 from solana.system_program import TransferParams, transfer
 
 from services.blockchains.base_blockchain_service import BaseBlockchainService
@@ -125,8 +125,8 @@ class SolanaService(BaseBlockchainService):
                     self.logger.info(f"Signing Solana transaction using direct client")
                     
                     # Load private key
-                    from solana.keypair import Keypair
-                    from solana.transaction import Transaction
+                    from solders.keypair import Keypair
+                    from solders.transaction import Transaction
                     from solana.system_program import TransferParams, transfer
                     
                     # Decode private key
@@ -224,7 +224,7 @@ class SolanaService(BaseBlockchainService):
                     self.logger.info(f"Attempting to send Solana transaction via direct client")
                     
                     # Reuse or create keypair
-                    from solana.keypair import Keypair
+                    from solders.keypair import Keypair
                     keypair = Keypair.from_secret_key(bytes.fromhex(private_key))
                     
                     # Try to send transaction (if we already built it above)

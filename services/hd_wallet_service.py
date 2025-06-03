@@ -3,7 +3,7 @@ from bip_utils import Bip39SeedGenerator, Bip44, Bip44Coins
 from eth_account import Account
 from web3 import Web3
 from tronpy import Tron
-from solana.keypair import Keypair
+from solders.keypair import Keypair
 import logging
 
 class HDWalletService:

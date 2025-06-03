@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, BigInteger, DECIMAL, DateTime, ForeignKey, UniqueConstraint, Index, func
+from sqlalchemy import Column, String, Integer, BigInteger, DECIMAL, DateTime, ForeignKey, Index, func
 from sqlalchemy.orm import relationship
 from .base import Base
 
@@ -18,8 +18,8 @@ class Price(Base):
     last_updated = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
     __table_args__ = (
-        UniqueConstraint('crypto_id', 'currency', name='unique_crypto_currency'),
         Index('crypto_id_idx', 'crypto_id'),
+        Index('crypto_currency_idx', 'crypto_id', 'currency'),
     )
 
     currency_ref = relationship('Currencies', back_populates='prices')
