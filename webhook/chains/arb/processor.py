@@ -1,6 +1,6 @@
-from webhook.transaction_processor import TransactionProcessor
-from utils.logging_config import get_logger
-from webhook.chains.arb.utils import parse_arb_input_data, calculate_arb_fee, is_token_transfer
+from CC.webhook.transaction_processor import TransactionProcessor
+from CC.utils.logging_config import get_logger
+from CC.webhook.chains.arb.utils import parse_arb_input_data, calculate_arb_fee, is_token_transfer
 
 logger = get_logger(__name__)
 

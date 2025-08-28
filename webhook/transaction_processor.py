@@ -1,8 +1,8 @@
 import logging
-from utils.logging_config import get_logger
-from webhook.blockchain_utils import BlockchainUtils
-from webhook.database_operations import DatabaseOperations
-from webhook.notification_service import NotificationService
+from CC.utils.logging_config import get_logger
+from CC.webhook.blockchain_utils import BlockchainUtils
+from CC.webhook.database_operations import DatabaseOperations
+from CC.webhook.notification_service import NotificationService
 from datetime import datetime, timedelta
 import time
 import json
@@ -303,6 +303,9 @@ class TransactionProcessor:
                 
                 # ارسال اعلان به فرانت‌اند
                 try:
+                    # Add computed direction and address info to webhook_data for notification
+                    webhook_data['direction'] = 'inbound'  # Contract events are typically inbound
+                    
                     self.notification_service.notify(
                         transaction_type='contract_event',
                         transaction_id=transaction_id,
@@ -550,15 +553,36 @@ class TransactionProcessor:
                         logger.error(f"Error querying token symbol: {str(e)}")
                         token_symbol = 'UNKNOWN'  # استفاده از UNKNOWN به جای آدرس قرارداد
             
-            # If token_symbol starts with 0x and is long, it's likely a contract address
-            if token_symbol and (token_symbol.startswith('0x') or token_symbol.startswith('0X')) and len(token_symbol) >= 40:
+            # If token_symbol starts with 0x (any hex address), it's likely a contract address
+            if token_symbol and (token_symbol.startswith('0x') or token_symbol.startswith('0X')) and len(token_symbol) >= 10:
                 # If we haven't set the token_contract yet, use this as the contract
                 if not token_contract:
                     token_contract = token_symbol
                     asset_type = "token"  # Since we have a contract address, it's a token
-                # استفاده از UNKNOWN به جای آدرس قرارداد
-                token_symbol = 'UNKNOWN'
-                logger.warning(f"Token symbol is a contract address, replacing with UNKNOWN")
+                
+                # Try to get actual token symbol from database using contract address
+                actual_symbol = None
+                try:
+                    with Session(self.db_operations._get_engine()) as db_session:
+                        # Look up by exact SmartContractAddress match
+                        symbol_query = text("""
+                            SELECT Symbol FROM currencies 
+                            WHERE LOWER(SmartContractAddress) = LOWER(:contract_address)
+                            OR SmartContractAddress LIKE CONCAT('%', :contract_address, '%')
+                            LIMIT 1
+                        """)
+                        
+                        result = db_session.execute(symbol_query, {'contract_address': token_symbol}).fetchone()
+                        if result:
+                            actual_symbol = result[0]
+                            logger.info(f"Found actual token symbol '{actual_symbol}' for contract address {token_symbol}")
+                except Exception as e:
+                    logger.error(f"Error looking up token symbol for {token_symbol}: {str(e)}")
+                
+                # Use actual symbol if found, otherwise UNKNOWN
+                token_symbol = actual_symbol if actual_symbol else 'UNKNOWN'
+                if not actual_symbol:
+                    logger.warning(f"Token symbol was a contract address, replaced with UNKNOWN: {token_contract}")
             
             # Construct relevant_addresses for save_transaction
             relevant_addresses = [{
@@ -663,6 +687,12 @@ class TransactionProcessor:
                 
                 # ارسال اعلان به فرانت‌اند
                 try:
+                    # Add computed direction to webhook_data for notification
+                    webhook_data['direction'] = direction
+                    webhook_data['from'] = real_from_address  
+                    webhook_data['to'] = real_to_address
+                    webhook_data['token'] = token_symbol or blockchain
+                    
                     self.notification_service.notify(
                         transaction_type='address_transaction',
                         transaction_id=transaction_id,

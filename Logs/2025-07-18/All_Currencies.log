@@ -1,0 +1,8 @@
+2025-07-18 20:32:40 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-18 20:32:40 - All_Currencies - INFO - Initializing currency post module
+2025-07-18 20:32:41 - All_Currencies - INFO - Initializing currency post module
+2025-07-18 20:33:05 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-18 20:33:05 - All_Currencies - INFO - Initializing currency post module
+2025-07-18 20:33:06 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 01:51:58 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

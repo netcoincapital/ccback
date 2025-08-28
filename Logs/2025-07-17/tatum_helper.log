@@ -1,0 +1,448 @@
+2025-07-17 06:03:37 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:03:38 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:03:38 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:03:55 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878924b2386b442a7fa12e6"}
+2025-07-17 06:09:08 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:09:08 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:09:08 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:09:16 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:11:48 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:11:49 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:11:49 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:12:03 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:27:40 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:27:40 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:27:40 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:28:06 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:28:06 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 06:28:06 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 06:28:06 - tatum_helper - DEBUG - Request data: {'txData': '0xf86c808504a817c80082520894b944f84569b9f32ff12443fbdc6ff38a605c4e2a87038d7ea4c68000802aa0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2'}
+2025-07-17 06:28:06 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 06:28:06 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 06:28:06 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687897f61628e032e30de341"}
+2025-07-17 06:28:06 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687897f61628e032e30de341"}
+2025-07-17 06:31:32 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:31:32 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:31:32 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:32:11 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:32:11 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 06:32:11 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 06:32:11 - tatum_helper - DEBUG - Request data: {'txData': '0xf86c808504a817c80082520894b944f84569b9f32ff12443fbdc6ff38a605c4e2a87038d7ea4c68000802aa0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2'}
+2025-07-17 06:32:11 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 06:32:11 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 06:32:11 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687898eba7a243511c1718de"}
+2025-07-17 06:32:11 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687898eba7a243511c1718de"}
+2025-07-17 06:35:29 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:35:29 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:35:30 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:35:55 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:35:55 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 06:35:55 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 06:35:55 - tatum_helper - DEBUG - Request data: {'txData': '0xf86c808504a817c80082520894b944f84569b9f32ff12443fbdc6ff38a605c4e2a87038d7ea4c68000802aa0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2'}
+2025-07-17 06:35:55 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 06:35:55 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 06:35:55 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687899cbe1f460b74171ea3c"}
+2025-07-17 06:35:55 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687899cbe1f460b74171ea3c"}
+2025-07-17 06:36:41 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:36:42 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:36:42 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:36:58 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:36:58 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 06:36:58 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 06:36:58 - tatum_helper - DEBUG - Request data: {'txData': '0xf86c808504a817c80082520894b944f84569b9f32ff12443fbdc6ff38a605c4e2a87038d7ea4c68000802aa0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2'}
+2025-07-17 06:36:58 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 06:36:58 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 06:36:58 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=68789a0ad7428c890730551d"}
+2025-07-17 06:36:58 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=68789a0ad7428c890730551d"}
+2025-07-17 06:59:04 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:59:04 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:59:04 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:59:14 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 06:59:14 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 06:59:14 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 06:59:14 - tatum_helper - DEBUG - Request data: {'txData': '0xf86c808504a817c80082520894b944f84569b9f32ff12443fbdc6ff38a605c4e2a87038d7ea4c68000802aa0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2'}
+2025-07-17 06:59:14 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 06:59:14 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 06:59:14 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=68789f4208734b5534132c91"}
+2025-07-17 06:59:14 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=68789f4208734b5534132c91"}
+2025-07-17 07:00:52 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:00:52 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:00:52 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:01:10 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:01:10 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:01:11 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:01:21 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:01:21 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:01:21 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:01:21 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a00d74258da866aac7f5e4f3a77ca2c8e74c15b42c67d7584a9cf9c25b47ab0277a04629fb2fe9be63760dabb3382f9c302833039f58b90f02368d3e5371810f87d4'}
+2025-07-17 07:01:21 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:01:21 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:01:21 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=68789fc19155a13078193172"}
+2025-07-17 07:01:21 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=68789fc19155a13078193172"}
+2025-07-17 07:16:40 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:16:40 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:16:40 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:17:06 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:17:06 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:17:06 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:17:06 - tatum_helper - DEBUG - Request data: {'txData': '0xf86c808504a817c80082520894b944f84569b9f32ff12443fbdc6ff38a605c4e2a87038d7ea4c68000802aa0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a0a0c9c4cbaef4cd2a3f6c5b327d2e4c3d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2'}
+2025-07-17 07:17:06 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:17:06 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:17:06 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a372d7428c8907306047"}
+2025-07-17 07:17:06 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"rlp: value size exceeds available input length [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a372d7428c8907306047"}
+2025-07-17 07:21:59 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:21:59 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:21:59 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:24:06 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:24:06 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:24:06 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:24:06 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:24:06 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:24:06 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:24:06 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a516daf2fb1782f1bb4f"}
+2025-07-17 07:24:06 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a516daf2fb1782f1bb4f"}
+2025-07-17 07:28:24 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:28:24 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:28:25 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:28:42 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:28:42 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:28:42 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:28:42 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:28:42 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:28:42 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:28:42 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a62a08734b55341334c6"}
+2025-07-17 07:28:42 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a62a08734b55341334c6"}
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Getting balance from Tatum endpoint: /polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Making get request to https://api.tatum.io/v3/polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Response body: {"balance":"9.199607331348133586"}
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:28:43 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a62be1f460b74171f896"}
+2025-07-17 07:28:43 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a62be1f460b74171f896"}
+2025-07-17 07:32:04 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:32:04 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:32:04 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:32:14 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:32:14 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:32:14 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:32:14 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d018506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820135a0311839bf0c10fd4da953c3e8539481bd8a757e6074144b2387f139958eba3a6ba00f9d62240079e28cb767baa8118692c8b007b04eaf436d7746cf7846c395cff8'}
+2025-07-17 07:32:14 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:32:14 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:32:14 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a6fe08734b5534133580"}
+2025-07-17 07:32:14 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a6fe08734b5534133580"}
+2025-07-17 07:32:15 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a6ff9155a130781939e9"}
+2025-07-17 07:32:15 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a6ff2386b442a7fa2aee"}
+2025-07-17 07:32:15 - tatum_helper - DEBUG - Getting balance from Tatum endpoint: /polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:32:15 - tatum_helper - DEBUG - Making get request to https://api.tatum.io/v3/polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Response body: {"balance":"9.197977331348133586"}
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a70071119edd7f803575"}
+2025-07-17 07:32:16 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a70071119edd7f803575"}
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 07:32:16 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a7001628e032e30df4ce"}
+2025-07-17 07:32:16 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a7001628e032e30df4ce"}
+2025-07-17 07:36:34 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:36:35 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:36:35 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:36:46 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:36:46 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:36:46 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:36:46 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d038506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a0fcfda91254074046cbc8768d65880165fbf63f1d9bdf0ca1e9f9781cbf632b70a055ba32ef735635d4ca85d0ea68d8b4f3660d75eb5e8c9b3f211247b177e7e294'}
+2025-07-17 07:36:46 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:36:47 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 07:36:47 - tatum_helper - DEBUG - Response body: {"txId":"0xa053459febc7d588b22d037b6297d9fd6ecfebfeb1588aec7d0097365efa3c85"}
+2025-07-17 07:36:47 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a80fa7a243511c172ac2"}
+2025-07-17 07:36:48 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a810ed8ea0aa62203ffd"}
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Getting balance from Tatum endpoint: /polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Making get request to https://api.tatum.io/v3/polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Response body: {"balance":"9.196347331348133586"}
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:36:48 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a810674832060923d33a"}
+2025-07-17 07:36:48 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a810674832060923d33a"}
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Using fromPrivateKey method for polygon broadcast
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x742d35Cc6634C0532925A3B8D4C9dB96C4B4d8B6', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a811ed8ea0aa62203fff"}
+2025-07-17 07:36:49 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a811ed8ea0aa62203fff"}
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a811a0f019ef871f9340"}
+2025-07-17 07:36:49 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a811a0f019ef871f9340"}
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Using fromPrivateKey method for polygon broadcast
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x742d35Cc6634C0532925A3B8D4C9dB96C4B4d8B6', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 07:36:49 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a811674832060923d33c"}
+2025-07-17 07:36:49 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a811674832060923d33c"}
+2025-07-17 07:43:28 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:43:29 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:43:29 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:43:48 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:43:48 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:43:48 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:43:48 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d048506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820135a01804eb3274acc44050d19b7139c6c821bfbaba06a65ecec5bac4723d0176c4a2a01ea29c1bf121e6fa620e9725e6292e93a471e4aece2cdb7c7586bdf4329052a6'}
+2025-07-17 07:43:48 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:43:48 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:43:48 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b4600c176cad1dae74"}
+2025-07-17 07:43:48 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b4600c176cad1dae74"}
+2025-07-17 07:43:49 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b508734b553413379e"}
+2025-07-17 07:43:49 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b5674832060923d4be"}
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Getting balance from Tatum endpoint: /polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Making get request to https://api.tatum.io/v3/polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Response body: {"balance":"9.194717331348133586"}
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:43:49 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b5a0f019ef871f94a6"}
+2025-07-17 07:43:49 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b5a0f019ef871f94a6"}
+2025-07-17 07:43:59 - tatum_helper - DEBUG - Using fromPrivateKey method for polygon broadcast
+2025-07-17 07:43:59 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 07:43:59 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:43:59 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x742d35Cc6634C0532925A3B8D4C9dB96C4B4d8B6', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 07:43:59 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c01628e032e30df70e"}
+2025-07-17 07:44:00 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c01628e032e30df70e"}
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c008734b55341337af"}
+2025-07-17 07:44:00 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c008734b55341337af"}
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Using fromPrivateKey method for polygon broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x742d35Cc6634C0532925A3B8D4C9dB96C4B4d8B6', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c0a0f019ef871f94b3"}
+2025-07-17 07:44:00 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c0a0f019ef871f94b3"}
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Using fromPrivateKey method for polygon broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x742d35Cc6634C0532925A3B8D4C9dB96C4B4d8B6', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 07:44:00 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c09155a13078193c51"}
+2025-07-17 07:44:00 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c09155a13078193c51"}
+2025-07-17 07:47:26 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:47:26 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:47:26 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:47:54 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:47:54 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:47:54 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:47:54 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d058506fc23ac0082520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820136a05c1565091e7f5f499109d847004c4a1d53582818c26ed77232c6ba5c74887ce1a0446658a08f1faccb59d72a4c13ddb7fe7a1bbaf8473dfafdc397be3792eefe02'}
+2025-07-17 07:47:54 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:47:54 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:47:54 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaaa1628e032e30df800"}
+2025-07-17 07:47:54 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaaa1628e032e30df800"}
+2025-07-17 07:47:55 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaab71119edd7f8038bf"}
+2025-07-17 07:47:55 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaab2386b442a7fa2e3b"}
+2025-07-17 07:47:55 - tatum_helper - DEBUG - Getting balance from Tatum endpoint: /polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:47:55 - tatum_helper - DEBUG - Making get request to https://api.tatum.io/v3/polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Response body: {"balance":"9.191457331348133586"}
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaac08734b55341338ad"}
+2025-07-17 07:47:56 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaac08734b55341338ad"}
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:47:56 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaac9155a13078193d35"}
+2025-07-17 07:47:56 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaac9155a13078193d35"}
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Request data: {'txData': 'f86d0685064953508b82520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820136a0c3dd5804543b9bd77d76cdd21f18780a5e56c57912fcaefa9e8103aa82698f85a019578dd2ce9907725b18fd8674a12c026b959f0b74e940d382c8a6f75f333e04'}
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaafe1f460b74171fc71"}
+2025-07-17 07:47:59 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaafe1f460b74171fc71"}
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaafe1f460b74171fc73"}
+2025-07-17 07:47:59 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaafe1f460b74171fc73"}
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Using fromPrivateKey method for polygon broadcast
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 07:47:59 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaafdaf2fb1782f1c0ac"}
+2025-07-17 07:47:59 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaafdaf2fb1782f1c0ac"}
+2025-07-17 07:48:00 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:48:00 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:48:00 - tatum_helper - DEBUG - Request data: {'txData': 'f86d0685064953508882520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820136a0c062fdc88021cb663bb6e3849b4c108509925143d118b469058a106fe8275911a02719c494f425c0fd2a865530df5100c7c25abea4e521c58673da37ccbfe1189c'}
+2025-07-17 07:48:00 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:48:00 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:48:00 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aab0d7428c890730677a"}
+2025-07-17 07:48:00 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aab0d7428c890730677a"}
+2025-07-17 07:54:34 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:54:35 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:54:35 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:55:05 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 07:55:05 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:55:05 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:55:05 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d068506fc23ac0082520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820135a0a147d00204a423c0349eb3d88a9864ad2ddfe4902c1bc9d1130ee068812444e7a01fbf4a1bbd1d7e121a1e1ad006bd3c9786c696c3e542b987d324844b73c6c189'}
+2025-07-17 07:55:05 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:55:06 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:55:06 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac5a71119edd7f803aa0"}
+2025-07-17 07:55:06 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac5a71119edd7f803aa0"}
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Getting balance from Tatum endpoint: /polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Making get request to https://api.tatum.io/v3/polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Response body: {"balance":"9.188260331337675586"}
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac8cd7428c8907306965"}
+2025-07-17 07:55:56 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac8cd7428c8907306965"}
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:55:56 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac8c1628e032e30df9fb"}
+2025-07-17 07:55:56 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac8c1628e032e30df9fb"}
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d09850649534fed82520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820135a0f5bca80c2823c13ba6b6e4140b43c6d5d874ef15179c6ebd0847982cfd64311aa05525d2cfa8c18854939ef164cb35260eb5bf0aca1a5a25cc8e4c002e3c5a5638'}
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Response body: {"txId":"0xf95e24023b15ecf32b652a2a4b2bcb3fa4ccc0648b6fef0bdc1dafdbde2a96e5"}
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac9c1628e032e30dfa03"}
+2025-07-17 07:56:12 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac9c1628e032e30dfa03"}
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Using fromPrivateKey method for polygon broadcast
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 07:56:12 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 07:56:13 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 07:56:13 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac9d600c176cad1db146"}
+2025-07-17 07:56:13 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878ac9d600c176cad1db146"}
+2025-07-17 08:14:29 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b0e571119edd7f803fd0"}
+2025-07-17 08:15:42 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b12e71119edd7f804081"}
+2025-07-17 08:16:28 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b15c600c176cad1db73c"}
+2025-07-17 08:17:46 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b1aadaf2fb1782f1c8b7"}
+2025-07-17 08:20:15 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 08:23:33 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b30508734b55341341f8"}
+2025-07-17 08:24:50 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b352600c176cad1db91e"}
+2025-07-17 08:25:46 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b38aa7a243511c173743"}
+2025-07-17 08:53:50 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba1ed7428c89073077e5"}
+2025-07-17 08:54:02 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba2adaf2fb1782f1d10a"}
+2025-07-17 08:54:24 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba409155a13078194e3b"}
+2025-07-17 08:55:21 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 08:55:21 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 08:55:21 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 08:55:21 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d018506fc23ac0082520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820135a01ccef442e051a70465db9a1a01ace743b8983413d5e3547dae8a04b2156501eea02269e022dfbd5601c545ba37714f5135aca7487c476669efb7515f21fe1f59fa'}
+2025-07-17 08:55:21 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 08:55:21 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 08:55:21 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba79600c176cad1dc048"}
+2025-07-17 08:55:21 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba79600c176cad1dc048"}
+2025-07-17 08:55:31 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba8371119edd7f804a48"}
+2025-07-17 08:55:37 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba89600c176cad1dc05f"}
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Getting balance from Tatum endpoint: /polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Making get request to https://api.tatum.io/v3/polygon/account/balance/0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Response body: {"balance":"9.185126331316948586"}
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba8ad7428c890730785d"}
+2025-07-17 08:55:38 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba8ad7428c890730785d"}
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 08:55:38 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba8a1628e032e30e0921"}
+2025-07-17 08:55:38 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba8a1628e032e30e0921"}
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d0185064953514682520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820135a023940250f8736921e169d66e84533b990b75f827159fbe23760d056a08442b2da0112e990e10be72fa4c8e4ea3e90edf4a3d1eaf5821b008b683ecedb5acd072aa'}
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba93600c176cad1dc064"}
+2025-07-17 08:55:47 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba93600c176cad1dc064"}
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d808506fc23ac0082520894742d35cc6634c0532925a3b8d4c9db96c4b4d8b687038d7ea4c6800080820136a036542ef7c39cbc417be79d1283f4c82cd3fcfe15d29f047480f615e7dfa97068a03128f8b901e3aec922505e6d2b321d54df86a4013977e54a75139623c21bc184'}
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Response status code: 403
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba939155a13078194e8a"}
+2025-07-17 08:55:47 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba939155a13078194e8a"}
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Using fromPrivateKey method for polygon broadcast
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Sending polygon transaction via Tatum
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Request data: {'from': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to': '0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1', 'amount': '0.001', 'fromPrivateKey': '***'}
+2025-07-17 08:55:47 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 08:55:48 - tatum_helper - DEBUG - Response status code: 400
+2025-07-17 08:55:48 - tatum_helper - DEBUG - Response body: {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba94600c176cad1dc066"}
+2025-07-17 08:55:48 - tatum_helper - ERROR - Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba94600c176cad1dc066"}
+2025-07-17 08:55:55 - tatum_helper - DEBUG - Broadcasting polygon transaction via Tatum
+2025-07-17 08:55:55 - tatum_helper - DEBUG - Using endpoint: /polygon/broadcast
+2025-07-17 08:55:55 - tatum_helper - DEBUG - Request data: {'txData': '0xf86d0a85064953513982520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820135a01ff0859bb73a69d7cd3609e4ec9c00f2263dbdc1cd2ae505842428f9f4a641a9a015a605e17cfcb43bfe3cb98b43eaf45f618102a7254f58ca677301f39d3ec0aa'}
+2025-07-17 08:55:55 - tatum_helper - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-17 08:55:56 - tatum_helper - DEBUG - Response status code: 200
+2025-07-17 08:55:56 - tatum_helper - DEBUG - Response body: {"txId":"0x78dac5f958d302070d6d2436ec10f922ba41eeeed212abc176c4163d09040b0c"}
+2025-07-17 10:46:55 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 10:47:14 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-17 20:55:52 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=68796358600c176cad1e838b"}
+2025-07-17 20:55:55 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6879635b8cc215dce3444e83"}
+2025-07-17 20:55:58 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6879635e9155a130781a111b"}
+2025-07-19 10:40:14 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b760ea7a243511c1a7956"}
+2025-07-19 10:40:20 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b761471119edd7f83844e"}
+2025-07-19 10:40:23 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b76179840217ebda5fb07"}
+2025-07-19 10:40:33 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b7621d7428c890733af35"}
+2025-07-19 10:45:51 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b775f1628e032e3114568"}
+2025-07-19 10:49:20 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b78309d56841a06d46c76"}
+2025-07-19 11:29:29 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8199d7428c890733bab4"}

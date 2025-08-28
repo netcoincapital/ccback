@@ -131,6 +131,15 @@ def get_api_blockchain_name(blockchain_name):
 def prepare(data):
     """Global prepare endpoint that routes to the appropriate blockchain service"""
     try:
+        # Extract UserID in any format - this is required
+        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
+        if not user_id:
+            logger.warning("No UserID found in prepare request")
+            return jsonify({
+                "success": False, 
+                "message": "UserID is required for transaction preparation"
+            }), 400
+        
         # Extract blockchain from request
         blockchain = data.get('blockchain')
         if not blockchain:
@@ -146,18 +155,9 @@ def prepare(data):
         api_blockchain = get_api_blockchain_name(normalized_blockchain)
         
         # Log the routing
-        logger.info(f"Routing prepare request from legacy endpoint to /{api_blockchain}/prepare")
+        logger.info(f"Routing prepare request from legacy endpoint to /{api_blockchain}/prepare for user {user_id}")
         
-        # Extract UserID in any format
-        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
-        if not user_id:
-            logger.warning("No UserID found in prepare request. This might cause authentication errors.")
-            # Check if there's a userId in the path or query parameters
-            if request.args.get('userId') or request.args.get('UserId') or request.args.get('UserID'):
-                user_id = request.args.get('userId') or request.args.get('UserId') or request.args.get('UserID')
-                logger.info(f"Found UserID in query parameters: {user_id}")
-        
-        # First try direct service call to avoid any authentication issues
+        # First try direct service call
         try:
             # Get service for this blockchain
             service = get_blockchain_service(normalized_blockchain)
@@ -182,12 +182,12 @@ def prepare(data):
             if error:
                 return jsonify({"success": False, "message": error}), 400
                 
-            # Add UserID to response if available
-            if user_id:
+            # Always add UserID to response
+            if isinstance(tx_details, dict):
                 tx_details['UserID'] = user_id
                 tx_details['userId'] = user_id
                 
-            logger.info(f"Successfully prepared transaction for {normalized_blockchain}")
+            logger.info(f"Successfully prepared transaction for {normalized_blockchain} for user {user_id}")
             return jsonify(tx_details), 200
             
         except Exception as direct_error:
@@ -199,14 +199,13 @@ def prepare(data):
                 api_url = f"{request.host_url.rstrip('/')}/api/{api_blockchain}/prepare"
                 logger.debug(f"Making API request to: {api_url}")
                 
-                # Prepare headers with no authentication
+                # Prepare headers
                 headers = {"Content-Type": "application/json"}
                 
                 # Ensure data includes proper UserID
                 api_data = data.copy()
-                if user_id:
-                    api_data['UserID'] = user_id
-                    api_data['userId'] = user_id
+                api_data['UserID'] = user_id
+                api_data['userId'] = user_id
                 
                 # Make the API call
                 response = requests.post(
@@ -215,53 +214,19 @@ def prepare(data):
                     headers=headers
                 )
                 
-                # Check for authentication errors specifically
-                if response.status_code == 400:
-                    resp_data = response.json()
-                    if 'message' in resp_data and 'authentication' in resp_data.get('message', '').lower():
-                        logger.error(f"Authentication error from API: {resp_data.get('message')}")
-                        
-                        # Try again with explicit UserID parameters
-                        if user_id:
-                            logger.info(f"Retrying with explicit UserID parameters")
-                            api_data['UserID'] = user_id
-                            api_data['userId'] = user_id
-                            api_data['user_id'] = user_id
-                            
-                            response = requests.post(
-                                api_url,
-                                json=api_data,
-                                headers=headers
-                            )
-                            
-                            if response.status_code == 200:
-                                logger.info("Retry with explicit UserID succeeded")
-                                return jsonify(response.json()), response.status_code
-                                
-                        return jsonify({
-                            "success": False, 
-                            "message": "Error: The endpoint does not require authentication, but an authentication error occurred.",
-                            "blockchain": blockchain,
-                            "original_error": resp_data.get('message'),
-                            "user_id_provided": user_id is not None
-                        }), 400
-                
                 # Return the response from the API endpoint
                 return jsonify(response.json()), response.status_code
                 
             except Exception as api_error:
-                logger.error(f"Error calling API endpoint: {str(api_error)}")
+                logger.error(f"Error in API endpoint call: {str(api_error)}")
                 return jsonify({
-                    "success": False,
-                    "message": f"Failed to prepare transaction: {str(api_error)}"
+                    "success": False, 
+                    "message": f"Error preparing transaction: {str(api_error)}"
                 }), 500
-    
+                
     except Exception as e:
-        logger.exception(f"Unhandled error in prepare endpoint: {str(e)}")
-        return jsonify({
-            "success": False, 
-            "message": f"Error preparing transaction: {str(e)}"
-        }), 500
+        logger.error(f"Error in prepare endpoint: {str(e)}")
+        return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
 
 # Global API endpoint (backward compatibility) for confirming transactions
 @send_bp.route('/confirm', methods=['POST'])
@@ -271,6 +236,15 @@ def prepare(data):
 def confirm(data):
     """Global confirm endpoint that routes to the appropriate blockchain service"""
     try:
+        # Extract UserID in any format - this is required
+        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
+        if not user_id:
+            logger.warning("No UserID found in confirm request")
+            return jsonify({
+                "success": False, 
+                "message": "UserID is required for transaction confirmation"
+            }), 400
+        
         # Extract blockchain and transaction ID from request
         blockchain = data.get('blockchain')
         transaction_id = data.get('transaction_id')
@@ -290,51 +264,96 @@ def confirm(data):
         
         # Log the routing (without private key)
         safe_data = {k: v for k, v in data.items() if k != 'private_key'}
-        logger.info(f"Routing confirm request from legacy endpoint to /{api_blockchain}/confirm")
+        logger.info(f"Routing confirm request from legacy endpoint to /{api_blockchain}/confirm for user {user_id}")
         logger.debug(f"Confirm request data (sanitized): {json.dumps(safe_data, indent=2)}")
         
         # Extract private key (never log this)
         private_key = data.get('private_key')
+        
+        # ✅ SECURITY IMPROVEMENT: If no private key provided, get it from database
         if not private_key:
-            return jsonify({"success": False, "message": "Missing required field: private_key"}), 400
+            logger.info(f"No private key provided in request, retrieving from database for blockchain {normalized_blockchain}")
+            
+            # Need to get sender address from transaction data first
+            service = get_blockchain_service(normalized_blockchain)
+            if not service:
+                return jsonify({"success": False, 
+                              "message": f"Blockchain service not available: {normalized_blockchain}"}), 503
+            
+            # Try to get transaction from shared storage
+            from services.shared_storage import shared_storage
+            tx_data = shared_storage.get_transaction(transaction_id)
+            
+            if not tx_data:
+                return jsonify({"success": False, "message": "Transaction not found or expired"}), 400
+            
+            # Get sender address from transaction data
+            sender_address = tx_data.get('details', {}).get('sender')
+            if not sender_address:
+                return jsonify({"success": False, "message": "Transaction data incomplete - no sender address"}), 400
+            
+            # Retrieve private key from database
+            session = SessionLocal()
+            try:
+                private_key = get_private_key_from_db(session, sender_address, normalized_blockchain)
+                logger.info(f"Successfully retrieved private key from database for address: {sender_address}")
+            except Exception as e:
+                logger.error(f"Failed to retrieve private key from database: {str(e)}")
+                return jsonify({"success": False, "message": f"Failed to retrieve wallet credentials: {str(e)}"}), 400
+            finally:
+                session.close()
+        else:
+            logger.info(f"Private key provided in request for blockchain {normalized_blockchain}")
+            
+        if not private_key:
+            return jsonify({"success": False, "message": "Unable to retrieve private key for transaction"}), 400
             
         # Get service using the helper function
         service = get_blockchain_service(normalized_blockchain)
         if not service:
             return jsonify({"success": False, 
                           "message": f"Blockchain service not available: {normalized_blockchain}"}), 503
-                          
-        # Call the service's send method (uses standardized broadcast endpoints via TatumHelper)
-        tx_result, error = service.send_transaction(transaction_id, private_key)
+        
+        # Call the service's send method
+        logger.info(f"Directly calling send_transaction for {normalized_blockchain}")
+        tx_details, error = service.send_transaction(transaction_id, private_key)
         
         if error:
-            logger.error(f"Error confirming transaction: {error}")
+            logger.error(f"Error in send_transaction: {error}")
             return jsonify({"success": False, "message": error}), 400
-            
-        # Ensure consistent response format
-        tx_hash = tx_result.get('tx_hash') or tx_result.get('transaction_hash')
         
-        logger.info(f"Successfully confirmed and broadcast transaction: {transaction_id}")
-        return jsonify({
-            "success": True,
-            "transaction_hash": tx_hash,
-            "message": "Transaction sent successfully"
-        }), 200
-            
+        # Always add UserID to response
+        if isinstance(tx_details, dict):
+            tx_details['UserID'] = user_id
+            tx_details['userId'] = user_id
+        
+        logger.info(f"Successfully confirmed transaction {transaction_id} for {normalized_blockchain} for user {user_id}")
+        return jsonify(tx_details), 200
+        
     except Exception as e:
-        logger.exception(f"Error in confirm endpoint: {str(e)}")
-        return jsonify({"success": False, "message": f"Error confirming transaction: {str(e)}"}), 500
+        logger.error(f"Error in confirm endpoint: {str(e)}")
+        return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
 
 # Ethereum specific endpoints
 @send_bp.route('/ethereum/prepare', methods=['POST'])
 @SecurityUtils.rate_limit(requests=10, window=60)
 @blockchain_api
 def ethereum_prepare(data):
-    """Ethereum-specific prepare endpoint"""
+    """Ethereum-specific prepare endpoint with enhanced error handling"""
     try:
+        # Extract UserID in any format - this is required
+        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
+        if not user_id:
+            logger.warning("No UserID found in Ethereum prepare request")
+            return jsonify({
+                "success": False, 
+                "message": "UserID is required for Ethereum transaction preparation"
+            }), 400
+        
         # Get Ethereum service
         service = get_blockchain_service('ethereum')
         if not service:
+            logger.error("Ethereum service is not available")
             return jsonify({"success": False, "message": "Ethereum service not available"}), 503
             
         # Extract parameters
@@ -343,21 +362,38 @@ def ethereum_prepare(data):
         amount = data.get('amount')
         contract = data.get('smart_contract_address')
         
+        # Log the request details
+        logger.info(f"Ethereum prepare request - Sender: {sender}, Recipient: {recipient}, Amount: {amount}, UserID: {user_id}")
+        
         # Validate required fields
         if not sender or not recipient or not amount:
+            logger.warning(f"Missing required fields - Sender: {sender}, Recipient: {recipient}, Amount: {amount}")
             return jsonify({"success": False, 
                           "message": "Missing required fields: sender_address, recipient_address, or amount"}), 400
             
         # Call the service's prepare method
-        tx_details, error = service.prepare_transaction(sender, recipient, amount, contract)
-        
-        if error:
-            return jsonify({"success": False, "message": error}), 400
+        try:
+            logger.info(f"Calling Ethereum prepare_transaction with sender:{sender}, recipient:{recipient}, amount:{amount}")
+            tx_details, error = service.prepare_transaction(sender, recipient, amount, contract)
             
-        return jsonify(tx_details), 200
+            if error:
+                logger.error(f"Error in Ethereum prepare_transaction: {error}")
+                return jsonify({"success": False, "message": error}), 400
+                
+            # Always add UserID to response
+            if isinstance(tx_details, dict):
+                tx_details['UserID'] = user_id
+                
+            logger.info(f"Successfully prepared Ethereum transaction with ID: {tx_details.get('transaction_id', 'unknown')} for user {user_id}")
+            return jsonify(tx_details), 200
+            
+        except Exception as prepare_error:
+            logger.error(f"Error in Ethereum prepare_transaction: {str(prepare_error)}")
+            return jsonify({"success": False, "message": f"Error preparing Ethereum transaction: {str(prepare_error)}"}), 500
+            
     except Exception as e:
-        logger.exception(f"Error in ethereum prepare endpoint: {str(e)}")
-        return jsonify({"success": False, "message": f"Error preparing transaction: {str(e)}"}), 500
+        logger.error(f"Error in Ethereum prepare endpoint: {str(e)}")
+        return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
 
 @send_bp.route('/ethereum/confirm', methods=['POST'])
 @SecurityUtils.rate_limit(requests=5, window=60)
@@ -411,11 +447,21 @@ def ethereum_confirm(data):
 @SecurityUtils.rate_limit(requests=10, window=60)
 @blockchain_api
 def bsc_prepare(data):
-    """BSC-specific prepare endpoint"""
+    """BSC-specific prepare endpoint with enhanced error handling"""
     try:
+        # Extract UserID in any format - this is required
+        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
+        if not user_id:
+            logger.warning("No UserID found in BSC prepare request")
+            return jsonify({
+                "success": False, 
+                "message": "UserID is required for BSC transaction preparation"
+            }), 400
+        
         # Get BSC service
         service = get_blockchain_service('bsc')
         if not service:
+            logger.error("BSC service is not available")
             return jsonify({"success": False, "message": "BSC service not available"}), 503
             
         # Extract parameters
@@ -424,22 +470,38 @@ def bsc_prepare(data):
         amount = data.get('amount')
         contract = data.get('smart_contract_address')
         
+        # Log the request details
+        logger.info(f"BSC prepare request - Sender: {sender}, Recipient: {recipient}, Amount: {amount}, UserID: {user_id}")
+        
         # Validate required fields
         if not sender or not recipient or not amount:
+            logger.warning(f"Missing required fields - Sender: {sender}, Recipient: {recipient}, Amount: {amount}")
             return jsonify({"success": False, 
                           "message": "Missing required fields: sender_address, recipient_address, or amount"}), 400
             
         # Call the service's prepare method
-        tx_details, error = service.prepare_transaction(sender, recipient, amount, contract)
-        
-        if error:
-            return jsonify({"success": False, "message": error}), 400
+        try:
+            logger.info(f"Calling BSC prepare_transaction with sender:{sender}, recipient:{recipient}, amount:{amount}")
+            tx_details, error = service.prepare_transaction(sender, recipient, amount, contract)
             
-        return jsonify(tx_details), 200
-        
+            if error:
+                logger.error(f"Error in BSC prepare_transaction: {error}")
+                return jsonify({"success": False, "message": error}), 400
+                
+            # Always add UserID to response
+            if isinstance(tx_details, dict):
+                tx_details['UserID'] = user_id
+                
+            logger.info(f"Successfully prepared BSC transaction with ID: {tx_details.get('transaction_id', 'unknown')} for user {user_id}")
+            return jsonify(tx_details), 200
+            
+        except Exception as prepare_error:
+            logger.error(f"Error in BSC prepare_transaction: {str(prepare_error)}")
+            return jsonify({"success": False, "message": f"Error preparing BSC transaction: {str(prepare_error)}"}), 500
+            
     except Exception as e:
-        logger.exception(f"Error in BSC prepare endpoint: {str(e)}")
-        return jsonify({"success": False, "message": f"Error preparing transaction: {str(e)}"}), 500
+        logger.error(f"Error in BSC prepare endpoint: {str(e)}")
+        return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
 
 @send_bp.route('/bsc/confirm', methods=['POST'])
 @SecurityUtils.rate_limit(requests=5, window=60)
@@ -495,6 +557,15 @@ def bsc_confirm(data):
 def tron_prepare(data):
     """TRON-specific prepare endpoint with enhanced error handling"""
     try:
+        # Extract UserID in any format - this is required
+        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
+        if not user_id:
+            logger.warning("No UserID found in TRON prepare request")
+            return jsonify({
+                "success": False, 
+                "message": "UserID is required for TRON transaction preparation"
+            }), 400
+        
         # Get TRON service
         service = get_blockchain_service('tron')
         if not service:
@@ -506,9 +577,6 @@ def tron_prepare(data):
         recipient = data.get('recipient_address')
         amount = data.get('amount')
         contract = data.get('smart_contract_address')
-        
-        # Extract UserID in any format
-        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
         
         # Log the request details
         logger.info(f"TRON prepare request - Sender: {sender}, Recipient: {recipient}, Amount: {amount}, UserID: {user_id}")
@@ -522,65 +590,25 @@ def tron_prepare(data):
         # Call the service's prepare method
         try:
             logger.info(f"Calling TRON prepare_transaction with sender:{sender}, recipient:{recipient}, amount:{amount}")
-            tx_details, error = service.prepare_transaction(sender, recipient, amount)
+            tx_details, error = service.prepare_transaction(sender, recipient, amount, contract)
             
             if error:
                 logger.error(f"Error in TRON prepare_transaction: {error}")
                 return jsonify({"success": False, "message": error}), 400
                 
-            # Add UserID to response if provided
-            if user_id and tx_details:
+            # Always add UserID to response
+            if isinstance(tx_details, dict):
                 tx_details['UserID'] = user_id
                 
-            logger.info(f"Successfully prepared TRON transaction with ID: {tx_details.get('transaction_id', 'unknown')}")
+            logger.info(f"Successfully prepared TRON transaction with ID: {tx_details.get('transaction_id', 'unknown')} for user {user_id}")
             return jsonify(tx_details), 200
             
         except Exception as prepare_error:
-            logger.exception(f"Exception in TRON prepare_transaction: {str(prepare_error)}")
+            logger.error(f"Error in TRON prepare_transaction: {str(prepare_error)}")
+            return jsonify({"success": False, "message": f"Error preparing TRON transaction: {str(prepare_error)}"}), 500
             
-            # Try direct API call as fallback
-            try:
-                # Make request to our special debug TRON API endpoint
-                api_url = f"{request.host_url.rstrip('/')}/api/tron/debug"
-                logger.info(f"Making diagnostic request to: {api_url}")
-                
-                # Create detailed diagnostics request
-                diagnostic_data = {
-                    "sender_address": sender,
-                    "recipient_address": recipient,
-                    "amount": amount,
-                    "UserID": user_id,
-                    "error_info": str(prepare_error)
-                }
-                
-                # Execute diagnostic request
-                diagnostic_response = requests.post(
-                    api_url,
-                    json=diagnostic_data,
-                    headers={"Content-Type": "application/json"}
-                )
-                
-                # Log diagnostic results
-                try:
-                    diag_result = diagnostic_response.json()
-                    logger.info(f"TRON diagnostics result: {json.dumps(diag_result, indent=2)}")
-                except:
-                    logger.error(f"Failed to parse diagnostics response: {diagnostic_response.text}")
-            except Exception as diag_error:
-                logger.error(f"Error in TRON diagnostics: {str(diag_error)}")
-            
-            # Return user-friendly error message
-            return jsonify({
-                "success": False,
-                "message": f"Error preparing TRON transaction: {str(prepare_error)}",
-                "error_details": {
-                    "type": type(prepare_error).__name__,
-                    "service_available": service is not None
-                }
-            }), 500
-        
     except Exception as e:
-        logger.exception(f"Error in TRON prepare endpoint: {str(e)}")
+        logger.error(f"Error in TRON prepare endpoint: {str(e)}")
         return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
 
 @send_bp.route('/tron/confirm', methods=['POST'])
@@ -635,11 +663,21 @@ def tron_confirm(data):
 @SecurityUtils.rate_limit(requests=10, window=60)
 @blockchain_api
 def bitcoin_prepare(data):
-    """Bitcoin-specific prepare endpoint"""
+    """Bitcoin-specific prepare endpoint with enhanced error handling"""
     try:
+        # Extract UserID in any format - this is required
+        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
+        if not user_id:
+            logger.warning("No UserID found in Bitcoin prepare request")
+            return jsonify({
+                "success": False, 
+                "message": "UserID is required for Bitcoin transaction preparation"
+            }), 400
+        
         # Get Bitcoin service
         service = get_blockchain_service('bitcoin')
         if not service:
+            logger.error("Bitcoin service is not available")
             return jsonify({"success": False, "message": "Bitcoin service not available"}), 503
             
         # Extract parameters
@@ -647,21 +685,38 @@ def bitcoin_prepare(data):
         recipient = data.get('recipient_address')
         amount = data.get('amount')
         
+        # Log the request details
+        logger.info(f"Bitcoin prepare request - Sender: {sender}, Recipient: {recipient}, Amount: {amount}, UserID: {user_id}")
+        
         # Validate required fields
         if not sender or not recipient or not amount:
+            logger.warning(f"Missing required fields - Sender: {sender}, Recipient: {recipient}, Amount: {amount}")
             return jsonify({"success": False, 
                           "message": "Missing required fields: sender_address, recipient_address, or amount"}), 400
             
         # Call the service's prepare method
-        tx_details, error = service.prepare_transaction(sender, recipient, amount)
-        
-        if error:
-            return jsonify({"success": False, "message": error}), 400
+        try:
+            logger.info(f"Calling Bitcoin prepare_transaction with sender:{sender}, recipient:{recipient}, amount:{amount}")
+            tx_details, error = service.prepare_transaction(sender, recipient, amount)
             
-        return jsonify(tx_details), 200
+            if error:
+                logger.error(f"Error in Bitcoin prepare_transaction: {error}")
+                return jsonify({"success": False, "message": error}), 400
+                
+            # Always add UserID to response
+            if isinstance(tx_details, dict):
+                tx_details['UserID'] = user_id
+                
+            logger.info(f"Successfully prepared Bitcoin transaction with ID: {tx_details.get('transaction_id', 'unknown')} for user {user_id}")
+            return jsonify(tx_details), 200
+            
+        except Exception as prepare_error:
+            logger.error(f"Error in Bitcoin prepare_transaction: {str(prepare_error)}")
+            return jsonify({"success": False, "message": f"Error preparing Bitcoin transaction: {str(prepare_error)}"}), 500
+            
     except Exception as e:
-        logger.exception(f"Error in Bitcoin prepare endpoint: {str(e)}")
-        return jsonify({"success": False, "message": f"Error preparing transaction: {str(e)}"}), 500
+        logger.error(f"Error in Bitcoin prepare endpoint: {str(e)}")
+        return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
 
 @send_bp.route('/bitcoin/confirm', methods=['POST'])
 @SecurityUtils.rate_limit(requests=5, window=60)
@@ -715,11 +770,21 @@ def bitcoin_confirm(data):
 @SecurityUtils.rate_limit(requests=10, window=60)
 @blockchain_api
 def polygon_prepare(data):
-    """Polygon-specific prepare endpoint"""
+    """Polygon-specific prepare endpoint with enhanced error handling"""
     try:
+        # Extract UserID in any format - this is required
+        user_id = data.get('UserId') or data.get('userId') or data.get('UserID') or data.get('userid') or data.get('user_id')
+        if not user_id:
+            logger.warning("No UserID found in Polygon prepare request")
+            return jsonify({
+                "success": False, 
+                "message": "UserID is required for Polygon transaction preparation"
+            }), 400
+        
         # Get Polygon service
         service = get_blockchain_service('polygon')
         if not service:
+            logger.error("Polygon service is not available")
             return jsonify({"success": False, "message": "Polygon service not available"}), 503
             
         # Extract parameters
@@ -728,29 +793,77 @@ def polygon_prepare(data):
         amount = data.get('amount')
         contract = data.get('smart_contract_address')
         
+        # Log the request details
+        logger.info(f"Polygon prepare request - Sender: {sender}, Recipient: {recipient}, Amount: {amount}, UserID: {user_id}")
+        
         # Validate required fields
         if not sender or not recipient or not amount:
+            logger.warning(f"Missing required fields - Sender: {sender}, Recipient: {recipient}, Amount: {amount}")
             return jsonify({"success": False, 
                           "message": "Missing required fields: sender_address, recipient_address, or amount"}), 400
             
         # Call the service's prepare method
-        tx_details, error = service.prepare_transaction(sender, recipient, amount, contract)
-        
-        if error:
-            return jsonify({"success": False, "message": error}), 400
+        try:
+            logger.info(f"Calling Polygon prepare_transaction with sender:{sender}, recipient:{recipient}, amount:{amount}")
             
-        return jsonify(tx_details), 200
+            # Debug: Check storage before prepare
+            logger.info(f"Storage before prepare: {service.storage.get_storage_info()}")
+            
+            tx_details, error = service.prepare_transaction(sender, recipient, amount, contract)
+            
+            if error:
+                logger.error(f"Error in Polygon prepare_transaction: {error}")
+                return jsonify({"success": False, "message": error}), 400
+            
+            # Debug: Check storage after prepare
+            logger.info(f"Storage after prepare: {service.storage.get_storage_info()}")
+            
+            # Debug: Try to retrieve the transaction immediately
+            transaction_id = tx_details.get('transaction_id')
+            if transaction_id:
+                logger.info(f"Trying to retrieve transaction {transaction_id} immediately after prepare...")
+                stored_tx = service.storage.get_transaction(transaction_id)
+                if stored_tx:
+                    logger.info(f"✅ Transaction {transaction_id} found in storage immediately after prepare")
+                else:
+                    logger.error(f"❌ Transaction {transaction_id} NOT found in storage immediately after prepare")
+                    # Check all transactions
+                    all_txs = service.storage.get_all_transactions()
+                    logger.info(f"All transactions in storage: {list(all_txs.keys())}")
+                    
+                    # Force store the transaction using shared storage directly
+                    logger.info(f"Force storing transaction {transaction_id} using shared storage...")
+                    from services.shared_storage import shared_storage
+                    shared_storage.store_transaction(transaction_id, tx_details, 30)
+                    
+                    # Verify storage
+                    stored_tx_after = shared_storage.get_transaction(transaction_id)
+                    if stored_tx_after:
+                        logger.info(f"✅ Transaction {transaction_id} successfully force-stored")
+                    else:
+                        logger.error(f"❌ Failed to force-store transaction {transaction_id}")
+                
+            # Always add UserID to response
+            if isinstance(tx_details, dict):
+                tx_details['UserID'] = user_id
+                
+            logger.info(f"Successfully prepared Polygon transaction with ID: {tx_details.get('transaction_id', 'unknown')} for user {user_id}")
+            return jsonify(tx_details), 200
+            
+        except Exception as prepare_error:
+            logger.error(f"Error in Polygon prepare_transaction: {str(prepare_error)}")
+            return jsonify({"success": False, "message": f"Error preparing Polygon transaction: {str(prepare_error)}"}), 500
             
     except Exception as e:
-        logger.exception(f"Error in Polygon prepare endpoint: {str(e)}")
-        return jsonify({"success": False, "message": f"Error preparing transaction: {str(e)}"}), 500
+        logger.error(f"Error in Polygon prepare endpoint: {str(e)}")
+        return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
 
 @send_bp.route('/polygon/confirm', methods=['POST'])
 @SecurityUtils.rate_limit(requests=5, window=60)
 @log_transaction_request
 @blockchain_api
 def polygon_confirm(data):
-    """Polygon-specific confirm endpoint"""
+    """Polygon-specific confirm endpoint with database private key retrieval"""
     try:
         # Get Polygon service
         service = get_blockchain_service('polygon')
@@ -759,17 +872,46 @@ def polygon_confirm(data):
             
         # Extract parameters
         transaction_id = data.get('transaction_id')
-        private_key = data.get('private_key')
+        private_key = data.get('private_key')  # Optional - will get from DB if not provided
         
         # Validate required fields
-        if not transaction_id or not private_key:
+        if not transaction_id:
             return jsonify({"success": False, 
-                          "message": "Missing required fields: transaction_id or private_key"}), 400
+                          "message": "Missing required field: transaction_id"}), 400
         
         # Log sanitized request data
         safe_data = sanitize_sensitive_data(data)
         logger.info(f"Processing Polygon transaction confirm: {transaction_id}")
         logger.debug(f"Confirm data (sanitized): {json.dumps(safe_data, indent=2)}")
+        
+        # Try to get transaction from shared storage directly
+        from services.shared_storage import shared_storage
+        tx_data = shared_storage.get_transaction(transaction_id)
+        
+        if not tx_data:
+            logger.error(f"Transaction {transaction_id} not found in shared storage")
+            return jsonify({"success": False, "message": "Transaction not found or expired"}), 400
+            
+        logger.info(f"Found transaction {transaction_id} in shared storage")
+        
+        # Get sender address from transaction data
+        sender_address = tx_data.get('details', {}).get('sender')
+        if not sender_address:
+            logger.error(f"No sender address found in transaction {transaction_id}")
+            return jsonify({"success": False, "message": "Transaction data incomplete - no sender address"}), 400
+        
+        # If no private key provided, get it from database
+        if not private_key:
+            logger.info(f"No private key provided, retrieving from database for address: {sender_address}")
+            session = SessionLocal()
+            try:
+                private_key = get_private_key_from_db(session, sender_address, 'polygon')
+                logger.info(f"Successfully retrieved private key from database for address: {sender_address}")
+            except Exception as e:
+                logger.error(f"Failed to retrieve private key from database: {str(e)}")
+                return jsonify({"success": False, "message": f"Failed to retrieve wallet credentials: {str(e)}"}), 400
+            finally:
+                session.close()
             
         # Call the service's send method
         result, error = service.send_transaction(transaction_id, private_key)
@@ -828,21 +970,94 @@ def get_transaction(transaction_id):
     logger.debug(f"Available transaction IDs: {list(transaction_manager.pending_transactions.keys())}")
     return None
 
+@send_bp.route('/debug-storage', methods=['GET'])
+def debug_storage():
+    """Debug endpoint to check transaction storage status and configuration."""
+    try:
+        # Get storage info from a TRON service instance (all services use the same storage)
+        service = get_blockchain_service('tron')
+        if not service:
+            return jsonify({
+                "error": "TRON service not available",
+                "available_services": list(blockchain_services.keys())
+            }), 500
+            
+        # Get storage information
+        storage_info = service.storage.get_storage_info()
+        
+        # Get all transactions
+        all_transactions = service.storage.get_all_transactions()
+        
+        # Clean up expired transactions
+        cleaned_count = service.storage.cleanup_expired()
+        
+        return jsonify({
+            "storage_info": storage_info,
+            "transaction_count": len(all_transactions),
+            "transactions": {
+                tx_id: {
+                    "expires_at": tx_data.get("expires_at"),
+                    "stored_at": tx_data.get("stored_at"),
+                    "blockchain": tx_data.get("details", {}).get("blockchain"),
+                    "amount": tx_data.get("details", {}).get("amount"),
+                    "sender": tx_data.get("details", {}).get("sender"),
+                    "recipient": tx_data.get("details", {}).get("recipient")
+                }
+                for tx_id, tx_data in all_transactions.items()
+            },
+            "cleaned_expired_count": cleaned_count,
+            "timestamp": datetime.now().isoformat()
+        }), 200
+        
+    except Exception as e:
+        logger.error(f"Error in debug storage endpoint: {str(e)}")
+        return jsonify({
+            "error": f"Debug storage error: {str(e)}",
+            "timestamp": datetime.now().isoformat()
+        }), 500
+
 @send_bp.route('/debug-transaction/<transaction_id>', methods=['GET'])
 def debug_transaction(transaction_id):
-    """Debug endpoint to see a specific transaction."""
-    tx_data = transaction_manager.get_transaction(transaction_id)
-    if tx_data:
-        result = {
-            'exists': True,
-            'data': {k: v for k, v in tx_data.items() if k != 'private_key'}  # Don't include private key
-        }
-    else:
-        result = {
-            'exists': False,
-            'all_transactions': list(transaction_manager.pending_transactions.keys())
-        }
-    return jsonify(result), 200
+    """Debug endpoint to check a specific transaction's status."""
+    try:
+        # Get storage info from a TRON service instance
+        service = get_blockchain_service('tron')
+        if not service:
+            return jsonify({
+                "error": "TRON service not available",
+                "transaction_id": transaction_id
+            }), 500
+            
+        # Try to get the transaction
+        tx_data = service.storage.get_transaction(transaction_id)
+        
+        # Get storage info
+        storage_info = service.storage.get_storage_info()
+        
+        if tx_data:
+            return jsonify({
+                "transaction_id": transaction_id,
+                "found": True,
+                "transaction_data": tx_data,
+                "storage_info": storage_info,
+                "timestamp": datetime.now().isoformat()
+            }), 200
+        else:
+            return jsonify({
+                "transaction_id": transaction_id,
+                "found": False,
+                "message": "Transaction not found or expired",
+                "storage_info": storage_info,
+                "timestamp": datetime.now().isoformat()
+            }), 404
+            
+    except Exception as e:
+        logger.error(f"Error in debug transaction endpoint: {str(e)}")
+        return jsonify({
+            "error": f"Debug transaction error: {str(e)}",
+            "transaction_id": transaction_id,
+            "timestamp": datetime.now().isoformat()
+        }), 500
 
 def get_private_key_from_db(session, address, blockchain_name):
     """Get private key from database"""

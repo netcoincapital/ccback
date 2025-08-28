@@ -14,6 +14,7 @@ from .BalanceUpdateLog import BalanceUpdateLog
 from .UserDevices import UserDevices
 from CC.config import DATABASE_URL
 
+
 # ایجاد موتور دیتابیس
 engine = create_engine(DATABASE_URL, echo=False, pool_pre_ping=True)
 

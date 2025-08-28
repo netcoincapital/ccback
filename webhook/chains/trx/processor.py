@@ -1,6 +1,6 @@
-from webhook.transaction_processor import TransactionProcessor
-from utils.logging_config import get_logger
-from webhook.chains.trx.utils import parse_tron_contract_data
+from CC.webhook.transaction_processor import TransactionProcessor
+from CC.utils.logging_config import get_logger
+from CC.webhook.chains.trx.utils import parse_tron_contract_data
 import requests
 from decimal import Decimal
 from sqlalchemy import text

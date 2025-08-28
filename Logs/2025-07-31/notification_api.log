@@ -1,0 +1,37 @@
+2025-07-31 10:38:40 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-31 10:42:01 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-31 10:42:01 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-31 10:42:02 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-31 10:42:10 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-31 10:42:10 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-31 10:42:11 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-31 11:17:10 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-31 11:17:10 - notification_api - INFO - درخواست برای کاربر: 2f9ed693-bdfd-4b21-828f-e0f9e1affaf9
+2025-07-31 11:17:10 - notification_api - INFO - درخواست برای کیف پول: 5d498e06-7aca-402f-9bf5-c15d34be8cff
+2025-07-31 11:17:10 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-31 11:17:10 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-31 11:17:10 - notification_api - INFO - توکن دستگاه جدید با شناسه 287 ثبت شد برای کاربر 2f9ed693-bdfd-4b21-828f-e0f9e1affaf9 و کیف پول 5d498e06-7aca-402f-9bf5-c15d34be8cff
+2025-07-31 17:19:30 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-31 17:19:30 - notification_api - INFO - درخواست برای کاربر: 98927ddd-d93e-492e-a4ee-d4f910994845
+2025-07-31 17:19:30 - notification_api - INFO - درخواست برای کیف پول: 4d9e847d-6514-48ac-add9-9720fb7ce9c3
+2025-07-31 17:19:30 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-31 17:19:30 - notification_api - INFO - دستگاه: SM-A556E, نوع: android
+2025-07-31 17:19:30 - notification_api - INFO - توکن دستگاه جدید با شناسه 288 ثبت شد برای کاربر 98927ddd-d93e-492e-a4ee-d4f910994845 و کیف پول 4d9e847d-6514-48ac-add9-9720fb7ce9c3
+2025-07-31 20:20:55 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-31 20:20:55 - notification_api - INFO - درخواست برای کاربر: ec6f1ef1-7d7c-4b38-8280-2ebaa1a2f2d0
+2025-07-31 20:20:55 - notification_api - INFO - درخواست برای کیف پول: 2c1c2c3d-02c9-4c38-8fe6-c36f53231f50
+2025-07-31 20:20:55 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-31 20:20:55 - notification_api - INFO - دستگاه: M2010J19CG, نوع: android
+2025-07-31 20:20:55 - notification_api - INFO - توکن دستگاه جدید با شناسه 289 ثبت شد برای کاربر ec6f1ef1-7d7c-4b38-8280-2ebaa1a2f2d0 و کیف پول 2c1c2c3d-02c9-4c38-8fe6-c36f53231f50
+2025-08-01 06:41:45 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 06:41:45 - notification_api - INFO - درخواست برای کاربر: eca138ca-d670-41cd-957a-c1a1aec88c37
+2025-08-01 06:41:45 - notification_api - INFO - درخواست برای کیف پول: d5939b26-b4db-414e-bd3c-a036acb5b2a0
+2025-08-01 06:41:45 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-01 06:41:45 - notification_api - INFO - دستگاه: moto g stylus 5G (2022), نوع: android
+2025-08-01 06:41:45 - notification_api - INFO - توکن دستگاه جدید با شناسه 290 ثبت شد برای کاربر eca138ca-d670-41cd-957a-c1a1aec88c37 و کیف پول d5939b26-b4db-414e-bd3c-a036acb5b2a0
+2025-08-01 06:51:10 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 06:51:10 - notification_api - INFO - درخواست برای کاربر: d29366a4-dad7-40f2-af4d-a097b3c4002b
+2025-08-01 06:51:10 - notification_api - INFO - درخواست برای کیف پول: 5ceb19ba-c02e-405a-8550-118b477fe11e
+2025-08-01 06:51:10 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-01 06:51:10 - notification_api - INFO - دستگاه: moto g stylus 5G (2022), نوع: android
+2025-08-01 06:51:10 - notification_api - INFO - توکن دستگاه جدید با شناسه 291 ثبت شد برای کاربر d29366a4-dad7-40f2-af4d-a097b3c4002b و کیف پول 5ceb19ba-c02e-405a-8550-118b477fe11e

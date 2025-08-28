@@ -1,0 +1,59 @@
+2025-08-11 12:46:53 - NCCPRICE - DEBUG - Logger initialized for NCCPRICE at level DEBUG
+2025-08-11 12:46:53 - NCCPRICE - INFO - 📊 راه‌اندازی ماژول شبیه‌ساز قیمت NCC
+2025-08-11 12:48:13 - NCCPRICE - DEBUG - Logger initialized for NCCPRICE at level DEBUG
+2025-08-11 12:48:13 - NCCPRICE - INFO - 📊 راه‌اندازی ماژول شبیه‌ساز قیمت NCC
+2025-08-11 12:48:13 - NCCPRICE - INFO - 🔍 جستجوی توکن‌های NCC در دیتابیس...
+2025-08-11 12:48:13 - NCCPRICE - INFO - ✅ توکن NCC با آیدی 8517 یافت شد - شناسه ارز: 8517
+2025-08-11 12:48:13 - NCCPRICE - INFO - ✅ توکن NCC با آیدی 8519 یافت شد - شناسه ارز: 8519
+2025-08-11 12:48:13 - NCCPRICE - INFO - ✅ تعداد 2 توکن NCC یافت شد: [8517, 8519]
+2025-08-11 12:48:45 - NCCPRICE - DEBUG - Logger initialized for NCCPRICE at level DEBUG
+2025-08-11 12:48:45 - NCCPRICE - INFO - 📊 راه‌اندازی ماژول شبیه‌ساز قیمت NCC
+2025-08-11 12:48:45 - NCCPRICE - INFO - 🔍 جستجوی توکن‌های NCC در دیتابیس...
+2025-08-11 12:48:45 - NCCPRICE - INFO - ✅ توکن NCC با آیدی 8517 یافت شد - شناسه ارز: 8517
+2025-08-11 12:48:45 - NCCPRICE - INFO - ✅ توکن NCC با آیدی 8519 یافت شد - شناسه ارز: 8519
+2025-08-11 12:48:45 - NCCPRICE - INFO - ✅ تعداد 2 توکن NCC یافت شد: [8517, 8519]
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - Logger initialized for NCCPRICE at level DEBUG
+2025-08-11 12:50:06 - NCCPRICE - INFO - 📊 راه‌اندازی ماژول شبیه‌ساز قیمت NCC
+2025-08-11 12:50:06 - NCCPRICE - INFO - 🔍 جستجوی توکن‌های NCC در دیتابیس...
+2025-08-11 12:50:06 - NCCPRICE - INFO - ✅ توکن NCC با آیدی 8517 یافت شد - شناسه ارز: 8517
+2025-08-11 12:50:06 - NCCPRICE - INFO - ✅ توکن NCC با آیدی 8519 یافت شد - شناسه ارز: 8519
+2025-08-11 12:50:06 - NCCPRICE - INFO - ✅ تعداد 2 توکن NCC یافت شد: [8517, 8519]
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - 📊 قیمت فعلی برای NCC (ID: 8517) به USD: 0.22 $
+2025-08-11 12:50:06 - NCCPRICE - INFO - 🆕 شروع الگوریتم طبیعی NCC از $0.22 به $0.80 در 9 ماه
+2025-08-11 12:50:06 - NCCPRICE - INFO - 📊 نوسانات: 20%-30% کاهش در چرخه‌های طبیعی
+2025-08-11 12:50:06 - NCCPRICE - INFO - 🆕 قیمت پایه NCC: $0.220000
+2025-08-11 12:50:06 - NCCPRICE - INFO - NCC_CURRENCY_IDS at start: [8517, 8519]
+2025-08-11 12:50:06 - NCCPRICE - INFO - Trying to update price for currency_id: 8517
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به USD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به CAD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به AUD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به GBP به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به EUR به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به KWD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به TRY به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به SAR به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به CNY به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به KRW به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به JPY به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به INR به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به RUB به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به IQD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به TND به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8517] رکورد قیمت NCC به BHD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - INFO - Trying to update price for currency_id: 8519
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به USD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به CAD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به AUD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به GBP به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به EUR به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به KWD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به TRY به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به SAR به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به CNY به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به KRW به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به JPY به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به INR به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به RUB به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به IQD به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به TND به‌روزرسانی شد
+2025-08-11 12:50:06 - NCCPRICE - DEBUG - ✅ [ID: 8519] رکورد قیمت NCC به BHD به‌روزرسانی شد

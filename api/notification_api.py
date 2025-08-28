@@ -395,7 +395,12 @@ def test_notify():
         # آماده‌سازی داده‌های تست
         webhook_data = {
             'timestamp': str(datetime.utcnow()),
-            'chain': 'TEST'
+            'chain': 'TEST',
+            'direction': 'inbound',  # Test direction
+            'amount': '1.0',         # Test amount
+            'token': 'TEST',         # Test token symbol
+            'from': '0x1234567890abcdef1234567890abcdef12345678',  # Test from address
+            'to': '0xabcdefabcdefabcdefabcdefabcdefabcdefabcd'     # Test to address
         }
         
         relevant_addresses = [{

@@ -1,6 +1,6 @@
-from webhook.transaction_processor import TransactionProcessor
-from utils.logging_config import get_logger
-from webhook.chains.btc.utils import analyze_btc_inputs_outputs
+from CC.webhook.transaction_processor import TransactionProcessor
+from CC.utils.logging_config import get_logger
+from CC.webhook.chains.btc.utils import analyze_btc_inputs_outputs
 
 logger = get_logger(__name__)
 

@@ -43,6 +43,11 @@ class SecurityUtils:
                     return f(*args, **kwargs)
                     
                 ip = request.remote_addr
+                
+                # Skip rate limiting for localhost
+                if ip in ['127.0.0.1', 'localhost', '::1']:
+                    return f(*args, **kwargs)
+                    
                 key = f"{ip}:{request.endpoint}"
                 
                 try:

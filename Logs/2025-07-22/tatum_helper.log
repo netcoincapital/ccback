@@ -1,0 +1,31 @@
+2025-07-22 05:45:27 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 17:18:15 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 17:18:15 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 17:18:15 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 17:33:57 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 17:33:57 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 17:33:57 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:28:18 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:28:18 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:28:18 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:31:21 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:31:21 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:31:21 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:32:01 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:32:02 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:32:02 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:34:12 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:34:12 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:34:12 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:34:25 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:34:25 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:34:25 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:46:43 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:46:43 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 20:46:43 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 21:52:24 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 21:52:24 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-22 21:52:24 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-23 13:20:23 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6880e197fb64ed58fec37647"}
+2025-07-23 13:20:47 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: intrinsic gas too low: have 17500, want 21000","dashboardLog":"https://dashboard.tatum.io/logs?id=6880e1af41e8ebb40d8af8c3"}
+2025-07-23 13:22:26 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=6880e21241e8ebb40d8af919"}

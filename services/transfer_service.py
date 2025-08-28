@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
-from database import Transfers, Blockchains, Address, Wallets, Price, Currencies
+from CC.database import Transfers, Blockchains, Address, Wallets, Price, Currencies
 from decimal import Decimal
 from datetime import datetime
 import logging
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 
 # Configure logging
 logger = get_logger('firebase')  # Use firebase logger for notifications

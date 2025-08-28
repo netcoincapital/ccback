@@ -1,0 +1,42 @@
+2025-08-05 07:25:11 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 07:25:11 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 07:26:12 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 07:26:12 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 07:26:48 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 07:26:48 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 11:18:45 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 11:18:45 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 11:18:59 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 11:18:59 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 11:19:14 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-08-05 11:53:33 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters
+2025-08-05 11:53:46 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters
+2025-08-05 11:53:48 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters
+2025-08-05 11:54:01 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters
+2025-08-05 18:00:34 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 18:00:34 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 18:00:34 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 18:00:34 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 18:00:34 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 18:00:34 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 18:01:16 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 18:01:16 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 18:01:17 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 18:01:17 - import_wallet - INFO - Initializing wallet import module
+2025-08-05 18:01:17 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-08-05 18:01:17 - import_wallet - INFO - Initializing wallet import module
+2025-08-06 07:49:06 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters
+2025-08-06 07:50:30 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters
+2025-08-06 07:51:20 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters
+2025-08-06 12:11:53 - import_wallet - WARNING - Invalid mnemonic phrase provided
+2025-08-06 12:12:27 - import_wallet - WARNING - Invalid mnemonic phrase provided
+2025-08-06 12:12:42 - import_wallet - WARNING - Invalid mnemonic phrase provided
+2025-08-06 12:13:07 - import_wallet - WARNING - Invalid mnemonic phrase provided
+2025-08-06 12:13:17 - import_wallet - WARNING - Invalid mnemonic phrase provided
+2025-08-06 12:13:26 - import_wallet - WARNING - Invalid mnemonic phrase provided
+2025-08-06 12:14:59 - import_wallet - WARNING - Invalid mnemonic phrase provided
+2025-08-07 12:11:13 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-08-07 12:11:15 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-08-07 12:11:26 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-08-07 12:11:29 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-08-07 12:11:37 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters

@@ -1,0 +1,130 @@
+2025-07-19 11:36:57 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:36:57 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:36:57 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:36:57 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:36:57 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:36:57 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:36:59 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:36:59 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:36:59 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:43:09 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:43:09 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:43:09 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:43:09 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:43:09 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:43:09 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:43:10 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:43:11 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:43:11 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:57:43 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:57:43 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:57:43 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:57:43 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:57:43 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 11:57:43 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:57:45 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:57:45 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 11:57:45 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:03:44 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:03:44 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:03:44 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:03:44 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:03:45 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:03:45 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:03:46 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:03:46 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:03:47 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:08:01 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 12:08:03 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 12:08:12 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 12:16:36 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:16:36 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:16:38 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:16:38 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:16:38 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:16:38 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:16:39 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:16:40 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:16:40 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:22:25 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:22:25 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:22:26 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:22:26 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:22:26 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 12:22:26 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:22:28 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:22:28 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 12:22:28 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 13:25:01 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 13:35:44 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 13:35:59 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 13:46:48 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 14:19:46 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 14:24:16 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 14:24:16 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 14:24:17 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 14:24:17 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 14:24:17 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 14:24:17 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 14:24:18 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 14:24:19 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 14:24:19 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 14:31:00 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-19 15:31:53 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:31:53 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:31:53 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:31:53 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:31:53 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:31:53 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:31:55 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:31:55 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:31:55 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:38:34 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:38:34 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:38:34 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:38:34 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:38:34 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:38:34 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:38:36 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:38:36 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:38:36 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:55:24 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:55:24 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:55:25 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:55:25 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:55:25 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 15:55:25 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:55:27 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:55:27 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 15:55:27 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 16:06:30 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 16:06:30 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 16:06:30 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 16:06:30 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 16:06:31 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 16:06:31 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 16:06:32 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 16:06:32 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 16:06:32 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 19:29:32 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 19:29:32 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 19:29:34 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 19:29:44 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 19:29:44 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 19:29:46 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 19:29:58 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-07-19 19:29:58 - All_Currencies - INFO - Initializing currency post module
+2025-07-19 19:30:00 - All_Currencies - INFO - Initializing currency post module
+2025-07-21 05:56:19 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-21 05:56:21 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

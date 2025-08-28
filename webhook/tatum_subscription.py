@@ -6,7 +6,7 @@ import time
 from dotenv import load_dotenv
 
 # Import the logging configuration
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 
 # Load environment variables
 load_dotenv()

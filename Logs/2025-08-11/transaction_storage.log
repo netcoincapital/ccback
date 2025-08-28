@@ -1,0 +1,490 @@
+2025-08-11 07:34:48 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 07:34:48 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 07:34:48 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 07:34:48 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 07:34:48 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 07:34:48 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 07:34:48 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 07:34:48 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 07:34:48 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 07:34:48 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 07:34:48 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 07:34:48 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 07:34:48 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 07:34:48 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 07:34:48 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 07:35:14 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 07:35:14 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 07:35:14 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 07:35:14 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 07:35:14 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 07:35:14 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 07:35:14 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 07:35:14 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 07:35:14 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 07:35:14 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 07:35:14 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 07:35:14 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 07:35:14 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 07:35:14 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 07:35:14 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 12:13:08 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 12:13:08 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 12:13:08 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 12:13:08 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 12:13:08 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 12:13:08 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 12:13:08 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 12:13:08 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 12:13:08 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 12:13:08 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 12:13:08 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 12:13:08 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-08-11 12:13:08 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-08-11 12:13:08 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-08-11 12:13:08 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 13:42:40 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 13:42:40 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 13:42:40 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 13:42:40 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 13:42:40 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 13:44:48 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 13:44:48 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 13:44:48 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 13:44:48 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 13:44:48 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 13:44:48 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 13:44:48 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 13:44:48 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 13:44:48 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 13:44:48 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:07:58 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:07:58 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:07:58 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:07:58 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:07:58 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:10:04 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:10:04 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:10:04 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:10:04 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:10:04 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:10:04 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:10:04 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:10:04 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:10:04 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:10:04 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:12:53 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:12:53 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:12:53 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:12:53 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:12:53 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:15:07 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:15:07 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:15:07 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:15:07 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:15:07 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:17:10 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:17:10 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:17:10 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:17:10 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:17:10 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:24:16 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:24:16 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:24:16 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:24:16 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:24:16 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:25:17 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:25:17 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:25:17 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:25:17 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:25:17 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:26:19 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:26:19 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:26:19 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:26:19 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:26:19 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:31:22 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:31:22 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:31:22 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:31:22 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:31:22 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:32:27 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:32:27 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:32:27 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:32:27 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:32:27 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:33:25 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:33:25 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:33:25 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:33:25 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:33:25 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:34:15 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:34:15 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:34:15 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:34:15 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:34:15 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 14:43:15 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 14:43:15 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 14:43:15 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 14:43:15 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 14:43:15 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:00:06 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:00:06 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:00:06 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:00:06 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:00:06 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:00:06 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:00:06 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:00:06 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:00:06 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:00:06 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:00:10 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:00:10 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:00:10 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:00:10 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:00:10 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:05:14 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:05:14 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:05:14 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:05:14 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:05:14 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:07:12 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:07:12 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:07:12 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:07:12 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:07:12 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:07:12 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:07:12 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:07:12 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:07:12 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:07:12 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:12:19 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:12:19 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:12:19 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:12:19 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:12:19 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:16:46 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:16:46 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:16:46 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:16:46 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:16:46 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:17:27 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:17:27 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:17:27 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:17:27 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:17:27 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:17:35 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:17:35 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:17:35 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:17:35 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:17:35 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:23:52 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:23:52 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:23:52 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:23:52 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:23:52 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:24:33 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:24:33 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:24:33 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:24:33 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:24:33 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:24:41 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:24:41 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:24:41 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:24:41 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:24:41 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:30:58 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:30:58 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:30:58 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:30:58 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:30:58 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:31:39 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:31:39 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:31:39 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:31:39 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:31:39 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:31:47 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:31:47 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:31:47 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:31:47 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:31:47 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:38:04 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:38:04 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:38:04 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:38:04 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:38:04 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:38:45 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:38:45 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:38:45 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:38:45 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:38:45 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:38:53 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:38:53 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:38:53 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:38:53 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:38:53 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:45:10 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:45:10 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:45:10 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:45:10 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:45:10 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:45:51 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:45:51 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:45:51 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:45:51 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:45:51 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:45:59 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:45:59 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:45:59 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:45:59 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:45:59 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 15:52:36 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 15:52:36 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 15:52:36 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 15:52:36 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 15:52:36 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:24:45 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:24:45 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:24:45 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:24:45 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:24:45 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:24:45 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:24:45 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:24:45 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:24:45 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:24:45 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:24:45 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:24:45 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:24:45 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:24:45 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:24:45 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:31:51 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:31:51 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:31:51 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:31:51 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:31:51 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:31:51 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:31:51 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:31:51 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:31:51 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:31:51 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:31:51 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:31:51 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:31:51 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:31:51 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:31:51 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:38:57 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:38:57 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:38:57 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:38:57 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:38:57 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:38:57 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:38:57 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:38:57 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:38:57 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:38:57 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:39:01 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:39:01 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:39:01 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:39:01 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:39:01 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:44:09 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:44:09 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:44:09 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:44:09 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:44:09 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:46:07 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:46:07 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:46:07 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:46:07 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:46:07 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:46:11 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:46:11 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:46:11 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:46:11 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:46:11 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:51:15 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:51:15 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:51:15 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:51:15 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:51:15 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:51:56 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:51:56 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:51:56 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:51:56 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:51:56 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:53:13 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:53:13 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:53:13 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:53:13 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:53:13 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:56:53 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:56:53 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:56:53 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:56:53 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:56:53 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 16:58:21 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 16:58:21 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 16:58:21 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 16:58:21 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 16:58:21 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:00:19 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:00:19 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:00:19 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:00:19 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:00:19 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:07:01 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:07:01 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:07:01 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:07:01 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:07:01 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:07:01 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:07:01 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:07:01 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:07:01 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:07:01 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:07:01 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:07:01 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:07:01 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:07:01 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:07:01 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:12:12 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:12:12 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:12:12 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:12:12 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:12:12 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:14:07 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:14:07 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:14:07 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:14:07 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:14:07 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:14:07 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:14:07 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:14:07 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:14:07 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:14:07 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:18:25 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:18:25 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:18:25 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:18:25 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:18:25 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:21:17 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:21:17 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:21:17 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:21:17 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:21:17 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:23:20 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:23:20 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:23:20 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:23:20 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:23:20 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:23:20 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:23:20 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:23:20 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:23:20 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:23:20 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:26:20 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:26:20 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:26:20 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:26:20 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:26:20 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:36:40 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:36:40 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:36:40 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:36:40 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:36:40 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:36:40 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:36:40 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:36:40 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:36:40 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:36:40 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:36:40 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:36:40 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:36:40 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:36:40 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:36:40 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 17:49:22 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 17:49:22 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 17:49:22 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 17:49:22 - transaction_storage - WARNING - Redis authentication failed for method No Auth: Authentication required.
+2025-08-11 17:49:22 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 18:02:51 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 18:02:51 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 18:02:51 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 18:02:51 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 18:02:51 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 18:02:51 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 18:02:51 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 18:02:51 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 18:02:51 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 18:02:51 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 18:05:31 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 18:05:31 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 18:05:31 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 18:05:31 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 18:05:31 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 18:05:31 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 18:05:31 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 18:05:31 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 18:05:31 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 18:05:31 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:08:45 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:08:45 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:08:45 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:08:45 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:08:45 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:08:45 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:08:45 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:08:45 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:08:45 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:08:45 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:10:07 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:10:07 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:10:07 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:10:07 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:10:07 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:10:08 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:10:08 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:10:08 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:10:08 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:10:08 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:13:06 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:13:06 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:13:06 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:13:06 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:13:06 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:13:06 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:13:06 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:13:06 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:13:06 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:13:06 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:17:30 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:17:30 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:17:30 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:17:30 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:17:30 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:17:30 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:17:30 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:17:30 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:17:30 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:17:30 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:18:31 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:18:31 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:18:31 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:18:31 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:18:31 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:18:31 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:18:31 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:18:31 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:18:31 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:18:31 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:20:23 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:20:23 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:20:23 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:20:23 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:20:23 - transaction_storage - INFO - Using Redis storage for transactions
+2025-08-11 22:20:23 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-08-11 22:20:23 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-08-11 22:20:23 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-08-11 22:20:23 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-08-11 22:20:23 - transaction_storage - INFO - Using Redis storage for transactions

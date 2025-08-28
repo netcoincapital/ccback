@@ -4,14 +4,14 @@ from typing import Dict, Optional, Tuple, Any
 from datetime import datetime
 import json
 from utils.logging_config import get_logger
-from services.transaction_storage import TransactionStorage
+from services.shared_storage import shared_storage
 
 class BaseBlockchainService(ABC):
     """Base class for all blockchain services"""
     
     def __init__(self):
         self.logger = get_logger(__file__)
-        self.storage = TransactionStorage()
+        self.storage = shared_storage
         
     @abstractmethod
     def prepare_transaction(self, sender: str, recipient: str, amount: str, 
@@ -124,8 +124,17 @@ class BaseBlockchainService(ABC):
         
     def _get_stored_transaction(self, transaction_id: str) -> Optional[Dict]:
         """Get stored transaction data"""
-        return self.storage.get_transaction(transaction_id)
+        if self.storage:
+            return self.storage.get_transaction(transaction_id)
+        else:
+            self.logger.warning(f"Storage not available for transaction {transaction_id}")
+            return None
         
     def _store_transaction(self, transaction_id: str, tx_data: Dict, expires_minutes: int = 15) -> datetime:
         """Store transaction data"""
-        return self.storage.store_transaction(transaction_id, tx_data, expires_minutes) 
+        if self.storage:
+            return self.storage.store_transaction(transaction_id, tx_data, expires_minutes)
+        else:
+            self.logger.warning(f"Storage not available for transaction {transaction_id}")
+            from datetime import datetime
+            return datetime.now() 

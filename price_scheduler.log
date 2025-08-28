@@ -1,0 +1,467 @@
+nohup: ignoring input
+WARNING:root:Redis server is not available. Rate limiting will be disabled.
+2025-08-11 12:46:48 - error_handlers - DEBUG - Logger initialized for error_handlers at level DEBUG
+2025-08-11 12:46:48 - error_handlers - INFO - Initializing error handling module
+2025-08-11 12:46:49 - __init__ - DEBUG - Logger initialized for __init__ at level DEBUG
+2025-08-11 12:46:49 - __init__ - INFO - Initializing Currencies package
+2025-08-11 12:46:49 - api_key_manager - DEBUG - Logger initialized for api_key_manager at level DEBUG
+2025-08-11 12:46:49 - api_key_manager - INFO - Initializing API key manager
+2025-08-11 12:46:49 - currency_price_service - DEBUG - Logger initialized for currency_price_service at level DEBUG
+2025-08-11 12:46:49 - currency_price_service - INFO - Initializing currency price service module
+2025-08-11 12:46:49 - price_service - DEBUG - Logger initialized for price_service at level DEBUG
+2025-08-11 12:46:49 - price_service - INFO - Initializing price service module
+2025-08-11 12:46:49 - Prices - DEBUG - Logger initialized for Prices at level DEBUG
+2025-08-11 12:46:49 - Prices - INFO - Initializing currency update module
+2025-08-11 12:46:49 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-11 12:46:49 - api_config - DEBUG - Logger initialized for api_config at level DEBUG
+2025-08-11 12:46:49 - api_config - DEBUG - Optional API keys missing in .env file: SOLANA_API_KEY, ARBITRUM_API_KEY, XRP_API_KEY, BITCOIN_API_KEY
+2025-08-11 12:46:49 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-08-11 12:46:49 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-08-11 12:46:49 - blockchain_service - DEBUG - Logger initialized for blockchain_service at level DEBUG
+2025-08-11 12:46:49 - blockchain_utils - DEBUG - Logger initialized for blockchain_utils at level DEBUG
+2025-08-11 12:46:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-11 12:46:50 - notification_service - DEBUG - Logger initialized for notification_service at level DEBUG
+2025-08-11 12:46:50 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.eth.utils - DEBUG - Logger initialized for webhook.chains.eth.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.eth.processor - DEBUG - Logger initialized for webhook.chains.eth.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.eth.processor - INFO - پردازشگر اتریوم راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.btc.utils - DEBUG - Logger initialized for webhook.chains.btc.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.btc.processor - DEBUG - Logger initialized for webhook.chains.btc.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.btc.processor - INFO - پردازشگر بیت‌کوین راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.trx.utils - DEBUG - Logger initialized for webhook.chains.trx.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.trx.processor - DEBUG - Logger initialized for webhook.chains.trx.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.trx.processor - INFO - پردازشگر ترون راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.matic.processor - DEBUG - Logger initialized for webhook.chains.matic.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.matic.processor - INFO - پردازشگر پالیگان (ماتیک) راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.sol.processor - DEBUG - Logger initialized for webhook.chains.sol.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.sol.processor - INFO - پردازشگر سولانا راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.xrp.utils - DEBUG - Logger initialized for webhook.chains.xrp.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.xrp.processor - DEBUG - Logger initialized for webhook.chains.xrp.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.xrp.processor - INFO - پردازشگر ریپل راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.doge.utils - DEBUG - Logger initialized for webhook.chains.doge.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.doge.processor - DEBUG - Logger initialized for webhook.chains.doge.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.doge.processor - INFO - پردازشگر دوج‌کوین راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.ltc.utils - DEBUG - Logger initialized for webhook.chains.ltc.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.ltc.processor - DEBUG - Logger initialized for webhook.chains.ltc.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.ltc.processor - INFO - پردازشگر لایت‌کوین راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.ada.utils - DEBUG - Logger initialized for webhook.chains.ada.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.ada.processor - DEBUG - Logger initialized for webhook.chains.ada.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.ada.processor - INFO - Cardano Processor initialized
+2025-08-11 12:46:50 - webhook.chains.bnb.utils - DEBUG - Logger initialized for webhook.chains.bnb.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.bnb.processor - DEBUG - Logger initialized for webhook.chains.bnb.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.bnb.processor - INFO - پردازشگر Binance Smart Chain راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.avax.utils - DEBUG - Logger initialized for webhook.chains.avax.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.avax.processor - DEBUG - Logger initialized for webhook.chains.avax.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.avax.processor - INFO - پردازشگر آوالانچ راه‌اندازی شد
+2025-08-11 12:46:50 - webhook.chains.arb.utils - DEBUG - Logger initialized for webhook.chains.arb.utils at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.arb.processor - DEBUG - Logger initialized for webhook.chains.arb.processor at level DEBUG
+2025-08-11 12:46:50 - webhook.chains.arb.processor - INFO - پردازشگر آربیتروم راه‌اندازی شد
+2025-08-11 12:46:50 - webhook_routes - DEBUG - Logger initialized for webhook_routes at level DEBUG
+2025-08-11 12:46:50 - tatum_subscription - DEBUG - Logger initialized for tatum_subscription at level DEBUG
+2025-08-11 12:46:50 - TransferHandler - DEBUG - Logger initialized for TransferHandler at level DEBUG
+2025-08-11 12:46:50 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-11 12:46:50 - All_Currencies - INFO - Initializing currency post module
+2025-08-11 12:46:50 - __init__ - DEBUG - Blueprints and services initialized and exported
+2025-08-11 12:46:50 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-08-11 12:46:50 - schedule_config - INFO - Loading schedule configuration
+2025-08-11 12:46:50 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-08-11 12:46:50 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-08-11 12:46:50 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-08-11 12:46:50 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-08-11 12:46:50 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-08-11 12:46:50 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-08-11 12:46:50 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-08-11 12:46:50 - price_scheduler - DEBUG - Logger initialized for price_scheduler at level DEBUG
+2025-08-11 12:46:50 - price_scheduler - INFO - Price scheduler script started
+2025-08-11 12:46:50 - price_scheduler - INFO - ==================== STARTING PRICE SCHEDULER ====================
+2025-08-11 12:46:50 - price_scheduler - INFO - Initializing currency price scheduler
+2025-08-11 12:46:50 - price_scheduler - INFO - Fetching cryptocurrencies from database
+2025-08-11 12:46:50 - price_scheduler - INFO - Found 23 cryptocurrencies with valid CMC_ID
+2025-08-11 12:46:50 - price_scheduler - DEBUG - CurrencyID: 1, CMC_ID: 1
+2025-08-11 12:46:50 - price_scheduler - DEBUG - CurrencyID: 10, CMC_ID: 52
+2025-08-11 12:46:50 - price_scheduler - DEBUG - CurrencyID: 11, CMC_ID: 5426
+2025-08-11 12:46:50 - price_scheduler - DEBUG - CurrencyID: 12, CMC_ID: 5805
+2025-08-11 12:46:50 - price_scheduler - DEBUG - CurrencyID: 13, CMC_ID: 3957
+2025-08-11 12:46:50 - price_scheduler - DEBUG - Database session closed
+2025-08-11 12:46:50 - price_scheduler - INFO - Using 16 fiat currencies: ['USD', 'CAD', 'AUD', 'GBP', 'EUR', 'KWD', 'TRY', 'SAR', 'CNY', 'KRW', 'JPY', 'INR', 'RUB', 'IQD', 'TND', 'BHD']
+2025-08-11 12:46:50 - price_scheduler - INFO - Created 1 packages of 50 cryptocurrencies each
+2025-08-11 12:46:50 - price_scheduler - INFO - Setting up schedule for interval 5 minutes
+2025-08-11 12:46:50 - price_scheduler - DEBUG - Creating worker for package 0 with 23 coins
+2025-08-11 12:46:50 - price_scheduler - DEBUG - Creating worker for Package-0 with interval 5 minutes
+2025-08-11 12:46:50 - price_scheduler - INFO - [Package-0] Running update for 23 currencies (every 5 min)
+2025-08-11 12:46:50 - price_scheduler - DEBUG - Started thread for Package-0
+2025-08-11 12:46:50 - price_service - INFO - Starting price update process
+2025-08-11 12:46:50 - currency_price_service - DEBUG - Initializing CurrencyPriceService
+2025-08-11 12:46:50 - price_scheduler - INFO - Setting up schedule for interval 10 minutes
+2025-08-11 12:46:50 - api_key_manager - INFO - Loaded 28 CoinMarketCap API keys
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 1 out of range (max: 0)
+2025-08-11 12:46:50 - currency_price_service - INFO - Starting update_prices for 23 currency IDs in 16 currencies (NCC tokens filtered out)
+2025-08-11 12:46:50 - currency_price_service - DEBUG - Currency IDs to update: ['1', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '2', '20', '21', '27', '3', '4', '5', '6', '7', '8', '8518', '9']
+2025-08-11 12:46:50 - price_scheduler - INFO - Setting up schedule for interval 15 minutes
+2025-08-11 12:46:50 - currency_price_service - DEBUG - Fiat currencies to update: ['USD', 'CAD', 'AUD', 'GBP', 'EUR', 'KWD', 'TRY', 'SAR', 'CNY', 'KRW', 'JPY', 'INR', 'RUB', 'IQD', 'TND', 'BHD']
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 2 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - INFO - Setting up schedule for interval 60 minutes
+2025-08-11 12:46:50 - currency_price_service - INFO - Found 23 currencies with valid CMC_ID
+2025-08-11 12:46:50 - currency_price_service - DEBUG - Currency mapping: {'1': '1', '10': '52', '11': '5426', '12': '5805', '13': '3957', '14': '6636', '15': '24478', '16': '1027', '17': '7083', '18': '1958', '19': '7278', '2': '825', '20': '3897', '21': '21159', '27': '5994', '3': '1839', '4': '825', '5': '825', '6': '825', '7': '825', '8': '825', '8518': '28321', '9': '825'}
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 3 out of range (max: 0)
+2025-08-11 12:46:50 - currency_price_service - INFO - Processing USD currency updates
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 4 out of range (max: 0)
+2025-08-11 12:46:50 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 5 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 6 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 7 out of range (max: 0)
+2025-08-11 12:46:50 - currency_price_service - INFO - Fetching latest prices for 23 symbols in USD
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 8 out of range (max: 0)
+2025-08-11 12:46:50 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:46:50 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:46:50 - price_scheduler - INFO - Setting up schedule for interval 180 minutes
+2025-08-11 12:46:50 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 3949a597...
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 9 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 10 out of range (max: 0)
+2025-08-11 12:46:50 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'USD'}
+2025-08-11 12:46:50 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 11 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 12 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 13 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 14 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 15 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 16 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - WARNING - Package index 17 out of range (max: 0)
+2025-08-11 12:46:50 - price_scheduler - INFO - Started 1 worker threads
+2025-08-11 12:46:50 - price_scheduler - INFO - Scheduler is running. Press Ctrl+C to stop.
+2025-08-11 12:46:50 - price_scheduler - DEBUG - Active threads: 1/1
+2025-08-11 12:46:52 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=USD HTTP/1.1" 429 395
+2025-08-11 12:46:52 - currency_price_service - WARNING - Rate limit hit with API key 3949a597...
+2025-08-11 12:46:57 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 9e840a2e...
+2025-08-11 12:46:57 - currency_price_service - DEBUG - Retrying with API key: 9e840a2e...
+2025-08-11 12:46:57 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:46:57 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=USD HTTP/1.1" 429 395
+2025-08-11 12:46:57 - currency_price_service - WARNING - Rate limit hit again with API key 9e840a2e...
+2025-08-11 12:47:12 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 11c6a14b...
+2025-08-11 12:47:12 - currency_price_service - DEBUG - Final retry with API key: 11c6a14b...
+2025-08-11 12:47:12 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:12 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=USD HTTP/1.1" 429 395
+2025-08-11 12:47:12 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:47:12.602Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:47:12 - currency_price_service - INFO - Fetching 24h changes for 23 symbols in USD
+2025-08-11 12:47:12 - currency_price_service - DEBUG - CMC IDs for changes fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:47:12 - api_key_manager - DEBUG - Selected API key for coinmarketcap: a1afa999...
+2025-08-11 12:47:12 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: a1afa999...
+2025-08-11 12:47:12 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'USD'}
+2025-08-11 12:47:12 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:12 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=USD HTTP/1.1" 429 395
+2025-08-11 12:47:12 - currency_price_service - WARNING - Rate limit hit with API key a1afa999...
+2025-08-11 12:47:17 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 01b554da...
+2025-08-11 12:47:17 - currency_price_service - DEBUG - Retrying with API key: 01b554da...
+2025-08-11 12:47:17 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:17 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=USD HTTP/1.1" 429 395
+2025-08-11 12:47:17 - currency_price_service - WARNING - Rate limit hit again with API key 01b554da...
+2025-08-11 12:47:32 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:47:32 - currency_price_service - DEBUG - Final retry with API key: 3949a597...
+2025-08-11 12:47:32 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:32 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=USD HTTP/1.1" 429 395
+2025-08-11 12:47:32 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:47:32.924Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:47:32 - currency_price_service - DEBUG - Prices received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:47:32 - currency_price_service - DEBUG - Changes received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:47:32 - currency_price_service - ERROR - Error fetching prices for USD: API error: 429
+2025-08-11 12:47:32 - currency_price_service - INFO - Processing CAD currency updates
+2025-08-11 12:47:32 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:47:32 - currency_price_service - INFO - Fetching latest prices for 23 symbols in CAD
+2025-08-11 12:47:32 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:47:32 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 54271eb9...
+2025-08-11 12:47:32 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 54271eb9...
+2025-08-11 12:47:32 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'CAD'}
+2025-08-11 12:47:32 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:33 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=CAD HTTP/1.1" 429 395
+2025-08-11 12:47:33 - currency_price_service - WARNING - Rate limit hit with API key 54271eb9...
+2025-08-11 12:47:38 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:47:38 - currency_price_service - DEBUG - Retrying with API key: 3949a597...
+2025-08-11 12:47:38 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:38 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=CAD HTTP/1.1" 429 395
+2025-08-11 12:47:38 - currency_price_service - WARNING - Rate limit hit again with API key 3949a597...
+2025-08-11 12:47:50 - price_scheduler - DEBUG - Active threads: 1/1
+2025-08-11 12:47:53 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 1b2949ee...
+2025-08-11 12:47:53 - currency_price_service - DEBUG - Final retry with API key: 1b2949ee...
+2025-08-11 12:47:53 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:53 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=CAD HTTP/1.1" 429 395
+2025-08-11 12:47:53 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:47:53.238Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:47:53 - currency_price_service - INFO - Fetching 24h changes for 23 symbols in CAD
+2025-08-11 12:47:53 - currency_price_service - DEBUG - CMC IDs for changes fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:47:53 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:47:53 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 3949a597...
+2025-08-11 12:47:53 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'CAD'}
+2025-08-11 12:47:53 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:53 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=CAD HTTP/1.1" 429 395
+2025-08-11 12:47:53 - currency_price_service - WARNING - Rate limit hit with API key 3949a597...
+2025-08-11 12:47:58 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:47:58 - currency_price_service - DEBUG - Retrying with API key: 3949a597...
+2025-08-11 12:47:58 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:47:58 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=CAD HTTP/1.1" 429 395
+2025-08-11 12:47:58 - currency_price_service - WARNING - Rate limit hit again with API key 3949a597...
+2025-08-11 12:48:13 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 0d216d8a...
+2025-08-11 12:48:13 - currency_price_service - DEBUG - Final retry with API key: 0d216d8a...
+2025-08-11 12:48:13 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:13 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=CAD HTTP/1.1" 200 None
+2025-08-11 12:48:13 - currency_price_service - INFO - Successfully fetched changes for 17 symbols in CAD
+2025-08-11 12:48:13 - currency_price_service - DEBUG - Prices received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:48:13 - currency_price_service - DEBUG - Changes received from API: {'1': 0.82009236, '52': 0.53102012, '825': -0.02483561, '1027': -0.52940875, '1839': -0.71142916, '1958': -0.26695532, '3897': -0.78295089, '3957': -0.4928669, '5426': -0.75900272, '5805': -1.59043524, '5994': -2.5030339, '6636': -2.47693025, '7083': -0.1877882, '7278': -1.96392094, '21159': -1.96568732, '24478': -3.14342064, '28321': -1.60917295}
+2025-08-11 12:48:13 - currency_price_service - ERROR - Error fetching prices for CAD: API error: 429
+2025-08-11 12:48:13 - currency_price_service - INFO - Processing AUD currency updates
+2025-08-11 12:48:13 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:48:13 - currency_price_service - INFO - Fetching latest prices for 23 symbols in AUD
+2025-08-11 12:48:13 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:48:13 - api_key_manager - DEBUG - Selected API key for coinmarketcap: e4938def...
+2025-08-11 12:48:13 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: e4938def...
+2025-08-11 12:48:13 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'AUD'}
+2025-08-11 12:48:13 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:13 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=AUD HTTP/1.1" 429 395
+2025-08-11 12:48:13 - currency_price_service - WARNING - Rate limit hit with API key e4938def...
+2025-08-11 12:48:18 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:48:18 - currency_price_service - DEBUG - Retrying with API key: 3949a597...
+2025-08-11 12:48:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:18 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=AUD HTTP/1.1" 429 395
+2025-08-11 12:48:18 - currency_price_service - WARNING - Rate limit hit again with API key 3949a597...
+2025-08-11 12:48:33 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:48:33 - currency_price_service - DEBUG - Final retry with API key: 3949a597...
+2025-08-11 12:48:33 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:34 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=AUD HTTP/1.1" 429 395
+2025-08-11 12:48:34 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:48:33.969Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:48:34 - currency_price_service - INFO - Fetching 24h changes for 23 symbols in AUD
+2025-08-11 12:48:34 - currency_price_service - DEBUG - CMC IDs for changes fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:48:34 - api_key_manager - DEBUG - Selected API key for coinmarketcap: fd4b869f...
+2025-08-11 12:48:34 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: fd4b869f...
+2025-08-11 12:48:34 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'AUD'}
+2025-08-11 12:48:34 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:34 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=AUD HTTP/1.1" 429 395
+2025-08-11 12:48:34 - currency_price_service - WARNING - Rate limit hit with API key fd4b869f...
+2025-08-11 12:48:39 - api_key_manager - DEBUG - Selected API key for coinmarketcap: be1e1502...
+2025-08-11 12:48:39 - currency_price_service - DEBUG - Retrying with API key: be1e1502...
+2025-08-11 12:48:39 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:39 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=AUD HTTP/1.1" 429 207
+2025-08-11 12:48:39 - currency_price_service - WARNING - Rate limit hit again with API key be1e1502...
+2025-08-11 12:48:50 - price_scheduler - DEBUG - Active threads: 1/1
+2025-08-11 12:48:54 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 32822298...
+2025-08-11 12:48:54 - currency_price_service - DEBUG - Final retry with API key: 32822298...
+2025-08-11 12:48:54 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:54 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=AUD HTTP/1.1" 429 395
+2025-08-11 12:48:54 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:48:54.388Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:48:54 - currency_price_service - DEBUG - Prices received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:48:54 - currency_price_service - DEBUG - Changes received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:48:54 - currency_price_service - ERROR - Error fetching prices for AUD: API error: 429
+2025-08-11 12:48:54 - currency_price_service - INFO - Processing GBP currency updates
+2025-08-11 12:48:54 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:48:54 - currency_price_service - INFO - Fetching latest prices for 23 symbols in GBP
+2025-08-11 12:48:54 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:48:54 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 41ad37a0...
+2025-08-11 12:48:54 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 41ad37a0...
+2025-08-11 12:48:54 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'GBP'}
+2025-08-11 12:48:54 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:54 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=GBP HTTP/1.1" 429 395
+2025-08-11 12:48:54 - currency_price_service - WARNING - Rate limit hit with API key 41ad37a0...
+2025-08-11 12:48:59 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:48:59 - currency_price_service - DEBUG - Retrying with API key: 3949a597...
+2025-08-11 12:48:59 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:48:59 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=GBP HTTP/1.1" 429 395
+2025-08-11 12:48:59 - currency_price_service - WARNING - Rate limit hit again with API key 3949a597...
+2025-08-11 12:49:14 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 11c6a14b...
+2025-08-11 12:49:14 - currency_price_service - DEBUG - Final retry with API key: 11c6a14b...
+2025-08-11 12:49:14 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:49:14 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=GBP HTTP/1.1" 429 395
+2025-08-11 12:49:14 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:49:14.738Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:49:14 - currency_price_service - INFO - Fetching 24h changes for 23 symbols in GBP
+2025-08-11 12:49:14 - currency_price_service - DEBUG - CMC IDs for changes fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:49:14 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3ca91db4...
+2025-08-11 12:49:14 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 3ca91db4...
+2025-08-11 12:49:14 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'GBP'}
+2025-08-11 12:49:14 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:49:14 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=GBP HTTP/1.1" 429 395
+2025-08-11 12:49:14 - currency_price_service - WARNING - Rate limit hit with API key 3ca91db4...
+2025-08-11 12:49:19 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 32822298...
+2025-08-11 12:49:19 - currency_price_service - DEBUG - Retrying with API key: 32822298...
+2025-08-11 12:49:19 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:49:19 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=GBP HTTP/1.1" 429 395
+2025-08-11 12:49:19 - currency_price_service - WARNING - Rate limit hit again with API key 32822298...
+2025-08-11 12:49:35 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 7f7ce154...
+2025-08-11 12:49:35 - currency_price_service - DEBUG - Final retry with API key: 7f7ce154...
+2025-08-11 12:49:35 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:49:35 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=GBP HTTP/1.1" 429 395
+2025-08-11 12:49:35 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:49:35.066Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:49:35 - currency_price_service - DEBUG - Prices received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:49:35 - currency_price_service - DEBUG - Changes received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:49:35 - currency_price_service - ERROR - Error fetching prices for GBP: API error: 429
+2025-08-11 12:49:35 - currency_price_service - INFO - Processing EUR currency updates
+2025-08-11 12:49:35 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:49:35 - currency_price_service - INFO - Fetching latest prices for 23 symbols in EUR
+2025-08-11 12:49:35 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:49:35 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 93a1eb9c...
+2025-08-11 12:49:35 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 93a1eb9c...
+2025-08-11 12:49:35 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'EUR'}
+2025-08-11 12:49:35 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:49:35 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=EUR HTTP/1.1" 429 395
+2025-08-11 12:49:35 - currency_price_service - WARNING - Rate limit hit with API key 93a1eb9c...
+2025-08-11 12:49:40 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 93a1eb9c...
+2025-08-11 12:49:40 - currency_price_service - DEBUG - Retrying with API key: 93a1eb9c...
+2025-08-11 12:49:40 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:49:40 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=EUR HTTP/1.1" 429 395
+2025-08-11 12:49:40 - currency_price_service - WARNING - Rate limit hit again with API key 93a1eb9c...
+2025-08-11 12:49:50 - price_scheduler - DEBUG - Active threads: 1/1
+2025-08-11 12:49:55 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:49:55 - currency_price_service - DEBUG - Final retry with API key: 3949a597...
+2025-08-11 12:49:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:49:55 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=EUR HTTP/1.1" 429 395
+2025-08-11 12:49:55 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:49:55.384Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:49:55 - currency_price_service - INFO - Fetching 24h changes for 23 symbols in EUR
+2025-08-11 12:49:55 - currency_price_service - DEBUG - CMC IDs for changes fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:49:55 - api_key_manager - DEBUG - Selected API key for coinmarketcap: c723bbf3...
+2025-08-11 12:49:55 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: c723bbf3...
+2025-08-11 12:49:55 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'EUR'}
+2025-08-11 12:49:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:49:55 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=EUR HTTP/1.1" 429 207
+2025-08-11 12:49:55 - currency_price_service - WARNING - Rate limit hit with API key c723bbf3...
+2025-08-11 12:50:00 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:50:00 - currency_price_service - DEBUG - Retrying with API key: 3949a597...
+2025-08-11 12:50:00 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:00 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=EUR HTTP/1.1" 429 395
+2025-08-11 12:50:00 - currency_price_service - WARNING - Rate limit hit again with API key 3949a597...
+2025-08-11 12:50:15 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 93a1eb9c...
+2025-08-11 12:50:15 - currency_price_service - DEBUG - Final retry with API key: 93a1eb9c...
+2025-08-11 12:50:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:15 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=EUR HTTP/1.1" 429 395
+2025-08-11 12:50:15 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:50:15.735Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:50:15 - currency_price_service - DEBUG - Prices received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:50:15 - currency_price_service - DEBUG - Changes received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:50:15 - currency_price_service - ERROR - Error fetching prices for EUR: API error: 429
+2025-08-11 12:50:15 - currency_price_service - INFO - Processing KWD currency updates
+2025-08-11 12:50:15 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:50:15 - currency_price_service - INFO - Fetching latest prices for 23 symbols in KWD
+2025-08-11 12:50:15 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:50:15 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:50:15 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 3949a597...
+2025-08-11 12:50:15 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'KWD'}
+2025-08-11 12:50:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:15 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=KWD HTTP/1.1" 429 395
+2025-08-11 12:50:15 - currency_price_service - WARNING - Rate limit hit with API key 3949a597...
+2025-08-11 12:50:20 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:50:20 - currency_price_service - DEBUG - Retrying with API key: 3949a597...
+2025-08-11 12:50:20 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:20 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=KWD HTTP/1.1" 429 395
+2025-08-11 12:50:20 - currency_price_service - WARNING - Rate limit hit again with API key 3949a597...
+2025-08-11 12:50:36 - api_key_manager - DEBUG - Selected API key for coinmarketcap: be1e1502...
+2025-08-11 12:50:36 - currency_price_service - DEBUG - Final retry with API key: be1e1502...
+2025-08-11 12:50:36 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:36 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=KWD HTTP/1.1" 429 207
+2025-08-11 12:50:36 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:50:36.087Z', 'error_code': 1011, 'error_message': "You've hit an IP rate limit.", 'elapsed': 0, 'credit_count': 0}}
+2025-08-11 12:50:36 - currency_price_service - INFO - Fetching 24h changes for 23 symbols in KWD
+2025-08-11 12:50:36 - currency_price_service - DEBUG - CMC IDs for changes fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:50:36 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 54271eb9...
+2025-08-11 12:50:36 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 54271eb9...
+2025-08-11 12:50:36 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'KWD'}
+2025-08-11 12:50:36 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:36 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=KWD HTTP/1.1" 429 395
+2025-08-11 12:50:36 - currency_price_service - WARNING - Rate limit hit with API key 54271eb9...
+2025-08-11 12:50:41 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 01b554da...
+2025-08-11 12:50:41 - currency_price_service - DEBUG - Retrying with API key: 01b554da...
+2025-08-11 12:50:41 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:41 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=KWD HTTP/1.1" 429 395
+2025-08-11 12:50:41 - currency_price_service - WARNING - Rate limit hit again with API key 01b554da...
+2025-08-11 12:50:50 - price_scheduler - DEBUG - Active threads: 1/1
+2025-08-11 12:50:56 - api_key_manager - DEBUG - Selected API key for coinmarketcap: d5a0c29f...
+2025-08-11 12:50:56 - currency_price_service - DEBUG - Final retry with API key: d5a0c29f...
+2025-08-11 12:50:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:56 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=KWD HTTP/1.1" 429 207
+2025-08-11 12:50:56 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:50:56.398Z', 'error_code': 1011, 'error_message': "You've hit an IP rate limit.", 'elapsed': 0, 'credit_count': 0}}
+2025-08-11 12:50:56 - currency_price_service - DEBUG - Prices received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:50:56 - currency_price_service - DEBUG - Changes received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:50:56 - currency_price_service - ERROR - Error fetching prices for KWD: API error: 429
+2025-08-11 12:50:56 - currency_price_service - INFO - Processing TRY currency updates
+2025-08-11 12:50:56 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:50:56 - currency_price_service - INFO - Fetching latest prices for 23 symbols in TRY
+2025-08-11 12:50:56 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:50:56 - api_key_manager - DEBUG - Selected API key for coinmarketcap: e4938def...
+2025-08-11 12:50:56 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: e4938def...
+2025-08-11 12:50:56 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'TRY'}
+2025-08-11 12:50:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:50:56 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=TRY HTTP/1.1" 429 395
+2025-08-11 12:50:56 - currency_price_service - WARNING - Rate limit hit with API key e4938def...
+2025-08-11 12:51:01 - api_key_manager - DEBUG - Selected API key for coinmarketcap: be1e1502...
+2025-08-11 12:51:01 - currency_price_service - DEBUG - Retrying with API key: be1e1502...
+2025-08-11 12:51:01 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:01 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=TRY HTTP/1.1" 401 203
+2025-08-11 12:51:01 - currency_price_service - ERROR - API error: 401, Response: {'status': {'timestamp': '2025-08-11T12:51:01.606Z', 'error_code': 1001, 'error_message': 'This API Key is invalid.', 'elapsed': 0, 'credit_count': 0}}
+2025-08-11 12:51:01 - currency_price_service - INFO - Fetching 24h changes for 23 symbols in TRY
+2025-08-11 12:51:01 - currency_price_service - DEBUG - CMC IDs for changes fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:51:01 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 01b554da...
+2025-08-11 12:51:01 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 01b554da...
+2025-08-11 12:51:01 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'TRY'}
+2025-08-11 12:51:01 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:01 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=TRY HTTP/1.1" 429 395
+2025-08-11 12:51:01 - currency_price_service - WARNING - Rate limit hit with API key 01b554da...
+2025-08-11 12:51:06 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 93a1eb9c...
+2025-08-11 12:51:06 - currency_price_service - DEBUG - Retrying with API key: 93a1eb9c...
+2025-08-11 12:51:06 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:06 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=TRY HTTP/1.1" 429 395
+2025-08-11 12:51:06 - currency_price_service - WARNING - Rate limit hit again with API key 93a1eb9c...
+2025-08-11 12:51:21 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:51:21 - currency_price_service - DEBUG - Final retry with API key: 3949a597...
+2025-08-11 12:51:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:21 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=TRY HTTP/1.1" 429 395
+2025-08-11 12:51:21 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:51:21.933Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:51:21 - currency_price_service - DEBUG - Prices received from API: {'status': 'error', 'message': 'API error: 401'}
+2025-08-11 12:51:21 - currency_price_service - DEBUG - Changes received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:51:21 - currency_price_service - ERROR - Error fetching prices for TRY: API error: 401
+2025-08-11 12:51:21 - currency_price_service - INFO - Processing SAR currency updates
+2025-08-11 12:51:21 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:51:21 - currency_price_service - INFO - Fetching latest prices for 23 symbols in SAR
+2025-08-11 12:51:21 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:51:21 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 1b2949ee...
+2025-08-11 12:51:21 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: 1b2949ee...
+2025-08-11 12:51:21 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'SAR'}
+2025-08-11 12:51:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:22 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=SAR HTTP/1.1" 429 395
+2025-08-11 12:51:22 - currency_price_service - WARNING - Rate limit hit with API key 1b2949ee...
+2025-08-11 12:51:27 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3949a597...
+2025-08-11 12:51:27 - currency_price_service - DEBUG - Retrying with API key: 3949a597...
+2025-08-11 12:51:27 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:27 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=SAR HTTP/1.1" 429 395
+2025-08-11 12:51:27 - currency_price_service - WARNING - Rate limit hit again with API key 3949a597...
+2025-08-11 12:51:42 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 3ca91db4...
+2025-08-11 12:51:42 - currency_price_service - DEBUG - Final retry with API key: 3ca91db4...
+2025-08-11 12:51:42 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:42 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=SAR HTTP/1.1" 429 395
+2025-08-11 12:51:42 - currency_price_service - ERROR - API error: 429, Response: {'status': {'timestamp': '2025-08-11T12:51:42.236Z', 'error_code': 1010, 'error_message': "You've exceeded your API Key's monthly credit limit. Please contact us at api@coinmarketcap.com if you need assistance upgrading your plan.", 'elapsed': 0, 'credit_count': 0, 'notice': "You have used 100% of your plan's monthly credit limit."}}
+2025-08-11 12:51:42 - currency_price_service - INFO - Fetching 24h changes for 23 symbols in SAR
+2025-08-11 12:51:42 - currency_price_service - DEBUG - CMC IDs for changes fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:51:42 - api_key_manager - DEBUG - Selected API key for coinmarketcap: e4938def...
+2025-08-11 12:51:42 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: e4938def...
+2025-08-11 12:51:42 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'SAR'}
+2025-08-11 12:51:42 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:42 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=SAR HTTP/1.1" 429 395
+2025-08-11 12:51:42 - currency_price_service - WARNING - Rate limit hit with API key e4938def...
+2025-08-11 12:51:47 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 7f7ce154...
+2025-08-11 12:51:47 - currency_price_service - DEBUG - Retrying with API key: 7f7ce154...
+2025-08-11 12:51:47 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:51:47 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=SAR HTTP/1.1" 429 395
+2025-08-11 12:51:47 - currency_price_service - WARNING - Rate limit hit again with API key 7f7ce154...
+2025-08-11 12:51:50 - price_scheduler - DEBUG - Active threads: 1/1
+2025-08-11 12:52:02 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 0d216d8a...
+2025-08-11 12:52:02 - currency_price_service - DEBUG - Final retry with API key: 0d216d8a...
+2025-08-11 12:52:02 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:52:02 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=SAR HTTP/1.1" 200 None
+2025-08-11 12:52:02 - currency_price_service - INFO - Successfully fetched changes for 17 symbols in SAR
+2025-08-11 12:52:02 - currency_price_service - DEBUG - Prices received from API: {'status': 'error', 'message': 'API error: 429'}
+2025-08-11 12:52:02 - currency_price_service - DEBUG - Changes received from API: {'1': 0.7922445, '52': 0.41370856, '825': -0.02578672, '1027': -0.45063919, '1839': -0.77366806, '1958': -0.28412863, '3897': -0.74858446, '3957': -0.49711521, '5426': -0.72053655, '5805': -1.91254227, '5994': -2.48764139, '6636': -2.50767276, '7083': -0.03264078, '7278': -2.07563288, '21159': -1.97535467, '24478': -3.58011295, '28321': -1.57495412}
+2025-08-11 12:52:02 - currency_price_service - ERROR - Error fetching prices for SAR: API error: 429
+2025-08-11 12:52:02 - currency_price_service - INFO - Processing CNY currency updates
+2025-08-11 12:52:02 - currency_price_service - DEBUG - Using CMC IDs for API call: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:52:02 - currency_price_service - INFO - Fetching latest prices for 23 symbols in CNY
+2025-08-11 12:52:02 - currency_price_service - DEBUG - CMC IDs for price fetch: ['1', '52', '5426', '5805', '3957', '6636', '24478', '1027', '7083', '1958', '7278', '825', '3897', '21159', '5994', '1839', '825', '825', '825', '825', '825', '28321', '825']
+2025-08-11 12:52:02 - api_key_manager - DEBUG - Selected API key for coinmarketcap: bbae831b...
+2025-08-11 12:52:02 - currency_price_service - DEBUG - Making API request to https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest with API key: bbae831b...
+2025-08-11 12:52:02 - currency_price_service - DEBUG - Request params: {'id': '1,52,5426,5805,3957,6636,24478,1027,7083,1958,7278,825,3897,21159,5994,1839,825,825,825,825,825,28321,825', 'convert': 'CNY'}
+2025-08-11 12:52:02 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:52:02 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=CNY HTTP/1.1" 429 395
+2025-08-11 12:52:02 - currency_price_service - WARNING - Rate limit hit with API key bbae831b...
+2025-08-11 12:52:07 - api_key_manager - DEBUG - Selected API key for coinmarketcap: 1b2949ee...
+2025-08-11 12:52:07 - currency_price_service - DEBUG - Retrying with API key: 1b2949ee...
+2025-08-11 12:52:07 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): pro-api.coinmarketcap.com:443
+2025-08-11 12:52:07 - urllib3.connectionpool - DEBUG - https://pro-api.coinmarketcap.com:443 "GET /v1/cryptocurrency/quotes/latest?id=1%2C52%2C5426%2C5805%2C3957%2C6636%2C24478%2C1027%2C7083%2C1958%2C7278%2C825%2C3897%2C21159%2C5994%2C1839%2C825%2C825%2C825%2C825%2C825%2C28321%2C825&convert=CNY HTTP/1.1" 429 395
+2025-08-11 12:52:07 - currency_price_service - WARNING - Rate limit hit again with API key 1b2949ee...

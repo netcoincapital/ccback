@@ -3,7 +3,7 @@ from decimal import Decimal
 import json
 from typing import Dict, Any, Optional, List, Union
 
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 
 logger = get_logger(__name__)
 

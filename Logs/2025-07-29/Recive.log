@@ -1,0 +1,33 @@
+2025-07-29 21:23:54 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:23:54 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:23:54 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:23:54 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:23:54 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:23:54 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:23:56 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:23:56 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:23:57 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:29:29 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:29:29 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:29:30 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:29:30 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:29:30 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:29:30 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:29:31 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:29:32 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:29:32 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:33:24 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:33:24 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:33:25 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:33:25 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:33:25 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-29 21:33:25 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:33:26 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:33:27 - Recive - INFO - Initializing receive transaction module
+2025-07-29 21:33:27 - Recive - INFO - Initializing receive transaction module
+2025-07-30 09:01:50 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 09:01:50 - Recive - WARNING - No address found for user 6c21309d-003c-4784-a3e0-7b12f0c81f26 on blockchain Tron
+2025-07-30 12:19:52 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 12:19:52 - Recive - WARNING - No address found for user 3e23b0b3-283b-497f-a653-5235f8c9adea on blockchain Tron

@@ -1,0 +1,223 @@
+2025-07-16 07:08:47 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 07:08:59 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 07:09:13 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 16:58:52 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 16:59:04 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 16:59:18 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:00:24 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:01:48 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:15:00 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:15:54 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:16:25 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:16:50 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:19:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:20:34 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:21:19 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:22:01 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:23:04 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 17:44:57 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TCNwszVsFCYfwu9hx98QuGv4FkKWSrnuDK', 'amount': 1.0, 'type': None, 'token_contract': ''}
+2025-07-16 17:44:57 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 17:44:58 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 17:45:23 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TCNwszVsFCYfwu9hx98QuGv4FkKWSrnuDK', 'amount': 1.0, 'type': None, 'token_contract': ''}
+2025-07-16 17:45:23 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 17:45:23 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 17:48:42 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TCNwszVsFCYfwu9hx98QuGv4FkKWSrnuDK', 'amount': 1.0, 'type': None, 'token_contract': ''}
+2025-07-16 17:48:42 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 17:48:43 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 17:52:47 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TCNwszVsFCYfwu9hx98QuGv4FkKWSrnuDK', 'amount': 1.0, 'type': None, 'token_contract': ''}
+2025-07-16 17:52:47 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 17:52:47 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 17:52:54 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:12:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:14:07 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TLAdHP2Lymkbor8mjzMyzH4QnrgsdNcoko', 'amount': 1.0, 'type': None, 'token_contract': ''}
+2025-07-16 18:14:07 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 18:14:08 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 18:14:54 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TLAdHP2Lymkbor8mjzMyzH4QnrgsdNcoko', 'amount': 1.0, 'type': None, 'token_contract': ''}
+2025-07-16 18:14:54 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 18:14:54 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 18:15:47 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TYuMLBHzBNgNaN5fZEUAz3dZGddngCtLgy', 'amount': 2.0, 'type': None, 'token_contract': ''}
+2025-07-16 18:15:47 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 18:15:47 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 18:16:08 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TYuMLBHzBNgNaN5fZEUAz3dZGddngCtLgy', 'amount': 2.0, 'type': None, 'token_contract': ''}
+2025-07-16 18:16:08 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 18:16:08 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 18:16:14 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'TRON', 'from_address': 'TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy', 'to_address': 'TYuMLBHzBNgNaN5fZEUAz3dZGddngCtLgy', 'amount': 2.0, 'type': None, 'token_contract': ''}
+2025-07-16 18:16:14 - api - DEBUG - Processing fee estimation for blockchain: TRON
+2025-07-16 18:16:15 - api - INFO - Fee estimation completed successfully for TRON
+2025-07-16 18:18:15 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'POLYGON', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 9.20123733, 'type': None, 'token_contract': ''}
+2025-07-16 18:18:15 - api - DEBUG - Processing fee estimation for blockchain: POLYGON
+2025-07-16 18:18:15 - api - ERROR - Value error in fee estimation: Unsupported blockchain: polygon. Supported blockchains are: bitcoin, ethereum, tron, bsc, solana, xrp, cardano, polkadot, cosmos
+2025-07-16 18:18:18 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'POLYGON', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 9.20123733, 'type': None, 'token_contract': ''}
+2025-07-16 18:18:18 - api - DEBUG - Processing fee estimation for blockchain: POLYGON
+2025-07-16 18:18:18 - api - ERROR - Value error in fee estimation: Unsupported blockchain: polygon. Supported blockchains are: bitcoin, ethereum, tron, bsc, solana, xrp, cardano, polkadot, cosmos
+2025-07-16 18:18:20 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'POLYGON', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 9.20123733, 'type': None, 'token_contract': ''}
+2025-07-16 18:18:20 - api - DEBUG - Processing fee estimation for blockchain: POLYGON
+2025-07-16 18:18:20 - api - ERROR - Value error in fee estimation: Unsupported blockchain: polygon. Supported blockchains are: bitcoin, ethereum, tron, bsc, solana, xrp, cardano, polkadot, cosmos
+2025-07-16 18:18:22 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'POLYGON', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 9.20123733, 'type': None, 'token_contract': ''}
+2025-07-16 18:18:22 - api - DEBUG - Processing fee estimation for blockchain: POLYGON
+2025-07-16 18:18:22 - api - ERROR - Value error in fee estimation: Unsupported blockchain: polygon. Supported blockchains are: bitcoin, ethereum, tron, bsc, solana, xrp, cardano, polkadot, cosmos
+2025-07-16 18:20:30 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'POLYGON', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 9.20123733, 'type': None, 'token_contract': ''}
+2025-07-16 18:20:30 - api - DEBUG - Processing fee estimation for blockchain: POLYGON
+2025-07-16 18:20:30 - api - ERROR - Value error in fee estimation: Unsupported blockchain: polygon. Supported blockchains are: bitcoin, ethereum, tron, bsc, solana, xrp, cardano, polkadot, cosmos
+2025-07-16 18:20:34 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'POLYGON', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 9.20123733, 'type': None, 'token_contract': ''}
+2025-07-16 18:20:34 - api - DEBUG - Processing fee estimation for blockchain: POLYGON
+2025-07-16 18:20:34 - api - ERROR - Value error in fee estimation: Unsupported blockchain: polygon. Supported blockchains are: bitcoin, ethereum, tron, bsc, solana, xrp, cardano, polkadot, cosmos
+2025-07-16 18:27:46 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:27:46 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:27:46 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:29:57 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:29:57 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:29:57 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:30:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:30:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:30:57 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:32:38 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:32:38 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:32:38 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:33:45 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:33:45 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:33:45 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:34:43 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:34:44 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:34:44 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:35:55 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:35:55 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:35:55 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:39:25 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:39:26 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:39:26 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:58:05 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:58:06 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 18:58:06 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:01:30 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:01:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:01:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:03:39 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:03:40 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:03:40 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:06:39 - api - DEBUG - Health check requested
+2025-07-16 19:06:53 - api - DEBUG - Health check requested
+2025-07-16 19:34:00 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:34:00 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:34:00 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:34:36 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:34:36 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:34:36 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:34:49 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:34:49 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:34:49 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:36:02 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:36:02 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:36:03 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:37:05 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:37:05 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:37:05 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:41:54 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:47:30 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:47:30 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 19:47:30 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 20:25:54 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 20:25:55 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 20:25:55 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 20:56:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 20:56:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 20:56:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 20:58:16 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'POLYGON', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 2.0, 'type': None, 'token_contract': ''}
+2025-07-16 20:58:16 - api - DEBUG - Processing fee estimation for blockchain: POLYGON
+2025-07-16 20:58:16 - api - ERROR - Value error in fee estimation: Unsupported blockchain: polygon. Supported blockchains are: bitcoin, ethereum, tron, bsc, solana, xrp, cardano, polkadot, cosmos
+2025-07-16 21:04:39 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:04:40 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:04:40 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:08:13 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:08:13 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:08:13 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:11:21 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:11:21 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:11:21 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:15:30 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:15:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:15:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:17:28 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:17:29 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:17:29 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:18:44 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:18:44 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:18:44 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:19:57 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:19:58 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:19:58 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:21:45 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:21:45 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:21:45 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:23:06 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:23:07 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:23:08 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:24:06 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:24:06 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:24:06 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:25:28 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:25:28 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:25:28 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:26:46 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'POLYGON', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 2.0, 'type': None, 'token_contract': ''}
+2025-07-16 21:26:46 - api - DEBUG - Processing fee estimation for blockchain: POLYGON
+2025-07-16 21:26:46 - api - ERROR - Value error in fee estimation: Unsupported blockchain: polygon. Supported blockchains are: bitcoin, ethereum, tron, bsc, solana, xrp, cardano, polkadot, cosmos
+2025-07-16 21:27:40 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:27:40 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:27:40 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:29:04 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:29:05 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:29:05 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:30:54 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:30:54 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:30:55 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:33:01 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:33:01 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:33:01 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:37:16 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:37:17 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:37:17 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:45:33 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:45:33 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:45:34 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:47:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:47:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:47:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:51:26 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:51:26 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:51:26 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:53:51 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:53:52 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:53:52 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:56:25 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:56:25 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:56:25 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:57:40 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:57:41 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:57:41 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:59:49 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:59:49 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 21:59:49 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:02:58 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:02:58 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:02:58 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:06:09 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:06:09 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:06:09 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:07:43 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:07:43 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:07:43 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:09:55 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:09:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:09:56 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:11:11 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:11:12 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:11:13 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:12:53 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:12:53 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:12:53 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:16:25 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:16:26 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:16:26 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:18:23 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:18:23 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-16 22:18:23 - api - DEBUG - Logger initialized for api at level DEBUG

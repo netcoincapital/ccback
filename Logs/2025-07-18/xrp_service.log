@@ -1,0 +1,16 @@
+2025-07-18 20:32:40 - xrp_service - DEBUG - Logger initialized for xrp_service at level DEBUG
+2025-07-18 20:32:40 - xrp_service - WARNING - XRP_NODE_URL environment variable is not set. Using default XRP node: https://s1.ripple.com:51234
+2025-07-18 20:32:40 - xrp_service - INFO - XRP client initialization skipped - using Tatum API only
+2025-07-18 20:32:40 - xrp_service - INFO - Tatum helper initialized for XRP service
+2025-07-18 20:32:40 - xrp_service - WARNING - XRP_NODE_URL environment variable is not set. Using default XRP node: https://s1.ripple.com:51234
+2025-07-18 20:32:40 - xrp_service - INFO - XRP client initialization skipped - using Tatum API only
+2025-07-18 20:32:40 - xrp_service - INFO - Tatum helper initialized for XRP service
+2025-07-18 20:32:42 - xrp_service - WARNING - XRP_NODE_URL environment variable is not set. Using default XRP node: https://s1.ripple.com:51234
+2025-07-18 20:33:05 - xrp_service - DEBUG - Logger initialized for xrp_service at level DEBUG
+2025-07-18 20:33:05 - xrp_service - WARNING - XRP_NODE_URL environment variable is not set. Using default XRP node: https://s1.ripple.com:51234
+2025-07-18 20:33:05 - xrp_service - INFO - XRP client initialization skipped - using Tatum API only
+2025-07-18 20:33:05 - xrp_service - INFO - Tatum helper initialized for XRP service
+2025-07-18 20:33:05 - xrp_service - WARNING - XRP_NODE_URL environment variable is not set. Using default XRP node: https://s1.ripple.com:51234
+2025-07-18 20:33:05 - xrp_service - INFO - XRP client initialization skipped - using Tatum API only
+2025-07-18 20:33:05 - xrp_service - INFO - Tatum helper initialized for XRP service
+2025-07-18 20:33:07 - xrp_service - WARNING - XRP_NODE_URL environment variable is not set. Using default XRP node: https://s1.ripple.com:51234

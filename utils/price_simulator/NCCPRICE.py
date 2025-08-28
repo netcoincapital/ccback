@@ -1,8 +1,14 @@
 import sys, os
 # اضافه کردن مسیر اصلی پروژه به sys.path
 current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.abspath(os.path.join(current_dir, '../../..'))
-sys.path.append(project_root)
+# از utils/price_simulator به CC directory (یعنی 2 سطح بالا)
+project_root = os.path.abspath(os.path.join(current_dir, '../..'))
+# اضافه کردن parent directory که شامل CC است
+parent_dir = os.path.dirname(project_root)
+sys.path.insert(0, parent_dir)
+
+# تغییر مسیر کاری به CC directory
+os.chdir(project_root)
 
 import time
 import random
@@ -17,18 +23,30 @@ from CC.database.Currencies import Currencies
 from CC.database.prices import Price
 from CC.utils.logging_config import get_logger
 
-# تنظیم مسیر برای import از ماژول‌های دیگر پروژه
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-
 # تنظیم لاگر با استفاده از ماژول لاگینگ پروژه
-logger = get_logger(__file__)
-logger.info("📊 راه‌اندازی ماژول شبیه‌ساز قیمت NCC")
+try:
+    logger = get_logger(__file__)
+    logger.info("📊 راه‌اندازی ماژول شبیه‌ساز قیمت NCC")
+except Exception as e:
+    # اگر لاگر اصلی مشکل دارد، از لاگر پایه استفاده کن
+    import logging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    logger = logging.getLogger('NCCPRICE')
+    logger.error(f"❌ خطا در راه‌اندازی لاگر اصلی: {str(e)}")
+    logger.info("📊 راه‌اندازی ماژول شبیه‌ساز قیمت NCC با لاگر پایه")
 
-# تنظیمات قیمت
-INITIAL_PRICE = 0.05
-TARGET_PRICE = 0.80
-MIN_MONTHS = 5
-MAX_MONTHS = 10
+# تنظیمات قیمت - الگوریتم کانال طبیعی با نوسانات
+START_PRICE = 0.22      # قیمت شروع: 22 سنت
+TARGET_PRICE = 0.80     # قیمت هدف: 80 سنت
+DURATION_MONTHS = 9     # مدت زمان: 9 ماه
+DURATION_DAYS = 270     # 9 ماه = 270 روز
+MIN_CHANNEL_PERCENT = 0.40  # حداقل 40% پیشرفت در کانال
+MAX_CHANNEL_PERCENT = 0.60  # حداکثر 60% پیشرفت در کانال
+
+# تنظیمات نوسانات طبیعی
+MAX_DROP_PERCENT = 0.30     # حداکثر 30% کاهش از بالاترین قیمت
+MIN_DROP_PERCENT = 0.20     # حداقل 20% کاهش از بالاترین قیمت
+VOLATILITY_CYCLES = [30, 45, 60, 90]  # چرخه‌های نوسان (روز)
 
 # فیات‌های مورد پشتیبانی
 FIAT_CURRENCIES = {
@@ -65,6 +83,12 @@ NCC_CURRENCY_IDS_TO_FIND = [8517, 8519]  # هر دو شناسه NCC
 price_history = []  # تاریخچه قیمت مشترک - یک لیست از تاپل (زمان، قیمت)
 last_updated = None  # آخرین زمان به‌روزرسانی مشترک برای همه توکن‌ها
 
+# متغیرهای نوسانات طبیعی
+highest_price_ever = START_PRICE  # بالاترین قیمت تاریخی
+current_cycle_phase = "growth"    # فاز فعلی: "growth" یا "correction"
+cycle_start_time = None          # زمان شروع فاز فعلی
+next_cycle_duration = random.choice(VOLATILITY_CYCLES)  # مدت فاز بعدی
+
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 
@@ -76,27 +100,31 @@ def init_ncc():
     session = Session()
     found_currencies = []
     
-    logger.info("🔍 جستجوی توکن‌های NCC در دیتابیس...")
-    
-    for currency_id in NCC_CURRENCY_IDS_TO_FIND:
-        ncc_token = session.query(Currencies).filter(Currencies.CurrencyID == str(currency_id)).first()
-        if ncc_token:
-            found_currencies.append(currency_id)
-            logger.info(f"✅ توکن NCC با آیدی {currency_id} یافت شد - شناسه ارز: {currency_id}")
+    try:
+        logger.info("🔍 جستجوی توکن‌های NCC در دیتابیس...")
+        
+        for currency_id in NCC_CURRENCY_IDS_TO_FIND:
+            ncc_token = session.query(Currencies).filter(Currencies.CurrencyID == str(currency_id)).first()
+            if ncc_token:
+                found_currencies.append(currency_id)
+                logger.info(f"✅ توکن NCC با آیدی {currency_id} یافت شد - شناسه ارز: {currency_id}")
+            else:
+                logger.warning(f"⚠️ توکن NCC با آیدی {currency_id} در دیتابیس یافت نشد")
+        
+        if found_currencies:
+            NCC_CURRENCY_IDS = found_currencies
+            logger.info(f"✅ تعداد {len(NCC_CURRENCY_IDS)} توکن NCC یافت شد: {NCC_CURRENCY_IDS}")
+            return True
         else:
-            logger.warning(f"⚠️ توکن NCC با آیدی {currency_id} در دیتابیس یافت نشد")
-    
-    if found_currencies:
-        NCC_CURRENCY_IDS = found_currencies
-        logger.info(f"✅ تعداد {len(NCC_CURRENCY_IDS)} توکن NCC یافت شد: {NCC_CURRENCY_IDS}")
-    else:
-        NCC_CURRENCY_IDS = []
-        logger.error("❌ هیچ توکن NCC در دیتابیس یافت نشد")
-        session.close()
+            NCC_CURRENCY_IDS = []
+            logger.error("❌ هیچ توکن NCC در دیتابیس یافت نشد")
+            return False
+    except Exception as e:
+        logger.error(f"❌ خطا در مقداردهی اولیه NCC: {str(e)}")
+        session.rollback()
         return False
-    
-    session.close()
-    return True
+    finally:
+        session.close()
 
 def get_current_price(fiat="USD"):
     """
@@ -113,20 +141,26 @@ def get_current_price(fiat="USD"):
         return None
         
     session = Session()
-    # استفاده از اولین شناسه ارز برای دریافت قیمت - تبدیل به string
-    currency_id_str = str(NCC_CURRENCY_IDS[0])
-    price = session.query(Price).filter(
-        Price.crypto_id == currency_id_str,
-        Price.currency == fiat
-    ).order_by(Price.last_updated.desc()).first()
-    session.close()
-    
-    if price:
-        logger.debug(f"📊 قیمت فعلی برای NCC (ID: {currency_id_str}) به {fiat}: {float(price.price)} {FIAT_CURRENCIES.get(fiat, '')}")
-        return float(price.price)
-    else:
-        logger.debug(f"⚠️ هیچ قیمتی برای NCC (ID: {currency_id_str}) به {fiat} در دیتابیس پیدا نشد")
+    try:
+        # استفاده از اولین شناسه ارز برای دریافت قیمت - تبدیل به string
+        currency_id_str = str(NCC_CURRENCY_IDS[0])
+        price = session.query(Price).filter(
+            Price.crypto_id == currency_id_str,
+            Price.currency == fiat
+        ).order_by(Price.last_updated.desc()).first()
+        
+        if price:
+            logger.debug(f"📊 قیمت فعلی برای NCC (ID: {currency_id_str}) به {fiat}: {float(price.price)} {FIAT_CURRENCIES.get(fiat, '')}")
+            return float(price.price)
+        else:
+            logger.debug(f"⚠️ هیچ قیمتی برای NCC (ID: {currency_id_str}) به {fiat} در دیتابیس پیدا نشد")
+            return None
+    except Exception as e:
+        logger.error(f"❌ خطا در دریافت قیمت فعلی: {str(e)}")
+        session.rollback()
         return None
+    finally:
+        session.close()
 
 def get_price_24h_ago(fiat="USD"):
     """
@@ -171,76 +205,197 @@ def get_price_24h_ago(fiat="USD"):
             return float(price.price)
         else:
             logger.debug(f"⚠️ هیچ قیمتی برای 24 ساعت قبل NCC (ID: {currency_id_str}) به {fiat} پیدا نشد")
-            # اگر هیچ قیمتی یافت نشد، از قیمت پایه با یک اختلاف کوچک استفاده می‌کنیم
-            return INITIAL_PRICE * 0.99  # 1٪ کمتر از قیمت پایه
+            # اگر هیچ قیمتی یافت نشد، از قیمت شروع استفاده می‌کنیم
+            return START_PRICE
     finally:
         session.close()
 
+def calculate_channel_bounds(days_passed):
+    """
+    محاسبه کانال قیمت بر اساس روزهای گذشته
+    
+    Args:
+        days_passed: تعداد روزهای گذشته از شروع
+        
+    Returns:
+        tuple: (min_price, max_price, ideal_price)
+    """
+    # محاسبه پیشرفت (0 تا 1)
+    progress = min(days_passed / DURATION_DAYS, 1.0)
+    
+    # قیمت ایده‌آل بر اساس پیشرفت زمانی
+    ideal_price = START_PRICE + (TARGET_PRICE - START_PRICE) * progress
+    
+    # محاسبه رشد کل تا این نقطه
+    total_growth_so_far = (ideal_price - START_PRICE) / START_PRICE
+    
+    # محاسبه کانال (40% تا 60% از رشد کل)
+    min_growth = total_growth_so_far * MIN_CHANNEL_PERCENT
+    max_growth = total_growth_so_far * MAX_CHANNEL_PERCENT
+    
+    min_price = START_PRICE * (1 + min_growth)
+    max_price = START_PRICE * (1 + max_growth)
+    
+    # اطمینان از حداقل‌ها
+    min_price = max(min_price, START_PRICE)
+    max_price = max(max_price, START_PRICE)
+    
+    return min_price, max_price, ideal_price
+
+def determine_market_phase(days_passed):
+    """
+    تعیین فاز بازار (رشد یا اصلاح) بر اساس چرخه‌های طبیعی
+    
+    Args:
+        days_passed: روزهای گذشته از شروع
+        
+    Returns:
+        tuple: (phase, phase_progress, target_correction)
+    """
+    global current_cycle_phase, cycle_start_time, next_cycle_duration
+    
+    if cycle_start_time is None:
+        cycle_start_time = datetime.now()
+        current_cycle_phase = "growth"
+        next_cycle_duration = random.choice(VOLATILITY_CYCLES)
+    
+    # محاسبه زمان گذشته از شروع فاز فعلی
+    phase_days = (datetime.now() - cycle_start_time).total_seconds() / (24 * 3600)
+    
+    # اگر فاز فعلی تمام شد، تغییر فاز
+    if phase_days >= next_cycle_duration:
+        if current_cycle_phase == "growth":
+            current_cycle_phase = "correction"
+            next_cycle_duration = random.randint(7, 21)  # اصلاح 1-3 هفته
+        else:
+            current_cycle_phase = "growth"
+            next_cycle_duration = random.choice(VOLATILITY_CYCLES)
+        
+        cycle_start_time = datetime.now()
+        phase_days = 0
+        logger.info(f"🔄 تغییر فاز بازار به: {current_cycle_phase} برای {next_cycle_duration} روز")
+    
+    phase_progress = phase_days / next_cycle_duration
+    
+    # محاسبه هدف اصلاح
+    if current_cycle_phase == "correction":
+        correction_percent = MIN_DROP_PERCENT + (MAX_DROP_PERCENT - MIN_DROP_PERCENT) * random.random()
+        target_correction = correction_percent
+    else:
+        target_correction = 0
+    
+    return current_cycle_phase, phase_progress, target_correction
+
 def generate_price():
     """
-    تولید قیمت جدید برای توکن NCC به دلار آمریکا
+    تولید قیمت جدید با الگوریتم طبیعی شامل رشد و اصلاحات
+    قیمت در 9 ماه از 22 سنت به 80 سنت با نوسانات واقعی
     
     Returns:
         tuple: قیمت جدید و درصد تغییر 24 ساعته
     """
-    global price_history, last_updated
+    global price_history, last_updated, highest_price_ever
     now = datetime.now()
 
-    if not price_history:
-        base = get_current_price("USD") or INITIAL_PRICE
-        logger.info(f"🆕 شروع جدید شبیه‌ساز قیمت NCC از قیمت پایه: ${base:.8f}")
-        
-        price_history.append((now, base))
-        last_updated = now
-        
-        # برای اولین قیمت، تغییر را صفر تنظیم می‌کنیم
-        change_24h = 0.0
-        logger.info(f"🆕 ثبت قیمت پایه NCC: ${base:.8f} (تغییر: {change_24h:.2f}%)")
-        return base, change_24h
-
-    last_price = price_history[-1][1]
-    days_passed = (now - last_updated).total_seconds() / (60 * 60 * 24)
-    total_days = 12 * 30  # یعنی 360 روز
-    drift = (TARGET_PRICE - INITIAL_PRICE) / total_days
-    volatility = 0.02
-
-    drift_component = drift * days_passed
-    random_component = np.random.normal(0, volatility) * last_price * np.sqrt(days_passed)
-    new_price = last_price + drift_component + random_component
-    new_price = max(new_price, INITIAL_PRICE)
-
-    # احتمالات پامپ و دامپ
-    pump_chance = 0.05  # احتمال 5% برای پامپ
-    dump_chance = 0.05  # احتمال 5% برای دامپ
+    # بررسی قیمت فعلی در دیتابیس برای اطمینان از شروع صحیح
+    current_db_price = get_current_price("USD")
     
-    if random.random() < pump_chance:
-        pump_factor = random.uniform(1.10, 1.30)  # افزایش 10% تا 30%
-        old_price = new_price
-        new_price *= pump_factor
-        logger.warning(f"🚀 پامپ! قیمت از ${old_price:.8f} به ${new_price:.8f} ({((pump_factor-1)*100):.1f}% افزایش)")
+    # اولین اجرا یا اگر قیمت در دیتابیس بالاتر از حد مجاز است - ریست کامل
+    if not price_history or (current_db_price and current_db_price > TARGET_PRICE * 2):
+        if current_db_price and current_db_price > TARGET_PRICE * 2:
+            logger.warning(f"⚠️ قیمت فعلی در دیتابیس بسیار بالا است: ${current_db_price:.6f} - ریست کامل انجام می‌شود")
+            # ریست کامل متغیرهای global
+            price_history = []
+            highest_price_ever = START_PRICE
+            last_updated = None
         
-    elif random.random() < dump_chance:
-        dump_factor = random.uniform(0.70, 0.90)  # کاهش 10% تا 30%
-        old_price = new_price
-        new_price *= dump_factor
-        logger.warning(f"💥 دامپ! قیمت از ${old_price:.8f} به ${new_price:.8f} ({((1-dump_factor)*100):.1f}% کاهش)")
+        logger.info(f"🆕 شروع الگوریتم طبیعی NCC از ${START_PRICE:.2f} به ${TARGET_PRICE:.2f} در {DURATION_MONTHS} ماه")
+        logger.info(f"📊 نوسانات: {MIN_DROP_PERCENT*100:.0f}%-{MAX_DROP_PERCENT*100:.0f}% کاهش در چرخه‌های طبیعی")
+        
+        price_history.append((now, START_PRICE))
+        last_updated = now
+        highest_price_ever = START_PRICE
+        
+        change_24h = 0.0
+        logger.info(f"🆕 قیمت پایه NCC: ${START_PRICE:.6f}")
+        return START_PRICE, change_24h
 
-    # محاسبه درصد تغییر بر اساس تاریخچه داخلی
-    if len(price_history) > 1:
-        # استفاده از قیمت قبلی در تاریخچه به عنوان قیمت 24 ساعت قبل
-        price_24h = price_history[-2][1] if len(price_history) > 1 else price_history[0][1]
-        change_24h = ((new_price / price_24h - 1) * 100)
-        logger.debug(f"محاسبه تغییر بر اساس تاریخچه داخلی: ${price_24h:.8f} -> ${new_price:.8f}")
+    # محاسبه زمان گذشته
+    start_time = price_history[0][0]
+    days_passed = (now - start_time).total_seconds() / (24 * 3600)
+    
+    # اگر 9 ماه گذشته، قیمت را روی 80 سنت ثابت نگه دار
+    if days_passed >= DURATION_DAYS:
+        new_price = TARGET_PRICE
+        logger.info(f"🎯 9 ماه تکمیل شد - قیمت نهایی: ${TARGET_PRICE:.2f}")
     else:
-        # اگر فقط یک قیمت در تاریخچه داریم، تغییر کوچکی تولید می‌کنیم
-        change_24h = random.uniform(-1.0, 2.0)
-        logger.debug(f"تنظیم تغییر 24 ساعته به صورت تصادفی: {change_24h:.2f}%")
+        # محاسبه کانال اصلی و قیمت ایده‌آل
+        min_price, max_price, ideal_price = calculate_channel_bounds(days_passed)
+        
+        # تعیین فاز بازار
+        market_phase, phase_progress, target_correction = determine_market_phase(days_passed)
+        
+        last_price = price_history[-1][1]
+        
+        if market_phase == "growth":
+            # فاز رشد - حرکت به سمت قیمت ایده‌آل یا بالاتر
+            growth_target = min(ideal_price * 1.1, max_price)  # تا 10% بالاتر از ایده‌آل
+            trend_component = (growth_target - last_price) * 0.15  # 15% حرکت به سمت هدف
+            
+            # نوسانات مثبت بیشتر
+            volatility = (max_price - min_price) * 0.03  # 3% نوسان
+            noise_component = random.uniform(-volatility * 0.3, volatility)  # بیشتر مثبت
+            
+        else:  # correction phase
+            # فاز اصلاح - کاهش قوی‌تر از ATH
+            correction_target = highest_price_ever * (1 - target_correction)
+            correction_target = max(correction_target, min_price)  # نباید زیر کانال برود
+            
+            trend_component = (correction_target - last_price) * 0.6  # 60% حرکت به سمت اصلاح
+            
+            # نوسانات منفی قوی‌تر برای اصلاح طبیعی
+            volatility = (max_price - min_price) * 0.03
+            noise_component = random.uniform(-volatility * 1.2, volatility * 0.2)  # بیشتر منفی
+        
+        # محاسبه قیمت جدید
+        new_price = last_price + trend_component + noise_component
+        
+        # اطمینان از ماندن در کانال کلی
+        new_price = max(min_price, min(new_price, max_price))
+        
+        # محدود کردن تغییرات شدید (حداکثر 3% در 15 دقیقه)
+        max_change = last_price * 0.03
+        new_price = max(last_price - max_change, min(new_price, last_price + max_change))
+        
+        # به‌روزرسانی بالاترین قیمت
+        if new_price > highest_price_ever:
+            highest_price_ever = new_price
+
+    # محاسبه درصد تغییر 24 ساعته
+    price_24h_ago = last_price
+    if len(price_history) >= 96:  # 96 = 24 ساعت * 4 (هر 15 دقیقه)
+        price_24h_ago = price_history[-96][1]
+    elif len(price_history) > 1:
+        price_24h_ago = price_history[0][1]
+    
+    change_24h = ((new_price / price_24h_ago - 1) * 100)
+
+    # حذف تاریخچه قدیمی
+    if len(price_history) > 500:
+        price_history = price_history[-500:]
 
     price_history.append((now, new_price))
     last_updated = now
 
+    # لاگ جزئیات
+    progress_percent = min(days_passed / DURATION_DAYS * 100, 100)
     change_sign = "+" if change_24h > 0 else ""
-    logger.info(f"📈 قیمت جدید NCC (USD): ${new_price:.8f}, تغییر 24 ساعته: {change_sign}{change_24h:.2f}%")
+    phase_icon = "📈" if market_phase == "growth" else "📉"
+    
+    # لاگ اضافی برای دیباگ
+    logger.debug(f"محاسبه تغییر بر اساس تاریخچه داخلی: ${last_price:.8f} -> ${new_price:.8f}")
+    logger.info(f"{phase_icon} NCC: ${new_price:.6f} | فاز: {market_phase} | ATH: ${highest_price_ever:.6f} | پیشرفت: {progress_percent:.1f}% | 24h: {change_sign}{change_24h:.2f}%")
+    
     return new_price, change_24h
 
 def calculate_fiat_price(usd_price, fiat):
@@ -344,14 +499,18 @@ def run_price_update():
 
 def reset_price_simulator():
     """
-    ریست کردن شبیه‌ساز قیمت NCC به حالت اولیه (5 سنت)
+    ریست کردن شبیه‌ساز قیمت NCC به حالت اولیه (22 سنت)
     """
-    global price_history, last_updated
+    global price_history, last_updated, highest_price_ever, current_cycle_phase, cycle_start_time, next_cycle_duration
     logger.info("🔄 ریست کردن شبیه‌ساز قیمت NCC به حالت اولیه...")
 
-    # پاک کردن تاریخچه قیمت
+    # پاک کردن تاریخچه قیمت و متغیرهای نوسان
     price_history = []
     last_updated = None
+    highest_price_ever = START_PRICE
+    current_cycle_phase = "growth"
+    cycle_start_time = None
+    next_cycle_duration = random.choice(VOLATILITY_CYCLES)
 
     # حذف همه قیمت‌های قبلی NCC از دیتابیس
     session = Session()
@@ -368,14 +527,14 @@ def reset_price_simulator():
     finally:
         session.close()
 
-    # ثبت قیمت اولیه (۵ سنت) بدون استفاده از generate_price
-    usd_price = INITIAL_PRICE
+    # ثبت قیمت اولیه (22 سنت) با الگوریتم کانال صعودی
+    usd_price = START_PRICE  # شروع از 22 سنت
     change = 0.0
     if update_price(usd_price, change):
-        logger.info(f"✅ شبیه‌ساز قیمت NCC با موفقیت ریست شد - قیمت جدید: ${usd_price:.8f}")
+        logger.info(f"✅ الگوریتم کانال صعودی ریست شد - شروع: ${START_PRICE:.2f} → هدف: ${TARGET_PRICE:.2f} ({DURATION_MONTHS} ماه)")
         return True
     else:
-        logger.error("❌ خطا در ریست کردن شبیه‌ساز قیمت NCC")
+        logger.error("❌ خطا در ریست کردن الگوریتم کانال صعودی")
         return False
 
 def main():
@@ -403,13 +562,13 @@ def main():
             prices_8517 = session.query(Price).filter(Price.crypto_id == '8517', Price.currency == 'USD').first()
             prices_8519 = session.query(Price).filter(Price.crypto_id == '8519', Price.currency == 'USD').first()
             
-            # اگر قیمت‌ها متفاوت هستند یا از 5 سنت فاصله دارند، ریست کن
+            # اگر قیمت‌ها متفاوت هستند یا زیر قیمت شروع (22 سنت) هستند، ریست کن
             need_reset = False
             if prices_8517 and prices_8519:
                 price_8517 = float(prices_8517.price)
                 price_8519 = float(prices_8519.price)
-                if abs(price_8517 - price_8519) > 0.001 or abs(price_8517 - INITIAL_PRICE) > 0.001:
-                    logger.warning(f"⚠️ قیمت‌های NCC متفاوت هستند: 8517=${price_8517:.8f}, 8519=${price_8519:.8f}")
+                if abs(price_8517 - price_8519) > 0.001 or price_8517 < START_PRICE or price_8519 < START_PRICE:
+                    logger.warning(f"⚠️ قیمت‌های NCC متفاوت هستند یا زیر حداقل: 8517=${price_8517:.8f}, 8519=${price_8519:.8f}")
                     need_reset = True
             elif prices_8517 or prices_8519:
                 logger.warning("⚠️ تنها یکی از توکن‌های NCC قیمت دارد")
@@ -433,9 +592,9 @@ def main():
         # اجرای اولیه
         run_price_update()
         
-        # زمانبندی اجرای دوره‌ای
-        schedule.every(1).minutes.do(run_price_update)
-        logger.info("⏱️ زمانبندی به‌روزرسانی هر دقیقه تنظیم شد")
+        # زمانبندی اجرای دوره‌ای - هر 15 دقیقه برای رشد طبیعی‌تر
+        schedule.every(15).minutes.do(run_price_update)
+        logger.info("⏱️ زمانبندی به‌روزرسانی هر 15 دقیقه تنظیم شد")
         
         while True:
             schedule.run_pending()

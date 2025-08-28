@@ -1,0 +1,3 @@
+2025-07-18 20:32:40 - blockchain_api - DEBUG - Logger initialized for blockchain_api at level DEBUG
+2025-07-18 20:33:05 - blockchain_api - DEBUG - Logger initialized for blockchain_api at level DEBUG
+2025-07-19 10:57:30 - blockchain_api - ERROR - Error confirming transaction: Failed to broadcast transaction via Tatum API

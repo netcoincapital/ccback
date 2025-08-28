@@ -9,8 +9,8 @@ class TransactionType(Enum):
     TOKEN = "token"
     CONTRACT = "contract"
 
-from webhook.transaction_processor import TransactionProcessor
-from webhook.chains.ada.utils import (
+from CC.webhook.transaction_processor import TransactionProcessor
+from CC.webhook.chains.ada.utils import (
     parse_ada_input_data,
     format_ada_address,
     is_valid_ada_address,
@@ -19,7 +19,7 @@ from webhook.chains.ada.utils import (
     is_token_transfer,
     get_token_details
 )
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 
 logger = get_logger(__name__)
 

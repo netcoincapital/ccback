@@ -17,7 +17,7 @@ from database import engine, Currencies
 from database.prices import Price
 from Currencies.price_service import PriceDbService
 from Currencies.api_key_manager import ApiKeyManager
-from Currencies.currency_price_service import dynamic_decimal_format, fiat_symbols
+from Currencies.currency_price_service import dynamic_decimal_format, fiat_symbols, CurrencyPriceService
 
 # Configure logging
 logger = get_logger(__file__)
@@ -51,6 +51,12 @@ def get_currency_price():
                 type: array
                 items:
                   type: string
+              include_historical:
+                type: boolean
+                description: Include historical data for charts (default false)
+              days:
+                type: integer
+                description: Number of days of historical data (default 30, max 365)
     responses:
       200:
         description: Currency prices retrieved successfully
@@ -104,6 +110,14 @@ def get_currency_price():
                 pattern=r'^[A-Z]{3}$'
             ) for fiat in fiat_currencies
         ]
+
+        # Historical data parameters
+        include_historical = data.get('include_historical', False)
+        days = data.get('days', 30)
+        if days > 365:
+            days = 365
+        elif days < 1:
+            days = 30
 
         # تبدیل Symbol یا currencyname به CurrencyID با استفاده از دیتابیس
         logger.info(f"Converting symbols/currencynames to currency IDs: {validated_symbols}")
@@ -242,10 +256,58 @@ def get_currency_price():
         if not final_prices:
             logger.warning(f"No prices found for symbols: {validated_symbols} in fiats: {validated_fiats}")
         
-        return jsonify({
+        # اگر داده‌های تاریخی درخواست شده باشد، آنها را اضافه کن
+        response_data = {
             "prices": final_prices,
             "success": True
-        }), 200
+        }
+        
+        if include_historical:
+            logger.info(f"Including historical data for {days} days")
+            try:
+                # محاسبه زمان شروع
+                from datetime import datetime, timedelta
+                time_end = datetime.now().isoformat() + "Z"
+                time_start = (datetime.now() - timedelta(days=days)).isoformat() + "Z"
+                
+                # دریافت داده‌های تاریخی
+                price_service = CurrencyPriceService()
+                historical_data = price_service.get_historical_data(
+                    currency_ids, time_start, time_end, "daily", validated_fiats
+                )
+                
+                if historical_data.get("success"):
+                    # تبدیل داده‌های تاریخی به فرمت مناسب
+                    historical_chart_data = {}
+                    data_points = historical_data.get("data", {})
+                    
+                    for currency_id, fiats in data_points.items():
+                        symbol = id_to_symbol_map.get(currency_id) or id_to_symbol_map.get(str(currency_id)) or str(currency_id)
+                        historical_chart_data[symbol] = {}
+                        
+                        for fiat, price_history in fiats.items():
+                            historical_chart_data[symbol][fiat] = {
+                                "prices": [],
+                                "timestamps": [],
+                                "market_caps": [],
+                                "volumes": []
+                            }
+                            
+                            for point in price_history:
+                                historical_chart_data[symbol][fiat]["timestamps"].append(point["timestamp"])
+                                historical_chart_data[symbol][fiat]["prices"].append(point["price"])
+                                historical_chart_data[symbol][fiat]["market_caps"].append(point["market_cap"])
+                                historical_chart_data[symbol][fiat]["volumes"].append(point["volume_24h"])
+                    
+                    response_data["historical_data"] = historical_chart_data
+                    response_data["days"] = days
+                else:
+                    logger.warning(f"Failed to fetch historical data: {historical_data.get('message')}")
+                    
+            except Exception as hist_error:
+                logger.error(f"Error fetching historical data: {str(hist_error)}")
+        
+        return jsonify(response_data), 200
 
     except ValidationError as e:
         logger.warning(f"Validation error in get_currency_price: {str(e)}")
@@ -498,6 +560,602 @@ def get_api_key_stats():
         }), 200
     except Exception as e:
         logger.error(f"Error in get_api_key_stats: {str(e)}", exc_info=True)
+        return jsonify({
+            "message": f"An unexpected error occurred: {str(e)}",
+            "success": False
+        }), 500
+
+@CUpdate_bp.route('/historical-prices', methods=['POST'])
+@SecurityUtils.rate_limit(requests=50, window=60)
+@handle_api_errors
+def get_historical_prices():
+    """
+    Get historical price data for cryptocurrency charts
+    ---
+    tags:
+      - Currencies
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              Symbol:
+                type: array
+                items:
+                  type: string
+                description: List of cryptocurrency symbols
+              FiatCurrencies:
+                type: array
+                items:
+                  type: string
+                description: List of fiat currencies (default USD)
+              time_start:
+                type: string
+                format: date-time
+                description: Start time in ISO format (default 30 days ago)
+              time_end:
+                type: string
+                format: date-time
+                description: End time in ISO format (default now)
+              interval:
+                type: string
+                description: Time interval (daily, hourly, etc.) (default daily)
+    responses:
+      200:
+        description: Historical price data retrieved successfully
+      400:
+        description: Invalid input data
+      429:
+        description: Rate limit exceeded
+      500:
+        description: Server error
+    """
+    try:
+        data = request.get_json() or {}
+        
+        # پشتیبانی از هر دو فرمت Symbol و currencyname
+        symbols = data.get('Symbol', data.get('currencyname', data.get('CurrencyID', [])))
+        if isinstance(symbols, str):
+            symbols = [symbols]
+        if not isinstance(symbols, list) or not symbols:
+            raise ValidationError("At least one Symbol/currencyname is required")
+
+        validated_symbols = [
+            InputValidator.validate_string(
+                symbol,
+                "Symbol/currencyname",
+                pattern=r'^[A-Za-z0-9 ]+$'
+            ) for symbol in symbols
+        ]
+
+        # Validate FiatCurrencies
+        fiat_currencies = data.get('FiatCurrencies', ["USD"])
+        if isinstance(fiat_currencies, str):
+            fiat_currencies = [fiat_currencies]
+        if not isinstance(fiat_currencies, list):
+            raise ValidationError("FiatCurrencies must be list or string")
+        
+        validated_fiats = [
+            InputValidator.validate_string(
+                fiat,
+                "FiatCurrency",
+                pattern=r'^[A-Z]{3}$'
+            ) for fiat in fiat_currencies
+        ]
+
+        # Time parameters
+        time_start = data.get('time_start')
+        time_end = data.get('time_end')
+        interval = data.get('interval', 'daily')
+
+        # Validate interval
+        valid_intervals = ['5m', '10m', '15m', '30m', '45m', '1h', '2h', '3h', '4h', '6h', '12h', '1d', '2d', '3d', '7d', '14d', '15d', '30d', '60d', '90d', '365d', 'daily', 'hourly']
+        if interval not in valid_intervals:
+            interval = 'daily'
+
+        logger.info(f"Getting historical data for symbols: {validated_symbols}, fiats: {validated_fiats}, interval: {interval}")
+
+        # تبدیل Symbol یا currencyname به CurrencyID
+        currency_ids = []
+        symbol_to_id_map = {}
+        id_to_symbol_map = {}
+
+        session = Session(bind=engine)
+        try:
+            # بررسی Symbol
+            symbol_matches = session.query(Currencies).filter(
+                Currencies.Symbol.in_(validated_symbols)
+            ).all()
+            
+            # بررسی CurrencyName
+            name_matches = session.query(Currencies).filter(
+                Currencies.CurrencyName.in_(validated_symbols)
+            ).all()
+            
+            # بررسی CurrencyID
+            id_matches = session.query(Currencies).filter(
+                Currencies.CurrencyID.in_(validated_symbols)
+            ).all()
+            
+            # اضافه کردن موارد پیدا شده
+            for currency in symbol_matches:
+                currency_ids.append(currency.CurrencyID)
+                symbol_to_id_map[currency.Symbol] = currency.CurrencyID
+                id_to_symbol_map[currency.CurrencyID] = currency.Symbol
+                id_to_symbol_map[str(currency.CurrencyID)] = currency.Symbol
+            
+            for currency in name_matches:
+                if currency.CurrencyID not in currency_ids:
+                    currency_ids.append(currency.CurrencyID)
+                    symbol_to_id_map[currency.CurrencyName] = currency.CurrencyID
+                    id_to_symbol_map[currency.CurrencyID] = currency.Symbol
+                    id_to_symbol_map[str(currency.CurrencyID)] = currency.Symbol
+                
+            for currency in id_matches:
+                if currency.CurrencyID not in currency_ids:
+                    currency_ids.append(currency.CurrencyID)
+                    symbol_to_id_map[currency.CurrencyID] = currency.CurrencyID
+                    id_to_symbol_map[currency.CurrencyID] = currency.Symbol
+                    id_to_symbol_map[str(currency.CurrencyID)] = currency.Symbol
+            
+        finally:
+            session.close()
+            
+        if not currency_ids:
+            raise ValidationError(f"No matching currencies found for symbols: {validated_symbols}")
+
+        # استفاده از سرویس قیمت برای دریافت داده‌های تاریخی
+        price_service = CurrencyPriceService()
+        historical_data = price_service.get_historical_data(
+            currency_ids, time_start, time_end, interval, validated_fiats
+        )
+
+        if not historical_data.get("success"):
+            return jsonify({
+                "success": False,
+                "error_type": "data_fetch_error",
+                "message": historical_data.get("message", "Failed to fetch historical data")
+            }), 500
+
+        # تبدیل خروجی به فرمت مناسب برای چارت
+        chart_data = {}
+        data_points = historical_data.get("data", {})
+
+        for currency_id, fiats in data_points.items():
+            symbol = id_to_symbol_map.get(currency_id) or id_to_symbol_map.get(str(currency_id)) or str(currency_id)
+            chart_data[symbol] = {}
+            
+            for fiat, price_history in fiats.items():
+                chart_data[symbol][fiat] = {
+                    "prices": [],
+                    "timestamps": [],
+                    "market_caps": [],
+                    "volumes": []
+                }
+                
+                for point in price_history:
+                    chart_data[symbol][fiat]["timestamps"].append(point["timestamp"])
+                    chart_data[symbol][fiat]["prices"].append(point["price"])
+                    chart_data[symbol][fiat]["market_caps"].append(point["market_cap"])
+                    chart_data[symbol][fiat]["volumes"].append(point["volume_24h"])
+
+        logger.info(f"Successfully retrieved historical data for {len(validated_symbols)} symbols")
+        
+        return jsonify({
+            "historical_data": chart_data,
+            "success": True,
+            "interval": interval,
+            "time_start": time_start,
+            "time_end": time_end
+        }), 200
+
+    except ValidationError as e:
+        logger.warning(f"Validation error in get_historical_prices: {str(e)}")
+        return jsonify({
+            "success": False,
+            "error_type": "validation_error",
+            "message": str(e)
+        }), 400
+    except Exception as e:
+        logger.error(f"Error in get_historical_prices: {str(e)}", exc_info=True)
+        return jsonify({
+            "success": False,
+            "error_type": "internal_error",
+            "message": f"Internal server error: {str(e)}"
+        }), 500
+
+@CUpdate_bp.route('/historical-prices-bulk', methods=['POST'])
+@SecurityUtils.rate_limit(requests=2, window=3600)  # محدودیت به 2 درخواست در ساعت برای bulk
+@handle_api_errors
+def get_bulk_historical_prices():
+    """
+    Get bulk historical price data for long periods (months/years)
+    ---
+    tags:
+      - Currencies
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              Symbol:
+                type: array
+                items:
+                  type: string
+                description: List of cryptocurrency symbols
+              FiatCurrencies:
+                type: array
+                items:
+                  type: string
+                description: List of fiat currencies (default USD)
+              months:
+                type: integer
+                description: Number of months to fetch (max 12 for Hobbyist plan)
+                minimum: 1
+                maximum: 12
+              interval:
+                type: string
+                description: Time interval (daily recommended for long periods)
+                default: daily
+    """
+    try:
+        data = request.get_json() or {}
+        
+        # Validate symbols
+        symbols = data.get('Symbol', [])
+        if isinstance(symbols, str):
+            symbols = [symbols]
+        if not symbols:
+            raise ValidationError("At least one Symbol is required")
+
+        # Validate months
+        months = data.get('months', 1)
+        if not isinstance(months, int) or months < 1 or months > 12:
+            raise ValidationError("months must be between 1 and 12")
+
+        # Validate other parameters
+        fiat_currencies = data.get('FiatCurrencies', ["USD"])
+        if isinstance(fiat_currencies, str):
+            fiat_currencies = [fiat_currencies]
+            
+        interval = data.get('interval', 'daily')
+        
+        logger.info(f"Bulk historical data request: {symbols} for {months} months")
+        
+        # Convert symbols to currency IDs (same logic as regular endpoint)
+        currency_ids = []
+        session = Session(bind=engine)
+        try:
+            symbol_matches = session.query(Currencies).filter(
+                Currencies.Symbol.in_(symbols)
+            ).all()
+            
+            name_matches = session.query(Currencies).filter(
+                Currencies.CurrencyName.in_(symbols)
+            ).all()
+            
+            for currency in symbol_matches + name_matches:
+                if currency.CurrencyID not in currency_ids:
+                    currency_ids.append(currency.CurrencyID)
+                    
+        finally:
+            session.close()
+            
+        if not currency_ids:
+            raise ValidationError(f"No matching currencies found for symbols: {symbols}")
+
+        # Use batch fetcher for long-term data
+        from utils.batch_historical_fetcher import BatchHistoricalFetcher
+        
+        fetcher = BatchHistoricalFetcher()
+        result = fetcher.fetch_long_term_data(
+            currency_ids=currency_ids,
+            months=months,
+            interval=interval,
+            fiat_currencies=fiat_currencies
+        )
+        
+        if result.get('success'):
+            return jsonify({
+                'success': True,
+                'message': result['message'],
+                'records_added': result['total_records_added'],
+                'batches_processed': result['total_batches'],
+                'months_processed': result['months_processed'],
+                'recommendation': 'Use /historical-prices endpoint to retrieve the stored data'
+            }), 200
+        else:
+            return jsonify({
+                'success': False,
+                'error_type': 'bulk_fetch_error',
+                'message': result.get('message')
+            }), 500
+            
+    except ValidationError as e:
+        return jsonify({
+            'success': False,
+            'error_type': 'validation_error',
+            'message': str(e)
+        }), 400
+    except Exception as e:
+        logger.error(f"Error in bulk historical prices: {str(e)}", exc_info=True)
+        return jsonify({
+            'success': False,
+            'error_type': 'internal_error',
+            'message': str(e)
+        }), 500
+
+@CUpdate_bp.route('/historical-prices-auto', methods=['POST'])
+@SecurityUtils.rate_limit(requests=3, window=3600)  # محدودیت به 3 درخواست در ساعت
+@handle_api_errors
+def get_historical_prices_auto():
+    """
+    Automatically fetch historical data for all currencies in database
+    ---
+    tags:
+      - Currencies
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              time_start:
+                type: string
+                format: date-time
+                description: Start time in ISO format
+              time_end:
+                type: string
+                format: date-time
+                description: End time in ISO format
+              interval:
+                type: string
+                description: Time interval (default daily)
+              fiat_currencies:
+                type: array
+                items:
+                  type: string
+                description: List of fiat currencies (default USD)
+              max_currencies:
+                type: integer
+                description: Maximum number of currencies to process (default 20)
+    """
+    try:
+        data = request.get_json() or {}
+        
+        # Parameters
+        time_start = data.get('time_start')
+        time_end = data.get('time_end')
+        interval = data.get('interval', 'daily')
+        fiat_currencies = data.get('fiat_currencies', ['USD'])
+        max_currencies = data.get('max_currencies', 20)
+        
+        logger.info(f"Auto historical data request: {max_currencies} currencies, interval {interval}")
+        
+        # Get all currencies with CMC_ID from database
+        session = Session(bind=engine)
+        try:
+            currencies = session.query(Currencies).filter(
+                Currencies.CMC_ID.isnot(None),
+                Currencies.CMC_ID != '',
+                Currencies.CMC_ID != 0
+            ).limit(max_currencies).all()
+            
+            if not currencies:
+                raise ValidationError("No currencies with valid CMC_ID found in database")
+            
+            currency_ids = [c.CurrencyID for c in currencies]
+            currency_info = [(c.Symbol, c.CurrencyName, c.CMC_ID) for c in currencies]
+            
+            logger.info(f"Found {len(currency_ids)} currencies with CMC_ID")
+            for symbol, name, cmc_id in currency_info:
+                logger.debug(f"  {symbol} ({name}) - CMC_ID: {cmc_id}")
+                
+        finally:
+            session.close()
+        
+        # Use historical data service
+        price_service = CurrencyPriceService()
+        result = price_service.update_historical_data(
+            currency_ids=currency_ids,
+            time_start=time_start,
+            time_end=time_end,
+            interval=interval,
+            fiat_currencies=fiat_currencies
+        )
+        
+        if result.get('success'):
+            return jsonify({
+                'success': True,
+                'message': f'Historical data updated for {len(currency_ids)} currencies',
+                'currencies_processed': len(currency_ids),
+                'currency_list': [f"{info[0]} ({info[1]})" for info in currency_info],
+                'records_added': result.get('records_added', 0),
+                'time_range': f"{time_start} to {time_end}",
+                'interval': interval
+            }), 200
+        else:
+            return jsonify({
+                'success': False,
+                'error_type': 'update_error',
+                'message': result.get('message', 'Failed to update historical data')
+            }), 500
+            
+    except ValidationError as e:
+        return jsonify({
+            'success': False,
+            'error_type': 'validation_error',
+            'message': str(e)
+        }), 400
+    except Exception as e:
+        logger.error(f"Error in auto historical prices: {str(e)}", exc_info=True)
+        return jsonify({
+            'success': False,
+            'error_type': 'internal_error',
+            'message': str(e)
+        }), 500
+
+@CUpdate_bp.route('/update-historical-prices', methods=['POST'])
+@SecurityUtils.rate_limit(requests=5, window=3600)  # محدودیت به 5 درخواست در ساعت
+@handle_api_errors
+def update_historical_prices():
+    """
+    Manually update historical price data from CoinMarketCap
+    ---
+    tags:
+      - Currencies
+    requestBody:
+      required: false
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              Symbol:
+                type: array
+                items:
+                  type: string
+                description: Optional specific currencies to update
+              FiatCurrencies:
+                type: array
+                items:
+                  type: string
+                description: Optional specific fiat currencies to update
+              time_start:
+                type: string
+                format: date-time
+                description: Start time for historical data
+              time_end:
+                type: string
+                format: date-time
+                description: End time for historical data
+              interval:
+                type: string
+                description: Time interval for data points
+    responses:
+      200:
+        description: Historical price update process completed
+      400:
+        description: Invalid input data
+      429:
+        description: Rate limit exceeded
+      500:
+        description: Server error
+    """
+    try:
+        data = request.get_json() or {}
+        logger.info("Manual historical price update requested")
+        
+        # فیلترهای اختیاری
+        specific_symbols = data.get('Symbol', data.get('currencyname', data.get('CurrencyID', [])))
+        specific_fiats = data.get('FiatCurrencies', [])
+        time_start = data.get('time_start')
+        time_end = data.get('time_end')
+        interval = data.get('interval', 'daily')
+        
+        # تبدیل symbols به currency_ids
+        currency_ids = []
+        symbols_used = []
+        
+        if specific_symbols:
+            if isinstance(specific_symbols, str):
+                specific_symbols = [specific_symbols]
+            
+            validated_symbols = [
+                InputValidator.validate_string(
+                    symbol,
+                    "Symbol/currencyname",
+                    pattern=r'^[A-Za-z0-9 ]+$'
+                ) for symbol in specific_symbols
+            ]
+            
+            session = Session(bind=engine)
+            try:
+                symbol_matches = session.query(Currencies).filter(
+                    Currencies.Symbol.in_(validated_symbols)
+                ).all()
+                
+                name_matches = session.query(Currencies).filter(
+                    Currencies.CurrencyName.in_(validated_symbols)
+                ).all()
+                
+                id_matches = session.query(Currencies).filter(
+                    Currencies.CurrencyID.in_(validated_symbols)
+                ).all()
+                
+                for currency in symbol_matches:
+                    currency_ids.append(currency.CurrencyID)
+                    symbols_used.append(currency.Symbol)
+                
+                for currency in name_matches:
+                    if currency.CurrencyID not in currency_ids:
+                        currency_ids.append(currency.CurrencyID)
+                        symbols_used.append(currency.Symbol)
+                    
+                for currency in id_matches:
+                    if currency.CurrencyID not in currency_ids:
+                        currency_ids.append(currency.CurrencyID)
+                        symbols_used.append(currency.Symbol)
+                
+            finally:
+                session.close()
+                
+            if not currency_ids:
+                raise ValidationError(f"No matching currencies found for symbols: {validated_symbols}")
+
+        # اعتبارسنجی fiat currencies
+        if specific_fiats:
+            if isinstance(specific_fiats, str):
+                specific_fiats = [specific_fiats]
+                
+            validated_fiats = [
+                InputValidator.validate_string(
+                    fiat,
+                    "FiatCurrency",
+                    pattern=r'^[A-Z]{3}$'
+                ) for fiat in specific_fiats
+            ]
+        else:
+            validated_fiats = None
+
+        # استفاده از سرویس قیمت برای به‌روزرسانی
+        price_service = CurrencyPriceService()
+        result = price_service.update_historical_data(
+            currency_ids=currency_ids if currency_ids else None,
+            time_start=time_start,
+            time_end=time_end,
+            interval=interval,
+            fiat_currencies=validated_fiats
+        )
+        
+        if result["success"]:
+            symbols_str = ", ".join(symbols_used) if symbols_used else "all currencies"
+            return jsonify({
+                "message": f"Successfully updated historical data for {symbols_str}",
+                "symbols_updated": symbols_used if symbols_used else "all",
+                "records_added": result.get("records_added", 0),
+                "records_failed": result.get("records_failed", 0),
+                "success": True
+            }), 200
+        else:
+            return jsonify({
+                "message": result["message"],
+                "success": False
+            }), 500
+                
+    except ValidationError as e:
+        logger.warning(f"Validation error in update_historical_prices: {str(e)}")
+        return jsonify({
+            "message": str(e),
+            "success": False
+        }), 400
+    except Exception as e:
+        logger.error(f"Error in update_historical_prices: {str(e)}", exc_info=True)
         return jsonify({
             "message": f"An unexpected error occurred: {str(e)}",
             "success": False

@@ -4,10 +4,10 @@ from web3 import Web3
 import requests
 from abc import ABC, abstractmethod
 from decimal import Decimal
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 from bitcoinlib.wallets import Wallet
 from solana.rpc.api import Client
-from config.api_config import EXTERNAL_APIS
+from CC.config.api_config import EXTERNAL_APIS
 
 # ERC20 ABI for token interactions
 ERC20_ABI = [

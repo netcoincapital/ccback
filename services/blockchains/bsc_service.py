@@ -410,11 +410,8 @@ class BSCService(BaseBlockchainService):
     def _get_stored_transaction(self, transaction_id: str) -> Optional[Dict]:
         """Get stored transaction data"""
         try:
-            # Import transaction manager
-            from CC.Send.Send import transaction_manager
-            
-            # Get transaction from transaction manager
-            tx_data = transaction_manager.get_transaction(transaction_id)
+            # Use the unified storage system from base class
+            tx_data = self.storage.get_transaction(transaction_id)
             if tx_data:
                 self.logger.debug(f"Retrieved BSC transaction {transaction_id} from storage")
                 return tx_data
@@ -427,29 +424,13 @@ class BSCService(BaseBlockchainService):
 
     def _store_transaction(self, transaction_id: str, tx_details: Dict) -> None:
         """Store transaction details"""
-        # Use transaction manager to store transaction data
-        from CC.Send.Send import transaction_manager
-        
-        transaction_data = {
-            "blockchain_name": "binance-smart-chain",
-            "api_chain_name": "bsc",
-            "sender_address": tx_details["details"]["sender"],
-            "recipient_address": tx_details["details"]["recipient"],
-            "amount": tx_details["details"]["amount"],
-            "smart_contract_address": tx_details.get("smart_contract_address", ""),
-            "created_at": datetime.now().isoformat()
-        }
-        
-        # Add additional BSC-specific data
-        transaction_data.update({
-            "chain_id": 56,  # BSC mainnet chain ID
-            "gas_price": str(self._get_cached_gas_price()),
-            "gas_limit": "21000"  # Default for BNB transfers
-        })
-        
-        # Store transaction
-        transaction_manager.store_transaction(transaction_id, transaction_data)
-        self.logger.debug(f"Stored BSC transaction {transaction_id}")
+        try:
+            # Use the unified storage system from base class
+            self.storage.store_transaction(transaction_id, tx_details)
+            self.logger.debug(f"Stored BSC transaction {transaction_id}")
+        except Exception as e:
+            self.logger.error(f"Error storing BSC transaction {transaction_id}: {str(e)}")
+            raise
         
     def _log_transaction(self, transaction_id: str, action: str, details: Dict = None) -> None:
         """Log transaction activity"""

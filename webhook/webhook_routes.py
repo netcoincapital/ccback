@@ -1,21 +1,22 @@
 import logging
 from flask import Blueprint, request, jsonify
-from utils.logging_config import get_logger
-from webhook.transaction_processor import TransactionProcessor
+from CC.utils.logging_config import get_logger
+from CC.webhook.transaction_processor import TransactionProcessor
 import uuid
 import json
+from datetime import datetime
 
 # Chain-specific processors
-from webhook.chains.eth import processor as eth_processor
-from webhook.chains.btc import processor as btc_processor
-from webhook.chains.trx import processor as trx_processor
-from webhook.chains.matic import processor as matic_processor
-from webhook.chains.sol import processor as sol_processor
-from webhook.chains.xrp import processor as xrp_processor
-from webhook.chains.doge import processor as doge_processor
-from webhook.chains.ltc import processor as ltc_processor
-from webhook.chains.ada import processor as ada_processor
-from webhook.chains.bnb import processor as bnb_processor
+from CC.webhook.chains.eth import processor as eth_processor
+from CC.webhook.chains.btc import processor as btc_processor
+from CC.webhook.chains.trx import processor as trx_processor
+from CC.webhook.chains.matic import processor as matic_processor
+from CC.webhook.chains.sol import processor as sol_processor
+from CC.webhook.chains.xrp import processor as xrp_processor
+from CC.webhook.chains.doge import processor as doge_processor
+from CC.webhook.chains.ltc import processor as ltc_processor
+from CC.webhook.chains.ada import processor as ada_processor
+from CC.webhook.chains.bnb import processor as bnb_processor
 
 # تنظیم لاگر
 logger = get_logger(__file__)
@@ -28,22 +29,43 @@ def handle_tatum_transaction():
     """
     دریافت و مدیریت وب‌هوک‌های تاتوم برای رویدادهای قرارداد هوشمند یا تراکنش‌های آدرس.
     """
+    # تست قطعی - نوشتن در فایل
+    with open('/tmp/webhook_test.log', 'a') as f:
+        f.write(f"WEBHOOK RECEIVED AT {datetime.now()}\n")
+    
     req_id = str(uuid.uuid4())[:8]  # ایجاد یک شناسه منحصر به فرد برای هر درخواست
+    
+    with open('/tmp/webhook_test.log', 'a') as f:
+        f.write(f"Request ID: {req_id}\n")
+    
     logger.info(f"[{req_id}] 🔥 وب‌هوک دریافت شد 🔥")
+    
+    with open('/tmp/webhook_test.log', 'a') as f:
+        f.write(f"After logger.info\n")
     
     # بررسی وجود داده JSON در درخواست
     if not request.is_json:
+        with open('/tmp/webhook_test.log', 'a') as f:
+            f.write(f"Not JSON request\n")
         logger.error(f"[{req_id}] درخواست غیر-JSON دریافت شد")
         return jsonify({"ok": True}), 200  # فرمت پاسخ مورد انتظار تاتوم
     
+    with open('/tmp/webhook_test.log', 'a') as f:
+        f.write(f"JSON request OK\n")
+    
     # دریافت داده‌های وب‌هوک
     webhook_data = request.json
-    logger.info(f"[{req_id}] داده‌های وب‌هوک: {json.dumps(webhook_data, ensure_ascii=False)}")
+    
+    with open('/tmp/webhook_test.log', 'a') as f:
+        f.write(f"Webhook data: {webhook_data}\n")
     
     try:
         # تشخیص بلاکچین از داده‌های وب‌هوک
         blockchain = webhook_data.get('chain', '').lower()
         currency = webhook_data.get('currency', '').lower()
+        
+        with open('/tmp/webhook_test.log', 'a') as f:
+            f.write(f"Blockchain: {blockchain}, Currency: {currency}\n")
         
         # انتخاب پردازشگر مناسب بر اساس بلاکچین
         if blockchain == 'ethereum' or currency == 'eth':
@@ -54,6 +76,8 @@ def handle_tatum_transaction():
             processor = trx_processor
         elif blockchain == 'polygon' or currency == 'matic':
             processor = matic_processor
+            with open('/tmp/webhook_test.log', 'a') as f:
+                f.write(f"Selected matic_processor\n")
         elif blockchain == 'solana' or currency == 'sol':
             processor = sol_processor
         elif blockchain == 'ripple' or currency == 'xrp':
@@ -71,9 +95,17 @@ def handle_tatum_transaction():
             # در صورت عدم تشخیص بلاکچین، از پردازشگر پیش‌فرض استفاده می‌کنیم
             logger.warning(f"[{req_id}] بلاکچین ناشناخته: {blockchain}/{currency}، استفاده از پردازشگر پیش‌فرض")
             processor = TransactionProcessor()
+            with open('/tmp/webhook_test.log', 'a') as f:
+                f.write(f"Using default processor\n")
+        
+        with open('/tmp/webhook_test.log', 'a') as f:
+            f.write(f"About to call processor.process_webhook\n")
         
         # پردازش وب‌هوک و دریافت نتیجه
         result = processor.process_webhook(webhook_data)
+        
+        with open('/tmp/webhook_test.log', 'a') as f:
+            f.write(f"Processor result: {result}\n")
         logger.info(f"[{req_id}] نتیجه پردازش: {json.dumps(result, ensure_ascii=False)}")
         
         # پاسخ به درخواست در فرمت مورد انتظار تاتوم
@@ -131,7 +163,6 @@ def test_webhook():
     نقطه پایانی ساده برای بررسی صحت ثبت مسیرهای وب‌هوک
     """
     logger.info("نقطه پایانی تست وب‌هوک فراخوانی شد")
-    from datetime import datetime
     return jsonify({
         "status": "موفق",
         "message": "مسیرهای وب‌هوک به درستی کار می‌کنند",

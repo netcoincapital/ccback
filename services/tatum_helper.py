@@ -35,11 +35,34 @@ class TatumHelper:
                 endpoint = f"/ethereum/account/balance/{address}"
             elif chain == "binance smart chain":
                 endpoint = f"/binance smart chain/account/balance/{address}"
+            elif chain == "bitcoin":
+                # Bitcoin uses a different endpoint format
+                endpoint = f"/bitcoin/address/{address}/balance"
+            elif chain == "litecoin":
+                endpoint = f"/litecoin/address/{address}/balance"
+            elif chain == "dogecoin":
+                endpoint = f"/dogecoin/address/{address}/balance"
             else:
                 endpoint = f"/{chain}/account/balance/{address}"
                 
             self.logger.debug(f"Getting balance from Tatum endpoint: {endpoint}")
-            return self._make_request('get', endpoint)
+            response_data, error = self._make_request('get', endpoint)
+            
+            if error:
+                return {}, error
+                
+            # For Bitcoin-like chains, the response format is different
+            if chain in ["bitcoin", "litecoin", "dogecoin"]:
+                # Bitcoin API returns balance in satoshis
+                if 'balance' in response_data:
+                    balance_satoshis = response_data['balance']
+                    balance_btc = Decimal(balance_satoshis) / Decimal(10**8)
+                    return balance_btc, None
+                else:
+                    return Decimal('0'), "Balance not found in response"
+            else:
+                # For other chains, return the raw response
+                return response_data, None
             
         except Exception as e:
             error_msg = f"Error getting balance from Tatum: {str(e)}"
@@ -60,6 +83,10 @@ class TatumHelper:
                 self.logger.warning(f"Converting amount from {type(amount)} to string")
                 amount = str(amount)
                 
+            # Validate required parameters
+            if not private_key:
+                return {}, "Private key is required for transaction sending"
+                
             # Normalize blockchain name
             chain = self._normalize_chain_name(blockchain_name)
             
@@ -72,6 +99,12 @@ class TatumHelper:
                 private_key, 
                 tx_details
             )
+            
+            # Validate that we got a valid endpoint and request data
+            if not broadcast_endpoint:
+                return {}, "Failed to get broadcast endpoint"
+            if not request_data:
+                return {}, "Failed to prepare request data"
             
             # Remove private key from request data before logging
             safe_request_data = self._sanitize_request_data(request_data)
@@ -152,6 +185,66 @@ class TatumHelper:
             
         except Exception as e:
             error_msg = f"Error getting transaction details via Tatum: {str(e)}"
+            self.logger.error(error_msg)
+            return {}, error_msg
+            
+    @handle_api_errors
+    def broadcast_transaction(self, blockchain_name: str, signed_tx_raw: str) -> Tuple[Dict, Optional[str]]:
+        """Broadcast a signed transaction using Tatum API"""
+        try:
+            # Validate signed transaction data
+            if not signed_tx_raw:
+                return {}, "Signed transaction data is required"
+                
+            # Normalize blockchain name
+            chain = self._normalize_chain_name(blockchain_name)
+            
+            # Get the appropriate broadcast endpoint for this blockchain
+            if chain == "ethereum":
+                endpoint = "/ethereum/broadcast"
+            elif chain == "binance-smart-chain":
+                endpoint = "/bsc/broadcast"
+            elif chain == "polygon":
+                endpoint = "/polygon/broadcast"
+            elif chain == "bitcoin":
+                endpoint = "/bitcoin/broadcast"
+            elif chain == "tron":
+                endpoint = "/tron/broadcast"
+            elif chain == "avalanche":
+                endpoint = "/avalanche/broadcast"
+            elif chain == "arbitrum":
+                endpoint = "/arb/broadcast"
+            else:
+                endpoint = f"/{chain}/broadcast"
+            
+            # Prepare request data - ONLY use txData for pre-signed transactions
+            request_data = {
+                "txData": signed_tx_raw
+            }
+            
+            self.logger.debug(f"Broadcasting {chain} transaction via Tatum")
+            self.logger.debug(f"Using endpoint: {endpoint}")
+            self.logger.debug(f"Request data: {request_data}")
+            
+            # Send broadcast request
+            response_data, error = self._make_request('post', endpoint, data=request_data)
+            if error:
+                return {}, error
+                
+            # Extract transaction hash from response
+            tx_hash = self._extract_tx_hash(response_data)
+            if not tx_hash:
+                self.logger.error(f"Transaction hash not found in response: {response_data}")
+                return {}, "Transaction hash not found in response"
+                
+            return {
+                "txId": tx_hash,
+                "transaction_hash": tx_hash,
+                "status": "pending"
+            }, None
+            
+        except Exception as e:
+            error_msg = f"Error broadcasting transaction via Tatum: {str(e)}"
             self.logger.error(error_msg)
             return {}, error_msg
             
@@ -280,8 +373,17 @@ class TatumHelper:
     def _get_broadcast_params(self, chain: str, sender: str, recipient: str, 
                              amount: str, private_key: str, tx_details: Dict) -> Tuple[str, Dict]:
         """Get the broadcast endpoint and request data for a specific blockchain"""
-        # Default structure for most blockchains
-        signed_tx = tx_details.get("signed_tx")
+        # Import Web3 for address validation
+        from web3 import Web3
+        
+        # Validate and normalize addresses using Web3.toChecksumAddress
+        try:
+            sender = Web3.to_checksum_address(sender)
+            recipient = Web3.to_checksum_address(recipient)
+            self.logger.debug(f"Addresses validated: sender={sender}, recipient={recipient}")
+        except Exception as e:
+            self.logger.error(f"Invalid address format: {str(e)}")
+            return "", {}
         
         # Define broadcast endpoints for each blockchain
         endpoints = {
@@ -301,38 +403,56 @@ class TatumHelper:
         if not endpoint:
             endpoint = f"/{chain}/broadcast" 
             self.logger.warning(f"Using default broadcast endpoint pattern for {chain}")
-            
-        # For blockchains that need raw transaction data
+        
+        # Check if we have a pre-signed transaction (txData method)
+        signed_tx = tx_details.get("signed_tx") if tx_details else None
+        
+        # Method 1: Use txData (pre-signed transaction)
         if signed_tx:
+            self.logger.debug(f"Using txData method for {chain} broadcast")
             return endpoint, {"txData": signed_tx}
-            
-        # Some blockchains have different request formats for broadcasting
-        if chain == "ripple" or chain == "xrp":
-            request_data = {
-                "from": sender,
-                "to": recipient,
-                "amount": amount,
-                "fromSecret": private_key
-            }
-        elif chain == "solana":
-            request_data = {
-                "signatureId": tx_details.get("signature_id"),
-                "serializedTransaction": tx_details.get("serialized_tx")
-            }
+        
+        # Method 2: Use fromPrivateKey (let Tatum handle signing)
         else:
-            # Standard request format
-            request_data = {
-                "from": sender,
-                "to": recipient,
-                "amount": amount,
-                "fromPrivateKey": private_key
-            }
+            self.logger.debug(f"Using fromPrivateKey method for {chain} broadcast")
             
-            # Add contract address for token transfers
-            if tx_details.get("contract_address"):
-                request_data["contractAddress"] = tx_details.get("contract_address")
+            # For fromPrivateKey method, use transaction endpoint instead of broadcast
+            if chain == "polygon":
+                # Polygon should use /polygon/transaction endpoint for fromPrivateKey
+                endpoint = "/polygon/transaction"
+                request_data = {
+                    "from": sender,
+                    "to": recipient,
+                    "amount": amount,
+                    "fromPrivateKey": private_key,
+                    "currency": "MATIC"
+                }
+            elif chain == "ripple" or chain == "xrp":
+                request_data = {
+                    "from": sender,
+                    "to": recipient,
+                    "amount": amount,
+                    "fromSecret": private_key
+                }
+            elif chain == "solana":
+                request_data = {
+                    "signatureId": tx_details.get("signature_id") if tx_details else None,
+                    "serializedTransaction": tx_details.get("serialized_tx") if tx_details else None
+                }
+            else:
+                # Standard request format for other EVM chains
+                request_data = {
+                    "from": sender,
+                    "to": recipient,
+                    "amount": amount,
+                    "fromPrivateKey": private_key
+                }
                 
-        return endpoint, request_data
+                # Add contract address for token transfers
+                if tx_details and tx_details.get("contract_address"):
+                    request_data["contractAddress"] = tx_details.get("contract_address")
+                    
+            return endpoint, request_data
         
     def _extract_tx_hash(self, response_data: Dict) -> Optional[str]:
         """Extract transaction hash from Tatum API response"""

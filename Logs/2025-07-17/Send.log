@@ -1,0 +1,90 @@
+2025-07-17 06:03:39 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:03:39 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:03:39 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:03:55 - Send - ERROR - Error sending Polygon transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 06:09:10 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:09:10 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:09:10 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:11:50 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:11:50 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:11:50 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:27:41 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:27:41 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:27:42 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:31:34 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:31:34 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:31:34 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:35:30 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:35:31 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:35:31 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:36:43 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:36:44 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:36:44 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:59:06 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:59:06 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 06:59:06 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:00:53 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:00:53 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:00:53 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:01:12 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:01:12 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:01:13 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:16:41 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:16:41 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:16:41 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:17:07 - Send - ERROR - Error sending Polygon transaction: No signing service available
+2025-07-17 07:22:00 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:22:00 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:22:00 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:24:06 - Send - ERROR - Error sending Polygon transaction: No signing service available
+2025-07-17 07:28:26 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:28:26 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:28:26 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:28:43 - Send - ERROR - Error sending Polygon transaction: No signing service available - Failed to sign transaction
+2025-07-17 07:32:05 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:32:06 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:32:06 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:32:15 - Send - ERROR - Error sending Polygon transaction: Tatum transaction failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a6ff9155a130781939e9"}
+2025-07-17 07:36:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:36:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:36:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:36:47 - Send - ERROR - Error sending Polygon transaction: Tatum transaction failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a80fa7a243511c172ac2"}
+2025-07-17 07:43:30 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:43:30 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:43:31 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:43:49 - Send - ERROR - Error sending Polygon transaction: Tatum transaction failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b508734b553413379e"}
+2025-07-17 07:47:27 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:47:27 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:47:27 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:47:55 - Send - ERROR - Error sending Polygon transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 07:54:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:54:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:54:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 07:55:26 - Send - ERROR - Error sending Polygon transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:14:29 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:15:42 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:16:28 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:17:46 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:20:16 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 08:23:33 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:24:50 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:25:46 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:53:50 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:54:02 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:54:24 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 08:55:31 - Send - ERROR - Error sending Polygon transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 10:46:57 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 10:47:15 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-17 20:55:52 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 20:55:55 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-17 20:55:58 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-19 10:40:14 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-19 10:40:20 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-19 10:40:23 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-19 10:40:33 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-19 10:45:51 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-19 10:49:20 - Send - ERROR - Error in send_transaction: Failed to broadcast transaction via Tatum API
+2025-07-19 10:57:30 - Send - ERROR - Error sending Polygon transaction: Failed to broadcast transaction via Tatum API
+2025-07-19 11:25:06 - Send - ERROR - Transaction test_transaction_12345 not found in shared storage
+2025-07-19 11:25:27 - Send - ERROR - Transaction test_transaction_12345 not found in shared storage
+2025-07-19 11:29:29 - Send - ERROR - Error sending Polygon transaction: Failed to broadcast transaction via Tatum API

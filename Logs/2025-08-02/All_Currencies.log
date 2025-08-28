@@ -1,0 +1,103 @@
+2025-08-02 07:31:15 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 07:31:15 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 07:31:15 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 07:31:15 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 07:31:15 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 07:31:15 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 07:31:17 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 07:31:17 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 07:31:17 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 07:33:10 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-02 08:08:30 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 08:08:30 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 08:08:30 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 08:08:30 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 08:08:30 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 08:08:30 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 08:08:32 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 08:08:32 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 08:08:32 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:20:21 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 09:20:21 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:20:21 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 09:20:21 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:20:21 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 09:20:21 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:20:22 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:20:23 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:20:23 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:24:47 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 09:24:47 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:24:48 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 09:24:48 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:24:48 - All_Currencies - DEBUG - Logger initialized for All_Currencies at level DEBUG
+2025-08-02 09:24:48 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:24:48 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:24:49 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:24:49 - All_Currencies - INFO - Initializing currency post module
+2025-08-02 09:45:12 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-02 17:31:02 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-02 17:31:03 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-02 17:31:20 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-02 20:06:55 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT currencies.`CurrencyID` AS `currencies_CurrencyID`, currencies.`CurrencyName` AS `currencies_CurrencyName`, currencies.`Icon` AS `currencies_Icon`, currencies.`Symbol` AS `currencies_Symbol`, currencies.`BlockchainID` AS `currencies_BlockchainID`, currencies.`DecimalPlaces` AS `currencies_DecimalPlaces`, currencies.`IsToken` AS `currencies_IsToken`, currencies.`SmartContractAddress` AS `currencies_SmartContractAddress`, currencies.`CreatedAt` AS `currencies_CreatedAt`, currencies.`UpdatedAt` AS `currencies_UpdatedAt`, currencies.`CMC_ID` AS `currencies_CMC_ID`, blockchains.`BlockchainName` AS `blockchains_BlockchainName` 
+FROM currencies INNER JOIN blockchains ON currencies.`BlockchainID` = blockchains.`BlockchainID`]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-02 20:06:58 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 13:39:53 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 13:39:57 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 13:40:04 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 13:40:07 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 15:34:41 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 15:34:53 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT currencies.`CurrencyID` AS `currencies_CurrencyID`, currencies.`CurrencyName` AS `currencies_CurrencyName`, currencies.`Icon` AS `currencies_Icon`, currencies.`Symbol` AS `currencies_Symbol`, currencies.`BlockchainID` AS `currencies_BlockchainID`, currencies.`DecimalPlaces` AS `currencies_DecimalPlaces`, currencies.`IsToken` AS `currencies_IsToken`, currencies.`SmartContractAddress` AS `currencies_SmartContractAddress`, currencies.`CreatedAt` AS `currencies_CreatedAt`, currencies.`UpdatedAt` AS `currencies_UpdatedAt`, currencies.`CMC_ID` AS `currencies_CMC_ID`, blockchains.`BlockchainName` AS `blockchains_BlockchainName` 
+FROM currencies INNER JOIN blockchains ON currencies.`BlockchainID` = blockchains.`BlockchainID`]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-03 15:34:56 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 16:00:55 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 20:59:13 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-03 20:59:17 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-04 10:05:10 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-04 10:05:12 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-04 10:41:55 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT currencies.`CurrencyID` AS `currencies_CurrencyID`, currencies.`CurrencyName` AS `currencies_CurrencyName`, currencies.`Icon` AS `currencies_Icon`, currencies.`Symbol` AS `currencies_Symbol`, currencies.`BlockchainID` AS `currencies_BlockchainID`, currencies.`DecimalPlaces` AS `currencies_DecimalPlaces`, currencies.`IsToken` AS `currencies_IsToken`, currencies.`SmartContractAddress` AS `currencies_SmartContractAddress`, currencies.`CreatedAt` AS `currencies_CreatedAt`, currencies.`UpdatedAt` AS `currencies_UpdatedAt`, currencies.`CMC_ID` AS `currencies_CMC_ID`, blockchains.`BlockchainName` AS `blockchains_BlockchainName` 
+FROM currencies INNER JOIN blockchains ON currencies.`BlockchainID` = blockchains.`BlockchainID`]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-04 16:43:57 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-04 17:09:59 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-04 17:10:10 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-05 05:28:29 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-05 05:28:30 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-05 05:29:26 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-05 05:29:29 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-05 08:33:23 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-05 10:56:10 - All_Currencies - ERROR - Error fetching all currencies: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

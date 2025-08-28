@@ -1,0 +1,61 @@
+2025-07-23 12:46:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-23 13:21:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-23 13:22:21 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 13:22:21 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 13:22:21 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=341a373b-61bd-4527-8f27-79eb65981906 و tx_id=0xc50c3366b79670038f841b3a8789f76758b73c5f83b81cebd371191b252436dd قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 13:45:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-23 13:47:57 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 13:47:57 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 13:47:57 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x5c30b04c80ea6da031734cb666174e68a843af2bb8c979a5975e6b433f474217 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 13:50:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-23 13:50:47 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 13:50:47 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 13:50:47 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x1eaa58d98f337962cc81f49e33750adfb733e804f3f94ee7211567e5380760ed قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 13:51:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-23 13:59:07 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 13:59:07 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 13:59:07 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 13:59:07 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x00dad7fe8a6e6814182f58804c69417f6690c6040f6e851a0f1b9519ec2a021a قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 13:59:07 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 13:59:07 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x5d49d8dd3ee1cd41de23ffda2f2f7eb6454853d0be67081fab1e933529b314d1 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 14:09:16 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 14:09:16 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 14:09:16 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x27892fb04f90108fddde14351f6a8f7d2a2eab354a78e35bae6714caa9937785 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 14:09:31 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 14:09:32 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 14:09:32 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x16df329bce904252ae0f4eba883af263320bd75bb860f11929ee60b0cf8400a5 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 14:12:31 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 14:12:31 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 14:12:31 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=eeb55235-a593-45e8-86a1-fc016bb1bcac و tx_id=0xed302eb5aa46bfc886cc01bb76d14f1fa80bcbb948ecd3a7d3c323f90e578c74 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 14:13:22 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 14:13:22 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 14:13:22 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=eeb55235-a593-45e8-86a1-fc016bb1bcac و tx_id=0x6e4f9490657c166b46f6c67887b07d43b6fe26f5d5dd35334f2f65a6e3f82c2a قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 14:14:31 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 14:14:31 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 14:14:31 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=eeb55235-a593-45e8-86a1-fc016bb1bcac و tx_id=0xfda3657f43d82d608cc61e04a1516f8ce12fb1481d2c62c73a012e931e909c48 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 14:14:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-23 15:17:06 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 15:17:06 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 15:17:06 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=eeb55235-a593-45e8-86a1-fc016bb1bcac و tx_id=0xa2bedea611d6dfb5cf65b3dfb3010027f7a4665b7ca98ac386da0dedec7b605b قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 15:21:11 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 15:21:11 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 15:21:11 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=eeb55235-a593-45e8-86a1-fc016bb1bcac و tx_id=0x1f281275c02012ceb043e85fe79356f5675bb19198d5a0a1dbc9de44fda91472 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 15:37:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-23 15:53:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-24 01:06:26 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-24 01:06:26 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-24 01:06:26 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x1b13dc6e87409a3b0e5e56420c333de5f95bbaafce0e5bdb96781025081121f7 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-24 01:06:46 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-24 01:06:46 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-24 01:06:46 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x39448f5eb18426445afc8e6ff4e9ef4ea2fc935a7ea88d5dec5c77effd8ebbee قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-24 19:26:21 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-24 19:26:22 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-24 19:26:22 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x16dbb6e340be299689f318d4ac907d704f7664f78600f608bc0df6b587947f57 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-28 23:13:36 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0XBBCECCD398B7DAA505D3E3F0E059D3B6E9EB453E در بلاکچین BNB یافت نشد
+2025-07-28 23:13:37 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-28 23:13:37 - database_operations - WARNING - تراکنش باعث منفی شدن موجودی می‌شد، موجودی به صفر تنظیم شد
+2025-07-28 23:13:37 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0xa1fe4822d523cdb59f77efd02b846b90ff57a051d8f0d6d481a0839927c3edc7 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-28 23:18:03 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X2191D82461FB254B1D1951135633F342BEC7C819 در بلاکچین MATIC یافت نشد
+2025-07-28 23:18:04 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-28 23:18:04 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x7faf977f60532ebc4e10a9395d3ecf91048c06d53040cc892f84801a8652d90f قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-28 23:18:04 - database_operations - ERROR - ارز UNKNOWN در بلاکچین MATIC یافت نشد

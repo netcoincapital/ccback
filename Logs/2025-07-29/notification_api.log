@@ -1,0 +1,51 @@
+2025-07-29 21:23:56 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-29 21:23:56 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-29 21:23:57 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-29 21:29:31 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-29 21:29:32 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-29 21:29:32 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-29 21:33:26 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-29 21:33:27 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-29 21:33:27 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-30 00:03:26 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-30 00:03:26 - notification_api - INFO - درخواست برای کاربر: aba64c45-9a3a-4bca-9dfc-2be4e0c89f24
+2025-07-30 00:03:26 - notification_api - INFO - درخواست برای کیف پول: 63d81872-76b0-430e-b9bf-c063cc7798cf
+2025-07-30 00:03:26 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-30 00:03:26 - notification_api - INFO - دستگاه: M2007J20CG, نوع: android
+2025-07-30 00:03:26 - notification_api - INFO - توکن دستگاه جدید با شناسه 281 ثبت شد برای کاربر aba64c45-9a3a-4bca-9dfc-2be4e0c89f24 و کیف پول 63d81872-76b0-430e-b9bf-c063cc7798cf
+2025-07-30 10:54:58 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-30 10:54:58 - notification_api - INFO - درخواست برای کاربر: 52892aad-c1d0-45cc-b4b8-a3ceae36fffa
+2025-07-30 10:54:58 - notification_api - INFO - درخواست برای کیف پول: a8749b6e-a55d-4dfd-ad0a-66f16554dd27
+2025-07-30 10:54:58 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-30 10:54:58 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-30 10:54:58 - notification_api - INFO - توکن دستگاه جدید با شناسه 282 ثبت شد برای کاربر 52892aad-c1d0-45cc-b4b8-a3ceae36fffa و کیف پول a8749b6e-a55d-4dfd-ad0a-66f16554dd27
+2025-07-30 11:17:05 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-30 11:17:05 - notification_api - INFO - درخواست برای کاربر: fcfe641d-4fc4-4b20-803e-e6c071107545
+2025-07-30 11:17:05 - notification_api - INFO - درخواست برای کیف پول: 39757a2e-8bae-4e23-a6f5-f1b2db27407a
+2025-07-30 11:17:05 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-30 11:17:05 - notification_api - INFO - دستگاه: MAR-LX2, نوع: android
+2025-07-30 11:17:05 - notification_api - INFO - توکن دستگاه جدید با شناسه 283 ثبت شد برای کاربر fcfe641d-4fc4-4b20-803e-e6c071107545 و کیف پول 39757a2e-8bae-4e23-a6f5-f1b2db27407a
+2025-07-30 13:01:43 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-30 13:01:43 - notification_api - INFO - درخواست برای کاربر: ab0ffd8c-bd25-4e36-9ed4-ec844087e702
+2025-07-30 13:01:43 - notification_api - INFO - درخواست برای کیف پول: 081f6885-e63f-4562-908a-04c1ae3ea4aa
+2025-07-30 13:01:43 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-30 13:01:43 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-30 13:01:43 - notification_api - INFO - توکن دستگاه جدید با شناسه 284 ثبت شد برای کاربر ab0ffd8c-bd25-4e36-9ed4-ec844087e702 و کیف پول 081f6885-e63f-4562-908a-04c1ae3ea4aa
+2025-07-30 14:57:03 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-30 14:57:03 - notification_api - INFO - درخواست برای کاربر: 54b1db34-a209-4a15-8d9e-796a6f6669fe
+2025-07-30 14:57:03 - notification_api - INFO - درخواست برای کیف پول: 7edd2cf2-db58-4ccb-ac7b-fe766407f01d
+2025-07-30 14:57:03 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-30 14:57:03 - notification_api - INFO - دستگاه: M2007J20CG, نوع: android
+2025-07-30 14:57:03 - notification_api - INFO - توکن دستگاه جدید با شناسه 285 ثبت شد برای کاربر 54b1db34-a209-4a15-8d9e-796a6f6669fe و کیف پول 7edd2cf2-db58-4ccb-ac7b-fe766407f01d
+2025-07-30 17:22:23 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-30 17:22:23 - notification_api - INFO - درخواست برای کاربر: bf799f6e-1dc1-4d80-8af1-f239d9bb6497
+2025-07-30 17:22:23 - notification_api - INFO - درخواست برای کیف پول: 29c30a0c-a10d-47c9-882d-f0fc79fa1e3a
+2025-07-30 17:22:23 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-30 17:22:23 - notification_api - INFO - دستگاه: 2409BRN2CA, نوع: android
+2025-07-30 17:22:23 - notification_api - INFO - توکن دستگاه موجود به‌روزرسانی شد برای کاربر bf799f6e-1dc1-4d80-8af1-f239d9bb6497 و کیف پول 29c30a0c-a10d-47c9-882d-f0fc79fa1e3a
+2025-07-31 06:44:46 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-31 06:44:46 - notification_api - INFO - درخواست برای کاربر: e21e0df9-1b67-4c4e-a094-dee6110ab8d4
+2025-07-31 06:44:46 - notification_api - INFO - درخواست برای کیف پول: d05ef8b3-3957-4000-93a0-e8da2c177e03
+2025-07-31 06:44:46 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-31 06:44:46 - notification_api - INFO - دستگاه: 23117RA68G, نوع: android
+2025-07-31 06:44:46 - notification_api - INFO - توکن دستگاه جدید با شناسه 286 ثبت شد برای کاربر e21e0df9-1b67-4c4e-a094-dee6110ab8d4 و کیف پول d05ef8b3-3957-4000-93a0-e8da2c177e03

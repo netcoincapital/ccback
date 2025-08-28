@@ -1,0 +1,193 @@
+2025-07-17 06:03:39 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:03:39 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:03:39 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:09:10 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:09:10 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:09:10 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:11:50 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:11:50 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:11:50 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:27:41 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:27:41 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:27:42 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:31:34 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:31:34 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:31:34 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:35:30 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:35:31 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:35:31 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:36:43 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:36:44 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:36:44 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:59:06 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:59:06 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 06:59:06 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:00:53 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:00:53 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:00:53 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:01:12 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:01:12 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:01:13 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:08:50 - balance - ERROR - Error processing balance update request: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1311, in _checkout
+    raise exc.InvalidatePoolError()
+sqlalchemy.exc.InvalidatePoolError: ()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1356, in _checkout
+    del fairy
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1342, in _checkout
+    fairy._connection_record.get_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 838, in get_connection
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/balance/balance.py", line 120, in update_balance
+    user = session.query(Users).filter(Users.UserID == user_id).first()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1356, in _checkout
+    del fairy
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1342, in _checkout
+    fairy._connection_record.get_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 838, in get_connection
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+
+2025-07-17 07:16:41 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:16:41 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:16:41 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:22:00 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:22:00 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:22:00 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:28:26 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:28:26 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:28:26 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:32:05 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:32:06 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:32:06 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:36:36 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:36:36 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:36:36 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:43:30 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:43:30 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:43:31 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:47:27 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:47:27 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:47:27 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:54:36 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:54:36 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 07:54:36 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 08:20:16 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 10:46:57 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 10:47:15 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-17 11:32:39 - balance - ERROR - Failed to update balances for user c14d3c63-0783-4987-ba91-86edc6678b24: Error updating balance data: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: DELETE FROM userholding WHERE userholding.`UserID` = %(UserID_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 11:32:39 - balance - ERROR - Failed to update balances for user c14d3c63-0783-4987-ba91-86edc6678b24: Error updating balance data: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: DELETE FROM userholding WHERE userholding.`UserID` = %(UserID_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 11:32:47 - balance - ERROR - Failed to update balances for user c14d3c63-0783-4987-ba91-86edc6678b24: Error updating balance data: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: DELETE FROM userholding WHERE userholding.`UserID` = %(UserID_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 11:33:08 - balance - ERROR - Failed to update balances for user c14d3c63-0783-4987-ba91-86edc6678b24: Error updating balance data: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: DELETE FROM userholding WHERE userholding.`UserID` = %(UserID_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-18 19:04:54 - balance - ERROR - Failed to update balances for user c1bf9df0-8263-41f1-844f-2e587f9b4050: Error updating balance data: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: DELETE FROM userholding WHERE userholding.`UserID` = %(UserID_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-18 19:04:54 - balance - ERROR - Failed to update balances for user c1bf9df0-8263-41f1-844f-2e587f9b4050: Error updating balance data: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: DELETE FROM userholding WHERE userholding.`UserID` = %(UserID_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

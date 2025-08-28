@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "blockchain": "Solana (SOL) - USDT Mainnet",
+    "total_transactions": 3,
+    "total_fees_usd": 0.32,
+    "target_total_fees": 113,
+    "max_transaction_amount": 300,
+    "date_range": "2025-07-17 to 2025-08-17 (real timestamps)",
+    "generated_at": "2025-08-18T02:36:18.005379",
+    "token_focus": "USDT (SPL)",
+    "usdt_mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+    "data_source": "Real Solana Mainnet USDT Transactions",
+    "apis_used": [
+      "Solana RPC API"
+    ],
+    "criteria": {
+      "wallet_type": "New wallets + Binance Exchange",
+      "transaction_type": "USDT SPL transfers only",
+      "fee_source": "Real network fees",
+      "amount_limit": "< $300 USDT"
+    }
+  },
+  "transactions": [
+    {
+      "signature": "2SnieaUCMMPFjQDcrG57EEwRyTA6p5hFFUqeMAXExamauqVk36Hi4Ybb6kpnGJbDo6WgfzN1WJM1EH9iwzAFxudr",
+      "fee_lamports": 158965,
+      "fee_sol": 0.000158965,
+      "fee_usd": 0.03051333175,
+      "sender_address": "9DjV3jRBkHKEwpehWN5hn6c1WDeviKDXw6x6hnRxvrsp",
+      "receiver_address": "2ojv9BAiHUrvsm9gxDe7fJSzbNZSJcxZvf8dqmWGHG8S",
+      "sender_type": "Binance Exchange",
+      "receiver_type": "Binance Exchange",
+      "value_sol": 0.0,
+      "value_usd": 31.95739946248628,
+      "transaction_date": "2025-08-18 01:24:35",
+      "is_token_transfer": true,
+      "token_type": "USDT (SPL)",
+      "confirmed": true,
+      "slot": 360749141,
+      "data_source": "Real Solana mainnet USDT transactions"
+    },
+    {
+      "signature": "8FTGqd6pqckThSqbTrnSBvhHKQPXh3j7CpeRiUDhsYXYbRoqcbd42DaNGC7ahqdZ9vNzQw2DMEcdokCyeLDHqz5",
+      "fee_lamports": 1117348,
+      "fee_sol": 0.001117348,
+      "fee_usd": 0.2144749486,
+      "sender_address": "Gc825i82VGD1asd8L77LmWZBbDPejGAgSfAj4WHegZFn",
+      "receiver_address": "2ojv9BAiHUrvsm9gxDe7fJSzbNZSJcxZvf8dqmWGHG8S",
+      "sender_type": "New Wallet",
+      "receiver_type": "Binance Exchange",
+      "value_sol": 0.0,
+      "value_usd": 198.68728000166334,
+      "transaction_date": "2025-08-18 01:24:27",
+      "is_token_transfer": true,
+      "token_type": "USDT (SPL)",
+      "confirmed": true,
+      "slot": 360749119,
+      "data_source": "Real Solana mainnet USDT transactions"
+    },
+    {
+      "signature": "To1pVN7YfpaGjgeMJMCinjrstoUeFHNvQzZHdbczGSMCyRwC6p3whPKNG8FSAQF9wQMhGuZQgFNrNjsF2ngpXWS",
+      "fee_lamports": 404803,
+      "fee_sol": 0.000404803,
+      "fee_usd": 0.07770193585,
+      "sender_address": "Gc825i82VGD1asd8L77LmWZBbDPejGAgSfAj4WHegZFn",
+      "receiver_address": "14VYSm9fa24ry29YqttCT9jvioSXUARXQycuwhgPQkr2",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "value_sol": 0.0,
+      "value_usd": 41.60941072680714,
+      "transaction_date": "2025-08-08 22:54:22",
+      "is_token_transfer": true,
+      "token_type": "USDT (SPL)",
+      "confirmed": true,
+      "slot": 358749888,
+      "data_source": "Real Solana mainnet USDT transactions"
+    }
+  ]
+}

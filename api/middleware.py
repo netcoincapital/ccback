@@ -38,76 +38,6 @@ def sanitize_data(data: Dict[str, Any]) -> Dict[str, Any]:
     
     return safe_data
 
-def debug_auth_middleware(app):
-    """
-    Middleware to debug authentication errors.
-    This intercepts responses with 'Authentication required' and adds more debug information.
-    """
-    @app.after_request
-    def debug_auth_response(response):
-        try:
-            if response.status_code == 400:
-                try:
-                    resp_data = json.loads(response.get_data(as_text=True))
-                    if 'success' in resp_data and not resp_data.get('success') and 'authentication' in resp_data.get('message', '').lower():
-                        # Log debug information
-                        logger.critical(f"Authentication error detected in response")
-                        logger.critical(f"Request method: {request.method}")
-                        logger.critical(f"Request URL: {request.url}")
-                        logger.critical(f"Request content type: {request.content_type}")
-                        
-                        # Don't log raw headers - they may contain auth tokens
-                        safe_headers = {k: v for k, v in dict(request.headers).items() 
-                                       if k.lower() not in ['authorization', 'x-auth-token', 'token']}
-                        logger.critical(f"Request headers (sanitized): {safe_headers}")
-                        
-                        # Get request data without sensitive information
-                        data = {}
-                        if request.is_json and request.get_data():
-                            try:
-                                data = request.get_json(silent=True) or {}
-                            except Exception:
-                                pass
-                        elif request.form:
-                            data = request.form.to_dict()
-                        elif request.args:
-                            data = request.args.to_dict()
-                        
-                        # Sanitize data using our utility function
-                        safe_data = sanitize_data(data)
-                        logger.critical(f"Request data (sanitized): {json.dumps(safe_data, indent=2)}")
-                        
-                        # Check for UserID in various formats
-                        user_id = None
-                        for key in ['UserId', 'userId', 'UserID', 'userid', 'user_id']:
-                            if key in data:
-                                user_id = data[key]
-                                logger.critical(f"Found UserID '{user_id}' in key: {key}")
-                                break
-                        
-                        # Update response with more helpful message
-                        new_response = {
-                            "success": False,
-                            "message": "UserID parameter is required for this request",
-                            "debug_info": {
-                                "note": "Please add UserID parameter to your request",
-                                "request_url": request.url,
-                                "content_type": request.content_type,
-                                "user_id_found": user_id is not None,
-                                "user_id_key": user_id is not None and [k for k in data if k.lower() in ['userid', 'user_id'] and data.get(k) == user_id][0] if user_id else None
-                            }
-                        }
-                        
-                        # Create a new response
-                        response.set_data(json.dumps(new_response))
-                except Exception as e:
-                    logger.error(f"Error in debug middleware: {str(e)}")
-        except Exception as e:
-            logger.error(f"Error processing response in debug middleware: {str(e)}")
-        return response
-    
-    return app
-
 # Utility to check if a userId is present in the request
 def requires_user_id(func):
     """Decorator to check if userId is present in request"""
@@ -191,14 +121,10 @@ def normalize_parameters(func):
     return wrapper
 
 def log_transaction_request(func):
-    """Middleware to log transaction requests with sensitive data sanitized"""
+    """Decorator to log transaction requests safely"""
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
-            method = request.method
-            path = request.path
-            endpoint = request.endpoint
-            
             # Get request data
             data = {}
             if request.is_json:
@@ -207,14 +133,14 @@ def log_transaction_request(func):
                 data = request.form.to_dict()
             elif request.args:
                 data = request.args.to_dict()
-                
+            
             # Sanitize and log
             safe_data = sanitize_data(data)
-            logger.info(f"Transaction request: {method} {path} ({endpoint})")
-            logger.debug(f"Transaction data (sanitized): {json.dumps(safe_data, indent=2)}")
+            logger.info(f"Transaction request: {request.method} {request.path}")
+            logger.debug(f"Request data: {json.dumps(safe_data, indent=2)}")
             
+            return func(*args, **kwargs)
         except Exception as e:
-            logger.error(f"Error in transaction logging middleware: {str(e)}")
-            
-        return func(*args, **kwargs)
+            logger.error(f"Error in transaction request logging: {str(e)}")
+            return func(*args, **kwargs)
     return wrapper 

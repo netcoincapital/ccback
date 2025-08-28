@@ -1,0 +1,18 @@
+2025-08-15 00:00:37 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 00:00:37 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 13:58:47 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 14:02:55 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 14:03:05 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 14:03:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 14:03:59 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 14:04:41 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 14:05:10 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 14:05:30 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 14:05:53 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 19:32:11 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 19:53:06 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 19:53:21 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-15 19:54:24 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-19 11:03:40 - api - INFO - Received fee estimation request: {'UserID': '867dd1a6-4dc6-41cc-a61c-73bac89cf62d', 'blockchain': 'bsc', 'from_address': '0xFf0A9aE4871C78aaD9DDc16B02525d9f55504531', 'to_address': '0xee8360DaC4292dCA49bb73B746c9105d225449Cc', 'amount': 2.0, 'type': None, 'token_contract': ''}
+2025-08-19 11:03:40 - api - DEBUG - Processing fee estimation for blockchain: bsc
+2025-08-19 11:03:40 - api - INFO - Fee estimation completed successfully for bsc

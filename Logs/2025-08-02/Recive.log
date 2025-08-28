@@ -1,0 +1,53 @@
+2025-08-02 07:31:15 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 07:31:15 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 07:31:15 - Recive - INFO - Initializing receive transaction module
+2025-08-02 07:31:15 - Recive - INFO - Initializing receive transaction module
+2025-08-02 07:31:15 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 07:31:15 - Recive - INFO - Initializing receive transaction module
+2025-08-02 07:31:17 - Recive - INFO - Initializing receive transaction module
+2025-08-02 07:31:17 - Recive - INFO - Initializing receive transaction module
+2025-08-02 07:31:17 - Recive - INFO - Initializing receive transaction module
+2025-08-02 08:08:30 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 08:08:30 - Recive - INFO - Initializing receive transaction module
+2025-08-02 08:08:30 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 08:08:30 - Recive - INFO - Initializing receive transaction module
+2025-08-02 08:08:30 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 08:08:30 - Recive - INFO - Initializing receive transaction module
+2025-08-02 08:08:32 - Recive - INFO - Initializing receive transaction module
+2025-08-02 08:08:32 - Recive - INFO - Initializing receive transaction module
+2025-08-02 08:08:32 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:20:21 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 09:20:21 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:20:21 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 09:20:21 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:20:21 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 09:20:21 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:20:22 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:20:23 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:20:23 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:24:47 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 09:24:47 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:24:48 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 09:24:48 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:24:48 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-02 09:24:48 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:24:48 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:24:49 - Recive - INFO - Initializing receive transaction module
+2025-08-02 09:24:49 - Recive - INFO - Initializing receive transaction module
+2025-08-02 17:31:00 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-02 17:31:00 - Recive - WARNING - No address found for user 867dd1a6-4dc6-41cc-a61c-73bac89cf62d on blockchain Binance Smart Chain
+2025-08-04 10:05:09 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT blockchains.`BlockchainID` AS `blockchains_BlockchainID`, blockchains.`BlockchainName` AS `blockchains_BlockchainName`, blockchains.`Symbol` AS `blockchains_Symbol`, blockchains.`ChainCode` AS `blockchains_ChainCode`, blockchains.`CreatedAt` AS `blockchains_CreatedAt`, blockchains.`UpdatedAt` AS `blockchains_UpdatedAt` 
+FROM blockchains 
+WHERE lower(blockchains.`BlockchainName`) LIKE lower(%(BlockchainName_1)s) 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-04 10:05:09 - Recive - WARNING - No address found for user 20e7385c-5516-4ec3-829e-9099c6b4fa6d on blockchain Tron
+2025-08-04 10:05:12 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-04 10:05:12 - Recive - WARNING - No address found for user 20e7385c-5516-4ec3-829e-9099c6b4fa6d on blockchain Tron
+2025-08-05 07:27:09 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-05 07:27:09 - Recive - WARNING - No address found for user 6e22d30b-0cba-418f-946d-b8db6632615b on blockchain Bitcoin

@@ -1,0 +1,25 @@
+# Ethereum Transaction Finder Dependencies
+# وابستگی‌های مورد نیاز برای جستجوگر تراکنش‌های اتریوم
+
+# Core HTTP requests
+requests>=2.28.0
+
+# Environment variables
+python-dotenv>=0.19.0
+
+# Data handling
+decimal>=1.70
+
+# Date and time handling (built-in, but for clarity)
+# datetime
+# json
+# typing
+# time
+# os
+
+# Optional: Web3 for advanced Ethereum operations
+# web3>=6.0.0
+
+# Optional: Alternative Ethereum libraries
+# eth-account>=0.8.0
+# eth-utils>=2.0.0

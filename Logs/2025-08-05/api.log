@@ -1,0 +1,65 @@
+2025-08-05 07:25:12 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 07:26:13 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 07:26:49 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 11:18:46 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 11:19:00 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 18:00:36 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 18:00:36 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 18:00:36 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 18:01:18 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 18:01:18 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-05 18:01:18 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-06 10:59:22 - api - INFO - Received fee estimation request: {'amount': 100000.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 10:59:22 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 10:59:23 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 10:59:47 - api - INFO - Received fee estimation request: {'amount': 100000.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 10:59:47 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 10:59:47 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:35:24 - api - INFO - Received fee estimation request: {'amount': 116000000.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:35:24 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:35:24 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:25 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:25 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:25 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:31 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:31 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:31 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:35 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:35 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:36 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:38 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:38 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:38 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:41 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:41 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:41 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:47 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:47 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:48 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:51 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:51 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:51 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:54 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:54 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:54 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:36:57 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:36:57 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:36:58 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:37:24 - api - INFO - Received fee estimation request: {'amount': 116045000.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:37:24 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:37:24 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:37:35 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:37:35 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:37:35 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:40:38 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:40:38 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:40:39 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:40:52 - api - INFO - Received fee estimation request: {'amount': 116045.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-06 11:40:52 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:40:53 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:51:24 - api - INFO - Received fee estimation request: {'amount': 100.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': '0x50327c6c5a14dcade707abad2e27eb517df87ab5'}
+2025-08-06 11:51:24 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:51:24 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-06 11:51:28 - api - INFO - Received fee estimation request: {'amount': 100.0, 'blockchain': 'Tron', 'from_address': 'TYvLGvjy62W8j9oMHZRpsKyrafGAxWBf2K', 'to_address': 'TCNeicyyLwRZcFg6QnCirjLAF3SQvWA6Ac', 'token_contract': '0x50327c6c5a14dcade707abad2e27eb517df87ab5'}
+2025-08-06 11:51:28 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-06 11:51:28 - api - INFO - Fee estimation completed successfully for Tron

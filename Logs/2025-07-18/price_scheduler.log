@@ -1,0 +1,10 @@
+2025-07-18 20:32:42 - price_scheduler - DEBUG - Logger initialized for price_scheduler at level DEBUG
+2025-07-18 20:32:42 - price_scheduler - INFO - ==================== STARTING PRICE SCHEDULER ====================
+2025-07-18 20:32:42 - price_scheduler - INFO - Initializing currency price scheduler
+2025-07-18 20:32:42 - price_scheduler - INFO - Fetching cryptocurrencies from database
+2025-07-18 20:32:42 - price_scheduler - DEBUG - Database session closed
+2025-07-18 20:33:07 - price_scheduler - DEBUG - Logger initialized for price_scheduler at level DEBUG
+2025-07-18 20:33:07 - price_scheduler - INFO - ==================== STARTING PRICE SCHEDULER ====================
+2025-07-18 20:33:07 - price_scheduler - INFO - Initializing currency price scheduler
+2025-07-18 20:33:07 - price_scheduler - INFO - Fetching cryptocurrencies from database
+2025-07-18 20:33:07 - price_scheduler - DEBUG - Database session closed

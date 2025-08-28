@@ -1,0 +1,16 @@
+2025-07-24 01:06:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-24 01:06:56 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-24 01:06:56 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-24 01:06:56 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x3cb0872d2cbeab9d8fbe9f606fbe2856347798380645f29cc328c05babbad48d قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-24 10:18:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-28 23:05:47 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0XC02CA05EAEF65C6FE245F9E22AF42126BC14BD1C در بلاکچین BNB یافت نشد
+2025-07-28 23:05:48 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-28 23:05:48 - database_operations - WARNING - تراکنش باعث منفی شدن موجودی می‌شد، موجودی به صفر تنظیم شد
+2025-07-28 23:05:48 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x4fc8c12ce631eaaee2d91d094e4999aa1a954e2f36aca0383bcab5f9e301dc7f قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-28 23:08:52 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X702AA7132443E81EF2D204FB06EED773A81393FA در بلاکچین BNB یافت نشد
+2025-07-28 23:08:52 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-28 23:08:52 - database_operations - WARNING - تراکنش باعث منفی شدن موجودی می‌شد، موجودی به صفر تنظیم شد
+2025-07-28 23:08:52 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x8d4731f4aa988f69b7b5d8caaead380f856ab87af8ea84cbbe08d2b6a0b314e3 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-29 07:35:42 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0XBBCECCD398B7DAA505D3E3F0E059D3B6E9EB453E در بلاکچین BNB یافت نشد
+2025-07-29 07:35:42 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-29 07:35:42 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x5bbdb0f74fd8c449be257fec13c7951e5679d8e1b1c731b08ea77797bef87e37 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.

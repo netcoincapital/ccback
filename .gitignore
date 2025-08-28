@@ -1,0 +1,13 @@
+﻿venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.ipynb_checkpoints/
+.mypy_cache/
+.coverage
+dist/
+build/

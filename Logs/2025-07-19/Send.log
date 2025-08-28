@@ -1,0 +1,108 @@
+2025-07-19 11:36:59 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:36:59 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:36:59 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:37:24 - Send - ERROR - Error sending Polygon transaction: Tatum transaction failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=687b8374600c176cad210839"}
+2025-07-19 11:38:15 - Send - WARNING - No UserID found in prepare request
+2025-07-19 11:38:24 - Send - WARNING - No UserID found in prepare request
+2025-07-19 11:38:30 - Send - WARNING - No UserID found in prepare request
+2025-07-19 11:38:44 - Send - WARNING - No UserID found in prepare request
+2025-07-19 11:43:10 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:43:10 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:43:11 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:44:09 - Send - ERROR - Error in Polygon prepare_transaction: Invalid sender address
+2025-07-19 11:45:28 - Send - ERROR - Error sending Polygon transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b855836e3f52c32ad7018"}
+2025-07-19 11:57:45 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:57:45 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:57:45 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 11:57:56 - Send - ERROR - Error sending Polygon transaction: No signing service available - all methods failed
+2025-07-19 11:59:10 - Send - ERROR - Error sending Polygon transaction: No signing service available - all methods failed
+2025-07-19 12:03:46 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:03:46 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:03:46 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:05:04 - Send - ERROR - Error sending Polygon transaction: No signing service available - all methods failed
+2025-07-19 12:12:44 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:12:44 - Send - DEBUG - Retrieving private key for address 0x68Ba7F66B09783977E36AA7bD8390b812742853C on blockchain polygon
+2025-07-19 12:12:44 - Send - DEBUG - Found blockchain ID: 5 with name: Polygon
+2025-07-19 12:12:44 - Send - DEBUG - Found address record with ID: 14156 in wallet: db0f0055-67f6-48f0-bd03-44c7ebb3ab27
+2025-07-19 12:12:44 - Send - DEBUG - Attempting to decrypt private key
+2025-07-19 12:12:44 - Send - DEBUG - Successfully decrypted private key for address 0x68Ba7F66B09783977E36AA7bD8390b812742853C (length: 64)
+2025-07-19 12:13:43 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:13:43 - Send - DEBUG - Retrieving private key for address 0x68Ba7F66B09783977E36AA7bD8390b812742853C on blockchain polygon
+2025-07-19 12:13:43 - Send - DEBUG - Found blockchain ID: 5 with name: Polygon
+2025-07-19 12:13:43 - Send - DEBUG - Found address record with ID: 14156 in wallet: db0f0055-67f6-48f0-bd03-44c7ebb3ab27
+2025-07-19 12:13:43 - Send - DEBUG - Attempting to decrypt private key
+2025-07-19 12:13:43 - Send - DEBUG - Successfully decrypted private key for address 0x68Ba7F66B09783977E36AA7bD8390b812742853C (length: 64)
+2025-07-19 12:13:47 - Send - ERROR - Error sending Polygon transaction: No signing service available - all methods failed
+2025-07-19 12:16:38 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:16:40 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:16:40 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:18:53 - Send - ERROR - Error sending Polygon transaction: No signing service available - all methods failed
+2025-07-19 12:22:28 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:22:28 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:22:28 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 12:24:40 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e8836e3f52c32ad7970"}
+2025-07-19 12:24:44 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e8c71119edd7f839d66"}
+2025-07-19 12:24:48 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e90f2a86cf8cf1af485"}
+2025-07-19 12:39:02 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91e6a7a243511c1a95ee"}
+2025-07-19 12:39:07 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91ebd7428c890733cc73"}
+2025-07-19 12:39:12 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91f0337d6b2911a7c27d"}
+2025-07-19 12:39:20 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91f871119edd7f83a0f5"}
+2025-07-19 12:39:25 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91fd9d56841a06d48709"}
+2025-07-19 12:39:29 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9201dee58248489f79e0"}
+2025-07-19 13:37:06 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f823c24ff9ef6d8b980"}
+2025-07-19 13:37:13 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f8940b3ca3a79b3f812"}
+2025-07-19 13:37:19 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f8f6561be68909fdfda"}
+2025-07-19 13:38:02 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fba03cfbdf3a51002fa"}
+2025-07-19 13:38:06 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fbe40b3ca3a79b3f839"}
+2025-07-19 13:38:11 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fc3794bcd7eaac46216"}
+2025-07-19 13:39:00 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9ff4a7a243511c1aa5c5"}
+2025-07-19 13:39:05 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9ff940b3ca3a79b3f85e"}
+2025-07-19 13:39:12 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba000600c176cad21276c"}
+2025-07-19 13:46:03 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba19b337d6b2911a7d4c1"}
+2025-07-19 13:46:10 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1a251adc7c76a23fa9b"}
+2025-07-19 13:46:15 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1a7d7428c890733de90"}
+2025-07-19 13:46:25 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1b1a7a243511c1aa7e2"}
+2025-07-19 13:46:30 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1b651adc7c76a23faa9"}
+2025-07-19 13:46:34 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1ba9840217ebda62a82"}
+2025-07-19 14:05:37 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba63171119edd7f83b7ff"}
+2025-07-19 14:05:41 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba6359d56841a06d49ea5"}
+2025-07-19 14:05:46 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba63ad7428c890733e376"}
+2025-07-19 14:07:26 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba69e51adc7c76a23ffe9"}
+2025-07-19 14:07:30 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba6a236e3f52c32ad951a"}
+2025-07-19 14:07:34 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba6a6a7a243511c1aad5f"}
+2025-07-19 14:09:19 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba70f51adc7c76a240047"}
+2025-07-19 14:09:25 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba7159d56841a06d49fa0"}
+2025-07-19 14:09:30 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba71a337d6b2911a7dafe"}
+2025-07-19 14:24:18 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 14:24:19 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 14:24:19 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:11:47 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5b3d7428c890733f573"}
+2025-07-19 15:11:53 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5b91628e032e3118a6f"}
+2025-07-19 15:11:58 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5be9d56841a06d4b0d5"}
+2025-07-19 15:31:55 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:31:55 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:31:55 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:38:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:38:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:38:36 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:39:50 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc461628e032e3119207"}
+2025-07-19 15:39:54 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc4a337d6b2911a7f395"}
+2025-07-19 15:39:58 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc4e337d6b2911a7f39e"}
+2025-07-19 15:52:03 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf2336e3f52c32adb177"}
+2025-07-19 15:52:07 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf27600c176cad214bd2"}
+2025-07-19 15:52:11 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf2b9840217ebda64c86"}
+2025-07-19 15:55:27 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:55:27 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:55:27 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 15:55:39 - Send - ERROR - Error in send_transaction: Private key does not match sender address. Expected: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106
+2025-07-19 15:55:41 - Send - ERROR - Error in send_transaction: Private key does not match sender address. Expected: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106
+2025-07-19 15:55:43 - Send - ERROR - Error in send_transaction: Private key does not match sender address. Expected: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106
+2025-07-19 15:56:08 - Send - ERROR - Error in send_transaction: Private key does not match sender address. Expected: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106
+2025-07-19 15:56:11 - Send - ERROR - Error in send_transaction: Private key does not match sender address. Expected: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106
+2025-07-19 15:56:13 - Send - ERROR - Error in send_transaction: Private key does not match sender address. Expected: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106
+2025-07-19 16:06:32 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 16:06:32 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 16:06:32 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 19:29:34 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 19:29:46 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-19 19:30:00 - Send - DEBUG - Logger initialized for Send at level DEBUG

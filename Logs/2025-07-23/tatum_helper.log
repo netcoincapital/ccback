@@ -1,0 +1,10 @@
+2025-07-23 12:46:49 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-23 13:22:00 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-23 13:45:48 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-23 13:50:32 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-23 13:50:53 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6880e8bd31db661ab5f67f6d"}
+2025-07-23 13:51:05 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-23 14:14:46 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-23 15:17:13 - tatum_helper - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=6880fcf9cc49101fea7e1db9"}
+2025-07-23 15:37:35 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG
+2025-07-23 15:53:24 - tatum_helper - DEBUG - Logger initialized for tatum_helper at level DEBUG

@@ -2,10 +2,10 @@ import logging
 import json
 import requests
 import os
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 from sqlalchemy.orm import Session
-from database import SessionLocal, UserDevices
-from config.firebase import send_notification
+from CC.database import SessionLocal, UserDevices
+from CC.config.firebase import send_notification
 
 # Configure logger
 logger = get_logger(__file__)
@@ -66,6 +66,15 @@ class NotificationService:
             from_address = webhook_data.get('from')
             to_address = webhook_data.get('to')
             wallet_id = wallet_ids[0] if wallet_ids else None
+            
+            # Debug: Log all extracted values
+            logger.info(f"[DEBUG] Extracted values for notification:")
+            logger.info(f"  - direction: {direction} (type: {type(direction)})")
+            logger.info(f"  - amount: {amount} (type: {type(amount)})")
+            logger.info(f"  - symbol: {symbol} (type: {type(symbol)})")
+            logger.info(f"  - from_address: {from_address}")
+            logger.info(f"  - to_address: {to_address}")
+            logger.info(f"  - wallet_id: {wallet_id}")
             
             # Validate required fields for notification
             if not direction or direction not in ['inbound', 'outbound']:
@@ -261,6 +270,9 @@ class NotificationService:
             logger.warning(f"Missing amount or symbol. Amount: {amount}, Symbol: {symbol}. Skipping notification.")
             return None
 
+        # Map direction to frontend-expected type
+        notification_type = "receive" if direction == 'inbound' else "send"
+
         # Set message based on transaction direction
         if direction == 'outbound':
             title = f"💸 Sent: {amount} {symbol}"
@@ -274,10 +286,11 @@ class NotificationService:
             "body": body,
             "data": {
                 "transaction_id": transaction_id,
-                "type": transaction_type,
+                "type": notification_type,  # Changed from transaction_type to send/receive
                 "direction": direction,
                 "amount": amount,
-                "symbol": symbol,
+                "currency": symbol,  # Changed from symbol to currency for frontend compatibility
+                "symbol": symbol,    # Keep both for backward compatibility
                 "from_address": from_address,
                 "to_address": to_address,
                 "wallet_id": wallet_id

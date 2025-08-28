@@ -1,5 +1,5 @@
-from webhook.webhook_routes import webhook_bp
-from webhook.tatum_subscription import (
+from CC.webhook.webhook_routes import webhook_bp
+from CC.webhook.tatum_subscription import (
     create_contract_subscription, 
     list_subscriptions,
     delete_subscription, 
@@ -7,7 +7,7 @@ from webhook.tatum_subscription import (
 )
 
 # Importing chain-specific modules
-from webhook.chains import eth, btc, trx, matic, sol, xrp, doge, ltc, ada
+from CC.webhook.chains import eth, btc, trx, matic, sol, xrp, doge, ltc, ada
 
 def init_app(app):
     """

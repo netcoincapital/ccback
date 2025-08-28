@@ -1,5 +1,5 @@
-from webhook.transaction_processor import TransactionProcessor
-from utils.logging_config import get_logger
+from CC.webhook.transaction_processor import TransactionProcessor
+from CC.utils.logging_config import get_logger
 
 logger = get_logger(__name__)
 

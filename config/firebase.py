@@ -3,7 +3,7 @@ import json
 import logging
 import firebase_admin
 from firebase_admin import credentials, messaging
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 import pathlib
 
 # Configure logger
@@ -116,19 +116,31 @@ def send_notification(token, title, body, data=None, priority='normal'):
         # Convert data to dictionary with string values
         string_data = {k: str(v) for k, v in (data or {}).items()}
         
+        # Determine notification channel based on type
+        notification_type = string_data.get('type', 'default')
+        if notification_type == 'send':
+            channel_id = 'send_channel'
+            sound = 'send_sound'
+        elif notification_type == 'receive':
+            channel_id = 'receive_channel'
+            sound = 'receive_sound'
+        else:
+            channel_id = 'default'
+            sound = 'default'
+        
         # Priority settings for Android and iOS
         android_config = messaging.AndroidConfig(
             priority=priority,
             notification=messaging.AndroidNotification(
-                sound='default',
-                channel_id='default'
+                sound=sound,
+                channel_id=channel_id
             )
         )
         
         apns_config = messaging.APNSConfig(
             payload=messaging.APNSPayload(
                 aps=messaging.Aps(
-                    sound='default',
+                    sound=sound,
                     badge=1
                 )
             ),

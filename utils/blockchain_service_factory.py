@@ -76,7 +76,18 @@ class BlockchainServiceFactory:
         if normalized_name in cls._services:
             return cls._services[normalized_name]
             
-        # Try to import and instantiate the service
+        # Check if service is registered in _service_classes
+        if normalized_name in cls._service_classes:
+            try:
+                service_class = cls._service_classes[normalized_name]
+                service = service_class()
+                cls._services[normalized_name] = service
+                return service
+            except Exception as e:
+                logger.error(f"Error instantiating registered service for {blockchain_name}: {e}")
+                return None
+            
+        # Try to import and instantiate the service dynamically
         try:
             class_name = normalized_name.capitalize() + "Service"
             module_name = normalized_name.lower()

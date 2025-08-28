@@ -1,0 +1,23 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/start_ncc_simulator.py", line 7, in <module>
+    from utils.price_simulator.NCCPRICE import start_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/__init__.py", line 2, in <module>
+    from .error_handlers import handle_api_errors, APIErrorHandler
+  File "/www/wwwroot/coinceeper.com/CC/utils/error_handlers.py", line 9, in <module>
+    from database import SessionLocal
+  File "/www/wwwroot/coinceeper.com/CC/database/__init__.py", line 4, in <module>
+    from .base import Base
+  File "/www/wwwroot/coinceeper.com/CC/database/base.py", line 19, in <module>
+    raise ValueError("""
+ValueError: 
+    Database configuration is missing. Please set the following environment variables:
+    - DB_USER: Database username
+    - DB_PASSWORD: Database password
+    
+    You can set these in your .env file:
+    DB_USER=your_username
+    DB_PASSWORD=your_password
+    DB_HOST=localhost
+    DB_NAME=coinceeper
+    

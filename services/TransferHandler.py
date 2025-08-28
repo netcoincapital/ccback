@@ -1,7 +1,7 @@
-from database import SessionLocal, Transfers
+from CC.database import SessionLocal, Transfers
 import json
 import logging
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 import traceback
 
 # Configure logging

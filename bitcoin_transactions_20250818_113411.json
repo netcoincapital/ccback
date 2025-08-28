@@ -1,0 +1,793 @@
+{
+  "metadata": {
+    "total_transactions": 34,
+    "total_fee_usd": 340.7861394,
+    "btc_price_usd": 115419.0,
+    "generated_at": "2025-08-18T11:34:11.125323",
+    "criteria": {
+      "target_total_fees": 270,
+      "max_fee_per_transaction": 50,
+      "max_transaction_amount": 500,
+      "date_range": "2025-07-17 to 2025-08-17",
+      "duration": "1 month",
+      "wallet_type": "any valid Bitcoin address"
+    }
+  },
+  "transactions": [
+    {
+      "hash": "cb11f2831f3c34f0fa2fbcf571f363fc8881a01c2280d6e6e69bcb499b8bb444",
+      "fee_satoshi": 10230,
+      "fee_btc": 0.0001023,
+      "fee_usd": 11.8073637,
+      "sender_address": "bc1qxmmmznzpnj6nrtqe5jfpf7glgkk0f8j323dh82",
+      "receiver_address": "bc1qjjnuknc6x0vgka45e9l9yg9wcle8kq0kfm87va",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qxmmmznzpnj6nrtqe5jfpf7glgkk0f8j323dh82"
+      ],
+      "all_receiver_addresses": [
+        "bc1qjjnuknc6x0vgka45e9l9yg9wcle8kq0kfm87va"
+      ],
+      "total_output_btc": 0.002354,
+      "total_output_usd": 271.696326,
+      "timestamp": 1755505712,
+      "transaction_date": "2025-08-04 07:07:02",
+      "actual_date": "2025-08-18 11:28:32",
+      "confirmed": true
+    },
+    {
+      "hash": "81dfd34911b70484f9352b17e43b07e6b8488b834dd671862f34659e8ecb3965",
+      "fee_satoshi": 10230,
+      "fee_btc": 0.0001023,
+      "fee_usd": 11.8073637,
+      "sender_address": "bc1qr09ld7zyrkmg4q0eajy43nt6vz86qxuvluk20f",
+      "receiver_address": "bc1qjjnuknc6x0vgka45e9l9yg9wcle8kq0kfm87va",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qr09ld7zyrkmg4q0eajy43nt6vz86qxuvluk20f"
+      ],
+      "all_receiver_addresses": [
+        "bc1qjjnuknc6x0vgka45e9l9yg9wcle8kq0kfm87va"
+      ],
+      "total_output_btc": 0.0001894,
+      "total_output_usd": 21.8603586,
+      "timestamp": 1755505712,
+      "transaction_date": "2025-08-03 11:23:36",
+      "actual_date": "2025-08-18 11:28:32",
+      "confirmed": true
+    },
+    {
+      "hash": "a14f9cf8be6c470b6917c758752eb22ed3bf36c5e856c6aff2ff0c23beb53670",
+      "fee_satoshi": 10230,
+      "fee_btc": 0.0001023,
+      "fee_usd": 11.8073637,
+      "sender_address": "bc1qtt7lc3vshtuuu3jh78cyjud5nggns46gj8lguz",
+      "receiver_address": "bc1qjjnuknc6x0vgka45e9l9yg9wcle8kq0kfm87va",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qtt7lc3vshtuuu3jh78cyjud5nggns46gj8lguz"
+      ],
+      "all_receiver_addresses": [
+        "bc1qjjnuknc6x0vgka45e9l9yg9wcle8kq0kfm87va"
+      ],
+      "total_output_btc": 0.00045754,
+      "total_output_usd": 52.80880926,
+      "timestamp": 1755505712,
+      "transaction_date": "2025-07-29 11:19:11",
+      "actual_date": "2025-08-18 11:28:32",
+      "confirmed": true
+    },
+    {
+      "hash": "13b3662cc7db8dbf07225efabb5b6c21a471735785a41f75514584471c85f9c7",
+      "fee_satoshi": 4437,
+      "fee_btc": 4.437e-05,
+      "fee_usd": 5.12114103,
+      "sender_address": "bc1q9hl74xvzv2sgx6fjy27paue37rq9p4ns06n3yl",
+      "receiver_address": "bc1q9ju2e3y9hdz5rg8wx6seql8v6n7yst3fr64ks9",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1q9hl74xvzv2sgx6fjy27paue37rq9p4ns06n3yl"
+      ],
+      "all_receiver_addresses": [
+        "bc1q9ju2e3y9hdz5rg8wx6seql8v6n7yst3fr64ks9",
+        "bc1q3etdj4smtzmm67dnx3u37xcl0ej4yd9mxf526k"
+      ],
+      "total_output_btc": 0.00428687,
+      "total_output_usd": 494.78624853,
+      "timestamp": 1755505712,
+      "transaction_date": "2025-08-10 14:12:53",
+      "actual_date": "2025-08-18 11:28:32",
+      "confirmed": true
+    },
+    {
+      "hash": "9fbd7816e7252448898d1d0a1dd3a9943891f50330c90f06d9f9e574cfb47243",
+      "fee_satoshi": 26316,
+      "fee_btc": 0.00026316,
+      "fee_usd": 30.37366404,
+      "sender_address": "3HoUfFKo1k7s3gkMMFdCVdCgNFGhcwwTyZ",
+      "receiver_address": "3AvB1Spkx9ZiPehkT1z2ZDT59DNMpAdB5p",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "3HoUfFKo1k7s3gkMMFdCVdCgNFGhcwwTyZ"
+      ],
+      "all_receiver_addresses": [
+        "3AvB1Spkx9ZiPehkT1z2ZDT59DNMpAdB5p"
+      ],
+      "total_output_btc": 0.00252884,
+      "total_output_usd": 291.87618396,
+      "timestamp": 1755505342,
+      "transaction_date": "2025-08-05 16:16:10",
+      "actual_date": "2025-08-18 11:22:22",
+      "confirmed": true
+    },
+    {
+      "hash": "e72e0017d0a4228dc5039d8325d1e20ff6cca299fc9ae0782d8b6913a620952d",
+      "fee_satoshi": 11114,
+      "fee_btc": 0.00011114,
+      "fee_usd": 12.82766766,
+      "sender_address": "bc1qx6ksnycvx57zeecfeddfgkwf03fsmyzhl9pama",
+      "receiver_address": "37LDbsqkziEUpUD4XcUGRQaHvSgqUSWpPq",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qx6ksnycvx57zeecfeddfgkwf03fsmyzhl9pama"
+      ],
+      "all_receiver_addresses": [
+        "37LDbsqkziEUpUD4XcUGRQaHvSgqUSWpPq"
+      ],
+      "total_output_btc": 0.00043,
+      "total_output_usd": 49.63017,
+      "timestamp": 1755505342,
+      "transaction_date": "2025-08-06 06:31:33",
+      "actual_date": "2025-08-18 11:22:22",
+      "confirmed": true
+    },
+    {
+      "hash": "b46dcd4e308f9c3bbab5145b7058a7dc2994cc85f1281c2161a4afdcea7a3640",
+      "fee_satoshi": 6930,
+      "fee_btc": 6.93e-05,
+      "fee_usd": 7.9985367,
+      "sender_address": "bc1qe6dn5lcn85ax67cjharml4ju3gdzs3zw76h2uy",
+      "receiver_address": "bc1qjjnuknc6x0vgka45e9l9yg9wcle8kq0kfm87va",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qe6dn5lcn85ax67cjharml4ju3gdzs3zw76h2uy"
+      ],
+      "all_receiver_addresses": [
+        "bc1qjjnuknc6x0vgka45e9l9yg9wcle8kq0kfm87va"
+      ],
+      "total_output_btc": 0.0039321,
+      "total_output_usd": 453.8390499,
+      "timestamp": 1755505342,
+      "transaction_date": "2025-07-29 17:55:26",
+      "actual_date": "2025-08-18 11:22:22",
+      "confirmed": true
+    },
+    {
+      "hash": "c11746239bf068741a1a2d2bfab3a100a5a2d3c433b83dd74f4276a3b8fa5f16",
+      "fee_satoshi": 7650,
+      "fee_btc": 7.65e-05,
+      "fee_usd": 8.8295535,
+      "sender_address": "bc1qjd7rwlalsar32d4s0cyfvde966rjrya572cfuf",
+      "receiver_address": "bc1pq3npz3e3hnd8q0u5as0x2nwrm2rguumn6wur03ejyggfdyunym9qcfwyqp",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qjd7rwlalsar32d4s0cyfvde966rjrya572cfuf"
+      ],
+      "all_receiver_addresses": [
+        "bc1pq3npz3e3hnd8q0u5as0x2nwrm2rguumn6wur03ejyggfdyunym9qcfwyqp",
+        "bc1qlyydfgmywaw2fzdcha009qqmzgx3gu2mu6w222"
+      ],
+      "total_output_btc": 0.00409597,
+      "total_output_usd": 472.75276143,
+      "timestamp": 1755504897,
+      "transaction_date": "2025-08-06 09:03:07",
+      "actual_date": "2025-08-18 11:14:57",
+      "confirmed": true
+    },
+    {
+      "hash": "485bf9f4f0dbd781f758ca323a41b6a492f35c64a80a9dbf935bb69454c19e22",
+      "fee_satoshi": 5271,
+      "fee_btc": 5.271e-05,
+      "fee_usd": 6.08373549,
+      "sender_address": "1NkBJEQXtButxATmYVw4fMMhJpLNHd5Mtv",
+      "receiver_address": "bc1qvq9ulm0034t20e5mg38u9hq7jhyht88wvnw4p2",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "1NkBJEQXtButxATmYVw4fMMhJpLNHd5Mtv"
+      ],
+      "all_receiver_addresses": [
+        "bc1qvq9ulm0034t20e5mg38u9hq7jhyht88wvnw4p2",
+        "1LSit7pPGrsuJhipU5XPCjMCqqYqbkwdp8"
+      ],
+      "total_output_btc": 0.00163314,
+      "total_output_usd": 188.49538566,
+      "timestamp": 1755504897,
+      "transaction_date": "2025-08-01 21:28:16",
+      "actual_date": "2025-08-18 11:14:57",
+      "confirmed": true
+    },
+    {
+      "hash": "3fed55cc3dc83ffe0838f3631786717c89392053e0db9635792da59f6f23af74",
+      "fee_satoshi": 2840,
+      "fee_btc": 2.84e-05,
+      "fee_usd": 3.2778996,
+      "sender_address": "bc1qte968fld7ntxn40uusurjnua6xwmzhl02mu5ry",
+      "receiver_address": "3Gx7UXY38aGwNeG6Zf7NWSkkhGqYVK75ws",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qte968fld7ntxn40uusurjnua6xwmzhl02mu5ry"
+      ],
+      "all_receiver_addresses": [
+        "3Gx7UXY38aGwNeG6Zf7NWSkkhGqYVK75ws",
+        "bc1qte968fld7ntxn40uusurjnua6xwmzhl02mu5ry"
+      ],
+      "total_output_btc": 0.00164681,
+      "total_output_usd": 190.07316339,
+      "timestamp": 1755504673,
+      "transaction_date": "2025-08-11 17:00:11",
+      "actual_date": "2025-08-18 11:11:13",
+      "confirmed": true
+    },
+    {
+      "hash": "10a265f4cab57287966c9e4294cf99d85b015374ec46e794f17e6671d384b4e0",
+      "fee_satoshi": 3247,
+      "fee_btc": 3.247e-05,
+      "fee_usd": 3.74765493,
+      "sender_address": "1G6NhQZCJhmu9h117kZq8Pc57hxcmRbdr6",
+      "receiver_address": "bc1qve4mdv9h47p45p6d07ewm7e72eh260kpeaxpkv",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "1G6NhQZCJhmu9h117kZq8Pc57hxcmRbdr6"
+      ],
+      "all_receiver_addresses": [
+        "bc1qve4mdv9h47p45p6d07ewm7e72eh260kpeaxpkv",
+        "1G6NhQZCJhmu9h117kZq8Pc57hxcmRbdr6"
+      ],
+      "total_output_btc": 0.00354286,
+      "total_output_usd": 408.91335834,
+      "timestamp": 1755504673,
+      "transaction_date": "2025-08-10 11:19:09",
+      "actual_date": "2025-08-18 11:11:13",
+      "confirmed": true
+    },
+    {
+      "hash": "a7d926dc4b6d7b86adfd70a5979b58c32ce853aa22fc609b6fbdb32bd972dc85",
+      "fee_satoshi": 18160,
+      "fee_btc": 0.0001816,
+      "fee_usd": 20.9600904,
+      "sender_address": "1LY41zcSeH1hSALtjXVrTKfUcnsYJLnEWc",
+      "receiver_address": "12EunTsM6Q7axmi5BjJWya8fYx3TSEejQ6",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "1LY41zcSeH1hSALtjXVrTKfUcnsYJLnEWc"
+      ],
+      "all_receiver_addresses": [
+        "12EunTsM6Q7axmi5BjJWya8fYx3TSEejQ6",
+        "bc1qftfx7audyzan9426mmr0590twnz6myxxt8a4pc"
+      ],
+      "total_output_btc": 0.0039521,
+      "total_output_usd": 456.1474299,
+      "timestamp": 1755504643,
+      "transaction_date": "2025-08-09 02:13:27",
+      "actual_date": "2025-08-18 11:10:43",
+      "confirmed": true
+    },
+    {
+      "hash": "5a33f1a38b585694538d0004548f314ebb84f538164b56e76b9e3c0c509a54f2",
+      "fee_satoshi": 10404,
+      "fee_btc": 0.00010404,
+      "fee_usd": 12.00819276,
+      "sender_address": "bc1q85uaew605saqz5j8jfjmnz3em0lmyv9y8k755f",
+      "receiver_address": "bc1q85uaew605saqz5j8jfjmnz3em0lmyv9y8k755f",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1q85uaew605saqz5j8jfjmnz3em0lmyv9y8k755f"
+      ],
+      "all_receiver_addresses": [
+        "bc1q85uaew605saqz5j8jfjmnz3em0lmyv9y8k755f",
+        "bc1qpjkhnls0sd9tp3sr582vjj00wdelhelduv99hq"
+      ],
+      "total_output_btc": 0.00017806,
+      "total_output_usd": 20.55150714,
+      "timestamp": 1755504643,
+      "transaction_date": "2025-07-30 04:10:13",
+      "actual_date": "2025-08-18 11:10:43",
+      "confirmed": true
+    },
+    {
+      "hash": "3298892843f73e12f42e29a9d0f5f3608be3737a312bbe99c7f2111dfc4d5bfd",
+      "fee_satoshi": 24192,
+      "fee_btc": 0.00024192,
+      "fee_usd": 27.92216448,
+      "sender_address": "bc1qlu4tnlg2p2e7d870hgrlgrp7qfmdmh99p4kz47",
+      "receiver_address": "bc1q2jqwc7q73lyzznpgs4xzvk03jg32dw04emt7ns",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qlu4tnlg2p2e7d870hgrlgrp7qfmdmh99p4kz47"
+      ],
+      "all_receiver_addresses": [
+        "bc1q2jqwc7q73lyzznpgs4xzvk03jg32dw04emt7ns"
+      ],
+      "total_output_btc": 0.00060626,
+      "total_output_usd": 69.97392294,
+      "timestamp": 1755504643,
+      "transaction_date": "2025-08-11 15:54:27",
+      "actual_date": "2025-08-18 11:10:43",
+      "confirmed": true
+    },
+    {
+      "hash": "3f068f725f447465d4a8fe263e889bde858038f74b08dc4b50ca48dfa54d18ce",
+      "fee_satoshi": 17250,
+      "fee_btc": 0.0001725,
+      "fee_usd": 19.9097775,
+      "sender_address": "bc1qadfwn60mlsg0pey5pwxfsycqd6dnlxlszuea7c",
+      "receiver_address": "bc1qve3uce423zvcavzwvlc90m6vc963646mk6c7ux",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qadfwn60mlsg0pey5pwxfsycqd6dnlxlszuea7c",
+        "bc1qadfwn60mlsg0pey5pwxfsycqd6dnlxlszuea7c",
+        "bc1qadfwn60mlsg0pey5pwxfsycqd6dnlxlszuea7c",
+        "bc1qadfwn60mlsg0pey5pwxfsycqd6dnlxlszuea7c"
+      ],
+      "all_receiver_addresses": [
+        "bc1qve3uce423zvcavzwvlc90m6vc963646mk6c7ux",
+        "bc1qadfwn60mlsg0pey5pwxfsycqd6dnlxlszuea7c"
+      ],
+      "total_output_btc": 0.00257412,
+      "total_output_usd": 297.10235628,
+      "timestamp": 1755504643,
+      "transaction_date": "2025-07-26 12:09:02",
+      "actual_date": "2025-08-18 11:10:43",
+      "confirmed": true
+    },
+    {
+      "hash": "ee127ecbdecaa226a84e38e95575ad15db3de9ed2fa2bd9949f108b212cb8021",
+      "fee_satoshi": 7052,
+      "fee_btc": 7.052e-05,
+      "fee_usd": 8.13934788,
+      "sender_address": "bc1q04mfyxjnr4et53jvnwlfmkyyerz0m7x7vhs6g3",
+      "receiver_address": "bc1q4xvspjss26jjdjvmacultw3g7fgkg0xn8qnvgp",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1q04mfyxjnr4et53jvnwlfmkyyerz0m7x7vhs6g3"
+      ],
+      "all_receiver_addresses": [
+        "bc1q4xvspjss26jjdjvmacultw3g7fgkg0xn8qnvgp",
+        "bc1qsjvzedchqj9a3lv3v2snpahgg3xxv78rxpckfy",
+        "bc1q9e6x3sd8zyu07sxu2e8dpkjcmqe2xq6tf2rsmp"
+      ],
+      "total_output_btc": 0.00126631,
+      "total_output_usd": 146.15623389,
+      "timestamp": 1755504643,
+      "transaction_date": "2025-08-05 03:41:41",
+      "actual_date": "2025-08-18 11:10:43",
+      "confirmed": true
+    },
+    {
+      "hash": "9d8e96d43fdc481815ab76be9dca500562be93e126c18aaf871b383969c96eb8",
+      "fee_satoshi": 282,
+      "fee_btc": 2.82e-06,
+      "fee_usd": 0.32548158,
+      "sender_address": "bc1plwmrjn9r675pmz3j38s02a4hk78t8fszrq6pdnyfvvxc3c7cr8rsk3z6vw",
+      "receiver_address": "bc1qwfn4fq5l86snpddxa7wy9jh6dc86vd6jdquw2g",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1plwmrjn9r675pmz3j38s02a4hk78t8fszrq6pdnyfvvxc3c7cr8rsk3z6vw"
+      ],
+      "all_receiver_addresses": [
+        "bc1qwfn4fq5l86snpddxa7wy9jh6dc86vd6jdquw2g"
+      ],
+      "total_output_btc": 5.46e-06,
+      "total_output_usd": 0.63018774,
+      "timestamp": 1755504643,
+      "transaction_date": "2025-08-09 14:44:13",
+      "actual_date": "2025-08-18 11:10:43",
+      "confirmed": true
+    },
+    {
+      "hash": "7c4b8143fe287812d6218d547d7660ed481c9633c0381f3805f5d971eb418478",
+      "fee_satoshi": 8463,
+      "fee_btc": 8.463e-05,
+      "fee_usd": 9.76790997,
+      "sender_address": "3CjHtdoHXgkoq1VpZSAvQd2ZELk3Rrm255",
+      "receiver_address": "bc1q2g9478xgtzm2p5z3e84ndgt3j3jvu5sc6r0yrx",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "3CjHtdoHXgkoq1VpZSAvQd2ZELk3Rrm255"
+      ],
+      "all_receiver_addresses": [
+        "bc1q2g9478xgtzm2p5z3e84ndgt3j3jvu5sc6r0yrx"
+      ],
+      "total_output_btc": 0.00057958,
+      "total_output_usd": 66.89454402,
+      "timestamp": 1755502533,
+      "transaction_date": "2025-08-04 00:56:14",
+      "actual_date": "2025-08-18 10:35:33",
+      "confirmed": true
+    },
+    {
+      "hash": "6a0f089836f2ca772c09cc8d2c2a17c61b91e8a645c01f9c20457d3a8cd4f2b2",
+      "fee_satoshi": 280,
+      "fee_btc": 2.8e-06,
+      "fee_usd": 0.3231732,
+      "sender_address": "bc1prcadw70dsggqaxgdzaujhapcphjm23djpx7pfyhv6esr8t70ytqq42fftx",
+      "receiver_address": "bc1qwfn4fq5l86snpddxa7wy9jh6dc86vd6jdquw2g",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1prcadw70dsggqaxgdzaujhapcphjm23djpx7pfyhv6esr8t70ytqq42fftx"
+      ],
+      "all_receiver_addresses": [
+        "bc1qwfn4fq5l86snpddxa7wy9jh6dc86vd6jdquw2g"
+      ],
+      "total_output_btc": 5.46e-06,
+      "total_output_usd": 0.63018774,
+      "timestamp": 1755502533,
+      "transaction_date": "2025-07-29 19:05:13",
+      "actual_date": "2025-08-18 10:35:33",
+      "confirmed": true
+    },
+    {
+      "hash": "11b7687b5307299b71002b7cdbe9b057344228380e204ca40a5f34980ce88c19",
+      "fee_satoshi": 4400,
+      "fee_btc": 4.4e-05,
+      "fee_usd": 5.078436,
+      "sender_address": "bc1qmyfklmsnmw02rjh4lyzvzh9cj7ylzqt7lazuye",
+      "receiver_address": "bc1qqlv6l8ta6enjyuwanc52red3laxx3y23wt7ucp",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qmyfklmsnmw02rjh4lyzvzh9cj7ylzqt7lazuye"
+      ],
+      "all_receiver_addresses": [
+        "bc1qqlv6l8ta6enjyuwanc52red3laxx3y23wt7ucp"
+      ],
+      "total_output_btc": 0.0042784,
+      "total_output_usd": 493.8086496,
+      "timestamp": 1755502533,
+      "transaction_date": "2025-07-28 15:07:30",
+      "actual_date": "2025-08-18 10:35:33",
+      "confirmed": true
+    },
+    {
+      "hash": "51fecffd4bb217d28450af5e1cb8c97828941566c1d8148e8ae212241a5b6c78",
+      "fee_satoshi": 2300,
+      "fee_btc": 2.3e-05,
+      "fee_usd": 2.654637,
+      "sender_address": "bc1qha9d04hrsgmjp3ctzljlflkd4ajg0qky4ql74x",
+      "receiver_address": "bc1qctpdlck66lc3u84d6ls3cjt4uhfp8wf9cc5zp0",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qha9d04hrsgmjp3ctzljlflkd4ajg0qky4ql74x"
+      ],
+      "all_receiver_addresses": [
+        "bc1qctpdlck66lc3u84d6ls3cjt4uhfp8wf9cc5zp0"
+      ],
+      "total_output_btc": 0.000917,
+      "total_output_usd": 105.839223,
+      "timestamp": 1755501635,
+      "transaction_date": "2025-07-27 12:18:33",
+      "actual_date": "2025-08-18 10:20:35",
+      "confirmed": true
+    },
+    {
+      "hash": "0015fa9634cd52e6f1b50a52f3ec81ba7358157a1bb7870eec985a2e0cb698dd",
+      "fee_satoshi": 2000,
+      "fee_btc": 2e-05,
+      "fee_usd": 2.30838,
+      "sender_address": "bc1qgl2ty08rhthf7rk5ufv27a5na2kt45k2hqunuy",
+      "receiver_address": "bc1qw9j0fcuc53uhatf4cqwf24qzh46m5xnygc027j",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qgl2ty08rhthf7rk5ufv27a5na2kt45k2hqunuy"
+      ],
+      "all_receiver_addresses": [
+        "bc1qw9j0fcuc53uhatf4cqwf24qzh46m5xnygc027j"
+      ],
+      "total_output_btc": 0.00063,
+      "total_output_usd": 72.71397,
+      "timestamp": 1755501635,
+      "transaction_date": "2025-08-06 00:20:19",
+      "actual_date": "2025-08-18 10:20:35",
+      "confirmed": true
+    },
+    {
+      "hash": "d98c810bbcf63cd2c45ee7246577dea1862d76c556ebb1820eb99071ef5daf86",
+      "fee_satoshi": 866,
+      "fee_btc": 8.66e-06,
+      "fee_usd": 0.99952854,
+      "sender_address": "bc1qhm82tw6g34qal64lxh6xwluat82cdsfrhfjgry",
+      "receiver_address": "3FNWP81F2gMWCfYcHddJLzNvwW9z4Eigp6",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qhm82tw6g34qal64lxh6xwluat82cdsfrhfjgry",
+        "bc1qhm82tw6g34qal64lxh6xwluat82cdsfrhfjgry"
+      ],
+      "all_receiver_addresses": [
+        "3FNWP81F2gMWCfYcHddJLzNvwW9z4Eigp6"
+      ],
+      "total_output_btc": 0.00260865,
+      "total_output_usd": 301.08777435,
+      "timestamp": 1755501635,
+      "transaction_date": "2025-08-02 08:23:58",
+      "actual_date": "2025-08-18 10:20:35",
+      "confirmed": true
+    },
+    {
+      "hash": "24df586e3af6dcdb4ba42f68f25a29f63b2b1035bf813e18d2bc0484bdc3f7bd",
+      "fee_satoshi": 8382,
+      "fee_btc": 8.382e-05,
+      "fee_usd": 9.67442058,
+      "sender_address": "bc1qt2lckasj3y8zptcdlr5tgwjqeujqr0wqdt8htf",
+      "receiver_address": "bc1qexfzzxgeqcpnp268s4jewtfuykp3wvc68gvd72",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qt2lckasj3y8zptcdlr5tgwjqeujqr0wqdt8htf"
+      ],
+      "all_receiver_addresses": [
+        "bc1qexfzzxgeqcpnp268s4jewtfuykp3wvc68gvd72"
+      ],
+      "total_output_btc": 0.0018,
+      "total_output_usd": 207.7542,
+      "timestamp": 1755501530,
+      "transaction_date": "2025-08-08 09:09:30",
+      "actual_date": "2025-08-18 10:18:50",
+      "confirmed": true
+    },
+    {
+      "hash": "2e3812d4a949aa7672e8b107da7363a077205183df2362bb96cbd1a0dbb374b7",
+      "fee_satoshi": 36000,
+      "fee_btc": 0.00036,
+      "fee_usd": 41.55084,
+      "sender_address": "bc1ql4hd8yckygkm4udxa22jnu8dc68vsvggzp9whz",
+      "receiver_address": "13cm5Pwm2M8tc7LtWxpnABG8bhQv3318Xc",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1ql4hd8yckygkm4udxa22jnu8dc68vsvggzp9whz",
+        "bc1qne0sxc8l82xtrse3p5klk3j2ukskh7p6y6s4kh",
+        "bc1q70a2nvajq0l8hwp39xjpk0srrah8jsh0l498xa"
+      ],
+      "all_receiver_addresses": [
+        "13cm5Pwm2M8tc7LtWxpnABG8bhQv3318Xc",
+        "bc1qcxlnf7llld7tz4wezfncq2jy32c2ckeyx9lkj4",
+        "bc1qcvh8y54ldz8s99t94nuxuql8yyv3y6gvz57dap",
+        "bc1qxku9t0dhx08rpjc530atq7qw0nkm4mmncemh3f",
+        "bc1qf3j44laza22mzcpjrzrsv5ryr9wta5j59462dt",
+        "bc1qs8qlpxrrkwrd5da0xmnpf0ex4yuhes7fjlk7pj"
+      ],
+      "total_output_btc": 0.0029268,
+      "total_output_usd": 337.8083292,
+      "timestamp": 1755500970,
+      "transaction_date": "2025-08-08 20:03:24",
+      "actual_date": "2025-08-18 10:09:30",
+      "confirmed": true
+    },
+    {
+      "hash": "c5760df189dbcf0c6b97c6b873e92bdf5271fef543db95d211af887b0a6a53c4",
+      "fee_satoshi": 4785,
+      "fee_btc": 4.785e-05,
+      "fee_usd": 5.52279915,
+      "sender_address": "bc1qtqgcrpdq9hr8swmcq9jyvfkh82us7ye332rajh",
+      "receiver_address": "bc1qsr6k590w9wx0eaynuhmzusedh93w909pvlsyxx",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qtqgcrpdq9hr8swmcq9jyvfkh82us7ye332rajh"
+      ],
+      "all_receiver_addresses": [
+        "bc1qsr6k590w9wx0eaynuhmzusedh93w909pvlsyxx"
+      ],
+      "total_output_btc": 0.00138918,
+      "total_output_usd": 160.33776642,
+      "timestamp": 1755500970,
+      "transaction_date": "2025-08-04 21:23:52",
+      "actual_date": "2025-08-18 10:09:30",
+      "confirmed": true
+    },
+    {
+      "hash": "be58619b1428a59c5cc60b6414959daaf6bb1ea84f58c08870df59e90a398c6b",
+      "fee_satoshi": 2820,
+      "fee_btc": 2.82e-05,
+      "fee_usd": 3.2548158,
+      "sender_address": "bc1qq42v32n63n7r39qth5076mt59jem0tfl2a5qkm",
+      "receiver_address": "bc1qqctak8zfz3qdwaadgvxz7dszree8jscw47en86",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qq42v32n63n7r39qth5076mt59jem0tfl2a5qkm"
+      ],
+      "all_receiver_addresses": [
+        "bc1qqctak8zfz3qdwaadgvxz7dszree8jscw47en86",
+        "bc1qh2gm0uqnz8xsczt68tknu2uuxedkghqd44ctcx"
+      ],
+      "total_output_btc": 0.0017918,
+      "total_output_usd": 206.8077642,
+      "timestamp": 1755500970,
+      "transaction_date": "2025-08-08 17:16:51",
+      "actual_date": "2025-08-18 10:09:30",
+      "confirmed": true
+    },
+    {
+      "hash": "782cf9d7004b2395aa135213104a9ef834ce5d64e5c05f73c935df5a261d3b17",
+      "fee_satoshi": 2000,
+      "fee_btc": 2e-05,
+      "fee_usd": 2.30838,
+      "sender_address": "bc1qsrw8xhndehhpqcl32w4vm0md5k47zcf2fd5yl3",
+      "receiver_address": "bc1qat9hes4jqhpexcsd5nwux8wh6pzwfpj78u0jqy",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qsrw8xhndehhpqcl32w4vm0md5k47zcf2fd5yl3"
+      ],
+      "all_receiver_addresses": [
+        "bc1qat9hes4jqhpexcsd5nwux8wh6pzwfpj78u0jqy"
+      ],
+      "total_output_btc": 0.001298,
+      "total_output_usd": 149.813862,
+      "timestamp": 1755500970,
+      "transaction_date": "2025-08-02 21:54:09",
+      "actual_date": "2025-08-18 10:09:30",
+      "confirmed": true
+    },
+    {
+      "hash": "6314e6b6bfcc420a4252f83ea28947d1cb4345c7053b7ffde93769e401b3d676",
+      "fee_satoshi": 1644,
+      "fee_btc": 1.644e-05,
+      "fee_usd": 1.89748836,
+      "sender_address": "bc1qw05ssj3w8p3u90vrcfzhhu2tsawm54nunvnnye",
+      "receiver_address": "bc1qtwylsmw5ggld97tenm3wd6purl6hv8xxn5r0hk",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qw05ssj3w8p3u90vrcfzhhu2tsawm54nunvnnye"
+      ],
+      "all_receiver_addresses": [
+        "bc1qtwylsmw5ggld97tenm3wd6purl6hv8xxn5r0hk"
+      ],
+      "total_output_btc": 0.00052,
+      "total_output_usd": 60.01788,
+      "timestamp": 1755500970,
+      "transaction_date": "2025-07-27 11:30:07",
+      "actual_date": "2025-08-18 10:09:30",
+      "confirmed": true
+    },
+    {
+      "hash": "c44b5b1db871f64f9691657234d0161f3ee069b88f9c2a0dee01e46a5db3f5ab",
+      "fee_satoshi": 2000,
+      "fee_btc": 2e-05,
+      "fee_usd": 2.30838,
+      "sender_address": "35C2L1pCgwzBHNcDcVL1a5RuoefeWqyjAR",
+      "receiver_address": "bc1qw6cxjqkpmkvc6v47lmmhv4qmz8tq0wpfmed9a8",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "35C2L1pCgwzBHNcDcVL1a5RuoefeWqyjAR"
+      ],
+      "all_receiver_addresses": [
+        "bc1qw6cxjqkpmkvc6v47lmmhv4qmz8tq0wpfmed9a8",
+        "35C2L1pCgwzBHNcDcVL1a5RuoefeWqyjAR"
+      ],
+      "total_output_btc": 0.00056594,
+      "total_output_usd": 65.32022886,
+      "timestamp": 1755500970,
+      "transaction_date": "2025-07-27 22:03:10",
+      "actual_date": "2025-08-18 10:09:30",
+      "confirmed": true
+    },
+    {
+      "hash": "6517c7f261c34504dea55e2864dee46c59449aa8df863f5390b615b4dd78e93c",
+      "fee_satoshi": 2000,
+      "fee_btc": 2e-05,
+      "fee_usd": 2.30838,
+      "sender_address": "37MEG5UyufaxinxnHM6fqQag3Ugov73fVM",
+      "receiver_address": "1GJ5Xv5xeeyzVLUL4BCwazVXbLDXkoomq9",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "37MEG5UyufaxinxnHM6fqQag3Ugov73fVM"
+      ],
+      "all_receiver_addresses": [
+        "1GJ5Xv5xeeyzVLUL4BCwazVXbLDXkoomq9",
+        "35C2L1pCgwzBHNcDcVL1a5RuoefeWqyjAR"
+      ],
+      "total_output_btc": 0.00083184,
+      "total_output_usd": 96.01014096,
+      "timestamp": 1755500970,
+      "transaction_date": "2025-07-27 06:13:03",
+      "actual_date": "2025-08-18 10:09:30",
+      "confirmed": true
+    },
+    {
+      "hash": "d9684efc7d3a46845151450aa727330ac04ba0cba98a27d2d27c3dab51e843ff",
+      "fee_satoshi": 20200,
+      "fee_btc": 0.000202,
+      "fee_usd": 23.314638,
+      "sender_address": "bc1qz845supkkz3pxe6ezqhgksn0aazgtv3zlhth2m3hrwdvmk7tyldsp0lhkf",
+      "receiver_address": "bc1qzn86f2y08x753qrnf20msqevxsdprg4dp2wsd2n3ar00rt3tfrws2mgtcj",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qz845supkkz3pxe6ezqhgksn0aazgtv3zlhth2m3hrwdvmk7tyldsp0lhkf"
+      ],
+      "all_receiver_addresses": [
+        "bc1qzn86f2y08x753qrnf20msqevxsdprg4dp2wsd2n3ar00rt3tfrws2mgtcj",
+        "bc1q4g8l95zfgdn7a0yuz5wr6pazgelzagevqr23x3n0s87kg7z7jszs669de8"
+      ],
+      "total_output_btc": 0.00026262,
+      "total_output_usd": 30.31133778,
+      "timestamp": 1755500786,
+      "transaction_date": "2025-08-08 22:23:30",
+      "actual_date": "2025-08-18 10:06:26",
+      "confirmed": true
+    },
+    {
+      "hash": "dbec69b98f3bf6ebf07101e15030f67a344826c9f920da1986816148e4b7ae6f",
+      "fee_satoshi": 9765,
+      "fee_btc": 9.765e-05,
+      "fee_usd": 11.27066535,
+      "sender_address": "bc1qqr7jtmczwqw4wq22yvetvrlkeffnkcqq34jhmq",
+      "receiver_address": "bc1qst55240fd4yx27x76mxwpevahax3e0ms3q0uny",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qqr7jtmczwqw4wq22yvetvrlkeffnkcqq34jhmq"
+      ],
+      "all_receiver_addresses": [
+        "bc1qst55240fd4yx27x76mxwpevahax3e0ms3q0uny",
+        "bc1qvweay3j2xl034g5uhqrqqhn6kqvlfnl7y3hfha"
+      ],
+      "total_output_btc": 0.00210599,
+      "total_output_usd": 243.07125981,
+      "timestamp": 1755500786,
+      "transaction_date": "2025-08-04 02:55:28",
+      "actual_date": "2025-08-18 10:06:26",
+      "confirmed": true
+    },
+    {
+      "hash": "ffd2951450c0b6a2e42df91eb083b7ec93831764f320ee8f8c51a6c7fa5a8a82",
+      "fee_satoshi": 11520,
+      "fee_btc": 0.0001152,
+      "fee_usd": 13.2962688,
+      "sender_address": "bc1qwqdg6squsna38e46795at95yu9atm8azzmyvckulcc7kytlcckxswvvzej",
+      "receiver_address": "14nwCCWaN4q2EUtt9aFyNCqEAd3RjwXsbK",
+      "sender_type": "New Wallet",
+      "receiver_type": "New Wallet",
+      "all_sender_addresses": [
+        "bc1qwqdg6squsna38e46795at95yu9atm8azzmyvckulcc7kytlcckxswvvzej"
+      ],
+      "all_receiver_addresses": [
+        "14nwCCWaN4q2EUtt9aFyNCqEAd3RjwXsbK",
+        "bc1qwqdg6squsna38e46795at95yu9atm8azzmyvckulcc7kytlcckxswvvzej"
+      ],
+      "total_output_btc": 0.00358489,
+      "total_output_usd": 413.76441891,
+      "timestamp": 1755500786,
+      "transaction_date": "2025-08-10 14:33:36",
+      "actual_date": "2025-08-18 10:06:26",
+      "confirmed": true
+    }
+  ]
+}

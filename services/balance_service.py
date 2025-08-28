@@ -1,12 +1,12 @@
 from sqlalchemy.orm import Session
-from database import Users, Wallets, Address, Blockchains, Currencies, UserHolding, Transfers
+from CC.database import Users, Wallets, Address, Blockchains, Currencies, UserHolding, Transfers
 from typing import Dict, List, Optional, Any
 from decimal import Decimal
 import logging
 import requests
 from web3 import Web3
-from utils.logging_config import get_logger
-from config.api_config import Web3Manager, ERC20_ABI, EXTERNAL_APIS
+from CC.utils.logging_config import get_logger
+from CC.config.api_config import Web3Manager, ERC20_ABI, EXTERNAL_APIS
 from sqlalchemy import func
 from datetime import datetime
 import concurrent.futures
@@ -1430,6 +1430,55 @@ class BalanceService:
                     
                 blockchain_name = blockchain.BlockchainName
                 token_symbol = transfer.TokenSymbol
+                
+                # بررسی و اصلاح TokenSymbol اگر آدرس قرارداد باشد
+                if token_symbol and (token_symbol.startswith('0x') or token_symbol.startswith('0X')) and len(token_symbol) >= 10:
+                    logger.warning(f"TokenSymbol appears to be a contract address: {token_symbol}")
+                    
+                    # جستجو برای سیمبل واقعی در دیتابیس
+                    actual_symbol = None
+                    try:
+                        symbol_query = text("""
+                            SELECT Symbol FROM currencies 
+                            WHERE LOWER(SmartContractAddress) = LOWER(:contract_address)
+                            OR SmartContractAddress LIKE CONCAT('%', :contract_address, '%')
+                            AND BlockchainID = :blockchain_id
+                            LIMIT 1
+                        """)
+                        
+                        result = self.session.execute(symbol_query, {
+                            'contract_address': token_symbol,
+                            'blockchain_id': transfer.BlockchainID
+                        }).fetchone()
+                        
+                        if result:
+                            actual_symbol = result[0]
+                            logger.info(f"Found actual token symbol '{actual_symbol}' for contract address {token_symbol}")
+                        else:
+                            # توکن‌های شناخته شده
+                            known_tokens = {
+                                '0x55d398326f99059ff775485246999027b3197955': 'USDT',
+                                '0x55d398326f99059ff7': 'USDT',
+                                '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c': 'WBNB',
+                                'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf': 'NCC',
+                                'TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1': 'NCC'
+                            }
+                            
+                            for addr, symbol in known_tokens.items():
+                                if addr.lower() == token_symbol.lower():
+                                    actual_symbol = symbol
+                                    logger.info(f"Found token symbol from known tokens: {actual_symbol}")
+                                    break
+                    except Exception as e:
+                        logger.error(f"Error looking up token symbol: {str(e)}")
+                    
+                    # استفاده از سیمبل واقعی یا UNKNOWN
+                    if actual_symbol:
+                        token_symbol = actual_symbol
+                        logger.info(f"Using corrected token symbol: {token_symbol}")
+                    else:
+                        token_symbol = 'UNKNOWN'
+                        logger.warning(f"Could not resolve token symbol, using UNKNOWN")
                 
                 # Find currency record
                 currency = self.session.query(Currencies).filter(

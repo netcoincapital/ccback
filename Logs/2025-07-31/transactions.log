@@ -1,0 +1,21 @@
+2025-07-31 10:38:40 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-31 10:42:01 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-31 10:42:01 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-31 10:42:01 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-31 10:42:10 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-31 10:42:10 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-31 10:42:10 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-31 17:28:41 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 17:28:57 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-01 04:17:58 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-01 04:50:41 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT 1]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-01 04:50:46 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-01 04:51:00 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

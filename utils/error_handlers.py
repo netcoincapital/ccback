@@ -6,13 +6,13 @@ import traceback
 from sqlalchemy.exc import SQLAlchemyError, OperationalError, DisconnectionError, TimeoutError, InvalidRequestError, NoSuchModuleError
 import json
 
-from database import SessionLocal
-from security.validators import InputValidator, SecurityUtils, ValidationError
+from CC.database import SessionLocal
+from CC.security.validators import InputValidator, SecurityUtils, ValidationError
 # Removing the circular import
 # from services.wallet_service import WalletService
 
 # Import proper logging configuration
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 
 # Create a dedicated logger for error handling
 logger = get_logger(__file__)

@@ -1,0 +1,1091 @@
+2025-07-17 06:03:37 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:03:38 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:03:38 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:03:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:03:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:03:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:03:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:03:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:03:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:03:55 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878924b2386b442a7fa12e6"}')
+2025-07-17 06:09:08 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:09:08 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:09:08 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:09:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:09:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:09:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:09:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:09:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:09:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:09:16 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:09:16 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:11:48 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:11:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:11:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:11:49 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:11:49 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:11:49 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:11:49 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:11:49 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:11:49 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:12:03 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:12:03 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:27:40 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:27:40 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:27:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:27:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:27:40 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:27:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:27:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:27:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:27:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:28:06 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:28:06 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:31:32 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:31:32 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:31:32 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:31:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:31:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:31:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:31:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:31:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:31:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:32:11 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:32:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:32:12 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:32:12 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.201237331348133586
+2025-07-17 06:32:12 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 26000000319 Wei
+2025-07-17 06:32:12 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 06:32:12 - polygon_service - INFO - [Fee Calculation] Gas Price: 26000000319 Wei, Gas Limit: 21000, Fee Wei: 546000006699000, Fee MATIC: 0.000546000006699000
+2025-07-17 06:32:12 - polygon_service - INFO - [Fee] Estimated fee: 0.000546000006699000 POL
+2025-07-17 06:32:12 - polygon_service - INFO - [Comparison] Balance: 9.201237331348133586, Amount: 0.001, Fee: 0.000546000006699000, Required: 0.001546000006699000
+2025-07-17 06:32:12 - polygon_service - INFO - Storing transaction ca6d9afc-36af-4502-b18f-fa778a275664 in shared storage
+2025-07-17 06:32:12 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 06:32:12 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "ca6d9afc-36af-4502-b18f-fa778a275664",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000546000006699000",
+    "explorer_url": "https://polygonscan.com/tx/ca6d9afc-36af-4502-b18f-fa778a275664",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.199691331341434586",
+    "sender_balance_before": "9.201237331348133586"
+  },
+  "expires_at": "2025-07-17T06:42:12.190630",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 06:32:12 - polygon_service - INFO - Successfully stored transaction ca6d9afc-36af-4502-b18f-fa778a275664, result: 2025-07-17 06:47:12.191079
+2025-07-17 06:32:12 - polygon_service - DEBUG - Retrieved Polygon transaction ca6d9afc-36af-4502-b18f-fa778a275664 from storage
+2025-07-17 06:32:12 - polygon_service - INFO - Verified transaction ca6d9afc-36af-4502-b18f-fa778a275664 is stored
+2025-07-17 06:32:12 - polygon_service - INFO - Transaction event: {"transaction_id": "ca6d9afc-36af-4502-b18f-fa778a275664", "event": "prepared", "timestamp": "2025-07-17T06:32:12.193041", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000546000006699000", "explorer_url": "https://polygonscan.com/tx/ca6d9afc-36af-4502-b18f-fa778a275664", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.199691331341434586", "sender_balance_before": "9.201237331348133586"}, "expires_at": "2025-07-17T06:47:12.191079", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T06:32:12.191090"}
+2025-07-17 06:35:29 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:35:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:35:29 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:35:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:35:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:35:30 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:35:30 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:35:30 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:35:30 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:35:55 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:35:55 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:35:55 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:35:55 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.201237331348133586
+2025-07-17 06:35:55 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 26000000321 Wei
+2025-07-17 06:35:55 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 06:35:55 - polygon_service - INFO - [Fee Calculation] Gas Price: 26000000321 Wei, Gas Limit: 21000, Fee Wei: 546000006741000, Fee MATIC: 0.000546000006741000
+2025-07-17 06:35:55 - polygon_service - INFO - [Fee] Estimated fee: 0.000546000006741000 POL
+2025-07-17 06:35:55 - polygon_service - INFO - [Comparison] Balance: 9.201237331348133586, Amount: 0.001, Fee: 0.000546000006741000, Required: 0.001546000006741000
+2025-07-17 06:35:55 - polygon_service - INFO - Storing transaction 461e5519-d02b-404b-b617-670b40ce330e in shared storage
+2025-07-17 06:35:55 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 06:35:55 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "461e5519-d02b-404b-b617-670b40ce330e",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000546000006741000",
+    "explorer_url": "https://polygonscan.com/tx/461e5519-d02b-404b-b617-670b40ce330e",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.199691331341392586",
+    "sender_balance_before": "9.201237331348133586"
+  },
+  "expires_at": "2025-07-17T06:45:55.512585",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 06:35:55 - polygon_service - INFO - Successfully stored transaction 461e5519-d02b-404b-b617-670b40ce330e, result: 2025-07-17 06:50:55.514308
+2025-07-17 06:35:55 - polygon_service - DEBUG - Retrieved Polygon transaction 461e5519-d02b-404b-b617-670b40ce330e from storage
+2025-07-17 06:35:55 - polygon_service - INFO - Verified transaction 461e5519-d02b-404b-b617-670b40ce330e is stored
+2025-07-17 06:35:55 - polygon_service - INFO - Transaction event: {"transaction_id": "461e5519-d02b-404b-b617-670b40ce330e", "event": "prepared", "timestamp": "2025-07-17T06:35:55.516517", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000546000006741000", "explorer_url": "https://polygonscan.com/tx/461e5519-d02b-404b-b617-670b40ce330e", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.199691331341392586", "sender_balance_before": "9.201237331348133586"}, "expires_at": "2025-07-17T06:50:55.514308", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T06:35:55.514323"}
+2025-07-17 06:36:41 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:36:42 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:36:42 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:36:42 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:36:42 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:36:42 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:36:43 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:36:43 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:36:43 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:36:58 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:36:58 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:36:58 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:36:58 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.201237331348133586
+2025-07-17 06:36:58 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 26000000305 Wei
+2025-07-17 06:36:58 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 06:36:58 - polygon_service - INFO - [Fee Calculation] Gas Price: 26000000305 Wei, Gas Limit: 21000, Fee Wei: 546000006405000, Fee MATIC: 0.000546000006405000
+2025-07-17 06:36:58 - polygon_service - INFO - [Fee] Estimated fee: 0.000546000006405000 POL
+2025-07-17 06:36:58 - polygon_service - INFO - [Comparison] Balance: 9.201237331348133586, Amount: 0.001, Fee: 0.000546000006405000, Required: 0.001546000006405000
+2025-07-17 06:36:58 - polygon_service - INFO - Storing transaction bb0736a8-f947-4743-b3cd-3a6a3e75c644 in shared storage
+2025-07-17 06:36:58 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 06:36:58 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "bb0736a8-f947-4743-b3cd-3a6a3e75c644",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000546000006405000",
+    "explorer_url": "https://polygonscan.com/tx/bb0736a8-f947-4743-b3cd-3a6a3e75c644",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.199691331341728586",
+    "sender_balance_before": "9.201237331348133586"
+  },
+  "expires_at": "2025-07-17T06:46:58.545595",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 06:36:58 - polygon_service - INFO - Successfully stored transaction bb0736a8-f947-4743-b3cd-3a6a3e75c644, result: 2025-07-17 06:51:58.545949
+2025-07-17 06:36:58 - polygon_service - DEBUG - Retrieved Polygon transaction bb0736a8-f947-4743-b3cd-3a6a3e75c644 from storage
+2025-07-17 06:36:58 - polygon_service - INFO - Verified transaction bb0736a8-f947-4743-b3cd-3a6a3e75c644 is stored
+2025-07-17 06:36:58 - polygon_service - INFO - Transaction event: {"transaction_id": "bb0736a8-f947-4743-b3cd-3a6a3e75c644", "event": "prepared", "timestamp": "2025-07-17T06:36:58.547578", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000546000006405000", "explorer_url": "https://polygonscan.com/tx/bb0736a8-f947-4743-b3cd-3a6a3e75c644", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.199691331341728586", "sender_balance_before": "9.201237331348133586"}, "expires_at": "2025-07-17T06:51:58.545949", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T06:36:58.545956"}
+2025-07-17 06:59:04 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:59:04 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:59:04 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:59:04 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:59:04 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:59:04 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:59:04 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:59:04 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:59:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:59:14 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 06:59:14 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:59:15 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 06:59:15 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.201237331348133586
+2025-07-17 06:59:15 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 25000000195 Wei
+2025-07-17 06:59:15 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 06:59:15 - polygon_service - INFO - [Fee Calculation] Gas Price: 25000000195 Wei, Gas Limit: 21000, Fee Wei: 525000004095000, Fee MATIC: 0.000525000004095000
+2025-07-17 06:59:15 - polygon_service - INFO - [Fee] Estimated fee: 0.000525000004095000 POL
+2025-07-17 06:59:15 - polygon_service - INFO - [Comparison] Balance: 9.201237331348133586, Amount: 0.001, Fee: 0.000525000004095000, Required: 0.001525000004095000
+2025-07-17 06:59:15 - polygon_service - INFO - Storing transaction e0c89454-51fb-485e-8692-28fc6c78d12a in shared storage
+2025-07-17 06:59:15 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 06:59:15 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "e0c89454-51fb-485e-8692-28fc6c78d12a",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000525000004095000",
+    "explorer_url": "https://polygonscan.com/tx/e0c89454-51fb-485e-8692-28fc6c78d12a",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.199712331344038586",
+    "sender_balance_before": "9.201237331348133586"
+  },
+  "expires_at": "2025-07-17T07:09:15.035944",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 06:59:15 - polygon_service - INFO - Successfully stored transaction e0c89454-51fb-485e-8692-28fc6c78d12a, result: 2025-07-17 07:14:15.037430
+2025-07-17 06:59:15 - polygon_service - DEBUG - Retrieved Polygon transaction e0c89454-51fb-485e-8692-28fc6c78d12a from storage
+2025-07-17 06:59:15 - polygon_service - INFO - Verified transaction e0c89454-51fb-485e-8692-28fc6c78d12a is stored
+2025-07-17 06:59:15 - polygon_service - INFO - Transaction event: {"transaction_id": "e0c89454-51fb-485e-8692-28fc6c78d12a", "event": "prepared", "timestamp": "2025-07-17T06:59:15.039810", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000525000004095000", "explorer_url": "https://polygonscan.com/tx/e0c89454-51fb-485e-8692-28fc6c78d12a", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.199712331344038586", "sender_balance_before": "9.201237331348133586"}, "expires_at": "2025-07-17T07:14:15.037430", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T06:59:15.037449"}
+2025-07-17 07:00:52 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:00:52 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:00:52 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:00:52 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:00:52 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:00:52 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:00:52 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:00:52 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:00:52 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:10 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:01:10 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:01:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:11 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:01:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:21 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:01:21 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:21 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:01:21 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.201237331348133586
+2025-07-17 07:01:21 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 25000000201 Wei
+2025-07-17 07:01:21 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:01:21 - polygon_service - INFO - [Fee Calculation] Gas Price: 25000000201 Wei, Gas Limit: 21000, Fee Wei: 525000004221000, Fee MATIC: 0.000525000004221000
+2025-07-17 07:01:21 - polygon_service - INFO - [Fee] Estimated fee: 0.000525000004221000 POL
+2025-07-17 07:01:21 - polygon_service - INFO - [Comparison] Balance: 9.201237331348133586, Amount: 0.001, Fee: 0.000525000004221000, Required: 0.001525000004221000
+2025-07-17 07:01:21 - polygon_service - INFO - Storing transaction c8b90a6a-2bf5-4d38-bcfe-53e470960028 in shared storage
+2025-07-17 07:01:21 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:01:21 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "c8b90a6a-2bf5-4d38-bcfe-53e470960028",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000525000004221000",
+    "explorer_url": "https://polygonscan.com/tx/c8b90a6a-2bf5-4d38-bcfe-53e470960028",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.199712331343912586",
+    "sender_balance_before": "9.201237331348133586"
+  },
+  "expires_at": "2025-07-17T07:11:21.844429",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:01:21 - polygon_service - INFO - Successfully stored transaction c8b90a6a-2bf5-4d38-bcfe-53e470960028, result: 2025-07-17 07:16:21.844887
+2025-07-17 07:01:21 - polygon_service - DEBUG - Retrieved Polygon transaction c8b90a6a-2bf5-4d38-bcfe-53e470960028 from storage
+2025-07-17 07:01:21 - polygon_service - INFO - Verified transaction c8b90a6a-2bf5-4d38-bcfe-53e470960028 is stored
+2025-07-17 07:01:21 - polygon_service - INFO - Transaction event: {"transaction_id": "c8b90a6a-2bf5-4d38-bcfe-53e470960028", "event": "prepared", "timestamp": "2025-07-17T07:01:21.846522", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000525000004221000", "explorer_url": "https://polygonscan.com/tx/c8b90a6a-2bf5-4d38-bcfe-53e470960028", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.199712331343912586", "sender_balance_before": "9.201237331348133586"}, "expires_at": "2025-07-17T07:16:21.844887", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:01:21.844897"}
+2025-07-17 07:16:40 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:16:40 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:16:40 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:16:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:16:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:16:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:16:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:16:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:16:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:17:06 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:17:06 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:17:06 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:17:06 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.201237331348133586
+2025-07-17 07:17:06 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 25000000285 Wei
+2025-07-17 07:17:06 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:17:06 - polygon_service - INFO - [Fee Calculation] Gas Price: 25000000285 Wei, Gas Limit: 21000, Fee Wei: 525000005985000, Fee MATIC: 0.000525000005985000
+2025-07-17 07:17:06 - polygon_service - INFO - [Fee] Estimated fee: 0.000525000005985000 POL
+2025-07-17 07:17:06 - polygon_service - INFO - [Comparison] Balance: 9.201237331348133586, Amount: 0.001, Fee: 0.000525000005985000, Required: 0.001525000005985000
+2025-07-17 07:17:06 - polygon_service - INFO - Storing transaction b0d9a132-a4d8-41c0-834d-016b0f179a8d in shared storage
+2025-07-17 07:17:06 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:17:06 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "b0d9a132-a4d8-41c0-834d-016b0f179a8d",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000525000005985000",
+    "explorer_url": "https://polygonscan.com/tx/b0d9a132-a4d8-41c0-834d-016b0f179a8d",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.199712331342148586",
+    "sender_balance_before": "9.201237331348133586"
+  },
+  "expires_at": "2025-07-17T07:27:06.992497",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:17:06 - polygon_service - INFO - Successfully stored transaction b0d9a132-a4d8-41c0-834d-016b0f179a8d, result: 2025-07-17 07:32:06.992916
+2025-07-17 07:17:06 - polygon_service - DEBUG - Retrieved Polygon transaction b0d9a132-a4d8-41c0-834d-016b0f179a8d from storage
+2025-07-17 07:17:06 - polygon_service - INFO - Verified transaction b0d9a132-a4d8-41c0-834d-016b0f179a8d is stored
+2025-07-17 07:17:06 - polygon_service - INFO - Transaction event: {"transaction_id": "b0d9a132-a4d8-41c0-834d-016b0f179a8d", "event": "prepared", "timestamp": "2025-07-17T07:17:06.994498", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000525000005985000", "explorer_url": "https://polygonscan.com/tx/b0d9a132-a4d8-41c0-834d-016b0f179a8d", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.199712331342148586", "sender_balance_before": "9.201237331348133586"}, "expires_at": "2025-07-17T07:32:06.992916", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:17:06.992925"}
+2025-07-17 07:17:07 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:17:07 - polygon_service - WARNING - Failed to sign with Web3: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:17:07 - polygon_service - ERROR - Neither Web3 nor Tatum API available for transaction signing
+2025-07-17 07:17:07 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:17:07 - polygon_service - WARNING - Failed to sign with Web3: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:17:07 - polygon_service - ERROR - Neither Web3 nor Tatum API available for transaction signing
+2025-07-17 07:21:59 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:21:59 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:21:59 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:21:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:21:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:21:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:21:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:21:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:21:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:24:05 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:24:06 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:24:06 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:24:06 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.201237331348133586
+2025-07-17 07:24:06 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000393 Wei
+2025-07-17 07:24:06 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:24:06 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000393 Wei, Gas Limit: 21000, Fee Wei: 567000008253000, Fee MATIC: 0.000567000008253000
+2025-07-17 07:24:06 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000008253000 POL
+2025-07-17 07:24:06 - polygon_service - INFO - [Comparison] Balance: 9.201237331348133586, Amount: 0.001, Fee: 0.000567000008253000, Required: 0.001567000008253000
+2025-07-17 07:24:06 - polygon_service - INFO - Storing transaction 9e06e582-3759-4779-8bcd-0d715ccae484 in shared storage
+2025-07-17 07:24:06 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:24:06 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "9e06e582-3759-4779-8bcd-0d715ccae484",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000008253000",
+    "explorer_url": "https://polygonscan.com/tx/9e06e582-3759-4779-8bcd-0d715ccae484",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.199670331339880586",
+    "sender_balance_before": "9.201237331348133586"
+  },
+  "expires_at": "2025-07-17T07:34:06.469721",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:24:06 - polygon_service - INFO - Successfully stored transaction 9e06e582-3759-4779-8bcd-0d715ccae484, result: 2025-07-17 07:39:06.473412
+2025-07-17 07:24:06 - polygon_service - DEBUG - Retrieved Polygon transaction 9e06e582-3759-4779-8bcd-0d715ccae484 from storage
+2025-07-17 07:24:06 - polygon_service - INFO - Verified transaction 9e06e582-3759-4779-8bcd-0d715ccae484 is stored
+2025-07-17 07:24:06 - polygon_service - INFO - Transaction event: {"transaction_id": "9e06e582-3759-4779-8bcd-0d715ccae484", "event": "prepared", "timestamp": "2025-07-17T07:24:06.475211", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000008253000", "explorer_url": "https://polygonscan.com/tx/9e06e582-3759-4779-8bcd-0d715ccae484", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.199670331339880586", "sender_balance_before": "9.201237331348133586"}, "expires_at": "2025-07-17T07:39:06.473412", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:24:06.473438"}
+2025-07-17 07:24:06 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:24:06 - polygon_service - WARNING - Failed to sign with Web3: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:24:06 - polygon_service - ERROR - Neither Web3 nor Tatum API available for transaction signing
+2025-07-17 07:24:06 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:24:06 - polygon_service - WARNING - Failed to sign with Web3: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:24:06 - polygon_service - ERROR - Neither Web3 nor Tatum API available for transaction signing
+2025-07-17 07:28:24 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:28:24 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:28:24 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:25 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:28:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:41 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:28:42 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:43 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:43 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.199607331348133586
+2025-07-17 07:28:43 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000429 Wei
+2025-07-17 07:28:43 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:28:43 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000429 Wei, Gas Limit: 21000, Fee Wei: 567000009009000, Fee MATIC: 0.000567000009009000
+2025-07-17 07:28:43 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000009009000 POL
+2025-07-17 07:28:43 - polygon_service - INFO - [Comparison] Balance: 9.199607331348133586, Amount: 0.001, Fee: 0.000567000009009000, Required: 0.001567000009009000
+2025-07-17 07:28:43 - polygon_service - INFO - Storing transaction eac16711-fce1-46d7-9bb3-54b0f807ee14 in shared storage
+2025-07-17 07:28:43 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:28:43 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "eac16711-fce1-46d7-9bb3-54b0f807ee14",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000009009000",
+    "explorer_url": "https://polygonscan.com/tx/eac16711-fce1-46d7-9bb3-54b0f807ee14",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.198040331339124586",
+    "sender_balance_before": "9.199607331348133586"
+  },
+  "expires_at": "2025-07-17T07:38:43.103778",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:28:43 - polygon_service - INFO - Successfully stored transaction eac16711-fce1-46d7-9bb3-54b0f807ee14, result: 2025-07-17 07:43:43.104187
+2025-07-17 07:28:43 - polygon_service - DEBUG - Retrieved Polygon transaction eac16711-fce1-46d7-9bb3-54b0f807ee14 from storage
+2025-07-17 07:28:43 - polygon_service - INFO - Verified transaction eac16711-fce1-46d7-9bb3-54b0f807ee14 is stored
+2025-07-17 07:28:43 - polygon_service - INFO - Transaction event: {"transaction_id": "eac16711-fce1-46d7-9bb3-54b0f807ee14", "event": "prepared", "timestamp": "2025-07-17T07:28:43.105887", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000009009000", "explorer_url": "https://polygonscan.com/tx/eac16711-fce1-46d7-9bb3-54b0f807ee14", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.198040331339124586", "sender_balance_before": "9.199607331348133586"}, "expires_at": "2025-07-17T07:43:43.104187", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:28:43.104194"}
+2025-07-17 07:28:43 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:28:43 - polygon_service - WARNING - Failed to sign with Web3: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:28:43 - polygon_service - ERROR - Failed to sign transaction with Web3
+2025-07-17 07:28:43 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:28:43 - polygon_service - WARNING - Failed to sign with Web3: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:28:43 - polygon_service - ERROR - Failed to sign transaction with Web3
+2025-07-17 07:28:43 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:28:43 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:04 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:32:04 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:04 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:04 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:32:04 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:32:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:14 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:32:14 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:15 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:15 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.199607331348133586
+2025-07-17 07:32:15 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000444 Wei
+2025-07-17 07:32:15 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:32:15 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000444 Wei, Gas Limit: 21000, Fee Wei: 567000009324000, Fee MATIC: 0.000567000009324000
+2025-07-17 07:32:15 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000009324000 POL
+2025-07-17 07:32:15 - polygon_service - INFO - [Comparison] Balance: 9.199607331348133586, Amount: 0.001, Fee: 0.000567000009324000, Required: 0.001567000009324000
+2025-07-17 07:32:15 - polygon_service - INFO - Storing transaction c0cc47c9-a6b8-4a1b-89f4-ba73f85f11ba in shared storage
+2025-07-17 07:32:15 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:32:15 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "c0cc47c9-a6b8-4a1b-89f4-ba73f85f11ba",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000009324000",
+    "explorer_url": "https://polygonscan.com/tx/c0cc47c9-a6b8-4a1b-89f4-ba73f85f11ba",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.198040331338809586",
+    "sender_balance_before": "9.199607331348133586"
+  },
+  "expires_at": "2025-07-17T07:42:15.177395",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:32:15 - polygon_service - INFO - Successfully stored transaction c0cc47c9-a6b8-4a1b-89f4-ba73f85f11ba, result: 2025-07-17 07:47:15.177962
+2025-07-17 07:32:15 - polygon_service - DEBUG - Retrieved Polygon transaction c0cc47c9-a6b8-4a1b-89f4-ba73f85f11ba from storage
+2025-07-17 07:32:15 - polygon_service - INFO - Verified transaction c0cc47c9-a6b8-4a1b-89f4-ba73f85f11ba is stored
+2025-07-17 07:32:15 - polygon_service - INFO - Transaction event: {"transaction_id": "c0cc47c9-a6b8-4a1b-89f4-ba73f85f11ba", "event": "prepared", "timestamp": "2025-07-17T07:32:15.179719", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000009324000", "explorer_url": "https://polygonscan.com/tx/c0cc47c9-a6b8-4a1b-89f4-ba73f85f11ba", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.198040331338809586", "sender_balance_before": "9.199607331348133586"}, "expires_at": "2025-07-17T07:47:15.177962", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:32:15.177973"}
+2025-07-17 07:32:15 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:32:15 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:32:15 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:32:15 - polygon_service - ERROR - Method 2 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:32:15 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a6ff9155a130781939e9"}
+2025-07-17 07:32:15 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:32:15 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:32:15 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:32:15 - polygon_service - ERROR - Method 2 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:32:15 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a6ff2386b442a7fa2aee"}
+2025-07-17 07:32:15 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:16 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:16 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:32:16 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.197977331348133586
+2025-07-17 07:32:16 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000445 Wei
+2025-07-17 07:32:16 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:32:16 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000445 Wei, Gas Limit: 21000, Fee Wei: 567000009345000, Fee MATIC: 0.000567000009345000
+2025-07-17 07:32:16 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000009345000 POL
+2025-07-17 07:32:16 - polygon_service - INFO - [Comparison] Balance: 9.197977331348133586, Amount: 0.001, Fee: 0.000567000009345000, Required: 0.001567000009345000
+2025-07-17 07:32:16 - polygon_service - INFO - Storing transaction aa713b0f-7236-41bf-8424-3385a57c82e9 in shared storage
+2025-07-17 07:32:16 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:32:16 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "aa713b0f-7236-41bf-8424-3385a57c82e9",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000009345000",
+    "explorer_url": "https://polygonscan.com/tx/aa713b0f-7236-41bf-8424-3385a57c82e9",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.196410331338788586",
+    "sender_balance_before": "9.197977331348133586"
+  },
+  "expires_at": "2025-07-17T07:42:16.476467",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:32:16 - polygon_service - INFO - Successfully stored transaction aa713b0f-7236-41bf-8424-3385a57c82e9, result: 2025-07-17 07:47:16.477586
+2025-07-17 07:32:16 - polygon_service - DEBUG - Retrieved Polygon transaction aa713b0f-7236-41bf-8424-3385a57c82e9 from storage
+2025-07-17 07:32:16 - polygon_service - INFO - Verified transaction aa713b0f-7236-41bf-8424-3385a57c82e9 is stored
+2025-07-17 07:32:16 - polygon_service - INFO - Transaction event: {"transaction_id": "aa713b0f-7236-41bf-8424-3385a57c82e9", "event": "prepared", "timestamp": "2025-07-17T07:32:16.479856", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000009345000", "explorer_url": "https://polygonscan.com/tx/aa713b0f-7236-41bf-8424-3385a57c82e9", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.196410331338788586", "sender_balance_before": "9.197977331348133586"}, "expires_at": "2025-07-17T07:47:16.477586", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:32:16.477599"}
+2025-07-17 07:32:16 - polygon_service - DEBUG - Retrieved Polygon transaction aa713b0f-7236-41bf-8424-3385a57c82e9 from storage
+2025-07-17 07:32:16 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 07:32:16 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 07:32:16 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:32:16 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:32:16 - polygon_service - DEBUG - Method 2: Direct Web3 sending
+2025-07-17 07:32:16 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:32:16 - polygon_service - ERROR - Method 2 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:32:16 - polygon_service - DEBUG - Method 3: Tatum transaction endpoint
+2025-07-17 07:32:16 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a7001628e032e30df4ce"}
+2025-07-17 07:36:34 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:36:35 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:36:35 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:36:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:46 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:36:46 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:47 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:47 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.196347331348133586
+2025-07-17 07:36:47 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000481 Wei
+2025-07-17 07:36:47 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:36:47 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000481 Wei, Gas Limit: 21000, Fee Wei: 567000010101000, Fee MATIC: 0.000567000010101000
+2025-07-17 07:36:47 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000010101000 POL
+2025-07-17 07:36:47 - polygon_service - INFO - [Comparison] Balance: 9.196347331348133586, Amount: 0.001, Fee: 0.000567000010101000, Required: 0.001567000010101000
+2025-07-17 07:36:47 - polygon_service - INFO - Storing transaction cd752ba2-03ce-420c-8c7b-a75c6b71df8c in shared storage
+2025-07-17 07:36:47 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:36:47 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "cd752ba2-03ce-420c-8c7b-a75c6b71df8c",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000010101000",
+    "explorer_url": "https://polygonscan.com/tx/cd752ba2-03ce-420c-8c7b-a75c6b71df8c",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.194780331338032586",
+    "sender_balance_before": "9.196347331348133586"
+  },
+  "expires_at": "2025-07-17T07:46:47.439606",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:36:47 - polygon_service - INFO - Successfully stored transaction cd752ba2-03ce-420c-8c7b-a75c6b71df8c, result: 2025-07-17 07:51:47.441263
+2025-07-17 07:36:47 - polygon_service - DEBUG - Retrieved Polygon transaction cd752ba2-03ce-420c-8c7b-a75c6b71df8c from storage
+2025-07-17 07:36:47 - polygon_service - INFO - Verified transaction cd752ba2-03ce-420c-8c7b-a75c6b71df8c is stored
+2025-07-17 07:36:47 - polygon_service - INFO - Transaction event: {"transaction_id": "cd752ba2-03ce-420c-8c7b-a75c6b71df8c", "event": "prepared", "timestamp": "2025-07-17T07:36:47.443773", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000010101000", "explorer_url": "https://polygonscan.com/tx/cd752ba2-03ce-420c-8c7b-a75c6b71df8c", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.194780331338032586", "sender_balance_before": "9.196347331348133586"}, "expires_at": "2025-07-17T07:51:47.441263", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:36:47.441279"}
+2025-07-17 07:36:47 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:36:47 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:36:47 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:36:47 - polygon_service - ERROR - Method 2 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:36:47 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a80fa7a243511c172ac2"}
+2025-07-17 07:36:48 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:36:48 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:36:48 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:36:48 - polygon_service - ERROR - Method 2 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:36:48 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a810ed8ea0aa62203ffd"}
+2025-07-17 07:36:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:36:48 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.194717331348133586
+2025-07-17 07:36:49 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000481 Wei
+2025-07-17 07:36:49 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:36:49 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000481 Wei, Gas Limit: 21000, Fee Wei: 567000010101000, Fee MATIC: 0.000567000010101000
+2025-07-17 07:36:49 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000010101000 POL
+2025-07-17 07:36:49 - polygon_service - INFO - [Comparison] Balance: 9.194717331348133586, Amount: 0.001, Fee: 0.000567000010101000, Required: 0.001567000010101000
+2025-07-17 07:36:49 - polygon_service - INFO - Storing transaction e67f2369-9eea-4673-ba73-c1d6c2f7949d in shared storage
+2025-07-17 07:36:49 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:36:49 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "e67f2369-9eea-4673-ba73-c1d6c2f7949d",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000010101000",
+    "explorer_url": "https://polygonscan.com/tx/e67f2369-9eea-4673-ba73-c1d6c2f7949d",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.193150331338032586",
+    "sender_balance_before": "9.194717331348133586"
+  },
+  "expires_at": "2025-07-17T07:46:49.009836",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:36:49 - polygon_service - INFO - Successfully stored transaction e67f2369-9eea-4673-ba73-c1d6c2f7949d, result: 2025-07-17 07:51:49.010325
+2025-07-17 07:36:49 - polygon_service - DEBUG - Retrieved Polygon transaction e67f2369-9eea-4673-ba73-c1d6c2f7949d from storage
+2025-07-17 07:36:49 - polygon_service - INFO - Verified transaction e67f2369-9eea-4673-ba73-c1d6c2f7949d is stored
+2025-07-17 07:36:49 - polygon_service - INFO - Transaction event: {"transaction_id": "e67f2369-9eea-4673-ba73-c1d6c2f7949d", "event": "prepared", "timestamp": "2025-07-17T07:36:49.012142", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000010101000", "explorer_url": "https://polygonscan.com/tx/e67f2369-9eea-4673-ba73-c1d6c2f7949d", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.193150331338032586", "sender_balance_before": "9.194717331348133586"}, "expires_at": "2025-07-17T07:51:49.010325", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:36:49.010336"}
+2025-07-17 07:36:49 - polygon_service - DEBUG - Retrieved Polygon transaction e67f2369-9eea-4673-ba73-c1d6c2f7949d from storage
+2025-07-17 07:36:49 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 07:36:49 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 07:36:49 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:36:49 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:36:49 - polygon_service - DEBUG - Method 2: Direct Web3 sending
+2025-07-17 07:36:49 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:36:49 - polygon_service - ERROR - Method 2 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:36:49 - polygon_service - DEBUG - Method 3: Tatum transaction endpoint
+2025-07-17 07:36:49 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a811ed8ea0aa62203fff"}
+2025-07-17 07:43:28 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:43:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:29 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:43:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:29 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:43:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:30 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:30 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:48 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:43:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:49 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.194717331348133586
+2025-07-17 07:43:49 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000781 Wei
+2025-07-17 07:43:49 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:43:49 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000781 Wei, Gas Limit: 21000, Fee Wei: 567000016401000, Fee MATIC: 0.000567000016401000
+2025-07-17 07:43:49 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000016401000 POL
+2025-07-17 07:43:49 - polygon_service - INFO - [Comparison] Balance: 9.194717331348133586, Amount: 0.001, Fee: 0.000567000016401000, Required: 0.001567000016401000
+2025-07-17 07:43:49 - polygon_service - INFO - Storing transaction 47085f67-d82d-4c43-9471-6ec09c5a3cea in shared storage
+2025-07-17 07:43:49 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:43:49 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "47085f67-d82d-4c43-9471-6ec09c5a3cea",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000016401000",
+    "explorer_url": "https://polygonscan.com/tx/47085f67-d82d-4c43-9471-6ec09c5a3cea",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.193150331331732586",
+    "sender_balance_before": "9.194717331348133586"
+  },
+  "expires_at": "2025-07-17T07:53:49.058259",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:43:49 - polygon_service - INFO - Successfully stored transaction 47085f67-d82d-4c43-9471-6ec09c5a3cea, result: 2025-07-17 07:58:49.058619
+2025-07-17 07:43:49 - polygon_service - DEBUG - Retrieved Polygon transaction 47085f67-d82d-4c43-9471-6ec09c5a3cea from storage
+2025-07-17 07:43:49 - polygon_service - INFO - Verified transaction 47085f67-d82d-4c43-9471-6ec09c5a3cea is stored
+2025-07-17 07:43:49 - polygon_service - INFO - Transaction event: {"transaction_id": "47085f67-d82d-4c43-9471-6ec09c5a3cea", "event": "prepared", "timestamp": "2025-07-17T07:43:49.060358", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000016401000", "explorer_url": "https://polygonscan.com/tx/47085f67-d82d-4c43-9471-6ec09c5a3cea", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.193150331331732586", "sender_balance_before": "9.194717331348133586"}, "expires_at": "2025-07-17T07:58:49.058619", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:43:49.058626"}
+2025-07-17 07:43:49 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:43:49 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:43:49 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:43:49 - polygon_service - ERROR - Web3 sending failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:43:49 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-17 07:43:49 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b508734b553413379e"}
+2025-07-17 07:43:49 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:43:49 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:43:49 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:43:49 - polygon_service - ERROR - Web3 sending failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:43:49 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-17 07:43:49 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9b5674832060923d4be"}
+2025-07-17 07:43:49 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:50 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:50 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:43:50 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.194717331348133586
+2025-07-17 07:43:50 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000781 Wei
+2025-07-17 07:43:50 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:43:50 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000781 Wei, Gas Limit: 21000, Fee Wei: 567000016401000, Fee MATIC: 0.000567000016401000
+2025-07-17 07:43:50 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000016401000 POL
+2025-07-17 07:43:50 - polygon_service - INFO - [Comparison] Balance: 9.194717331348133586, Amount: 0.001, Fee: 0.000567000016401000, Required: 0.001567000016401000
+2025-07-17 07:43:50 - polygon_service - INFO - Storing transaction 9f8880b9-f439-4b4f-bf18-63df9505f5fc in shared storage
+2025-07-17 07:43:50 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:43:50 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "9f8880b9-f439-4b4f-bf18-63df9505f5fc",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000016401000",
+    "explorer_url": "https://polygonscan.com/tx/9f8880b9-f439-4b4f-bf18-63df9505f5fc",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.193150331331732586",
+    "sender_balance_before": "9.194717331348133586"
+  },
+  "expires_at": "2025-07-17T07:53:50.233116",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:43:50 - polygon_service - INFO - Successfully stored transaction 9f8880b9-f439-4b4f-bf18-63df9505f5fc, result: 2025-07-17 07:58:50.233613
+2025-07-17 07:43:50 - polygon_service - DEBUG - Retrieved Polygon transaction 9f8880b9-f439-4b4f-bf18-63df9505f5fc from storage
+2025-07-17 07:43:50 - polygon_service - INFO - Verified transaction 9f8880b9-f439-4b4f-bf18-63df9505f5fc is stored
+2025-07-17 07:43:50 - polygon_service - INFO - Transaction event: {"transaction_id": "9f8880b9-f439-4b4f-bf18-63df9505f5fc", "event": "prepared", "timestamp": "2025-07-17T07:43:50.235465", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000016401000", "explorer_url": "https://polygonscan.com/tx/9f8880b9-f439-4b4f-bf18-63df9505f5fc", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.193150331331732586", "sender_balance_before": "9.194717331348133586"}, "expires_at": "2025-07-17T07:58:50.233613", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:43:50.233624"}
+2025-07-17 07:43:50 - polygon_service - DEBUG - Retrieved Polygon transaction 9f8880b9-f439-4b4f-bf18-63df9505f5fc from storage
+2025-07-17 07:43:50 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 07:43:50 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 07:43:50 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 4
+2025-07-17 07:43:59 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:43:59 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:43:59 - polygon_service - DEBUG - Method 2: Direct Web3 sending with nonce retry
+2025-07-17 07:43:59 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 5
+2025-07-17 07:43:59 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:43:59 - polygon_service - INFO - Trying with nonce: 5
+2025-07-17 07:43:59 - polygon_service - ERROR - Web3 sending failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:43:59 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-17 07:43:59 - polygon_service - DEBUG - Method 3: Tatum transaction endpoint
+2025-07-17 07:44:00 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c01628e032e30df70e"}
+2025-07-17 07:44:00 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:44:00 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:44:00 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.193087331348133586
+2025-07-17 07:44:00 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000768 Wei
+2025-07-17 07:44:00 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:44:00 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000768 Wei, Gas Limit: 21000, Fee Wei: 567000016128000, Fee MATIC: 0.000567000016128000
+2025-07-17 07:44:00 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000016128000 POL
+2025-07-17 07:44:00 - polygon_service - INFO - [Comparison] Balance: 9.193087331348133586, Amount: 0.001, Fee: 0.000567000016128000, Required: 0.001567000016128000
+2025-07-17 07:44:00 - polygon_service - INFO - Storing transaction 1e6a1e91-6b92-4bac-b30a-49d66569f144 in shared storage
+2025-07-17 07:44:00 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:44:00 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "1e6a1e91-6b92-4bac-b30a-49d66569f144",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000016128000",
+    "explorer_url": "https://polygonscan.com/tx/1e6a1e91-6b92-4bac-b30a-49d66569f144",
+    "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.191520331332005586",
+    "sender_balance_before": "9.193087331348133586"
+  },
+  "expires_at": "2025-07-17T07:54:00.755304",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:44:00 - polygon_service - INFO - Successfully stored transaction 1e6a1e91-6b92-4bac-b30a-49d66569f144, result: 2025-07-17 07:59:00.755874
+2025-07-17 07:44:00 - polygon_service - DEBUG - Retrieved Polygon transaction 1e6a1e91-6b92-4bac-b30a-49d66569f144 from storage
+2025-07-17 07:44:00 - polygon_service - INFO - Verified transaction 1e6a1e91-6b92-4bac-b30a-49d66569f144 is stored
+2025-07-17 07:44:00 - polygon_service - INFO - Transaction event: {"transaction_id": "1e6a1e91-6b92-4bac-b30a-49d66569f144", "event": "prepared", "timestamp": "2025-07-17T07:44:00.757801", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000016128000", "explorer_url": "https://polygonscan.com/tx/1e6a1e91-6b92-4bac-b30a-49d66569f144", "recipient": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.191520331332005586", "sender_balance_before": "9.193087331348133586"}, "expires_at": "2025-07-17T07:59:00.755874", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:44:00.755890"}
+2025-07-17 07:44:00 - polygon_service - DEBUG - Retrieved Polygon transaction 1e6a1e91-6b92-4bac-b30a-49d66569f144 from storage
+2025-07-17 07:44:00 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 07:44:00 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 07:44:00 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 5
+2025-07-17 07:44:00 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:44:00 - polygon_service - ERROR - Method 1 failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:44:00 - polygon_service - DEBUG - Method 2: Direct Web3 sending with nonce retry
+2025-07-17 07:44:00 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 5
+2025-07-17 07:44:00 - polygon_service - WARNING - Failed to estimate gas, using default: ('Address has an invalid EIP-55 checksum. After looking up the address from the original source, try again.', '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6')
+2025-07-17 07:44:00 - polygon_service - INFO - Trying with nonce: 5
+2025-07-17 07:44:00 - polygon_service - ERROR - Web3 sending failed: Transaction had invalid fields: {'to': '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6'}
+2025-07-17 07:44:00 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-17 07:44:00 - polygon_service - DEBUG - Method 3: Tatum transaction endpoint
+2025-07-17 07:44:00 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=6878a9c09155a13078193c51"}
+2025-07-17 07:47:26 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:47:26 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:47:26 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:47:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:54 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:47:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:54 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.193087331348133586
+2025-07-17 07:47:54 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000658 Wei
+2025-07-17 07:47:54 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:47:54 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000658 Wei, Gas Limit: 21000, Fee Wei: 567000013818000, Fee MATIC: 0.000567000013818000
+2025-07-17 07:47:54 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000013818000 POL
+2025-07-17 07:47:54 - polygon_service - INFO - [Comparison] Balance: 9.193087331348133586, Amount: 0.001, Fee: 0.000567000013818000, Required: 0.001567000013818000
+2025-07-17 07:47:54 - polygon_service - INFO - Storing transaction a15ed814-28d0-41b2-8823-4523a139aa73 in shared storage
+2025-07-17 07:47:54 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:47:54 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "a15ed814-28d0-41b2-8823-4523a139aa73",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000013818000",
+    "explorer_url": "https://polygonscan.com/tx/a15ed814-28d0-41b2-8823-4523a139aa73",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.191520331334315586",
+    "sender_balance_before": "9.193087331348133586"
+  },
+  "expires_at": "2025-07-17T07:57:54.571647",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:47:54 - polygon_service - INFO - Successfully stored transaction a15ed814-28d0-41b2-8823-4523a139aa73, result: 2025-07-17 08:02:54.573103
+2025-07-17 07:47:54 - polygon_service - DEBUG - Retrieved Polygon transaction a15ed814-28d0-41b2-8823-4523a139aa73 from storage
+2025-07-17 07:47:54 - polygon_service - INFO - Verified transaction a15ed814-28d0-41b2-8823-4523a139aa73 is stored
+2025-07-17 07:47:54 - polygon_service - INFO - Transaction event: {"transaction_id": "a15ed814-28d0-41b2-8823-4523a139aa73", "event": "prepared", "timestamp": "2025-07-17T07:47:54.575516", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000013818000", "explorer_url": "https://polygonscan.com/tx/a15ed814-28d0-41b2-8823-4523a139aa73", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.191520331334315586", "sender_balance_before": "9.193087331348133586"}, "expires_at": "2025-07-17T08:02:54.573103", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:47:54.573118"}
+2025-07-17 07:47:55 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaab71119edd7f8038bf"}')
+2025-07-17 07:47:55 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaab2386b442a7fa2e3b"}')
+2025-07-17 07:47:55 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:56 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.191457331348133586
+2025-07-17 07:47:56 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000654 Wei
+2025-07-17 07:47:56 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:47:56 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000654 Wei, Gas Limit: 21000, Fee Wei: 567000013734000, Fee MATIC: 0.000567000013734000
+2025-07-17 07:47:56 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000013734000 POL
+2025-07-17 07:47:56 - polygon_service - INFO - [Comparison] Balance: 9.191457331348133586, Amount: 0.001, Fee: 0.000567000013734000, Required: 0.001567000013734000
+2025-07-17 07:47:56 - polygon_service - INFO - Storing transaction dd5703ba-8c92-4412-a6fd-4559b672f53d in shared storage
+2025-07-17 07:47:56 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:47:56 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "dd5703ba-8c92-4412-a6fd-4559b672f53d",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000013734000",
+    "explorer_url": "https://polygonscan.com/tx/dd5703ba-8c92-4412-a6fd-4559b672f53d",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.189890331334399586",
+    "sender_balance_before": "9.191457331348133586"
+  },
+  "expires_at": "2025-07-17T07:57:56.553481",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:47:56 - polygon_service - INFO - Successfully stored transaction dd5703ba-8c92-4412-a6fd-4559b672f53d, result: 2025-07-17 08:02:56.554066
+2025-07-17 07:47:56 - polygon_service - DEBUG - Retrieved Polygon transaction dd5703ba-8c92-4412-a6fd-4559b672f53d from storage
+2025-07-17 07:47:56 - polygon_service - INFO - Verified transaction dd5703ba-8c92-4412-a6fd-4559b672f53d is stored
+2025-07-17 07:47:56 - polygon_service - INFO - Transaction event: {"transaction_id": "dd5703ba-8c92-4412-a6fd-4559b672f53d", "event": "prepared", "timestamp": "2025-07-17T07:47:56.556628", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000013734000", "explorer_url": "https://polygonscan.com/tx/dd5703ba-8c92-4412-a6fd-4559b672f53d", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.189890331334399586", "sender_balance_before": "9.191457331348133586"}, "expires_at": "2025-07-17T08:02:56.554066", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:47:56.554079"}
+2025-07-17 07:47:56 - polygon_service - DEBUG - Retrieved Polygon transaction dd5703ba-8c92-4412-a6fd-4559b672f53d from storage
+2025-07-17 07:47:56 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 07:47:56 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 07:47:56 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 6
+2025-07-17 07:47:59 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-17 07:47:59 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-17 07:47:59 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aaafe1f460b74171fc71"}')
+2025-07-17 07:47:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:47:59 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.191457331348133586
+2025-07-17 07:47:59 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000648 Wei
+2025-07-17 07:47:59 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:47:59 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000648 Wei, Gas Limit: 21000, Fee Wei: 567000013608000, Fee MATIC: 0.000567000013608000
+2025-07-17 07:47:59 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000013608000 POL
+2025-07-17 07:47:59 - polygon_service - INFO - [Comparison] Balance: 9.191457331348133586, Amount: 0.001, Fee: 0.000567000013608000, Required: 0.001567000013608000
+2025-07-17 07:47:59 - polygon_service - INFO - Storing transaction b7bb156d-da82-47ef-a735-14496ca34376 in shared storage
+2025-07-17 07:47:59 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:47:59 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "b7bb156d-da82-47ef-a735-14496ca34376",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000013608000",
+    "explorer_url": "https://polygonscan.com/tx/b7bb156d-da82-47ef-a735-14496ca34376",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.189890331334525586",
+    "sender_balance_before": "9.191457331348133586"
+  },
+  "expires_at": "2025-07-17T07:57:59.853375",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:47:59 - polygon_service - INFO - Successfully stored transaction b7bb156d-da82-47ef-a735-14496ca34376, result: 2025-07-17 08:02:59.854902
+2025-07-17 07:47:59 - polygon_service - DEBUG - Retrieved Polygon transaction b7bb156d-da82-47ef-a735-14496ca34376 from storage
+2025-07-17 07:47:59 - polygon_service - INFO - Verified transaction b7bb156d-da82-47ef-a735-14496ca34376 is stored
+2025-07-17 07:47:59 - polygon_service - INFO - Transaction event: {"transaction_id": "b7bb156d-da82-47ef-a735-14496ca34376", "event": "prepared", "timestamp": "2025-07-17T07:47:59.856915", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000013608000", "explorer_url": "https://polygonscan.com/tx/b7bb156d-da82-47ef-a735-14496ca34376", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.189890331334525586", "sender_balance_before": "9.191457331348133586"}, "expires_at": "2025-07-17T08:02:59.854902", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:47:59.854916"}
+2025-07-17 07:47:59 - polygon_service - DEBUG - Retrieved Polygon transaction b7bb156d-da82-47ef-a735-14496ca34376 from storage
+2025-07-17 07:47:59 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 07:47:59 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 07:47:59 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 6
+2025-07-17 07:48:00 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-17 07:48:00 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-17 07:48:00 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutility.Bytes [-32602]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878aab0d7428c890730677a"}')
+2025-07-17 07:54:34 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:54:35 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:54:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:54:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:54:35 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:54:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:54:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:54:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:54:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:55:05 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 07:55:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:55:06 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:55:06 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.189827331348133586
+2025-07-17 07:55:06 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000498 Wei
+2025-07-17 07:55:06 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:55:06 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000498 Wei, Gas Limit: 21000, Fee Wei: 567000010458000, Fee MATIC: 0.000567000010458000
+2025-07-17 07:55:06 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000010458000 POL
+2025-07-17 07:55:06 - polygon_service - INFO - [Comparison] Balance: 9.189827331348133586, Amount: 0.001, Fee: 0.000567000010458000, Required: 0.001567000010458000
+2025-07-17 07:55:06 - polygon_service - INFO - Storing transaction 9da9f9cf-4c6e-4b36-8c2a-30af48972bb2 in shared storage
+2025-07-17 07:55:06 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:55:06 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "9da9f9cf-4c6e-4b36-8c2a-30af48972bb2",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000010458000",
+    "explorer_url": "https://polygonscan.com/tx/9da9f9cf-4c6e-4b36-8c2a-30af48972bb2",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.188260331337675586",
+    "sender_balance_before": "9.189827331348133586"
+  },
+  "expires_at": "2025-07-17T08:05:06.612275",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:55:06 - polygon_service - INFO - Successfully stored transaction 9da9f9cf-4c6e-4b36-8c2a-30af48972bb2, result: 2025-07-17 08:10:06.613558
+2025-07-17 07:55:06 - polygon_service - DEBUG - Retrieved Polygon transaction 9da9f9cf-4c6e-4b36-8c2a-30af48972bb2 from storage
+2025-07-17 07:55:06 - polygon_service - INFO - Verified transaction 9da9f9cf-4c6e-4b36-8c2a-30af48972bb2 is stored
+2025-07-17 07:55:06 - polygon_service - INFO - Transaction event: {"transaction_id": "9da9f9cf-4c6e-4b36-8c2a-30af48972bb2", "event": "prepared", "timestamp": "2025-07-17T07:55:06.615750", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000010458000", "explorer_url": "https://polygonscan.com/tx/9da9f9cf-4c6e-4b36-8c2a-30af48972bb2", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.188260331337675586", "sender_balance_before": "9.189827331348133586"}, "expires_at": "2025-07-17T08:10:06.613558", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:55:06.613576"}
+2025-07-17 07:55:26 - polygon_service - ERROR - Tatum API returned invalid response: ({'txId': '0x71903f24990455e52f88ab86305271587d6bd03b0ee2e0c5cbb7ae9984c5b1c9', 'transaction_hash': '0x71903f24990455e52f88ab86305271587d6bd03b0ee2e0c5cbb7ae9984c5b1c9', 'status': 'pending'}, None)
+2025-07-17 07:55:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:55:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:55:57 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:55:57 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.188260331337675586
+2025-07-17 07:55:57 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000493 Wei
+2025-07-17 07:55:57 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:55:57 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000493 Wei, Gas Limit: 21000, Fee Wei: 567000010353000, Fee MATIC: 0.000567000010353000
+2025-07-17 07:55:57 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000010353000 POL
+2025-07-17 07:55:57 - polygon_service - INFO - [Comparison] Balance: 9.188260331337675586, Amount: 0.001, Fee: 0.000567000010353000, Required: 0.001567000010353000
+2025-07-17 07:55:57 - polygon_service - INFO - Storing transaction b9f99e99-7e4e-485b-8f62-bc6704d498b7 in shared storage
+2025-07-17 07:55:57 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:55:57 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "b9f99e99-7e4e-485b-8f62-bc6704d498b7",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000010353000",
+    "explorer_url": "https://polygonscan.com/tx/b9f99e99-7e4e-485b-8f62-bc6704d498b7",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.186693331327322586",
+    "sender_balance_before": "9.188260331337675586"
+  },
+  "expires_at": "2025-07-17T08:05:57.073919",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:55:57 - polygon_service - INFO - Successfully stored transaction b9f99e99-7e4e-485b-8f62-bc6704d498b7, result: 2025-07-17 08:10:57.074484
+2025-07-17 07:55:57 - polygon_service - DEBUG - Retrieved Polygon transaction b9f99e99-7e4e-485b-8f62-bc6704d498b7 from storage
+2025-07-17 07:55:57 - polygon_service - INFO - Verified transaction b9f99e99-7e4e-485b-8f62-bc6704d498b7 is stored
+2025-07-17 07:55:57 - polygon_service - INFO - Transaction event: {"transaction_id": "b9f99e99-7e4e-485b-8f62-bc6704d498b7", "event": "prepared", "timestamp": "2025-07-17T07:55:57.076299", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000010353000", "explorer_url": "https://polygonscan.com/tx/b9f99e99-7e4e-485b-8f62-bc6704d498b7", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.186693331327322586", "sender_balance_before": "9.188260331337675586"}, "expires_at": "2025-07-17T08:10:57.074484", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:55:57.074500"}
+2025-07-17 07:55:57 - polygon_service - DEBUG - Retrieved Polygon transaction b9f99e99-7e4e-485b-8f62-bc6704d498b7 from storage
+2025-07-17 07:55:57 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1
+2025-07-17 07:55:57 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 07:55:57 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 07:55:57 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9
+2025-07-17 07:55:57 - polygon_service - ERROR - Tatum API returned invalid response: ({'txId': '0xb22fb7ed0f78ebf176e943cf16b7f0b3acccaa34069304e0418627346164cf76', 'transaction_hash': '0xb22fb7ed0f78ebf176e943cf16b7f0b3acccaa34069304e0418627346164cf76', 'status': 'pending'}, None)
+2025-07-17 07:56:12 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-17 07:56:12 - polygon_service - DEBUG - Signed transaction length: 224 characters
+2025-07-17 07:56:12 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-17 07:56:12 - polygon_service - ERROR - Tatum API returned invalid response: ({'txId': '0xf95e24023b15ecf32b652a2a4b2bcb3fa4ccc0648b6fef0bdc1dafdbde2a96e5', 'transaction_hash': '0xf95e24023b15ecf32b652a2a4b2bcb3fa4ccc0648b6fef0bdc1dafdbde2a96e5', 'status': 'pending'}, None)
+2025-07-17 07:56:13 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:56:13 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 07:56:13 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.186693331327301586
+2025-07-17 07:56:13 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000495 Wei
+2025-07-17 07:56:13 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 07:56:13 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000495 Wei, Gas Limit: 21000, Fee Wei: 567000010395000, Fee MATIC: 0.000567000010395000
+2025-07-17 07:56:13 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000010395000 POL
+2025-07-17 07:56:13 - polygon_service - INFO - [Comparison] Balance: 9.186693331327301586, Amount: 0.001, Fee: 0.000567000010395000, Required: 0.001567000010395000
+2025-07-17 07:56:13 - polygon_service - INFO - Storing transaction 775e3fae-2144-448b-8d81-c2213ef704c7 in shared storage
+2025-07-17 07:56:13 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 07:56:13 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "775e3fae-2144-448b-8d81-c2213ef704c7",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000010395000",
+    "explorer_url": "https://polygonscan.com/tx/775e3fae-2144-448b-8d81-c2213ef704c7",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.185126331316906586",
+    "sender_balance_before": "9.186693331327301586"
+  },
+  "expires_at": "2025-07-17T08:06:13.355020",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 07:56:13 - polygon_service - INFO - Successfully stored transaction 775e3fae-2144-448b-8d81-c2213ef704c7, result: 2025-07-17 08:11:13.355491
+2025-07-17 07:56:13 - polygon_service - DEBUG - Retrieved Polygon transaction 775e3fae-2144-448b-8d81-c2213ef704c7 from storage
+2025-07-17 07:56:13 - polygon_service - INFO - Verified transaction 775e3fae-2144-448b-8d81-c2213ef704c7 is stored
+2025-07-17 07:56:13 - polygon_service - INFO - Transaction event: {"transaction_id": "775e3fae-2144-448b-8d81-c2213ef704c7", "event": "prepared", "timestamp": "2025-07-17T07:56:13.357065", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000010395000", "explorer_url": "https://polygonscan.com/tx/775e3fae-2144-448b-8d81-c2213ef704c7", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.185126331316906586", "sender_balance_before": "9.186693331327301586"}, "expires_at": "2025-07-17T08:11:13.355491", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T07:56:13.355502"}
+2025-07-17 07:56:13 - polygon_service - DEBUG - Retrieved Polygon transaction 775e3fae-2144-448b-8d81-c2213ef704c7 from storage
+2025-07-17 07:56:13 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1
+2025-07-17 07:56:13 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 07:56:13 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 07:56:13 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 10
+2025-07-17 08:14:29 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b0e571119edd7f803fd0"}')
+2025-07-17 08:15:42 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b12e71119edd7f804081"}')
+2025-07-17 08:16:28 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b15c600c176cad1db73c"}')
+2025-07-17 08:17:46 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b1aadaf2fb1782f1c8b7"}')
+2025-07-17 08:20:15 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 08:20:15 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:20:15 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:23:33 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b30508734b55341341f8"}')
+2025-07-17 08:24:50 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b352600c176cad1db91e"}')
+2025-07-17 08:25:46 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878b38aa7a243511c173743"}')
+2025-07-17 08:53:50 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba1ed7428c89073077e5"}')
+2025-07-17 08:54:02 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba2adaf2fb1782f1d10a"}')
+2025-07-17 08:54:24 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba409155a13078194e3b"}')
+2025-07-17 08:55:21 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 08:55:21 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:55:22 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:55:22 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.185126331316948586
+2025-07-17 08:55:22 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000835 Wei
+2025-07-17 08:55:22 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 08:55:22 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000835 Wei, Gas Limit: 21000, Fee Wei: 567000017535000, Fee MATIC: 0.000567000017535000
+2025-07-17 08:55:22 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000017535000 POL
+2025-07-17 08:55:22 - polygon_service - INFO - [Comparison] Balance: 9.185126331316948586, Amount: 0.001, Fee: 0.000567000017535000, Required: 0.001567000017535000
+2025-07-17 08:55:22 - polygon_service - INFO - Storing transaction b723a81e-902f-42df-8814-1f316eb44914 in shared storage
+2025-07-17 08:55:22 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 08:55:22 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "b723a81e-902f-42df-8814-1f316eb44914",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000017535000",
+    "explorer_url": "https://polygonscan.com/tx/b723a81e-902f-42df-8814-1f316eb44914",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.183559331299413586",
+    "sender_balance_before": "9.185126331316948586"
+  },
+  "expires_at": "2025-07-17T09:05:22.424587",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 08:55:22 - polygon_service - INFO - Successfully stored transaction b723a81e-902f-42df-8814-1f316eb44914, result: 2025-07-17 09:10:22.431285
+2025-07-17 08:55:22 - polygon_service - DEBUG - Retrieved Polygon transaction b723a81e-902f-42df-8814-1f316eb44914 from storage
+2025-07-17 08:55:22 - polygon_service - INFO - Verified transaction b723a81e-902f-42df-8814-1f316eb44914 is stored
+2025-07-17 08:55:22 - polygon_service - INFO - Transaction event: {"transaction_id": "b723a81e-902f-42df-8814-1f316eb44914", "event": "prepared", "timestamp": "2025-07-17T08:55:22.433428", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000017535000", "explorer_url": "https://polygonscan.com/tx/b723a81e-902f-42df-8814-1f316eb44914", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.183559331299413586", "sender_balance_before": "9.185126331316948586"}, "expires_at": "2025-07-17T09:10:22.431285", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T08:55:22.431306"}
+2025-07-17 08:55:31 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba8371119edd7f804a48"}')
+2025-07-17 08:55:37 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba89600c176cad1dc05f"}')
+2025-07-17 08:55:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:55:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:55:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:55:39 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.185126331316948586
+2025-07-17 08:55:39 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000838 Wei
+2025-07-17 08:55:39 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 08:55:39 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000838 Wei, Gas Limit: 21000, Fee Wei: 567000017598000, Fee MATIC: 0.000567000017598000
+2025-07-17 08:55:39 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000017598000 POL
+2025-07-17 08:55:39 - polygon_service - INFO - [Comparison] Balance: 9.185126331316948586, Amount: 0.001, Fee: 0.000567000017598000, Required: 0.001567000017598000
+2025-07-17 08:55:39 - polygon_service - INFO - Storing transaction a97ba697-8268-4581-9ddf-a91851ab8197 in shared storage
+2025-07-17 08:55:39 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 08:55:39 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "a97ba697-8268-4581-9ddf-a91851ab8197",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000017598000",
+    "explorer_url": "https://polygonscan.com/tx/a97ba697-8268-4581-9ddf-a91851ab8197",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.183559331299350586",
+    "sender_balance_before": "9.185126331316948586"
+  },
+  "expires_at": "2025-07-17T09:05:39.044950",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 08:55:39 - polygon_service - INFO - Successfully stored transaction a97ba697-8268-4581-9ddf-a91851ab8197, result: 2025-07-17 09:10:39.046711
+2025-07-17 08:55:39 - polygon_service - DEBUG - Retrieved Polygon transaction a97ba697-8268-4581-9ddf-a91851ab8197 from storage
+2025-07-17 08:55:39 - polygon_service - INFO - Verified transaction a97ba697-8268-4581-9ddf-a91851ab8197 is stored
+2025-07-17 08:55:39 - polygon_service - INFO - Transaction event: {"transaction_id": "a97ba697-8268-4581-9ddf-a91851ab8197", "event": "prepared", "timestamp": "2025-07-17T08:55:39.049455", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000017598000", "explorer_url": "https://polygonscan.com/tx/a97ba697-8268-4581-9ddf-a91851ab8197", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.183559331299350586", "sender_balance_before": "9.185126331316948586"}, "expires_at": "2025-07-17T09:10:39.046711", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T08:55:39.046732"}
+2025-07-17 08:55:39 - polygon_service - DEBUG - Retrieved Polygon transaction a97ba697-8268-4581-9ddf-a91851ab8197 from storage
+2025-07-17 08:55:39 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1
+2025-07-17 08:55:39 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 08:55:39 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 08:55:39 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 1
+2025-07-17 08:55:47 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-17 08:55:47 - polygon_service - DEBUG - Signed transaction length: 224 characters
+2025-07-17 08:55:47 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-17 08:55:47 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6878ba93600c176cad1dc064"}')
+2025-07-17 08:55:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:55:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 08:55:48 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.185126331316948586
+2025-07-17 08:55:48 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000830 Wei
+2025-07-17 08:55:48 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-17 08:55:48 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000830 Wei, Gas Limit: 21000, Fee Wei: 567000017430000, Fee MATIC: 0.000567000017430000
+2025-07-17 08:55:48 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000017430000 POL
+2025-07-17 08:55:48 - polygon_service - INFO - [Comparison] Balance: 9.185126331316948586, Amount: 0.001, Fee: 0.000567000017430000, Required: 0.001567000017430000
+2025-07-17 08:55:48 - polygon_service - INFO - Storing transaction de5c7cc3-84bf-4406-880d-b69aa7eed950 in shared storage
+2025-07-17 08:55:48 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-17 08:55:48 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "de5c7cc3-84bf-4406-880d-b69aa7eed950",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000567000017430000",
+    "explorer_url": "https://polygonscan.com/tx/de5c7cc3-84bf-4406-880d-b69aa7eed950",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.183559331299518586",
+    "sender_balance_before": "9.185126331316948586"
+  },
+  "expires_at": "2025-07-17T09:05:48.649162",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-17 08:55:48 - polygon_service - INFO - Successfully stored transaction de5c7cc3-84bf-4406-880d-b69aa7eed950, result: 2025-07-17 09:10:48.649537
+2025-07-17 08:55:48 - polygon_service - DEBUG - Retrieved Polygon transaction de5c7cc3-84bf-4406-880d-b69aa7eed950 from storage
+2025-07-17 08:55:48 - polygon_service - INFO - Verified transaction de5c7cc3-84bf-4406-880d-b69aa7eed950 is stored
+2025-07-17 08:55:48 - polygon_service - INFO - Transaction event: {"transaction_id": "de5c7cc3-84bf-4406-880d-b69aa7eed950", "event": "prepared", "timestamp": "2025-07-17T08:55:48.651395", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000567000017430000", "explorer_url": "https://polygonscan.com/tx/de5c7cc3-84bf-4406-880d-b69aa7eed950", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.183559331299518586", "sender_balance_before": "9.185126331316948586"}, "expires_at": "2025-07-17T09:10:48.649537", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-17T08:55:48.649544"}
+2025-07-17 08:55:48 - polygon_service - DEBUG - Retrieved Polygon transaction de5c7cc3-84bf-4406-880d-b69aa7eed950 from storage
+2025-07-17 08:55:48 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1
+2025-07-17 08:55:48 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-17 08:55:48 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-17 08:55:48 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 10
+2025-07-17 08:55:55 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-17 08:55:55 - polygon_service - DEBUG - Signed transaction length: 224 characters
+2025-07-17 08:55:55 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-17 08:55:56 - polygon_service - ERROR - Tatum API returned invalid response: ({'txId': '0x78dac5f958d302070d6d2436ec10f922ba41eeeed212abc176c4163d09040b0c', 'transaction_hash': '0x78dac5f958d302070d6d2436ec10f922ba41eeeed212abc176c4163d09040b0c', 'status': 'pending'}, None)
+2025-07-17 10:46:55 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 10:46:55 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 10:46:55 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 10:47:14 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-17 10:47:14 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 10:47:14 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-17 20:55:52 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=68796358600c176cad1e838b"}')
+2025-07-17 20:55:55 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6879635b8cc215dce3444e83"}')
+2025-07-17 20:55:58 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6879635e9155a130781a111b"}')
+2025-07-19 10:40:14 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b760ea7a243511c1a7956"}')
+2025-07-19 10:40:20 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b761471119edd7f83844e"}')
+2025-07-19 10:40:23 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b76179840217ebda5fb07"}')
+2025-07-19 10:40:33 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b7621d7428c890733af35"}')
+2025-07-19 10:45:51 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b775f1628e032e3114568"}')
+2025-07-19 10:49:20 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b78309d56841a06d46c76"}')
+2025-07-19 10:57:30 - polygon_service - ERROR - Tatum API returned invalid response: ({'txId': '0x18358280a4ed9404fd80b78d3e4d4f98ce0bf487a986fc5914f1b053e6f2d03d', 'transaction_hash': '0x18358280a4ed9404fd80b78d3e4d4f98ce0bf487a986fc5914f1b053e6f2d03d', 'status': 'pending'}, None)
+2025-07-19 11:29:29 - polygon_service - ERROR - Tatum API returned invalid response: ({}, 'Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8199d7428c890733bab4"}')

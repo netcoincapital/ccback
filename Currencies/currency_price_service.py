@@ -11,6 +11,7 @@ from database.prices import Price
 from utils.logging_config import get_logger
 from Currencies.api_key_manager import ApiKeyManager
 from database.Currencies import Currencies
+from Currencies.historical_data_service import HistoricalDataService
 
 # تنظیم لاگر
 logger = get_logger(__file__)
@@ -34,14 +35,19 @@ def dynamic_decimal_format(price_value: float) -> str:
     Returns:
         str: Formatted price string with appropriate decimal places
     """
-    if price_value >= 1:
+    if price_value == 0:
+        return "0.00000000"
+    elif price_value >= 1:
         return f"{price_value:,.2f}"
     elif price_value >= 0.01:
         return f"{price_value:,.4f}"
     elif price_value >= 0.0001:
         return f"{price_value:,.6f}"
-    else:
+    elif price_value >= 0.00000001:
         return f"{price_value:,.8f}"
+    else:
+        # برای اعداد خیلی کوچک، از نمایش علمی جلوگیری کنیم
+        return f"{price_value:.12f}".rstrip('0').rstrip('.')
 
 # Define CurrencyPriceService class
 class CurrencyPriceService:
@@ -51,6 +57,7 @@ class CurrencyPriceService:
         logger.debug("Initializing CurrencyPriceService")
         self.api_key_manager = ApiKeyManager()
         self.base_url = "https://pro-api.coinmarketcap.com/v1"
+        self.historical_service = HistoricalDataService()
         
     def get_api_key(self):
         """
@@ -229,9 +236,15 @@ class CurrencyPriceService:
         """
         if fiat_currencies is None:
             fiat_currencies = ["USD"]
+        
+        # فیلتر کردن NCC توکن‌ها (8517, 8519) - آن‌ها توسط شبیه‌ساز اختصاصی کنترل می‌شوند
+        symbols = [s for s in symbols if s not in [8517, 8519]]
+        if len(symbols) == 0:
+            logger.info("No symbols to update after filtering NCC tokens")
+            return {"success": True, "message": "No symbols to update", "updated_count": 0}
             
         try:
-            logger.info(f"Starting update_prices for {len(symbols)} currency IDs in {len(fiat_currencies)} currencies")
+            logger.info(f"Starting update_prices for {len(symbols)} currency IDs in {len(fiat_currencies)} currencies (NCC tokens filtered out)")
             logger.debug(f"Currency IDs to update: {symbols}")
             logger.debug(f"Fiat currencies to update: {fiat_currencies}")
             
@@ -240,6 +253,7 @@ class CurrencyPriceService:
             try:
                 # دریافت مپینگ CurrencyID به CMC_ID از دیتابیس
                 currency_mapping = {}
+                cmc_to_currency_ids = {}  # مپینگ CMC_ID به لیست CurrencyID ها
                 
                 # اگر symbols خالی باشد، همه ارزها را بگیر
                 if not symbols:
@@ -248,13 +262,24 @@ class CurrencyPriceService:
                 else:
                     currencies = session.query(Currencies).filter(Currencies.CurrencyID.in_(symbols), Currencies.CMC_ID.isnot(None)).all()
                 
-                # ساخت مپینگ بین CurrencyID و CMC_ID
+                # ساخت مپینگ بین CurrencyID و CMC_ID و گروه‌بندی بر اساس CMC_ID
                 for currency in currencies:
                     if currency.CMC_ID:  # فقط ارزهایی که CMC_ID دارند
-                        currency_mapping[currency.CurrencyID] = str(currency.CMC_ID)
+                        cmc_id_str = str(currency.CMC_ID)
+                        currency_mapping[currency.CurrencyID] = cmc_id_str
+                        
+                        # گروه‌بندی CurrencyID ها بر اساس CMC_ID
+                        if cmc_id_str not in cmc_to_currency_ids:
+                            cmc_to_currency_ids[cmc_id_str] = []
+                        cmc_to_currency_ids[cmc_id_str].append(currency.CurrencyID)
                 
-                logger.info(f"Found {len(currency_mapping)} currencies with valid CMC_ID")
+                # حذف CMC_ID های تکراری برای API call
+                unique_cmc_ids = list(cmc_to_currency_ids.keys())
+                
+                logger.info(f"Found {len(currency_mapping)} total currency records with valid CMC_ID")
+                logger.info(f"Unique CMC_IDs for API calls: {len(unique_cmc_ids)} (optimized from {len(currency_mapping)} records)")
                 logger.debug(f"Currency mapping: {currency_mapping}")
+                logger.debug(f"CMC_ID grouping: {cmc_to_currency_ids}")
                 
                 # بررسی ارزهایی که CMC_ID ندارند
                 missing_cmc_ids = [c_id for c_id in symbols if c_id not in currency_mapping]
@@ -269,6 +294,7 @@ class CurrencyPriceService:
             finally:
                 session.close()
             
+            # متغیرهای مشترک برای همه fiat currencies
             success_count = 0
             fail_count = 0
             currency_ids = list(currency_mapping.keys())  # لیست CurrencyID ها
@@ -276,20 +302,16 @@ class CurrencyPriceService:
             for fiat in fiat_currencies:
                 logger.info(f"Processing {fiat} currency updates")
                 
-                # تبدیل CurrencyID ها به CMC_ID ها برای فراخوانی API
-                # اینجا باید از CMC_ID برای فراخوانی API استفاده کنیم نه CurrencyID
-                cmc_ids = [currency_mapping[c_id] for c_id in currency_ids if c_id in currency_mapping]
-                
-                if not cmc_ids:
-                    logger.warning(f"No valid CMC IDs found for currencies, skipping {fiat}")
+                # استفاده از CMC_ID های یکتا برای فراخوانی API (بهینه‌سازی شده)
+                if not unique_cmc_ids:
+                    logger.warning(f"No valid unique CMC IDs found for currencies, skipping {fiat}")
                     continue
                     
-                logger.debug(f"Using CMC IDs for API call: {cmc_ids}")
+                logger.debug(f"Using unique CMC IDs for API call: {unique_cmc_ids} (total: {len(unique_cmc_ids)})")
                 
-                # Get latest prices and changes using CMC_IDs
-                # اطمینان از اینکه cmc_ids شناسه‌های مناسب برای API هستند
-                prices = self.get_latest_prices(cmc_ids, fiat)
-                changes = self.get_24h_changes(cmc_ids, fiat)
+                # Get latest prices and changes using unique CMC_IDs
+                prices = self.get_latest_prices(unique_cmc_ids, fiat)
+                changes = self.get_24h_changes(unique_cmc_ids, fiat)
                 
                 # بررسی کامل داده‌های دریافتی
                 logger.debug(f"Prices received from API: {prices}")
@@ -303,9 +325,6 @@ class CurrencyPriceService:
                 if isinstance(changes, dict) and changes.get("status") == "error":
                     logger.error(f"Error fetching changes for {fiat}: {changes.get('message')}")
                     continue
-                
-                # تهیه یک مپینگ معکوس از CMC_ID به CurrencyID برای استفاده در به‌روزرسانی دیتابیس
-                reverse_mapping = {v: k for k, v in currency_mapping.items()}
                 
                 # Update database - create a new session for each fiat currency
                 session = Session(bind=engine)
@@ -329,57 +348,62 @@ class CurrencyPriceService:
                     except Exception as table_err:
                         logger.error(f"Error checking price table: {str(table_err)}", exc_info=True)
                     
-                    # Update database - اینجا از مپینگ معکوس استفاده می‌کنیم
-                    for cmc_id, currency_id in reverse_mapping.items():
+                    # Update database - به‌روزرسانی همه CurrencyID های مربوط به هر CMC_ID
+                    for cmc_id in unique_cmc_ids:
                         # بررسی اگر CMC_ID در نتایج API وجود دارد
                         price_value = prices.get(cmc_id)
                         change_value = changes.get(cmc_id)
                         
-                        logger.debug(f"Processing CMC_ID {cmc_id} (CurrencyID {currency_id}) in {fiat}: price={price_value}, change={change_value}")
-                        
                         if not isinstance(price_value, (int, float)):
-                            logger.warning(f"Invalid price value for CMC_ID {cmc_id} (CurrencyID {currency_id}) in {fiat}: {price_value}")
-                            fiat_fail += 1
+                            logger.warning(f"Invalid price value for CMC_ID {cmc_id} in {fiat}: {price_value}")
+                            # تمام CurrencyID های این CMC_ID را fail حساب کن
+                            fiat_fail += len(cmc_to_currency_ids.get(cmc_id, []))
                             continue
                         
-                        try:
-                            # استفاده از CurrencyID برای به‌روزرسانی دیتابیس
-                            existing_price = session.query(Price).filter_by(
-                                crypto_id=currency_id, 
-                                currency=fiat
-                            ).first()
-                            
-                            if existing_price:
-                                # Update existing price
-                                logger.debug(f"Updating existing record for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {existing_price.price} → {price_value}")
-                                existing_price.price = price_value
-                                existing_price.change_24h = change_value
-                                # Don't modify other fields if they already have values
-                            else:
-                                # Create new price entry with minimal required fields
-                                logger.debug(f"Creating new price record for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {price_value}")
-                                new_price = Price(
-                                    crypto_id=currency_id,  # استفاده از CurrencyID داخلی
-                                    currency=fiat,
-                                    price=price_value,
-                                    change_24h=change_value
-                                )
-                                session.add(new_price)
-                            
-                            # Commit each record individually to avoid batch errors
-                            logger.debug(f"Committing transaction for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}")
-                            session.commit()
-                            fiat_success += 1
-                            logger.debug(f"Successfully saved price for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}")
-                            
-                        except Exception as record_error:
-                            # If error occurs for one record, rollback that transaction and continue with others
-                            session.rollback()
-                            fiat_fail += 1
-                            logger.error(f"Error updating price for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {str(record_error)}", exc_info=True)
-                            # بررسی دقیق‌تر خطای SQL 
-                            if hasattr(record_error, 'orig') and record_error.orig:
-                                logger.error(f"SQL error details: {str(record_error.orig)}")
+                        # به‌روزرسانی همه CurrencyID هایی که این CMC_ID را دارند
+                        currency_ids_for_cmc = cmc_to_currency_ids.get(cmc_id, [])
+                        logger.debug(f"Processing CMC_ID {cmc_id} in {fiat}: price={price_value}, change={change_value}")
+                        logger.debug(f"Updating {len(currency_ids_for_cmc)} currency records: {currency_ids_for_cmc}")
+                        
+                        for currency_id in currency_ids_for_cmc:
+                            try:
+                                # استفاده از CurrencyID برای به‌روزرسانی دیتابیس
+                                existing_price = session.query(Price).filter_by(
+                                    crypto_id=currency_id, 
+                                    currency=fiat
+                                ).first()
+                                
+                                if existing_price:
+                                    # Update existing price
+                                    logger.debug(f"Updating existing record for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {existing_price.price} → {price_value}")
+                                    existing_price.price = price_value
+                                    existing_price.change_24h = change_value
+                                    # Don't modify other fields if they already have values
+                                else:
+                                    # Create new price entry with minimal required fields
+                                    logger.debug(f"Creating new price record for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {price_value}")
+                                    new_price = Price(
+                                        crypto_id=currency_id,  # استفاده از CurrencyID داخلی
+                                        currency=fiat,
+                                        price=price_value,
+                                        change_24h=change_value
+                                    )
+                                    session.add(new_price)
+                                
+                                # Commit each record individually to avoid batch errors
+                                logger.debug(f"Committing transaction for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}")
+                                session.commit()
+                                fiat_success += 1
+                                logger.debug(f"Successfully saved price for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}")
+                                
+                            except Exception as record_error:
+                                # If error occurs for one record, rollback that transaction and continue with others
+                                session.rollback()
+                                fiat_fail += 1
+                                logger.error(f"Error updating price for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {str(record_error)}", exc_info=True)
+                                # بررسی دقیق‌تر خطای SQL 
+                                if hasattr(record_error, 'orig') and record_error.orig:
+                                    logger.error(f"SQL error details: {str(record_error.orig)}")
                     
                     success_count += fiat_success
                     fail_count += fiat_fail
@@ -400,4 +424,90 @@ class CurrencyPriceService:
             
         except Exception as e:
             logger.error(f"Error in update_prices: {str(e)}", exc_info=True)
-            return False 
+            return False
+    
+    def get_historical_data(self, currency_ids, time_start=None, time_end=None, interval="daily", fiat_currencies=None):
+        """
+        Get historical price data for specified currencies
+        
+        Args:
+            currency_ids (list): List of internal currency IDs
+            time_start (str): Start time in ISO format
+            time_end (str): End time in ISO format
+            interval (str): Time interval (daily, hourly, etc.)
+            fiat_currencies (list): List of fiat currency codes
+            
+        Returns:
+            dict: Historical data result
+        """
+        try:
+            logger.info(f"Getting historical data for {len(currency_ids)} currencies")
+            
+            # First try to get from stored data
+            stored_data = self.historical_service.get_stored_historical_data(
+                currency_ids, time_start, time_end, fiat_currencies
+            )
+            
+            if stored_data.get("success") and stored_data.get("data"):
+                logger.info("Retrieved historical data from database")
+                return stored_data
+            
+            # If no stored data, fetch from API and store
+            logger.info("No stored data found, fetching from API")
+            result = self.historical_service.store_historical_data(
+                currency_ids, time_start, time_end, interval, fiat_currencies
+            )
+            
+            if result.get("success"):
+                # Now get the stored data
+                stored_data = self.historical_service.get_stored_historical_data(
+                    currency_ids, time_start, time_end, fiat_currencies
+                )
+                return stored_data
+            else:
+                return result
+                
+        except Exception as e:
+            logger.error(f"Error getting historical data: {str(e)}", exc_info=True)
+            return {"success": False, "message": str(e)}
+    
+    def update_historical_data(self, currency_ids=None, time_start=None, time_end=None, interval="daily", fiat_currencies=None):
+        """
+        Update historical data for specified currencies
+        
+        Args:
+            currency_ids (list): List of internal currency IDs (if None, update all)
+            time_start (str): Start time in ISO format
+            time_end (str): End time in ISO format
+            interval (str): Time interval
+            fiat_currencies (list): List of fiat currency codes
+            
+        Returns:
+            dict: Update result
+        """
+        try:
+            logger.info("Starting historical data update")
+            
+            # If no specific currencies provided, get all currencies with CMC_ID
+            if not currency_ids:
+                session = Session(bind=engine)
+                try:
+                    currencies = session.query(Currencies).filter(Currencies.CMC_ID.isnot(None)).all()
+                    currency_ids = [c.CurrencyID for c in currencies]
+                    logger.info(f"Found {len(currency_ids)} currencies with CMC_ID for historical update")
+                finally:
+                    session.close()
+            
+            if not currency_ids:
+                return {"success": False, "message": "No currencies found for historical update"}
+            
+            # Update historical data
+            result = self.historical_service.store_historical_data(
+                currency_ids, time_start, time_end, interval, fiat_currencies
+            )
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error updating historical data: {str(e)}", exc_info=True)
+            return {"success": False, "message": str(e)} 

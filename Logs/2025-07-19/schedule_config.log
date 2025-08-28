@@ -1,0 +1,324 @@
+2025-07-19 11:36:59 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:36:59 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:36:59 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:36:59 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:36:59 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:36:59 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:36:59 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:36:59 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:36:59 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:37:00 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:37:00 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:37:00 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:37:00 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:37:00 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:37:00 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:37:00 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:43:11 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:43:11 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:43:11 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:43:11 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:43:11 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:43:11 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:43:11 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:43:11 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:43:11 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:43:11 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:57:46 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:57:46 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:57:46 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:57:46 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:57:46 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:57:46 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 11:57:46 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 11:57:46 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 11:57:46 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 11:57:46 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:03:46 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:03:46 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:03:46 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:03:46 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:03:46 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:03:46 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:03:46 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:03:46 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:03:46 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:03:47 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:03:47 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:03:47 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:03:47 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:03:47 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:03:47 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:03:47 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:16:39 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:16:39 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:16:39 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:16:39 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:16:39 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:16:39 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:16:39 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:16:39 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:16:39 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:16:40 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:16:40 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:16:40 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:16:40 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:16:40 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:16:40 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:16:40 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:16:40 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:16:40 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:16:41 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:16:41 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:16:41 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:16:41 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:16:41 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:16:41 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:16:41 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:16:41 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:16:41 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:22:28 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:22:28 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:22:28 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:22:28 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:22:28 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:22:28 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:22:28 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:22:28 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:22:28 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:22:29 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:22:29 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:22:29 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 12:22:29 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 12:22:29 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 12:22:29 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 12:22:29 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 14:24:19 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 14:24:19 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 14:24:19 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 14:24:19 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 14:24:19 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 14:24:19 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 14:24:19 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 14:24:19 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 14:24:19 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 14:24:20 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 14:24:20 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 14:24:20 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 14:24:20 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 14:24:20 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 14:24:20 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 14:24:20 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:31:56 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:31:56 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:31:56 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:31:56 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:31:56 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:31:56 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:31:56 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:31:56 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:31:56 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:31:56 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:38:37 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:38:37 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:38:37 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:38:37 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:38:37 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:38:37 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:38:37 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:38:37 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:38:37 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:38:37 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:55:27 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:55:27 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:55:27 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:55:27 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:55:27 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:55:27 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:55:27 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:55:27 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:55:27 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:55:28 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:55:28 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:55:28 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 15:55:28 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 15:55:28 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 15:55:28 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 15:55:28 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 16:06:33 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 16:06:33 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 16:06:33 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 16:06:33 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 16:06:33 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 16:06:33 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 16:06:33 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 16:06:33 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 16:06:33 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 16:06:33 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 19:29:34 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 19:29:34 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 19:29:34 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 19:29:34 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 19:29:34 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 19:29:34 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 19:29:34 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 19:29:34 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 19:29:34 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 19:29:46 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 19:29:46 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 19:29:46 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 19:29:46 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 19:29:46 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 19:29:46 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 19:29:46 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 19:29:46 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 19:29:46 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]
+2025-07-19 19:30:00 - schedule_config - DEBUG - Logger initialized for schedule_config at level DEBUG
+2025-07-19 19:30:00 - schedule_config - INFO - Loading schedule configuration
+2025-07-19 19:30:00 - schedule_config - INFO - Schedule configuration loaded: 5 schedules defined
+2025-07-19 19:30:00 - schedule_config - INFO - Batch size set to: 50 coins per package
+2025-07-19 19:30:00 - schedule_config - DEBUG - Schedule 1: Every 5 minutes for 1 package(s): [0]
+2025-07-19 19:30:00 - schedule_config - DEBUG - Schedule 2: Every 10 minutes for 1 package(s): [1]
+2025-07-19 19:30:00 - schedule_config - DEBUG - Schedule 3: Every 15 minutes for 1 package(s): [2]
+2025-07-19 19:30:00 - schedule_config - DEBUG - Schedule 4: Every 60 minutes for 6 package(s): [3, 4, 5, 6, 7, 8]
+2025-07-19 19:30:00 - schedule_config - DEBUG - Schedule 5: Every 180 minutes for 9 package(s): [9, 10, 11, 12, 13, 14, 15, 16, 17]

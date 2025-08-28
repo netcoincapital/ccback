@@ -1,4 +1,4 @@
-from webhook.chains.bnb.processor import BNBProcessor
+from CC.webhook.chains.bnb.processor import BNBProcessor
 
 # ایجاد نمونه پردازشگر برای استفاده در webhook_routes.py
 processor = BNBProcessor()

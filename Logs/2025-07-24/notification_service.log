@@ -1,0 +1,7 @@
+2025-07-24 01:06:30 - notification_service - DEBUG - Logger initialized for notification_service at level DEBUG
+2025-07-24 01:06:56 - notification_service - WARNING - ⚠️ notify method called
+2025-07-24 01:06:56 - notification_service - WARNING - No device tokens found for sending push notification
+2025-07-24 10:18:36 - notification_service - DEBUG - Logger initialized for notification_service at level DEBUG
+2025-07-28 23:05:48 - notification_service - WARNING - ⚠️ notify method called
+2025-07-28 23:08:52 - notification_service - WARNING - ⚠️ notify method called
+2025-07-29 07:35:42 - notification_service - WARNING - ⚠️ notify method called

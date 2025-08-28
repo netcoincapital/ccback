@@ -1,0 +1,20 @@
+2025-08-05 07:25:10 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 07:26:12 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 07:26:48 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 07:57:02 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x35e08236cc2cbcca6bbbc0301ffcd9bc21f5ef6b
+2025-08-05 09:17:42 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x35e08236cc2cbcca6bbbc0301ffcd9bc21f5ef6b
+2025-08-05 11:18:44 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 11:18:59 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 11:26:52 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x07672f5a5553249d65a20d05e1aca78924fd5476
+2025-08-05 11:26:52 - transaction_processor - ERROR - Error saving transaction 0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74 to database - check database_operations.log for more details
+2025-08-05 11:31:37 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x35e08236cc2cbcca6bbbc0301ffcd9bc21f5ef6b
+2025-08-05 18:00:34 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 18:00:34 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 18:00:34 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 18:01:16 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 18:01:16 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 18:01:17 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-05 19:52:36 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x07672f5a5553249d65a20d05e1aca78924fd5476
+2025-08-05 19:52:37 - transaction_processor - ERROR - Error saving transaction 0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e to database - check database_operations.log for more details
+2025-08-05 19:56:57 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x35e08236cc2cbcca6bbbc0301ffcd9bc21f5ef6b
+2025-08-07 00:17:52 - transaction_processor - ERROR - Error saving transaction 0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419 to database - check database_operations.log for more details

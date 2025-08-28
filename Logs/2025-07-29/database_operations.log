@@ -1,0 +1,15 @@
+2025-07-29 21:23:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-29 21:23:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-29 21:23:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-29 21:29:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-29 21:29:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-29 21:29:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-29 21:29:42 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای NCC در بلاکچین TRX یافت نشد
+2025-07-29 21:29:42 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-29 21:29:42 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=b3db31ce-0b14-4096-9f4c-b5c5b588af96 و tx_id=07dd5b02eaa828de7d2917dea6b90216edb60fce68f7a6b1b54fac81ca7fecc8 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-29 21:33:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-29 21:33:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-29 21:33:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-31 09:33:37 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-07-31 09:33:38 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-31 09:33:38 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=fa97c815-fc13-4280-bc12-33f70a24268d و tx_id=0x817831b81eb7711fe58afd6688668f8c83bc0178f7de2e11e4b6ad7e3686a569 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.

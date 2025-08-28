@@ -111,12 +111,13 @@ try:
     
     # Run migration to increase DeviceToken field length
     try:
-        from migrations.add_user_device_token_length import run_migration
-        migration_result = run_migration()
-        if migration_result:
-            logger.info("DeviceToken field length migration completed successfully")
-        else:
-            logger.warning("DeviceToken field length migration was not needed or failed")
+        # from migrations.add_user_device_token_length import run_migration
+        # migration_result = run_migration()
+        # if migration_result:
+        #     logger.info("DeviceToken field length migration completed successfully")
+        # else:
+        #     logger.warning("DeviceToken field length migration was not needed or failed")
+        logger.info("Skipping DeviceToken migration - migrations module not available")
     except Exception as migration_error:
         logger.error(f"Error running DeviceToken migration: {str(migration_error)}", exc_info=True)
         
@@ -138,6 +139,7 @@ try:
     from generate import generate_bp
     from ImportWallet import import_bp
     from Currencies import Prices_bp, CPost_bp
+    from Currencies.chart_api import chart_bp
     from Transactions import receive_bp, gasfee_bp
     from Send import send_bp
     from balance import balance_api
@@ -145,7 +147,7 @@ try:
     from fee_estimator.api import fee_estimator_bp
     from api.notification_api import notification_api
     from api import init_api_routes
-    from api.middleware import debug_auth_middleware
+    # Authentication middleware removed - using UserID-based authentication
     
     # Register blueprints
     logger.info("Registering blueprints")
@@ -158,6 +160,8 @@ try:
     logger.info(f"Registered Prices_bp - contains {len(Prices_bp.deferred_functions)} routes")
     app.register_blueprint(CPost_bp, url_prefix='')
     logger.info("Registered CPost_bp")
+    app.register_blueprint(chart_bp, url_prefix='')
+    logger.info("Registered chart_bp")
     app.register_blueprint(receive_bp, url_prefix='')
     logger.info("Registered receive_bp")
     app.register_blueprint(gasfee_bp, url_prefix='')
@@ -184,9 +188,8 @@ try:
     init_api_routes(app)
     logger.info("Registered blockchain API endpoints")
     
-    # Apply middleware for debugging authentication errors
-    app = debug_auth_middleware(app)
-    logger.info("Applied debug authentication middleware")
+    # Authentication middleware removed - using UserID-based authentication instead
+    logger.info("Using UserID-based authentication instead of session-based")
     
     logger.info("All blueprints registered successfully")
 except Exception as e:
@@ -293,7 +296,7 @@ try:
 except Exception as scheduler_error:
     app.logger.error(f"Error starting price scheduler: {str(scheduler_error)}", exc_info=True)
 
-# اضافه کردن شبیه‌ساز قیمت NCC
+# اضافه کردن شبیه‌ساز قیمت NCC با الگوریتم جدید
 try:
     # بررسی اینکه شبیه‌ساز NCC از قبل در حال اجرا نباشد
     ncc_simulator_thread = None
@@ -306,7 +309,8 @@ try:
     
     if not ncc_simulator_thread:
         from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
-        app.logger.info("Starting NCC price simulator...")
+        app.logger.info("Starting NCC price simulator with natural volatility algorithm...")
+        app.logger.info("🚀 NCC: $0.22 → $0.80 در 9 ماه با نوسانات 20-30%")
         ncc_simulator_thread = threading.Thread(target=ncc_price_simulator, daemon=True, name="NCCPriceSimulator")
         ncc_simulator_thread.start()
         app.logger.info("NCC price simulator started successfully")
@@ -315,6 +319,28 @@ except Exception as ncc_error:
     app.logger.error(f"Error starting NCC price simulator: {str(ncc_error)}", exc_info=True)
     # نمایش جزئیات خطا برای عیب‌یابی
     app.logger.error(f"NCC price simulator error details: {traceback.format_exc()}")
+    # در صورت خطا برنامه ادامه پیدا می‌کند
+
+# اضافه کردن Historical Data Scheduler
+try:
+    # بررسی اینکه Historical Data Scheduler از قبل در حال اجرا نباشد
+    historical_scheduler_thread = None
+    
+    for thread in threading.enumerate():
+        if thread.name == "HistoricalDataScheduler":
+            historical_scheduler_thread = thread
+            app.logger.info(f"Historical data scheduler is already running in thread: {thread.name}")
+            break
+    
+    if not historical_scheduler_thread:
+        from Currencies.historical_scheduler import start_historical_scheduler
+        app.logger.info("Starting historical data scheduler...")
+        scheduler = start_historical_scheduler()
+        app.logger.info("📊 Historical data will be updated every 24 hours automatically")
+        app.logger.info("Historical data scheduler started successfully")
+    
+except Exception as historical_error:
+    app.logger.error(f"Error starting historical data scheduler: {str(historical_error)}", exc_info=True)
     # در صورت خطا برنامه ادامه پیدا می‌کند
 
 @app.route('/')
@@ -669,6 +695,102 @@ def test_config():
         'python_version': sys.version,
         'message': 'Configuration test completed'
     })
+
+@app.route('/api/historical-scheduler-status', methods=['GET'])
+def historical_scheduler_status():
+    """Get historical data scheduler status"""
+    try:
+        from Currencies.historical_scheduler import get_historical_scheduler
+        
+        scheduler = get_historical_scheduler()
+        
+        # Check if thread is running
+        is_running = scheduler.is_running()
+        
+        # Get thread info
+        thread_info = None
+        for thread in threading.enumerate():
+            if thread.name == "HistoricalDataScheduler":
+                thread_info = {
+                    'name': thread.name,
+                    'alive': thread.is_alive(),
+                    'daemon': thread.daemon
+                }
+                break
+        
+        return jsonify({
+            'success': True,
+            'scheduler_running': is_running,
+            'thread_info': thread_info,
+            'config': {
+                'update_interval_hours': scheduler.update_interval_hours,
+                'max_currencies_per_batch': scheduler.max_currencies_per_batch,
+                'days_to_fetch': scheduler.days_to_fetch
+            },
+            'message': 'Historical scheduler is running' if is_running else 'Historical scheduler is stopped'
+        })
+        
+    except Exception as e:
+        logger.error(f"Error checking historical scheduler status: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'message': 'Error checking scheduler status'
+        }), 500
+
+@app.route('/api/historical-scheduler-control', methods=['POST'])
+def historical_scheduler_control():
+    """Control historical data scheduler (start/stop/restart)"""
+    try:
+        data = request.get_json() or {}
+        action = data.get('action', '').lower()
+        
+        if action not in ['start', 'stop', 'restart']:
+            return jsonify({
+                'success': False,
+                'error': 'Invalid action. Use: start, stop, or restart'
+            }), 400
+        
+        from Currencies.historical_scheduler import get_historical_scheduler
+        scheduler = get_historical_scheduler()
+        
+        if action == 'start':
+            if scheduler.is_running():
+                return jsonify({
+                    'success': False,
+                    'message': 'Historical scheduler is already running'
+                }), 400
+            scheduler.start()
+            message = 'Historical scheduler started'
+            
+        elif action == 'stop':
+            if not scheduler.is_running():
+                return jsonify({
+                    'success': False,
+                    'message': 'Historical scheduler is not running'
+                }), 400
+            scheduler.stop()
+            message = 'Historical scheduler stopped'
+            
+        elif action == 'restart':
+            if scheduler.is_running():
+                scheduler.stop()
+                time.sleep(2)
+            scheduler.start()
+            message = 'Historical scheduler restarted'
+        
+        return jsonify({
+            'success': True,
+            'action': action,
+            'message': message
+        })
+        
+    except Exception as e:
+        logger.error(f"Error controlling historical scheduler: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
 
 # Add this code after the line importing BlockchainServiceFactory
 from utils.blockchain_service_factory import BlockchainServiceFactory

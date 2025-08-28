@@ -1,0 +1,775 @@
+2025-07-24 01:06:31 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-24 10:18:37 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-07-24 10:18:46 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 10:18:46 - notification_api - INFO - درخواست برای کاربر: 0ac78e39-813a-41af-b78b-83ca727792c7
+2025-07-24 10:18:46 - notification_api - INFO - درخواست برای کیف پول: 9b08cf35-e1f4-4591-85a5-fb6e6fd5c227
+2025-07-24 10:18:46 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 10:18:46 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 10:18:46 - notification_api - INFO - توکن دستگاه جدید با شناسه 249 ثبت شد برای کاربر 0ac78e39-813a-41af-b78b-83ca727792c7 و کیف پول 9b08cf35-e1f4-4591-85a5-fb6e6fd5c227
+2025-07-24 10:43:16 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 10:43:16 - notification_api - INFO - درخواست برای کاربر: c0acead0-73dc-48a1-97c3-033e0102e161
+2025-07-24 10:43:16 - notification_api - INFO - درخواست برای کیف پول: e62e98ab-d3aa-4310-96c6-67048980a477
+2025-07-24 10:43:16 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 10:43:16 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 10:43:16 - notification_api - INFO - توکن دستگاه جدید با شناسه 250 ثبت شد برای کاربر c0acead0-73dc-48a1-97c3-033e0102e161 و کیف پول e62e98ab-d3aa-4310-96c6-67048980a477
+2025-07-24 10:43:36 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 10:43:36 - notification_api - INFO - درخواست برای کاربر: d478d910-bd45-4a9b-9b51-7b5e43740707
+2025-07-24 10:43:36 - notification_api - INFO - درخواست برای کیف پول: 12811609-d258-4d55-9684-0b54a613edca
+2025-07-24 10:43:36 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 10:43:36 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 10:43:36 - notification_api - INFO - توکن دستگاه جدید با شناسه 251 ثبت شد برای کاربر d478d910-bd45-4a9b-9b51-7b5e43740707 و کیف پول 12811609-d258-4d55-9684-0b54a613edca
+2025-07-24 10:57:55 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 10:57:55 - notification_api - INFO - درخواست برای کاربر: d86b1ba0-d907-48e8-a357-1b1016c10913
+2025-07-24 10:57:55 - notification_api - INFO - درخواست برای کیف پول: b8bca036-4e1c-495e-8f21-66c57b2bdbc8
+2025-07-24 10:57:55 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 10:57:55 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 10:57:55 - notification_api - INFO - توکن دستگاه جدید با شناسه 253 ثبت شد برای کاربر d86b1ba0-d907-48e8-a357-1b1016c10913 و کیف پول b8bca036-4e1c-495e-8f21-66c57b2bdbc8
+2025-07-24 11:00:53 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 11:00:53 - notification_api - INFO - درخواست برای کاربر: 0a554d57-2c54-4645-a23d-ed9e295af1cd
+2025-07-24 11:00:53 - notification_api - INFO - درخواست برای کیف پول: 14f19b2b-6c55-4c22-8704-e6923462c90a
+2025-07-24 11:00:53 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 11:00:53 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 11:00:53 - notification_api - INFO - توکن دستگاه جدید با شناسه 254 ثبت شد برای کاربر 0a554d57-2c54-4645-a23d-ed9e295af1cd و کیف پول 14f19b2b-6c55-4c22-8704-e6923462c90a
+2025-07-24 11:01:43 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 11:01:43 - notification_api - INFO - درخواست برای کاربر: 84b715f3-89d3-4d6c-bb5d-376f0b4b2118
+2025-07-24 11:01:43 - notification_api - INFO - درخواست برای کیف پول: 95655b8a-1731-4cbb-a35a-66060b2bed02
+2025-07-24 11:01:43 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 11:01:43 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 11:01:43 - notification_api - INFO - توکن دستگاه جدید با شناسه 255 ثبت شد برای کاربر 84b715f3-89d3-4d6c-bb5d-376f0b4b2118 و کیف پول 95655b8a-1731-4cbb-a35a-66060b2bed02
+2025-07-24 12:07:15 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 12:07:15 - notification_api - INFO - درخواست برای کاربر: 85c509ac-b212-456c-8f2e-30e132f4fd43
+2025-07-24 12:07:15 - notification_api - INFO - درخواست برای کیف پول: 5d93c4e1-14ce-4500-8194-8ed793e02928
+2025-07-24 12:07:15 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 12:07:15 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 12:07:15 - notification_api - INFO - توکن دستگاه جدید با شناسه 257 ثبت شد برای کاربر 85c509ac-b212-456c-8f2e-30e132f4fd43 و کیف پول 5d93c4e1-14ce-4500-8194-8ed793e02928
+2025-07-24 12:07:53 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 12:07:53 - notification_api - INFO - درخواست برای کاربر: 20c32b93-016f-4586-9bc9-d6455e6f57c1
+2025-07-24 12:07:53 - notification_api - INFO - درخواست برای کیف پول: ed2af938-4317-4e0a-ab87-236edd2239b7
+2025-07-24 12:07:53 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 12:07:53 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 12:07:53 - notification_api - INFO - توکن دستگاه جدید با شناسه 258 ثبت شد برای کاربر 20c32b93-016f-4586-9bc9-d6455e6f57c1 و کیف پول ed2af938-4317-4e0a-ab87-236edd2239b7
+2025-07-24 12:10:58 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 12:10:58 - notification_api - INFO - درخواست برای کاربر: df6646fc-7430-49d4-b1e9-9284c65c3831
+2025-07-24 12:10:58 - notification_api - INFO - درخواست برای کیف پول: 3e83aedf-4ace-461b-ae49-c14e6da7b4de
+2025-07-24 12:10:58 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-24 12:10:58 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 12:10:58 - notification_api - INFO - توکن دستگاه جدید با شناسه 259 ثبت شد برای کاربر df6646fc-7430-49d4-b1e9-9284c65c3831 و کیف پول 3e83aedf-4ace-461b-ae49-c14e6da7b4de
+2025-07-24 13:28:02 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 13:28:02 - notification_api - INFO - درخواست برای کاربر: 590d3127-04b6-49eb-a739-d0af6f8e34f2
+2025-07-24 13:28:02 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 13:28:02 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 13:28:02 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 13:28:02 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 590d3127-04b6-49eb-a739-d0af6f8e34f2 یافت نشد
+2025-07-24 13:28:02 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 590d3127-04b6-49eb-a739-d0af6f8e34f2 یافت نشد
+2025-07-24 13:28:06 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 13:28:06 - notification_api - INFO - درخواست برای کاربر: 590d3127-04b6-49eb-a739-d0af6f8e34f2
+2025-07-24 13:28:06 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 13:28:06 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 13:28:06 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 13:28:06 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 590d3127-04b6-49eb-a739-d0af6f8e34f2 یافت نشد
+2025-07-24 13:28:06 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 590d3127-04b6-49eb-a739-d0af6f8e34f2 یافت نشد
+2025-07-24 13:28:12 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 13:28:12 - notification_api - INFO - درخواست برای کاربر: 590d3127-04b6-49eb-a739-d0af6f8e34f2
+2025-07-24 13:28:12 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 13:28:12 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 13:28:12 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 13:28:12 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 590d3127-04b6-49eb-a739-d0af6f8e34f2 یافت نشد
+2025-07-24 13:28:12 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 590d3127-04b6-49eb-a739-d0af6f8e34f2 یافت نشد
+2025-07-24 13:37:17 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 13:37:17 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 13:37:17 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 13:37:17 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 13:37:17 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 13:37:17 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 13:37:17 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 13:37:20 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 13:37:20 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 13:37:20 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 13:37:20 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 13:37:20 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 13:37:20 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 13:37:20 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 13:37:26 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 13:37:26 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 13:37:26 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 13:37:26 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 13:37:26 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 13:37:27 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 13:37:27 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 14:51:43 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 14:51:43 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 14:51:43 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 14:51:43 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 14:51:43 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 14:51:43 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 14:51:43 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 14:52:20 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 14:52:20 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 14:52:20 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 14:52:20 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 14:52:20 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 14:52:20 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 14:52:20 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 15:41:37 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 15:41:37 - notification_api - INFO - درخواست برای کاربر: 7955be4c-1199-4c47-8de1-b7d16dde283a
+2025-07-24 15:41:37 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-07-24 15:41:37 - notification_api - INFO - طول توکن دستگاه: 41 کاراکتر
+2025-07-24 15:41:37 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 15:41:37 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 7955be4c-1199-4c47-8de1-b7d16dde283a یافت نشد
+2025-07-24 15:41:37 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 7955be4c-1199-4c47-8de1-b7d16dde283a یافت نشد
+2025-07-24 15:41:40 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 15:41:40 - notification_api - INFO - درخواست برای کاربر: 7955be4c-1199-4c47-8de1-b7d16dde283a
+2025-07-24 15:41:40 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-07-24 15:41:40 - notification_api - INFO - طول توکن دستگاه: 41 کاراکتر
+2025-07-24 15:41:40 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 15:41:40 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 7955be4c-1199-4c47-8de1-b7d16dde283a یافت نشد
+2025-07-24 15:41:40 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 7955be4c-1199-4c47-8de1-b7d16dde283a یافت نشد
+2025-07-24 15:41:47 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 15:41:47 - notification_api - INFO - درخواست برای کاربر: 7955be4c-1199-4c47-8de1-b7d16dde283a
+2025-07-24 15:41:47 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-07-24 15:41:47 - notification_api - INFO - طول توکن دستگاه: 41 کاراکتر
+2025-07-24 15:41:47 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 15:41:47 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 7955be4c-1199-4c47-8de1-b7d16dde283a یافت نشد
+2025-07-24 15:41:47 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 7955be4c-1199-4c47-8de1-b7d16dde283a یافت نشد
+2025-07-24 15:51:22 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 15:51:22 - notification_api - INFO - درخواست برای کاربر: 5fa7080c-4464-4300-9f83-50d09a22975b
+2025-07-24 15:51:22 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 15:51:22 - notification_api - INFO - طول توکن دستگاه: 41 کاراکتر
+2025-07-24 15:51:22 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 15:51:22 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 5fa7080c-4464-4300-9f83-50d09a22975b یافت نشد
+2025-07-24 15:51:22 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 5fa7080c-4464-4300-9f83-50d09a22975b یافت نشد
+2025-07-24 15:51:28 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 15:51:28 - notification_api - INFO - درخواست برای کاربر: 5fa7080c-4464-4300-9f83-50d09a22975b
+2025-07-24 15:51:28 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 15:51:28 - notification_api - INFO - طول توکن دستگاه: 41 کاراکتر
+2025-07-24 15:51:28 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-24 15:51:28 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 5fa7080c-4464-4300-9f83-50d09a22975b یافت نشد
+2025-07-24 15:51:28 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 5fa7080c-4464-4300-9f83-50d09a22975b یافت نشد
+2025-07-24 16:15:49 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:15:49 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:15:49 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:15:49 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:15:49 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:15:49 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:15:49 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:15:53 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:15:53 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:15:53 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:15:53 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:15:53 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:15:53 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:15:53 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:15:59 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:15:59 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:15:59 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:15:59 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:15:59 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:15:59 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:15:59 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:17:17 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:17:17 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:17:17 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:17:17 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:17:17 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:17:17 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:17:17 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:17:24 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:17:24 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:17:24 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:17:24 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:17:24 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:17:24 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:17:24 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:31:40 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:31:40 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:31:40 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:31:40 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:31:40 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:31:40 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:31:40 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:31:43 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:31:43 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:31:43 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:31:43 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:31:43 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:31:43 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:31:43 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:31:50 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:31:50 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:31:50 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:31:50 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:31:50 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:31:50 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:31:50 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:39:48 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:39:48 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:39:48 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:39:48 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:39:48 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:39:48 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:39:48 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:39:52 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:39:52 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:39:52 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:39:52 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:39:52 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:39:52 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:39:52 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:39:59 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:39:59 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:39:59 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:39:59 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:39:59 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:39:59 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:39:59 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:43:25 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:43:25 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:43:25 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:43:25 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:43:25 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:43:25 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:43:25 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:43:28 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:43:28 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:43:28 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:43:28 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:43:28 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:43:28 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:43:28 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:43:35 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:43:35 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:43:35 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:43:35 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:43:35 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:43:35 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:43:35 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:44:13 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:44:13 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:44:13 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:44:13 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:44:13 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:44:13 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:44:13 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:44:16 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:44:16 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 16:44:16 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 16:44:16 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:44:16 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:44:16 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:44:16 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 16:44:43 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:44:43 - notification_api - INFO - درخواست برای کاربر: 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6
+2025-07-24 16:44:43 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 16:44:43 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:44:43 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:44:43 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 16:44:43 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 16:44:47 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:44:47 - notification_api - INFO - درخواست برای کاربر: 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6
+2025-07-24 16:44:47 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 16:44:47 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:44:47 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:44:47 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 16:44:47 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 16:44:53 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 16:44:53 - notification_api - INFO - درخواست برای کاربر: 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6
+2025-07-24 16:44:53 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 16:44:53 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 16:44:53 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 16:44:53 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 16:44:53 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 17:28:02 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 17:28:02 - notification_api - INFO - درخواست برای کاربر: 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6
+2025-07-24 17:28:02 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 17:28:02 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 17:28:02 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 17:28:02 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 17:28:02 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 17:28:12 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 17:28:12 - notification_api - INFO - درخواست برای کاربر: 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6
+2025-07-24 17:28:12 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 17:28:12 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 17:28:12 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 17:28:12 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 17:28:12 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 7ebd74b6-3cfd-42b5-9d86-af9eaaad7cf6 یافت نشد
+2025-07-24 17:43:09 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 17:43:09 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 17:43:09 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 17:43:09 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 17:43:09 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 17:43:09 - notification_api - ERROR - خطا در ثبت توکن دستگاه: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 719, in checkout
+    rec._checkin_failed(err, _fairy_was_created=False)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    dbapi_connection = rec.get_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 838, in get_connection
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/api/notification_api.py", line 120, in register_device
+    user = session.query(Users).filter(Users.UserID == user_id).first()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 719, in checkout
+    rec._checkin_failed(err, _fairy_was_created=False)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 716, in checkout
+    dbapi_connection = rec.get_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 838, in get_connection
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-24 17:43:12 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 17:43:12 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 17:43:12 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 17:43:12 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 17:43:12 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 17:43:12 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 17:43:12 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 17:43:19 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 17:43:19 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 17:43:19 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 17:43:19 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 17:43:19 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 17:43:19 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 17:43:19 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 17:43:54 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 17:43:54 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 17:43:54 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 17:43:54 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 17:43:54 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 17:43:54 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 17:43:54 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 17:43:58 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 17:43:58 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 17:43:58 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 17:43:58 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 17:43:58 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 17:43:58 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 17:43:58 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 17:44:04 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 17:44:04 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 17:44:04 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 17:44:04 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 17:44:04 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 17:44:04 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 17:44:04 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 18:55:25 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 18:55:25 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 18:55:25 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 18:55:25 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 18:55:25 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 18:55:25 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 18:55:25 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 18:55:29 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 18:55:29 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 18:55:29 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 18:55:29 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 18:55:29 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 18:55:29 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 18:55:29 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 18:55:36 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 18:55:36 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 18:55:36 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 18:55:36 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 18:55:36 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 18:55:36 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 18:55:36 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:14:33 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 19:14:33 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 19:14:33 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 19:14:33 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 19:14:33 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 19:14:34 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:14:34 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:14:44 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 19:14:44 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 19:14:44 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 19:14:44 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 19:14:44 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 19:14:44 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:14:44 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:18:23 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 19:18:23 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 19:18:23 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 19:18:23 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 19:18:23 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 19:18:23 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:18:23 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:18:30 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 19:18:30 - notification_api - INFO - درخواست برای کاربر: 2fbbd59d-0dc4-4907-971d-8a0df64ea75c
+2025-07-24 19:18:30 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-24 19:18:30 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 19:18:30 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 19:18:30 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:18:30 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 2fbbd59d-0dc4-4907-971d-8a0df64ea75c یافت نشد
+2025-07-24 19:25:13 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 19:25:13 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 19:25:13 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 19:25:13 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 19:25:13 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 19:25:13 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 19:25:13 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 19:25:17 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 19:25:17 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 19:25:17 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 19:25:17 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 19:25:17 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 19:25:17 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 19:25:17 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 20:01:19 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 20:01:19 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 20:01:19 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 20:01:19 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 20:01:19 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 20:01:19 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 20:01:19 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 20:01:23 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 20:01:23 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 20:01:23 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 20:01:23 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 20:01:23 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 20:01:23 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 20:01:23 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 20:01:30 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 20:01:30 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 20:01:30 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 20:01:30 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-24 20:01:30 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 20:01:30 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 20:01:30 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:46:36 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:46:36 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:46:36 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:46:36 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:46:36 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:46:36 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:46:36 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:46:39 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:46:39 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:46:39 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:46:39 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:46:39 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:46:39 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:46:39 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:46:46 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:46:46 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:46:46 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:46:46 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:46:46 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:46:46 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:46:46 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:49:33 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:49:33 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:49:33 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:49:33 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:49:33 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:49:33 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:49:33 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:49:52 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:49:52 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:49:52 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:49:52 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:49:52 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:49:52 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:49:52 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:49:58 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:49:58 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:49:58 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:49:58 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:49:58 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:49:58 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:49:58 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:52:08 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:52:08 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:52:08 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:52:08 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:52:08 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:52:08 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:52:08 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:52:12 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:52:12 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:52:12 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:52:12 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:52:12 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:52:12 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:52:12 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:52:19 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-24 22:52:19 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-24 22:52:19 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-24 22:52:19 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-24 22:52:19 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-24 22:52:19 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-24 22:52:19 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:35:48 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 05:35:48 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 05:35:48 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 05:35:48 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 05:35:48 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 05:35:48 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:35:48 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:35:52 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 05:35:52 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 05:35:52 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 05:35:52 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 05:35:52 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 05:35:52 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:35:52 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:36:44 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 05:36:44 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 05:36:44 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 05:36:44 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 05:36:44 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 05:36:44 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:36:44 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:36:48 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 05:36:48 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 05:36:48 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 05:36:48 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 05:36:48 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 05:36:48 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:36:48 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:36:55 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 05:36:55 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 05:36:55 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 05:36:55 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 05:36:55 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 05:36:55 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 05:36:55 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:21:53 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:21:53 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:21:53 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:21:53 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:21:53 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:21:53 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:21:53 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:21:57 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:21:57 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:21:57 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:21:57 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:21:57 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:21:57 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:21:57 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:22:03 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:22:03 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:22:03 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:22:03 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:22:03 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:22:03 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:22:03 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:22:37 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:22:37 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:22:37 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:22:37 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:22:37 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:22:37 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:22:37 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:22:41 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:22:41 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:22:41 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:22:41 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:22:41 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:22:41 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:22:41 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:43:26 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:43:26 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:43:26 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:43:26 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:43:26 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:43:26 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:43:26 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:43:30 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:43:30 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:43:30 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:43:30 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:43:30 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:43:30 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:43:30 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:43:37 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:43:37 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:43:37 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:43:37 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:43:37 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:43:37 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:43:37 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:56:45 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:56:45 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-25 07:56:45 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-25 07:56:45 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:56:45 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:56:45 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:56:45 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-25 07:58:36 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 07:58:36 - notification_api - INFO - درخواست برای کاربر: 0f64ed12-1f0c-4432-ac23-422a459b34a6
+2025-07-25 07:58:36 - notification_api - INFO - درخواست برای کیف پول: a9635bc8-d707-430d-8f67-c55b7029f65d
+2025-07-25 07:58:36 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-25 07:58:36 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-07-25 07:58:36 - notification_api - INFO - توکن دستگاه جدید با شناسه 260 ثبت شد برای کاربر 0f64ed12-1f0c-4432-ac23-422a459b34a6 و کیف پول a9635bc8-d707-430d-8f67-c55b7029f65d
+2025-07-25 12:05:45 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 12:05:45 - notification_api - INFO - درخواست برای کاربر: 891ec58d-5458-40c9-86a7-a7a21e2154c8
+2025-07-25 12:05:45 - notification_api - INFO - درخواست برای کیف پول: b3b0f5a9-03ff-4e6f-aefe-654ee1155484
+2025-07-25 12:05:45 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-25 12:05:45 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-25 12:05:45 - notification_api - INFO - توکن دستگاه جدید با شناسه 262 ثبت شد برای کاربر 891ec58d-5458-40c9-86a7-a7a21e2154c8 و کیف پول b3b0f5a9-03ff-4e6f-aefe-654ee1155484
+2025-07-25 12:12:45 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 12:12:45 - notification_api - INFO - درخواست برای کاربر: 5c9cac12-9286-4388-9007-61e48e2ca745
+2025-07-25 12:12:45 - notification_api - INFO - درخواست برای کیف پول: f1d560c8-a90c-454e-8a20-0056140b34d7
+2025-07-25 12:12:45 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-25 12:12:45 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-25 12:12:45 - notification_api - INFO - توکن دستگاه جدید با شناسه 266 ثبت شد برای کاربر 5c9cac12-9286-4388-9007-61e48e2ca745 و کیف پول f1d560c8-a90c-454e-8a20-0056140b34d7
+2025-07-25 18:22:46 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 18:22:46 - notification_api - INFO - درخواست برای کاربر: 47f2b437-c176-4332-bbbd-1a10fb1c5694
+2025-07-25 18:22:46 - notification_api - INFO - درخواست برای کیف پول: 2d9e093a-d813-4ce1-9730-1e14523b579a
+2025-07-25 18:22:46 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-25 18:22:46 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-25 18:22:46 - notification_api - INFO - توکن دستگاه جدید با شناسه 270 ثبت شد برای کاربر 47f2b437-c176-4332-bbbd-1a10fb1c5694 و کیف پول 2d9e093a-d813-4ce1-9730-1e14523b579a
+2025-07-25 20:13:39 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-25 20:13:39 - notification_api - INFO - درخواست برای کاربر: b93b0aa9-7223-4fab-ad09-87782d99e383
+2025-07-25 20:13:39 - notification_api - INFO - درخواست برای کیف پول: c9251af7-91a8-4bc2-9124-cf9f16714f17
+2025-07-25 20:13:39 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-25 20:13:39 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-25 20:13:39 - notification_api - INFO - توکن دستگاه جدید با شناسه 272 ثبت شد برای کاربر b93b0aa9-7223-4fab-ad09-87782d99e383 و کیف پول c9251af7-91a8-4bc2-9124-cf9f16714f17
+2025-07-26 05:32:05 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-26 05:32:05 - notification_api - INFO - درخواست برای کاربر: d217899c-156c-4f12-bb37-0029095ba33c
+2025-07-26 05:32:05 - notification_api - INFO - درخواست برای کیف پول: 7b75e845-32e1-4269-bf5f-1f879d53fc80
+2025-07-26 05:32:05 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-26 05:32:05 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-26 05:32:05 - notification_api - INFO - توکن دستگاه جدید با شناسه 273 ثبت شد برای کاربر d217899c-156c-4f12-bb37-0029095ba33c و کیف پول 7b75e845-32e1-4269-bf5f-1f879d53fc80
+2025-07-27 10:20:50 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-27 10:20:50 - notification_api - INFO - درخواست برای کاربر: 2299c000-3b4b-4301-bc9d-2388de7a6c6f
+2025-07-27 10:20:50 - notification_api - INFO - درخواست برای کیف پول: 5e7f9e9f-7b6e-4507-bf40-754569e4b902
+2025-07-27 10:20:50 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-07-27 10:20:50 - notification_api - INFO - دستگاه: SM-F916B, نوع: android
+2025-07-27 10:20:50 - notification_api - INFO - توکن دستگاه جدید با شناسه 275 ثبت شد برای کاربر 2299c000-3b4b-4301-bc9d-2388de7a6c6f و کیف پول 5e7f9e9f-7b6e-4507-bf40-754569e4b902
+2025-07-27 11:18:59 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-27 11:18:59 - notification_api - INFO - درخواست برای کاربر: daf7c8b2-fc15-4410-ab9e-3107fee43471
+2025-07-27 11:18:59 - notification_api - INFO - درخواست برای کیف پول: a5fac978-2414-489c-85f6-1dffb0bbeae2
+2025-07-27 11:18:59 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-27 11:18:59 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-27 11:18:59 - notification_api - INFO - توکن دستگاه جدید با شناسه 276 ثبت شد برای کاربر daf7c8b2-fc15-4410-ab9e-3107fee43471 و کیف پول a5fac978-2414-489c-85f6-1dffb0bbeae2
+2025-07-28 01:03:56 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-28 01:03:56 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-28 01:03:56 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-28 01:03:56 - notification_api - INFO - طول توکن دستگاه: 39 کاراکتر
+2025-07-28 01:03:56 - notification_api - INFO - دستگاه: google Pixel 4 XL, نوع: flutter
+2025-07-28 01:03:56 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-28 01:03:56 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-28 01:04:00 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-28 01:04:00 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-07-28 01:04:00 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-07-28 01:04:00 - notification_api - INFO - طول توکن دستگاه: 39 کاراکتر
+2025-07-28 01:04:00 - notification_api - INFO - دستگاه: google Pixel 4 XL, نوع: flutter
+2025-07-28 01:04:00 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-28 01:04:00 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-07-28 11:03:52 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-28 11:03:52 - notification_api - INFO - درخواست برای کاربر: 52e1106b-4ef9-463f-ad27-4750d9ddf8cf
+2025-07-28 11:03:52 - notification_api - INFO - درخواست برای کیف پول: e046f3d8-1dbc-4310-97da-2a107c7466a0
+2025-07-28 11:03:52 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-28 11:03:52 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-28 11:03:52 - notification_api - INFO - توکن دستگاه جدید با شناسه 279 ثبت شد برای کاربر 52e1106b-4ef9-463f-ad27-4750d9ddf8cf و کیف پول e046f3d8-1dbc-4310-97da-2a107c7466a0
+2025-07-28 11:04:10 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-28 11:04:10 - notification_api - INFO - درخواست برای کاربر: 0e28842e-a79f-46ad-8e68-b29d3a5bb914
+2025-07-28 11:04:10 - notification_api - INFO - درخواست برای کیف پول: 6ac5fe7e-e5e3-4086-ad5e-ab94fe15ca93
+2025-07-28 11:04:10 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-07-28 11:04:10 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-07-28 11:04:10 - notification_api - INFO - توکن دستگاه جدید با شناسه 280 ثبت شد برای کاربر 0e28842e-a79f-46ad-8e68-b29d3a5bb914 و کیف پول 6ac5fe7e-e5e3-4086-ad5e-ab94fe15ca93
+2025-07-29 18:42:50 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-29 18:42:50 - notification_api - INFO - درخواست برای کاربر: c11dcae2-af01-40a0-8cae-a7a441a2f52b
+2025-07-29 18:42:50 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-29 18:42:50 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-29 18:42:50 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-07-29 18:42:50 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-07-29 18:42:50 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-07-29 18:43:01 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-07-29 18:43:01 - notification_api - INFO - درخواست برای کاربر: c11dcae2-af01-40a0-8cae-a7a441a2f52b
+2025-07-29 18:43:01 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-07-29 18:43:01 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-07-29 18:43:01 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-07-29 18:43:01 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-07-29 18:43:01 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد

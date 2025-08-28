@@ -1,6 +1,6 @@
-from webhook.transaction_processor import TransactionProcessor
-from utils.logging_config import get_logger
-from webhook.chains.eth.utils import parse_eth_input_data  # استفاده از همان توابع اتریوم چون سازگار است
+from CC.webhook.transaction_processor import TransactionProcessor
+from CC.utils.logging_config import get_logger
+from CC.webhook.chains.eth.utils import parse_eth_input_data  # استفاده از همان توابع اتریوم چون سازگار است
 
 logger = get_logger(__name__)
 

@@ -1,6 +1,6 @@
-from webhook.transaction_processor import TransactionProcessor
-from utils.logging_config import get_logger
-from webhook.chains.bnb.utils import parse_bnb_input_data, calculate_bnb_fee, is_token_transfer
+from CC.webhook.transaction_processor import TransactionProcessor
+from CC.utils.logging_config import get_logger
+from CC.webhook.chains.bnb.utils import parse_bnb_input_data, calculate_bnb_fee, is_token_transfer
 
 logger = get_logger(__name__)
 

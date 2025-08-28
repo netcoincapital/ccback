@@ -6,12 +6,12 @@ from decimal import Decimal
 from datetime import datetime
 import traceback
 
-from database import SessionLocal, Users, Wallets, Address, Blockchains, Currencies, UserHolding
-from schemas.balance_schemas import UserBalanceRequest, UserBalanceResponse, TokenBalanceItem
-from security.validators import SecurityUtils, InputValidator, ValidationError
-from utils.logging_config import get_logger
-from services.balance_service import BalanceService
-from workers.rebuild_user_holdings import rebuild_user_holdings
+from CC.database import SessionLocal, Users, Wallets, Address, Blockchains, Currencies, UserHolding
+from CC.schemas.balance_schemas import UserBalanceRequest, UserBalanceResponse, TokenBalanceItem
+from CC.security.validators import SecurityUtils, InputValidator, ValidationError
+from CC.utils.logging_config import get_logger
+from CC.services.balance_service import BalanceService
+from CC.workers.rebuild_user_holdings import rebuild_user_holdings
 
 # Configure logging
 logger = get_logger(__file__)

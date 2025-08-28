@@ -1,0 +1,1965 @@
+2025-07-16 07:08:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 07:08:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 07:09:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 16:58:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 16:59:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 16:59:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:00:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:01:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:01:48 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-16 17:14:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:15:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:16:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:16:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:19:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:20:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:21:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:21:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:23:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:48:23 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای NCC در بلاکچین TRX یافت نشد
+2025-07-16 17:48:23 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 17:48:23 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=f15e1484-ba23-4531-a92a-0a178a18a7d3 و tx_id=a450aafe782188839b09d34678d2ab322318ca93021621c2fbb7b08a93a89d11 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 17:52:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 17:56:52 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-16 18:04:27 - database_operations - WARNING - فرمت پاسخ API برای بلاکچین tron-mainnet شناخته شده نیست
+2025-07-16 18:04:28 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 18:04:28 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=ae991a55cd8c66a267bb451f718c12edc5fc88bc06121bd32658769b7a029626 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 18:07:01 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-16 18:07:01 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 18:07:01 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x1b7c00a569d60ecb7fb2573561c98a957018d473e2094ccbf321c716e2f7adbe قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 18:10:58 - database_operations - WARNING - فرمت پاسخ API برای بلاکچین tron-mainnet شناخته شده نیست
+2025-07-16 18:10:58 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 18:10:58 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=247d822bea676aa1f96750b08f42a43119286479deb9f589d765f92378657ce6 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 18:12:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:14:57 - database_operations - WARNING - فرمت پاسخ API برای بلاکچین tron-mainnet شناخته شده نیست
+2025-07-16 18:14:57 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 18:14:57 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=57e89402125105c91b9142e7c982cc92eed535443be0fe43d1473df472ceb1b7 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 18:15:57 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 18:15:57 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=5053b7e8ce2f5a4b97ab081e1aee772ba749c3356e7ab14f477fb3db1b756573 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 18:16:58 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 18:16:58 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=e45c2fc1a2dd9c634c20894ce37b6ab826cf395c893776d5c7a08a8b4584d421 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 18:18:27 - database_operations - WARNING - فرمت پاسخ API برای بلاکچین tron-mainnet شناخته شده نیست
+2025-07-16 18:18:27 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 18:18:27 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=c9d0af5beceb4ce7b90fb46b966151801008eae18ca6419b547a2e6c6191d024 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 18:27:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:27:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:27:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:29:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:29:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:29:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:29:57 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-16 18:29:57 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-16 18:29:57 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-16 18:30:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:30:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:30:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:32:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:32:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:32:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:33:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:33:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:33:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:34:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:34:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:34:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:35:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:35:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:35:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:39:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:39:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:39:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:58:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:58:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 18:58:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:01:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:01:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:01:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:03:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:03:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:03:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:08:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:09:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:10:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:11:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:12:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:13:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:14:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:15:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:16:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:17:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:18:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:19:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:20:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:21:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:22:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:23:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:24:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:25:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:26:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:27:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:08 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:28:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:29:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:30:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:07 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:32 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:31:57 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:32:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:05 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:15 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:39 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:33:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:34:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:34:33 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:34:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:34:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:34:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:34:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:36:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:36:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:36:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:37:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:37:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:37:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:41:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:45:27 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-16 19:45:27 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=e7669541f4923f39961e0522261d501a71cdd9c726eda161ebe55d99ae06db6a قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-16 19:47:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:47:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 19:47:27 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 20:25:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 20:25:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 20:25:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 20:56:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 20:56:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 20:56:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:04:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:04:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:04:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:06:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:08:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:08:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:08:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:11:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:11:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:11:18 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:12:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:15:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:15:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:15:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:16:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:17:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:17:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:17:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:18:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:18:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:18:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:18:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:19:54 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:19:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:19:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:20:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:21:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:21:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:21:43 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:22:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:23:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:23:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:23:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:23:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:24:03 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:24:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:24:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:24:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:25:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:25:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:25:25 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:25:36 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:27:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:27:37 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:27:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:27:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:29:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:29:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:29:02 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:30:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:30:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:30:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:31:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:32:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:32:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:32:58 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:37:13 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:37:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:37:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:45:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:45:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:45:31 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:47:28 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:47:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:47:29 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:47:32 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-16 21:47:32 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-16 21:47:32 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+    self._dec_overflow()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-16 21:51:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:51:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:51:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:51:45 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:53:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:53:49 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:53:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:54:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:56:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:56:22 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:56:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:57:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:57:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:57:38 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:59:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:59:46 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 21:59:47 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:02:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:02:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:02:55 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:06:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:06:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:06:06 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:07:40 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:07:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:07:41 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:09:52 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:09:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:09:53 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:10:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:11:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:11:09 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:11:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:11:19 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:12:50 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:12:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:12:51 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:13:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:16:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:16:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:16:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:16:35 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:18:04 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:18:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:18:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:18:20 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-16 22:18:30 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG

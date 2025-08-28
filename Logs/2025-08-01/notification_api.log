@@ -1,0 +1,81 @@
+2025-08-01 10:47:57 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 10:47:57 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 10:47:57 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 10:48:14 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 10:48:14 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 10:48:15 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 10:50:52 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 10:50:53 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 10:50:53 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 11:21:53 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 11:21:53 - notification_api - INFO - درخواست برای کاربر: 106b68e1-1851-48f8-aff0-d0e2ca308e87
+2025-08-01 11:21:53 - notification_api - INFO - درخواست برای کیف پول: 7347f0bd-98cf-4a3a-8a02-bd374c488bb8
+2025-08-01 11:21:53 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-01 11:21:53 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-08-01 11:21:53 - notification_api - INFO - توکن دستگاه جدید با شناسه 292 ثبت شد برای کاربر 106b68e1-1851-48f8-aff0-d0e2ca308e87 و کیف پول 7347f0bd-98cf-4a3a-8a02-bd374c488bb8
+2025-08-01 11:43:19 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 11:43:19 - notification_api - INFO - درخواست برای کاربر: def007ee-e9ed-4a74-997f-738c877ee6d7
+2025-08-01 11:43:19 - notification_api - INFO - درخواست برای کیف پول: aac6aea2-0e9b-4c91-9f8a-f6befb429be5
+2025-08-01 11:43:19 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-01 11:43:19 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-08-01 11:43:19 - notification_api - INFO - توکن دستگاه جدید با شناسه 293 ثبت شد برای کاربر def007ee-e9ed-4a74-997f-738c877ee6d7 و کیف پول aac6aea2-0e9b-4c91-9f8a-f6befb429be5
+2025-08-01 11:43:47 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 11:43:47 - notification_api - INFO - درخواست برای کاربر: 60a9ce8f-bd8f-486b-8a48-24ee8132e4d3
+2025-08-01 11:43:47 - notification_api - INFO - درخواست برای کیف پول: 283a6b42-9951-4904-a4e4-defc0b27cd77
+2025-08-01 11:43:47 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-01 11:43:47 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-08-01 11:43:47 - notification_api - INFO - توکن دستگاه جدید با شناسه 294 ثبت شد برای کاربر 60a9ce8f-bd8f-486b-8a48-24ee8132e4d3 و کیف پول 283a6b42-9951-4904-a4e4-defc0b27cd77
+2025-08-01 12:12:04 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 12:12:04 - notification_api - INFO - درخواست برای کاربر: 51dc32b8-1798-4299-bffa-b343166db910
+2025-08-01 12:12:04 - notification_api - INFO - درخواست برای کیف پول: 57068fbd-2810-479e-bea5-d846e46fec2b
+2025-08-01 12:12:04 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-01 12:12:04 - notification_api - INFO - دستگاه: SM-A326B, نوع: android
+2025-08-01 12:12:04 - notification_api - INFO - توکن دستگاه جدید با شناسه 295 ثبت شد برای کاربر 51dc32b8-1798-4299-bffa-b343166db910 و کیف پول 57068fbd-2810-479e-bea5-d846e46fec2b
+2025-08-01 15:14:24 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 15:14:24 - notification_api - INFO - درخواست برای کاربر: 22276dd5-75e1-498d-be08-9177ca17b87a
+2025-08-01 15:14:24 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-01 15:14:24 - notification_api - INFO - طول توکن دستگاه: 36 کاراکتر
+2025-08-01 15:14:24 - notification_api - INFO - دستگاه: HUAWEI ICL-LX9, نوع: flutter
+2025-08-01 15:14:24 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 22276dd5-75e1-498d-be08-9177ca17b87a یافت نشد
+2025-08-01 15:14:24 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 22276dd5-75e1-498d-be08-9177ca17b87a یافت نشد
+2025-08-01 15:14:28 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 15:14:28 - notification_api - INFO - درخواست برای کاربر: 22276dd5-75e1-498d-be08-9177ca17b87a
+2025-08-01 15:14:28 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-01 15:14:28 - notification_api - INFO - طول توکن دستگاه: 36 کاراکتر
+2025-08-01 15:14:28 - notification_api - INFO - دستگاه: HUAWEI ICL-LX9, نوع: flutter
+2025-08-01 15:14:28 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 22276dd5-75e1-498d-be08-9177ca17b87a یافت نشد
+2025-08-01 15:14:28 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 22276dd5-75e1-498d-be08-9177ca17b87a یافت نشد
+2025-08-01 15:14:34 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-01 15:14:34 - notification_api - INFO - درخواست برای کاربر: 22276dd5-75e1-498d-be08-9177ca17b87a
+2025-08-01 15:14:34 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-01 15:14:34 - notification_api - INFO - طول توکن دستگاه: 36 کاراکتر
+2025-08-01 15:14:34 - notification_api - INFO - دستگاه: HUAWEI ICL-LX9, نوع: flutter
+2025-08-01 15:14:34 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 22276dd5-75e1-498d-be08-9177ca17b87a یافت نشد
+2025-08-01 15:14:34 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 22276dd5-75e1-498d-be08-9177ca17b87a یافت نشد
+2025-08-01 16:03:09 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:03:10 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:03:10 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:13:30 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:13:30 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:13:30 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:13:38 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:13:38 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:13:39 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:16:20 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:16:20 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:16:20 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:20:43 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:20:43 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:20:44 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:22:25 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:22:25 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 16:22:25 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 17:41:02 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 17:41:02 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 17:41:02 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 17:41:28 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 17:41:28 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 17:41:29 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 22:40:12 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 22:40:12 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-01 22:40:12 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG

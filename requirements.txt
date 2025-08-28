@@ -1,46 +1,36 @@
-# 📌 Flask و افزونه‌های مرتبط
-flask==3.1.1
-flask-cors==6.0.0
-flask-wtf==1.2.2
-flask-openapi3==4.1.0
-flask-swagger-ui==5.21.0
-flask-socketio==5.3.4
-eventlet==0.33.3
-
-# 📌 اعتبارسنجی و تست
-pydantic==2.6.4
-pytest==8.2.1
-pytest-cov==4.1.0
-
-# 📌 ابزارهای ارتباطی و پیکربندی
-redis==5.0.3
-pika==1.3.2
-python-dotenv==1.0.1
-schedule==1.2.0
-
-# 📌 ORM و پایگاه‌داده
-SQLAlchemy==2.0.29
-alembic==1.13.1
-pymysql==1.1.0
-mysql-connector-python==8.3.0
-psycopg2-binary==2.9.9
-
-# 📌 کتابخانه‌های بلاک‌چین و رمزنگاری (بدون قید نسخه برای حل تضادها)
+flask
+flask-cors
+flask-wtf
+flask-openapi3
+flask-swagger-ui
+flask-socketio
+eventlet
+pydantic
+pytest
+pytest-cov
+redis
+pika
+python-dotenv
+schedule
+SQLAlchemy
+alembic
+pymysql
+mysql-connector-python
+psycopg2-binary
 eth-account
 web3
 tronpy
-solana==0.21.0
+solana
+solders
 eth-abi
 websockets
-hexbytes==0.3.1
-bip-utils==2.9.3
-mnemonic==0.21
-pycryptodome==3.20.0
-bit==0.8.0
-xrpl-py==3.0.0
-bitcoinlib==0.6.12
-
-# 📌 ابزارهای عمومی
-requests==2.31.0
-gunicorn==21.2.0
-firebase-admin==6.4.0
+hexbytes
+bip-utils
+mnemonic
+pycryptodome
+bit
+xrpl-py
+bitcoinlib
+requests
+gunicorn
+firebase-admin

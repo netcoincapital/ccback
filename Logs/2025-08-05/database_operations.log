@@ -1,0 +1,403 @@
+2025-08-05 07:25:10 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 07:26:12 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 07:26:48 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 07:57:02 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X35E08236CC2CBCCA6BBBC0301FFCD9BC21F5EF6B در بلاکچین BNB یافت نشد
+2025-08-05 07:57:02 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 07:57:02 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x0a6b407db04d494681da7ea4edacd75759b7247b09ceda9a3cb70451f442af80 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 09:13:07 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 09:13:07 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 09:13:07 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0xd169d9ebd7195c91e57fc43dadf603c7ad19e072141239ebf5fc319ae0cbdd09 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 09:17:42 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X35E08236CC2CBCCA6BBBC0301FFCD9BC21F5EF6B در بلاکچین BNB یافت نشد
+2025-08-05 09:17:43 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 09:17:43 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x08b1edf4ab41d4135136f977b90d940d28a38975c7c325612a9d962459cc1449 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 10:17:02 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 10:17:02 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 10:17:02 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x3b64bef76f60d22a4126f55882e84e5d114fc53489c99703126e0984ef86e80c قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 11:18:44 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 11:18:59 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 11:26:21 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 11:26:22 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 11:26:22 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x30dcc92846c882ec16021de16aed9020f17b09562156becbdc43265c223deefc قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 11:26:52 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 11:26:52 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X07672F5A5553249D65A20D05E1ACA78924FD5476 در بلاکچین BNB یافت نشد
+2025-08-05 11:26:52 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 11:26:52 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 11:26:52 - database_operations - ERROR - Error saving transaction 0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56526881, 'Timestamp': datetime.datetime(2025, 8, 5, 11, 26, 47), 'TokenContract': '0x07672f5a5553249d65a20d05e1aca78924fd5476', 'TokenSymbol': '0x07672f5a5553249d65', 'AssetType': 'token', 'Direction': 'inbound', 'FromAddress': '0x47470a2a79550080a46a99f9afbb8b9541827d58', 'ToAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'Amount': 246.5, 'Fee': 3.86352e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74', 'CreatedAt': datetime.datetime(2025, 8, 5, 11, 26, 52, 438557), 'UpdatedAt': datetime.datetime(2025, 8, 5, 11, 26, 52, 438561), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-05 11:26:52 - database_operations - ERROR - (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56526881, 'Timestamp': datetime.datetime(2025, 8, 5, 11, 26, 47), 'TokenContract': '0x07672f5a5553249d65a20d05e1aca78924fd5476', 'TokenSymbol': '0x07672f5a5553249d65', 'AssetType': 'token', 'Direction': 'inbound', 'FromAddress': '0x47470a2a79550080a46a99f9afbb8b9541827d58', 'ToAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'Amount': 246.5, 'Fee': 3.86352e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74', 'CreatedAt': datetime.datetime(2025, 8, 5, 11, 26, 52, 438557), 'UpdatedAt': datetime.datetime(2025, 8, 5, 11, 26, 52, 438561), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f' for key 'transfers.unique_transfer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f' for key 'transfers.unique_transfer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 858, in save_transaction
+    session.execute(insert_tx_query, tx_data)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1413, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1840, in _execute_context
+    return self._exec_single_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1980, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.IntegrityError: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56526881, 'Timestamp': datetime.datetime(2025, 8, 5, 11, 26, 47), 'TokenContract': '0x07672f5a5553249d65a20d05e1aca78924fd5476', 'TokenSymbol': '0x07672f5a5553249d65', 'AssetType': 'token', 'Direction': 'inbound', 'FromAddress': '0x47470a2a79550080a46a99f9afbb8b9541827d58', 'ToAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'Amount': 246.5, 'Fee': 3.86352e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0xb9f2a5450b0760e97bb8e43423e7a8a9923876cd14d594b9b7e02a2f9d552f74', 'CreatedAt': datetime.datetime(2025, 8, 5, 11, 26, 52, 438557), 'UpdatedAt': datetime.datetime(2025, 8, 5, 11, 26, 52, 438561), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-05 11:31:37 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X35E08236CC2CBCCA6BBBC0301FFCD9BC21F5EF6B در بلاکچین BNB یافت نشد
+2025-08-05 11:31:37 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 11:31:37 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x26d595adff7c385369a6a55bd265a6c58d6b5583d30135129ec801723b32af4c قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 11:31:52 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 11:31:52 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 11:31:52 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x013aa7ddd3b853535831d175300fbd96cc36ca1ebbf168da5a8e559543fe6cca قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 16:14:57 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 16:14:57 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 16:14:57 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0xa2391b10597269972f84a73c90239e78cd67b5d1198816cf9992be8ddf1ca89c قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 16:16:17 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 16:16:17 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 16:16:18 - database_operations - ERROR - خطا در ذخیره اطلاعات تراکنش 0xa9cea34705c43ac834e4be9b47c07ea022fa9a0da6b27e84a002547023ec616b در جدول لاگ: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '57068fbd-2810-479e-bea5-d846e46fec2b-0xa9cea34705c43ac834e4be9b4' for key 'balance_update_log.uc_wallet_tx'
+[SQL: 
+                    INSERT INTO balance_update_log (
+                        wallet_id, tx_id, direction, amount, token_symbol, blockchain, created_at
+                    ) VALUES (
+                        %(wallet_id)s, %(tx_id)s, %(direction)s, %(amount)s, %(token_symbol)s, %(blockchain)s, NOW()
+                    )
+                ]
+[parameters: {'wallet_id': '57068fbd-2810-479e-bea5-d846e46fec2b', 'tx_id': '0xa9cea34705c43ac834e4be9b47c07ea022fa9a0da6b27e84a002547023ec616b', 'direction': 'outbound', 'amount': '0.150000000000000000', 'token_symbol': '0x55d398326f99059ff775485246999027b3197955', 'blockchain': 3}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-05 16:16:18 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 16:16:18 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 16:16:18 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0xa9cea34705c43ac834e4be9b47c07ea022fa9a0da6b27e84a002547023ec616b قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 16:16:18 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0xa9cea34705c43ac834e4be9b47c07ea022fa9a0da6b27e84a002547023ec616b قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 16:21:07 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 16:21:07 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 16:21:07 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x08bce03e3787f1c01b9505ccabcd8c4482a6983337659cf218c51d7d71a2d44b قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 18:00:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 18:00:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 18:00:34 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 18:01:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 18:01:16 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 18:01:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-08-05 19:36:01 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 19:36:02 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 19:36:02 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0xe53a0544e2998667cf6f7f56aea802cf8c39d8775f240e498d41dbb90f6bd513 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 19:52:26 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 19:52:27 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 19:52:27 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x84a6cedb42516d330f6d8d06156bcf2e5d2060ec11f8d3fc9e6e9e2ad14b969b قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 19:52:36 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 19:52:36 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X07672F5A5553249D65A20D05E1ACA78924FD5476 در بلاکچین BNB یافت نشد
+2025-08-05 19:52:36 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 19:52:36 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 19:52:37 - database_operations - ERROR - Error saving transaction 0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f899' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56567336, 'Timestamp': datetime.datetime(2025, 8, 5, 19, 52, 33), 'TokenContract': '0x07672f5a5553249d65a20d05e1aca78924fd5476', 'TokenSymbol': '0x07672f5a5553249d65', 'AssetType': 'token', 'Direction': 'inbound', 'FromAddress': '0x47470a2a79550080a46a99f9afbb8b9541827d58', 'ToAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'Amount': 100.0, 'Fee': 4.08796e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e', 'CreatedAt': datetime.datetime(2025, 8, 5, 19, 52, 37, 24785), 'UpdatedAt': datetime.datetime(2025, 8, 5, 19, 52, 37, 24791), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-05 19:52:37 - database_operations - ERROR - (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f899' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56567336, 'Timestamp': datetime.datetime(2025, 8, 5, 19, 52, 33), 'TokenContract': '0x07672f5a5553249d65a20d05e1aca78924fd5476', 'TokenSymbol': '0x07672f5a5553249d65', 'AssetType': 'token', 'Direction': 'inbound', 'FromAddress': '0x47470a2a79550080a46a99f9afbb8b9541827d58', 'ToAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'Amount': 100.0, 'Fee': 4.08796e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e', 'CreatedAt': datetime.datetime(2025, 8, 5, 19, 52, 37, 24785), 'UpdatedAt': datetime.datetime(2025, 8, 5, 19, 52, 37, 24791), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f899' for key 'transfers.unique_transfer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f899' for key 'transfers.unique_transfer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 858, in save_transaction
+    session.execute(insert_tx_query, tx_data)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1413, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1840, in _execute_context
+    return self._exec_single_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1980, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.IntegrityError: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f899' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56567336, 'Timestamp': datetime.datetime(2025, 8, 5, 19, 52, 33), 'TokenContract': '0x07672f5a5553249d65a20d05e1aca78924fd5476', 'TokenSymbol': '0x07672f5a5553249d65', 'AssetType': 'token', 'Direction': 'inbound', 'FromAddress': '0x47470a2a79550080a46a99f9afbb8b9541827d58', 'ToAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'Amount': 100.0, 'Fee': 4.08796e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0x71bb83294f19423a7e1ab5c7029f90e837c83f5944baa965b8d07d1642f8997e', 'CreatedAt': datetime.datetime(2025, 8, 5, 19, 52, 37, 24785), 'UpdatedAt': datetime.datetime(2025, 8, 5, 19, 52, 37, 24791), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-05 19:56:57 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X35E08236CC2CBCCA6BBBC0301FFCD9BC21F5EF6B در بلاکچین BNB یافت نشد
+2025-08-05 19:56:57 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 19:56:57 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x63e4e25ada75590f29b3eefdcf94cc7ebd79e4ba3b5ef18758f9378154907f55 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-05 19:57:17 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-05 19:57:17 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-05 19:57:17 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x8786dad3799ab334c99ecee7aa0d35660312056d8a94d1df016a56a5392a180d قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-06 11:23:22 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-06 11:23:22 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-06 11:23:22 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x888173808aa317c1d76a12edbec2948f9de33b6681eb9d8087046749cf466f07 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-07 00:17:51 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-07 00:17:52 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای 0X55D398326F99059FF775485246999027B3197955 در بلاکچین BNB یافت نشد
+2025-08-07 00:17:52 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-07 00:17:52 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=57068fbd-2810-479e-bea5-d846e46fec2b و tx_id=0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-07 00:17:52 - database_operations - ERROR - Error saving transaction 0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a04' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56703742, 'Timestamp': datetime.datetime(2025, 8, 7, 0, 17, 46), 'TokenContract': '0x55d398326f99059ff775485246999027b3197955', 'TokenSymbol': '0x55d398326f99059ff7', 'AssetType': 'token', 'Direction': 'outbound', 'FromAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'ToAddress': '0x4d73299d01062ae26871deae6fc3d8063054faae', 'Amount': 0.25, 'Fee': 1.87322e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419', 'CreatedAt': datetime.datetime(2025, 8, 7, 0, 17, 52, 271237), 'UpdatedAt': datetime.datetime(2025, 8, 7, 0, 17, 52, 271242), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-07 00:17:52 - database_operations - ERROR - (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a04' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56703742, 'Timestamp': datetime.datetime(2025, 8, 7, 0, 17, 46), 'TokenContract': '0x55d398326f99059ff775485246999027b3197955', 'TokenSymbol': '0x55d398326f99059ff7', 'AssetType': 'token', 'Direction': 'outbound', 'FromAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'ToAddress': '0x4d73299d01062ae26871deae6fc3d8063054faae', 'Amount': 0.25, 'Fee': 1.87322e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419', 'CreatedAt': datetime.datetime(2025, 8, 7, 0, 17, 52, 271237), 'UpdatedAt': datetime.datetime(2025, 8, 7, 0, 17, 52, 271242), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a04' for key 'transfers.unique_transfer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a04' for key 'transfers.unique_transfer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 858, in save_transaction
+    session.execute(insert_tx_query, tx_data)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1413, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1840, in _execute_context
+    return self._exec_single_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1980, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.IntegrityError: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a04' for key 'transfers.unique_transfer'
+[SQL: 
+                    INSERT INTO transfers (
+                        TxHash, BlockchainID, AddressID, WalletID, BlockNumber, 
+                        Timestamp, TokenContract, TokenSymbol, AssetType, Direction,
+                        FromAddress, ToAddress, Amount, Fee,
+                        Price, ExplorerUrl, CreatedAt, UpdatedAt,
+                        IsSuccessful, Status
+                    ) VALUES (
+                        %(TxHash)s, %(BlockchainID)s, %(AddressID)s, %(WalletID)s, %(BlockNumber)s,
+                        %(Timestamp)s, %(TokenContract)s, %(TokenSymbol)s, %(AssetType)s, %(Direction)s,
+                        %(FromAddress)s, %(ToAddress)s, %(Amount)s, %(Fee)s,
+                        %(Price)s, %(ExplorerUrl)s, %(CreatedAt)s, %(UpdatedAt)s,
+                        %(IsSuccessful)s, %(Status)s
+                    )
+                ]
+[parameters: {'TxHash': '0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419', 'BlockchainID': 3, 'AddressID': 11505, 'WalletID': '57068fbd-2810-479e-bea5-d846e46fec2b', 'BlockNumber': 56703742, 'Timestamp': datetime.datetime(2025, 8, 7, 0, 17, 46), 'TokenContract': '0x55d398326f99059ff775485246999027b3197955', 'TokenSymbol': '0x55d398326f99059ff7', 'AssetType': 'token', 'Direction': 'outbound', 'FromAddress': '0x7ac820c0127d7b83349a2144ca338fad01df3fdc', 'ToAddress': '0x4d73299d01062ae26871deae6fc3d8063054faae', 'Amount': 0.25, 'Fee': 1.87322e-05, 'Price': None, 'ExplorerUrl': 'https://bscscan.com/tx/0x98ce7a2e63ced1831b879d6c6947ac030974857e886f0fb253f0620c830a0419', 'CreatedAt': datetime.datetime(2025, 8, 7, 0, 17, 52, 271237), 'UpdatedAt': datetime.datetime(2025, 8, 7, 0, 17, 52, 271242), 'IsSuccessful': True, 'Status': 'confirmed'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-07 15:56:13 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای TWMOCWVHPUI48QXUVJEW2SVCFE8LYNGLCU در بلاکچین TRX یافت نشد
+2025-08-07 15:56:13 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-07 15:56:13 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=d628947b-af1c-4810-b7f7-1cf6b26a1243 و tx_id=4fae5b1cbc7f7079cba67cb9649205080e2eeebeb1d3ce1fb0588dd76a2c2991 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-08-07 15:56:13 - database_operations - ERROR - ارز TWmocwvHpui48QXUVJeW2SvcFe8LyNgLCU در بلاکچین Tron یافت نشد
+2025-08-07 22:20:48 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای NCC در بلاکچین TRX یافت نشد
+2025-08-07 22:20:48 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-08-07 22:20:48 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=8b6820db-f752-4d9b-af76-25f303e45b64 و tx_id=864fc3f23082d3eaaa600bf9923bf5f3b187f047813e6a6a8a241957cacfcd05 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.

@@ -8,11 +8,11 @@ from sqlalchemy.orm import Session
 from bip_utils import Bip39MnemonicGenerator, Bip39WordsNum, Bip39MnemonicValidator
 from uuid import uuid4
 from sqlalchemy import func
-from errors.common_errors import ResourceAlreadyExists
-from services.blockchain_service import get_blockchain_service
-from services.hd_wallet_service import HDWalletService
+from CC.errors.common_errors import ResourceAlreadyExists
+from CC.services.blockchain_service import get_blockchain_service
+from CC.services.hd_wallet_service import HDWalletService
 from dotenv import load_dotenv
-from webhook.tatum_subscription import register_new_addresses_for_webhook
+from CC.webhook.tatum_subscription import register_new_addresses_for_webhook
 import threading
 import concurrent.futures
 
@@ -22,12 +22,12 @@ logger = logging.getLogger(__name__)
 # Load environment variables
 load_dotenv()
 
-from database.users import Users
-from database.wallets import Wallets
-from database.Address import Address
-from database.Blockchains import Blockchains
-from utils.blockchain_address_generator import BlockchainAddressGenerator
-from security.encryption import encrypt_private_key_aes, encrypt_mnemonic_aes, decrypt_private_key_aes, decrypt_mnemonic_aes
+from CC.database.users import Users
+from CC.database.wallets import Wallets
+from CC.database.Address import Address
+from CC.database.Blockchains import Blockchains
+from CC.utils.blockchain_address_generator import BlockchainAddressGenerator
+from CC.security.encryption import encrypt_private_key_aes, encrypt_mnemonic_aes, decrypt_private_key_aes, decrypt_mnemonic_aes
 from .hd_wallet_service import HDWalletService
 from .transaction_signer_service import TransactionSignerService
 from .smart_contract_service import SmartContractService

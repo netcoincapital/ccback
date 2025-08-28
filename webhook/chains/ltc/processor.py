@@ -1,6 +1,6 @@
-from webhook.transaction_processor import TransactionProcessor
-from utils.logging_config import get_logger
-from webhook.chains.ltc.utils import (
+from CC.webhook.transaction_processor import TransactionProcessor
+from CC.utils.logging_config import get_logger
+from CC.webhook.chains.ltc.utils import (
     parse_ltc_input_data,
     format_ltc_address,
     is_valid_ltc_address,

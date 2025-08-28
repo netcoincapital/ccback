@@ -1,0 +1,274 @@
+2025-07-19 10:57:28 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 10:57:28 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 10:57:28 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 10:57:28 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 10:57:28 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 10:57:29 - transaction_storage - INFO - Storing transaction cceef131-ef77-4596-b135-5992576ef842 with expiration 2025-07-19 11:12:29.349188
+2025-07-19 10:57:29 - transaction_storage - DEBUG - Stored transaction cceef131-ef77-4596-b135-5992576ef842 in Redis with expiration 2025-07-19 11:12:29.349188
+2025-07-19 10:57:29 - transaction_storage - DEBUG - Verified transaction cceef131-ef77-4596-b135-5992576ef842 is stored in Redis
+2025-07-19 10:57:29 - transaction_storage - DEBUG - Retrieving transaction cceef131-ef77-4596-b135-5992576ef842
+2025-07-19 10:57:29 - transaction_storage - DEBUG - Successfully retrieved transaction cceef131-ef77-4596-b135-5992576ef842 from Redis
+2025-07-19 10:57:29 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 10:57:29 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 10:57:29 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 10:57:29 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 10:57:31 - transaction_storage - INFO - Storing transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 with expiration 2025-07-19 11:12:31.414040
+2025-07-19 10:57:31 - transaction_storage - DEBUG - Stored transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 in Redis with expiration 2025-07-19 11:12:31.414040
+2025-07-19 10:57:31 - transaction_storage - DEBUG - Verified transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 is stored in Redis
+2025-07-19 10:57:31 - transaction_storage - DEBUG - Retrieving transaction 608bda1d-6f1d-4623-a0a9-30b129e04886
+2025-07-19 10:57:31 - transaction_storage - DEBUG - Successfully retrieved transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 from Redis
+2025-07-19 10:57:31 - transaction_storage - DEBUG - Retrieving transaction 608bda1d-6f1d-4623-a0a9-30b129e04886
+2025-07-19 10:57:31 - transaction_storage - DEBUG - Successfully retrieved transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 from Redis
+2025-07-19 10:57:32 - transaction_storage - INFO - Storing transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 with expiration 2025-07-19 11:12:32.543435
+2025-07-19 10:57:32 - transaction_storage - DEBUG - Stored transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 in Redis with expiration 2025-07-19 11:12:32.543435
+2025-07-19 10:57:32 - transaction_storage - DEBUG - Verified transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 is stored in Redis
+2025-07-19 10:57:32 - transaction_storage - DEBUG - Retrieving transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3
+2025-07-19 10:57:32 - transaction_storage - DEBUG - Successfully retrieved transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 from Redis
+2025-07-19 10:57:32 - transaction_storage - DEBUG - Retrieving transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3
+2025-07-19 10:57:32 - transaction_storage - DEBUG - Successfully retrieved transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 from Redis
+2025-07-19 11:36:57 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:36:57 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:36:57 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:36:57 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:36:57 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:36:57 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:36:57 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:36:57 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:36:57 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:36:57 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:36:57 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:36:57 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:36:57 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:36:57 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:36:57 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:40:59 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:40:59 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:40:59 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:40:59 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:40:59 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:40:59 - transaction_storage - INFO - Storing transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 with expiration 2025-07-19 11:55:59.589849
+2025-07-19 11:40:59 - transaction_storage - DEBUG - Stored transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 in Redis with expiration 2025-07-19 11:55:59.589849
+2025-07-19 11:40:59 - transaction_storage - DEBUG - Verified transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 is stored in Redis
+2025-07-19 11:40:59 - transaction_storage - DEBUG - Retrieving transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12
+2025-07-19 11:40:59 - transaction_storage - DEBUG - Successfully retrieved transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 from Redis
+2025-07-19 11:40:59 - transaction_storage - DEBUG - Retrieving transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12
+2025-07-19 11:40:59 - transaction_storage - DEBUG - Successfully retrieved transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 from Redis
+2025-07-19 11:43:09 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:43:09 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:43:09 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:43:09 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:43:09 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:43:09 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:43:09 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:43:09 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:43:09 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:43:09 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:43:09 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:43:09 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:43:09 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:43:09 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:43:09 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:43:20 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:43:20 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:43:20 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:43:20 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:43:20 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:43:20 - transaction_storage - INFO - Storing transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 with expiration 2025-07-19 11:58:20.830021
+2025-07-19 11:43:20 - transaction_storage - DEBUG - Stored transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 in Redis with expiration 2025-07-19 11:58:20.830021
+2025-07-19 11:43:20 - transaction_storage - DEBUG - Verified transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 is stored in Redis
+2025-07-19 11:43:20 - transaction_storage - DEBUG - Retrieving transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1
+2025-07-19 11:43:20 - transaction_storage - DEBUG - Successfully retrieved transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 from Redis
+2025-07-19 11:43:20 - transaction_storage - DEBUG - Retrieving transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1
+2025-07-19 11:43:20 - transaction_storage - DEBUG - Successfully retrieved transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 from Redis
+2025-07-19 11:57:43 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:57:43 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:57:43 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:57:43 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:57:43 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:57:43 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:57:43 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:57:43 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:57:43 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 11:57:43 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:57:43 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 11:57:43 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 11:57:43 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 11:57:43 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 11:57:43 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:03:44 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:03:44 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:03:44 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:03:44 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:03:44 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:03:44 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:03:44 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:03:44 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:03:44 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:03:44 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:03:45 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:03:45 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:03:45 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:03:45 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:03:45 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:10:39 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:10:39 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:10:39 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:10:39 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:10:39 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:10:39 - transaction_storage - INFO - Storing transaction 803b6337-1789-47ee-b584-5ad88558ed90 with expiration 2025-07-19 12:25:39.873068
+2025-07-19 12:10:39 - transaction_storage - DEBUG - Stored transaction 803b6337-1789-47ee-b584-5ad88558ed90 in Redis with expiration 2025-07-19 12:25:39.873068
+2025-07-19 12:10:39 - transaction_storage - DEBUG - Verified transaction 803b6337-1789-47ee-b584-5ad88558ed90 is stored in Redis
+2025-07-19 12:10:39 - transaction_storage - DEBUG - Retrieving transaction 803b6337-1789-47ee-b584-5ad88558ed90
+2025-07-19 12:10:39 - transaction_storage - DEBUG - Successfully retrieved transaction 803b6337-1789-47ee-b584-5ad88558ed90 from Redis
+2025-07-19 12:10:39 - transaction_storage - DEBUG - Retrieving transaction 803b6337-1789-47ee-b584-5ad88558ed90
+2025-07-19 12:10:39 - transaction_storage - DEBUG - Successfully retrieved transaction 803b6337-1789-47ee-b584-5ad88558ed90 from Redis
+2025-07-19 12:12:42 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:12:42 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:12:42 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:12:42 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:12:42 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:13:41 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:13:41 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:13:41 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:13:41 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:13:41 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:16:36 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:16:36 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:16:36 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:16:36 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:16:36 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:16:38 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:16:38 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:16:38 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:16:38 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:16:38 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:16:38 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:16:38 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:16:38 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:16:38 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:16:38 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:22:25 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:22:25 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:22:25 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:22:26 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:22:26 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:22:26 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:22:26 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:22:26 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:22:26 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:22:26 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 12:22:26 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 12:22:26 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 12:22:26 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 12:22:26 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 12:22:26 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 14:19:40 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 14:19:40 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 14:19:40 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 14:19:40 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 14:19:40 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 14:20:48 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 14:20:48 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 14:20:48 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 14:20:48 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 14:20:48 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 14:21:22 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 14:21:22 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 14:21:22 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 14:21:22 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 14:21:22 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 14:24:16 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 14:24:16 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 14:24:16 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 14:24:16 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 14:24:16 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 14:24:17 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 14:24:17 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 14:24:17 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 14:24:17 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 14:24:17 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 14:24:17 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 14:24:17 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 14:24:17 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 14:24:17 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 14:24:17 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 14:24:41 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 14:24:41 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 14:24:41 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 14:24:41 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 14:24:41 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:31:53 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:31:53 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:31:53 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:31:53 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:31:53 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:31:53 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:31:53 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:31:53 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:31:53 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:31:53 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:31:53 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:31:53 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:31:53 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:31:53 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:31:53 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:38:34 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:38:34 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:38:34 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:38:34 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:38:34 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:38:34 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:38:34 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:38:34 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:38:34 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:38:34 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:38:35 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:38:35 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:38:35 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:38:35 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:38:35 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:55:24 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:55:24 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:55:24 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:55:24 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:55:24 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:55:25 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:55:25 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:55:25 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:55:25 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:55:25 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 15:55:25 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 15:55:25 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 15:55:25 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 15:55:25 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 15:55:25 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 16:06:30 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 16:06:30 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 16:06:30 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 16:06:30 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 16:06:30 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 16:06:30 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 16:06:30 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 16:06:30 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 16:06:30 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 16:06:30 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 16:06:31 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 16:06:31 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 16:06:31 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 16:06:31 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 16:06:31 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 19:29:32 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 19:29:32 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 19:29:32 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 19:29:32 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 19:29:32 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 19:29:44 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 19:29:44 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 19:29:44 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 19:29:44 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 19:29:44 - transaction_storage - INFO - Using Redis storage for transactions
+2025-07-19 19:29:58 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-07-19 19:29:58 - transaction_storage - INFO - Attempting Redis connection - URL: redis://:2a4efe20e40e332d@localhost:6379/0, Host: localhost, Port: 6379, DB: 0
+2025-07-19 19:29:58 - transaction_storage - INFO - Trying Redis connection method: URL
+2025-07-19 19:29:58 - transaction_storage - INFO - Redis connection successful using URL: True
+2025-07-19 19:29:58 - transaction_storage - INFO - Using Redis storage for transactions

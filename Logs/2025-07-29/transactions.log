@@ -1,0 +1,35 @@
+2025-07-29 21:23:56 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-29 21:23:56 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-29 21:23:56 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-29 21:29:31 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-29 21:29:31 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-29 21:29:32 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-29 21:33:26 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-29 21:33:26 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-29 21:33:27 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-30 02:03:32 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 07:22:50 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 07:22:51 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 09:01:36 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 09:01:49 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT 1]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 12:19:50 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 14:31:36 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT 1]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 17:05:39 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 05:55:57 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 08:07:39 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 09:24:54 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

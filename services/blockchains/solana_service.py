@@ -125,8 +125,8 @@ class SolanaService(BaseBlockchainService):
                     self.logger.info(f"Signing Solana transaction using direct client")
                     
                     # Load private key
-                    from solders.keypair import Keypair
-                    from solders.transaction import Transaction
+                    from solana.keypair import Keypair
+                    from solana.transaction import Transaction
                     from solana.system_program import TransferParams, transfer
                     
                     # Decode private key
@@ -224,7 +224,7 @@ class SolanaService(BaseBlockchainService):
                     self.logger.info(f"Attempting to send Solana transaction via direct client")
                     
                     # Reuse or create keypair
-                    from solders.keypair import Keypair
+                    from solana.keypair import Keypair
                     keypair = Keypair.from_secret_key(bytes.fromhex(private_key))
                     
                     # Try to send transaction (if we already built it above)

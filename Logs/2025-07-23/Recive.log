@@ -1,0 +1,27 @@
+2025-07-23 12:46:49 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-23 12:46:49 - Recive - INFO - Initializing receive transaction module
+2025-07-23 12:46:50 - Recive - INFO - Initializing receive transaction module
+2025-07-23 13:22:00 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-23 13:22:00 - Recive - INFO - Initializing receive transaction module
+2025-07-23 13:22:01 - Recive - INFO - Initializing receive transaction module
+2025-07-23 13:45:48 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-23 13:45:48 - Recive - INFO - Initializing receive transaction module
+2025-07-23 13:45:49 - Recive - INFO - Initializing receive transaction module
+2025-07-23 13:50:32 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-23 13:50:32 - Recive - INFO - Initializing receive transaction module
+2025-07-23 13:50:34 - Recive - INFO - Initializing receive transaction module
+2025-07-23 13:51:05 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-23 13:51:05 - Recive - INFO - Initializing receive transaction module
+2025-07-23 13:51:07 - Recive - INFO - Initializing receive transaction module
+2025-07-23 14:14:46 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-23 14:14:46 - Recive - INFO - Initializing receive transaction module
+2025-07-23 14:14:48 - Recive - INFO - Initializing receive transaction module
+2025-07-23 15:37:35 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-23 15:37:35 - Recive - INFO - Initializing receive transaction module
+2025-07-23 15:37:36 - Recive - INFO - Initializing receive transaction module
+2025-07-23 15:53:24 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-07-23 15:53:24 - Recive - INFO - Initializing receive transaction module
+2025-07-23 15:53:25 - Recive - INFO - Initializing receive transaction module
+2025-07-24 08:33:31 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-24 08:33:31 - Recive - WARNING - No address found for user c579224d-282c-4364-85f3-34900adf3640 on blockchain Tron

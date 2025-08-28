@@ -1,0 +1,33 @@
+2025-07-22 05:45:28 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 06:10:06 - Send - WARNING - No UserID found in prepare request
+2025-07-22 06:10:18 - Send - WARNING - No UserID found in prepare request
+2025-07-22 06:21:03 - Send - WARNING - No UserID found in prepare request
+2025-07-22 17:18:17 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 17:18:17 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 17:18:17 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 17:33:59 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 17:33:59 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 17:33:59 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:28:20 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:28:20 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:28:20 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:31:22 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:31:23 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:31:23 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:32:03 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:32:04 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:32:04 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:34:13 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:34:13 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:34:13 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:34:26 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:34:26 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:34:26 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:46:45 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:46:45 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 20:46:45 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 21:52:25 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 21:52:26 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-22 21:52:26 - Send - DEBUG - Logger initialized for Send at level DEBUG
+2025-07-23 13:20:47 - Send - ERROR - Error in send_transaction: Tatum transaction failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: intrinsic gas too low: have 17500, want 21000","dashboardLog":"https://dashboard.tatum.io/logs?id=6880e1af41e8ebb40d8af8c3"}
+2025-07-23 13:22:26 - Send - ERROR - Error in send_transaction: Tatum reports insufficient funds. Our calculations: Available=0.009474998500516000 MATIC, Required=0.010525001492617000 MATIC. This may indicate a private key mismatch or higher gas costs in Tatum.

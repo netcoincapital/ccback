@@ -1,7 +1,7 @@
 import logging
 import requests
 import os
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 
 # تنظیم لاگر
 logger = get_logger(__file__)
@@ -23,6 +23,7 @@ class BlockchainUtils:
             "ethereum-mainnet": "ETH",
             "bitcoin-mainnet": "BTC",
             "polygon-mainnet": "MATIC",
+            "polygon": "MATIC",  # اضافه کردن polygon بدون mainnet
             "bsc-mainnet": "BSC",
             "avax-mainnet": "AVAX",
             "solana-mainnet": "SOL",
@@ -34,6 +35,7 @@ class BlockchainUtils:
         # انواع دیگر
         self.BSC_VARIANTS = ["BSC", "BNB", "Binance", "BINANCE", "bsc", "bnb", "binance"]
         self.ETH_VARIANTS = ["ETH", "Ethereum", "ETHEREUM", "eth", "ethereum"]
+        self.POLYGON_VARIANTS = ["POLYGON", "MATIC", "Polygon", "polygon", "matic", "Matic"]
     
     def convert_chain_format(self, chain):
         """
@@ -99,6 +101,11 @@ class BlockchainUtils:
         if chain.lower() in [v.lower() for v in self.ETH_VARIANTS]:
             logger.info(f"بلاکچین '{chain}' با انواع ETH تطبیق یافت")
             return "ETH"
+        
+        # بررسی انواع POLYGON
+        if chain.lower() in [v.lower() for v in self.POLYGON_VARIANTS]:
+            logger.info(f"بلاکچین '{chain}' با انواع POLYGON تطبیق یافت")
+            return "MATIC"
         
         # اگر نتوانستیم آن را تبدیل کنیم، یک هشدار ثبت می‌کنیم و مقدار اصلی را برمی‌گردانیم
         logger.warning(f"تبدیل فرمت بلاکچین تاتوم '{chain}' به فرمت داخلی امکان‌پذیر نبود")

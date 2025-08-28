@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
-from database.Currencies import Currencies
+from CC.database.Currencies import Currencies
 import requests
 import logging
-from config.cache import redis_client
+from CC.config.cache import redis_client
 import json
 from datetime import timedelta
 

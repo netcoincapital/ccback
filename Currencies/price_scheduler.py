@@ -19,8 +19,11 @@ def run_scheduler():
     logger.info("Fetching cryptocurrencies from database")
     session = Session(bind=engine)
     try:
-        # فقط ارزهایی که CMC_ID دارند را انتخاب می‌کنیم
-        all_cryptos = session.query(Currencies).filter(Currencies.CMC_ID.isnot(None)).order_by(Currencies.CurrencyID.asc()).all()
+        # فقط ارزهایی که CMC_ID دارند را انتخاب می‌کنیم - حذف NCC توکن‌های 8517 و 8519
+        all_cryptos = session.query(Currencies).filter(
+            Currencies.CMC_ID.isnot(None),
+            Currencies.CurrencyID.notin_([8517, 8519])  # حذف NCC توکن‌ها از scheduler اصلی
+        ).order_by(Currencies.CurrencyID.asc()).all()
         
         # اگر ارزی پیدا نشد
         if not all_cryptos:

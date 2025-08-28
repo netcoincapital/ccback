@@ -1,0 +1,569 @@
+2025-07-18 20:32:39 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-18 20:33:04 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-18 20:34:33 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-18 20:34:33 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-18 20:34:33 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-18 20:34:33 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-18 20:34:34 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-18T20:34:34.252+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TCa9n3wiBMQVxLhVkNMp1SHL4Tz4v2tNJh/tokens"}
+2025-07-18 20:34:34 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-18T20:34:34.504+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TCa9n3wiBMQVxLhVkNMp1SHL4Tz4v2tNJh/tokens"}
+2025-07-18 20:34:35 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-18 20:34:35 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-18T20:34:35.134+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TCa9n3wiBMQVxLhVkNMp1SHL4Tz4v2tNJh/tokens"}
+2025-07-18 20:34:35 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TCa9n3wiBMQVxLhVkNMp1SHL4Tz4v2tNJh/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887253c4c0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-18 20:34:36 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TCa9n3wiBMQVxLhVkNMp1SHL4Tz4v2tNJh/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8871d27250>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-18 20:34:36 - balance_service - WARNING - Error getting token decimals, using default 18: 429 Client Error: Too Many Requests for url: https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7
+2025-07-18 20:34:36 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TCa9n3wiBMQVxLhVkNMp1SHL4Tz4v2tNJh/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88724fee20>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 05:49:45 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 05:49:45 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 05:49:45 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 05:49:45 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 05:49:46 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T05:49:46.474+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TGsSyxBQeNDDUDiiPTY6mgsP12Fx75C375/tokens"}
+2025-07-19 05:49:46 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T05:49:46.682+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TGsSyxBQeNDDUDiiPTY6mgsP12Fx75C375/tokens"}
+2025-07-19 05:49:47 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 05:49:47 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T05:49:47.139+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TGsSyxBQeNDDUDiiPTY6mgsP12Fx75C375/tokens"}
+2025-07-19 05:49:47 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TGsSyxBQeNDDUDiiPTY6mgsP12Fx75C375/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88724e6160>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 05:49:48 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TGsSyxBQeNDDUDiiPTY6mgsP12Fx75C375/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88724d5970>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 05:49:48 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TGsSyxBQeNDDUDiiPTY6mgsP12Fx75C375/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88724e63a0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:12:02 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 07:12:02 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 07:12:02 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 07:12:02 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 07:12:02 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:12:02.845+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:12:03 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:12:03.138+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:12:03 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 07:12:03 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:12:03.640+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:12:04 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8871d320d0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:12:05 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872b01970>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:12:05 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88724b64c0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:12:52 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 07:12:52 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 07:12:52 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 07:12:52 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 07:12:53 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:12:53.133+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:12:53 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:12:53.296+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:12:53 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:12:53.808+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:12:53 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 07:12:54 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872baea60>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:12:55 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872b988b0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:12:55 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872b87be0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:17:16 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 07:17:16 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 07:17:16 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 07:17:16 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 07:17:17 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:17:17.389+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:17:17 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:17:17.662+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:17:18 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 07:17:18 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:17:18.154+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:17:18 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8871232be0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:17:19 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872a59760>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:17:19 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887018a970>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:20:57 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 07:20:57 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 07:20:57 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 07:20:57 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 07:20:57 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:20:57.686+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:20:58 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:20:57.994+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:20:58 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 07:20:58 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T07:20:58.456+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 07:20:59 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872a23760>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:20:59 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872a2e490>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 07:21:00 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872bd9430>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:01:17 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 08:01:17 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 08:01:17 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 08:01:17 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 08:01:18 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:01:18.259+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:01:18 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:01:18.543+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:01:18 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 08:01:19 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:01:19.063+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:01:19 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872a76100>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:01:20 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872a888b0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:01:20 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872aa5370>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:03:13 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 08:03:13 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 08:03:13 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 08:03:13 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 08:03:14 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:03:14.120+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:03:14 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:03:14.336+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:03:14 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 08:03:14 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:03:14.847+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:03:15 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872a17d60>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:03:16 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872c32730>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:03:16 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872c06a60>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:03:25 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 08:03:25 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 08:03:25 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 08:03:25 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 08:03:25 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:03:25.951+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:03:26 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:03:26.198+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:03:26 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:03:26.828+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:03:26 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 08:03:27 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88700e2520>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:03:27 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88700db100>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:03:28 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88700c5df0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:13:10 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 08:13:10 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 08:13:10 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 08:13:10 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 08:13:11 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:13:11.161+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:13:11 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:13:11.421+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:13:11 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 08:13:12 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:13:12.051+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:13:12 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872c28250>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:13:13 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872c04610>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:13:13 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872c04310>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:13:30 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 08:13:30 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 08:13:30 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 08:13:30 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 08:13:31 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:13:31.210+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:13:31 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:13:31.421+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:13:32 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T08:13:32.090+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 08:13:32 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 08:13:32 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878ab2a90>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:13:33 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878a811c0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 08:13:33 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878aa6c10>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:27:18 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 09:27:18 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 09:27:18 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 09:27:18 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 09:27:19 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:27:19.448+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:27:19 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:27:19.645+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:27:20 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:27:20.542+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:27:20 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 09:27:20 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878a8ce20>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:27:21 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878a19070>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:27:22 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887890a940>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:27:22 - balance_service - ERROR - Error getting EVM token balance on Ethereum: 429 Client Error: Too Many Requests for url: https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 163, in get_token_balance
+    balance = token_contract.functions.balanceOf(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/contract/contract.py", line 291, in call
+    return call_contract_function(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/contract/utils.py", line 154, in call_contract_function
+    return_data = w3.eth.call(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/eth/eth.py", line 247, in call
+    return self._durin_call(transaction, block_identifier, state_override)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/eth/eth.py", line 266, in _durin_call
+    return self._call(transaction, block_identifier, state_override)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/manager.py", line 231, in request_blocking
+    response = self._make_request(method, params)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/manager.py", line 163, in _make_request
+    return request_func(method, params)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+  [Previous line repeated 1 more time]
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/middleware/formatting.py", line 164, in response_processor
+    self.sync_formatters_builder(cast("Web3", self._w3), method),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/middleware/validation.py", line 141, in build_method_validators
+    w3_chain_id = w3.eth.chain_id
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/eth/eth.py", line 156, in chain_id
+    return self._chain_id()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/manager.py", line 231, in request_blocking
+    response = self._make_request(method, params)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/manager.py", line 163, in _make_request
+    return request_func(method, params)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+  [Previous line repeated 2 more times]
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/_utils/caching/caching_utils.py", line 261, in wrapper
+    return func(provider, method, params)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/providers/rpc/rpc.py", line 170, in make_request
+    raw_response = self._make_request(method, request_data)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/providers/rpc/rpc.py", line 157, in _make_request
+    raise e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/providers/rpc/rpc.py", line 147, in _make_request
+    return self._request_session_manager.make_post_request(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/_utils/http_session_manager.py", line 148, in make_post_request
+    response.raise_for_status()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7
+2025-07-19 09:33:01 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 09:33:01 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 09:33:01 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 09:33:01 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 09:33:01 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:33:01.663+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:33:01 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:33:01.850+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:33:02 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 09:33:02 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:33:02.316+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:33:03 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887285da90>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:33:03 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872ab6fd0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:33:04 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872868a90>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:33:06 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 09:33:06 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 09:33:06 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 09:33:06 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 09:33:07 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:33:07.458+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:33:07 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:33:07.655+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:33:08 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 09:33:08 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:33:08.393+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:33:08 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88727c03a0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:33:09 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88727cad60>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:33:10 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872810610>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:40:03 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 09:40:03 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 09:40:03 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 09:40:03 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 09:40:03 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:40:03.850+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:40:04 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:40:03.999+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:40:04 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 09:40:04 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T09:40:04.758+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 09:40:05 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887282d250>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:40:05 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88728ab9d0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 09:40:06 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887287f7c0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:01:33 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 10:01:33 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 10:01:33 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 10:01:33 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 10:01:33 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:01:33.808+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:01:34 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:01:34.063+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:01:34 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 10:01:34 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:01:34.607+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:01:35 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872708580>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:01:36 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887279fd00>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:01:36 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872715310>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:05:17 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 10:05:17 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 10:05:17 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 10:05:17 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 10:05:17 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:05:17.818+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:05:18 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:05:18.033+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:05:18 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 10:05:18 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:05:18.742+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:05:19 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88726cafd0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:05:19 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887280eb80>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:05:20 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88726a92b0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:13:55 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 10:13:55 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 10:13:55 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 10:13:55 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 10:13:56 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:13:55.984+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:13:56 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:13:56.200+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:13:56 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 10:13:56 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:13:56.893+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:13:57 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878878d90>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:13:57 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878815970>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:13:58 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878815fa0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:22:36 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 10:22:36 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 10:22:36 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 10:22:36 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 10:22:37 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:22:37.052+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:22:37 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:22:37.298+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:22:38 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:22:38.209+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:22:38 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88726224c0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:22:38 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 10:22:39 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887263fd60>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:22:39 - balance_service - WARNING - Error getting token decimals, using default 18: 429 Client Error: Too Many Requests for url: https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7
+2025-07-19 10:22:39 - balance_service - WARNING - Error getting token decimals, using default 18: 429 Client Error: Too Many Requests for url: https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7
+2025-07-19 10:22:40 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88726fb8b0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:31:33 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 10:31:33 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 10:31:33 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 10:31:33 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 10:31:34 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:31:34.357+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:31:34 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:31:34.596+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:31:34 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 10:31:35 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:31:35.059+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:31:35 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88789641c0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:31:36 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f88788244c0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:31:36 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887884bbb0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:39:49 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 10:39:49 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 10:39:49 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 10:39:49 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 10:39:50 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:39:50.146+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:39:50 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:39:50.319+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:39:50 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:39:50.730+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:39:51 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 10:39:51 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872af0820>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:39:52 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872a94c10>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:39:52 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8872822a60>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:39:52 - balance_service - WARNING - Error getting token decimals, using default 18: 429 Client Error: Too Many Requests for url: https://mainnet.infura.io/v3/a8ab43a04ce044de988a838d92f478a7
+2025-07-19 10:45:28 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-19 10:45:28 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-19 10:45:28 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-19 10:45:28 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-19 10:45:28 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:45:28.644+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:45:28 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:45:28.891+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:45:29 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-19 10:45:29 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-19T10:45:29.354+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens"}
+2025-07-19 10:45:30 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878740f10>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:45:30 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f887874d7f0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-19 10:45:31 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TWxYj1EgkXikRh3SszVUQniB6NcLNKeRfy/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8878746370>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))

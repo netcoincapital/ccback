@@ -1,0 +1,10 @@
+2025-07-18 20:32:40 - notification_service - DEBUG - Logger initialized for notification_service at level DEBUG
+2025-07-18 20:33:05 - notification_service - DEBUG - Logger initialized for notification_service at level DEBUG
+2025-07-18 22:26:47 - notification_service - WARNING - ⚠️ notify method called
+2025-07-18 22:26:47 - notification_service - WARNING - Invalid or missing direction: None. Skipping notification.
+2025-07-19 10:57:31 - notification_service - WARNING - ⚠️ notify method called
+2025-07-19 10:57:31 - notification_service - WARNING - Invalid or missing direction: None. Skipping notification.
+2025-07-19 10:57:36 - notification_service - WARNING - ⚠️ notify method called
+2025-07-19 10:57:36 - notification_service - WARNING - Invalid or missing direction: None. Skipping notification.
+2025-07-19 10:57:36 - notification_service - WARNING - ⚠️ notify method called
+2025-07-19 10:57:36 - notification_service - WARNING - Invalid or missing direction: None. Skipping notification.

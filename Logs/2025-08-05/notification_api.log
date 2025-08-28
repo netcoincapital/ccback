@@ -1,0 +1,978 @@
+2025-08-05 07:25:12 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 07:25:35 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 07:25:35 - notification_api - INFO - درخواست برای کاربر: 0a2389d9-5a96-455a-92e8-0f9d535c3dc0
+2025-08-05 07:25:35 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-05 07:25:35 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-05 07:25:35 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-05 07:25:35 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 0a2389d9-5a96-455a-92e8-0f9d535c3dc0 یافت نشد
+2025-08-05 07:25:35 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 0a2389d9-5a96-455a-92e8-0f9d535c3dc0 یافت نشد
+2025-08-05 07:26:13 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 07:26:49 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 07:26:58 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 07:26:58 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-05 07:26:58 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-05 07:26:58 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-05 07:26:58 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-05 07:26:58 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 07:26:58 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 07:48:42 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 07:48:42 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-05 07:48:42 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-05 07:48:42 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-05 07:48:42 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-05 07:48:42 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 07:48:42 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 07:55:50 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 07:55:50 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-05 07:55:50 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-05 07:55:50 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-05 07:55:50 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-05 07:55:50 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 07:55:50 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 08:01:54 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 08:01:54 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-05 08:01:54 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-05 08:01:54 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 08:01:54 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-05 08:01:54 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 08:01:54 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 08:01:58 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 08:01:58 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-05 08:01:58 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-05 08:01:58 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 08:01:58 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-05 08:01:58 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 08:01:58 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 08:02:04 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 08:02:04 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-05 08:02:04 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-05 08:02:04 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 08:02:04 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-05 08:02:04 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 08:02:04 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 09:21:05 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 09:21:05 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-05 09:21:05 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-05 09:21:05 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 09:21:05 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-05 09:21:05 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 09:21:05 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 09:21:08 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 09:21:08 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-05 09:21:08 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-05 09:21:08 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 09:21:08 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-05 09:21:08 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 09:21:08 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 09:21:15 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 09:21:15 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-05 09:21:15 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-05 09:21:15 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 09:21:15 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-05 09:21:15 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 09:21:15 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-05 11:18:10 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 11:18:10 - notification_api - INFO - درخواست برای کاربر: 6e6dcc98-82f9-4551-b94a-288056d0b0f3
+2025-08-05 11:18:10 - notification_api - INFO - درخواست برای کیف پول: 42cc9a7e-1099-4b7b-9134-4f8734bd59fb
+2025-08-05 11:18:10 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-05 11:18:10 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-08-05 11:18:10 - notification_api - INFO - توکن دستگاه جدید با شناسه 297 ثبت شد برای کاربر 6e6dcc98-82f9-4551-b94a-288056d0b0f3 و کیف پول 42cc9a7e-1099-4b7b-9134-4f8734bd59fb
+2025-08-05 11:18:46 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 11:19:00 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 11:58:24 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 11:58:24 - notification_api - INFO - درخواست برای کاربر: faf05a3c-c821-401f-9932-468c06d0b50b
+2025-08-05 11:58:24 - notification_api - INFO - درخواست برای کیف پول: 190fd7ee-3ed2-40ff-a15e-71c90fa67453
+2025-08-05 11:58:24 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-05 11:58:24 - notification_api - INFO - دستگاه: MAR-LX2, نوع: android
+2025-08-05 11:58:24 - notification_api - INFO - توکن دستگاه موجود به‌روزرسانی شد برای کاربر faf05a3c-c821-401f-9932-468c06d0b50b و کیف پول 190fd7ee-3ed2-40ff-a15e-71c90fa67453
+2025-08-05 12:18:37 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 12:18:37 - notification_api - INFO - درخواست برای کاربر: ffd425af-7d4d-436e-a79b-46a387855c0b
+2025-08-05 12:18:37 - notification_api - INFO - درخواست برای کیف پول: b636d4f4-e90c-493e-ba02-ba82c51e0f83
+2025-08-05 12:18:37 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-05 12:18:37 - notification_api - INFO - دستگاه: SM-A556E, نوع: android
+2025-08-05 12:18:37 - notification_api - INFO - توکن دستگاه جدید با شناسه 298 ثبت شد برای کاربر ffd425af-7d4d-436e-a79b-46a387855c0b و کیف پول b636d4f4-e90c-493e-ba02-ba82c51e0f83
+2025-08-05 15:38:11 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 15:38:11 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-05 15:38:11 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-05 15:38:11 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 15:38:11 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-05 15:38:11 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 15:38:11 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 15:38:14 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 15:38:14 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-05 15:38:14 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-05 15:38:14 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 15:38:14 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-05 15:38:14 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 15:38:14 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 15:38:21 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 15:38:21 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-05 15:38:21 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-05 15:38:21 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-05 15:38:21 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-05 15:38:21 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 15:38:21 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-05 16:53:39 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-05 16:53:39 - notification_api - INFO - درخواست برای کاربر: 20e7385c-5516-4ec3-829e-9099c6b4fa6d
+2025-08-05 16:53:39 - notification_api - INFO - درخواست برای کیف پول: acfbe766-0f0a-4a9f-9010-6c2eaf547f61
+2025-08-05 16:53:39 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-05 16:53:39 - notification_api - INFO - دستگاه: SM-A715F, نوع: android
+2025-08-05 16:53:39 - notification_api - INFO - توکن دستگاه موجود به‌روزرسانی شد برای کاربر 20e7385c-5516-4ec3-829e-9099c6b4fa6d و کیف پول acfbe766-0f0a-4a9f-9010-6c2eaf547f61
+2025-08-05 18:00:36 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 18:00:36 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 18:00:36 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 18:01:18 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 18:01:18 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-05 18:01:18 - notification_api - DEBUG - Logger initialized for notification_api at level DEBUG
+2025-08-06 10:09:37 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 10:09:37 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 10:09:37 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 10:09:37 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 10:09:37 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 10:09:37 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 10:09:37 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 10:09:41 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 10:09:41 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 10:09:41 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 10:09:41 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 10:09:41 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 10:09:41 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 10:09:41 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 10:09:47 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 10:09:47 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 10:09:47 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 10:09:47 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 10:09:47 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 10:09:47 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 10:09:47 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 10:53:44 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 10:53:44 - notification_api - INFO - درخواست برای کاربر: eef851e4-3589-4646-b0e2-3975afbf5a4e
+2025-08-06 10:53:44 - notification_api - INFO - درخواست برای کیف پول: b1e1a0cb-d090-45d8-ba25-68e93fe33dd1
+2025-08-06 10:53:44 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-06 10:53:44 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-08-06 10:53:44 - notification_api - INFO - توکن دستگاه جدید با شناسه 299 ثبت شد برای کاربر eef851e4-3589-4646-b0e2-3975afbf5a4e و کیف پول b1e1a0cb-d090-45d8-ba25-68e93fe33dd1
+2025-08-06 11:53:22 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 11:53:22 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 11:53:22 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 11:53:22 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 11:53:22 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 11:53:22 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:53:22 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:53:26 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 11:53:26 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 11:53:26 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 11:53:26 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 11:53:26 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 11:53:26 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:53:26 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:53:33 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 11:53:33 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 11:53:33 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 11:53:33 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 11:53:33 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 11:53:33 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:53:33 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:54:48 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 11:54:48 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 11:54:48 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 11:54:48 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 11:54:48 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 11:54:48 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:54:48 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:54:52 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 11:54:52 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 11:54:52 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 11:54:52 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 11:54:52 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 11:54:52 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 11:54:52 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 12:05:33 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 12:05:33 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 12:05:33 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 12:05:33 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 12:05:33 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 12:05:33 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 12:05:33 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 12:05:37 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 12:05:37 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 12:05:37 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 12:05:37 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 12:05:37 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 12:05:37 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 12:05:37 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 12:05:44 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 12:05:44 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 12:05:44 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 12:05:44 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 12:05:44 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 12:05:44 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 12:05:44 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 14:12:03 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:12:03 - notification_api - INFO - درخواست برای کاربر: c11dcae2-af01-40a0-8cae-a7a441a2f52b
+2025-08-06 14:12:03 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 14:12:03 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-08-06 14:12:03 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-08-06 14:12:03 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:12:03 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:12:07 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:12:07 - notification_api - INFO - درخواست برای کاربر: c11dcae2-af01-40a0-8cae-a7a441a2f52b
+2025-08-06 14:12:07 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 14:12:07 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-08-06 14:12:07 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-08-06 14:12:07 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:12:07 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:13:18 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:13:18 - notification_api - INFO - درخواست برای کاربر: c11dcae2-af01-40a0-8cae-a7a441a2f52b
+2025-08-06 14:13:18 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 14:13:18 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-08-06 14:13:18 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-08-06 14:13:18 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:13:18 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:13:22 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:13:22 - notification_api - INFO - درخواست برای کاربر: c11dcae2-af01-40a0-8cae-a7a441a2f52b
+2025-08-06 14:13:22 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 14:13:22 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-08-06 14:13:22 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-08-06 14:13:22 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:13:22 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:13:29 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:13:29 - notification_api - INFO - درخواست برای کاربر: c11dcae2-af01-40a0-8cae-a7a441a2f52b
+2025-08-06 14:13:29 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 14:13:29 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-08-06 14:13:29 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-08-06 14:13:29 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:13:29 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر c11dcae2-af01-40a0-8cae-a7a441a2f52b یافت نشد
+2025-08-06 14:16:38 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:16:38 - notification_api - INFO - درخواست برای کاربر: 21283a7f-d423-4165-b81b-06d4b83c6aea
+2025-08-06 14:16:38 - notification_api - INFO - درخواست برای کیف پول: d247b4fa-0fa4-402e-9ee3-aa56683081db
+2025-08-06 14:16:38 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-06 14:16:38 - notification_api - INFO - دستگاه: 23129RAA4G, نوع: android
+2025-08-06 14:16:38 - notification_api - INFO - توکن دستگاه جدید با شناسه 300 ثبت شد برای کاربر 21283a7f-d423-4165-b81b-06d4b83c6aea و کیف پول d247b4fa-0fa4-402e-9ee3-aa56683081db
+2025-08-06 14:19:06 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:19:06 - notification_api - INFO - درخواست برای کاربر: 18290a05-8c1f-4ab6-ad03-19999dad7621
+2025-08-06 14:19:06 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 14:19:06 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-08-06 14:19:06 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-08-06 14:19:06 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 18290a05-8c1f-4ab6-ad03-19999dad7621 یافت نشد
+2025-08-06 14:19:06 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 18290a05-8c1f-4ab6-ad03-19999dad7621 یافت نشد
+2025-08-06 14:19:10 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:19:10 - notification_api - INFO - درخواست برای کاربر: 18290a05-8c1f-4ab6-ad03-19999dad7621
+2025-08-06 14:19:10 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 14:19:10 - notification_api - INFO - طول توکن دستگاه: 38 کاراکتر
+2025-08-06 14:19:10 - notification_api - INFO - دستگاه: samsung SM-S928B, نوع: flutter
+2025-08-06 14:19:10 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 18290a05-8c1f-4ab6-ad03-19999dad7621 یافت نشد
+2025-08-06 14:19:10 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 18290a05-8c1f-4ab6-ad03-19999dad7621 یافت نشد
+2025-08-06 14:28:02 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:28:02 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 14:28:02 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 14:28:02 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 14:28:02 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 14:28:02 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 14:28:02 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 14:28:06 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:28:06 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 14:28:06 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 14:28:06 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 14:28:06 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 14:28:06 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 14:28:06 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 14:28:13 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 14:28:13 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 14:28:13 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 14:28:13 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 14:28:13 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 14:28:13 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 14:28:13 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:20:09 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:20:09 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 16:20:09 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 16:20:09 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 16:20:09 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 16:20:09 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:20:09 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:20:13 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:20:13 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 16:20:13 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 16:20:13 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 16:20:13 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 16:20:13 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:20:13 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:20:20 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:20:20 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 16:20:20 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 16:20:20 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 16:20:20 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 16:20:20 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:20:20 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:26:55 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:26:55 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 16:26:55 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 16:26:55 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 16:26:55 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 16:26:55 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:26:55 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:26:59 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:26:59 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 16:26:59 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 16:26:59 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 16:26:59 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 16:26:59 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:26:59 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:27:06 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:27:06 - notification_api - INFO - درخواست برای کاربر: 6e22d30b-0cba-418f-946d-b8db6632615b
+2025-08-06 16:27:06 - notification_api - INFO - درخواست برای کیف پول: mohamamd
+2025-08-06 16:27:06 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-06 16:27:06 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-06 16:27:06 - notification_api - WARNING - کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:27:06 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه mohamamd برای کاربر 6e22d30b-0cba-418f-946d-b8db6632615b یافت نشد
+2025-08-06 16:45:51 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:45:51 - notification_api - INFO - درخواست برای کاربر: 990c47ee-c076-448f-a552-bf69fc74d5b4
+2025-08-06 16:45:51 - notification_api - INFO - درخواست برای کیف پول: 07715b82-4102-42c3-bbb5-2951566a20f0
+2025-08-06 16:45:51 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:45:51 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:45:51 - notification_api - INFO - توکن دستگاه جدید با شناسه 301 ثبت شد برای کاربر 990c47ee-c076-448f-a552-bf69fc74d5b4 و کیف پول 07715b82-4102-42c3-bbb5-2951566a20f0
+2025-08-06 16:46:11 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:46:11 - notification_api - INFO - درخواست برای کاربر: 990c47ee-c076-448f-a552-bf69fc74d5b4
+2025-08-06 16:46:11 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 16:46:11 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:46:11 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:46:11 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 990c47ee-c076-448f-a552-bf69fc74d5b4 یافت نشد
+2025-08-06 16:46:11 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 990c47ee-c076-448f-a552-bf69fc74d5b4 یافت نشد
+2025-08-06 16:46:15 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:46:15 - notification_api - INFO - درخواست برای کاربر: 990c47ee-c076-448f-a552-bf69fc74d5b4
+2025-08-06 16:46:15 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 16:46:15 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:46:15 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:46:15 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 990c47ee-c076-448f-a552-bf69fc74d5b4 یافت نشد
+2025-08-06 16:46:15 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 990c47ee-c076-448f-a552-bf69fc74d5b4 یافت نشد
+2025-08-06 16:46:22 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:46:22 - notification_api - INFO - درخواست برای کاربر: 990c47ee-c076-448f-a552-bf69fc74d5b4
+2025-08-06 16:46:22 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-06 16:46:22 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:46:22 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:46:22 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 990c47ee-c076-448f-a552-bf69fc74d5b4 یافت نشد
+2025-08-06 16:46:22 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 990c47ee-c076-448f-a552-bf69fc74d5b4 یافت نشد
+2025-08-06 16:49:57 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:49:57 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-06 16:49:57 - notification_api - INFO - درخواست برای کیف پول: 052f4389-0f44-47f4-8a54-2d0105176dde
+2025-08-06 16:49:57 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:49:57 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:49:57 - notification_api - INFO - توکن دستگاه جدید با شناسه 302 ثبت شد برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 و کیف پول 052f4389-0f44-47f4-8a54-2d0105176dde
+2025-08-06 16:50:15 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:50:15 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-06 16:50:15 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-06 16:50:15 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:50:15 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:50:15 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:15 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:19 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:50:19 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-06 16:50:19 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-06 16:50:19 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:50:19 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:50:19 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:19 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:21 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:50:21 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-06 16:50:21 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-06 16:50:21 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:50:21 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:50:21 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:21 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:25 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:50:25 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-06 16:50:25 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-06 16:50:25 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:50:25 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:50:25 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:25 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:25 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:50:25 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-06 16:50:25 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-06 16:50:25 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:50:25 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:50:25 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:25 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:32 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-06 16:50:32 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-06 16:50:32 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-06 16:50:32 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-06 16:50:32 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-06 16:50:32 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-06 16:50:32 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-07 05:06:14 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 05:06:14 - notification_api - INFO - درخواست برای کاربر: 6c5c8e13-b4e7-438f-b096-016f5822e277
+2025-08-07 05:06:14 - notification_api - INFO - درخواست برای کیف پول: 78469198-1ece-4e2e-beb9-8fb643aab121
+2025-08-07 05:06:14 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-07 05:06:14 - notification_api - INFO - دستگاه: 220333QPG, نوع: android
+2025-08-07 05:06:14 - notification_api - ERROR - خطا در ثبت توکن دستگاه: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1809, in _execute_context
+    context = constructor(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1428, in _init_compiled
+    self.cursor = self.create_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1767, in create_cursor
+    return self.create_default_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/dialects/mysql/mysqlconnector.py", line 88, in create_default_cursor
+    return self._dbapi_connection.cursor(buffered=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1486, in cursor
+    return self.dbapi_connection.cursor(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 841, in cursor
+    raise OperationalError("MySQL Connection not available.")
+mysql.connector.errors.OperationalError: MySQL Connection not available.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/api/notification_api.py", line 120, in register_device
+    user = session.query(Users).filter(Users.UserID == user_id).first()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1413, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1815, in _execute_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1809, in _execute_context
+    context = constructor(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1428, in _init_compiled
+    self.cursor = self.create_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1767, in create_cursor
+    return self.create_default_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/dialects/mysql/mysqlconnector.py", line 88, in create_default_cursor
+    return self._dbapi_connection.cursor(buffered=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1486, in cursor
+    return self.dbapi_connection.cursor(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 841, in cursor
+    raise OperationalError("MySQL Connection not available.")
+sqlalchemy.exc.OperationalError: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-07 05:06:18 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 05:06:18 - notification_api - INFO - درخواست برای کاربر: 6c5c8e13-b4e7-438f-b096-016f5822e277
+2025-08-07 05:06:18 - notification_api - INFO - درخواست برای کیف پول: 78469198-1ece-4e2e-beb9-8fb643aab121
+2025-08-07 05:06:18 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-07 05:06:18 - notification_api - INFO - دستگاه: 220333QPG, نوع: android
+2025-08-07 05:06:18 - notification_api - ERROR - خطا در ثبت توکن دستگاه: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3295, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 447, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 717, in checkout
+    rec._checkin_failed(err, _fairy_was_created=False)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 714, in checkout
+    dbapi_connection = rec.get_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 865, in get_connection
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 895, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 626, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/api/notification_api.py", line 120, in register_device
+    user = session.query(Users).filter(Users.UserID == user_id).first()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3271, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2434, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3295, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 447, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 717, in checkout
+    rec._checkin_failed(err, _fairy_was_created=False)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 714, in checkout
+    dbapi_connection = rec.get_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 865, in get_connection
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 895, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 626, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-07 05:06:24 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 05:06:24 - notification_api - INFO - درخواست برای کاربر: 6c5c8e13-b4e7-438f-b096-016f5822e277
+2025-08-07 05:06:24 - notification_api - INFO - درخواست برای کیف پول: 78469198-1ece-4e2e-beb9-8fb643aab121
+2025-08-07 05:06:24 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-07 05:06:24 - notification_api - INFO - دستگاه: 220333QPG, نوع: android
+2025-08-07 05:06:24 - notification_api - INFO - توکن دستگاه موجود به‌روزرسانی شد برای کاربر 6c5c8e13-b4e7-438f-b096-016f5822e277 و کیف پول 78469198-1ece-4e2e-beb9-8fb643aab121
+2025-08-07 08:38:42 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 08:38:42 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-07 08:38:42 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-07 08:38:42 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-07 08:38:42 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-07 08:38:42 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-07 08:38:42 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-07 08:38:45 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 08:38:45 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-07 08:38:45 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-07 08:38:45 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-07 08:38:45 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-07 08:38:45 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-07 08:38:45 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-07 08:38:52 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 08:38:52 - notification_api - INFO - درخواست برای کاربر: 3185de0f-3490-453c-8fe7-53fd2e67b585
+2025-08-07 08:38:52 - notification_api - INFO - درخواست برای کیف پول: New wallet 2
+2025-08-07 08:38:52 - notification_api - INFO - طول توکن دستگاه: 30 کاراکتر
+2025-08-07 08:38:52 - notification_api - INFO - دستگاه: samsung SM-N770F, نوع: flutter
+2025-08-07 08:38:52 - notification_api - WARNING - کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-07 08:38:52 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 2 برای کاربر 3185de0f-3490-453c-8fe7-53fd2e67b585 یافت نشد
+2025-08-07 11:11:01 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 11:11:01 - notification_api - INFO - درخواست برای کاربر: 159e25af-7465-4e83-8420-a54e0bc48c63
+2025-08-07 11:11:01 - notification_api - INFO - درخواست برای کیف پول: 11ae7be1-5d1e-4900-a851-14ba84dde71a
+2025-08-07 11:11:01 - notification_api - INFO - طول توکن دستگاه: 27 کاراکتر
+2025-08-07 11:11:01 - notification_api - INFO - دستگاه: OnePlus OnePlus8Pro, نوع: flutter
+2025-08-07 11:11:01 - notification_api - INFO - توکن دستگاه جدید با شناسه 303 ثبت شد برای کاربر 159e25af-7465-4e83-8420-a54e0bc48c63 و کیف پول 11ae7be1-5d1e-4900-a851-14ba84dde71a
+2025-08-07 11:40:12 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 11:40:12 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-07 11:40:12 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-07 11:40:12 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 11:40:12 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 11:40:12 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 11:40:12 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 11:40:16 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 11:40:16 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-07 11:40:16 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-07 11:40:16 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 11:40:16 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 11:40:16 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 11:40:16 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 11:40:22 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 11:40:22 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-07 11:40:22 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-07 11:40:22 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 11:40:22 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 11:40:22 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 11:40:22 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 11:42:13 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 11:42:13 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 11:42:13 - notification_api - INFO - درخواست برای کیف پول: 53221da6-8885-4915-a498-8b76ea23dfd2
+2025-08-07 11:42:13 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 11:42:13 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 11:42:13 - notification_api - INFO - توکن دستگاه جدید با شناسه 304 ثبت شد برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e و کیف پول 53221da6-8885-4915-a498-8b76ea23dfd2
+2025-08-07 11:42:34 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 11:42:34 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 11:42:34 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 11:42:34 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 11:42:34 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 11:42:34 - notification_api - ERROR - خطا در ثبت توکن دستگاه: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1311, in _checkout
+    raise exc.InvalidatePoolError()
+sqlalchemy.exc.InvalidatePoolError: ()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3295, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 447, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1356, in _checkout
+    del fairy
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1342, in _checkout
+    fairy._connection_record.get_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 836, in get_connection
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 895, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 626, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/api/notification_api.py", line 120, in register_device
+    user = session.query(Users).filter(Users.UserID == user_id).first()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3271, in connect
+    return self._connection_cls(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2434, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 3295, in raw_connection
+    return self.pool.connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 447, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1356, in _checkout
+    del fairy
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1342, in _checkout
+    fairy._connection_record.get_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 836, in get_connection
+    self.__connect()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 895, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 626, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-07 11:42:37 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 11:42:37 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 11:42:37 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 11:42:37 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 11:42:37 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 11:42:37 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 11:42:37 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 11:42:44 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 11:42:44 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 11:42:44 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 11:42:44 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 11:42:44 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 11:42:44 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 11:42:44 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 12:01:24 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 12:01:24 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-07 12:01:24 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-07 12:01:24 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 12:01:24 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-07 12:01:24 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 12:01:24 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 12:01:27 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 12:01:27 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-07 12:01:27 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-07 12:01:27 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 12:01:27 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-07 12:01:27 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 12:01:27 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 12:01:34 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 12:01:34 - notification_api - INFO - درخواست برای کاربر: c1bf9df0-8263-41f1-844f-2e587f9b4050
+2025-08-07 12:01:34 - notification_api - INFO - درخواست برای کیف پول: Imported wallet 1
+2025-08-07 12:01:34 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 12:01:34 - notification_api - INFO - دستگاه: iPad, نوع: flutter
+2025-08-07 12:01:34 - notification_api - WARNING - کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 12:01:34 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه Imported wallet 1 برای کاربر c1bf9df0-8263-41f1-844f-2e587f9b4050 یافت نشد
+2025-08-07 12:10:43 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 12:10:43 - notification_api - INFO - درخواست برای کاربر: 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca
+2025-08-07 12:10:43 - notification_api - INFO - درخواست برای کیف پول: 0f6f5b18-2d39-4e60-9249-7a15c79bf691
+2025-08-07 12:10:43 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 12:10:43 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 12:10:43 - notification_api - INFO - توکن دستگاه جدید با شناسه 305 ثبت شد برای کاربر 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca و کیف پول 0f6f5b18-2d39-4e60-9249-7a15c79bf691
+2025-08-07 12:12:43 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 12:12:43 - notification_api - INFO - درخواست برای کاربر: 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca
+2025-08-07 12:12:43 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 12:12:43 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 12:12:43 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 12:12:43 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca یافت نشد
+2025-08-07 12:12:43 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca یافت نشد
+2025-08-07 12:12:46 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 12:12:46 - notification_api - INFO - درخواست برای کاربر: 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca
+2025-08-07 12:12:46 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 12:12:46 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 12:12:46 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 12:12:46 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca یافت نشد
+2025-08-07 12:12:46 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca یافت نشد
+2025-08-07 12:12:52 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 12:12:52 - notification_api - INFO - درخواست برای کاربر: 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca
+2025-08-07 12:12:52 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 12:12:52 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 12:12:52 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 12:12:52 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca یافت نشد
+2025-08-07 12:12:52 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر 3b27ad04-bde7-4cdc-bdc2-cf3d74f9ccca یافت نشد
+2025-08-07 15:00:03 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 15:00:03 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 15:00:03 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 15:00:03 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 15:00:03 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 15:00:03 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:00:03 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:00:08 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 15:00:08 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 15:00:08 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 15:00:08 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 15:00:08 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 15:00:08 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:00:08 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:00:16 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 15:00:16 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 15:00:16 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 15:00:16 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 15:00:16 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 15:00:16 - notification_api - ERROR - خطا در ثبت توکن دستگاه: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1809, in _execute_context
+    context = constructor(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1428, in _init_compiled
+    self.cursor = self.create_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1767, in create_cursor
+    return self.create_default_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/dialects/mysql/mysqlconnector.py", line 88, in create_default_cursor
+    return self._dbapi_connection.cursor(buffered=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1486, in cursor
+    return self.dbapi_connection.cursor(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 841, in cursor
+    raise OperationalError("MySQL Connection not available.")
+mysql.connector.errors.OperationalError: MySQL Connection not available.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/api/notification_api.py", line 120, in register_device
+    user = session.query(Users).filter(Users.UserID == user_id).first()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1413, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1815, in _execute_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1809, in _execute_context
+    context = constructor(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1428, in _init_compiled
+    self.cursor = self.create_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1767, in create_cursor
+    return self.create_default_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/dialects/mysql/mysqlconnector.py", line 88, in create_default_cursor
+    return self._dbapi_connection.cursor(buffered=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1486, in cursor
+    return self.dbapi_connection.cursor(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 841, in cursor
+    raise OperationalError("MySQL Connection not available.")
+sqlalchemy.exc.OperationalError: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-07 15:02:34 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 15:02:34 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 15:02:34 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 15:02:34 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 15:02:34 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 15:02:34 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:02:34 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:02:38 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 15:02:38 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 15:02:38 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 15:02:38 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 15:02:38 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 15:02:38 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:02:38 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:02:46 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 15:02:46 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 15:02:46 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 15:02:46 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 15:02:46 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 15:02:46 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 15:02:46 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:21:36 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 18:21:36 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 18:21:36 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 18:21:36 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 18:21:36 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 18:21:36 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:21:36 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:21:40 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 18:21:40 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 18:21:40 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 18:21:40 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 18:21:40 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 18:21:40 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:21:40 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:22:23 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 18:22:23 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 18:22:23 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 18:22:23 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 18:22:23 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 18:22:23 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:22:23 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:23:05 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 18:23:05 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 18:23:05 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 18:23:05 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 18:23:05 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 18:23:05 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:23:05 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:23:08 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 18:23:08 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 18:23:08 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 18:23:08 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 18:23:08 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 18:23:08 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:23:08 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:23:15 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 18:23:15 - notification_api - INFO - درخواست برای کاربر: d00dff87-eb67-4b3e-b7c6-43e92cc9157e
+2025-08-07 18:23:15 - notification_api - INFO - درخواست برای کیف پول: New wallet 1
+2025-08-07 18:23:15 - notification_api - INFO - طول توکن دستگاه: 26 کاراکتر
+2025-08-07 18:23:15 - notification_api - INFO - دستگاه: iPhone, نوع: flutter
+2025-08-07 18:23:15 - notification_api - WARNING - کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 18:23:15 - notification_api - WARNING - خطای اعتبارسنجی: کیف پول با شناسه New wallet 1 برای کاربر d00dff87-eb67-4b3e-b7c6-43e92cc9157e یافت نشد
+2025-08-07 22:14:41 - notification_api - INFO - درخواست ثبت دستگاه جدید دریافت شد
+2025-08-07 22:14:41 - notification_api - INFO - درخواست برای کاربر: 575df5e1-35f0-4910-b3d4-66ac7412cb69
+2025-08-07 22:14:41 - notification_api - INFO - درخواست برای کیف پول: 8b6820db-f752-4d9b-af76-25f303e45b64
+2025-08-07 22:14:41 - notification_api - INFO - طول توکن دستگاه: 142 کاراکتر
+2025-08-07 22:14:41 - notification_api - INFO - دستگاه: 2201117TG, نوع: android
+2025-08-07 22:14:41 - notification_api - INFO - توکن دستگاه جدید با شناسه 306 ثبت شد برای کاربر 575df5e1-35f0-4910-b3d4-66ac7412cb69 و کیف پول 8b6820db-f752-4d9b-af76-25f303e45b64

@@ -183,7 +183,7 @@ class TronService(BaseBlockchainService):
                 self.logger.error(f"Error converting amount to Decimal: {str(e)}")
                 return {}, f"Invalid amount format: {amount_str}"
             
-            self.logger.info(f"Sending TRON transaction using Tatum broadcast endpoint")
+            self.logger.info(f"Sending TRON transaction using Tatum API")
             
             # Try TRON client to sign transaction first to get raw data
             signed_tx_raw = None
@@ -206,24 +206,29 @@ class TronService(BaseBlockchainService):
                     
                     # Get raw signed transaction
                     signed_tx_raw = txn.serialize().hex()
-                    self.logger.debug(f"Successfully signed TRON transaction")
+                    self.logger.debug(f"Successfully signed TRON transaction locally")
                 except Exception as e:
                     self.logger.warning(f"Error signing transaction via TRON client: {str(e)}")
-                    # Continue without signed transaction - Tatum will sign it
+                    # Continue without signed transaction - Tatum will handle it
             
-            # Use Tatum helper to broadcast the transaction
-            tx_details = {}
+            # Use different approaches based on whether we have signed transaction
             if signed_tx_raw:
-                tx_details['signed_tx'] = signed_tx_raw
-                
-            result, error = self.tatum.send_transaction(
-                'tron',
-                sender,
-                recipient,
-                amount_str,
-                private_key,
-                tx_details
-            )
+                # Use Tatum broadcast endpoint with signed transaction
+                self.logger.debug(f"Broadcasting signed TRON transaction via Tatum")
+                result, error = self.tatum.send_transaction(
+                    'tron',
+                    sender,
+                    recipient,
+                    amount_str,
+                    private_key,
+                    {'signed_tx': signed_tx_raw}
+                )
+            else:
+                # Use Tatum transaction endpoint (let Tatum handle signing)
+                self.logger.debug(f"Using Tatum transaction endpoint to sign and broadcast")
+                result, error = self._send_via_tatum_transaction_endpoint(
+                    sender, recipient, amount_str, private_key
+                )
             
             if error:
                 self.logger.error(f"Error broadcasting transaction: {error}")
@@ -240,26 +245,80 @@ class TronService(BaseBlockchainService):
                 'tx_hash': tx_hash,
                 'status': 'sent',
                 'sent_at': datetime.now().isoformat(),
-                'sent_via': 'tatum_broadcast'
+                'sent_via': 'tatum_broadcast' if signed_tx_raw else 'tatum_transaction'
             })
             self._store_transaction(transaction_id, tx_data)
             
             # Log sending
             self._log_transaction(transaction_id, 'sent', {
                 'tx_hash': tx_hash,
-                'sent_via': 'tatum_broadcast'
+                'sent_via': 'tatum_broadcast' if signed_tx_raw else 'tatum_transaction'
             })
             
+            self.logger.info(f"Successfully sent TRON transaction: {tx_hash}")
             return {
-                'transaction_id': transaction_id,
+                'transaction_hash': tx_hash,
                 'tx_hash': tx_hash,
                 'status': 'sent',
-                'transaction_hash': tx_hash
+                'message': 'Transaction sent successfully'
             }, None
+            
+        except Exception as e:
+            self.logger.error(f"Error sending TRON transaction: {str(e)}")
+            self.logger.error(traceback.format_exc())
+            return {}, f"Error sending TRON transaction: {str(e)}"
+    
+    def _send_via_tatum_transaction_endpoint(self, sender: str, recipient: str, amount: str, private_key: str) -> Tuple[Dict, Optional[str]]:
+        """Send TRON transaction using Tatum transaction endpoint (not broadcast)"""
+        try:
+            # Use Tatum transaction endpoint for TRON
+            tatum_url = f"{self.tatum.base_url}/tron/transaction"
+            
+            # Prepare request data
+            request_data = {
+                "from": sender,
+                "to": recipient,
+                "amount": amount,
+                "fromPrivateKey": private_key
+            }
+            
+            # Log request (without private key)
+            safe_request_data = {k: v for k, v in request_data.items() if k != 'fromPrivateKey'}
+            safe_request_data['fromPrivateKey'] = '***'
+            self.logger.debug(f"Sending TRON transaction request: {safe_request_data}")
+            
+            # Make request
+            response = requests.post(
+                tatum_url,
+                headers=self.tatum.headers,
+                json=request_data,
+                timeout=30
+            )
+            
+            self.logger.debug(f"Tatum response status: {response.status_code}")
+            
+            if response.status_code == 200:
+                response_data = response.json()
+                self.logger.debug(f"Tatum response: {response_data}")
+                
+                # Extract transaction hash
+                tx_hash = response_data.get('txId') or response_data.get('transactionHash')
+                if tx_hash:
+                    return {
+                        'transaction_hash': tx_hash,
+                        'txId': tx_hash,
+                        'status': 'sent'
+                    }, None
+                else:
+                    return {}, "Transaction hash not found in response"
+            else:
+                error_text = response.text
+                self.logger.error(f"Tatum transaction endpoint error: {response.status_code}, {error_text}")
+                return {}, f"Tatum transaction endpoint error: {response.status_code}, {error_text}"
                 
         except Exception as e:
-            self.logger.error(f"Error sending transaction: {str(e)}")
-            return {}, str(e)
+            self.logger.error(f"Error in Tatum transaction endpoint: {str(e)}")
+            return {}, f"Error in Tatum transaction endpoint: {str(e)}"
             
     @handle_api_errors
     def estimate_fee(self, sender: str, recipient: str, amount) -> Tuple[Decimal, Optional[str]]:

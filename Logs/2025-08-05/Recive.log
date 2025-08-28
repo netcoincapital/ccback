@@ -1,0 +1,53 @@
+2025-08-05 07:25:11 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 07:25:11 - Recive - INFO - Initializing receive transaction module
+2025-08-05 07:25:12 - Recive - INFO - Initializing receive transaction module
+2025-08-05 07:26:12 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 07:26:12 - Recive - INFO - Initializing receive transaction module
+2025-08-05 07:26:13 - Recive - INFO - Initializing receive transaction module
+2025-08-05 07:26:48 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 07:26:48 - Recive - INFO - Initializing receive transaction module
+2025-08-05 07:26:49 - Recive - INFO - Initializing receive transaction module
+2025-08-05 07:27:06 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT blockchains.`BlockchainID` AS `blockchains_BlockchainID`, blockchains.`BlockchainName` AS `blockchains_BlockchainName`, blockchains.`Symbol` AS `blockchains_Symbol`, blockchains.`ChainCode` AS `blockchains_ChainCode`, blockchains.`CreatedAt` AS `blockchains_CreatedAt`, blockchains.`UpdatedAt` AS `blockchains_UpdatedAt` 
+FROM blockchains 
+WHERE lower(blockchains.`BlockchainName`) LIKE lower(%(BlockchainName_1)s) 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-05 07:27:06 - Recive - WARNING - No address found for user 6e22d30b-0cba-418f-946d-b8db6632615b on blockchain Bitcoin
+2025-08-05 07:27:07 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-05 07:27:07 - Recive - WARNING - No address found for user 6e22d30b-0cba-418f-946d-b8db6632615b on blockchain Bitcoin
+2025-08-05 11:18:45 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 11:18:45 - Recive - INFO - Initializing receive transaction module
+2025-08-05 11:18:46 - Recive - INFO - Initializing receive transaction module
+2025-08-05 11:18:59 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 11:18:59 - Recive - INFO - Initializing receive transaction module
+2025-08-05 11:19:00 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:00:34 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 18:00:34 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:00:34 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 18:00:34 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:00:34 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 18:00:34 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:00:36 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:00:36 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:00:36 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:01:16 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 18:01:16 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:01:17 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 18:01:17 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:01:17 - Recive - DEBUG - Logger initialized for Recive at level DEBUG
+2025-08-05 18:01:17 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:01:18 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:01:18 - Recive - INFO - Initializing receive transaction module
+2025-08-05 18:01:18 - Recive - INFO - Initializing receive transaction module
+2025-08-06 16:27:28 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-06 16:27:28 - Recive - WARNING - No address found for user 6e22d30b-0cba-418f-946d-b8db6632615b on blockchain Bitcoin
+2025-08-06 16:27:29 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-06 16:27:29 - Recive - WARNING - No address found for user 6e22d30b-0cba-418f-946d-b8db6632615b on blockchain Bitcoin
+2025-08-07 06:34:18 - Recive - ERROR - Error in get_user_address: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-07 06:34:18 - Recive - WARNING - No address found for user 6c21309d-003c-4784-a3e0-7b12f0c81f26 on blockchain Tron

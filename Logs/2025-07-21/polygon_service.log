@@ -1,0 +1,58 @@
+2025-07-21 07:21:05 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 07:21:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 07:21:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 07:33:37 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ded519d56841a06d713dc"}
+2025-07-21 07:33:54 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 07:33:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 07:33:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 09:19:00 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 09:19:00 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 09:19:00 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 09:19:00 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 09:19:01 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 09:19:01 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 09:19:01 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 09:19:01 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 09:19:01 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:40:46 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 10:40:46 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 10:40:46 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 10:40:46 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:40:46 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:40:46 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:40:46 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:40:46 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:40:46 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:59:55 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 10:59:55 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 10:59:55 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:59:55 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 10:59:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:59:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:59:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:59:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 10:59:56 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 11:02:05 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 11:02:05 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 11:02:05 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 11:02:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 11:02:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 11:02:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 11:02:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 11:02:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 11:02:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:08:57 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 20:08:57 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:08:57 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:09:11 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 20:09:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:09:11 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:09:41 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 20:09:41 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:09:41 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:20:21 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 20:20:21 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:20:21 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:20:29 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-21 20:20:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 20:20:30 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com

@@ -1,0 +1,1510 @@
+2025-08-02 07:31:11 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 07:31:11 - app - INFO - Starting IronWallet application
+2025-08-02 07:31:11 - app - INFO - Testing database connection...
+2025-08-02 07:31:11 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 07:31:11 - app - INFO - Starting IronWallet application
+2025-08-02 07:31:11 - app - INFO - Testing database connection...
+2025-08-02 07:31:11 - app - INFO - Database connection successful: 1
+2025-08-02 07:31:11 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 07:31:11 - app - INFO - Starting IronWallet application
+2025-08-02 07:31:11 - app - INFO - Testing database connection...
+2025-08-02 07:31:11 - app - INFO - Database connection successful: 1
+2025-08-02 07:31:11 - app - INFO - Database connection successful: 1
+2025-08-02 07:31:11 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 07:31:12 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 07:31:12 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 07:31:14 - app - INFO - RabbitMQ connection successful
+2025-08-02 07:31:14 - app - INFO - RabbitMQ connection successful
+2025-08-02 07:31:14 - app - INFO - Database initialized successfully
+2025-08-02 07:31:14 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 07:31:14 - app - INFO - RabbitMQ connection successful
+2025-08-02 07:31:14 - app - INFO - Database initialized successfully
+2025-08-02 07:31:14 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 07:31:14 - app - INFO - Database initialized successfully
+2025-08-02 07:31:14 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 07:31:15 - app - INFO - Firebase initialized successfully
+2025-08-02 07:31:15 - app - INFO - Firebase initialized successfully
+2025-08-02 07:31:15 - app - INFO - Firebase initialized successfully
+2025-08-02 07:31:15 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 07:31:15 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 07:31:15 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f67fce1f1f0>
+2025-08-02 07:31:15 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f67fce1f160>
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 07:31:15 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 07:31:15 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f67fce1f0d0>
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d2bd'}
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d2bd'}
+2025-08-02 07:31:15 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 07:31:15 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 07:31:15 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f67fcdd3640>
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 07:31:15 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f67fcdd36d0>
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d2be'}
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d2be'}
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d2bd'}
+2025-08-02 07:31:15 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 07:31:15 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f67fcdd35b0>
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 07:31:15 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 07:31:15 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 07:31:15 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 07:31:15 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d2be'}
+2025-08-02 07:31:15 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 07:31:16 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 07:31:16 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 07:31:16 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 07:31:16 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 07:31:16 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 07:31:18 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 07:31:18 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 07:31:18 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 07:31:18 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 07:31:18 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 07:31:18 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 07:31:18 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 07:31:19 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 08:08:26 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 08:08:26 - app - INFO - Starting IronWallet application
+2025-08-02 08:08:26 - app - INFO - Testing database connection...
+2025-08-02 08:08:26 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 08:08:26 - app - INFO - Starting IronWallet application
+2025-08-02 08:08:26 - app - INFO - Testing database connection...
+2025-08-02 08:08:26 - app - INFO - Database connection successful: 1
+2025-08-02 08:08:26 - app - INFO - Database connection successful: 1
+2025-08-02 08:08:27 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 08:08:27 - app - INFO - Starting IronWallet application
+2025-08-02 08:08:27 - app - INFO - Testing database connection...
+2025-08-02 08:08:27 - app - INFO - Database connection successful: 1
+2025-08-02 08:08:27 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 08:08:27 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 08:08:28 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 08:08:29 - app - INFO - RabbitMQ connection successful
+2025-08-02 08:08:30 - app - INFO - Database initialized successfully
+2025-08-02 08:08:30 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 08:08:30 - app - INFO - RabbitMQ connection successful
+2025-08-02 08:08:30 - app - INFO - Database initialized successfully
+2025-08-02 08:08:30 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 08:08:30 - app - INFO - Firebase initialized successfully
+2025-08-02 08:08:30 - app - INFO - Firebase initialized successfully
+2025-08-02 08:08:30 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 08:08:30 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 08:08:30 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f0d5841f100>
+2025-08-02 08:08:30 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 08:08:30 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 08:08:30 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d6c2'}
+2025-08-02 08:08:30 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 08:08:30 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 08:08:30 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f0d583d25e0>
+2025-08-02 08:08:30 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 08:08:30 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 08:08:30 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 08:08:30 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f0d5841e190>
+2025-08-02 08:08:30 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 08:08:30 - app - INFO - RabbitMQ connection successful
+2025-08-02 08:08:30 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 08:08:30 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d6c2'}
+2025-08-02 08:08:30 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 08:08:30 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 08:08:30 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d6c2'}
+2025-08-02 08:08:30 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 08:08:30 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 08:08:30 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f0d583d1670>
+2025-08-02 08:08:30 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 08:08:30 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 08:08:30 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d6c2'}
+2025-08-02 08:08:30 - app - INFO - Database initialized successfully
+2025-08-02 08:08:30 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 08:08:30 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 08:08:30 - app - INFO - Firebase initialized successfully
+2025-08-02 08:08:31 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 08:08:31 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 08:08:31 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f0d5841f220>
+2025-08-02 08:08:31 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 08:08:31 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 08:08:31 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d6c2'}
+2025-08-02 08:08:31 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 08:08:31 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 08:08:31 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f0d583cb700>
+2025-08-02 08:08:31 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 08:08:31 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 08:08:31 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473d6c2'}
+2025-08-02 08:08:31 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 08:08:31 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 08:08:31 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 08:08:31 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 08:08:31 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 08:08:31 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 08:08:32 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 08:08:32 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 08:08:32 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 08:08:32 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 08:08:33 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 08:08:33 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 08:08:33 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 08:08:33 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 08:08:34 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:20:17 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 09:20:17 - app - INFO - Starting IronWallet application
+2025-08-02 09:20:17 - app - INFO - Testing database connection...
+2025-08-02 09:20:18 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 09:20:18 - app - INFO - Starting IronWallet application
+2025-08-02 09:20:18 - app - INFO - Testing database connection...
+2025-08-02 09:20:18 - app - INFO - Database connection successful: 1
+2025-08-02 09:20:18 - app - INFO - Database connection successful: 1
+2025-08-02 09:20:18 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 09:20:18 - app - INFO - Starting IronWallet application
+2025-08-02 09:20:18 - app - INFO - Testing database connection...
+2025-08-02 09:20:18 - app - INFO - Database connection successful: 1
+2025-08-02 09:20:18 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 09:20:18 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 09:20:18 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 09:20:20 - app - INFO - RabbitMQ connection successful
+2025-08-02 09:20:20 - app - INFO - Database initialized successfully
+2025-08-02 09:20:20 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 09:20:20 - app - INFO - RabbitMQ connection successful
+2025-08-02 09:20:20 - app - INFO - RabbitMQ connection successful
+2025-08-02 09:20:21 - app - INFO - Firebase initialized successfully
+2025-08-02 09:20:21 - app - INFO - Database initialized successfully
+2025-08-02 09:20:21 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 09:20:21 - app - INFO - Database initialized successfully
+2025-08-02 09:20:21 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 09:20:21 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:20:21 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f6146a1f1c0>
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473de9f'}
+2025-08-02 09:20:21 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:20:21 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f61469d26a0>
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473de9f'}
+2025-08-02 09:20:21 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:20:21 - app - INFO - Firebase initialized successfully
+2025-08-02 09:20:21 - app - INFO - Firebase initialized successfully
+2025-08-02 09:20:21 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:20:21 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:20:21 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f6146a1f130>
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:20:21 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f6146a21250>
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473de9f'}
+2025-08-02 09:20:21 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473de9f'}
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:20:21 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:20:21 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f61469d1610>
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:20:21 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f61469cb730>
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473de9f'}
+2025-08-02 09:20:21 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:20:21 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473de9f'}
+2025-08-02 09:20:21 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:20:21 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:20:22 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:20:22 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:20:22 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:20:22 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:20:22 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:20:23 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:20:23 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:20:23 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 09:20:24 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 09:20:24 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 09:20:24 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 09:20:24 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:20:24 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:20:25 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:24:45 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 09:24:45 - app - INFO - Starting IronWallet application
+2025-08-02 09:24:45 - app - INFO - Testing database connection...
+2025-08-02 09:24:45 - app - INFO - Database connection successful: 1
+2025-08-02 09:24:45 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 09:24:45 - app - INFO - Starting IronWallet application
+2025-08-02 09:24:45 - app - INFO - Testing database connection...
+2025-08-02 09:24:45 - app - INFO - Database connection successful: 1
+2025-08-02 09:24:45 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 09:24:45 - app - DEBUG - Logger initialized for app at level DEBUG
+2025-08-02 09:24:45 - app - INFO - Starting IronWallet application
+2025-08-02 09:24:45 - app - INFO - Testing database connection...
+2025-08-02 09:24:45 - app - INFO - Database connection successful: 1
+2025-08-02 09:24:45 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 09:24:46 - rlp.codec - DEBUG - Consider installing rusty-rlp to improve pyrlp performance with a rust basedbackend. Not currently functional for Python 3.11
+2025-08-02 09:24:46 - app - INFO - RabbitMQ connection successful
+2025-08-02 09:24:46 - app - INFO - Database initialized successfully
+2025-08-02 09:24:46 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 09:24:47 - app - INFO - Firebase initialized successfully
+2025-08-02 09:24:47 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:24:47 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:24:47 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f416f69f160>
+2025-08-02 09:24:47 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:24:47 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:24:47 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473df1d'}
+2025-08-02 09:24:47 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:24:47 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:24:47 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f416f651640>
+2025-08-02 09:24:47 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:24:47 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:24:47 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473df1d'}
+2025-08-02 09:24:47 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:24:47 - app - INFO - RabbitMQ connection successful
+2025-08-02 09:24:48 - app - INFO - RabbitMQ connection successful
+2025-08-02 09:24:48 - app - INFO - Database initialized successfully
+2025-08-02 09:24:48 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 09:24:48 - app - INFO - Database initialized successfully
+2025-08-02 09:24:48 - app - INFO - Skipping DeviceToken migration - migrations module not available
+2025-08-02 09:24:48 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:24:48 - app - INFO - Firebase initialized successfully
+2025-08-02 09:24:48 - app - INFO - Firebase initialized successfully
+2025-08-02 09:24:48 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:24:48 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:24:48 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f416f6a11f0>
+2025-08-02 09:24:48 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:24:48 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:24:48 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:24:48 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473df1d'}
+2025-08-02 09:24:48 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:24:48 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:24:48 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f416f6526d0>
+2025-08-02 09:24:48 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:24:48 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:24:48 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f416f6a1280>
+2025-08-02 09:24:48 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:24:48 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:24:48 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473df1d'}
+2025-08-02 09:24:48 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:24:48 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473df1d'}
+2025-08-02 09:24:48 - web3.manager.RequestManager - DEBUG - Making request. Method: eth_blockNumber
+2025-08-02 09:24:48 - web3.providers.HTTPProvider - DEBUG - Making request HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber
+2025-08-02 09:24:48 - web3._utils.http_session_manager.HTTPSessionManager - DEBUG - Session cached: https://polygon-rpc.com, <requests.sessions.Session object at 0x7f416f652760>
+2025-08-02 09:24:48 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): polygon-rpc.com:443
+2025-08-02 09:24:48 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:24:48 - urllib3.connectionpool - DEBUG - https://polygon-rpc.com:443 "POST / HTTP/1.1" 200 69
+2025-08-02 09:24:48 - web3.providers.HTTPProvider - DEBUG - Getting response HTTP. URI: https://polygon-rpc.com, Method: eth_blockNumber, Response: {'id': 0, 'jsonrpc': '2.0', 'result': '0x473df1d'}
+2025-08-02 09:24:48 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:24:48 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:24:48 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:24:48 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:24:48 - substrateinterface.base - DEBUG - Connecting to wss://rpc.polkadot.io ...
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:24:49 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 09:24:49 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 09:24:49 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:24:49 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: ethereum -> EthereumService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: eth -> ethereum
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: bsc -> BSCService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: binance -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: binance-smart-chain -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: bnb -> bsc
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: bitcoin -> BitcoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: btc -> bitcoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: tron -> TronService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: trx -> tron
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: polygon -> PolygonService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: matic -> polygon
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: ripple -> XRPService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: xrp -> ripple
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: solana -> SolanaService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: sol -> solana
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: polkadot -> PolkadotService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: dot -> polkadot
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: litecoin -> LitecoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: ltc -> litecoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: dogecoin -> DogecoinService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: doge -> dogecoin
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: dash -> DashService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: arbitrum -> ArbitrumService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: arb -> arbitrum
+2025-08-02 09:24:49 - utils.blockchain_service_factory - INFO - Registered blockchain service: avalanche -> AvalancheService
+2025-08-02 09:24:49 - utils.blockchain_service_factory - DEBUG - Added name variant: avax -> avalanche
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 09:24:50 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - app - ERROR - Error starting NCC price simulator: No module named 'schedule'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+2025-08-02 09:24:50 - app - ERROR - NCC price simulator error details: Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/app.py", line 308, in <module>
+    from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+  File "/www/wwwroot/coinceeper.com/CC/utils/price_simulator/NCCPRICE.py", line 18, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:24:50 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for solana: SOLANA_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for litecoin: LITECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dogecoin: DOGECOIN_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for dash: DASH_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for arbitrum: ARBITRUM_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 09:24:51 - utils.blockchain_service_factory - ERROR - Error instantiating registered service for avalanche: AVALANCHE_NODE_URL environment variable is not set
+2025-08-02 10:29:08 - sqlalchemy.pool.impl.QueuePool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Server shutdown in progress
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1053 (08S01): Server shutdown in progress
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 4441, in _flush
+    flush_context.execute()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1413, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1840, in _execute_context
+    return self._exec_single_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1980, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.OperationalError: (mysql.connector.errors.OperationalError) 1053 (08S01): Server shutdown in progress
+[SQL: UPDATE prices SET price=%(price)s, change_24h=%(change_24h)s, last_updated=now() WHERE prices.id = %(prices_id)s]
+[parameters: {'price': 64.17491173338021, 'change_24h': -0.97913244, 'prices_id': 3331}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/Currencies/currency_price_service.py", line 371, in update_prices
+    session.commit()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 4345, in flush
+    self._flush(objects)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 4481, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 228, in __exit__
+    raise value.with_traceback(traceback)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 4481, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "<string>", line 2, in rollback
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1395, in rollback
+    raise rollback_err[1].with_traceback(rollback_err[2])
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1360, in rollback
+    t[1].rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2605, in rollback
+    self._do_rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2724, in _do_rollback
+    self._close_impl(try_deactivate=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2707, in _close_impl
+    self._connection_rollback_impl()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2699, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1124, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1122, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 704, in do_rollback
+    dbapi_connection.rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 985, in _finalize_fairy
+    fairy._reset(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1433, in _reset
+    pool._dialect.do_rollback(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 704, in do_rollback
+    dbapi_connection.rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+2025-08-02 10:29:08 - sqlalchemy.pool.impl.QueuePool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Server shutdown in progress
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1053 (08S01): Server shutdown in progress
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 4441, in _flush
+    flush_context.execute()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1413, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1840, in _execute_context
+    return self._exec_single_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1980, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.OperationalError: (mysql.connector.errors.OperationalError) 1053 (08S01): Server shutdown in progress
+[SQL: UPDATE prices SET price=%(price)s, change_24h=%(change_24h)s, last_updated=now() WHERE prices.id = %(prices_id)s]
+[parameters: {'price': 64.17491173338021, 'change_24h': -0.97913244, 'prices_id': 3331}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/Currencies/currency_price_service.py", line 371, in update_prices
+    session.commit()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 4345, in flush
+    self._flush(objects)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 4481, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 228, in __exit__
+    raise value.with_traceback(traceback)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 4481, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "<string>", line 2, in rollback
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1395, in rollback
+    raise rollback_err[1].with_traceback(rollback_err[2])
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 1360, in rollback
+    t[1].rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2605, in rollback
+    self._do_rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2724, in _do_rollback
+    self._close_impl(try_deactivate=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2707, in _close_impl
+    self._connection_rollback_impl()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2699, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1124, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1122, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 704, in do_rollback
+    dbapi_connection.rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 985, in _finalize_fairy
+    fairy._reset(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1433, in _reset
+    pool._dialect.do_rollback(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 704, in do_rollback
+    dbapi_connection.rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+2025-08-02 15:48:53 - sqlalchemy.pool.impl.QueuePool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 985, in _finalize_fairy
+    fairy._reset(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1433, in _reset
+    pool._dialect.do_rollback(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 704, in do_rollback
+    dbapi_connection.rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+2025-08-02 15:48:53 - sqlalchemy.pool.impl.QueuePool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 985, in _finalize_fairy
+    fairy._reset(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1433, in _reset
+    pool._dialect.do_rollback(self)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 704, in do_rollback
+    dbapi_connection.rollback()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+2025-08-05 11:17:51 - root - INFO - Successfully generated Binance Smart Chain address: 0x93CE0f76cc13D9e236069C8Fd4211F92C293c39f
+2025-08-05 11:17:51 - root - INFO - Successfully generated Binance Smart Chain address: 0x93CE0f76cc13D9e236069C8Fd4211F92C293c39f

@@ -1,0 +1,5 @@
+2025-07-24 01:06:30 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-07-24 10:18:36 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-07-28 23:05:47 - transaction_processor - WARNING - Token symbol is a contract address, replacing with UNKNOWN
+2025-07-28 23:08:52 - transaction_processor - WARNING - Token symbol is a contract address, replacing with UNKNOWN
+2025-07-29 07:35:42 - transaction_processor - WARNING - Token symbol is a contract address, replacing with UNKNOWN

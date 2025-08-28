@@ -1,0 +1,37 @@
+2025-08-02 07:31:14 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 07:31:14 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 07:31:14 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 08:08:29 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 08:08:29 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 08:08:30 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 09:20:20 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 09:20:20 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 09:20:20 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 09:24:46 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 09:24:47 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 09:24:47 - transaction_processor - DEBUG - Logger initialized for transaction_processor at level DEBUG
+2025-08-02 11:02:12 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0xbbceccd398b7daa505d3e3f0e059d3b6e9eb453e
+2025-08-02 12:04:15 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x04d9bc5a23d6910d981f084ff3f2e51e04aaf834
+2025-08-02 16:19:32 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0xbbceccd398b7daa505d3e3f0e059d3b6e9eb453e
+2025-08-02 21:21:11 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x6ed6dc72c32c38120e7211d9774551cddd1e94de
+2025-08-02 22:15:12 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x6ed6dc72c32c38120e7211d9774551cddd1e94de
+2025-08-02 22:50:02 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0xe984dcb1851183c0eb752b05a7fd32e1932c6c52
+2025-08-02 22:50:37 - transaction_processor - WARNING - No user addresses found in the database
+2025-08-02 22:51:02 - transaction_processor - WARNING - No user addresses found in the database
+2025-08-02 22:51:12 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x95d674c65bf1795fe5aeec063cc9e6afa3352bd8
+2025-08-02 22:51:12 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0xcfc0d35328e5f2489627bbf750d9f43e24d87c6f
+2025-08-02 22:51:17 - transaction_processor - WARNING - No user addresses found in the database
+2025-08-02 22:51:42 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x02310b4c00ba4b45fd6e9e4f2645456afffd0c60
+2025-08-02 23:01:17 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x26d4d98e1be94ba3bef880f22bd23f9d82d0eec8
+2025-08-02 23:01:17 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x65e909c182feb6e09cc27dd9aaa4ac366fb1b6fa
+2025-08-03 00:54:57 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x6ed6dc72c32c38120e7211d9774551cddd1e94de
+2025-08-03 07:32:27 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x6ed6dc72c32c38120e7211d9774551cddd1e94de
+2025-08-03 09:59:37 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x07672f5a5553249d65a20d05e1aca78924fd5476
+2025-08-03 09:59:37 - transaction_processor - ERROR - Error saving transaction 0x2e84d1887d8ad3af3beb688e16b6a771203201011f99c4d3e8e4eeff6fab4cdc to database - check database_operations.log for more details
+2025-08-04 09:51:02 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x35e08236cc2cbcca6bbbc0301ffcd9bc21f5ef6b
+2025-08-04 10:02:11 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x07672f5a5553249d65a20d05e1aca78924fd5476
+2025-08-04 10:02:12 - transaction_processor - ERROR - Error saving transaction 0xac2bda3fa94c3059dfb1dd07ab7689782dc49dabbbff4c00c04de2bdaeb8c62f to database - check database_operations.log for more details
+2025-08-04 10:07:37 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x35e08236cc2cbcca6bbbc0301ffcd9bc21f5ef6b
+2025-08-04 11:11:37 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x36b6031688913b5345f90c6c216471abcd4426b9
+2025-08-05 10:19:42 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x35e08236cc2cbcca6bbbc0301ffcd9bc21f5ef6b
+2025-08-05 10:21:32 - transaction_processor - WARNING - Token symbol was a contract address, replaced with UNKNOWN: 0x35e08236cc2cbcca6bbbc0301ffcd9bc21f5ef6b

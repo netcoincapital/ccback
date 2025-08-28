@@ -1,0 +1,820 @@
+2025-07-22 05:45:27 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 05:45:27 - GasFee - INFO - Initializing gas fee module
+2025-07-22 05:45:28 - GasFee - INFO - Initializing gas fee module
+2025-07-22 06:08:50 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:08:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:08:51 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:08:51 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:10:28 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:10:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:10:29 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:10:29 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:15:18 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:15:19 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:15:19 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:15:19 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:15:59 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:15:59 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:16:00 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:16:00 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:19:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:19:43 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:19:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:19:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:20:10 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:20:11 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:20:11 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:20:11 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:24:34 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:24:34 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:24:35 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:24:35 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:24:46 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:24:46 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:24:46 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:24:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:26:38 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:26:38 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:26:38 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:26:39 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 06:40:12 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 06:40:13 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 06:40:13 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 06:40:13 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 07:26:21 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 07:26:22 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 07:26:22 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 07:26:22 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 08:04:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 08:04:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 08:04:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 08:04:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 09:23:44 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 09:23:44 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 09:23:45 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 09:23:45 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 09:26:18 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 09:26:19 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 09:26:19 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 09:26:19 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 09:26:27 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 09:26:28 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 09:26:28 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 09:26:28 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 10:17:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 10:17:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 10:17:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 10:17:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 10:55:16 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 10:55:17 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 10:55:17 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 10:55:17 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 10:55:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 10:55:27 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 10:55:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 10:55:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 10:55:45 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 10:55:46 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 10:55:47 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 10:55:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 10:56:13 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 10:56:13 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 10:56:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 10:56:14 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 10:56:22 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 10:56:23 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 10:56:23 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 10:56:23 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 11:44:34 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 11:44:35 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 11:44:35 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 11:44:35 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 12:14:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 12:14:30 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 12:14:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 12:14:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 12:37:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 12:37:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 12:37:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 12:37:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 13:00:35 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 13:00:35 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 13:00:36 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 13:00:36 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 13:00:43 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 13:00:43 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 13:00:44 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 13:00:44 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 13:00:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 13:00:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 13:00:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 13:00:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 13:01:04 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 13:01:05 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 13:01:05 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 13:01:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 13:07:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 13:07:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 13:07:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 13:07:04 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 13:07:10 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 13:07:11 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 13:07:11 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 13:07:12 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 14:06:52 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 14:06:52 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 14:06:53 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 14:06:53 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 16:15:00 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 16:15:00 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 16:15:01 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 16:15:01 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 16:27:13 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 16:27:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 16:27:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 16:27:14 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 16:34:25 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 16:34:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 16:34:25 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 16:34:26 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 16:34:30 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 16:34:30 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 16:34:31 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 16:34:31 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 16:59:23 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 16:59:23 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 16:59:24 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 16:59:24 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:18:15 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 17:18:15 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:18:15 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 17:18:15 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:18:15 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 17:18:15 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:18:17 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:18:17 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:18:17 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:33:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 17:33:57 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:33:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 17:33:57 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:33:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 17:33:57 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:33:59 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:33:59 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:33:59 - GasFee - INFO - Initializing gas fee module
+2025-07-22 17:43:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:27 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:28 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:37 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:38 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:38 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:38 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:39 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:39 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:39 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:41 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:41 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:41 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:41 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:42 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:43 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:43 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:44 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:44 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:46 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:47 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:47 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:48 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:48 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:48 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:48 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:48 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:49 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:50 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:50 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:50 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:53 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:53 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:54 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:54 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:43:58 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:43:59 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:43:59 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:43:59 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:16 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:16 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:17 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:17 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:18 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:18 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:18 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:19 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:20 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:24 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:25 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:25 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:28 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:29 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:29 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:34 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:34 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:35 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:35 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:35 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:35 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:36 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:36 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:37 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:38 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:38 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:38 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:44:40 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:44:40 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:44:41 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:44:41 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:50:04 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:50:05 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:50:05 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:50:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:50:13 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:50:13 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:50:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:50:14 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:50:17 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:50:18 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:50:18 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:50:18 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:50:21 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:50:22 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:50:22 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:50:22 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 17:51:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 17:51:42 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 17:51:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 17:51:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:24:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:24:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:24:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:24:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:24:13 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:24:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:24:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:24:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:24:14 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:24:15 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:24:15 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:24:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:24:21 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:24:22 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:24:22 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:24:22 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:32:01 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:32:02 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:32:02 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:32:02 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:32:12 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:32:13 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:32:13 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:32:13 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:32:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:32:20 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:32:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:32:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:32:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:32:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:32:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:32:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:32:32 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:32:33 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:32:33 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:32:33 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 18:49:53 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 18:49:54 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 18:49:54 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 18:49:54 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 19:10:46 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 19:10:47 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 19:10:47 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 19:10:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 19:12:57 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 19:12:58 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 19:12:58 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 19:12:59 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 19:12:59 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 19:13:00 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 19:13:00 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 19:13:00 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 19:13:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 19:13:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 19:13:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 19:13:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 20:02:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 20:02:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 20:02:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 20:02:04 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 20:28:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:28:18 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:28:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:28:18 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:28:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:28:18 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:28:20 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:28:20 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:28:20 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:31:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:31:21 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:31:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:31:21 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:31:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:31:21 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:31:23 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:31:23 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:31:23 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:32:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:32:01 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:32:02 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:32:02 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:32:02 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:32:02 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:32:03 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:32:04 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:32:04 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:11 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:34:11 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:12 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:34:12 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:12 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:34:12 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:13 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:14 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:14 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:25 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:34:25 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:25 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:34:25 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:25 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:34:25 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:26 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:26 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:34:26 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:46:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:46:43 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:46:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:46:43 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:46:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 20:46:43 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:46:45 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:46:45 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:46:45 - GasFee - INFO - Initializing gas fee module
+2025-07-22 20:56:58 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 20:56:59 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 20:56:59 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 20:56:59 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 21:21:15 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 21:21:16 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 21:21:16 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 21:21:16 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 21:21:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 21:21:21 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 21:21:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 21:21:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 21:21:25 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 21:21:26 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 21:21:26 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 21:21:26 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 21:33:27 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 21:33:28 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 21:33:28 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 21:33:28 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 21:51:58 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 21:51:58 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 21:51:59 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 21:51:59 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 21:52:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 21:52:24 - GasFee - INFO - Initializing gas fee module
+2025-07-22 21:52:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 21:52:24 - GasFee - INFO - Initializing gas fee module
+2025-07-22 21:52:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-07-22 21:52:24 - GasFee - INFO - Initializing gas fee module
+2025-07-22 21:52:25 - GasFee - INFO - Initializing gas fee module
+2025-07-22 21:52:26 - GasFee - INFO - Initializing gas fee module
+2025-07-22 21:52:26 - GasFee - INFO - Initializing gas fee module
+2025-07-22 21:56:40 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 21:56:40 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 21:56:41 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 21:56:41 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 22:03:59 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 22:03:59 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 22:04:00 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 22:04:00 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 22:25:40 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 22:25:40 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 22:25:41 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 22:25:41 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 22:25:48 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 22:25:49 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 22:25:49 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 22:25:50 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 22:25:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 22:25:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 22:25:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 22:25:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 22:28:24 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 22:28:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 22:28:25 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 22:28:25 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 22:46:55 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 22:46:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 22:46:56 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 22:46:56 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 22:47:30 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 22:47:31 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 22:47:31 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 22:47:31 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:01:00 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:01:01 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:01:01 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:01:01 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:07:13 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:07:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:07:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:07:14 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:09:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:09:57 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:09:57 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:09:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:18:30 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:18:30 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:18:31 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:18:31 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:34:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:34:30 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:34:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:34:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:37:47 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:37:48 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:37:48 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:37:48 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:55:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:55:54 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:55:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:55:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:56:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:56:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:56:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:56:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:56:15 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:56:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:56:15 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:56:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:56:31 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:56:31 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:56:31 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:56:31 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:56:31 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:56:31 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:56:32 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:56:32 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:57:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:57:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:57:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:57:04 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:57:35 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:57:35 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:57:35 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:57:36 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:57:36 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:57:36 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:57:36 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:57:36 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:57:51 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:57:51 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-22 23:57:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:57:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-22 23:57:52 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:57:52 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-22 23:57:52 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-22 23:57:52 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 02:58:19 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 02:58:19 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 02:58:19 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 02:58:20 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 03:35:41 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 03:35:42 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 03:35:42 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 03:35:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:01:08 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:01:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:01:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:01:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:01:31 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:01:31 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:01:31 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:01:31 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:01:31 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:01:31 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:01:31 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:01:32 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:01:32 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:01:32 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:01:32 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:01:32 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:01:38 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:01:39 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:01:39 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:01:39 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:01:45 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:01:46 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:01:46 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:01:46 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:07:25 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:07:26 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:07:26 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:07:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:07:39 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:07:40 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:07:40 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:07:40 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:07:43 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:07:44 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:07:44 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:07:44 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:07:48 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:07:49 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:07:49 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:07:49 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:07:50 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:07:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:07:51 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:07:51 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 04:15:25 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 04:15:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 04:15:25 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 04:15:26 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 05:48:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 05:48:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 05:48:05 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 05:48:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 05:49:52 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 05:49:52 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 05:49:53 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 05:49:53 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 05:49:53 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 05:49:53 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 05:49:53 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 05:49:53 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:00:32 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:00:32 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:00:33 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:00:33 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:28:59 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:29:00 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:29:00 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:29:00 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:29:00 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:29:00 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:29:00 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:29:01 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:44:34 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:44:35 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:44:35 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:44:35 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:58:41 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:58:41 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:58:41 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:58:42 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:58:46 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:58:47 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:58:47 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:58:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:58:55 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:58:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:58:56 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:58:56 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:59:07 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:59:07 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:59:08 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:59:08 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 07:59:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 07:59:21 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 07:59:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 07:59:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 08:00:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 08:00:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 08:00:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 08:00:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 08:01:06 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 08:01:07 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 08:01:07 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 08:01:07 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 08:06:34 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 08:06:34 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 08:06:35 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 08:06:35 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 08:19:11 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 08:19:11 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 08:19:11 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 08:19:12 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 08:23:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 08:23:36 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 08:23:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 08:23:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 08:23:50 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 08:23:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 08:23:51 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 08:23:51 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 08:46:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 08:46:36 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 08:46:36 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 08:46:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 08:48:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 08:48:03 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 08:48:03 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 08:48:04 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 09:04:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 09:04:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 09:04:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 09:04:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 09:05:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 09:05:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 09:05:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 09:05:04 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 09:30:43 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 09:30:44 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 09:30:44 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 09:30:44 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:12:18 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:12:19 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:12:19 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:12:19 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:15:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:15:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:15:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:15:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:18:21 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:18:21 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:18:22 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:18:22 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:21:08 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:21:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:21:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:21:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:21:15 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:21:15 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:21:15 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:21:16 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:21:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:21:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:21:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:21:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:21:39 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:21:40 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:21:40 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:21:40 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:22:07 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:22:08 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:22:08 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:22:08 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:22:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:22:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:22:15 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:22:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:23:01 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:23:01 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:23:01 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:23:02 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:37:09 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:37:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:37:10 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:37:10 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:37:34 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:37:34 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:37:35 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:37:35 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 10:50:04 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 10:50:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 10:50:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 10:50:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 11:21:22 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 11:21:23 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 11:21:23 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 11:21:24 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 11:39:51 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 11:39:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 11:39:52 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 11:39:52 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 11:39:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 11:39:57 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 11:39:57 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 11:39:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 11:43:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 11:43:42 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 11:43:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 11:43:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 11:43:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 11:43:56 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 11:43:57 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 11:43:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 11:44:00 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 11:44:00 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 11:44:01 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 11:44:01 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 12:17:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 12:17:27 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 12:17:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 12:17:28 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 12:17:48 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 12:17:48 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 12:17:48 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 12:17:48 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 12:17:50 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 12:17:50 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 12:17:51 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 12:17:51 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 12:39:39 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 12:39:39 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 12:39:40 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 12:39:40 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 12:45:30 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 12:45:30 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 12:45:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 12:45:31 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 12:48:16 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 12:48:17 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 12:48:17 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 12:48:17 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 12:49:46 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 12:49:46 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 12:49:47 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 12:49:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:03:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:03:42 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:03:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:03:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:09:05 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:09:05 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:09:06 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:09:06 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:11:53 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:11:53 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:11:54 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:11:54 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:30:50 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:30:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:30:51 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:30:51 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:31:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:31:26 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:31:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:31:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:32:47 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:32:48 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:32:48 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:32:48 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:34:55 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:34:55 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:34:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:34:56 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:35:04 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:35:05 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:35:05 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:35:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:39:08 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:39:08 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:39:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:39:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:39:41 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:39:41 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:39:41 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:39:42 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:42:04 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:42:05 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:42:05 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:42:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:42:12 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:42:13 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:42:13 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:42:13 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:44:27 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:44:27 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:44:28 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:44:28 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:45:15 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:45:16 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:45:16 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:45:16 - GasFee - WARNING - Cosmos API returned status code 404
+2025-07-23 13:46:21 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-07-23 13:46:21 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-07-23 13:46:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-07-23 13:46:22 - GasFee - WARNING - Cosmos API returned status code 404

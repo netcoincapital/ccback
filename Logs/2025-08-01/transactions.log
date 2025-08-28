@@ -1,0 +1,40 @@
+2025-08-01 10:47:56 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 10:47:56 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 10:47:56 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 10:48:14 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 10:48:14 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 10:48:14 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 10:50:52 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 10:50:52 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 10:50:53 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:03:09 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:03:10 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:03:10 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:13:30 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:13:30 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:13:30 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:13:38 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:13:38 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:13:38 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:16:19 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:16:19 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:16:20 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:20:43 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:20:43 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:20:43 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:22:24 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:22:24 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 16:22:25 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 17:41:01 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 17:41:01 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 17:41:02 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 17:41:28 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 17:41:28 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 17:41:28 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 22:40:12 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 22:40:12 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-01 22:40:12 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-08-02 00:15:58 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-08-02 02:21:46 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

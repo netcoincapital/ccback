@@ -1,0 +1,233 @@
+2025-07-23 12:46:50 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-23 13:22:01 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-23 13:33:46 - transactions - ERROR - Database error: IN expression list, SELECT construct, or bound parameter object expected, got 'TRX'.
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/UserTransactions/transactions.py", line 434, in get_user_transactions_from_db
+    Transfers.TokenSymbol.in_(token_symbols),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 453, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/properties.py", line 479, in operate
+    return op(self.__clause_element__(), *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 1523, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/type_api.py", line 212, in operate
+    return op_fn(self.expr, op, *other, **addtl_kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/default_comparator.py", line 219, in _in_impl
+    seq_or_selectable = coercions.expect(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 878, in _literal_coercion
+    self._raise_for_expected(element, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: IN expression list, SELECT construct, or bound parameter object expected, got 'TRX'.
+2025-07-23 13:33:46 - transactions - ERROR - Failed SQL query: SELECT transfers."TransferID", transfers."TxHash", transfers."BlockNumber", transfers."Timestamp", transfers."FromAddress", transfers."ToAddress", transfers."Amount", transfers."TokenSymbol", transfers."TokenContract", transfers."AssetType", transfers."Fee", transfers."Direction", transfers."Status", transfers."IsSuccessful", transfers."ExplorerUrl", transfers."CreatedAt", transfers."UpdatedAt", transfers."Price", blockchains."BlockchainName", blockchains."Symbol" AS "BlockchainSymbol", address."PublicAddress", wallets."WalletID" 
+FROM transfers LEFT OUTER JOIN wallets ON transfers."WalletID" = wallets."WalletID" LEFT OUTER JOIN address ON transfers."AddressID" = address."AddressID" LEFT OUTER JOIN blockchains ON transfers."BlockchainID" = blockchains."BlockchainID" 
+WHERE wallets."UserID" = '57e257d6-7973-4e7e-b3de-e3a2ea7f20f5'
+2025-07-23 13:33:46 - transactions - ERROR - Error fetching transactions from database: IN expression list, SELECT construct, or bound parameter object expected, got 'TRX'.
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/UserTransactions/transactions.py", line 434, in get_user_transactions_from_db
+    Transfers.TokenSymbol.in_(token_symbols),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 453, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/properties.py", line 479, in operate
+    return op(self.__clause_element__(), *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 1523, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/type_api.py", line 212, in operate
+    return op_fn(self.expr, op, *other, **addtl_kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/default_comparator.py", line 219, in _in_impl
+    seq_or_selectable = coercions.expect(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 878, in _literal_coercion
+    self._raise_for_expected(element, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: IN expression list, SELECT construct, or bound parameter object expected, got 'TRX'.
+2025-07-23 13:34:53 - transactions - ERROR - Database error: IN expression list, SELECT construct, or bound parameter object expected, got 'BTC'.
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/UserTransactions/transactions.py", line 434, in get_user_transactions_from_db
+    Transfers.TokenSymbol.in_(token_symbols),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 453, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/properties.py", line 479, in operate
+    return op(self.__clause_element__(), *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 1523, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/type_api.py", line 212, in operate
+    return op_fn(self.expr, op, *other, **addtl_kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/default_comparator.py", line 219, in _in_impl
+    seq_or_selectable = coercions.expect(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 878, in _literal_coercion
+    self._raise_for_expected(element, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: IN expression list, SELECT construct, or bound parameter object expected, got 'BTC'.
+2025-07-23 13:34:53 - transactions - ERROR - Failed SQL query: SELECT transfers."TransferID", transfers."TxHash", transfers."BlockNumber", transfers."Timestamp", transfers."FromAddress", transfers."ToAddress", transfers."Amount", transfers."TokenSymbol", transfers."TokenContract", transfers."AssetType", transfers."Fee", transfers."Direction", transfers."Status", transfers."IsSuccessful", transfers."ExplorerUrl", transfers."CreatedAt", transfers."UpdatedAt", transfers."Price", blockchains."BlockchainName", blockchains."Symbol" AS "BlockchainSymbol", address."PublicAddress", wallets."WalletID" 
+FROM transfers LEFT OUTER JOIN wallets ON transfers."WalletID" = wallets."WalletID" LEFT OUTER JOIN address ON transfers."AddressID" = address."AddressID" LEFT OUTER JOIN blockchains ON transfers."BlockchainID" = blockchains."BlockchainID" 
+WHERE wallets."UserID" = '57e257d6-7973-4e7e-b3de-e3a2ea7f20f5'
+2025-07-23 13:34:53 - transactions - ERROR - Error fetching transactions from database: IN expression list, SELECT construct, or bound parameter object expected, got 'BTC'.
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/UserTransactions/transactions.py", line 434, in get_user_transactions_from_db
+    Transfers.TokenSymbol.in_(token_symbols),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 453, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/properties.py", line 479, in operate
+    return op(self.__clause_element__(), *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 1523, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/type_api.py", line 212, in operate
+    return op_fn(self.expr, op, *other, **addtl_kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/default_comparator.py", line 219, in _in_impl
+    seq_or_selectable = coercions.expect(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 878, in _literal_coercion
+    self._raise_for_expected(element, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: IN expression list, SELECT construct, or bound parameter object expected, got 'BTC'.
+2025-07-23 13:45:49 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-23 13:50:34 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-23 13:51:07 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-23 14:14:48 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-23 15:37:36 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-23 15:52:31 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-23 15:53:25 - transactions - DEBUG - Logger initialized for transactions at level DEBUG
+2025-07-23 16:03:19 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-24 23:02:38 - transactions - ERROR - Database connection test inner error: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-28 01:12:51 - transactions - ERROR - Database error: IN expression list, SELECT construct, or bound parameter object expected, got 'ETH'.
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/UserTransactions/transactions.py", line 434, in get_user_transactions_from_db
+    Transfers.TokenSymbol.in_(token_symbols),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 453, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/properties.py", line 479, in operate
+    return op(self.__clause_element__(), *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 1523, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/type_api.py", line 212, in operate
+    return op_fn(self.expr, op, *other, **addtl_kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/default_comparator.py", line 219, in _in_impl
+    seq_or_selectable = coercions.expect(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 878, in _literal_coercion
+    self._raise_for_expected(element, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: IN expression list, SELECT construct, or bound parameter object expected, got 'ETH'.
+2025-07-28 01:12:51 - transactions - ERROR - Failed SQL query: SELECT transfers."TransferID", transfers."TxHash", transfers."BlockNumber", transfers."Timestamp", transfers."FromAddress", transfers."ToAddress", transfers."Amount", transfers."TokenSymbol", transfers."TokenContract", transfers."AssetType", transfers."Fee", transfers."Direction", transfers."Status", transfers."IsSuccessful", transfers."ExplorerUrl", transfers."CreatedAt", transfers."UpdatedAt", transfers."Price", blockchains."BlockchainName", blockchains."Symbol" AS "BlockchainSymbol", address."PublicAddress", wallets."WalletID" 
+FROM transfers LEFT OUTER JOIN wallets ON transfers."WalletID" = wallets."WalletID" LEFT OUTER JOIN address ON transfers."AddressID" = address."AddressID" LEFT OUTER JOIN blockchains ON transfers."BlockchainID" = blockchains."BlockchainID" 
+WHERE wallets."UserID" = 'c1bf9df0-8263-41f1-844f-2e587f9b4050'
+2025-07-28 01:12:51 - transactions - ERROR - Error fetching transactions from database: IN expression list, SELECT construct, or bound parameter object expected, got 'ETH'.
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/UserTransactions/transactions.py", line 434, in get_user_transactions_from_db
+    Transfers.TokenSymbol.in_(token_symbols),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 453, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/properties.py", line 479, in operate
+    return op(self.__clause_element__(), *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 1523, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 2146, in in_op
+    return a.in_(b)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/operators.py", line 943, in in_
+    return self.operate(in_op, other)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/type_api.py", line 212, in operate
+    return op_fn(self.expr, op, *other, **addtl_kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/default_comparator.py", line 219, in _in_impl
+    seq_or_selectable = coercions.expect(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 878, in _literal_coercion
+    self._raise_for_expected(element, **kw)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: IN expression list, SELECT construct, or bound parameter object expected, got 'ETH'.

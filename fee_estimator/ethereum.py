@@ -14,74 +14,153 @@ INFURA_URL = "https://mainnet.infura.io/v3/"  # Add your key after deploying
 ETH_TRANSFER_GAS = 21000  # Standard ETH transfer gas
 ERC20_TRANSFER_GAS = 65000  # Estimated gas for ERC20 transfer
 
+# EVM Chain configurations
+EVM_CHAIN_CONFIGS = {
+    "ethereum": {
+        "rpc_url": "https://eth.llamarpc.com",
+        "gas_api": "https://ethgasstation.info/api/ethgasAPI.json",
+        "chain_id": 1,
+        "currency": "ETH",
+        "default_gas_price": 20  # Gwei
+    },
+    "bsc": {
+        "rpc_url": "https://bsc-dataseed.binance.org/",
+        "gas_api": "https://api.bscscan.com/api?module=gastracker&action=gasoracle",
+        "chain_id": 56,
+        "currency": "BNB", 
+        "default_gas_price": 5  # Gwei
+    },
+    "polygon": {
+        "rpc_url": "https://polygon-rpc.com/",
+        "gas_api": "https://api.polygonscan.com/api?module=gastracker&action=gasoracle",
+        "chain_id": 137,
+        "currency": "MATIC",
+        "default_gas_price": 30  # Gwei
+    },
+    "avalanche": {
+        "rpc_url": "https://api.avax.network/ext/bc/C/rpc",
+        "gas_api": None,  # No specific gas API
+        "chain_id": 43114,
+        "currency": "AVAX",
+        "default_gas_price": 25  # Gwei
+    },
+    "arbitrum": {
+        "rpc_url": "https://arb1.arbitrum.io/rpc",
+        "gas_api": None,
+        "chain_id": 42161,
+        "currency": "ETH",
+        "default_gas_price": 0.1  # Gwei (much lower on L2)
+    },
+    "optimism": {
+        "rpc_url": "https://mainnet.optimism.io",
+        "gas_api": None,
+        "chain_id": 10,
+        "currency": "ETH", 
+        "default_gas_price": 0.001  # Gwei (very low on L2)
+    },
+    "fantom": {
+        "rpc_url": "https://rpc.ftm.tools/",
+        "gas_api": None,
+        "chain_id": 250,
+        "currency": "FTM",
+        "default_gas_price": 22  # Gwei
+    },
+    "base": {
+        "rpc_url": "https://mainnet.base.org",
+        "gas_api": None,
+        "chain_id": 8453,
+        "currency": "ETH",
+        "default_gas_price": 0.001  # Gwei (L2)
+    }
+}
+
 # ERC20 Transfer function signature
 ERC20_TRANSFER_SIGNATURE = "0xa9059cbb"
 
 class EthereumFeeEstimator(FeeEstimator):
-    """Ethereum fee estimator for ETH and ERC20 tokens."""
+    """Ethereum fee estimator for ETH and ERC20 tokens on EVM chains."""
     
-    def __init__(self, infura_key: Optional[str] = None, gas_api_url: str = ETH_GAS_STATION_API):
+    def __init__(self, chain: str = "ethereum", infura_key: Optional[str] = None):
         """
-        Initialize the Ethereum fee estimator.
+        Initialize the EVM fee estimator.
         
         Args:
-            infura_key: Infura API key, if None will try to use a default node
-            gas_api_url: Gas price API URL
+            chain: EVM chain name (ethereum, bsc, polygon, etc.)
+            infura_key: Infura API key, if None will use chain-specific RPC
         """
+        self.chain = chain.lower()
         self.infura_key = infura_key
-        self.gas_api_url = gas_api_url
         
-        # Connect to Ethereum node
-        if infura_key:
+        # Get chain configuration
+        if self.chain not in EVM_CHAIN_CONFIGS:
+            raise ValueError(f"Unsupported EVM chain: {self.chain}")
+        
+        self.config = EVM_CHAIN_CONFIGS[self.chain]
+        
+        # Connect to blockchain node
+        if infura_key and self.chain == "ethereum":
             self.web3 = Web3(Web3.HTTPProvider(f"{INFURA_URL}{infura_key}"))
         else:
-            # Fallback to a public node (not recommended for production)
-            self.web3 = Web3(Web3.HTTPProvider("https://eth.public-rpc.com"))
+            # Use chain-specific RPC
+            self.web3 = Web3(Web3.HTTPProvider(self.config["rpc_url"]))
         
         self.gas_client = APIClient(base_url="", rate_limit=0.2)  # Max 5 req/sec
     
     def _get_current_gas_prices(self) -> Dict[str, float]:
         """
-        Get current gas prices from gas station API.
+        Get current gas prices from chain-specific gas station API.
         
         Returns:
             Dictionary with gas prices in Gwei for different priorities
         """
         try:
-            # Try to get gas prices from gas price API
-            response = requests.get(self.gas_api_url, timeout=10)
-            response.raise_for_status()
-            data = response.json()
-            
-            # Convert from their format (price * 10) to Gwei
-            return {
-                "slow": data.get("safeLow", 50) / 10,
-                "average": data.get("average", 100) / 10,
-                "fast": data.get("fast", 200) / 10
-            }
+            # Try to get gas prices from chain-specific gas price API
+            if self.config["gas_api"]:
+                response = requests.get(self.config["gas_api"], timeout=10)
+                response.raise_for_status()
+                data = response.json()
+                
+                # Handle different API response formats
+                if self.chain == "ethereum":
+                    # ETH Gas Station format
+                    return {
+                        "slow": data.get("safeLow", 50) / 10,
+                        "average": data.get("average", 100) / 10,
+                        "fast": data.get("fast", 200) / 10
+                    }
+                elif self.chain in ["bsc", "polygon"]:
+                    # BSCScan/PolygonScan format
+                    result = data.get("result", {})
+                    return {
+                        "slow": float(result.get("SafeGasPrice", self.config["default_gas_price"] * 0.8)),
+                        "average": float(result.get("StandardGasPrice", self.config["default_gas_price"])),
+                        "fast": float(result.get("FastGasPrice", self.config["default_gas_price"] * 1.5))
+                    }
+                    
         except Exception as e:
-            logger.warning(f"Error fetching gas prices: {e}")
+            logger.warning(f"Error fetching gas prices from API: {e}")
             
-            # Fallback: try to get from the node
-            try:
-                gas_price_wei = self.web3.eth.gas_price
-                gas_price_gwei = self.web3.from_wei(gas_price_wei, 'gwei')
-                
-                # Create simulated tiers
-                return {
-                    "slow": gas_price_gwei * 0.8,
-                    "average": gas_price_gwei,
-                    "fast": gas_price_gwei * 1.5
-                }
-            except Exception as e2:
-                logger.error(f"Failed to get fallback gas price: {e2}")
-                
-                # Final fallback: use hardcoded values
-                return {
-                    "slow": 50.0,
-                    "average": 80.0,
-                    "fast": 120.0
-                }
+        # Fallback: try to get from the node
+        try:
+            gas_price_wei = self.web3.eth.gas_price
+            gas_price_gwei = self.web3.from_wei(gas_price_wei, 'gwei')
+            
+            # Create simulated tiers
+            return {
+                "slow": gas_price_gwei * 0.8,
+                "average": gas_price_gwei,
+                "fast": gas_price_gwei * 1.5
+            }
+        except Exception as e2:
+            logger.error(f"Failed to get fallback gas price: {e2}")
+            
+            # Final fallback: use chain-specific default values
+            default_price = self.config["default_gas_price"]
+            return {
+                "slow": default_price * 0.8,
+                "average": default_price,
+                "fast": default_price * 1.5
+            }
     
     def _get_token_decimals(self, token_address: str) -> int:
         """Get the decimal places of an ERC20 token."""
@@ -180,7 +259,7 @@ class EthereumFeeEstimator(FeeEstimator):
         
         return self.format_fee_response(
             fee=fee_options['average'],
-            fee_currency="ETH",
+            fee_currency=self.config["currency"],
             gas_used=gas_limit,
             gas_price=int(self.web3.to_wei(gas_prices['average'], 'gwei')),
             priority_options=priority_options,
@@ -227,7 +306,7 @@ class EthereumFeeEstimator(FeeEstimator):
         
         return self.format_fee_response(
             fee=fee_options['average'],
-            fee_currency="ETH",
+            fee_currency=self.config["currency"],
             gas_used=gas_limit,
             gas_price=int(self.web3.to_wei(gas_prices['average'], 'gwei')),
             priority_options=priority_options,
@@ -250,34 +329,36 @@ class EthereumFeeEstimator(FeeEstimator):
 
 
 # Function exports for direct use
-def estimate_native_fee(from_address: str, to_address: str, amount: float) -> Dict[str, Any]:
+def estimate_native_fee(from_address: str, to_address: str, amount: float, chain: str = "ethereum") -> Dict[str, Any]:
     """
-    Estimate fee for native ETH transfer.
+    Estimate fee for native token transfer on EVM chains.
     
     Args:
-        from_address: Source ETH address
-        to_address: Destination ETH address
-        amount: Amount to transfer in ETH
+        from_address: Source address
+        to_address: Destination address
+        amount: Amount to transfer
+        chain: EVM chain name (ethereum, bsc, polygon, etc.)
         
     Returns:
         Dict with fee estimation details
     """
-    estimator = EthereumFeeEstimator()
+    estimator = EthereumFeeEstimator(chain=chain)
     return estimator.estimate_native_fee(from_address, to_address, amount)
 
 
-def estimate_token_fee(from_address: str, to_address: str, amount: float, token_contract: str) -> Dict[str, Any]:
+def estimate_token_fee(from_address: str, to_address: str, amount: float, token_contract: str, chain: str = "ethereum") -> Dict[str, Any]:
     """
-    Estimate fee for ERC20 token transfer.
+    Estimate fee for ERC20 token transfer on EVM chains.
     
     Args:
-        from_address: Source ETH address
-        to_address: Destination ETH address
+        from_address: Source address
+        to_address: Destination address
         amount: Amount to transfer in token units
         token_contract: Token contract address
+        chain: EVM chain name (ethereum, bsc, polygon, etc.)
         
     Returns:
         Dict with fee estimation details
     """
-    estimator = EthereumFeeEstimator()
+    estimator = EthereumFeeEstimator(chain=chain)
     return estimator.estimate_token_fee(from_address, to_address, amount, token_contract) 

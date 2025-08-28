@@ -1,0 +1,1547 @@
+2025-08-01 10:47:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:47:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:47:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:47:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:47:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:47:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:47:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:47:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:47:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:48:13 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:48:13 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:48:13 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:48:13 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:48:13 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:48:13 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:48:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:48:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:48:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:50:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:50:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:50:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:50:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:50:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 10:50:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:50:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:50:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 10:50:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 11:30:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:30:31 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:30:32 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:30:32 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:30:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:30:47 - GasFee - ERROR - Error fetching XRP transaction fee: HTTPSConnectionPool(host='xrplcluster.com', port=443): Read timed out. (read timeout=10)
+2025-08-01 11:30:47 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:30:47 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:30:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:31:37 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:31:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:31:38 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:31:38 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:32:27 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:32:27 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:32:28 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:32:28 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:36:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:36:15 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:36:15 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:36:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:36:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:36:21 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:36:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:36:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:39:23 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:39:23 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:39:24 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:39:24 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:40:18 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:40:19 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:40:19 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:40:19 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:41:32 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:41:32 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:41:32 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:41:33 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 11:43:47 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 11:43:48 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 11:43:48 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 11:43:49 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:11:52 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:11:53 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:11:53 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:11:53 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:14:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:14:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:14:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:14:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:14:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:14:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:14:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:14:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:14:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:14:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:14:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:14:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:14:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:14:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:14:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:14:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:17:59 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:18:09 - GasFee - ERROR - Error fetching XRP transaction fee: HTTPSConnectionPool(host='xrplcluster.com', port=443): Read timed out. (read timeout=10)
+2025-08-01 12:18:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:18:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:18:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:21:37 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:21:38 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:21:38 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:21:38 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:21:52 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:21:53 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:21:53 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:21:53 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:22:13 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:22:13 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:22:13 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:22:14 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:28:57 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:28:58 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:28:58 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:28:58 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:29:10 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:29:20 - GasFee - ERROR - Error fetching XRP transaction fee: HTTPSConnectionPool(host='xrplcluster.com', port=443): Read timed out. (read timeout=10)
+2025-08-01 12:29:20 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:29:20 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:29:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:29:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:29:57 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:29:57 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:29:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:32:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:32:43 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:32:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:32:44 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 12:34:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 12:34:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 12:34:15 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 12:34:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 13:02:47 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 13:02:49 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 13:02:49 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 13:02:49 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 13:02:52 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 13:02:52 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 13:02:52 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 13:02:53 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 13:06:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 13:06:36 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 13:06:36 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 13:06:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 13:06:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 13:06:43 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 13:06:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 13:06:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 13:06:48 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 13:06:49 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 13:06:50 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 13:06:50 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 13:08:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 13:08:21 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 13:08:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 13:08:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 14:01:58 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 14:01:59 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 14:01:59 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 14:02:00 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 14:02:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 14:02:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 14:02:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 14:02:04 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 14:03:46 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 14:03:47 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 14:03:47 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 14:03:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 14:27:33 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 14:27:34 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 14:27:34 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 14:27:34 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 14:27:40 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 14:27:41 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 14:27:41 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 14:27:41 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 14:28:15 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 14:28:15 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 14:28:16 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 14:28:16 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 14:44:34 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 14:44:35 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 14:44:35 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 14:44:35 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 15:14:39 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 15:14:40 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 15:14:40 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 15:14:40 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 15:28:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 15:28:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 15:28:57 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 15:28:57 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 15:28:57 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 15:28:57 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 15:28:57 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 15:28:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 15:28:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 15:28:58 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 15:28:58 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 15:28:58 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 16:03:08 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:08 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:08 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:08 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:08 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:08 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:09 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:17 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:17 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:17 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:17 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:17 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:17 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:22 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:22 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:22 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:22 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:22 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:22 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:31 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:31 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:34 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:34 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:38 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:38 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:39 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:39 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:43 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:45 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:45 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:48 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:48 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:48 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:48 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:49 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:49 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:52 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:52 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:53 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:03:58 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:03:58 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:02 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:02 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:06 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:06 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:07 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:07 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:12 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:15 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:15 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:16 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:16 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:20 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:21 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:24 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:25 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:25 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:29 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:29 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:33 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:33 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:34 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:34 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:36 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:36 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:38 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:38 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:41 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:41 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:42 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:42 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:42 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:42 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:46 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:46 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:46 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:46 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:47 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:47 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:50 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:50 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:50 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:50 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:59 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:59 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:04:59 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:04:59 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:02 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:02 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:11 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:11 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:15 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:15 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:20 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:20 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:22 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:22 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:27 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:27 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:27 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:27 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:31 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:31 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:31 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:31 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:36 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:36 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:39 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:39 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:41 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:41 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:45 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:45 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:45 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:45 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:47 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:47 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:52 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:52 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:53 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:05:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:05:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:04 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:04 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:08 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:08 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:12 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:15 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:15 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:17 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:17 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:21 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:24 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:27 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:27 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:31 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:31 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:34 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:34 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:36 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:36 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:38 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:38 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:39 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:39 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:41 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:41 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:42 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:42 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:43 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:45 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:45 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:47 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:47 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:47 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:47 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:49 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:49 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:50 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:50 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:52 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:54 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:54 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:58 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:58 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:06:59 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:06:59 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:03 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:03 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:03 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:03 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:07 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:07 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:07 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:07 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:09 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:09 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:11 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:11 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:12 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:13 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:13 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:15 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:15 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:16 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:16 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:18 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:20 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:20 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:22 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:22 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:24 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:25 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:25 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:27 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:27 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:29 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:29 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:31 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:31 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:33 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:33 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:36 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:36 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:39 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:39 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:41 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:41 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:43 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:45 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:45 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:47 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:47 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:48 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:48 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:49 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:49 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:53 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:53 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:07:58 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:07:58 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:02 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:02 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:04 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:04 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:06 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:06 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:07 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:07 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:09 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:09 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:11 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:11 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:11 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:11 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:16 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:16 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:16 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:16 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:21 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:21 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:25 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:25 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:25 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:25 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:29 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:29 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:33 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:33 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:34 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:34 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:38 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:38 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:42 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:42 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:43 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:46 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:46 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:47 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:47 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:48 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:48 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:50 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:50 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:52 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:54 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:54 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:58 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:58 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:08:59 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:08:59 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:03 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:03 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:04 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:04 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:07 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:07 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:08 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:08 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:12 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:12 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:16 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:16 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:17 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:17 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:21 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:21 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:25 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:25 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:27 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:27 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:33 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:33 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:41 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:41 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:45 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:45 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:48 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:48 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:49 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:49 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:53 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:54 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:54 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:09:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:09:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:03 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:03 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:04 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:04 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:08 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:08 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:09 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:09 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:12 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:18 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:20 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:24 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:24 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:29 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:29 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:31 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:31 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:33 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:33 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:33 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:33 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:36 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:36 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:39 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:39 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:41 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:41 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:43 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:46 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:46 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:47 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:47 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:49 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:49 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:50 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:50 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:53 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:54 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:54 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:10:58 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:10:58 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:02 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:02 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:03 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:03 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:06 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:06 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:07 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:07 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:09 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:09 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:11 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:11 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:13 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:13 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:16 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:16 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:18 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:21 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:22 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:22 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:24 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:34 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:34 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:36 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:36 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:36 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:36 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:38 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:38 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:42 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:42 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:46 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:46 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:48 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:48 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:49 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:49 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:52 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:53 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:11:59 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:11:59 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:04 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:04 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:08 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:08 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:09 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:09 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:13 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:13 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:15 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:15 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:17 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:17 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:20 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:22 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:22 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:28 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:30 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:32 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:32 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:35 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:35 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:36 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:36 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:39 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:39 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:40 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:40 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:41 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:41 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:43 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:43 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:44 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:47 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:47 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:48 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:48 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:49 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:49 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:51 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:51 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:52 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:52 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:53 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:53 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:55 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:55 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:56 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:56 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:57 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:57 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:12:59 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:12:59 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:01 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:04 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:04 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:05 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:05 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:06 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:06 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:09 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:09 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:11 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:11 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:13 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:13 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:14 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:14 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:16 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:16 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:18 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:19 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:19 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:21 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:21 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:24 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:24 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:24 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:29 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:29 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:29 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:29 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:29 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:29 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:30 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:37 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:13:37 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:38 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:38 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:13:39 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:14:16 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 16:14:16 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 16:14:17 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 16:14:17 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 16:16:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:16:18 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:16:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:16:18 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:16:18 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:16:18 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:16:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:16:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:16:20 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:20:41 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:20:41 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:20:42 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:20:42 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:20:42 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:20:42 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:20:43 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:20:43 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:20:44 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:22:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:22:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:22:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:22:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:22:23 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 16:22:23 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:22:25 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:22:25 - GasFee - INFO - Initializing gas fee module
+2025-08-01 16:22:25 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 17:41:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 17:41:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:00 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 17:41:00 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:01 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:02 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:02 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:26 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 17:41:26 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:27 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 17:41:27 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:27 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 17:41:27 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:28 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:41:29 - GasFee - INFO - Initializing gas fee module
+2025-08-01 17:50:24 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 17:50:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 17:50:26 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 17:50:26 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 17:59:03 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 17:59:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 17:59:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 17:59:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 17:59:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 17:59:15 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 17:59:16 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 17:59:16 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:02:38 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:02:38 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:02:38 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:02:39 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:02:39 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:02:39 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:02:39 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:02:39 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:02:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:02:43 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:02:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:02:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:02:46 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:02:46 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:02:47 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:02:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:03:05 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:03:06 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:03:06 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:03:06 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:03:09 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:03:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:03:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:03:10 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:03:13 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:03:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:03:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:03:14 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:03:18 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:03:18 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:03:19 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:03:19 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:21 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:23 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:24 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:24 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:24 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:27 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:28 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:28 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:29 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:29 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:30 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:31 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:31 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:32 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:32 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:32 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:32 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:32 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:33 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:33 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:34 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:34 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:36 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:38 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:38 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:39 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:39 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:20:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:20:54 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:20:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:20:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:34:32 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:34:33 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:34:34 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:34:34 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:34:37 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:34:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:34:38 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:34:38 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:37:59 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:37:59 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:38:00 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:38:00 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 18:55:05 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 18:55:06 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 18:55:06 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 18:55:06 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:05:18 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:05:19 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:05:20 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:05:20 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:05:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:05:26 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:05:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:05:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:06:38 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:06:38 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:06:39 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:06:39 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:08:53 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:08:54 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:08:54 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:08:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:08:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:08:57 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:08:57 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:08:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:09:02 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:09:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:09:04 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:09:04 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:09:04 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:09:05 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:09:05 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:09:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:09:08 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:09:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:09:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:09:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:11:47 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:11:47 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:11:48 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:11:48 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:28:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:28:26 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:28:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:28:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:47:04 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:47:05 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:47:05 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:47:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:47:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:47:20 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:47:20 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:47:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:49:08 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:49:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:49:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:49:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:49:11 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:49:12 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:49:12 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:49:12 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 19:55:38 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 19:55:39 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 19:55:39 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 19:55:39 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:15:11 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:15:11 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:15:12 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:15:12 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:24:02 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:24:03 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:24:03 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:24:03 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:29:08 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:29:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:29:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:29:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:47:42 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:47:43 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:47:43 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:47:43 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:49:14 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:49:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:49:15 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:49:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:49:22 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:49:23 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:49:23 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:49:24 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:49:25 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:49:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:49:26 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:49:26 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:49:27 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:49:28 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:49:28 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:49:28 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:49:52 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:49:53 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:49:53 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:49:54 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:49:54 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:49:54 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:49:55 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:49:55 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:50:52 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:50:52 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:50:52 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:50:53 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:50:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:50:57 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:50:57 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:50:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 20:58:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 20:58:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 20:58:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 20:58:37 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:01:43 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:01:44 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:01:44 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:01:44 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:01:47 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:01:48 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:01:48 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:01:48 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:01:49 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:01:50 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:01:50 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:01:50 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:01:53 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:01:54 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:01:54 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:01:54 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:02:53 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:02:54 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:02:54 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:02:54 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:02:57 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:02:58 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:02:58 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:02:58 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:02:58 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:02:59 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:02:59 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:02:59 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:14:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:14:30 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:14:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:14:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:14:37 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:14:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:14:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:14:38 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:55:13 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:55:14 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:55:14 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:55:15 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:55:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:55:26 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:55:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:55:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 21:55:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 21:55:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 21:55:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 21:55:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 22:17:45 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 22:17:46 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 22:17:46 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 22:17:46 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 22:40:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 22:40:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 22:40:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 22:40:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 22:40:10 - GasFee - DEBUG - Logger initialized for GasFee at level DEBUG
+2025-08-01 22:40:10 - GasFee - INFO - Initializing gas fee module
+2025-08-01 22:40:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 22:40:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 22:40:12 - GasFee - INFO - Initializing gas fee module
+2025-08-01 23:23:25 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 23:23:26 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 23:23:26 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 23:23:26 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-01 23:23:33 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-01 23:23:34 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-01 23:23:34 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-01 23:23:34 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 00:15:55 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 00:15:56 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 00:15:56 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 00:15:56 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 00:16:02 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 00:16:03 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 00:16:03 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 00:16:04 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 00:16:12 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 00:16:12 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 00:16:12 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 00:16:13 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 02:21:07 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 02:21:08 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 02:21:08 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 02:21:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 02:21:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 02:21:20 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 02:21:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 02:21:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 02:21:32 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 02:21:32 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 02:21:33 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 02:21:33 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 02:21:50 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 02:21:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 02:21:51 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 02:21:51 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 02:21:56 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 02:21:56 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 02:21:56 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 02:21:57 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 02:33:15 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 02:33:16 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 02:33:16 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 02:33:16 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 03:26:51 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 03:26:51 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 03:26:51 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 03:26:52 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 03:27:04 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 03:27:04 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 03:27:05 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 03:27:05 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 03:27:10 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 03:27:10 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 03:27:11 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 03:27:11 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 03:27:11 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 03:27:11 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 03:27:12 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 03:27:12 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 03:27:16 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 03:27:17 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 03:27:17 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 03:27:17 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 03:27:18 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 03:27:18 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 03:27:19 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 03:27:19 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:31:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:31:21 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:31:21 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:31:22 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:32:19 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:32:19 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:32:19 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:32:19 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:32:20 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:32:20 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:32:20 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:32:20 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:32:25 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:32:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:32:25 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:32:26 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:39:40 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:39:41 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:39:41 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:39:41 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:53:46 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:53:47 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:53:47 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:53:47 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:54:00 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:54:01 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:54:01 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:54:01 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:54:05 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:54:06 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:54:06 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:54:06 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:54:17 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:54:18 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:54:18 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:54:18 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:54:24 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:54:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:54:25 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:54:25 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:54:33 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:54:34 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:54:34 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:54:34 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:54:44 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:54:45 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:54:45 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:54:45 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:54:58 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:54:59 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:54:59 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:55:00 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:55:08 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:55:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:55:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:55:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 04:55:36 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 04:55:37 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 04:55:37 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 04:55:38 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:00:11 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:00:12 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:00:12 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:00:13 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:03:21 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:03:22 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:03:23 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:03:23 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:03:24 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:03:25 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:03:25 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:03:25 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:03:44 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:03:44 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:03:45 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:03:45 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:04:08 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:04:09 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:04:09 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:04:09 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:04:23 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:04:24 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:04:24 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:04:24 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:38:24 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:38:24 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:38:25 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:38:25 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:38:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:38:27 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:38:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:38:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 05:56:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 05:56:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 05:56:30 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 05:56:30 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 06:14:26 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 06:14:26 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 06:14:27 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 06:14:27 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 06:25:50 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 06:25:50 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 06:25:51 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 06:25:51 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 06:33:20 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 06:33:20 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 06:33:20 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 06:33:21 - GasFee - WARNING - Cosmos API returned status code 404
+2025-08-02 07:19:29 - GasFee - ERROR - Error fetching Fantom gas fee: 401 Client Error: Unauthorized for url: https://rpc.ftm.tools/
+2025-08-02 07:19:29 - GasFee - WARNING - No Blockfrost API key found for Cardano
+2025-08-02 07:19:29 - GasFee - WARNING - Polkadot API returned status code 400
+2025-08-02 07:19:30 - GasFee - WARNING - Cosmos API returned status code 404

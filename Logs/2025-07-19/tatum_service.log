@@ -1,0 +1,45 @@
+2025-07-19 10:57:28 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 10:57:29 - tatum_service - DEBUG - Broadcasting transaction to: https://api.tatum.io/v3/polygon/broadcast
+2025-07-19 10:57:29 - tatum_service - DEBUG - Making post request to https://api.tatum.io/v3/polygon/broadcast
+2025-07-19 10:57:29 - tatum_service - DEBUG - Request data: {'txData': '0xf86d0c8506fc23ac0082520894184ac75b74c77d5bf3b3bffb5ed26ae091b3fed187038d7ea4c6800080820136a080d66422a259f3b771a4b7c062b6d79f968089814032187c68b10a3c2be9d447a07bfd3a61e236ec05859555a826660f3f5c26363b0f8b34d93f1489898fc1fc14'}
+2025-07-19 10:57:29 - tatum_service - DEBUG - Response status code: 403
+2025-07-19 10:57:29 - tatum_service - DEBUG - Response body: {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b7a1974398e6ed9df0112"}
+2025-07-19 10:57:29 - tatum_service - ERROR - Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"ALREADY_EXISTS: already known [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b7a1974398e6ed9df0112"}
+2025-07-19 11:36:57 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 11:36:57 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 11:36:57 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 11:43:09 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 11:43:09 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 11:43:09 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 11:57:43 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 11:57:43 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 11:57:43 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:03:44 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:03:44 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:03:45 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:12:42 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:13:41 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:16:36 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:16:38 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:16:38 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:22:25 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:22:26 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 12:22:26 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 14:24:16 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 14:24:17 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 14:24:17 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:31:53 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:31:53 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:31:53 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:38:34 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:38:34 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:38:35 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:55:24 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:55:25 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 15:55:25 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 16:06:30 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 16:06:30 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 16:06:31 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 19:29:32 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 19:29:44 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG
+2025-07-19 19:29:58 - tatum_service - DEBUG - Logger initialized for tatum_service at level DEBUG

@@ -1,0 +1,130 @@
+2025-07-22 05:45:26 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 17:18:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 17:18:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 17:18:14 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 17:33:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 17:33:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 17:33:56 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:26:40 - database_operations - ERROR - خطا در دریافت آدرس‌های کاربران: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: 
+                    SELECT 
+                        a.AddressID, 
+                        a.WalletID, 
+                        a.PublicAddress, 
+                        w.UserID,
+                        b.Symbol
+                    FROM address a
+                    JOIN wallets w ON a.WalletID = w.WalletID
+                    JOIN blockchains b ON a.BlockchainID = b.BlockchainID
+                ]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1811, in _execute_context
+    context = constructor(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1427, in _init_compiled
+    self.cursor = self.create_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1766, in create_cursor
+    return self.create_default_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/dialects/mysql/mysqlconnector.py", line 67, in create_default_cursor
+    return self._dbapi_connection.cursor(buffered=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1486, in cursor
+    return self.dbapi_connection.cursor(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 841, in cursor
+    raise OperationalError("MySQL Connection not available.")
+mysql.connector.errors.OperationalError: MySQL Connection not available.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/webhook/database_operations.py", line 79, in get_user_addresses
+    result = session.execute(query)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1817, in _execute_context
+    self._handle_dbapi_exception(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/base.py", line 1811, in _execute_context
+    context = constructor(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1427, in _init_compiled
+    self.cursor = self.create_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/engine/default.py", line 1766, in create_cursor
+    return self.create_default_cursor()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/dialects/mysql/mysqlconnector.py", line 67, in create_default_cursor
+    return self._dbapi_connection.cursor(buffered=True)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/sqlalchemy/pool/base.py", line 1486, in cursor
+    return self.dbapi_connection.cursor(*args, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 841, in cursor
+    raise OperationalError("MySQL Connection not available.")
+sqlalchemy.exc.OperationalError: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: 
+                    SELECT 
+                        a.AddressID, 
+                        a.WalletID, 
+                        a.PublicAddress, 
+                        w.UserID,
+                        b.Symbol
+                    FROM address a
+                    JOIN wallets w ON a.WalletID = w.WalletID
+                    JOIN blockchains b ON a.BlockchainID = b.BlockchainID
+                ]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-22 20:28:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:28:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:28:17 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:31:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:31:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:31:21 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:32:00 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:32:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:32:01 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:34:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:34:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:34:11 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:34:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:34:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:34:24 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:46:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:46:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 20:46:42 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 21:52:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 21:52:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 21:52:23 - database_operations - DEBUG - Logger initialized for database_operations at level DEBUG
+2025-07-22 21:53:45 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-22 21:53:45 - database_operations - ERROR - خطا در دریافت اطلاعات تراکنش از API تاتوم: 403 - {"statusCode":403,"errorCode":"polygon.tx.not.found","message":"Transaction 0x46c7065db5af090e9cd3c14bbff77796c90f8cfe6a887771be5ce05602a7c694 not found. Possible not exists or is still pending.","dashboardLog":"https://dashboard.tatum.io/logs?id=688008695f21166ca484909b"}
+2025-07-22 21:53:45 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-22 21:53:45 - database_operations - WARNING - تراکنش باعث منفی شدن موجودی می‌شد، موجودی به صفر تنظیم شد
+2025-07-22 21:53:45 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x46c7065db5af090e9cd3c14bbff77796c90f8cfe6a887771be5ce05602a7c694 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-22 21:57:51 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-22 21:57:51 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-22 21:57:51 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-22 21:57:51 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0xc8d0c8cfcb3b9c9463e565a997d4e4110f8c2bdea1997a1268c93e0cc9dd4290 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-22 21:57:51 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-22 21:57:51 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0xd334c1fd56bceea5733a2def8c83f4d98702dadc3f0b0b56793889d1f804ff4f قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-22 23:24:01 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-22 23:24:01 - database_operations - ERROR - خطا در دریافت اطلاعات تراکنش از API تاتوم: 403 - {"statusCode":403,"errorCode":"polygon.tx.not.found","message":"Transaction 0x46c7065db5af090e9cd3c14bbff77796c90f8cfe6a887771be5ce05602a7c695 not found. Possible not exists or is still pending.","dashboardLog":"https://dashboard.tatum.io/logs?id=68801d9113c8b434a1b6e1b0"}
+2025-07-22 23:24:01 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-22 23:24:01 - database_operations - WARNING - تراکنش باعث منفی شدن موجودی می‌شد، موجودی به صفر تنظیم شد
+2025-07-22 23:24:01 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0x46c7065db5af090e9cd3c14bbff77796c90f8cfe6a887771be5ce05602a7c695 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 12:49:16 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 12:49:16 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 12:49:16 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=341a373b-61bd-4527-8f27-79eb65981906 و tx_id=0xa891d91f516603d4b298ace9458d326122147c88df0ae0890f75f98f0ee74db6 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 12:51:41 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 12:51:42 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 12:51:42 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=341a373b-61bd-4527-8f27-79eb65981906 و tx_id=0xb2ce716eb4e97eec4b93407130581834c35d38f7339d4a3f546a7a86aa38ae2b قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 13:38:16 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 13:38:16 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 13:38:16 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=46f57b5b-05d7-4f62-9171-83dd2e358f05 و tx_id=0x0379c9c7cf5616521e352e4c441e6eba9b1b90c81b58ffd90b8b14b59b607997 قبلاً وجود دارد، درج مجدد انجام نمی‌شود.
+2025-07-23 13:48:16 - database_operations - WARNING - هیچ رکوردی در جدول currencies برای MATIC در بلاکچین MATIC یافت نشد
+2025-07-23 13:48:16 - database_operations - ERROR - خطا در به‌روزرسانی موجودی کیف پول: 'DatabaseOperations' object has no attribute '_acquire_lock'
+2025-07-23 13:48:16 - database_operations - WARNING - [LOG] رکورد لاگ برای wallet_id=db0f0055-67f6-48f0-bd03-44c7ebb3ab27 و tx_id=0xf98d83f2765e8871ffccae518c7f5ae8b007a4ad2a6d193945cc28d225677a3a قبلاً وجود دارد، درج مجدد انجام نمی‌شود.

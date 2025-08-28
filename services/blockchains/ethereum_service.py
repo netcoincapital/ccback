@@ -49,7 +49,7 @@ class EthereumService(BaseBlockchainService):
         
     def prepare_transaction(self, sender: str, recipient: str, amount: Decimal, 
                           private_key: str = None) -> Tuple[Dict, Optional[str]]:
-        """Prepare an Ethereum transaction"""
+        """Prepare an Ethereum transaction with smart fee handling"""
         try:
             # Validate addresses
             if not self.validate_address(sender):
@@ -67,9 +67,29 @@ class EthereumService(BaseBlockchainService):
             if error:
                 return None, f"Error estimating fee: {error}"
                 
-            # Check if sender has enough balance
-            if balance < amount + fee:
-                return None, "Insufficient balance"
+            # ✅ SMART FEE HANDLING: Auto-adjust amount for native tokens if needed
+            original_amount = amount
+            total_required = amount + fee
+            
+            self.logger.info(f"🔧 ETH PREPARE TRANSACTION:")
+            self.logger.info(f"   Original amount: {original_amount} ETH")
+            self.logger.info(f"   Estimated fee: {fee} ETH")
+            self.logger.info(f"   Total required: {total_required} ETH")
+            self.logger.info(f"   Available balance: {balance} ETH")
+            
+            # For native ETH, if insufficient balance, auto-adjust amount
+            if balance < total_required:
+                # Calculate maximum sendable amount
+                max_sendable = balance - fee
+                
+                if max_sendable <= 0:
+                    self.logger.error(f"Insufficient balance even for fees. Balance: {balance}, Fee: {fee}")
+                    return None, f"Insufficient balance to cover network fee. Balance: {balance} ETH, Required fee: {fee} ETH"
+                
+                # Auto-adjust amount
+                amount = max_sendable
+                self.logger.info(f"   ✅ AUTO-ADJUSTED: Amount reduced from {original_amount} to {amount} ETH")
+                self.logger.info(f"   ✅ User will send maximum possible: {amount} ETH")
                 
             # Generate transaction ID
             transaction_id = str(uuid.uuid4())
@@ -81,7 +101,9 @@ class EthereumService(BaseBlockchainService):
             tx_details = {
                 "transaction_id": transaction_id,
                 "details": {
-                    "amount": str(amount),
+                    "amount": str(amount),  # This may be adjusted amount
+                    "original_amount": str(original_amount),  # Store original for reference
+                    "auto_adjusted": amount != original_amount,  # Flag if adjusted
                     "blockchain": "ethereum",
                     "estimated_fee": str(fee),
                     "explorer_url": f"https://etherscan.io/tx/{transaction_id}",
@@ -91,7 +113,7 @@ class EthereumService(BaseBlockchainService):
                     "sender_balance_before": str(balance)
                 },
                 "expires_at": (datetime.now() + timedelta(minutes=15)).isoformat(),
-                "message": "Transaction prepared successfully",
+                "message": "Transaction prepared successfully" + (" (amount auto-adjusted)" if amount != original_amount else ""),
                 "success": True
             }
             
@@ -108,7 +130,7 @@ class EthereumService(BaseBlockchainService):
             return None, str(e)
             
     def send_transaction(self, transaction_id: str, private_key: str) -> Tuple[Dict, Optional[str]]:
-        """Send a prepared Ethereum transaction using Tatum API broadcast endpoint"""
+        """Send a prepared Ethereum transaction with strict balance verification"""
         try:
             # Get stored transaction
             tx_data = self._get_stored_transaction(transaction_id)
@@ -129,6 +151,37 @@ class EthereumService(BaseBlockchainService):
             except Exception as e:
                 self.logger.error(f"Error converting amount to Decimal: {str(e)}")
                 return {}, f"Invalid amount format: {amount_str}"
+                
+            # ✅ STRICT BALANCE VERIFICATION at confirm time
+            self.logger.info(f"🔧 ETH CONFIRM TRANSACTION - Final balance check:")
+            
+            # Get current balance (may have changed since prepare)
+            current_balance, balance_error = self.get_balance(sender)
+            if balance_error:
+                self.logger.error(f"Could not verify balance before sending: {balance_error}")
+                return {}, f"Could not verify current balance: {balance_error}"
+            
+            # Get current fee estimate (gas prices may have changed)
+            current_fee, fee_error = self.estimate_fee(sender, recipient, amount)
+            if fee_error:
+                self.logger.warning(f"Could not get current fee estimate, using default: {fee_error}")
+                current_fee = Decimal('0.002')  # Default fallback fee
+            
+            total_required = amount + current_fee
+            
+            self.logger.info(f"   Current balance: {current_balance} ETH")
+            self.logger.info(f"   Amount to send: {amount} ETH")
+            self.logger.info(f"   Current fee: {current_fee} ETH")
+            self.logger.info(f"   Total required: {total_required} ETH")
+            self.logger.info(f"   Balance sufficient: {current_balance >= total_required}")
+            
+            # Strict balance check
+            if current_balance < total_required:
+                error_msg = f"Insufficient balance at confirm time. Available: {current_balance} ETH, Required: {total_required} ETH (Amount: {amount} + Fee: {current_fee})"
+                self.logger.error(f"❌ CONFIRM FAILED: {error_msg}")
+                return {}, error_msg
+            
+            self.logger.info(f"✅ Balance verification passed, proceeding with transaction")
                 
             # Prepare transaction parameters
             params = {
@@ -178,14 +231,17 @@ class EthereumService(BaseBlockchainService):
                     'tx_hash': tx_hash,
                     'status': 'sent',
                     'sent_at': datetime.now().isoformat(),
-                    'sent_via': 'tatum_broadcast'
+                    'sent_via': 'tatum_broadcast',
+                    'final_balance_before': str(current_balance),
+                    'final_fee_used': str(current_fee)
                 })
                 self._store_transaction(transaction_id, tx_data)
                 
                 # Log sending
                 self._log_transaction(transaction_id, 'sent', {
                     'tx_hash': tx_hash,
-                    'sent_via': 'tatum_broadcast'
+                    'sent_via': 'tatum_broadcast',
+                    'final_balance_check': True
                 })
                 
                 return {

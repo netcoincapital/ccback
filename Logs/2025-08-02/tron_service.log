@@ -1,0 +1,108 @@
+2025-08-02 07:31:15 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 07:31:15 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 07:31:15 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:15 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:15 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 07:31:15 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 07:31:15 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 07:31:15 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 07:31:15 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:15 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:15 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 07:31:15 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 07:31:15 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 07:31:15 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 07:31:15 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 07:31:15 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:15 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 07:31:15 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 07:31:15 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:15 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 07:31:15 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 07:31:18 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:18 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 07:31:18 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:18 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 07:31:18 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 07:31:18 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:30 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 08:08:30 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:30 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:30 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 08:08:30 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:30 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:30 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 08:08:30 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 08:08:30 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:30 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:30 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 08:08:30 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:30 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:30 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 08:08:31 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 08:08:31 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:31 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:31 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 08:08:31 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:31 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:31 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 08:08:33 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:33 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:33 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:33 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 08:08:33 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 08:08:33 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:21 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 09:20:21 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:21 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:21 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:20:21 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:21 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:21 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:20:21 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 09:20:21 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:21 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:21 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:20:21 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:21 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:21 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:20:21 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 09:20:21 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:21 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:21 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:20:21 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:21 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:21 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:20:24 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:24 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:24 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:24 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:20:24 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:20:24 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:47 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 09:24:47 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:47 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:47 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:24:47 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:47 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:47 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:24:48 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 09:24:48 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:48 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:48 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:24:48 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:48 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:48 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:24:48 - tron_service - DEBUG - Logger initialized for tron_service at level DEBUG
+2025-08-02 09:24:48 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:48 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:48 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:24:48 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:48 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:48 - tron_service - INFO - Tatum helper initialized for TRON service
+2025-08-02 09:24:49 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:49 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:50 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:50 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'
+2025-08-02 09:24:50 - tron_service - WARNING - TRON_NODE_URL environment variable is not set. Using default TRON node: https://api.trongrid.io
+2025-08-02 09:24:50 - tron_service - ERROR - Failed to initialize TRON client: __init__() got an unexpected keyword argument 'provider_url'

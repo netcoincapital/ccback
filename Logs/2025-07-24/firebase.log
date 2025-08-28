@@ -1,0 +1,20 @@
+2025-07-24 01:06:29 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-24 01:06:30 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-24 01:06:30 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-24 01:06:30 - firebase - INFO - Firebase initialized successfully
+2025-07-24 10:18:35 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-24 10:18:36 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-24 10:18:36 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-24 10:18:36 - firebase - INFO - Firebase initialized successfully
+2025-07-28 23:05:48 - firebase - WARNING - [FCM] Device token fpz3xag_Rle2cokBkczQAX:APA91bErRflI-XMX9UB109bBsS9L7DS0FFZc0dPsIoUw-fUOuHusxq6erlgeYKncYVjNGIPyZidbBxeuhfnr7HRNqjgfJdpYlE5bUn-Ot0JQTVewQudAjnk is no longer valid
+2025-07-28 23:05:48 - firebase - WARNING - [FCM] Device token ftpj6NNdQ1aTeveLizo0K_:APA91bHeCbvq4GYI7yG_pd-DnGRW_sX-OPdsSoh0H8kqYZMcx1x0tGrIRFuOQkVZg9YdhNIpwU3bPt8hCr2ttg2t93aF4GsqY4L-UuIyghuAxWUko2NvUUg is no longer valid
+2025-07-28 23:05:48 - firebase - WARNING - [FCM] Device token cJWBBHiCRPWqpdgQWfDEFo:APA91bGdiWfPdCyQkgenCRwCaE6K00f-QwOKkmolp36KC-XxKPpMktQ1gq5GsXfOpv5R0TR9L5TquQVfL_jTRO8N78xuC8UeH3Mm_c9vMw8HV7oV3hISVZQ is no longer valid
+2025-07-28 23:05:48 - firebase - WARNING - [FCM] Device token dRj3dsknS3iAX5fQf2AcY9:APA91bGFdKRDb6ZG5wozh4v7X9lyda94x66vfWVReinZMkzyrruAPL8sDNHnRu_1zDzLTzVsYjaAZyEgTPkQFRRgwW3PF_keBkErIZu1eK5r4wxON6O9u9g is no longer valid
+2025-07-28 23:08:52 - firebase - WARNING - [FCM] Device token fpz3xag_Rle2cokBkczQAX:APA91bErRflI-XMX9UB109bBsS9L7DS0FFZc0dPsIoUw-fUOuHusxq6erlgeYKncYVjNGIPyZidbBxeuhfnr7HRNqjgfJdpYlE5bUn-Ot0JQTVewQudAjnk is no longer valid
+2025-07-28 23:08:52 - firebase - WARNING - [FCM] Device token ftpj6NNdQ1aTeveLizo0K_:APA91bHeCbvq4GYI7yG_pd-DnGRW_sX-OPdsSoh0H8kqYZMcx1x0tGrIRFuOQkVZg9YdhNIpwU3bPt8hCr2ttg2t93aF4GsqY4L-UuIyghuAxWUko2NvUUg is no longer valid
+2025-07-28 23:08:53 - firebase - WARNING - [FCM] Device token cJWBBHiCRPWqpdgQWfDEFo:APA91bGdiWfPdCyQkgenCRwCaE6K00f-QwOKkmolp36KC-XxKPpMktQ1gq5GsXfOpv5R0TR9L5TquQVfL_jTRO8N78xuC8UeH3Mm_c9vMw8HV7oV3hISVZQ is no longer valid
+2025-07-28 23:08:53 - firebase - WARNING - [FCM] Device token dRj3dsknS3iAX5fQf2AcY9:APA91bGFdKRDb6ZG5wozh4v7X9lyda94x66vfWVReinZMkzyrruAPL8sDNHnRu_1zDzLTzVsYjaAZyEgTPkQFRRgwW3PF_keBkErIZu1eK5r4wxON6O9u9g is no longer valid
+2025-07-29 07:35:42 - firebase - WARNING - [FCM] Device token fpz3xag_Rle2cokBkczQAX:APA91bErRflI-XMX9UB109bBsS9L7DS0FFZc0dPsIoUw-fUOuHusxq6erlgeYKncYVjNGIPyZidbBxeuhfnr7HRNqjgfJdpYlE5bUn-Ot0JQTVewQudAjnk is no longer valid
+2025-07-29 07:35:42 - firebase - WARNING - [FCM] Device token ftpj6NNdQ1aTeveLizo0K_:APA91bHeCbvq4GYI7yG_pd-DnGRW_sX-OPdsSoh0H8kqYZMcx1x0tGrIRFuOQkVZg9YdhNIpwU3bPt8hCr2ttg2t93aF4GsqY4L-UuIyghuAxWUko2NvUUg is no longer valid
+2025-07-29 07:35:43 - firebase - WARNING - [FCM] Device token cJWBBHiCRPWqpdgQWfDEFo:APA91bGdiWfPdCyQkgenCRwCaE6K00f-QwOKkmolp36KC-XxKPpMktQ1gq5GsXfOpv5R0TR9L5TquQVfL_jTRO8N78xuC8UeH3Mm_c9vMw8HV7oV3hISVZQ is no longer valid
+2025-07-29 07:35:43 - firebase - WARNING - [FCM] Device token dRj3dsknS3iAX5fQf2AcY9:APA91bGFdKRDb6ZG5wozh4v7X9lyda94x66vfWVReinZMkzyrruAPL8sDNHnRu_1zDzLTzVsYjaAZyEgTPkQFRRgwW3PF_keBkErIZu1eK5r4wxON6O9u9g is no longer valid

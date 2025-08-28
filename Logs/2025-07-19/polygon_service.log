@@ -1,0 +1,620 @@
+2025-07-19 10:57:28 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 10:57:28 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 10:57:29 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 10:57:29 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.181929331299623586
+2025-07-19 10:57:29 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 25642857278 Wei
+2025-07-19 10:57:29 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 10:57:29 - polygon_service - INFO - [Fee Calculation] Gas Price: 25642857278 Wei, Gas Limit: 21000, Fee Wei: 538500002838000, Fee MATIC: 0.000538500002838000
+2025-07-19 10:57:29 - polygon_service - INFO - [Fee] Estimated fee: 0.000538500002838000 POL
+2025-07-19 10:57:29 - polygon_service - INFO - [Comparison] Balance: 9.181929331299623586, Amount: 0.001, Fee: 0.000538500002838000, Required: 0.001538500002838000
+2025-07-19 10:57:29 - polygon_service - INFO - Storing transaction cceef131-ef77-4596-b135-5992576ef842 in shared storage
+2025-07-19 10:57:29 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-19 10:57:29 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "cceef131-ef77-4596-b135-5992576ef842",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000538500002838000",
+    "explorer_url": "https://polygonscan.com/tx/cceef131-ef77-4596-b135-5992576ef842",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.180390831296785586",
+    "sender_balance_before": "9.181929331299623586"
+  },
+  "expires_at": "2025-07-19T11:07:29.347434",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-19 10:57:29 - polygon_service - INFO - Successfully stored transaction cceef131-ef77-4596-b135-5992576ef842, result: 2025-07-19 11:12:29.349188
+2025-07-19 10:57:29 - polygon_service - DEBUG - Retrieved Polygon transaction cceef131-ef77-4596-b135-5992576ef842 from storage
+2025-07-19 10:57:29 - polygon_service - INFO - Verified transaction cceef131-ef77-4596-b135-5992576ef842 is stored
+2025-07-19 10:57:29 - polygon_service - INFO - Transaction event: {"transaction_id": "cceef131-ef77-4596-b135-5992576ef842", "event": "prepared", "timestamp": "2025-07-19T10:57:29.351679", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000538500002838000", "explorer_url": "https://polygonscan.com/tx/cceef131-ef77-4596-b135-5992576ef842", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.180390831296785586", "sender_balance_before": "9.181929331299623586"}, "expires_at": "2025-07-19T11:12:29.349188", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-19T10:57:29.349206"}
+2025-07-19 10:57:30 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 10:57:31 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 10:57:31 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 10:57:31 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.181929331299623586
+2025-07-19 10:57:31 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 25642857278 Wei
+2025-07-19 10:57:31 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 10:57:31 - polygon_service - INFO - [Fee Calculation] Gas Price: 25642857278 Wei, Gas Limit: 21000, Fee Wei: 538500002838000, Fee MATIC: 0.000538500002838000
+2025-07-19 10:57:31 - polygon_service - INFO - [Fee] Estimated fee: 0.000538500002838000 POL
+2025-07-19 10:57:31 - polygon_service - INFO - [Comparison] Balance: 9.181929331299623586, Amount: 0.001, Fee: 0.000538500002838000, Required: 0.001538500002838000
+2025-07-19 10:57:31 - polygon_service - INFO - Storing transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 in shared storage
+2025-07-19 10:57:31 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-19 10:57:31 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "608bda1d-6f1d-4623-a0a9-30b129e04886",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000538500002838000",
+    "explorer_url": "https://polygonscan.com/tx/608bda1d-6f1d-4623-a0a9-30b129e04886",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.180390831296785586",
+    "sender_balance_before": "9.181929331299623586"
+  },
+  "expires_at": "2025-07-19T11:07:31.413644",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-19 10:57:31 - polygon_service - INFO - Successfully stored transaction 608bda1d-6f1d-4623-a0a9-30b129e04886, result: 2025-07-19 11:12:31.414040
+2025-07-19 10:57:31 - polygon_service - DEBUG - Retrieved Polygon transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 from storage
+2025-07-19 10:57:31 - polygon_service - INFO - Verified transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 is stored
+2025-07-19 10:57:31 - polygon_service - INFO - Transaction event: {"transaction_id": "608bda1d-6f1d-4623-a0a9-30b129e04886", "event": "prepared", "timestamp": "2025-07-19T10:57:31.415674", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000538500002838000", "explorer_url": "https://polygonscan.com/tx/608bda1d-6f1d-4623-a0a9-30b129e04886", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.180390831296785586", "sender_balance_before": "9.181929331299623586"}, "expires_at": "2025-07-19T11:12:31.414040", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-19T10:57:31.414049"}
+2025-07-19 10:57:31 - polygon_service - DEBUG - Retrieved Polygon transaction 608bda1d-6f1d-4623-a0a9-30b129e04886 from storage
+2025-07-19 10:57:31 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1
+2025-07-19 10:57:31 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-19 10:57:31 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-19 10:57:31 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 14
+2025-07-19 10:57:31 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-19 10:57:31 - polygon_service - DEBUG - Signed transaction length: 224 characters
+2025-07-19 10:57:31 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-19 10:57:32 - polygon_service - ERROR - Tatum API returned invalid response: ({'txId': '0x0baba46356145152f519ba2da835187cbb097e8afd563d96fa8a41e64a3d6ea9', 'transaction_hash': '0x0baba46356145152f519ba2da835187cbb097e8afd563d96fa8a41e64a3d6ea9', 'status': 'pending'}, None)
+2025-07-19 10:57:32 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 10:57:32 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 10:57:32 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.181929331299623586
+2025-07-19 10:57:32 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 25642857278 Wei
+2025-07-19 10:57:32 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 10:57:32 - polygon_service - INFO - [Fee Calculation] Gas Price: 25642857278 Wei, Gas Limit: 21000, Fee Wei: 538500002838000, Fee MATIC: 0.000538500002838000
+2025-07-19 10:57:32 - polygon_service - INFO - [Fee] Estimated fee: 0.000538500002838000 POL
+2025-07-19 10:57:32 - polygon_service - INFO - [Comparison] Balance: 9.181929331299623586, Amount: 0.001, Fee: 0.000538500002838000, Required: 0.001538500002838000
+2025-07-19 10:57:32 - polygon_service - INFO - Storing transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 in shared storage
+2025-07-19 10:57:32 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-19 10:57:32 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "102dc73e-48cc-4625-8c56-ec4a06ed66f3",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000538500002838000",
+    "explorer_url": "https://polygonscan.com/tx/102dc73e-48cc-4625-8c56-ec4a06ed66f3",
+    "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.180390831296785586",
+    "sender_balance_before": "9.181929331299623586"
+  },
+  "expires_at": "2025-07-19T11:07:32.542583",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-19 10:57:32 - polygon_service - INFO - Successfully stored transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3, result: 2025-07-19 11:12:32.543435
+2025-07-19 10:57:32 - polygon_service - DEBUG - Retrieved Polygon transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 from storage
+2025-07-19 10:57:32 - polygon_service - INFO - Verified transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 is stored
+2025-07-19 10:57:32 - polygon_service - INFO - Transaction event: {"transaction_id": "102dc73e-48cc-4625-8c56-ec4a06ed66f3", "event": "prepared", "timestamp": "2025-07-19T10:57:32.545760", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000538500002838000", "explorer_url": "https://polygonscan.com/tx/102dc73e-48cc-4625-8c56-ec4a06ed66f3", "recipient": "0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.180390831296785586", "sender_balance_before": "9.181929331299623586"}, "expires_at": "2025-07-19T11:12:32.543435", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-19T10:57:32.543454"}
+2025-07-19 10:57:32 - polygon_service - DEBUG - Retrieved Polygon transaction 102dc73e-48cc-4625-8c56-ec4a06ed66f3 from storage
+2025-07-19 10:57:32 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0x184ac75b74C77D5BF3b3BffB5Ed26aE091B3feD1
+2025-07-19 10:57:32 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-19 10:57:32 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-19 10:57:32 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 15
+2025-07-19 10:57:33 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-19 10:57:33 - polygon_service - DEBUG - Signed transaction length: 224 characters
+2025-07-19 10:57:33 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-19 10:57:33 - polygon_service - ERROR - Tatum API returned invalid response: ({'txId': '0xff071aac70cc05789e38e86aba696f86c9596a24cb6a7e0c5fcc8f19cca487b9', 'transaction_hash': '0xff071aac70cc05789e38e86aba696f86c9596a24cb6a7e0c5fcc8f19cca487b9', 'status': 'pending'}, None)
+2025-07-19 11:36:57 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:36:57 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:36:57 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:36:57 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:36:57 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:36:57 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:36:58 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:36:58 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:36:58 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:37:24 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8374b02ab73e896d17b4"}
+2025-07-19 11:37:24 - polygon_service - ERROR - Web3 sending failed: 'SignedTransaction' object has no attribute 'rawTransaction'
+2025-07-19 11:37:24 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 11:37:24 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=687b8374600c176cad210839"}
+2025-07-19 11:40:59 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:40:59 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:40:59 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.175683831291109586
+2025-07-19 11:40:59 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 26000000119 Wei
+2025-07-19 11:40:59 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 11:40:59 - polygon_service - INFO - [Fee Calculation] Gas Price: 26000000119 Wei, Gas Limit: 21000, Fee Wei: 546000002499000, Fee MATIC: 0.000546000002499000
+2025-07-19 11:40:59 - polygon_service - INFO - [Fee] Estimated fee: 0.000546000002499000 POL
+2025-07-19 11:40:59 - polygon_service - INFO - [Comparison] Balance: 9.175683831291109586, Amount: 0.001, Fee: 0.000546000002499000, Required: 0.001546000002499000
+2025-07-19 11:40:59 - polygon_service - INFO - Storing transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 in shared storage
+2025-07-19 11:40:59 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-19 11:40:59 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "6a8426ab-9f9c-46ce-8002-ccc7eec45c12",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000546000002499000",
+    "explorer_url": "https://polygonscan.com/tx/6a8426ab-9f9c-46ce-8002-ccc7eec45c12",
+    "recipient": "0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.174137831288610586",
+    "sender_balance_before": "9.175683831291109586"
+  },
+  "expires_at": "2025-07-19T11:50:59.589341",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-19 11:40:59 - polygon_service - INFO - Successfully stored transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12, result: 2025-07-19 11:55:59.589849
+2025-07-19 11:40:59 - polygon_service - DEBUG - Retrieved Polygon transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 from storage
+2025-07-19 11:40:59 - polygon_service - INFO - Verified transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 is stored
+2025-07-19 11:40:59 - polygon_service - INFO - Transaction event: {"transaction_id": "6a8426ab-9f9c-46ce-8002-ccc7eec45c12", "event": "prepared", "timestamp": "2025-07-19T11:40:59.591484", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000546000002499000", "explorer_url": "https://polygonscan.com/tx/6a8426ab-9f9c-46ce-8002-ccc7eec45c12", "recipient": "0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.174137831288610586", "sender_balance_before": "9.175683831291109586"}, "expires_at": "2025-07-19T11:55:59.589849", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-19T11:40:59.589860"}
+2025-07-19 11:40:59 - polygon_service - DEBUG - Retrieved Polygon transaction 6a8426ab-9f9c-46ce-8002-ccc7eec45c12 from storage
+2025-07-19 11:40:59 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B
+2025-07-19 11:40:59 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-19 11:40:59 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-19 11:40:59 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 16
+2025-07-19 11:40:59 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-19 11:40:59 - polygon_service - DEBUG - Signed transaction length: 224 characters
+2025-07-19 11:40:59 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-19 11:40:59 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b844bb269df13b5658c08"}
+2025-07-19 11:40:59 - polygon_service - DEBUG - Method 2: Direct Web3 sending with nonce retry
+2025-07-19 11:40:59 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 16
+2025-07-19 11:41:00 - polygon_service - INFO - Trying with nonce: 16
+2025-07-19 11:41:00 - polygon_service - ERROR - Web3 sending failed: 'SignedTransaction' object has no attribute 'rawTransaction'
+2025-07-19 11:41:00 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 11:41:00 - polygon_service - DEBUG - Method 3: Tatum transaction endpoint
+2025-07-19 11:41:00 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["txData must be shorter than or equal to 1000000 characters","txData should not be empty and should be at most 1000000 characters"],"dashboardLog":"https://dashboard.tatum.io/logs?id=687b844c5583e44a731c3365"}
+2025-07-19 11:43:09 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:43:09 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:43:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:43:09 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:43:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:43:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:43:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:43:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:43:09 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:43:20 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:43:20 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:43:20 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.175683831291109586
+2025-07-19 11:43:20 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 26000000115 Wei
+2025-07-19 11:43:20 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 11:43:20 - polygon_service - INFO - [Fee Calculation] Gas Price: 26000000115 Wei, Gas Limit: 21000, Fee Wei: 546000002415000, Fee MATIC: 0.000546000002415000
+2025-07-19 11:43:20 - polygon_service - INFO - [Fee] Estimated fee: 0.000546000002415000 POL
+2025-07-19 11:43:20 - polygon_service - INFO - [Comparison] Balance: 9.175683831291109586, Amount: 0.001, Fee: 0.000546000002415000, Required: 0.001546000002415000
+2025-07-19 11:43:20 - polygon_service - INFO - Storing transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 in shared storage
+2025-07-19 11:43:20 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-19 11:43:20 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000546000002415000",
+    "explorer_url": "https://polygonscan.com/tx/1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1",
+    "recipient": "0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.174137831288694586",
+    "sender_balance_before": "9.175683831291109586"
+  },
+  "expires_at": "2025-07-19T11:53:20.828374",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-19 11:43:20 - polygon_service - INFO - Successfully stored transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1, result: 2025-07-19 11:58:20.830021
+2025-07-19 11:43:20 - polygon_service - DEBUG - Retrieved Polygon transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 from storage
+2025-07-19 11:43:20 - polygon_service - INFO - Verified transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 is stored
+2025-07-19 11:43:20 - polygon_service - INFO - Transaction event: {"transaction_id": "1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1", "event": "prepared", "timestamp": "2025-07-19T11:43:20.832651", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000546000002415000", "explorer_url": "https://polygonscan.com/tx/1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1", "recipient": "0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.174137831288694586", "sender_balance_before": "9.175683831291109586"}, "expires_at": "2025-07-19T11:58:20.830021", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-19T11:43:20.830039"}
+2025-07-19 11:43:20 - polygon_service - DEBUG - Retrieved Polygon transaction 1eb4cc37-f5aa-4a80-aeb3-a543c198cdb1 from storage
+2025-07-19 11:43:20 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B
+2025-07-19 11:43:20 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-19 11:43:20 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-19 11:43:20 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 16
+2025-07-19 11:43:21 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-19 11:43:21 - polygon_service - DEBUG - Signed transaction length: 224 characters
+2025-07-19 11:43:21 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-19 11:43:21 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b84d91628e032e3115362"}
+2025-07-19 11:43:21 - polygon_service - DEBUG - Method 2: Direct Web3 sending with nonce retry
+2025-07-19 11:43:21 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 16
+2025-07-19 11:43:21 - polygon_service - INFO - Trying with nonce: 16
+2025-07-19 11:43:21 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'insufficient funds for gas * price + value: balance 28, tx cost 1546000002415000, overshot 1546000002414972', 'data': {'trace_id': '6f611320ac9b0b56d0ed167196125e3f'}}
+2025-07-19 11:43:21 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 11:43:21 - polygon_service - DEBUG - Method 3: Tatum transaction endpoint
+2025-07-19 11:43:22 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b84dab02ab73e896d190e"}
+2025-07-19 11:45:27 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8557a7a243511c1a88ca"}
+2025-07-19 11:45:27 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '3b726ba9a048c50bd16f674127b1b0f0'}}
+2025-07-19 11:45:27 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 11:45:28 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b855836e3f52c32ad7018"}
+2025-07-19 11:57:44 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:57:44 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:57:44 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 11:57:44 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:57:44 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:57:44 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:57:44 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:57:44 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:57:44 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 11:57:55 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 11:57:55 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'ALREADY_EXISTS: already known', 'data': {'trace_id': 'ff7617c7e54e6066a168d246e7ee6c10'}}
+2025-07-19 11:57:55 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 11:57:56 - polygon_service - ERROR - Method 3 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 11:57:56 - polygon_service - ERROR - All transaction sending methods failed
+2025-07-19 11:59:08 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b888cb269df13b5659023"}
+2025-07-19 11:59:09 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 1/3)
+2025-07-19 11:59:09 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 2/3)
+2025-07-19 11:59:09 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 3/3)
+2025-07-19 11:59:09 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 11:59:10 - polygon_service - ERROR - Method 3 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 11:59:10 - polygon_service - ERROR - All transaction sending methods failed
+2025-07-19 12:03:44 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:03:44 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:03:45 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:03:45 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:03:45 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:03:45 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:03:45 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:03:45 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:03:45 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:05:01 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:05:02 - polygon_service - ERROR - Web3 sending failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:05:02 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:05:04 - polygon_service - ERROR - Method 3 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:05:04 - polygon_service - ERROR - All transaction sending methods failed
+2025-07-19 12:10:39 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:10:39 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:10:39 - polygon_service - INFO - [Balance] POL Balance for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 9.173027831283540586
+2025-07-19 12:10:39 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 25599765584 Wei
+2025-07-19 12:10:39 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 12:10:39 - polygon_service - INFO - [Fee Calculation] Gas Price: 25599765584 Wei, Gas Limit: 21000, Fee Wei: 537595077264000, Fee MATIC: 0.000537595077264000
+2025-07-19 12:10:39 - polygon_service - INFO - [Fee] Estimated fee: 0.000537595077264000 POL
+2025-07-19 12:10:39 - polygon_service - INFO - [Comparison] Balance: 9.173027831283540586, Amount: 0.001, Fee: 0.000537595077264000, Required: 0.001537595077264000
+2025-07-19 12:10:39 - polygon_service - INFO - Storing transaction 803b6337-1789-47ee-b584-5ad88558ed90 in shared storage
+2025-07-19 12:10:39 - polygon_service - DEBUG - Storage object: <class 'services.shared_storage.SharedTransactionStorage'>
+2025-07-19 12:10:39 - polygon_service - DEBUG - Transaction data: {
+  "transaction_id": "803b6337-1789-47ee-b584-5ad88558ed90",
+  "details": {
+    "amount": "0.001",
+    "blockchain": "polygon",
+    "estimated_fee": "0.000537595077264000",
+    "explorer_url": "https://polygonscan.com/tx/803b6337-1789-47ee-b584-5ad88558ed90",
+    "recipient": "0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B",
+    "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C",
+    "sender_balance_after": "9.171490236206276586",
+    "sender_balance_before": "9.173027831283540586"
+  },
+  "expires_at": "2025-07-19T12:20:39.872695",
+  "message": "Transaction prepared successfully",
+  "success": true
+}
+2025-07-19 12:10:39 - polygon_service - INFO - Successfully stored transaction 803b6337-1789-47ee-b584-5ad88558ed90, result: 2025-07-19 12:25:39.873068
+2025-07-19 12:10:39 - polygon_service - DEBUG - Retrieved Polygon transaction 803b6337-1789-47ee-b584-5ad88558ed90 from storage
+2025-07-19 12:10:39 - polygon_service - INFO - Verified transaction 803b6337-1789-47ee-b584-5ad88558ed90 is stored
+2025-07-19 12:10:39 - polygon_service - INFO - Transaction event: {"transaction_id": "803b6337-1789-47ee-b584-5ad88558ed90", "event": "prepared", "timestamp": "2025-07-19T12:10:39.874854", "details": {"amount": "0.001", "blockchain": "polygon", "estimated_fee": "0.000537595077264000", "explorer_url": "https://polygonscan.com/tx/803b6337-1789-47ee-b584-5ad88558ed90", "recipient": "0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B", "sender": "0x68Ba7F66B09783977E36AA7bD8390b812742853C", "sender_balance_after": "9.171490236206276586", "sender_balance_before": "9.173027831283540586"}, "expires_at": "2025-07-19T12:25:39.873068", "message": "Transaction prepared successfully", "success": true, "stored_at": "2025-07-19T12:10:39.873076"}
+2025-07-19 12:10:39 - polygon_service - DEBUG - Retrieved Polygon transaction 803b6337-1789-47ee-b584-5ad88558ed90 from storage
+2025-07-19 12:10:39 - polygon_service - INFO - Addresses validated: sender=0x68Ba7F66B09783977E36AA7bD8390b812742853C, recipient=0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B
+2025-07-19 12:10:39 - polygon_service - INFO - Sending Polygon transaction using Tatum API
+2025-07-19 12:10:39 - polygon_service - DEBUG - Method 1: Web3 signing + Tatum broadcasting
+2025-07-19 12:10:39 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 20
+2025-07-19 12:10:40 - polygon_service - INFO - Successfully signed Polygon transaction with Web3
+2025-07-19 12:10:40 - polygon_service - DEBUG - Signed transaction length: 224 characters
+2025-07-19 12:10:40 - polygon_service - DEBUG - Broadcasting Polygon transaction via Tatum API
+2025-07-19 12:10:40 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8b4071119edd7f8399e3"}
+2025-07-19 12:10:40 - polygon_service - DEBUG - Method 2: Direct Web3 sending with nonce retry
+2025-07-19 12:10:40 - polygon_service - INFO - Current nonce for 0x68Ba7F66B09783977E36AA7bD8390b812742853C: 20
+2025-07-19 12:10:40 - polygon_service - INFO - Trying with nonce: 20
+2025-07-19 12:10:41 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'e791c05d8da5b7eaa382d5f0bf85c90b'}}
+2025-07-19 12:10:41 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:10:41 - polygon_service - DEBUG - Method 3: Tatum transaction endpoint
+2025-07-19 12:10:42 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8b429d56841a06d48009"}
+2025-07-19 12:12:42 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:12:42 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:12:43 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:13:41 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:13:42 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:13:42 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:13:45 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:13:45 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 1/3)
+2025-07-19 12:13:46 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 2/3)
+2025-07-19 12:13:46 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 3/3)
+2025-07-19 12:13:46 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:13:47 - polygon_service - ERROR - Method 3 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:13:47 - polygon_service - ERROR - All transaction sending methods failed
+2025-07-19 12:16:37 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:16:37 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:16:37 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:16:38 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:16:38 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:16:38 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:16:39 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:16:39 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:16:39 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:18:51 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:18:51 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'ALREADY_EXISTS: already known', 'data': {'trace_id': '1d476d60b3d220cb8f6e3f36d1128039'}}
+2025-07-19 12:18:51 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:18:53 - polygon_service - ERROR - Method 3 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:18:53 - polygon_service - ERROR - All transaction sending methods failed
+2025-07-19 12:22:26 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:22:26 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:22:26 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 12:22:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:22:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:22:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:22:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:22:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:22:27 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 12:23:11 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:23:12 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'ALREADY_EXISTS: already known', 'data': {'trace_id': '2a638349df41446bb475a9ff83798aea'}}
+2025-07-19 12:23:12 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:23:13 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:24:38 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e869840217ebda6145c"}
+2025-07-19 12:24:39 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '1185f5ced095b0e46ae39910c5c087a2'}}
+2025-07-19 12:24:39 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:24:40 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e8836e3f52c32ad7970"}
+2025-07-19 12:24:42 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e8a40b3ca3a79b3e4e2"}
+2025-07-19 12:24:43 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '4eb0ac7c7f5e9740bbf183a44cdafcfb'}}
+2025-07-19 12:24:43 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:24:44 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e8c71119edd7f839d66"}
+2025-07-19 12:24:47 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e8f40b3ca3a79b3e4f0"}
+2025-07-19 12:24:47 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'insufficient funds for gas * price + value: balance 0, tx cost 10525021000000000, overshot 10525021000000000', 'data': {'trace_id': '1605b1eec58f7815b6ee6db795e6e35e'}}
+2025-07-19 12:24:47 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:24:48 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b8e90f2a86cf8cf1af485"}
+2025-07-19 12:27:06 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:27:07 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 12:39:01 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91e5771b27d1e473f89f"}
+2025-07-19 12:39:01 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '610fdfaaba430aaf3fe49ecb1c02253c'}}
+2025-07-19 12:39:01 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:39:02 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91e6a7a243511c1a95ee"}
+2025-07-19 12:39:06 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91ea9d56841a06d486fd"}
+2025-07-19 12:39:07 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'a3df1e14295da5370a0f1e1c13b61e14'}}
+2025-07-19 12:39:07 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:39:07 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91ebd7428c890733cc73"}
+2025-07-19 12:39:11 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91ef9d56841a06d48700"}
+2025-07-19 12:39:11 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '544e10e14c8f61458fb37c95e7b15cdb'}}
+2025-07-19 12:39:11 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:39:12 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91f0337d6b2911a7c27d"}
+2025-07-19 12:39:18 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91f6b269df13b5659a1c"}
+2025-07-19 12:39:19 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '7e1a5b94e7b52e2e09f68b1f36aa2e06'}}
+2025-07-19 12:39:19 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:39:20 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91f871119edd7f83a0f5"}
+2025-07-19 12:39:23 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91fba7a243511c1a95fd"}
+2025-07-19 12:39:24 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '14e97f6fa63f1b2322b867e15b58985d'}}
+2025-07-19 12:39:24 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:39:25 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b91fd9d56841a06d48709"}
+2025-07-19 12:39:28 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b920040b3ca3a79b3e87b"}
+2025-07-19 12:39:28 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '9773b228f81056c6e626334fd5cc51d4'}}
+2025-07-19 12:39:28 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 12:39:29 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9201dee58248489f79e0"}
+2025-07-19 13:37:04 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f8036e3f52c32ad8d3f"}
+2025-07-19 13:37:05 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '6ee6b461b349c2ed3028112e0d884c95'}}
+2025-07-19 13:37:05 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:37:06 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f823c24ff9ef6d8b980"}
+2025-07-19 13:37:09 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f859d56841a06d4976e"}
+2025-07-19 13:37:13 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '3ab83a4151239499bfa58a41178886b3'}}
+2025-07-19 13:37:13 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:37:13 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f8940b3ca3a79b3f812"}
+2025-07-19 13:37:17 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f8d6561be68909fdfd7"}
+2025-07-19 13:37:18 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'b0f9d48e8acfb1a7c23dc50ecb3757b8'}}
+2025-07-19 13:37:18 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:37:19 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9f8f6561be68909fdfda"}
+2025-07-19 13:38:00 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fb88633a6ce25a769bf"}
+2025-07-19 13:38:00 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'da489639c357f2133a27aab18263b8ae'}}
+2025-07-19 13:38:00 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:38:02 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fba03cfbdf3a51002fa"}
+2025-07-19 13:38:05 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fbda7a243511c1aa591"}
+2025-07-19 13:38:05 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '45ac5f3a0b6858a4fbed79c208cede6a'}}
+2025-07-19 13:38:05 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:38:06 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fbe40b3ca3a79b3f839"}
+2025-07-19 13:38:09 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fc1a7a243511c1aa597"}
+2025-07-19 13:38:10 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'a178ed6b4375c69e9172d336599d03db'}}
+2025-07-19 13:38:10 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:38:11 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9fc3794bcd7eaac46216"}
+2025-07-19 13:38:58 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9ff236e3f52c32ad8d8b"}
+2025-07-19 13:38:59 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '3d80a700374a680fbb0fe58c43cf6319'}}
+2025-07-19 13:38:59 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:39:00 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9ff4a7a243511c1aa5c5"}
+2025-07-19 13:39:03 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9ff71628e032e31170d4"}
+2025-07-19 13:39:04 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'insufficient funds for gas * price + value: balance 0, tx cost 10546000002583000, overshot 10546000002583000', 'data': {'trace_id': '910ed254c95c066d67d0c5766b5a79c1'}}
+2025-07-19 13:39:04 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:39:05 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9ff940b3ca3a79b3f85e"}
+2025-07-19 13:39:09 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687b9ffd9d56841a06d497b8"}
+2025-07-19 13:39:11 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '12e075592041c6d611bf978872072596'}}
+2025-07-19 13:39:11 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:39:12 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba000600c176cad21276c"}
+2025-07-19 13:46:02 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba19ad7428c890733de81"}
+2025-07-19 13:46:02 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '2982453c2f9b2b2ecbcafeb63a3cb2b4'}}
+2025-07-19 13:46:02 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:46:03 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba19b337d6b2911a7d4c1"}
+2025-07-19 13:46:07 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba19f71119edd7f83b2fc"}
+2025-07-19 13:46:09 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '25354711699a70b5e0051f27ffba596d'}}
+2025-07-19 13:46:09 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:46:10 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1a251adc7c76a23fa9b"}
+2025-07-19 13:46:13 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1a5337d6b2911a7d4cc"}
+2025-07-19 13:46:13 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'a8fd7947464b864a063f66dd54427032'}}
+2025-07-19 13:46:13 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:46:15 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1a7d7428c890733de90"}
+2025-07-19 13:46:24 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1b09840217ebda62a80"}
+2025-07-19 13:46:24 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '13b6971dc038c439381650a53ca92094'}}
+2025-07-19 13:46:24 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:46:25 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1b1a7a243511c1aa7e2"}
+2025-07-19 13:46:29 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1b571119edd7f83b308"}
+2025-07-19 13:46:29 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'ef49fae618ccd00fe613f7fcff14c9d3'}}
+2025-07-19 13:46:29 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:46:30 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1b651adc7c76a23faa9"}
+2025-07-19 13:46:33 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1b936e3f52c32ad8fc4"}
+2025-07-19 13:46:33 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '771d4b2ba8a52889449c581b6920b7da'}}
+2025-07-19 13:46:33 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 13:46:34 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba1ba9840217ebda62a82"}
+2025-07-19 14:05:35 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba62f600c176cad212e64"}
+2025-07-19 14:05:36 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '1dff721547f02172ec7c413e2a231353'}}
+2025-07-19 14:05:36 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:05:37 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba63171119edd7f83b7ff"}
+2025-07-19 14:05:40 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba634600c176cad212e73"}
+2025-07-19 14:05:40 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '83d77ebe0c73d124e3b38ac09193ad52'}}
+2025-07-19 14:05:40 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:05:41 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba6359d56841a06d49ea5"}
+2025-07-19 14:05:44 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba638600c176cad212e79"}
+2025-07-19 14:05:45 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '719c12500ab715ee7922abc06abfdaf6'}}
+2025-07-19 14:05:45 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:05:46 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba63ad7428c890733e376"}
+2025-07-19 14:07:24 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba69c1628e032e3117894"}
+2025-07-19 14:07:25 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '4f019459e8f9a9b72233205bb138d906'}}
+2025-07-19 14:07:25 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:07:26 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba69e51adc7c76a23ffe9"}
+2025-07-19 14:07:29 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba6a1600c176cad212ef2"}
+2025-07-19 14:07:29 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'bcc216476918236d3b4f692cac484c52'}}
+2025-07-19 14:07:29 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:07:30 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba6a236e3f52c32ad951a"}
+2025-07-19 14:07:33 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba6a551adc7c76a23ffef"}
+2025-07-19 14:07:34 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '7d708b9972cd79e490c788e22c88398a'}}
+2025-07-19 14:07:34 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:07:34 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba6a6a7a243511c1aad5f"}
+2025-07-19 14:09:18 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba70e40b3ca3a79b40090"}
+2025-07-19 14:09:18 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'd1d9c48e2f3ef16c0f02542aa7befe42'}}
+2025-07-19 14:09:18 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:09:19 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba70f51adc7c76a240047"}
+2025-07-19 14:09:24 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba714600c176cad212f62"}
+2025-07-19 14:09:24 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '0fdfc0132120a6992d310c053a1411e5'}}
+2025-07-19 14:09:24 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:09:25 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba7159d56841a06d49fa0"}
+2025-07-19 14:09:29 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba71836e3f52c32ad95a5"}
+2025-07-19 14:09:29 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '2f5429da59b7d74502bb007395111aca'}}
+2025-07-19 14:09:29 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 14:09:30 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687ba71a337d6b2911a7dafe"}
+2025-07-19 14:19:40 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 14:19:40 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:19:40 - polygon_service - WARNING - Failed to get balance from Web3: ENS name: '0x8ba1f109551bD432803012645Hac136c' is invalid.
+2025-07-19 14:19:40 - polygon_service - WARNING - Failed to get balance from Tatum: Tatum API error: 400, {"statusCode":400,"errorCode":"validation.failed","message":"Request validation failed. Please see data for additional information.","data":["address must be a valid MATIC address. Address must start with 0x and must contain 40 hexadecimal characters after and have the correct checksum. "],"dashboardLog":"https://dashboard.tatum.io/logs?id=687ba97c1628e032e3117c45"}
+2025-07-19 14:19:40 - polygon_service - WARNING - Using default balance for address 0x8ba1f109551bD432803012645Hac136c
+2025-07-19 14:20:48 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 14:20:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:21:22 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 14:21:22 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:21:22 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000144 Wei
+2025-07-19 14:21:22 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 14:21:22 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000144 Wei, Gas Limit: 21000, Fee Wei: 567000003024000, Fee MATIC: 0.000567000003024000
+2025-07-19 14:24:17 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 14:24:17 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 14:24:17 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:24:17 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 14:24:17 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:24:17 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:24:18 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:24:18 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:24:18 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:24:41 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 14:24:41 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 14:24:41 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000143 Wei
+2025-07-19 14:24:41 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 14:24:41 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000143 Wei, Gas Limit: 21000, Fee Wei: 567000003003000, Fee MATIC: 0.000567000003003000
+2025-07-19 14:24:41 - polygon_service - INFO - [Balance] POL Balance for 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106: 0E-18
+2025-07-19 14:24:41 - polygon_service - INFO - [Gas Price] Raw gas price from Web3: 27000000143 Wei
+2025-07-19 14:24:41 - polygon_service - INFO - [Gas Limit] Estimated gas limit: 21000
+2025-07-19 14:24:41 - polygon_service - INFO - [Fee Calculation] Gas Price: 27000000143 Wei, Gas Limit: 21000, Fee Wei: 567000003003000, Fee MATIC: 0.000567000003003000
+2025-07-19 14:24:41 - polygon_service - INFO - [Fee] Estimated fee: 0.000567000003003000 POL
+2025-07-19 14:24:41 - polygon_service - INFO - [Comparison] Balance: 0E-18, Amount: 0.01, Fee: 0.000567000003003000, Required: 0.010567000003003000
+2025-07-19 14:24:41 - polygon_service - ERROR - [Error] Insufficient balance. Available: 0E-18 POL, Required: 0.010567000003003000 POL (Amount: 0.01 + Fee: 0.000567000003003000)
+2025-07-19 15:11:45 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5b136e3f52c32ada6be"}
+2025-07-19 15:11:46 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '36a359b0d5be8131a0e6a6aad6195a85'}}
+2025-07-19 15:11:46 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:11:47 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5b3d7428c890733f573"}
+2025-07-19 15:11:52 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5b89d56841a06d4b0c7"}
+2025-07-19 15:11:53 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '89dd5ae043c65596e19afaed52d1b9c9'}}
+2025-07-19 15:11:53 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:11:53 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5b91628e032e3118a6f"}
+2025-07-19 15:11:56 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5bca4d4642b6771984d"}
+2025-07-19 15:11:57 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '0e40b48ad87db3bafdc26d41dbdb1b05'}}
+2025-07-19 15:11:57 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:11:58 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bb5be9d56841a06d4b0d5"}
+2025-07-19 15:31:53 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:31:53 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:31:53 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:31:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:31:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:31:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:31:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:31:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:31:54 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:38:34 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:38:34 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:38:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:38:35 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:38:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:38:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:38:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:38:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:38:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:39:48 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc44600c176cad214850"}
+2025-07-19 15:39:49 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '6d6af4de1b4b2992b35155668ea14121'}}
+2025-07-19 15:39:49 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:39:50 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc461628e032e3119207"}
+2025-07-19 15:39:53 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc4915c99df3b791fa1d"}
+2025-07-19 15:39:53 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'ce54792565ec28c193f0840e89774aa2'}}
+2025-07-19 15:39:53 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:39:54 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc4a337d6b2911a7f395"}
+2025-07-19 15:39:57 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc4d15c99df3b791fa26"}
+2025-07-19 15:39:58 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '9ab48ba78e44f9f33948e516d9ae510b'}}
+2025-07-19 15:39:58 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:39:58 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbc4e337d6b2911a7f39e"}
+2025-07-19 15:52:02 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf22d7428c89073400ce"}
+2025-07-19 15:52:03 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'd55e92319fba74a0f34d77decc4aa414'}}
+2025-07-19 15:52:03 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:52:03 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf2336e3f52c32adb177"}
+2025-07-19 15:52:06 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf26337d6b2911a7f746"}
+2025-07-19 15:52:07 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': '6c76fb6d697035cf83dbe655c50d6e32'}}
+2025-07-19 15:52:07 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:52:07 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf27600c176cad214bd2"}
+2025-07-19 15:52:10 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: insufficient funds [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf2a337d6b2911a7f74d"}
+2025-07-19 15:52:10 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds', 'data': {'trace_id': 'bf660d34209d387e903ac8184a2e0e9c'}}
+2025-07-19 15:52:10 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 15:52:11 - polygon_service - ERROR - Tatum transaction endpoint failed: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.tx.preparation","message":"Transaction preparation failure.","cause":"Returned error: insufficient funds for transfer","dashboardLog":"https://dashboard.tatum.io/logs?id=687bbf2b9840217ebda64c86"}
+2025-07-19 15:55:25 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:55:25 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:55:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:55:25 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 15:55:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:55:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:55:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:55:25 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:55:26 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 15:55:39 - polygon_service - ERROR - Private key mismatch. Expected address: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106, Got: 0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-19 15:55:41 - polygon_service - ERROR - Private key mismatch. Expected address: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106, Got: 0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-19 15:55:43 - polygon_service - ERROR - Private key mismatch. Expected address: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106, Got: 0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-19 15:56:08 - polygon_service - ERROR - Private key mismatch. Expected address: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106, Got: 0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-19 15:56:11 - polygon_service - ERROR - Private key mismatch. Expected address: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106, Got: 0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-19 15:56:13 - polygon_service - ERROR - Private key mismatch. Expected address: 0xe63aB0899E2FA155f48a62eD0460aDc1b3cF5106, Got: 0x68Ba7F66B09783977E36AA7bD8390b812742853C
+2025-07-19 16:06:30 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 16:06:31 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 16:06:31 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 16:06:31 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 16:06:31 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 16:06:31 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 16:06:31 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 16:06:31 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 16:06:31 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 16:10:22 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 16:10:22 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'ALREADY_EXISTS: already known', 'data': {'trace_id': '5ba68c8b9cafca84a008a195e11c17b2'}}
+2025-07-19 16:10:22 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-19 16:10:23 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 17:21:28 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 17:21:28 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-19 19:29:32 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 19:29:32 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 19:29:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 19:29:44 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 19:29:44 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 19:29:44 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 19:29:58 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-19 19:29:58 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-19 19:29:58 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-21 07:02:38 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-21 07:02:51 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-21 07:20:42 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-21 07:34:48 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-21 07:34:51 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-21 07:37:16 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-21 07:37:19 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 1/3)
+2025-07-21 07:37:19 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 2/3)
+2025-07-21 07:37:19 - polygon_service - WARNING - Nonce too low, retrying with higher nonce (attempt 3/3)
+2025-07-21 07:37:19 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-21 07:37:21 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'

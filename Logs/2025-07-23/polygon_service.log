@@ -1,0 +1,38 @@
+2025-07-23 12:46:49 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-23 12:46:49 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 12:46:49 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:22:00 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-23 13:22:00 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:22:00 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:45:48 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-23 13:45:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:45:48 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:50:32 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-23 13:50:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:50:33 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:50:53 - polygon_service - ERROR - Tatum API broadcast error: Tatum API error: 403, {"statusCode":403,"errorCode":"polygon.broadcast.failed","message":"Unable to broadcast transaction.","cause":"INTERNAL_ERROR: nonce too low [-32000]","dashboardLog":"https://dashboard.tatum.io/logs?id=6880e8bd31db661ab5f67f6d"}
+2025-07-23 13:51:05 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-23 13:51:05 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:51:06 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 13:58:52 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-23 13:58:53 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-23 14:09:11 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-23 14:09:22 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-23 14:14:23 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-23 14:14:47 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-23 14:14:47 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 14:14:47 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 15:17:02 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-23 15:17:11 - polygon_service - WARNING - Failed to estimate gas, using default: ('execution reverted: insufficient funds for gas * price + value: address 0x5f47DA8ab73D3E48E5da24B9750fc153c4585f1D have 8907967630453000 want 10000000000000000', {'trace_id': '477b7e98f1d7b58a911d524ce55059f9'})
+2025-07-23 15:17:12 - polygon_service - ERROR - Web3 sending failed: {'code': -32000, 'message': 'ALREADY_EXISTS: already known', 'data': {'trace_id': '27f28794305856c8d5f0b1b61cf5bddf'}}
+2025-07-23 15:17:12 - polygon_service - ERROR - All Web3 retries failed after 3 attempts
+2025-07-23 15:17:13 - polygon_service - ERROR - Tatum reports insufficient funds. Our calculations: Available=0.008907967630453000 MATIC, Required=0.010525006096867000 MATIC. This may indicate a private key mismatch or higher gas costs in Tatum.
+2025-07-23 15:37:35 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-23 15:37:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 15:37:35 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 15:53:24 - polygon_service - DEBUG - Logger initialized for polygon_service at level DEBUG
+2025-07-23 15:53:24 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-23 15:53:24 - polygon_service - INFO - Successfully connected to Polygon node: https://polygon-rpc.com
+2025-07-24 01:06:19 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-24 01:06:42 - polygon_service - ERROR - Method 1 failed: 'PolygonService' object has no attribute '_update_transaction_status'
+2025-07-24 01:06:50 - polygon_service - WARNING - Failed to update transaction status: 'PolygonService' object has no attribute '_update_transaction_status'

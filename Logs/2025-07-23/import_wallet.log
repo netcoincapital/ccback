@@ -1,0 +1,35 @@
+2025-07-23 12:46:49 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-07-23 12:46:49 - import_wallet - INFO - Initializing wallet import module
+2025-07-23 13:22:00 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-07-23 13:22:00 - import_wallet - INFO - Initializing wallet import module
+2025-07-23 13:45:48 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-07-23 13:45:48 - import_wallet - INFO - Initializing wallet import module
+2025-07-23 13:50:32 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-07-23 13:50:32 - import_wallet - INFO - Initializing wallet import module
+2025-07-23 13:51:05 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-07-23 13:51:05 - import_wallet - INFO - Initializing wallet import module
+2025-07-23 14:14:46 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-07-23 14:14:46 - import_wallet - INFO - Initializing wallet import module
+2025-07-23 15:37:35 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-07-23 15:37:35 - import_wallet - INFO - Initializing wallet import module
+2025-07-23 15:53:24 - import_wallet - DEBUG - Logger initialized for import_wallet at level DEBUG
+2025-07-23 15:53:24 - import_wallet - INFO - Initializing wallet import module
+2025-07-23 23:28:50 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:28:57 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:29:09 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:29:11 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:40:55 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:41:03 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:41:14 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:41:17 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:48:58 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-23 23:49:14 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-24 00:36:28 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-24 01:15:17 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-24 01:21:17 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-24 11:13:19 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-24 17:43:34 - import_wallet - WARNING - Wallet import failed: Failed to import wallet: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-26 05:33:16 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic must be at least 12 characters
+2025-07-26 17:57:38 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters
+2025-07-26 18:02:55 - import_wallet - WARNING - Validation error in import_wallet: Mnemonic contains invalid characters

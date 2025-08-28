@@ -1,0 +1,318 @@
+2025-07-29 21:23:53 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-29 21:23:53 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-29 21:23:53 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-29 21:29:28 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-29 21:29:28 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-29 21:29:28 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-29 21:33:23 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-29 21:33:23 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-29 21:33:24 - balance_service - DEBUG - Logger initialized for balance_service at level DEBUG
+2025-07-30 00:03:28 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-30 00:03:28 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-30 00:03:28 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-30 00:03:28 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-30 00:03:29 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T00:03:29.478+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TMjydthUhuyteqkZLeu6iZJVpw4vR7t7xh/tokens"}
+2025-07-30 00:03:29 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T00:03:29.696+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TMjydthUhuyteqkZLeu6iZJVpw4vR7t7xh/tokens"}
+2025-07-30 00:03:30 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-30 00:03:30 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T00:03:30.164+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TMjydthUhuyteqkZLeu6iZJVpw4vR7t7xh/tokens"}
+2025-07-30 00:03:31 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TMjydthUhuyteqkZLeu6iZJVpw4vR7t7xh/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa0204fd160>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 00:03:31 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TMjydthUhuyteqkZLeu6iZJVpw4vR7t7xh/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa02048cc40>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 00:03:32 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TMjydthUhuyteqkZLeu6iZJVpw4vR7t7xh/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa0204d5b50>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 02:03:32 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 02:03:32 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 02:03:33 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 02:03:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 02:03:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 02:03:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 07:22:33 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 07:22:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 07:22:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 07:22:50 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 07:22:51 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 07:22:51 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 07:22:51 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 07:22:52 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 08:28:33 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 08:28:33 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 09:01:49 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 10:07:51 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 10:07:51 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 10:29:52 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 10:29:53 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 10:29:53 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 10:54:58 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-30 10:54:58 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-30 10:54:58 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-30 10:54:58 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-30 10:54:59 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T10:54:59.086+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TH5YzacpXDywpihcMHfCjy3e9Zj7GkgcKU/tokens"}
+2025-07-30 10:54:59 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T10:54:59.307+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TH5YzacpXDywpihcMHfCjy3e9Zj7GkgcKU/tokens"}
+2025-07-30 10:54:59 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-30 10:54:59 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T10:54:59.815+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TH5YzacpXDywpihcMHfCjy3e9Zj7GkgcKU/tokens"}
+2025-07-30 10:55:00 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TH5YzacpXDywpihcMHfCjy3e9Zj7GkgcKU/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa0200e02e0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 10:55:01 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TH5YzacpXDywpihcMHfCjy3e9Zj7GkgcKU/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa020934820>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 10:55:01 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TH5YzacpXDywpihcMHfCjy3e9Zj7GkgcKU/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa020057b80>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 11:17:07 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-30 11:17:07 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-30 11:17:07 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-30 11:17:07 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-30 11:17:08 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T11:17:08.413+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TJt2uwSiMuaL51NFMycMWGddGpyByYAY65/tokens"}
+2025-07-30 11:17:08 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T11:17:08.687+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TJt2uwSiMuaL51NFMycMWGddGpyByYAY65/tokens"}
+2025-07-30 11:17:08 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-30 11:17:10 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TJt2uwSiMuaL51NFMycMWGddGpyByYAY65/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa0218fc880>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 11:17:10 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TJt2uwSiMuaL51NFMycMWGddGpyByYAY65/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa02192d0a0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 11:24:35 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 11:24:35 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 11:24:36 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 11:35:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 11:35:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 11:35:50 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 11:35:50 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 11:35:51 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 12:19:50 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 13:01:39 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-30 13:01:39 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-30 13:01:39 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-30 13:01:39 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-30 13:01:40 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T13:01:39.970+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TPAZm7J5DY3S3qJvJ9fqCw5HzMF2MRh26P/tokens"}
+2025-07-30 13:01:40 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T13:01:40.244+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TPAZm7J5DY3S3qJvJ9fqCw5HzMF2MRh26P/tokens"}
+2025-07-30 13:01:40 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-30 13:01:40 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T13:01:40.739+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TPAZm7J5DY3S3qJvJ9fqCw5HzMF2MRh26P/tokens"}
+2025-07-30 13:01:41 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TPAZm7J5DY3S3qJvJ9fqCw5HzMF2MRh26P/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa02231e970>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 13:01:42 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TPAZm7J5DY3S3qJvJ9fqCw5HzMF2MRh26P/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa008fd4430>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 13:01:42 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TPAZm7J5DY3S3qJvJ9fqCw5HzMF2MRh26P/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa022323040>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 14:31:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-30 14:31:35 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 14:31:37 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 14:31:38 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 14:31:38 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 14:57:05 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-30 14:57:05 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-30 14:57:05 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-30 14:57:05 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-30 14:57:05 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T14:57:05.688+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TQeMV94M7eJLJNHBtkUZXhUbCnGPqCYVRS/tokens"}
+2025-07-30 14:57:05 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T14:57:05.954+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TQeMV94M7eJLJNHBtkUZXhUbCnGPqCYVRS/tokens"}
+2025-07-30 14:57:06 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-30 14:57:06 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T14:57:06.419+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TQeMV94M7eJLJNHBtkUZXhUbCnGPqCYVRS/tokens"}
+2025-07-30 14:57:07 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TQeMV94M7eJLJNHBtkUZXhUbCnGPqCYVRS/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa02213c5b0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 14:57:07 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TQeMV94M7eJLJNHBtkUZXhUbCnGPqCYVRS/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa02209bdf0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 14:57:08 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TQeMV94M7eJLJNHBtkUZXhUbCnGPqCYVRS/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa02219e580>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 17:05:34 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 17:05:35 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 17:05:38 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-30 17:22:25 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-30 17:22:25 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-30 17:22:25 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-30 17:22:25 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-30 17:22:26 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T17:22:26.446+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TRHF1Eu1vi5r3BrBWo2q7SS9f9LWojTMYM/tokens"}
+2025-07-30 17:22:26 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T17:22:26.712+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TRHF1Eu1vi5r3BrBWo2q7SS9f9LWojTMYM/tokens"}
+2025-07-30 17:22:27 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-30 17:22:27 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-30T17:22:27.188+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TRHF1Eu1vi5r3BrBWo2q7SS9f9LWojTMYM/tokens"}
+2025-07-30 17:22:28 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TRHF1Eu1vi5r3BrBWo2q7SS9f9LWojTMYM/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa0221cbb20>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 17:22:28 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TRHF1Eu1vi5r3BrBWo2q7SS9f9LWojTMYM/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa022603820>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-30 17:22:29 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TRHF1Eu1vi5r3BrBWo2q7SS9f9LWojTMYM/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa022685340>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-31 05:55:57 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 06:44:48 - balance_service - WARNING - No native currency found for blockchain Bitcoin
+2025-07-31 06:44:48 - balance_service - WARNING - No native currency found for blockchain Avalanche
+2025-07-31 06:44:48 - balance_service - WARNING - No native currency found for blockchain Arbitrum
+2025-07-31 06:44:48 - balance_service - WARNING - No native currency found for blockchain Polkadot
+2025-07-31 06:44:49 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-31T06:44:49.575+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TVH9XtyXHbJVjEDGLuCtD26rcmQ1Li2sSM/tokens"}
+2025-07-31 06:44:49 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-31T06:44:49.888+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TVH9XtyXHbJVjEDGLuCtD26rcmQ1Li2sSM/tokens"}
+2025-07-31 06:44:50 - balance_service - ERROR - Error getting EVM token balance on Avalanche: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/services/balance_service.py", line 157, in get_token_balance
+    address=Web3.to_checksum_address(contract_address),
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/web3/main.py", line 268, in to_checksum_address
+    return to_checksum_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 129, in to_checksum_address
+    norm_address = to_normalized_address(value)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/address.py", line 73, in to_normalized_address
+    hex_address = hexstr_if_str(to_hex, value).lower()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/eth_utils/conversions.py", line 195, in hexstr_if_str
+    raise ValueError(
+ValueError: when sending a str, it must be a hex string. Got: 'FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z'
+2025-07-31 06:44:50 - balance_service - WARNING - خطا در دریافت موجودی TRC20 با API اصلی: 404 - {"timestamp":"2025-07-31T06:44:50.348+00:00","status":404,"error":"Not Found","path":"/v1/accounts/TVH9XtyXHbJVjEDGLuCtD26rcmQ1Li2sSM/tokens"}
+2025-07-31 06:44:51 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TVH9XtyXHbJVjEDGLuCtD26rcmQ1Li2sSM/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa021ecf8b0>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-31 06:44:52 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TVH9XtyXHbJVjEDGLuCtD26rcmQ1Li2sSM/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa021e64c70>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-31 06:44:52 - balance_service - ERROR - خطا در استفاده از API جایگزین 8: HTTPSConnectionPool(host='api.tronstation.io', port=443): Max retries exceeded with url: /v1/accounts/TVH9XtyXHbJVjEDGLuCtD26rcmQ1Li2sSM/tokens (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fa021de8d00>: Failed to resolve 'api.tronstation.io' ([Errno -2] Name or service not known)"))
+2025-07-31 08:07:39 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 08:07:41 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 08:07:42 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 08:07:54 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-31 08:07:54 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 08:07:55 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 08:07:57 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 09:24:41 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-31 09:24:52 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: SELECT users.`UserID` AS `users_UserID`, users.`ID` AS `users_ID`, users.`Email` AS `users_Email`, users.`CreatedAt` AS `users_CreatedAt`, users.`UpdatedAt` AS `users_UpdatedAt`, users.`Device` AS `users_Device`, users.`IP` AS `users_IP` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s 
+ LIMIT %(param_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-31 09:24:54 - balance_service - ERROR - Error getting simple user balance: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

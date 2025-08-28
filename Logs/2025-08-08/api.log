@@ -1,0 +1,11 @@
+2025-08-08 05:46:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-08 05:46:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-08 05:46:31 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-08-09 14:32:27 - api - DEBUG - Health check requested
+2025-08-09 14:46:10 - api - DEBUG - Health check requested
+2025-08-09 20:29:44 - api - INFO - Received fee estimation request: {'amount': 1000.0, 'blockchain': 'Tron', 'from_address': 'TJyKfVT7qxkpSNxEAtAWceKG8odWjMojzK', 'to_address': 'TX9S138m3HyBrduMrZQ5JHHeKGX9RUW484', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-09 20:29:44 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-09 20:29:45 - api - INFO - Fee estimation completed successfully for Tron
+2025-08-09 20:29:53 - api - INFO - Received fee estimation request: {'amount': 1000.0, 'blockchain': 'Tron', 'from_address': 'TJyKfVT7qxkpSNxEAtAWceKG8odWjMojzK', 'to_address': 'TX9S138m3HyBrduMrZQ5JHHeKGX9RUW484', 'token_contract': 'T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf'}
+2025-08-09 20:29:53 - api - DEBUG - Processing fee estimation for blockchain: Tron
+2025-08-09 20:29:53 - api - INFO - Fee estimation completed successfully for Tron

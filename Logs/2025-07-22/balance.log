@@ -1,0 +1,32 @@
+2025-07-22 05:45:28 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 17:18:17 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 17:18:17 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 17:18:17 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 17:33:59 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 17:33:59 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 17:33:59 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:28:20 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:28:20 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:28:20 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:31:22 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:31:23 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:31:23 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:32:03 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:32:04 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:32:04 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:34:13 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:34:13 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:34:13 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:34:26 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:34:26 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:34:26 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:46:45 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:46:45 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 20:46:45 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 21:52:25 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 21:52:26 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 21:52:26 - balance - DEBUG - Logger initialized for balance at level DEBUG
+2025-07-22 22:49:01 - balance - ERROR - Failed to update balances for user f8c2219e-595b-4629-8a3c-57ecc8620071: Error updating balance data: (mysql.connector.errors.OperationalError) MySQL Connection not available.
+[SQL: DELETE FROM userholding WHERE userholding.`UserID` = %(UserID_1)s]
+[parameters: [{}]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

@@ -1,0 +1,14 @@
+2025-07-18 20:32:41 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-18 20:33:06 - api - DEBUG - Logger initialized for api at level DEBUG
+2025-07-19 10:36:43 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'ethereum', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 0.01, 'type': None, 'token_contract': ''}
+2025-07-19 10:36:43 - api - DEBUG - Processing fee estimation for blockchain: ethereum
+2025-07-19 10:36:46 - api - INFO - Fee estimation completed successfully for ethereum
+2025-07-19 10:40:08 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'ethereum', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 0.01, 'type': None, 'token_contract': ''}
+2025-07-19 10:40:08 - api - DEBUG - Processing fee estimation for blockchain: ethereum
+2025-07-19 10:40:10 - api - INFO - Fee estimation completed successfully for ethereum
+2025-07-19 10:41:13 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'ethereum', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 0.01, 'type': None, 'token_contract': ''}
+2025-07-19 10:41:13 - api - DEBUG - Processing fee estimation for blockchain: ethereum
+2025-07-19 10:41:15 - api - INFO - Fee estimation completed successfully for ethereum
+2025-07-19 10:52:04 - api - INFO - Received fee estimation request: {'UserID': 'c1bf9df0-8263-41f1-844f-2e587f9b4050', 'blockchain': 'ethereum', 'from_address': '0x68Ba7F66B09783977E36AA7bD8390b812742853C', 'to_address': '0xF0F3d4dD1b8A86f4Fe65401524701915F00b4E3B', 'amount': 0.01, 'type': None, 'token_contract': ''}
+2025-07-19 10:52:04 - api - DEBUG - Processing fee estimation for blockchain: ethereum
+2025-07-19 10:52:06 - api - INFO - Fee estimation completed successfully for ethereum

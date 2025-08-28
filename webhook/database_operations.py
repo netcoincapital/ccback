@@ -5,7 +5,7 @@ from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from datetime import datetime, timedelta
 import os
 import json
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 import uuid
 from decimal import Decimal
 import time
@@ -14,10 +14,10 @@ import time
 logger = get_logger(__file__)
 
 # واردسازی تنظیمات پایگاه داده
-from config import DATABASE_URL
+from CC.config import DATABASE_URL
 
 # Import the BlockchainUtils class
-from webhook.blockchain_utils import BlockchainUtils
+from CC.webhook.blockchain_utils import BlockchainUtils
 
 class DatabaseOperations:
     """
@@ -696,15 +696,59 @@ class DatabaseOperations:
                 block = block_number or webhook_data.get('blockNumber') or webhook_data.get('blockHeight')
                 tx_timestamp = timestamp
                 
+                # Log timestamp information for debugging
+                logger.info(f"Processing timestamp for transaction {transaction_id}:")
+                logger.info(f"  - Provided timestamp parameter: {timestamp} (type: {type(timestamp)})")
+                logger.info(f"  - Webhook timestamp: {webhook_data.get('timestamp')} (type: {type(webhook_data.get('timestamp'))})")
+                
                 if not tx_timestamp:
                     if 'timestamp' in webhook_data:
                         tx_ts = webhook_data['timestamp']
                         # Convert from milliseconds if needed
-                        if isinstance(tx_ts, int) and tx_ts > 1000000000000:
+                        if isinstance(tx_ts, (int, float)) and tx_ts > 1000000000000:
+                            logger.info(f"Converting timestamp from milliseconds: {tx_ts} -> {tx_ts / 1000}")
                             tx_ts = tx_ts / 1000
-                        tx_timestamp = datetime.fromtimestamp(tx_ts)
+                        
+                        # Validate timestamp range
+                        min_timestamp = 946684800  # Jan 1, 2000
+                        max_timestamp = 2524608000  # Jan 1, 2050
+                        
+                        if isinstance(tx_ts, (int, float)) and (tx_ts < min_timestamp or tx_ts > max_timestamp):
+                            logger.warning(f"Webhook timestamp {tx_ts} is out of valid range. Using current time instead.")
+                            tx_timestamp = datetime.now()
+                        else:
+                            try:
+                                tx_timestamp = datetime.fromtimestamp(tx_ts)
+                                logger.info(f"Timestamp converted to datetime: {tx_timestamp}")
+                            except (ValueError, TypeError, OSError) as e:
+                                logger.error(f"Error converting timestamp {tx_ts}: {str(e)}. Using current time.")
+                                tx_timestamp = datetime.now()
                     else:
                         tx_timestamp = datetime.now()
+                        logger.info(f"Using current time as timestamp: {tx_timestamp}")
+                
+                # Additional validation for the timestamp parameter 
+                if timestamp and isinstance(timestamp, (int, float)):
+                    # If timestamp is provided as a number, handle it properly
+                    if timestamp > 1000000000000:  # It's in milliseconds
+                        logger.info(f"Converting provided timestamp from milliseconds: {timestamp} -> {timestamp / 1000}")
+                        timestamp = timestamp / 1000
+                    
+                    # Validate timestamp range (should be between 2000 and 2050)
+                    min_timestamp = 946684800  # Jan 1, 2000
+                    max_timestamp = 2524608000  # Jan 1, 2050
+                    
+                    if timestamp < min_timestamp or timestamp > max_timestamp:
+                        logger.warning(f"Timestamp {timestamp} is out of valid range. Using current time instead.")
+                        tx_timestamp = datetime.now()
+                    else:
+                        tx_timestamp = datetime.fromtimestamp(timestamp)
+                    logger.info(f"Using provided timestamp: {tx_timestamp}")
+                
+                # Final validation: if tx_timestamp is still invalid, use current time
+                if not tx_timestamp or tx_timestamp.year < 2000 or tx_timestamp.year > 2050:
+                    logger.warning(f"Invalid timestamp detected: {tx_timestamp}. Using current time.")
+                    tx_timestamp = datetime.now()
                 
                 # Extract token details from webhook
                 token_symbol = webhook_data.get('tokenSymbol') or webhook_data.get('symbol') or webhook_data.get('asset')

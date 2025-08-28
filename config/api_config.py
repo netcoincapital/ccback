@@ -1,6 +1,6 @@
 from web3 import Web3
 import logging
-from utils.logging_config import get_logger
+from CC.utils.logging_config import get_logger
 import time
 import threading
 from datetime import datetime, timedelta

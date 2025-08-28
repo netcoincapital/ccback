@@ -1,0 +1,215 @@
+2025-07-21 07:21:04 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 07:21:04 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 07:21:04 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 07:21:04 - firebase - INFO - Firebase initialized successfully
+2025-07-21 07:33:53 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 07:33:54 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 07:33:54 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 07:33:54 - firebase - INFO - Firebase initialized successfully
+2025-07-21 09:18:58 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 09:18:58 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 09:18:59 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 09:18:59 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 09:18:59 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 09:18:59 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 09:18:59 - firebase - INFO - Firebase initialized successfully
+2025-07-21 09:19:00 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 09:19:00 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 09:19:00 - firebase - INFO - Firebase initialized successfully
+2025-07-21 09:19:00 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 09:19:00 - firebase - INFO - Firebase initialized successfully
+2025-07-21 10:40:44 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 10:40:44 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 10:40:44 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 10:40:45 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 10:40:45 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 10:40:45 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 10:40:45 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 10:40:45 - firebase - INFO - Firebase initialized successfully
+2025-07-21 10:40:45 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 10:40:45 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 10:40:46 - firebase - INFO - Firebase initialized successfully
+2025-07-21 10:40:46 - firebase - INFO - Firebase initialized successfully
+2025-07-21 10:42:06 - firebase - ERROR - [FCM] Error sending notification: The registration token is not a valid FCM registration token
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 411, in send
+    resp = self._client.body(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 136, in body
+    resp = self.request(method, url, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 124, in request
+    resp.raise_for_status()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://fcm.googleapis.com/v1/projects/coinceeper-f2eaf/messages:send
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/config/firebase.py", line 163, in send_notification
+    response = messaging.send(message)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 121, in send
+    return _get_messaging_service(app).send(message, dry_run)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 418, in send
+    raise self._handle_fcm_error(error)
+firebase_admin.exceptions.InvalidArgumentError: The registration token is not a valid FCM registration token
+2025-07-21 10:42:06 - firebase - WARNING - Attempt 1 failed: The registration token is not a valid FCM registration token
+2025-07-21 10:42:07 - firebase - ERROR - [FCM] Error sending notification: The registration token is not a valid FCM registration token
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 411, in send
+    resp = self._client.body(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 136, in body
+    resp = self.request(method, url, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 124, in request
+    resp.raise_for_status()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://fcm.googleapis.com/v1/projects/coinceeper-f2eaf/messages:send
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/config/firebase.py", line 163, in send_notification
+    response = messaging.send(message)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 121, in send
+    return _get_messaging_service(app).send(message, dry_run)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 418, in send
+    raise self._handle_fcm_error(error)
+firebase_admin.exceptions.InvalidArgumentError: The registration token is not a valid FCM registration token
+2025-07-21 10:42:07 - firebase - WARNING - Attempt 2 failed: The registration token is not a valid FCM registration token
+2025-07-21 10:42:09 - firebase - ERROR - [FCM] Error sending notification: The registration token is not a valid FCM registration token
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 411, in send
+    resp = self._client.body(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 136, in body
+    resp = self.request(method, url, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 124, in request
+    resp.raise_for_status()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://fcm.googleapis.com/v1/projects/coinceeper-f2eaf/messages:send
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/config/firebase.py", line 163, in send_notification
+    response = messaging.send(message)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 121, in send
+    return _get_messaging_service(app).send(message, dry_run)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 418, in send
+    raise self._handle_fcm_error(error)
+firebase_admin.exceptions.InvalidArgumentError: The registration token is not a valid FCM registration token
+2025-07-21 10:56:18 - firebase - ERROR - [FCM] Error sending notification: The registration token is not a valid FCM registration token
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 411, in send
+    resp = self._client.body(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 136, in body
+    resp = self.request(method, url, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 124, in request
+    resp.raise_for_status()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://fcm.googleapis.com/v1/projects/coinceeper-f2eaf/messages:send
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/config/firebase.py", line 163, in send_notification
+    response = messaging.send(message)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 121, in send
+    return _get_messaging_service(app).send(message, dry_run)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 418, in send
+    raise self._handle_fcm_error(error)
+firebase_admin.exceptions.InvalidArgumentError: The registration token is not a valid FCM registration token
+2025-07-21 10:56:18 - firebase - WARNING - Attempt 1 failed: The registration token is not a valid FCM registration token
+2025-07-21 10:56:19 - firebase - ERROR - [FCM] Error sending notification: The registration token is not a valid FCM registration token
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 411, in send
+    resp = self._client.body(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 136, in body
+    resp = self.request(method, url, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 124, in request
+    resp.raise_for_status()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://fcm.googleapis.com/v1/projects/coinceeper-f2eaf/messages:send
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/config/firebase.py", line 163, in send_notification
+    response = messaging.send(message)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 121, in send
+    return _get_messaging_service(app).send(message, dry_run)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 418, in send
+    raise self._handle_fcm_error(error)
+firebase_admin.exceptions.InvalidArgumentError: The registration token is not a valid FCM registration token
+2025-07-21 10:56:19 - firebase - WARNING - Attempt 2 failed: The registration token is not a valid FCM registration token
+2025-07-21 10:56:21 - firebase - ERROR - [FCM] Error sending notification: The registration token is not a valid FCM registration token
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 411, in send
+    resp = self._client.body(
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 136, in body
+    resp = self.request(method, url, **kwargs)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/_http_client.py", line 124, in request
+    resp.raise_for_status()
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://fcm.googleapis.com/v1/projects/coinceeper-f2eaf/messages:send
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/coinceeper.com/CC/config/firebase.py", line 163, in send_notification
+    response = messaging.send(message)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 121, in send
+    return _get_messaging_service(app).send(message, dry_run)
+  File "/www/wwwroot/coinceeper.com/CC/venv/lib64/python3.9/site-packages/firebase_admin/messaging.py", line 418, in send
+    raise self._handle_fcm_error(error)
+firebase_admin.exceptions.InvalidArgumentError: The registration token is not a valid FCM registration token
+2025-07-21 10:58:12 - firebase - WARNING - [FCM] Device token euYtawyFT86uVvt5L7shsS:APA91bHoic-emX8mYJNj4-l5MDz6DEA1v0IPdf0x5ri0EWlwvL6SZBnulgzCcd3pSrsOIUOCkOHAT7QNKyrMWdEhd7W-7466vzZ740lDRT9iNf0sDa7pP38 is no longer valid
+2025-07-21 10:59:53 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 10:59:54 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 10:59:54 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 10:59:54 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 10:59:54 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 10:59:55 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 10:59:55 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 10:59:55 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 10:59:55 - firebase - INFO - Firebase initialized successfully
+2025-07-21 10:59:55 - firebase - INFO - Firebase initialized successfully
+2025-07-21 10:59:55 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 10:59:55 - firebase - INFO - Firebase initialized successfully
+2025-07-21 11:00:28 - firebase - WARNING - [FCM] Device token euYtawyFT86uVvt5L7shsS:APA91bHoic-emX8mYJNj4-l5MDz6DEA1v0IPdf0x5ri0EWlwvL6SZBnulgzCcd3pSrsOIUOCkOHAT7QNKyrMWdEhd7W-7466vzZ740lDRT9iNf0sDa7pP38 is no longer valid
+2025-07-21 11:02:04 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 11:02:04 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 11:02:04 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 11:02:05 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 11:02:05 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 11:02:05 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 11:02:05 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 11:02:05 - firebase - INFO - Firebase initialized successfully
+2025-07-21 11:02:05 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 11:02:05 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 11:02:05 - firebase - INFO - Firebase initialized successfully
+2025-07-21 11:02:05 - firebase - INFO - Firebase initialized successfully
+2025-07-21 11:03:04 - firebase - WARNING - [FCM] Device token euYtawyFT86uVvt5L7shsS:APA91bHoic-emX8mYJNj4-l5MDz6DEA1v0IPdf0x5ri0EWlwvL6SZBnulgzCcd3pSrsOIUOCkOHAT7QNKyrMWdEhd7W-7466vzZ740lDRT9iNf0sDa7pP38 is no longer valid
+2025-07-21 20:08:56 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 20:08:56 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 20:08:56 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 20:08:56 - firebase - INFO - Firebase initialized successfully
+2025-07-21 20:09:10 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 20:09:11 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 20:09:11 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 20:09:11 - firebase - INFO - Firebase initialized successfully
+2025-07-21 20:09:40 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 20:09:40 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 20:09:40 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 20:09:40 - firebase - INFO - Firebase initialized successfully
+2025-07-21 20:20:21 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 20:20:21 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 20:20:21 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 20:20:21 - firebase - INFO - Firebase initialized successfully
+2025-07-21 20:20:29 - firebase - DEBUG - Logger initialized for firebase at level DEBUG
+2025-07-21 20:20:29 - firebase - WARNING - tenacity package not available. Using simple retry mechanism.
+2025-07-21 20:20:29 - firebase - INFO - Using Firebase credentials from file: /www/wwwroot/coinceeper.com/CC/config/coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json
+2025-07-21 20:20:29 - firebase - INFO - Firebase initialized successfully
