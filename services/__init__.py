@@ -1,17 +1,4 @@
-# Export all service modules
-from .balance_service import BalanceService
-from .transfer_service import TransferService
-from .wallet_service import WalletService
-from .blockchain_service import BlockchainService
-from .currency_service import CurrencyService
-from .TransferHandler import register_transfer_created, on_new_transfer
+# از re-export پرهیز کنید تا حلقه ایجاد نشود.
+# Services should be imported directly from their modules to avoid circular imports
 
-__all__ = [
-    'BalanceService',
-    'TransferService',
-    'WalletService',
-    'BlockchainService',
-    'CurrencyService',
-    'register_transfer_created',
-    'on_new_transfer'
-]
+__all__ = []

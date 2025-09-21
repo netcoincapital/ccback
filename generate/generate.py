@@ -7,7 +7,7 @@ import json
 
 from database import SessionLocal
 from security.validators import InputValidator, SecurityUtils, ValidationError
-from services.wallet_service import WalletService
+# نکته: برای جلوگیری از حلقه‌ی import، داخل تابع import می‌کنیم.
 from utils.error_handlers import handle_api_errors
 from schemas import (
     WalletGenerationRequest, 
@@ -83,6 +83,8 @@ def generate_wallet_v1():
         # Generate wallet synchronously
         session = SessionLocal()
         try:
+            # Import service داخل تابع برای جلوگیری از circular import
+            from ..services.wallet_service import WalletService
             # Use service to create wallet
             wallet_service = WalletService(session)
             with session.begin():

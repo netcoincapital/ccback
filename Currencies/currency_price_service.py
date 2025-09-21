@@ -75,9 +75,92 @@ class CurrencyPriceService:
             logger.warning(f"Using fallback API key: {api_key[:8]}...")
         return api_key
         
+    def get_complete_market_data(self, cmc_ids, fiat="USD"):
+        """
+        Get complete market data including price, market cap, volume, and all changes for specified CMC IDs
+        
+        Args:
+            cmc_ids (list): List of CoinMarketCap IDs
+            fiat (str): Fiat currency code
+            
+        Returns:
+            dict: Dictionary with complete market data by CMC ID
+        """
+        try:
+            logger.info(f"Fetching complete market data for {len(cmc_ids)} symbols in {fiat}")
+            logger.debug(f"CMC IDs for market data fetch: {cmc_ids}")
+            
+            # Join CMC IDs for API request
+            id_str = ",".join(str(cid) for cid in cmc_ids)
+            
+            # Get API key from manager
+            api_key = self.get_api_key()
+            
+            # Make API request - استفاده از پارامتر id برای CMC_ID
+            url = f"{self.base_url}/cryptocurrency/quotes/latest"
+            headers = {
+                "X-CMC_PRO_API_KEY": api_key,
+                "Accept": "application/json"
+            }
+            params = {
+                "id": id_str,  # استفاده از پارامتر id برای CMC_ID
+                "convert": fiat
+            }
+            
+            logger.debug(f"Making API request to {url} with API key: {api_key[:8]}...")
+            logger.debug(f"Request params: {params}")
+            response = requests.get(url, headers=headers, params=params)
+            
+            # Check for API rate limit errors
+            if response.status_code == 429:
+                logger.warning(f"Rate limit hit with API key {api_key[:8]}...")
+                # Try with a different API key after a longer delay
+                time.sleep(5)  # Wait 5 seconds before trying again
+                api_key = self.get_api_key()
+                headers["X-CMC_PRO_API_KEY"] = api_key
+                logger.debug(f"Retrying with API key: {api_key[:8]}...")
+                response = requests.get(url, headers=headers, params=params)
+                
+                # If still getting rate limit error, wait even longer
+                if response.status_code == 429:
+                    logger.warning(f"Rate limit hit again with API key {api_key[:8]}...")
+                    time.sleep(15)  # Wait 15 seconds before final attempt
+                    api_key = self.get_api_key()
+                    headers["X-CMC_PRO_API_KEY"] = api_key
+                    logger.debug(f"Final retry with API key: {api_key[:8]}...")
+                    response = requests.get(url, headers=headers, params=params)
+            
+            data = response.json()
+            
+            if response.status_code != 200:
+                logger.error(f"API error: {response.status_code}, Response: {data}")
+                return {"status": "error", "message": f"API error: {response.status_code}"}
+            
+            # Extract complete market data - استخراج تمام داده‌های بازار
+            result = {}
+            if "data" in data:
+                for cmc_id, info in data["data"].items():
+                    if "quote" in info and fiat in info["quote"]:
+                        quote_data = info["quote"][fiat]
+                        result[cmc_id] = {
+                            "price": quote_data.get("price", 0),
+                            "market_cap": quote_data.get("market_cap", None),
+                            "volume_24h": quote_data.get("volume_24h", None),
+                            "change_1h": quote_data.get("percent_change_1h", None),
+                            "change_24h": quote_data.get("percent_change_24h", None),
+                            "change_7d": quote_data.get("percent_change_7d", None)
+                        }
+            
+            logger.info(f"Successfully fetched complete market data for {len(result)} symbols in {fiat}")
+            return result
+        except Exception as e:
+            logger.error(f"Error fetching complete market data: {str(e)}", exc_info=True)
+            return {"status": "error", "message": str(e)}
+
     def get_latest_prices(self, cmc_ids, fiat="USD"):
         """
         Get latest prices for specified CMC IDs in the given fiat currency
+        (Backward compatibility method - now uses complete market data)
         
         Args:
             cmc_ids (list): List of CoinMarketCap IDs
@@ -87,63 +170,18 @@ class CurrencyPriceService:
             dict: Dictionary of prices by CMC ID
         """
         try:
-            logger.info(f"Fetching latest prices for {len(cmc_ids)} symbols in {fiat}")
-            logger.debug(f"CMC IDs for price fetch: {cmc_ids}")
+            # Use the complete market data method and extract only prices
+            complete_data = self.get_complete_market_data(cmc_ids, fiat)
             
-            # Join CMC IDs for API request
-            id_str = ",".join(str(cid) for cid in cmc_ids)
+            if isinstance(complete_data, dict) and complete_data.get("status") == "error":
+                return complete_data
             
-            # Get API key from manager
-            api_key = self.get_api_key()
-            
-            # Make API request - استفاده از پارامتر id برای CMC_ID
-            url = f"{self.base_url}/cryptocurrency/quotes/latest"
-            headers = {
-                "X-CMC_PRO_API_KEY": api_key,
-                "Accept": "application/json"
-            }
-            params = {
-                "id": id_str,  # استفاده از پارامتر id برای CMC_ID
-                "convert": fiat
-            }
-            
-            logger.debug(f"Making API request to {url} with API key: {api_key[:8]}...")
-            logger.debug(f"Request params: {params}")
-            response = requests.get(url, headers=headers, params=params)
-            
-            # Check for API rate limit errors
-            if response.status_code == 429:
-                logger.warning(f"Rate limit hit with API key {api_key[:8]}...")
-                # Try with a different API key after a longer delay
-                time.sleep(5)  # Wait 5 seconds before trying again
-                api_key = self.get_api_key()
-                headers["X-CMC_PRO_API_KEY"] = api_key
-                logger.debug(f"Retrying with API key: {api_key[:8]}...")
-                response = requests.get(url, headers=headers, params=params)
-                
-                # If still getting rate limit error, wait even longer
-                if response.status_code == 429:
-                    logger.warning(f"Rate limit hit again with API key {api_key[:8]}...")
-                    time.sleep(15)  # Wait 15 seconds before final attempt
-                    api_key = self.get_api_key()
-                    headers["X-CMC_PRO_API_KEY"] = api_key
-                    logger.debug(f"Final retry with API key: {api_key[:8]}...")
-                    response = requests.get(url, headers=headers, params=params)
-            
-            data = response.json()
-            
-            if response.status_code != 200:
-                logger.error(f"API error: {response.status_code}, Response: {data}")
-                return {"status": "error", "message": f"API error: {response.status_code}"}
-            
-            # Extract prices - استخراج بر اساس CMC_ID ها
+            # Extract only prices for backward compatibility
             result = {}
-            if "data" in data:
-                for cmc_id, info in data["data"].items():
-                    if "quote" in info and fiat in info["quote"]:
-                        result[cmc_id] = info["quote"][fiat]["price"]
+            for cmc_id, data in complete_data.items():
+                if isinstance(data, dict) and "price" in data:
+                    result[cmc_id] = data["price"]
             
-            logger.info(f"Successfully fetched prices for {len(result)} symbols in {fiat}")
             return result
         except Exception as e:
             logger.error(f"Error fetching latest prices: {str(e)}", exc_info=True)
@@ -152,6 +190,7 @@ class CurrencyPriceService:
     def get_24h_changes(self, cmc_ids, fiat="USD"):
         """
         Get 24-hour price changes for specified CMC IDs in the given fiat currency
+        (Backward compatibility method - now uses complete market data)
         
         Args:
             cmc_ids (list): List of CoinMarketCap IDs
@@ -161,61 +200,17 @@ class CurrencyPriceService:
             dict: Dictionary of 24h price changes by CMC ID
         """
         try:
-            logger.info(f"Fetching 24h changes for {len(cmc_ids)} symbols in {fiat}")
-            logger.debug(f"CMC IDs for changes fetch: {cmc_ids}")
+            # Use the complete market data method and extract only 24h changes
+            complete_data = self.get_complete_market_data(cmc_ids, fiat)
             
-            # Join CMC IDs for API request
-            id_str = ",".join(str(cid) for cid in cmc_ids)
+            if isinstance(complete_data, dict) and complete_data.get("status") == "error":
+                return complete_data
             
-            # Get API key from manager
-            api_key = self.get_api_key()
-            
-            # Make API request - استفاده از پارامتر id برای CMC_ID
-            url = f"{self.base_url}/cryptocurrency/quotes/latest"
-            headers = {
-                "X-CMC_PRO_API_KEY": api_key,
-                "Accept": "application/json"
-            }
-            params = {
-                "id": id_str,  # استفاده از پارامتر id برای CMC_ID
-                "convert": fiat
-            }
-            
-            logger.debug(f"Making API request to {url} with API key: {api_key[:8]}...")
-            logger.debug(f"Request params: {params}")
-            response = requests.get(url, headers=headers, params=params)
-            
-            # Check for API rate limit errors
-            if response.status_code == 429:
-                logger.warning(f"Rate limit hit with API key {api_key[:8]}...")
-                # Try with a different API key after a longer delay
-                time.sleep(5)  # Wait 5 seconds before trying again
-                api_key = self.get_api_key()
-                headers["X-CMC_PRO_API_KEY"] = api_key
-                logger.debug(f"Retrying with API key: {api_key[:8]}...")
-                response = requests.get(url, headers=headers, params=params)
-                
-                # If still getting rate limit error, wait even longer
-                if response.status_code == 429:
-                    logger.warning(f"Rate limit hit again with API key {api_key[:8]}...")
-                    time.sleep(15)  # Wait 15 seconds before final attempt
-                    api_key = self.get_api_key()
-                    headers["X-CMC_PRO_API_KEY"] = api_key
-                    logger.debug(f"Final retry with API key: {api_key[:8]}...")
-                    response = requests.get(url, headers=headers, params=params)
-            
-            data = response.json()
-            
-            if response.status_code != 200:
-                logger.error(f"API error: {response.status_code}, Response: {data}")
-                return {"status": "error", "message": f"API error: {response.status_code}"}
-            
-            # Extract 24h changes - استخراج بر اساس CMC_ID ها
+            # Extract only 24h changes for backward compatibility
             result = {}
-            if "data" in data:
-                for cmc_id, info in data["data"].items():
-                    if "quote" in info and fiat in info["quote"]:
-                        result[cmc_id] = info["quote"][fiat]["percent_change_24h"]
+            for cmc_id, data in complete_data.items():
+                if isinstance(data, dict) and "change_24h" in data:
+                    result[cmc_id] = data["change_24h"]
             
             logger.info(f"Successfully fetched changes for {len(result)} symbols in {fiat}")
             return result
@@ -309,21 +304,15 @@ class CurrencyPriceService:
                     
                 logger.debug(f"Using unique CMC IDs for API call: {unique_cmc_ids} (total: {len(unique_cmc_ids)})")
                 
-                # Get latest prices and changes using unique CMC_IDs
-                prices = self.get_latest_prices(unique_cmc_ids, fiat)
-                changes = self.get_24h_changes(unique_cmc_ids, fiat)
+                # Get complete market data using unique CMC_IDs
+                market_data = self.get_complete_market_data(unique_cmc_ids, fiat)
                 
                 # بررسی کامل داده‌های دریافتی
-                logger.debug(f"Prices received from API: {prices}")
-                logger.debug(f"Changes received from API: {changes}")
+                logger.debug(f"Market data received from API: {market_data}")
                 
                 # Check for errors
-                if isinstance(prices, dict) and prices.get("status") == "error":
-                    logger.error(f"Error fetching prices for {fiat}: {prices.get('message')}")
-                    continue
-                    
-                if isinstance(changes, dict) and changes.get("status") == "error":
-                    logger.error(f"Error fetching changes for {fiat}: {changes.get('message')}")
+                if isinstance(market_data, dict) and market_data.get("status") == "error":
+                    logger.error(f"Error fetching market data for {fiat}: {market_data.get('message')}")
                     continue
                 
                 # Update database - create a new session for each fiat currency
@@ -336,7 +325,8 @@ class CurrencyPriceService:
                     # لاگ اتصال به دیتابیس
                     try:
                         logger.debug(f"Testing database connection...")
-                        connection_test = session.execute("SELECT 1").first()
+                        from sqlalchemy import text
+                        connection_test = session.execute(text("SELECT 1")).first()
                         logger.debug(f"Database connection test result: {connection_test}")
                     except Exception as conn_err:
                         logger.error(f"Database connection error: {str(conn_err)}", exc_info=True)
@@ -351,44 +341,51 @@ class CurrencyPriceService:
                     # Update database - به‌روزرسانی همه CurrencyID های مربوط به هر CMC_ID
                     for cmc_id in unique_cmc_ids:
                         # بررسی اگر CMC_ID در نتایج API وجود دارد
-                        price_value = prices.get(cmc_id)
-                        change_value = changes.get(cmc_id)
+                        cmc_market_data = market_data.get(cmc_id)
                         
-                        if not isinstance(price_value, (int, float)):
-                            logger.warning(f"Invalid price value for CMC_ID {cmc_id} in {fiat}: {price_value}")
+                        if not isinstance(cmc_market_data, dict) or not cmc_market_data.get("price"):
+                            logger.warning(f"Invalid market data for CMC_ID {cmc_id} in {fiat}: {cmc_market_data}")
                             # تمام CurrencyID های این CMC_ID را fail حساب کن
                             fiat_fail += len(cmc_to_currency_ids.get(cmc_id, []))
                             continue
                         
+                        # استخراج تمام داده‌های بازار
+                        price_value = cmc_market_data.get("price")
+                        market_cap_value = cmc_market_data.get("market_cap")
+                        volume_24h_value = cmc_market_data.get("volume_24h")
+                        change_1h_value = cmc_market_data.get("change_1h")
+                        change_24h_value = cmc_market_data.get("change_24h")
+                        change_7d_value = cmc_market_data.get("change_7d")
+                        
                         # به‌روزرسانی همه CurrencyID هایی که این CMC_ID را دارند
                         currency_ids_for_cmc = cmc_to_currency_ids.get(cmc_id, [])
-                        logger.debug(f"Processing CMC_ID {cmc_id} in {fiat}: price={price_value}, change={change_value}")
+                        logger.debug(f"Processing CMC_ID {cmc_id} in {fiat}: price={price_value}, market_cap={market_cap_value}, volume_24h={volume_24h_value}")
+                        logger.debug(f"Changes - 1h: {change_1h_value}%, 24h: {change_24h_value}%, 7d: {change_7d_value}%")
                         logger.debug(f"Updating {len(currency_ids_for_cmc)} currency records: {currency_ids_for_cmc}")
                         
                         for currency_id in currency_ids_for_cmc:
                             try:
                                 # استفاده از CurrencyID برای به‌روزرسانی دیتابیس
-                                existing_price = session.query(Price).filter_by(
-                                    crypto_id=currency_id, 
-                                    currency=fiat
-                                ).first()
+                                # همیشه رکورد جدید ایجاد کن برای ساخت چارت تاریخی
+                                from datetime import datetime
+                                current_timestamp = datetime.now()
                                 
-                                if existing_price:
-                                    # Update existing price
-                                    logger.debug(f"Updating existing record for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {existing_price.price} → {price_value}")
-                                    existing_price.price = price_value
-                                    existing_price.change_24h = change_value
-                                    # Don't modify other fields if they already have values
-                                else:
-                                    # Create new price entry with minimal required fields
-                                    logger.debug(f"Creating new price record for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {price_value}")
-                                    new_price = Price(
-                                        crypto_id=currency_id,  # استفاده از CurrencyID داخلی
-                                        currency=fiat,
-                                        price=price_value,
-                                        change_24h=change_value
-                                    )
-                                    session.add(new_price)
+                                # ایجاد رکورد جدید با timestamp منحصر به فرد
+                                logger.debug(f"Creating new historical record for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {price_value}")
+                                new_price = Price(
+                                    crypto_id=currency_id,
+                                    currency=fiat,
+                                    price=price_value,
+                                    market_cap=market_cap_value,
+                                    volume_24h=volume_24h_value,
+                                    change_1h=change_1h_value,
+                                    change_24h=change_24h_value,
+                                    change_7d=change_7d_value,
+                                    timestamp=current_timestamp,  # timestamp منحصر به فرد
+                                    is_historical=True,  # علامت‌گذاری به عنوان تاریخی
+                                    last_updated=current_timestamp
+                                )
+                                session.add(new_price)
                                 
                                 # Commit each record individually to avoid batch errors
                                 logger.debug(f"Committing transaction for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}")

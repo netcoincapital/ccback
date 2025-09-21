@@ -6,7 +6,14 @@ import time
 from dotenv import load_dotenv
 
 # Import the logging configuration
-from CC.utils.logging_config import get_logger
+try:
+    from CC.utils.logging_config import get_logger
+except ImportError:
+    # Try alternative import path
+    import sys
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from utils.logging_config import get_logger
 
 # Load environment variables
 load_dotenv()
@@ -549,29 +556,35 @@ def create_contract_subscription(contract_address, chain, webhook_url=None):
     logger.error(f"Failed to create subscription after {max_retries} retries")
     return None
 
-def list_subscriptions():
+def list_subscriptions(offset=0, limit=50):
     """
-    List all active subscriptions on Tatum.
+    List active subscriptions on Tatum with pagination support.
+    
+    Args:
+        offset (int): Number of items to skip
+        limit (int): Maximum number of items to return (max 50)
     
     Returns:
-        list: A list of all active subscriptions or empty list if failed
+        list: A list of active subscriptions or empty list if failed
     """
-    logger.info("Retrieving all active subscriptions")
+    logger.info(f"Retrieving subscriptions with offset={offset}, limit={limit}")
     
     headers = {
         "x-api-key": TATUM_API_KEY
     }
     
     try:
-        logger.debug(f"Sending GET request to {TATUM_API_BASE_URL}/subscription")
-        response = requests.get(
-            f"{TATUM_API_BASE_URL}/subscription?pageSize=50", 
-            headers=headers
-        )
+        # Build URL with pagination parameters
+        url = f"{TATUM_API_BASE_URL}/subscription?pageSize={min(limit, 50)}"
+        if offset > 0:
+            url += f"&offset={offset}"
+            
+        logger.debug(f"Sending GET request to {url}")
+        response = requests.get(url, headers=headers, timeout=30)
         
         if response.status_code == 200:
             subscriptions = response.json()
-            logger.info(f"Retrieved {len(subscriptions)} active subscriptions")
+            logger.info(f"Retrieved {len(subscriptions)} subscriptions (offset: {offset})")
             return subscriptions
         else:
             logger.error(f"Failed to list subscriptions: {response.status_code} - {response.text}")

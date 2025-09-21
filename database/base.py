@@ -6,13 +6,37 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+# Try to find .env file in current directory or parent directories
+import pathlib
+current_dir = pathlib.Path(__file__).parent.parent  # Go to project root
+env_path = current_dir / '.env'
+
+# Debug: Check if .env file exists
+if env_path.exists():
+    print(f"Loading .env from: {env_path}")
+    load_dotenv(dotenv_path=env_path)
+else:
+    print(f".env file not found at: {env_path}")
+    # Try current directory
+    env_path_current = pathlib.Path('.env')
+    if env_path_current.exists():
+        print(f"Loading .env from current directory: {env_path_current.absolute()}")
+        load_dotenv(dotenv_path=env_path_current)
+    else:
+        print("No .env file found in current directory either")
+        load_dotenv()  # Try default behavior
 
 # Get database configuration from environment variables
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_HOST = os.getenv('DB_HOST', 'localhost')
 DB_NAME = os.getenv('DB_NAME', 'coinceeper')
+
+# Debug: Print loaded values (mask password)
+print(f"DB_USER: {DB_USER}")
+print(f"DB_PASSWORD: {'*' * len(DB_PASSWORD) if DB_PASSWORD else None}")
+print(f"DB_HOST: {DB_HOST}")
+print(f"DB_NAME: {DB_NAME}")
 
 # Validate required environment variables
 if not DB_USER or not DB_PASSWORD:

@@ -145,11 +145,12 @@ class EthereumFeeEstimator(FeeEstimator):
             gas_price_wei = self.web3.eth.gas_price
             gas_price_gwei = self.web3.from_wei(gas_price_wei, 'gwei')
             
-            # Create simulated tiers
+            # Create simulated tiers - convert to float to avoid Decimal * float error
+            gas_price_float = float(gas_price_gwei)
             return {
-                "slow": gas_price_gwei * 0.8,
-                "average": gas_price_gwei,
-                "fast": gas_price_gwei * 1.5
+                "slow": gas_price_float * 0.8,
+                "average": gas_price_float,
+                "fast": gas_price_float * 1.5
             }
         except Exception as e2:
             logger.error(f"Failed to get fallback gas price: {e2}")

@@ -184,9 +184,9 @@ try:
     app.register_blueprint(fee_estimator_bp, url_prefix='')
     logger.info("Registered Fee Estimator endpoints")
     
-    # Register blockchain API endpoints
-    init_api_routes(app)
-    logger.info("Registered blockchain API endpoints")
+    # Register blockchain API endpoints (commented to avoid conflict with send_bp)
+    # init_api_routes(app)
+    # logger.info("Registered blockchain API endpoints")
     
     # Authentication middleware removed - using UserID-based authentication instead
     logger.info("Using UserID-based authentication instead of session-based")

@@ -43,6 +43,52 @@ def get_chart_data():
               points:
                 type: integer
                 description: Maximum number of data points (default 100)
+    responses:
+      200:
+        description: Chart data retrieved successfully
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                chart_data:
+                  type: object
+                  properties:
+                    symbol:
+                      type: string
+                    fiat:
+                      type: string
+                    timeframe:
+                      type: string
+                    data:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          timestamp:
+                            type: string
+                            format: date-time
+                          price:
+                            type: number
+                          market_cap:
+                            type: number
+                          volume_24h:
+                            type: number
+                          change_1h:
+                            type: number
+                          change_24h:
+                            type: number
+                          change_7d:
+                            type: number
+                points_count:
+                  type: integer
+                timeframe:
+                  type: string
+                last_updated:
+                  type: string
+                  format: date-time
     """
     try:
         data = request.get_json() or {}
@@ -159,8 +205,11 @@ def get_chart_data():
                 chart_data['data'].append({
                     'timestamp': timestamp.isoformat() if timestamp else None,
                     'price': float(record.price),
-                    'volume': float(record.volume_24h) if record.volume_24h else None,
-                    'market_cap': float(record.market_cap) if record.market_cap else None
+                    'market_cap': float(record.market_cap) if record.market_cap else None,
+                    'volume_24h': float(record.volume_24h) if record.volume_24h else None,
+                    'change_1h': float(record.change_1h) if record.change_1h else None,
+                    'change_24h': float(record.change_24h) if record.change_24h else None,
+                    'change_7d': float(record.change_7d) if record.change_7d else None
                 })
             
             logger.info(f"Returning {len(chart_data['data'])} chart points for {symbol}-{fiat}")
@@ -195,7 +244,60 @@ def get_chart_data():
 @handle_api_errors
 def get_live_chart_update():
     """
-    Get live price update for charts (current price only)
+    Get live price update for charts (current price and market data)
+    ---
+    tags:
+      - Charts
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              Symbol:
+                type: array
+                items:
+                  type: string
+                description: List of cryptocurrency symbols
+              FiatCurrency:
+                type: string
+                description: Fiat currency (default USD)
+    responses:
+      200:
+        description: Live market data retrieved successfully
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                live_prices:
+                  type: object
+                  additionalProperties:
+                    type: object
+                    properties:
+                      price:
+                        type: number
+                      market_cap:
+                        type: number
+                      volume_24h:
+                        type: number
+                      change_1h:
+                        type: number
+                      change_24h:
+                        type: number
+                      change_7d:
+                        type: number
+                      last_updated:
+                        type: string
+                        format: date-time
+                fiat_currency:
+                  type: string
+                timestamp:
+                  type: string
+                  format: date-time
     """
     try:
         data = request.get_json() or {}
@@ -230,8 +332,11 @@ def get_live_chart_update():
                     if latest_price:
                         results[symbol] = {
                             'price': float(latest_price.price),
-                            'change_24h': float(latest_price.change_24h) if latest_price.change_24h else None,
+                            'market_cap': float(latest_price.market_cap) if latest_price.market_cap else None,
                             'volume_24h': float(latest_price.volume_24h) if latest_price.volume_24h else None,
+                            'change_1h': float(latest_price.change_1h) if latest_price.change_1h else None,
+                            'change_24h': float(latest_price.change_24h) if latest_price.change_24h else None,
+                            'change_7d': float(latest_price.change_7d) if latest_price.change_7d else None,
                             'last_updated': latest_price.last_updated.isoformat() if latest_price.last_updated else None
                         }
                     else:

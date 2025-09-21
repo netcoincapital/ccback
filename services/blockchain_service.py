@@ -1313,9 +1313,10 @@ def get_blockchain_service(blockchain_name):
         return BitcoinBlockchainService(network='mainnet')
         
     elif normalized_name in ['ethereum', 'eth']:
-        logger.info(f"Creating Ethereum blockchain service with chain_id=1")
-        provider = Web3(Web3.HTTPProvider(f'https://mainnet.infura.io/v3/{infura_api_key}'))
-        return EVMBlockchainService(web3_provider=provider, chain_id=1)
+        logger.info(f"Creating Ethereum blockchain service with improved transaction handling")
+        # Import the improved EthereumService
+        from services.blockchains.ethereum_service import EthereumService
+        return EthereumService()
         
     elif normalized_name in ['tron', 'trx']:
         logger.info(f"Creating Tron blockchain service")

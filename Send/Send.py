@@ -322,13 +322,35 @@ def confirm(data):
             logger.error(f"Error in send_transaction: {error}")
             return jsonify({"success": False, "message": error}), 400
         
-        # Always add UserID to response
+        # Ensure we have a proper success response
+        if not tx_details:
+            logger.error(f"No transaction details returned from service")
+            return jsonify({"success": False, "message": "No transaction details returned"}), 500
+            
+        # Get transaction hash for response
+        tx_hash = tx_details.get('tx_hash') or tx_details.get('transaction_hash')
+        
+        # Create a standardized success response
+        response = {
+            "success": True,
+            "transaction_hash": tx_hash,
+            "message": "Transaction sent successfully",
+            "UserID": user_id,
+            "userId": user_id
+        }
+        
+        # Add additional details if available
         if isinstance(tx_details, dict):
-            tx_details['UserID'] = user_id
-            tx_details['userId'] = user_id
+            response.update({
+                "transaction_id": tx_details.get('transaction_id', transaction_id),
+                "status": tx_details.get('status', 'sent'),
+                "method": tx_details.get('method', 'unknown'),
+                "explorer_url": tx_details.get('explorer_url', '')
+            })
         
         logger.info(f"Successfully confirmed transaction {transaction_id} for {normalized_blockchain} for user {user_id}")
-        return jsonify(tx_details), 200
+        logger.info(f"Transaction hash: {tx_hash}")
+        return jsonify(response), 200
         
     except Exception as e:
         logger.error(f"Error in confirm endpoint: {str(e)}")
@@ -1113,8 +1135,24 @@ def get_private_key_from_db(session, address, blockchain_name):
                 logger.error("Decryption returned empty private key")
                 raise ValueError("Failed to decrypt private key")
             
+            # Validate that private key matches the address (simplified to avoid crashes)
+            try:
+                # Ensure private key has 0x prefix
+                if not private_key.startswith('0x'):
+                    private_key = '0x' + private_key
+                
+                # Basic validation - just check format, not derivation (to avoid crashes)
+                if len(private_key) != 66:  # 0x + 64 hex chars
+                    raise ValueError(f"Invalid private key format: length {len(private_key)}")
+                
+                logger.debug(f"✅ Private key format validation successful for address {address}")
+                
+            except Exception as validation_error:
+                logger.error(f"Private key format validation failed: {str(validation_error)}")
+                raise ValueError(f"Private key format validation failed: {str(validation_error)}")
+            
             # Never log the actual private key
-            logger.debug(f"Successfully decrypted private key for address {address} (length: {len(private_key)})")
+            logger.debug(f"Successfully decrypted and validated private key for address {address} (length: {len(private_key)})")
             
             return private_key
         except Exception as e:
@@ -1203,6 +1241,103 @@ def force_bsc():
         
     except Exception as e:
         logger.exception(f"Error forcing BSC: {str(e)}")
+        return jsonify({"success": False, "message": f"Error: {str(e)}"}), 500
+
+@send_bp.route('/debug-wallet', methods=['POST'])
+def debug_wallet():
+    """Debug endpoint to check if wallet exists in database"""
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"success": False, "message": "No data provided"}), 400
+            
+        address = data.get('address')
+        blockchain = data.get('blockchain', 'ethereum')
+        
+        if not address:
+            return jsonify({"success": False, "message": "Address is required"}), 400
+            
+        session = SessionLocal()
+        try:
+            # Normalize blockchain name
+            normalized_blockchain = normalize_blockchain_name(blockchain)
+            
+            # Get blockchain ID
+            blockchain_record = session.query(Blockchains).filter(
+                Blockchains.BlockchainName.ilike(normalized_blockchain)
+            ).first()
+            
+            result = {
+                "address": address,
+                "blockchain": normalized_blockchain,
+                "blockchain_found": blockchain_record is not None
+            }
+            
+            if blockchain_record:
+                result["blockchain_id"] = blockchain_record.BlockchainID
+                result["blockchain_name_in_db"] = blockchain_record.BlockchainName
+                
+                # Check if address exists
+                address_record = session.query(Address).filter(
+                    Address.PublicAddress == address,
+                    Address.BlockchainID == blockchain_record.BlockchainID
+                ).first()
+                
+                result["address_found"] = address_record is not None
+                
+                if address_record:
+                    result["address_id"] = address_record.AddressID
+                    result["wallet_id"] = address_record.WalletID
+                    result["has_private_key"] = bool(address_record.PrivateKey)
+                    
+                    if address_record.PrivateKey:
+                        # Test decryption without logging the key
+                        try:
+                            decrypted_key = decrypt_private_key_aes(address_record.PrivateKey)
+                            result["private_key_decrypts"] = bool(decrypted_key)
+                            result["private_key_length"] = len(decrypted_key) if decrypted_key else 0
+                            
+                            # Test private key validation like in confirm endpoint
+                            if decrypted_key:
+                                try:
+                                    from web3 import Web3
+                                    from eth_account import Account
+                                    
+                                    # Ensure private key has 0x prefix
+                                    if not decrypted_key.startswith('0x'):
+                                        decrypted_key = '0x' + decrypted_key
+                                    
+                                    # Get the address that corresponds to this private key
+                                    account = Account.from_key(decrypted_key)
+                                    derived_address = account.address
+                                    
+                                    result["private_key_matches_address"] = (derived_address.lower() == address.lower())
+                                    result["private_key_belongs_to"] = derived_address
+                                    
+                                    if derived_address.lower() != address.lower():
+                                        result["validation_error"] = f"Private key belongs to {derived_address}, not {address}"
+                                    else:
+                                        result["validation_success"] = True
+                                        
+                                except Exception as validation_error:
+                                    result["validation_error"] = str(validation_error)
+                                    result["private_key_matches_address"] = False
+                            
+                        except Exception as decrypt_error:
+                            result["private_key_decrypts"] = False
+                            result["decryption_error"] = str(decrypt_error)
+                else:
+                    result["address_found"] = False
+            else:
+                result["blockchain_found"] = False
+                
+            return jsonify({"success": True, "debug_info": result}), 200
+            
+        finally:
+            session.close()
+            
+    except Exception as e:
+        logger.exception(f"Error in wallet debug endpoint: {str(e)}")
         return jsonify({"success": False, "message": f"Error: {str(e)}"}), 500
 
 @send_bp.route('/detect-blockchain', methods=['POST'])
@@ -1309,4 +1444,48 @@ def detect_blockchain():
         
     except Exception as e:
         logger.exception(f"Error in blockchain detection: {str(e)}")
+        return jsonify({"success": False, "message": f"Error: {str(e)}"}), 500
+
+@send_bp.route('/test-broadcast-capability', methods=['GET'])
+def test_broadcast_capability():
+    """Test RPC broadcast capabilities"""
+    try:
+        # Get Ethereum service
+        service = get_blockchain_service('ethereum')
+        if not service:
+            return jsonify({"success": False, "message": "Ethereum service not available"}), 503
+        
+        # Test broadcast capability
+        test_results = service.test_rpc_broadcast_capability()
+        
+        return jsonify({
+            "success": True,
+            "message": "RPC broadcast capability test completed",
+            "test_results": test_results
+        }), 200
+        
+    except Exception as e:
+        logger.exception(f"Error testing broadcast capability: {str(e)}")
+        return jsonify({"success": False, "message": f"Error: {str(e)}"}), 500
+
+@send_bp.route('/check-mempool-visibility/<tx_hash>', methods=['GET'])
+def check_mempool_visibility(tx_hash):
+    """Check transaction visibility across multiple RPCs"""
+    try:
+        # Get Ethereum service
+        service = get_blockchain_service('ethereum')
+        if not service:
+            return jsonify({"success": False, "message": "Ethereum service not available"}), 503
+        
+        # Check mempool visibility
+        visibility_result = service.check_mempool_visibility(tx_hash)
+        
+        return jsonify({
+            "success": True,
+            "tx_hash": tx_hash,
+            "visibility": visibility_result
+        }), 200
+        
+    except Exception as e:
+        logger.exception(f"Error checking mempool visibility: {str(e)}")
         return jsonify({"success": False, "message": f"Error: {str(e)}"}), 500

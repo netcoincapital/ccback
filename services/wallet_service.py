@@ -12,7 +12,7 @@ from CC.errors.common_errors import ResourceAlreadyExists
 from CC.services.blockchain_service import get_blockchain_service
 from CC.services.hd_wallet_service import HDWalletService
 from dotenv import load_dotenv
-from CC.webhook.tatum_subscription import register_new_addresses_for_webhook
+# import تنبل داخل تابع مصرف‌کننده انجام می‌شود
 import threading
 import concurrent.futures
 
@@ -382,6 +382,8 @@ class WalletService:
                 logger.warning("No addresses to register with webhook system")
                 return
                 
+            # Import تنبل برای جلوگیری از circular import
+            from webhook.tatum_subscription import register_new_addresses_for_webhook
             webhook_results = register_new_addresses_for_webhook(formatted_addresses)
             logger.info(f"Successfully registered {len(formatted_addresses)} addresses with webhook: {webhook_results}")
         except Exception as e:

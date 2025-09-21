@@ -63,7 +63,15 @@ class PriceDbService:
                 for fiat in fiat_currencies:
                     rec = pick.get((scid, fiat))
                     if not rec:
-                        out[cid][fiat] = {"price": 0.0, "change_24h": 0.0, "updated_at": None}
+                        out[cid][fiat] = {
+                            "price": 0.0, 
+                            "market_cap": None,
+                            "volume_24h": None,
+                            "change_1h": None,
+                            "change_24h": 0.0,
+                            "change_7d": None,
+                            "updated_at": None
+                        }
                         continue
 
                     price_val = float(rec.price) if rec.price is not None else 0.0
@@ -93,7 +101,11 @@ class PriceDbService:
 
                     out[cid][fiat] = {
                         "price": price_val,
+                        "market_cap": float(rec.market_cap) if rec.market_cap else None,
+                        "volume_24h": float(rec.volume_24h) if rec.volume_24h else None,
+                        "change_1h": float(rec.change_1h) if rec.change_1h else None,
                         "change_24h": ch24,
+                        "change_7d": float(rec.change_7d) if rec.change_7d else None,
                         "updated_at": rec.timestamp or rec.last_updated,
                     }
 
@@ -104,3 +116,82 @@ class PriceDbService:
             return {}
         finally:
             session.close()
+
+    @staticmethod
+    def update_prices(currency_ids=None, fiat_currencies=None):
+        """
+        Update prices for specified currencies using CurrencyPriceService
+        
+        Args:
+            currency_ids (list): List of currency IDs to update (if None, update all)
+            fiat_currencies (list): List of fiat currencies (if None, use default)
+            
+        Returns:
+            dict: Result with success status and statistics
+        """
+        try:
+            import time
+            from Currencies.currency_price_service import CurrencyPriceService, fiat_symbols
+            
+            start_time = time.time()
+            logger.info("Starting PriceDbService.update_prices")
+            
+            # Initialize price service
+            price_service = CurrencyPriceService()
+            
+            # Set default fiat currencies if not provided
+            if fiat_currencies is None:
+                fiat_currencies = list(fiat_symbols.keys())
+            
+            # Get all currencies if specific ones not provided
+            if currency_ids is None:
+                session = Session(bind=engine)
+                try:
+                    currencies = session.query(Currencies).filter(Currencies.CMC_ID.isnot(None)).all()
+                    currency_ids = [c.CurrencyID for c in currencies]
+                    logger.info(f"No specific currencies provided, updating all {len(currency_ids)} currencies")
+                finally:
+                    session.close()
+            
+            if not currency_ids:
+                return {
+                    "success": False,
+                    "message": "No currencies found to update",
+                    "currencies_count": 0,
+                    "fiats_count": 0,
+                    "elapsed_time": 0
+                }
+            
+            # Use CurrencyPriceService to update prices
+            result = price_service.update_prices(currency_ids, fiat_currencies)
+            
+            elapsed_time = time.time() - start_time
+            
+            if result:
+                logger.info(f"Price update completed successfully in {elapsed_time:.2f} seconds")
+                return {
+                    "success": True,
+                    "message": "Prices updated successfully",
+                    "currencies_count": len(currency_ids),
+                    "fiats_count": len(fiat_currencies),
+                    "elapsed_time": elapsed_time
+                }
+            else:
+                logger.error("Price update failed")
+                return {
+                    "success": False,
+                    "message": "Price update failed",
+                    "currencies_count": len(currency_ids),
+                    "fiats_count": len(fiat_currencies),
+                    "elapsed_time": elapsed_time
+                }
+                
+        except Exception as e:
+            logger.error(f"Error in PriceDbService.update_prices: {str(e)}", exc_info=True)
+            return {
+                "success": False,
+                "message": f"Error: {str(e)}",
+                "currencies_count": 0,
+                "fiats_count": 0,
+                "elapsed_time": 0
+            }

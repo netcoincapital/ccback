@@ -1,0 +1,259 @@
+2025-09-06 05:14:10 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 05:14:10 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 05:14:10 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 05:14:10 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 05:14:10 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 05:14:22 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 05:14:22 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 05:14:22 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 05:14:22 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 05:14:22 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 08:44:38 - transaction_storage - DEBUG - Retrieving transaction 7c96d361-0153-4a9e-a1eb-f6f692eb6c6e
+2025-09-06 08:44:38 - transaction_storage - WARNING - Transaction 7c96d361-0153-4a9e-a1eb-f6f692eb6c6e not found in Redis
+2025-09-06 08:44:38 - transaction_storage - DEBUG - Transaction 7c96d361-0153-4a9e-a1eb-f6f692eb6c6e key does not exist in Redis
+2025-09-06 08:44:56 - transaction_storage - DEBUG - Retrieving transaction 79327814-5bc0-4c7f-bac9-d826f149aaf2
+2025-09-06 08:44:56 - transaction_storage - WARNING - Transaction 79327814-5bc0-4c7f-bac9-d826f149aaf2 not found in Redis
+2025-09-06 08:44:56 - transaction_storage - DEBUG - Transaction 79327814-5bc0-4c7f-bac9-d826f149aaf2 key does not exist in Redis
+2025-09-06 09:08:33 - transaction_storage - DEBUG - Retrieving transaction 1150a7a3-1314-4e7d-a7fb-89da206a8507
+2025-09-06 09:08:33 - transaction_storage - WARNING - Transaction 1150a7a3-1314-4e7d-a7fb-89da206a8507 not found in Redis
+2025-09-06 09:08:33 - transaction_storage - DEBUG - Transaction 1150a7a3-1314-4e7d-a7fb-89da206a8507 key does not exist in Redis
+2025-09-06 09:13:02 - transaction_storage - DEBUG - Retrieving transaction c0f8ec46-7df3-4a55-a404-23e92da83309
+2025-09-06 09:13:02 - transaction_storage - WARNING - Transaction c0f8ec46-7df3-4a55-a404-23e92da83309 not found in Redis
+2025-09-06 09:13:02 - transaction_storage - DEBUG - Transaction c0f8ec46-7df3-4a55-a404-23e92da83309 key does not exist in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Retrieving transaction 990c0039-620b-4c48-8503-51615be10e93
+2025-09-06 09:14:23 - transaction_storage - WARNING - Transaction 990c0039-620b-4c48-8503-51615be10e93 not found in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Transaction 990c0039-620b-4c48-8503-51615be10e93 key does not exist in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Retrieving transaction 990c0039-620b-4c48-8503-51615be10e93
+2025-09-06 09:14:23 - transaction_storage - WARNING - Transaction 990c0039-620b-4c48-8503-51615be10e93 not found in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Transaction 990c0039-620b-4c48-8503-51615be10e93 key does not exist in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Retrieving transaction 990c0039-620b-4c48-8503-51615be10e93
+2025-09-06 09:14:23 - transaction_storage - WARNING - Transaction 990c0039-620b-4c48-8503-51615be10e93 not found in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Transaction 990c0039-620b-4c48-8503-51615be10e93 key does not exist in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Retrieving transaction 990c0039-620b-4c48-8503-51615be10e93
+2025-09-06 09:14:23 - transaction_storage - WARNING - Transaction 990c0039-620b-4c48-8503-51615be10e93 not found in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Transaction 990c0039-620b-4c48-8503-51615be10e93 key does not exist in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Retrieving transaction 990c0039-620b-4c48-8503-51615be10e93
+2025-09-06 09:14:23 - transaction_storage - WARNING - Transaction 990c0039-620b-4c48-8503-51615be10e93 not found in Redis
+2025-09-06 09:14:23 - transaction_storage - DEBUG - Transaction 990c0039-620b-4c48-8503-51615be10e93 key does not exist in Redis
+2025-09-06 09:28:13 - transaction_storage - DEBUG - Retrieving transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c
+2025-09-06 09:28:13 - transaction_storage - WARNING - Transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c not found in Redis
+2025-09-06 09:28:13 - transaction_storage - DEBUG - Transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c key does not exist in Redis
+2025-09-06 09:28:13 - transaction_storage - DEBUG - Retrieving transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c
+2025-09-06 09:28:13 - transaction_storage - WARNING - Transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c not found in Redis
+2025-09-06 09:28:13 - transaction_storage - DEBUG - Transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c key does not exist in Redis
+2025-09-06 09:28:13 - transaction_storage - DEBUG - Retrieving transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c
+2025-09-06 09:28:13 - transaction_storage - WARNING - Transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c not found in Redis
+2025-09-06 09:28:13 - transaction_storage - DEBUG - Transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c key does not exist in Redis
+2025-09-06 09:28:13 - transaction_storage - DEBUG - Retrieving transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c
+2025-09-06 09:28:13 - transaction_storage - WARNING - Transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c not found in Redis
+2025-09-06 09:28:13 - transaction_storage - DEBUG - Transaction 2d61213f-1d47-48b1-a2fd-ecea8dbfa77c key does not exist in Redis
+2025-09-06 09:29:36 - transaction_storage - DEBUG - Retrieving transaction 2ad9b94c-e0d1-44f4-a6d8-e2f6a6309e08
+2025-09-06 09:29:36 - transaction_storage - WARNING - Transaction 2ad9b94c-e0d1-44f4-a6d8-e2f6a6309e08 not found in Redis
+2025-09-06 09:29:36 - transaction_storage - DEBUG - Transaction 2ad9b94c-e0d1-44f4-a6d8-e2f6a6309e08 key does not exist in Redis
+2025-09-06 09:29:36 - transaction_storage - DEBUG - Retrieving transaction 2ad9b94c-e0d1-44f4-a6d8-e2f6a6309e08
+2025-09-06 09:29:36 - transaction_storage - WARNING - Transaction 2ad9b94c-e0d1-44f4-a6d8-e2f6a6309e08 not found in Redis
+2025-09-06 09:29:36 - transaction_storage - DEBUG - Transaction 2ad9b94c-e0d1-44f4-a6d8-e2f6a6309e08 key does not exist in Redis
+2025-09-06 09:32:53 - transaction_storage - DEBUG - Retrieving transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea
+2025-09-06 09:32:53 - transaction_storage - WARNING - Transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea not found in Redis
+2025-09-06 09:32:53 - transaction_storage - DEBUG - Transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea key does not exist in Redis
+2025-09-06 09:32:53 - transaction_storage - DEBUG - Retrieving transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea
+2025-09-06 09:32:53 - transaction_storage - WARNING - Transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea not found in Redis
+2025-09-06 09:32:53 - transaction_storage - DEBUG - Transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea key does not exist in Redis
+2025-09-06 09:32:53 - transaction_storage - DEBUG - Retrieving transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea
+2025-09-06 09:32:53 - transaction_storage - WARNING - Transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea not found in Redis
+2025-09-06 09:32:53 - transaction_storage - DEBUG - Transaction 9032ecc6-3f9f-495e-8287-95d6f6256cea key does not exist in Redis
+2025-09-06 09:35:17 - transaction_storage - DEBUG - Retrieving transaction ccdb2db7-6c3d-4e37-8452-3cca865d7319
+2025-09-06 09:35:17 - transaction_storage - WARNING - Transaction ccdb2db7-6c3d-4e37-8452-3cca865d7319 not found in Redis
+2025-09-06 09:35:17 - transaction_storage - DEBUG - Transaction ccdb2db7-6c3d-4e37-8452-3cca865d7319 key does not exist in Redis
+2025-09-06 09:35:17 - transaction_storage - DEBUG - Retrieving transaction ccdb2db7-6c3d-4e37-8452-3cca865d7319
+2025-09-06 09:35:17 - transaction_storage - WARNING - Transaction ccdb2db7-6c3d-4e37-8452-3cca865d7319 not found in Redis
+2025-09-06 09:35:17 - transaction_storage - DEBUG - Transaction ccdb2db7-6c3d-4e37-8452-3cca865d7319 key does not exist in Redis
+2025-09-06 09:35:38 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:35:38 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:35:38 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:35:38 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:35:38 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:35:38 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:35:38 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:35:38 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:35:38 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:35:38 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:35:38 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:35:38 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:35:38 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:35:38 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:35:38 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:35:49 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:35:49 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:35:49 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:35:49 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:35:49 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:35:49 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:35:49 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:35:49 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:35:49 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:35:49 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:35:49 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:35:49 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:35:49 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:35:49 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:35:49 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:35:49 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:35:49 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:35:49 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:35:49 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:35:49 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:36:07 - transaction_storage - INFO - Storing transaction 969f77ec-cc66-4111-a5dc-54de56844adc with expiration 2025-09-06 10:06:07.708837
+2025-09-06 09:36:07 - transaction_storage - DEBUG - Stored transaction 969f77ec-cc66-4111-a5dc-54de56844adc in Redis with expiration 2025-09-06 10:06:07.708837
+2025-09-06 09:36:07 - transaction_storage - DEBUG - Verified transaction 969f77ec-cc66-4111-a5dc-54de56844adc is stored in Redis
+2025-09-06 09:36:08 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:08 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:08 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:08 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:10 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:10 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:10 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:10 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:12 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:12 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:12 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:12 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:13 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:13 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:13 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:13 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:14 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:14 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:36:14 - transaction_storage - DEBUG - Retrieving transaction 969f77ec-cc66-4111-a5dc-54de56844adc
+2025-09-06 09:36:14 - transaction_storage - DEBUG - Successfully retrieved transaction 969f77ec-cc66-4111-a5dc-54de56844adc from Redis
+2025-09-06 09:39:30 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:39:30 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:39:30 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:39:30 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:39:30 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:39:30 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:39:30 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:39:30 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:39:30 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:39:30 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:39:31 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:39:31 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:39:31 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:39:31 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:39:31 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:39:31 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:39:31 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:39:31 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:39:31 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:39:31 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:39:39 - transaction_storage - INFO - Storing transaction ca632261-260c-4a94-9c89-50c774016108 with expiration 2025-09-06 10:09:39.840375
+2025-09-06 09:39:39 - transaction_storage - DEBUG - Stored transaction ca632261-260c-4a94-9c89-50c774016108 in Redis with expiration 2025-09-06 10:09:39.840375
+2025-09-06 09:39:39 - transaction_storage - DEBUG - Verified transaction ca632261-260c-4a94-9c89-50c774016108 is stored in Redis
+2025-09-06 09:40:07 - transaction_storage - INFO - Storing transaction 0f129318-bc71-48e2-869c-d840d73e9773 with expiration 2025-09-06 10:10:07.694563
+2025-09-06 09:40:07 - transaction_storage - DEBUG - Stored transaction 0f129318-bc71-48e2-869c-d840d73e9773 in Redis with expiration 2025-09-06 10:10:07.694563
+2025-09-06 09:40:07 - transaction_storage - DEBUG - Verified transaction 0f129318-bc71-48e2-869c-d840d73e9773 is stored in Redis
+2025-09-06 09:40:08 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:08 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:08 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:08 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:10 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:10 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:10 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:10 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:11 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:11 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:11 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:11 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:13 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:13 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:13 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:13 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:14 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:14 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:40:14 - transaction_storage - DEBUG - Retrieving transaction 0f129318-bc71-48e2-869c-d840d73e9773
+2025-09-06 09:40:14 - transaction_storage - DEBUG - Successfully retrieved transaction 0f129318-bc71-48e2-869c-d840d73e9773 from Redis
+2025-09-06 09:55:32 - transaction_storage - INFO - Storing transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 with expiration 2025-09-06 10:25:32.970707
+2025-09-06 09:55:32 - transaction_storage - DEBUG - Stored transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 in Redis with expiration 2025-09-06 10:25:32.970707
+2025-09-06 09:55:32 - transaction_storage - DEBUG - Verified transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 is stored in Redis
+2025-09-06 09:55:34 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:34 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:34 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:34 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:35 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:35 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:35 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:35 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:37 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:37 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:37 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:37 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:38 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:38 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:38 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:38 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:40 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:40 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:55:40 - transaction_storage - DEBUG - Retrieving transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393
+2025-09-06 09:55:40 - transaction_storage - DEBUG - Successfully retrieved transaction 3abbfa57-0728-4b4a-9053-11dbe6e95393 from Redis
+2025-09-06 09:56:05 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:56:05 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:56:05 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:56:05 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:56:05 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:56:05 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:56:05 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:56:05 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:56:06 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:56:06 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:56:06 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:56:06 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:56:06 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:56:06 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:56:06 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:56:06 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 09:56:06 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 09:56:06 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 09:56:06 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 09:56:06 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 09:56:15 - transaction_storage - INFO - Storing transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e with expiration 2025-09-06 10:26:15.402314
+2025-09-06 09:56:15 - transaction_storage - DEBUG - Stored transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e in Redis with expiration 2025-09-06 10:26:15.402314
+2025-09-06 09:56:15 - transaction_storage - DEBUG - Verified transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e is stored in Redis
+2025-09-06 09:56:16 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:16 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:16 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:16 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:17 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:17 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:17 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:17 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:19 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:19 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:19 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:19 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:20 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:20 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:20 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:20 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:22 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:22 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 09:56:22 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 09:56:22 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 10:09:23 - transaction_storage - DEBUG - Logger initialized for transaction_storage at level DEBUG
+2025-09-06 10:09:23 - transaction_storage - INFO - Attempting Redis connection - URL: redis://localhost:6379, Host: localhost, Port: 6379, DB: 0
+2025-09-06 10:09:23 - transaction_storage - INFO - Trying Redis connection method: No Auth
+2025-09-06 10:09:23 - transaction_storage - INFO - Redis connection successful using No Auth: True
+2025-09-06 10:09:23 - transaction_storage - INFO - Using Redis storage for transactions
+2025-09-06 10:09:24 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 10:09:24 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 10:09:25 - transaction_storage - DEBUG - Retrieving transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e
+2025-09-06 10:09:25 - transaction_storage - DEBUG - Successfully retrieved transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e from Redis
+2025-09-06 10:09:26 - transaction_storage - INFO - Storing transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e with expiration 2025-09-06 10:39:26.709734
+2025-09-06 10:09:26 - transaction_storage - DEBUG - Stored transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e in Redis with expiration 2025-09-06 10:39:26.709734
+2025-09-06 10:09:26 - transaction_storage - DEBUG - Verified transaction e40709b0-dd0e-4041-a2c0-bcbc4e7add8e is stored in Redis
+2025-09-06 10:14:44 - transaction_storage - INFO - Storing transaction a95fd1e1-4736-47f7-9f5e-3d6ad02d19cf with expiration 2025-09-06 10:44:44.282628
+2025-09-06 10:14:44 - transaction_storage - DEBUG - Stored transaction a95fd1e1-4736-47f7-9f5e-3d6ad02d19cf in Redis with expiration 2025-09-06 10:44:44.282628
+2025-09-06 10:14:44 - transaction_storage - DEBUG - Verified transaction a95fd1e1-4736-47f7-9f5e-3d6ad02d19cf is stored in Redis
+2025-09-06 10:14:49 - transaction_storage - DEBUG - Retrieving transaction a95fd1e1-4736-47f7-9f5e-3d6ad02d19cf
+2025-09-06 10:14:49 - transaction_storage - DEBUG - Successfully retrieved transaction a95fd1e1-4736-47f7-9f5e-3d6ad02d19cf from Redis
+2025-09-06 10:14:49 - transaction_storage - DEBUG - Retrieving transaction a95fd1e1-4736-47f7-9f5e-3d6ad02d19cf
+2025-09-06 10:14:49 - transaction_storage - DEBUG - Successfully retrieved transaction a95fd1e1-4736-47f7-9f5e-3d6ad02d19cf from Redis

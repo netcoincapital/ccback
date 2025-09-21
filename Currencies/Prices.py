@@ -60,6 +60,41 @@ def get_currency_price():
     responses:
       200:
         description: Currency prices retrieved successfully
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prices:
+                  type: object
+                  additionalProperties:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        price:
+                          type: string
+                          description: Formatted price (e.g., "50,123.45")
+                        market_cap:
+                          type: string
+                          description: Formatted market cap (e.g., "$1.2T", "$500.5B")
+                        volume_24h:
+                          type: string
+                          description: Formatted 24h volume (e.g., "$25.4B")
+                        change_1h:
+                          type: string
+                          description: 1-hour change percentage (e.g., "+2.45%")
+                        change_24h:
+                          type: string
+                          description: 24-hour change percentage (e.g., "-1.23%")
+                        change_7d:
+                          type: string
+                          description: 7-day change percentage (e.g., "+5.67%")
+                success:
+                  type: boolean
+                historical_data:
+                  type: object
+                  description: Historical data (if include_historical is true)
       400:
         description: Invalid input data
       429:
@@ -242,9 +277,59 @@ def get_currency_price():
                 else:
                     change_str = "0.00%"
                 
+                # فرمت‌بندی فیلدهای اضافی
+                market_cap_value = price_info.get("market_cap")
+                volume_24h_value = price_info.get("volume_24h")
+                change_1h_value = price_info.get("change_1h")
+                change_7d_value = price_info.get("change_7d")
+                
+                # فرمت market cap
+                market_cap_str = None
+                if market_cap_value and market_cap_value > 0:
+                    if market_cap_value >= 1e12:
+                        market_cap_str = f"${market_cap_value/1e12:.2f}T"
+                    elif market_cap_value >= 1e9:
+                        market_cap_str = f"${market_cap_value/1e9:.2f}B"
+                    elif market_cap_value >= 1e6:
+                        market_cap_str = f"${market_cap_value/1e6:.2f}M"
+                    elif market_cap_value >= 1e3:
+                        market_cap_str = f"${market_cap_value/1e3:.2f}K"
+                    else:
+                        market_cap_str = f"${market_cap_value:.2f}"
+                
+                # فرمت volume 24h
+                volume_24h_str = None
+                if volume_24h_value and volume_24h_value > 0:
+                    if volume_24h_value >= 1e12:
+                        volume_24h_str = f"${volume_24h_value/1e12:.2f}T"
+                    elif volume_24h_value >= 1e9:
+                        volume_24h_str = f"${volume_24h_value/1e9:.2f}B"
+                    elif volume_24h_value >= 1e6:
+                        volume_24h_str = f"${volume_24h_value/1e6:.2f}M"
+                    elif volume_24h_value >= 1e3:
+                        volume_24h_str = f"${volume_24h_value/1e3:.2f}K"
+                    else:
+                        volume_24h_str = f"${volume_24h_value:.2f}"
+                
+                # فرمت change 1h
+                change_1h_str = None
+                if change_1h_value is not None:
+                    change_1h_sign = "+" if change_1h_value > 0 else ""
+                    change_1h_str = f"{change_1h_sign}{change_1h_value:.2f}%"
+                
+                # فرمت change 7d
+                change_7d_str = None
+                if change_7d_value is not None:
+                    change_7d_sign = "+" if change_7d_value > 0 else ""
+                    change_7d_str = f"{change_7d_sign}{change_7d_value:.2f}%"
+
                 final_prices[symbol][fiat] = {
                     "price": numeric_str,
-                    "change_24h": change_str
+                    "market_cap": market_cap_str,
+                    "volume_24h": volume_24h_str,
+                    "change_1h": change_1h_str,
+                    "change_24h": change_str,
+                    "change_7d": change_7d_str
                 }
                 
                 logger.debug(f"Formatted price for {symbol}/{fiat}: {final_prices[symbol][fiat]}")

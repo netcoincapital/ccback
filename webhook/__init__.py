@@ -1,13 +1,6 @@
-from CC.webhook.webhook_routes import webhook_bp
-from CC.webhook.tatum_subscription import (
-    create_contract_subscription, 
-    list_subscriptions,
-    delete_subscription, 
-    create_address_subscription
-)
+from .webhook_routes import webhook_bp
+# هیچ chain یا ماژول دیگری را اینجا import نکنید؛ در زمان نیاز، داخل فایل‌های مربوطه import شود.
 
-# Importing chain-specific modules
-from CC.webhook.chains import eth, btc, trx, matic, sol, xrp, doge, ltc, ada
 
 def init_app(app):
     """
@@ -21,9 +14,5 @@ def init_app(app):
 
 __all__ = [
     'init_app',
-    'webhook_bp',
-    'create_contract_subscription',
-    'list_subscriptions',
-    'delete_subscription',
-    'create_address_subscription'
+    'webhook_bp'
 ] 

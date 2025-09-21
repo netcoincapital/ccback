@@ -1,0 +1,140 @@
+{
+  "criteria": "contracts >$10",
+  "total_contracts": 11,
+  "total_cost_usd": 199.65881057039627,
+  "target_1400_achieved": false,
+  "contracts": [
+    {
+      "address": "0xb0d23a2f84746b094fd0a1ae430e0a8cf7da346c",
+      "creator": "0x18453ead11fdfbb18d10ab67d268984eb0fa42e7",
+      "tx_hash": "0x444ccf44053d4da8fd1a54061b0abc4fb03d6213ff394b90fc395eef3517efdd",
+      "block_number": 23262444,
+      "date": "2025-08-31 19:52:23",
+      "timestamp": 1756659143,
+      "gas_used": 1918113,
+      "gas_price_gwei": 1.288004792,
+      "cost_eth": 0.002470538735597496,
+      "cost_usd": 11.052300909118383
+    },
+    {
+      "address": "0x055d4e497e0992b974cf700ac620a77d3d02adbf",
+      "creator": "0x29f98658dddb77e18a196cbd5a4df9dba9e9abaf",
+      "tx_hash": "0xe3ddb7d47bfdd0c9055818ed91c66b4cc70143a80278a2a9057994e4532e0703",
+      "block_number": 23262437,
+      "date": "2025-08-31 19:50:59",
+      "timestamp": 1756659059,
+      "gas_used": 3397949,
+      "gas_price_gwei": 1.27613147,
+      "cost_eth": 0.00433622965235503,
+      "cost_usd": 19.398730421961556
+    },
+    {
+      "address": "0x0d367eb12250f9c200f465765e41380e212ead6a",
+      "creator": "0x68fcadd90855b711fd18a81c3213f1b78910e291",
+      "tx_hash": "0x1a6eca026319ef94e7ce1b7d536d693475f286a66f4e95d7380fe5b1c395c779",
+      "block_number": 23262433,
+      "date": "2025-08-31 19:50:11",
+      "timestamp": 1756659011,
+      "gas_used": 4788241,
+      "gas_price_gwei": 1.270045134,
+      "cost_eth": 0.006081282182469294,
+      "cost_usd": 27.205467222781937
+    },
+    {
+      "address": "0xee2a930f3f2ef98b9070a919855b40bc37bc864d",
+      "creator": "0xee38bb86c5b353a9676049c74f0bbf4b0333c087",
+      "tx_hash": "0x1e903ea77de2335a69c93b259090198f3f4a58103318f4d21a4db54e891cf7c4",
+      "block_number": 23258383,
+      "date": "2025-08-31 06:17:35",
+      "timestamp": 1756610255,
+      "gas_used": 18410822,
+      "gas_price_gwei": 0.2,
+      "cost_eth": 0.0036821644,
+      "cost_usd": 16.472677946416002
+    },
+    {
+      "address": "0xd8eabdfef3da5ab97368b3b89dd3cf13ef191b89",
+      "creator": "0xee38bb86c5b353a9676049c74f0bbf4b0333c087",
+      "tx_hash": "0x644db9d8689bc3b0ad9d9fa66142e2bfc5de6bfc2c04e798b73123ecda03271b",
+      "block_number": 23258183,
+      "date": "2025-08-31 05:37:23",
+      "timestamp": 1756607843,
+      "gas_used": 18445070,
+      "gas_price_gwei": 0.2,
+      "cost_eth": 0.003689014,
+      "cost_usd": 16.50332059096
+    },
+    {
+      "address": "0xcd03c272645a7d49e30f5eb1d2c28906883545ab",
+      "creator": "0xee38bb86c5b353a9676049c74f0bbf4b0333c087",
+      "tx_hash": "0x58663cf1466abbac60531b256e8b8423c6c218f38c6c85e4000a87d1e0c97331",
+      "block_number": 23257483,
+      "date": "2025-08-31 03:16:35",
+      "timestamp": 1756599395,
+      "gas_used": 18530534,
+      "gas_price_gwei": 0.2,
+      "cost_eth": 0.0037061068,
+      "cost_usd": 16.579787624752
+    },
+    {
+      "address": "0x22eae7dec19b3e2298f789b8ae20f533a2858a34",
+      "creator": "0xee38bb86c5b353a9676049c74f0bbf4b0333c087",
+      "tx_hash": "0x8094260ffb04bd7cbeb6470154bb578e3df4dd8978f9e3af3f526a33cc758f3d",
+      "block_number": 23257383,
+      "date": "2025-08-31 02:56:23",
+      "timestamp": 1756598183,
+      "gas_used": 18410822,
+      "gas_price_gwei": 0.2,
+      "cost_eth": 0.0036821644,
+      "cost_usd": 16.472677946416002
+    },
+    {
+      "address": "0x3daf6d8dc3cc43307a9e10ae45496e347aab4b9c",
+      "creator": "0x8610b8a194a8ebd842f1595ae1c9602bac384d6d",
+      "tx_hash": "0xe23974af3e6a4b80a1d3d350bce2491fce6ab7c07616e9fa398c4c6c90858d7f",
+      "block_number": 23257283,
+      "date": "2025-08-31 02:36:23",
+      "timestamp": 1756596983,
+      "gas_used": 18530810,
+      "gas_price_gwei": 0.2,
+      "cost_eth": 0.003706162,
+      "cost_usd": 16.58003456968
+    },
+    {
+      "address": "0xd729b4c5e65e0d44fa3b16f85afcd9efed2222e2",
+      "creator": "0x4904667de23e03f25994c0965fab662afab46bf2",
+      "tx_hash": "0xf1b82b61b0fb80cb69bc2c553bf9d244812a2d11129fb854aacb94a4a6c25f8e",
+      "block_number": 23256183,
+      "date": "2025-08-30 22:55:59",
+      "timestamp": 1756583759,
+      "gas_used": 18445166,
+      "gas_price_gwei": 0.24,
+      "cost_eth": 0.00442683984,
+      "cost_usd": 19.804087781817604
+    },
+    {
+      "address": "0x347d6ddd68d211dcf23c071e6a143eb4975d3297",
+      "creator": "0xd9854d4c4de96fef1054ecdfa6b35c6ef22dba5d",
+      "tx_hash": "0x722e7eba0c843cc80a6a784b41427ac16a1089ac972b5b328e6b736fbfd2e5b9",
+      "block_number": 23253783,
+      "date": "2025-08-30 14:54:11",
+      "timestamp": 1756554851,
+      "gas_used": 18410930,
+      "gas_price_gwei": 0.24,
+      "cost_eth": 0.0044186232,
+      "cost_usd": 19.767329492448003
+    },
+    {
+      "address": "0xdbcb63d6e8fba96e527ba7e01f32fc4433aee134",
+      "creator": "0xd9854d4c4de96fef1054ecdfa6b35c6ef22dba5d",
+      "tx_hash": "0xb87e1ed3cbd3607005c9bde81d92e84d960d6232e1f3071b44ae171c8100ca58",
+      "block_number": 23253683,
+      "date": "2025-08-30 14:33:47",
+      "timestamp": 1756553627,
+      "gas_used": 18462218,
+      "gas_price_gwei": 0.24,
+      "cost_eth": 0.00443093232,
+      "cost_usd": 19.8223960640448
+    }
+  ]
+}
