@@ -17,7 +17,7 @@ if sys.version_info >= (3, 11):
     import inspect
     inspect.getargspec = inspect.getfullargspec
 
-from flask import Flask, after_this_request, jsonify, request
+from flask import Flask, after_this_request, jsonify, request, send_from_directory, redirect, Response
 from flask_cors import CORS
 from flask_wtf.csrf import CSRFProtect, CSRFError
 from flask_openapi3 import OpenAPI, Info
@@ -27,7 +27,10 @@ import traceback
 import json
 import uuid
 import importlib
+import time
+import threading
 from sqlalchemy import text
+import requests
 
 # Configure logging first
 from utils.logging_config import get_logger
@@ -93,7 +96,53 @@ app = OpenAPI(__name__, info=info)
 # Set a secret key for the application
 app.secret_key = os.environ.get('SECRET_KEY', 'ironwallet-dev-secret-key')
 
-# Enable CORS
+# Initialize SocketIO for WebSocket support
+try:
+    from chat.websocket_handler import init_socketio, register_socketio_events
+    socketio = init_socketio(app)
+    register_socketio_events(socketio)
+    logger.info("SocketIO initialized successfully for real-time chat")
+except Exception as socketio_error:
+    logger.error(f"Failed to initialize SocketIO: {str(socketio_error)}")
+    logger.error(traceback.format_exc())
+    socketio = None
+
+# --- محدودیت API (غیرفعال؛ برای استفاده بعدی کامنت برداری کنید) ---
+# def _parse_allowed_origins():
+#     raw = os.environ.get('ALLOWED_ORIGINS', 'coinceeper.com,www.coinceeper.com,localhost,127.0.0.1')
+#     return [o.strip().lower() for o in raw.split(',') if o.strip()]
+#
+# def _host_from_url(url_or_host):
+#     """Extract host from Origin/Referer URL or return as-is if already a host."""
+#     if not url_or_host:
+#         return ''
+#     s = url_or_host.strip().lower()
+#     for prefix in ('https://', 'http://'):
+#         if s.startswith(prefix):
+#             s = s[len(prefix):]
+#     if '/' in s:
+#         s = s.split('/')[0]
+#     if ':' in s:
+#         s = s.split(':')[0]
+#     return s
+#
+# ALLOWED_ORIGINS_LIST = _parse_allowed_origins()
+# Enable CORS only for allowed origins (when using allowlist, uncomment above and use block below):
+# if ALLOWED_ORIGINS_LIST:
+#     _cors_origin_list = []
+#     for h in ALLOWED_ORIGINS_LIST:
+#         if h in ('localhost', '127.0.0.1'):
+#             _cors_origin_list.extend([f'http://{h}', f'https://{h}', f'http://{h}:3000', f'http://{h}:5173', f'http://{h}:8080'])
+#         else:
+#             _cors_origin_list.extend([f'https://{h}', f'https://www.{h}', f'http://{h}', f'http://www.{h}'])
+#     CORS(app, resources={r"/*": {"origins": _cors_origin_list}}, supports_credentials=True)
+# else:
+#     CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
+BLOCKED_ORIGINS = os.environ.get('BLOCKED_ORIGINS', 'laxce.com,laxce').split(',')
+BLOCKED_ORIGINS = [o.strip().lower() for o in BLOCKED_ORIGINS if o.strip()]
+
+# Enable CORS (حالت قبلی: همه دامنه‌ها)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 # Set additional Flask configurations for proper routing
@@ -103,6 +152,50 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False  # Don't pretty-print JSON in 
 app.config['TRAP_HTTP_EXCEPTIONS'] = True  # Trap HTTP exceptions for custom handling
 app.config['TRAP_BAD_REQUEST_ERRORS'] = True  # Trap bad request errors
 csrf = CSRFProtect(app)
+
+# --- کلید API (غیرفعال؛ برای استفاده بعدی کامنت برداری کنید) ---
+# CC_API_KEY = os.environ.get('CC_API_KEY', '').strip()
+# API_KEY_EXEMPT_PATHS = ('/ping', '/api/ping', '/api/app-health')
+
+@app.before_request
+def restrict_api_to_coinceeper():
+    """Block requests from blocked origins (e.g. laxce). API key and allowlist are commented out."""
+    if not request.path.startswith('/api/'):
+        return
+    origin = request.headers.get('Origin', '').lower()
+    referer = request.headers.get('Referer', '').lower()
+    host = request.headers.get('Host', '').lower()
+
+    # 1) Require API key (غیرفعال؛ برای فعال‌سازی کامنت را بردارید و _parse_allowed_origins / _host_from_url / ALLOWED_ORIGINS_LIST را هم فعال کنید)
+    # path = request.path.rstrip('/') or request.path
+    # exempt = any(path == p.rstrip('/') or path.startswith(p.rstrip('/') + '/') for p in API_KEY_EXEMPT_PATHS)
+    # if CC_API_KEY and not exempt:
+    #     api_key = request.headers.get('X-API-Key', '').strip()
+    #     if not api_key and request.headers.get('Authorization', '').startswith('Bearer '):
+    #         api_key = request.headers.get('Authorization', '')[7:].strip()
+    #     if api_key != CC_API_KEY:
+    #         logger.warning(f"Blocked request (invalid/missing API key): Path={request.path}")
+    #         return jsonify({'success': False, 'error': 'Access denied. Invalid or missing API key.', 'message': 'API access restricted'}), 403
+
+    # 2) Block known bad origins (فعال)
+    for blocked in BLOCKED_ORIGINS:
+        if blocked in origin or blocked in referer or blocked in host:
+            logger.warning(f"Blocked request from blocked origin: Origin={origin}, Referer={referer}, Host={host}, Path={request.path}")
+            return jsonify({
+                'success': False,
+                'error': 'Access denied. This API is only available for coinceeper project.',
+                'message': 'API access restricted'
+            }), 403
+
+    # 3) Allowlist (غیرفعال؛ برای استفاده بعدی کامنت برداری کنید)
+    # origin_host = _host_from_url(origin)
+    # referer_host = _host_from_url(referer)
+    # has_origin_or_referer = bool(origin.strip() or referer.strip())
+    # if has_origin_or_referer:
+    #     allowed = origin_host in ALLOWED_ORIGINS_LIST or referer_host in ALLOWED_ORIGINS_LIST
+    #     if not allowed:
+    #         logger.warning(f"Blocked request (allowlist): Origin={origin}, Referer={referer}, Path={request.path}")
+    #         return jsonify({'success': False, 'error': 'Access denied. This API is only available for coinceeper project.', 'message': 'API access restricted'}), 403
 
 # Initialize database
 try:
@@ -125,6 +218,15 @@ except Exception as db_init_error:
     logger.critical(f"Failed to initialize database: {str(db_init_error)}")
     # Continue without database to allow API to start but return errors on DB operations
 
+# Initialize shop and chat database
+try:
+    from database_shop_chat import init_shop_chat_db
+    init_shop_chat_db()
+    logger.info("Shop and Chat database initialized successfully")
+except Exception as shop_chat_db_error:
+    logger.critical(f"Failed to initialize shop and chat database: {str(shop_chat_db_error)}")
+    logger.critical(traceback.format_exc())
+
 # Initialize Firebase
 try:
     if initialize_firebase():
@@ -146,34 +248,44 @@ try:
     from UserTransactions import transactions_bp
     from fee_estimator.api import fee_estimator_bp
     from api.notification_api import notification_api
+    from api.notifications_admin_api import notifications_admin_bp
     from api import init_api_routes
+    from shop.shop_api import shop_api
+    from chat.dm_api import dm_api
+    from chat.report_block_api import report_block_api
+    from chat.moderation_api import moderation_api
+    from services.cache_proxy import cache_proxy_bp, cache_proxy_v3_bp
     # Authentication middleware removed - using UserID-based authentication
     
     # Register blueprints
     logger.info("Registering blueprints")
     
-    app.register_blueprint(generate_bp, url_prefix='')
+    app.register_blueprint(generate_bp, url_prefix='/api')
     logger.info("Registered generate_bp")
-    app.register_blueprint(import_bp, url_prefix='')
+    app.register_blueprint(import_bp, url_prefix='/api')
     logger.info("Registered import_bp")
-    app.register_blueprint(Prices_bp, url_prefix='')
+    app.register_blueprint(Prices_bp, url_prefix='/api')
     logger.info(f"Registered Prices_bp - contains {len(Prices_bp.deferred_functions)} routes")
-    app.register_blueprint(CPost_bp, url_prefix='')
+    app.register_blueprint(CPost_bp, url_prefix='/api')
     logger.info("Registered CPost_bp")
-    app.register_blueprint(chart_bp, url_prefix='')
+    app.register_blueprint(chart_bp, url_prefix='/api')
     logger.info("Registered chart_bp")
-    app.register_blueprint(receive_bp, url_prefix='')
+    app.register_blueprint(receive_bp, url_prefix='/api')
     logger.info("Registered receive_bp")
-    app.register_blueprint(gasfee_bp, url_prefix='')
+    app.register_blueprint(gasfee_bp, url_prefix='/api')
     logger.info("Registered gasfee_bp")
-    app.register_blueprint(balance_api, url_prefix='')
+    app.register_blueprint(balance_api, url_prefix='/api')
     logger.info(f"Registered balance_api - contains {len(balance_api.deferred_functions)} routes")
-    app.register_blueprint(send_bp, url_prefix='/send')
+    app.register_blueprint(send_bp, url_prefix='/api/send')
     logger.info("Registered send_bp")
-    app.register_blueprint(transactions_bp, url_prefix='')
+    app.register_blueprint(transactions_bp, url_prefix='/api')
     logger.info("Registered transactions_bp")
-    app.register_blueprint(notification_api, url_prefix='')
+    app.register_blueprint(notification_api, url_prefix='/api')
     logger.info("Registered notification_api without prefix")
+    
+    # Register Notification Admin API (security, price alerts, broadcast)
+    app.register_blueprint(notifications_admin_bp, url_prefix='/api')
+    logger.info("Registered notifications_admin_api")
     
     # نمایش تمام مسیرهای ثبت شده
     logger.info("Registered routes:")
@@ -181,8 +293,28 @@ try:
         logger.info(f"Route: {rule.rule}, Methods: {rule.methods}, Endpoint: {rule.endpoint}")
     
     # Register Fee Estimator endpoints
-    app.register_blueprint(fee_estimator_bp, url_prefix='')
+    app.register_blueprint(fee_estimator_bp, url_prefix='/api')
     logger.info("Registered Fee Estimator endpoints")
+    
+    # Register Shop API endpoints
+    app.register_blueprint(shop_api, url_prefix='/api')
+    logger.info("Registered shop_api")
+    
+    # Register Chat API endpoints
+    app.register_blueprint(dm_api, url_prefix='/api')
+    logger.info("Registered dm_api")
+    app.register_blueprint(report_block_api, url_prefix='/api')
+    logger.info("Registered report_block_api")
+    app.register_blueprint(moderation_api, url_prefix='/api')
+    logger.info("Registered moderation_api")
+
+    # Register Cache Proxy V2 endpoints (Non-Custodial — no UserID required)
+    app.register_blueprint(cache_proxy_bp)
+    logger.info("Registered cache_proxy_v2 (public, non-custodial endpoints)")
+
+    # Register Cache Proxy V3 Enhanced endpoints
+    app.register_blueprint(cache_proxy_v3_bp)
+    logger.info("Registered cache_proxy_v3 (enhanced: explorer, balance, rpc, broadcast, token-metadata)")
     
     # Register blockchain API endpoints (commented to avoid conflict with send_bp)
     # init_api_routes(app)
@@ -272,92 +404,209 @@ def setup_webhook_subscriptions():
 # Run the webhook setup
 setup_webhook_subscriptions()
 
+# فقط یک worker گیکورن باید schedulerها را اجرا کند؛ وگرنه چندین نخ روی همان DB pool می‌نشیند و API گیر می‌کند.
+_background_job_lock_fp = None
+
+
+def _this_worker_runs_background_jobs() -> bool:
+    global _background_job_lock_fp
+    if os.getenv("ENABLE_BACKGROUND_JOBS", "true").lower() != "true":
+        logger.info("Background jobs disabled by ENABLE_BACKGROUND_JOBS")
+        return False
+    try:
+        import fcntl
+
+        lock_path = os.getenv(
+            "BACKGROUND_JOB_LOCK_PATH", "/tmp/coinceeper_background_jobs.lock"
+        )
+        fp = open(lock_path, "a+", encoding="utf-8")
+        fcntl.flock(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        _background_job_lock_fp = fp
+        logger.info("Background job lock acquired in this Gunicorn worker")
+        return True
+    except BlockingIOError:
+        logger.info(
+            "Background jobs skipped in this worker (lock held by another process)"
+        )
+        return False
+    except Exception as e:
+        logger.warning("Could not acquire background job lock, skipping jobs: %s", e)
+        return False
+
+
+run_background_jobs = _this_worker_runs_background_jobs()
+
 # Check price scheduler status
-try:
-    # Import the price scheduler
-    from Currencies.price_scheduler import run_scheduler
-    
-    # Create a thread for the price scheduler if it's not already running
-    import threading
-    scheduler_thread = None
-    
-    for thread in threading.enumerate():
-        if thread.name.startswith("Package-") or thread.name == "PriceScheduler":
-            scheduler_thread = thread
-            app.logger.info(f"Price scheduler is already running in thread: {thread.name}")
-            break
-    
-    if not scheduler_thread:
-        app.logger.info("Starting price scheduler...")
-        scheduler_thread = threading.Thread(target=run_scheduler, daemon=True, name="PriceScheduler")
-        scheduler_thread.start()
-        app.logger.info("Price scheduler started successfully")
-    
-except Exception as scheduler_error:
-    app.logger.error(f"Error starting price scheduler: {str(scheduler_error)}", exc_info=True)
+if run_background_jobs:
+    try:
+        # Import the price scheduler
+        from Currencies.price_scheduler import run_scheduler
+        
+        # Create a thread for the price scheduler if it's not already running
+        scheduler_thread = None
+        
+        for thread in threading.enumerate():
+            if thread.name.startswith("Package-") or thread.name == "PriceScheduler":
+                scheduler_thread = thread
+                app.logger.info(f"Price scheduler is already running in thread: {thread.name}")
+                break
+        
+        if not scheduler_thread:
+            app.logger.info("Starting price scheduler...")
+            scheduler_thread = threading.Thread(target=run_scheduler, daemon=True, name="PriceScheduler")
+            scheduler_thread.start()
+            app.logger.info("Price scheduler started successfully")
+        
+    except Exception as scheduler_error:
+        app.logger.error(f"Error starting price scheduler: {str(scheduler_error)}", exc_info=True)
+else:
+    app.logger.info("Background jobs are not running in this worker")
 
 # اضافه کردن شبیه‌ساز قیمت NCC با الگوریتم جدید
-try:
-    # بررسی اینکه شبیه‌ساز NCC از قبل در حال اجرا نباشد
-    ncc_simulator_thread = None
-    
-    for thread in threading.enumerate():
-        if thread.name == "NCCPriceSimulator":
-            ncc_simulator_thread = thread
-            app.logger.info(f"NCC price simulator is already running in thread: {thread.name}")
-            break
-    
-    if not ncc_simulator_thread:
-        from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
-        app.logger.info("Starting NCC price simulator with natural volatility algorithm...")
-        app.logger.info("🚀 NCC: $0.22 → $0.80 در 9 ماه با نوسانات 20-30%")
-        ncc_simulator_thread = threading.Thread(target=ncc_price_simulator, daemon=True, name="NCCPriceSimulator")
-        ncc_simulator_thread.start()
-        app.logger.info("NCC price simulator started successfully")
-    
-except Exception as ncc_error:
-    app.logger.error(f"Error starting NCC price simulator: {str(ncc_error)}", exc_info=True)
-    # نمایش جزئیات خطا برای عیب‌یابی
-    app.logger.error(f"NCC price simulator error details: {traceback.format_exc()}")
-    # در صورت خطا برنامه ادامه پیدا می‌کند
+if run_background_jobs:
+    try:
+        # بررسی اینکه شبیه‌ساز NCC از قبل در حال اجرا نباشد
+        ncc_simulator_thread = None
+
+        for thread in threading.enumerate():
+            if thread.name == "NCCPriceSimulator":
+                ncc_simulator_thread = thread
+                app.logger.info(f"NCC price simulator is already running in thread: {thread.name}")
+                break
+
+        if not ncc_simulator_thread:
+            from utils.price_simulator.NCCPRICE import main as ncc_price_simulator
+            app.logger.info("Starting NCC price simulator with natural volatility algorithm...")
+            app.logger.info("🚀 NCC: $0.22 → $0.80 در 9 ماه با نوسانات 20-30%")
+            ncc_simulator_thread = threading.Thread(
+                target=ncc_price_simulator, daemon=True, name="NCCPriceSimulator"
+            )
+            ncc_simulator_thread.start()
+            app.logger.info("NCC price simulator started successfully")
+
+    except Exception as ncc_error:
+        app.logger.error(f"Error starting NCC price simulator: {str(ncc_error)}", exc_info=True)
+        # نمایش جزئیات خطا برای عیب‌یابی
+        app.logger.error(f"NCC price simulator error details: {traceback.format_exc()}")
+        # در صورت خطا برنامه ادامه پیدا می‌کند
 
 # اضافه کردن Historical Data Scheduler
-try:
-    # بررسی اینکه Historical Data Scheduler از قبل در حال اجرا نباشد
-    historical_scheduler_thread = None
-    
-    for thread in threading.enumerate():
-        if thread.name == "HistoricalDataScheduler":
-            historical_scheduler_thread = thread
-            app.logger.info(f"Historical data scheduler is already running in thread: {thread.name}")
-            break
-    
-    if not historical_scheduler_thread:
-        from Currencies.historical_scheduler import start_historical_scheduler
-        app.logger.info("Starting historical data scheduler...")
-        scheduler = start_historical_scheduler()
-        app.logger.info("📊 Historical data will be updated every 24 hours automatically")
-        app.logger.info("Historical data scheduler started successfully")
-    
-except Exception as historical_error:
-    app.logger.error(f"Error starting historical data scheduler: {str(historical_error)}", exc_info=True)
-    # در صورت خطا برنامه ادامه پیدا می‌کند
+if run_background_jobs:
+    try:
+        # بررسی اینکه Historical Data Scheduler از قبل در حال اجرا نباشد
+        historical_scheduler_thread = None
+        
+        for thread in threading.enumerate():
+            if thread.name == "HistoricalDataScheduler":
+                historical_scheduler_thread = thread
+                app.logger.info(f"Historical data scheduler is already running in thread: {thread.name}")
+                break
+        
+        if not historical_scheduler_thread:
+            from Currencies.historical_scheduler import start_historical_scheduler
+            app.logger.info("Starting historical data scheduler...")
+            scheduler = start_historical_scheduler()
+            app.logger.info("📊 Historical data will be updated every 24 hours automatically")
+            app.logger.info("Historical data scheduler started successfully")
+        
+    except Exception as historical_error:
+        app.logger.error(f"Error starting historical data scheduler: {str(historical_error)}", exc_info=True)
+        # در صورت خطا برنامه ادامه پیدا می‌کند
+
+# Notification Scheduler (gas alerts, portfolio summaries)
+if run_background_jobs:
+    try:
+        from services.notifications.scheduler import start_scheduler
+        app.logger.info("Starting notification scheduler (gas=5min, portfolio=1hr)...")
+        notif_threads = start_scheduler()
+        app.logger.info(f"Notification scheduler started with {len(notif_threads)} background workers")
+    except Exception as notif_error:
+        app.logger.error(f"Error starting notification scheduler: {str(notif_error)}", exc_info=True)
+
+# Block Chain Scanners (ONLY in the background-job worker, NOT in all 4 Gunicorn workers)
+# This prevents 4 x 10 = 40 scanner threads from saturating Gunicorn workers.
+if run_background_jobs:
+    try:
+        from services.cache_proxy.block_scanner import start_all_scanners
+        start_all_scanners()
+        app.logger.info("Blockchain scanners started in background-job worker")
+    except Exception as scanner_error:
+        app.logger.error(f"Error starting blockchain scanners: {str(scanner_error)}", exc_info=True)
 
 @app.route('/')
 def index():
-    """API root endpoint"""
-    return jsonify({
-        'name': 'IronWallet API',
-        'version': '1.0.0',
-        'documentation': '/api/docs',
-        'status': 'online',
-        'timestamp': datetime.now(timezone.utc).isoformat()
-    })
+    """Serve frontend index.html"""
+    frontend_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+    return send_from_directory(frontend_dir, 'index.html')
 
-@app.post("/generate-wallet", responses={"201": WalletGenerationSyncResponse})
+@app.route('/tools', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH'])
+@app.route('/tools/<path:subpath>', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH'])
+def phpmyadmin_proxy(subpath=''):
+    """Reverse proxy to phpMyAdmin on aaPanel port"""
+    try:
+        target_url = f"https://127.0.0.1:16914/dbc"
+        if subpath:
+            target_url += f"/{subpath}"
+        if request.query_string:
+            target_url += f"?{request.query_string.decode()}"
+        
+        headers = {key: value for key, value in request.headers if key.lower() not in ['host', 'connection']}
+        
+        resp = requests.request(
+            method=request.method,
+            url=target_url,
+            headers=headers,
+            data=request.get_data(),
+            cookies=request.cookies,
+            allow_redirects=False,
+            verify=False,
+            timeout=30
+        )
+        
+        excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection']
+        response_headers = [(name, value) for name, value in resp.raw.headers.items()
+                           if name.lower() not in excluded_headers]
+        
+        response_headers.append(('X-Proxy-Status', 'Working'))
+        response_headers.append(('Cache-Control', 'no-cache, no-store, must-revalidate'))
+        
+        return Response(resp.content, resp.status_code, response_headers)
+    except Exception as e:
+        logger.error(f"phpMyAdmin proxy error: {str(e)}")
+        return jsonify({"error": str(e), "message": "phpMyAdmin proxy failed", "traceback": traceback.format_exc()}), 500
+
+@app.route('/api-docs')
+@app.route('/api-docs/')
+def api_docs_index():
+    """Serve API documentation index page"""
+    api_docs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'api-docs')
+    return send_from_directory(api_docs_dir, 'index.html')
+
+@app.route('/api-docs/<path:filename>')
+def api_docs_files(filename):
+    """Serve API documentation files"""
+    api_docs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'api-docs')
+    try:
+        return send_from_directory(api_docs_dir, filename)
+    except:
+        return send_from_directory(api_docs_dir, 'index.html')
+
+@app.route('/<path:path>')
+def serve_static(path):
+    """Serve static files"""
+    if path.startswith('api/') or path.startswith('tools') or path.startswith('api-docs') or path in ['balance', 'update-balance', 'test-api', 'generate-wallet', 'test-db', 'debug-api', 'prices', 'update-prices', 'historical-prices', 'generate-wallet-v1', 'import_wallet', 'validate_mnemonic', 'all-currencies', 'chart-data', 'chart-live-update', 'Recive', 'record-deposit', 'gasfee', 'transactions', 'notifications', 'estimate-fee', 'supported-chains', 'health']:
+        from werkzeug.exceptions import NotFound
+        raise NotFound()
+    frontend_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+    try:
+        return send_from_directory(frontend_dir, path)
+    except:
+        return send_from_directory(frontend_dir, 'index.html')
+
+@app.route("/api/generate-wallet", methods=["POST"])
 @SecurityUtils.rate_limit(requests=3, window=300)
 @handle_api_errors
-def generate_wallet(body: WalletGenerationRequest):
+def generate_wallet():
     """
     Generate a new wallet synchronously
     ---
@@ -390,8 +639,25 @@ def generate_wallet(body: WalletGenerationRequest):
               $ref: '#/components/schemas/ErrorResponse'
     """
     try:
-        # Validate input
-        wallet_name = body.WalletName
+        # Only accept JSON payloads for Flutter compatibility.
+        payload = request.get_json(silent=True)
+        if not isinstance(payload, dict):
+            raw_body = request.get_data(cache=False, as_text=True) or ""
+            if raw_body.strip():
+                try:
+                    payload = json.loads(raw_body)
+                except Exception:
+                    payload = None
+
+        wallet_name = payload.get('WalletName') if isinstance(payload, dict) else None
+        if not wallet_name or not isinstance(wallet_name, str):
+            return jsonify({
+                'success': False,
+                'UserID': None,
+                'WalletID': None,
+                'Mnemonic': None,
+                'message': 'WalletName is required and must be a string'
+            }), 400
         
         # Get user IP and device info
         user_ip = request.remote_addr
@@ -428,7 +694,7 @@ def generate_wallet(body: WalletGenerationRequest):
             'message': str(e)
         }), 400
 
-@app.route('/test-db', methods=['GET'])
+@app.route('/api/test-db', methods=['GET'])
 def test_db_connection():
     """Test database connection"""
     try:
@@ -484,6 +750,13 @@ def test_api():
             "message": f"API error: {str(e)}"
         }), 500
 
+@app.route('/api/ping', methods=['GET'])
+def ping():
+    """Ultra-lightweight connectivity check for Flutter EnhancedNetworkManager.
+    Returns immediately without DB query to avoid timeout."""
+    return jsonify({"status": "pong", "timestamp": datetime.now(timezone.utc).isoformat()})
+
+
 @app.route('/api/app-health', methods=['GET'])
 def app_health():
     """Application health check"""
@@ -493,7 +766,7 @@ def app_health():
         try:
             session = SessionLocal()
             try:
-                session.execute("SELECT 1").scalar()
+                session.execute(text("SELECT 1")).scalar()
             finally:
                 session.close()
         except Exception as db_error:
@@ -822,4 +1095,7 @@ except Exception as e:
     # Continue with application startup even if some services failed to initialize
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    if socketio:
+        socketio.run(app, debug=True, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)
+    else:
+        app.run(debug=True, host='0.0.0.0', port=5000)

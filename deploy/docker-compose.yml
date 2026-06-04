@@ -1,0 +1,84 @@
+# =============================================================================
+# Hybrid Backend Proxy — Docker Compose
+# =============================================================================
+# سرویس‌ها:
+#   1. app: Flask application (Gunicorn 4 workers)
+#   2. redis: Redis cache (اختیاری — بدون Redis هم با RAM fallback کار می‌کند)
+#   3. nginx: Reverse proxy
+#
+# نکته: MySQL باید خارج از Docker اجرا شود (روی Host)
+# =============================================================================
+
+version: "3.8"
+
+services:
+  # ==================== Flask Application ====================
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: coinceeper-backend:latest
+    container_name: coinceeper-backend
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - ETHERSCAN_API_KEY=${ETHERSCAN_API_KEY}
+      - BSCSCAN_API_KEY=${BSCSCAN_API_KEY}
+      - POLYGONSCAN_API_KEY=${POLYGONSCAN_API_KEY}
+      - AVALANCHE_API_KEY=${AVALANCHE_API_KEY}
+      - ARBITRUMSCAN_API_KEY=${ARBITRUMSCAN_API_KEY}
+      - TRONGRID_API_KEY=${TRONGRID_API_KEY}
+      - BLOCKCYPHER_API_KEY=${BLOCKCYPHER_API_KEY}
+      - SUBSCAN_API_KEY=${SUBSCAN_API_KEY}
+      - COINGECKO_API_KEYS=${COINGECKO_API_KEYS}
+      - DRPC_API_KEYS=${DRPC_API_KEYS}
+      - ANKR_API_KEYS=${ANKR_API_KEYS}
+      - TATUM_API_KEY=${TATUM_API_KEY}
+      - WEBHOOK_BASE_URL=${WEBHOOK_BASE_URL}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - BLOCKED_ORIGINS=${BLOCKED_ORIGINS}
+      - ENABLE_BACKGROUND_JOBS=true
+    volumes:
+      - ../Logs:/app/Logs
+      - ../instance:/app/instance
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    networks:
+      - coinceeper-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ==================== Redis Cache ====================
+  redis:
+    image: redis:7-alpine
+    container_name: coinceeper-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - coinceeper-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  redis-data:
+    driver: local
+
+networks:
+  coinceeper-network:
+    driver: bridge
