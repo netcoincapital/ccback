@@ -10,12 +10,13 @@ POST  /api/v2/explorer/token-tx       — Token transfer history (ERC20/TRC20)
 POST  /api/v2/balance/native          — Balance native coin (EVM, Tron, Solana, BTC, Polkadot)
 POST  /api/v2/balance/token           — Balance توکن (ERC20/TRC20)
 POST  /api/v2/rpc/<chain>             — Generic RPC call (read-only, EVM only)
-POST  /api/v2/broadcast               — Broadcast signed tx (EVM only)
+POST  /api/v2/broadcast               — Broadcast signed tx (EVM + Tron)
 GET   /api/v2/token-metadata          — Metadata توکن (EVM, Tron)
 GET   /api/v2/proxy-health            — Health check کامل همه providers
 GET   /api/v2/metrics                 — Prometheus metrics / JSON counters
 """
 
+import os
 from datetime import datetime, timezone
 from typing import Dict, Optional
 
@@ -31,6 +32,7 @@ from .core.metrics import get_metrics
 from .providers.evm_explorer import get_evm_explorer
 from .providers.evm_rpc import get_evm_rpc_pool
 from .providers.trongrid import get_trongrid_proxy
+from .providers.tron_broadcast import get_tron_broadcast_provider
 from .providers.solana import get_solana_proxy
 from .providers.blockcypher import get_blockcypher_proxy
 from .providers.blockstream import get_blockstream_proxy
@@ -77,6 +79,36 @@ def _error_response(message: str, status_code: int = 400, details: dict = None):
         "details": details or {},
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }), status_code
+
+
+def _decode_hex_bytes(hex_str: Optional[str]) -> str:
+    """Decode a hex-encoded ABI result (bytes32 or string) to a readable string.
+    
+    Handles both:
+    - Static bytes32: 0x555344540000... (padded with zeros)
+    - Dynamic string with offset+length ABI encoding
+    """
+    if not hex_str or hex_str == "0x" or hex_str == "0x0":
+        return ""
+    clean = hex_str.removeprefix("0x")
+    if not clean:
+        return ""
+    try:
+        raw = bytes.fromhex(clean)
+        # Try to detect dynamic string encoding (starts with 32-byte offset)
+        if len(raw) > 64:
+            offset = int.from_bytes(raw[0:32], "big")
+            if 32 <= offset < len(raw):
+                length_pos = offset
+                str_len = int.from_bytes(raw[length_pos:length_pos + 32], "big")
+                str_start = length_pos + 32
+                str_end = str_start + str_len
+                if str_end <= len(raw):
+                    return raw[str_start:str_end].decode("utf-8", errors="replace")
+        # Fallback: strip null bytes from bytes32
+        return raw.rstrip(b"\x00").decode("utf-8", errors="replace").strip()
+    except Exception:
+        return hex_str
 
 
 def _success_response(data, source: str = "proxy", extra: dict = None):
@@ -528,7 +560,7 @@ def broadcast_transaction():
             return _error_response("chain and signed_tx are required")
 
         chain_type = _get_chain_type(chain)
-        if chain_type != "evm":
+        if chain_type not in ("evm", "tron"):
             return _error_response(f"Broadcast not supported for {chain}")
 
         # Rate limit stricter for broadcast
@@ -536,30 +568,27 @@ def broadcast_transaction():
 
         # نباید signedTx را در لاگ بنویسیم
         tx_preview = signed_tx[:16] + "..." if len(signed_tx) > 16 else signed_tx[:8]
-        logger.info("Broadcast request: chain=%s, tx=%s, simulate=%s",
-                     chain, tx_preview, simulate)
+        logger.info("Broadcast request: chain=%s, tx=%s, chain_type=%s, simulate=%s",
+                     chain, tx_preview, chain_type, simulate)
 
         if simulate:
-            # فقط تخمین Gas بدون ارسال واقعی
-            rpc = get_evm_rpc_pool()
-            result = rpc.call(chain, "eth_estimateGas", [{"data": signed_tx}])
-            if result:
-                return _success_response({
-                    "chain": chain,
-                    "simulate": True,
-                    "estimated_gas": str(result),
-                })
-            return _error_response("Gas estimation failed", 502)
+            return _handle_broadcast_simulate(chain, chain_type, signed_tx)
 
         # Broadcast واقعی
-        rpc = get_evm_rpc_pool()
-        tx_hash = rpc.broadcast_transaction(chain, signed_tx)
+        tx_hash = None
+        provider = None
+
+        if chain_type == "evm":
+            rpc = get_evm_rpc_pool()
+            tx_hash = rpc.broadcast_transaction(chain, signed_tx)
+            provider = "evm_rpc_pool"
+        elif chain_type == "tron":
+            tron_broadcast = get_tron_broadcast_provider()
+            tx_hash = tron_broadcast.broadcast(signed_tx)
+            provider = "trongrid_broadcasthex"
 
         if not tx_hash:
             return _error_response("Broadcast failed", 502)
-
-        # مشخص کردن provider (از روی لاگ RPC pool)
-        provider = "evm_rpc_pool"
 
         return _success_response({
             "chain": chain,
@@ -575,6 +604,27 @@ def broadcast_transaction():
     except Exception as e:
         logger.error("v2/broadcast error: %s", e, exc_info=True)
         return _error_response(str(e), 500)
+
+
+def _handle_broadcast_simulate(chain: str, chain_type: str, signed_tx: str):
+    """شبیه‌سازی broadcast بدون ارسال واقعی (فقط EVM)."""
+    if chain_type == "evm":
+        rpc = get_evm_rpc_pool()
+        result = rpc.call(chain, "eth_estimateGas", [{"data": signed_tx}])
+        if result:
+            return _success_response({
+                "chain": chain,
+                "simulate": True,
+                "estimated_gas": str(result),
+            })
+        return _error_response("Gas estimation failed", 502)
+    # Tron: تخمین پیش‌فرض (بدون شبیه‌سازی اختصاصی)
+    return _success_response({
+        "chain": chain,
+        "simulate": True,
+        "estimated_fee": "0.1",
+        "note": "Tron fee is fixed (~0.1 TRX for simple transfer)",
+    })
 
 
 # ============================================================
@@ -631,8 +681,8 @@ def token_metadata():
                 if symbol_result or dec_result:
                     metadata = {
                         "contract_address": contract_address,
-                        "symbol": symbol_result or "",
-                        "name": name_result or "",
+                        "symbol": _decode_hex_bytes(symbol_result),
+                        "name": _decode_hex_bytes(name_result),
                         "decimals": int(dec_result, 16) if dec_result else 18,
                         "source": "rpc_fallback",
                     }
@@ -698,6 +748,7 @@ def proxy_health():
                 "evm_explorer": {"chains": get_evm_explorer().get_supported_chains()},
                 "evm_rpc": {"providers": len(get_evm_rpc_pool()._providers) if hasattr(get_evm_rpc_pool(), '_providers') else 0},
                 "trongrid": {"status": "active"},
+                "tron_broadcast": get_tron_broadcast_provider().check_health(),
                 "solana": {"chains": get_solana_proxy().get_supported_chains()},
                 "blockcypher": {"chains": ["btc", "doge", "dash", "ltc"]},
                 "blockstream": {"chains": ["bitcoin"], "note": "Public API, no key required"},
@@ -716,6 +767,48 @@ def proxy_health():
             "status": "unhealthy",
             "error": str(e),
         }), 500
+
+
+# ============================================================
+# Admin: Reload API Keys (بدون ری‌استارت)
+# ============================================================
+
+
+@cache_proxy_v3_bp.route("/admin/reload-keys", methods=["POST"])
+def admin_reload_keys():
+    """
+    بارگذاری مجدد همه API Keyها از فایل env.
+    بدون نیاز به ری‌استارت سرویس.
+
+    Body (optional):
+        secret (str): رمز تأیید (پیش‌فرض: از env به نام ADMIN_SECRET)
+
+    Returns:
+        200: گزارش تعداد کلیدهای جدید بارگذاری شده
+        403: رمز اشتباه
+    """
+    try:
+        data = request.get_json(silent=True) or {}
+        provided = data.get("secret", "")
+        expected = os.environ.get("ADMIN_SECRET", "")
+
+        if expected and provided != expected:
+            return _error_response("Forbidden: invalid secret", 403)
+
+        mgr = get_key_pool_manager()
+        report = mgr.reload()
+
+        logger.info("Admin: keys reloaded — %s", report)
+
+        return _success_response({
+            "message": "All API key pools reloaded successfully",
+            "pools": report,
+            "total_pools": len(report),
+        })
+
+    except Exception as e:
+        logger.error("admin/reload-keys error: %s", e, exc_info=True)
+        return _error_response(str(e), 500)
 
 
 # ============================================================

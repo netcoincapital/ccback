@@ -23,6 +23,7 @@ from .solana import SolanaProxy, get_solana_proxy
 from .blockcypher import BlockCypherProxy, get_blockcypher_proxy
 from .blockstream import BlockstreamProxy, get_blockstream_proxy
 from .subscan import SubscanProxy, get_subscan_proxy
+from .tron_broadcast import TronBroadcastProvider, get_tron_broadcast_provider
 
 __all__ = [
     "EvmExplorerProxy",
@@ -31,6 +32,8 @@ __all__ = [
     "get_evm_rpc_pool",
     "TronGridProxy",
     "get_trongrid_proxy",
+    "TronBroadcastProvider",
+    "get_tron_broadcast_provider",
     "SolanaProxy",
     "get_solana_proxy",
     "BlockCypherProxy",
