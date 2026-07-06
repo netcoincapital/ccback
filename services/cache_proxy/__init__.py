@@ -8,7 +8,7 @@ Cache Proxy — Non-Custodial Caching Layer + Hybrid Backend
 
 ## معماری Hybrid (۳ لایه):
 
-1. **V2 Public Endpoints** (`routes_v2.py`): قیمت، نمودار، کارمزد، لیست ارزها، نوتیفیکیشن
+1. **V2 Public Endpoints** (`routes_v2.py`): قیمت، نمودار، کارمزد، لیست ارزها، airdrop، نوتیفیکیشن
 2. **V3 Enhanced Endpoints** (`routes_v3.py`): Explorer, Balance, RPC, Broadcast, Token Metadata
 3. **Core Modules** (`core/`): Redis Cache, Rate Limiter, Key Pool Manager
 4. **Provider Modules** (`providers/`): EVM Explorer, EVM RPC, TronGrid, BlockCypher, Subscan
@@ -26,6 +26,7 @@ from .price_cache import PriceCache, get_price_cache
 from .chart_cache import ChartCache, get_chart_cache
 from .coin_cache import CoinCache, get_coin_cache
 from .gas_cache import GasCache, get_gas_cache
+from .airdrop_cache import AirdropCache, get_airdrop_cache
 
 # V2 Routes
 from .routes_v2 import cache_proxy_bp
@@ -52,6 +53,8 @@ __all__ = [
     "get_coin_cache",
     "GasCache",
     "get_gas_cache",
+    "AirdropCache",
+    "get_airdrop_cache",
     # Routes
     "cache_proxy_bp",
     "cache_proxy_v3_bp",

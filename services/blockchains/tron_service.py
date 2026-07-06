@@ -8,9 +8,11 @@ from datetime import datetime, timedelta
 import requests
 from tronpy import Tron
 from tronpy.keys import PrivateKey
+from tronpy.providers import HTTPProvider
 
 from services.blockchains.base_blockchain_service import BaseBlockchainService
 from services.tatum_helper import TatumHelper
+from fee_estimator.tron import TronFeeEstimator
 from utils.logging_config import get_logger
 from utils.error_handlers import handle_api_errors, handle_tron_errors
 
@@ -38,7 +40,7 @@ class TronService(BaseBlockchainService):
             )
         
         try:
-            self.client = Tron(network='mainnet', provider_url=self.tron_node_url)
+            self.client = Tron(network='mainnet', provider=HTTPProvider(self.tron_node_url))
             self.tron_available = True
             self.logger.info("TRON client initialized successfully")
         except Exception as e:
@@ -322,7 +324,7 @@ class TronService(BaseBlockchainService):
             
     @handle_api_errors
     def estimate_fee(self, sender: str, recipient: str, amount) -> Tuple[Decimal, Optional[str]]:
-        """Estimate TRON transaction fee"""
+        """Estimate TRON transaction fee using TronFeeEstimator (bandwidth/energy based)."""
         try:
             # Convert amount to Decimal if it's a string
             if isinstance(amount, str):
@@ -330,12 +332,27 @@ class TronService(BaseBlockchainService):
                     amount = Decimal(amount.strip())
                 except Exception as e:
                     self.logger.error(f"Error converting amount to Decimal in estimate_fee: {str(e)}")
-                    # Continue with a default value
                     amount = Decimal('0')
-                    
-            # TRON has fixed fees
+
+            # Use TronFeeEstimator for dynamic estimation based on bandwidth/energy
+            try:
+                fee_estimator = TronFeeEstimator()
+                fee_result = fee_estimator.estimate_native_fee(sender, recipient, float(amount))
+                fee_sun = fee_result.get("fee", 0)
+                if fee_sun and int(fee_sun) > 0:
+                    fee_trx = Decimal(str(int(fee_sun))) / Decimal(10**6)
+                    self.logger.info(
+                        f"Estimated TRON fee via TronFeeEstimator: {fee_trx} TRX "
+                        f"(bandwidth={fee_result.get('bandwidth_fee', 0)}, "
+                        f"activation={fee_result.get('activation_fee', 0)})"
+                    )
+                    return fee_trx, None
+            except Exception as fee_err:
+                self.logger.warning(f"TronFeeEstimator failed, falling back to default: {str(fee_err)}")
+
+            # Fallback to fixed fee if estimator fails
             return Decimal('0.1'), None  # Fixed fee in TRX
-            
+
         except Exception as e:
             self.logger.error(f"Error estimating fee: {str(e)}")
             return Decimal('0'), str(e)

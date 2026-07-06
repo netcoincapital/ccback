@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>راهکار عملی 100% Non-Custodial — مقیاس‌پذیر برای هزاران کاربر</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      line-height: 1.8;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #0f0f2e 0%, #1a1a4e 100%);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 30px;
+      text-align: center;
+      border: 1px solid rgba(100, 100, 255, 0.15);
+    }
+    
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .header h1 small { font-size: 1rem; color: #11c699; display: block; margin-top: 5px; }
+    
+    .header .badge {
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 30px;
+      background: rgba(17, 198, 153, 0.15);
+      color: #11c699;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid rgba(17, 198, 153, 0.3);
+      margin-top: 10px;
+    }
+    
+    .critical-note {
+      background: linear-gradient(135deg, #2a0f0f 0%, #1a0a0a 100%);
+      border: 2px solid rgba(255, 82, 82, 0.4);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 25px 0;
+    }
+    .critical-note h3 { color: #ff5252; margin-bottom: 10px; }
+    .critical-note p { color: #ccc; }
+    
+    .architecture-box {
+      background: linear-gradient(135deg, #0d1a2a 0%, #0a0f1a 100%);
+      border: 1px solid rgba(100, 149, 237, 0.3);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+    .architecture-box h3 { color: cornflowerblue; margin-bottom: 15px; }
+
+    .diagram {
+      background: #0d0d1f;
+      border: 1px solid rgba(100,100,255,0.1);
+      border-radius: 12px;
+      padding: 30px 20px;
+      margin: 20px 0;
+      direction: ltr;
+      text-align: center;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 2;
+      color: #c9d1d9;
+    }
+    .diagram .arrow { color: #11c699; }
+    .diagram .bad { color: #ff5252; }
+    .diagram .good { color: #11c699; }
+    .diagram .box {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin: 2px;
+    }
+    .diagram .box-green { background: rgba(17,198,153,0.15); border: 1px solid rgba(17,198,153,0.3); }
+    .diagram .box-red { background: rgba(255,82,82,0.15); border: 1px solid rgba(255,82,82,0.3); }
+    .diagram .box-blue { background: rgba(100,149,237,0.15); border: 1px solid rgba(100,149,237,0.3); }
+    .diagram .box-yellow { background: rgba(255,193,7,0.15); border: 1px solid rgba(255,193,7,0.3); }
+    
+    .phase-card {
+      background: linear-gradient(135deg, #12122a 0%, #1a1a3e 100%);
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(100, 100, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .phase-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5px;
+      height: 100%;
+      border-radius: 0 3px 3px 0;
+    }
+    .phase-card.p1::before { background: #11c699; }
+    .phase-card.p2::before { background: #ffc107; }
+    .phase-card.p3::before { background: #ff9800; }
+    .phase-card.p-critical::before { background: #ff5252; }
+    
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .phase-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+    .phase-card.p1 .phase-num { background: rgba(17, 198, 153, 0.2); color: #11c699; }
+    .phase-card.p2 .phase-num { background: rgba(255, 193, 7, 0.2); color: #ffc107; }
+    .phase-card.p3 .phase-num { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
+    .phase-card.p-critical .phase-num { background: rgba(255, 82, 82, 0.2); color: #ff5252; }
+    
+    .phase-title { flex: 1; }
+    .phase-title h3 { color: #fff; font-size: 1.15rem; }
+    .phase-title .meta { color: #888; font-size: 0.85rem; }
+    .phase-effort { font-size: 0.8rem; padding: 3px 12px; border-radius: 20px; font-weight: 600; }
+    .effort-green { background: rgba(17, 198, 153, 0.15); color: #11c699; }
+    .effort-yellow { background: rgba(255, 193, 7, 0.15); color: #ffc107; }
+    .effort-orange { background: rgba(255, 152, 0, 0.15); color: #ff9800; }
+    .effort-red { background: rgba(255, 82, 82, 0.15); color: #ff5252; }
+
+    .code-block {
+      background: #0d0d1f;
+      border: 1px solid rgba(100, 100, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+      overflow-x: auto;
+      direction: ltr;
+      text-align: left;
+    }
+    .code-block .filename {
+      color: #666;
+      font-size: 0.8rem;
+      font-family: 'Fira Code', monospace;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-bottom: 8px;
+    }
+    pre {
+      font-family: 'Fira Code', 'Consolas', monospace;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #c9d1d9;
+      white-space: pre;
+    }
+    .keyword { color: #ff7b72; }
+    .string { color: #a5d6ff; }
+    .comment { color: #8b949e; font-style: italic; }
+    .type { color: #79c0ff; }
+    .function { color: #d2a8ff; }
+    .number { color: #79c0ff; }
+    .annotation { color: #ffa657; }
+    
+    .step { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .step:last-child { border-bottom: none; }
+    .step .step-title { color: #11c699; font-weight: 600; margin-bottom: 5px; }
+    .step .step-desc { color: #999; font-size: 0.9rem; }
+    .step .file-list {
+      color: #666; font-size: 0.8rem; font-family: 'Fira Code', monospace;
+      margin-top: 5px; padding: 5px 10px; background: rgba(255,255,255,0.03); border-radius: 6px;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(17, 198, 153, 0.3);
+    }
+    
+    .summary-box {
+      background: rgba(17, 198, 153, 0.05);
+      border: 1px solid rgba(17, 198, 153, 0.2);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+    .summary-box h3 { color: #11c699; margin-bottom: 10px; }
+    
+    .warning-box {
+      background: rgba(255, 193, 7, 0.05);
+      border: 1px solid rgba(255, 193, 7, 0.2);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 15px 0;
+    }
+    .warning-box h3 { color: #ffc107; margin-bottom: 10px; }
+    
+    .danger-box {
+      background: rgba(255, 82, 82, 0.05);
+      border: 1px solid rgba(255, 82, 82, 0.2);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 15px 0;
+    }
+    .danger-box h3 { color: #ff5252; margin-bottom: 10px; }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 0.9rem;
+    }
+    th, td { padding: 10px 15px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    th { background: rgba(17, 198, 153, 0.08); color: #11c699; font-weight: 600; }
+    
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .tag-green { background: rgba(17, 198, 153, 0.15); color: #11c699; }
+    .tag-yellow { background: rgba(255, 193, 7, 0.15); color: #ffc107; }
+    .tag-red { background: rgba(255, 82, 82, 0.15); color: #ff5252; }
+    .tag-blue { background: rgba(100, 149, 237, 0.15); color: cornflowerblue; }
+    .tag-orange { background: rgba(255, 152, 0, 0.15); color: #ff9800; }
+    
+    .footer { text-align: center; padding: 30px; color: #555; font-size: 0.85rem; }
+    
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    
+    .inline-code {
+      background: rgba(100, 100, 255, 0.1);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: #79c0ff;
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 12px;
+      margin: 8px 0;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .timeline-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .dot-green { background: #11c699; box-shadow: 0 0 8px rgba(17,198,153,0.5); }
+    .dot-yellow { background: #ffc107; box-shadow: 0 0 8px rgba(255,193,7,0.5); }
+    .dot-orange { background: #ff9800; box-shadow: 0 0 8px rgba(255,152,0,0.5); }
+    .dot-red { background: #ff5252; box-shadow: 0 0 8px rgba(255,82,82,0.5); }
+    .timeline-content { flex: 1; }
+    .timeline-content .tl-title { color: #fff; font-weight: 600; }
+    .timeline-content .tl-desc { color: #888; font-size: 0.85rem; }
+    
+    .cost-cell { font-size: 1.1rem; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- HEADER -->
+    <div class="header">
+      <h1>🎯 راهکار عملی 100% Non-Custodial <small>Enterprise Scale — ۱۰,۰۰۰+ کاربر</small></h1>
+      <div style="color: #aaa; margin-top: 5px;">بهینه از نظر هزینه + مقیاس‌پذیر + Non-Custodial واقعی</div>
+      <div class="badge">🆓 هزینه اضافی: ~$0 (با زیرساخت فعلی)</div>
+    </div>
+
+    <!-- ⚠️ CRITICAL NOTE: Previous solution was WRONG for scale -->
+    <div class="critical-note">
+      <h3>🚫 اشتباه رایج: "رفتن مستقیم از دستگاه به API رایگان"</h3>
+      <p>
+        راهکار <strong>"دستگاه ← CoinGecko مستقیم"</strong> برای دمو خوب است ولی برای <strong>۱۰,۰۰۰ کاربر</strong> فاجعه است.
+        CoinGecko رایگان ۱۰-۵۰ درخواست در دقیقه اجازه می‌دهد. با ۱۰,۰۰۰ کاربر که هر ۳۰ ثانیه یکبار قیمت می‌گیرند،
+        حدود <strong>۲۰,۰۰۰ درخواست در دقیقه</strong> نیاز دارید → یعنی ۴۰۰ برابر محدودیت رایگان.
+      </p>
+      <p style="margin-top: 10px;">
+        <strong style="color: #11c699;">✅ راه حل درست:</strong> دستگاه همچنان به سرور خودتان وصل می‌شود،
+        ولی سرور به جای Custodial API بودن، به <strong>Caching Proxy</strong> تبدیل می‌شود.
+        یعنی سرور هر ۱-۲ دقیقه ۱ بار از CoinGecko می‌گیرد و به همه کاربران سرویس می‌دهد.
+      </p>
+    </div>
+
+    <!-- COMPARISON DIAGRAM -->
+    <h2 class="section-title">🧬 معماری قدیم vs جدید</h2>
+
+    <div class="architecture-box">
+      <h3>❌ معماری غلط (برای اسکیل)</h3>
+      <div class="diagram">
+        <span class="box box-green">📱 Device #1</span> ───────┐<br>
+        <span class="box box-green">📱 Device #2</span> ───────┤<br>
+        <span class="box box-green">📱 Device #3</span> ───────┼── <span class="bad">✖️ ۱۰,۰۰۰ req/min</span> ──▶ <span class="box box-yellow">CoinGecko Free</span><br>
+        <span class="box box-green">📱 ... 10K more</span> ────┘<br>
+        <span style="color:#ff5252;">► Rate Limit: 50 req/min → ۹۹.۵٪ درخواست‌ها FAIL 🚫</span>
+      </div>
+    </div>
+
+    <div class="architecture-box">
+      <h3>✅ معماری درست (Enterprise Scale)</h3>
+      <div class="diagram">
+        <span class="box box-green">📱 Device #1</span> ───────┐<br>
+        <span class="box box-green">📱 Device #2</span> ───────┤<br>
+        <span class="box box-green">📱 Device #3</span> ───────┼──▶ <span class="box box-blue">🖥️ Your Server<br>(Cache Proxy)</span> ── ۱ req/۲min ──▶ <span class="box box-yellow">CoinGecko</span><br>
+        <span class="box box-green">📱 ... 10K more</span> ────┘         │<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="good">► پاسخ فوری از حافظه (RAM / Redis)</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="good">► بار سرور: ثابت (مستقل از تعداد کاربر)</span>
+      </div>
+    </div>
+
+    <!-- COST COMPARISON TABLE -->
+    <h2 class="section-title">💰 مقایسه هزینه برای ۱۰٬۰۰۰ کاربر</h2>
+
+    <table>
+      <tr>
+        <th>سرویس</th>
+        <th>مدل قدیمی (دستگاه ← API خارجی)</th>
+        <th>مدل جدید (Server-side Cache)</th>
+        <th>صرفه‌جویی</th>
+      </tr>
+      <tr>
+        <td>قیمت لحظه‌ای</td>
+        <td>CoinGecko Pro (<span style="color:#ff5252;">$199/ماه</span>)</td>
+        <td>CoinGecko Free + سرور خودتان (<span style="color:#11c699;">$0</span>)</td>
+        <td><span style="color:#11c699;">$199/ماه</span></td>
+      </tr>
+      <tr>
+        <td>نمودار</td>
+        <td>CoinGecko Pro (<span style="color:#ff5252;">$199/ماه</span>)</td>
+        <td>CoinGecko Free + سرور خودتان (<span style="color:#11c699;">$0</span>)</td>
+        <td><span style="color:#11c699;">$199/ماه</span></td>
+      </tr>
+      <tr>
+        <td>EVM RPC</td>
+        <td>Infura/QuickNode (<span style="color:#ff5252;">$50-200/ماه</span>)</td>
+        <td>publicnode.com (رایگان) + <strong>۱ Infura برای ارسال</strong> (<span style="color:#ff9800;">$50/ماه</span>)</td>
+        <td><span style="color:#11c699;">$0-150/ماه</span></td>
+      </tr>
+      <tr>
+        <td>تخمین کارمزد</td>
+        <td>Custom endpoint (<span style="color:#ff9800;">$20-50/ماه</span>)</td>
+        <td>سرور خودتان از public RPC کش می‌کند (<span style="color:#11c699;">$0</span>)</td>
+        <td><span style="color:#11c699;">$20-50/ماه</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:800;color:#11c699;">جمع</td>
+        <td style="font-weight:800;color:#ff5252;">~$400-650/ماه</td>
+        <td style="font-weight:800;color:#11c699;">~$50/ماه</td>
+        <td style="font-weight:800;color:#11c699;">~$350-600/ماه</td>
+      </tr>
+    </table>
+
+    <div class="divider" style="height:1px;background:linear-gradient(90deg,transparent,rgba(17,198,153,0.3),transparent);margin:30px 0;"></div>
+
+    <!-- PHASE 0: CRITICAL FIX -->
+    <h2 class="section-title">🚨 فاز ۰ — اصلاح استراتژی معماری (ضروری)</h2>
+
+    <div class="phase-card p-critical">
+      <div class="phase-header">
+        <div class="phase-num">0</div>
+        <div class="phase-title">
+          <h3>تغییر نقش سرور: از Custodial API به Caching Proxy</h3>
+          <div class="meta">تغییر استراتژی | ۲-۳ روز | <strong style="color:#11c699;">هزینه جدید: $0</strong></div>
+        </div>
+        <span class="phase-effort effort-red">بحرانی</span>
+      </div>
+
+      <!-- Server Side Code Example -->
+      <div class="step">
+        <div class="step-title">📄 نمونه کد سمت سرور (Node.js/PHP/Python) — Caching Proxy</div>
+        <div class="step-desc">
+          این کد روی سرور فعلی شما اجرا می‌شود. هر ۲ دقیقه ۱ بار از CoinGecko می‌گیرد و کش می‌کند.
+          بقیه زمان از RAM پاسخ می‌دهد. بار سرور برای ۱۰ تا ۱۰۰٬۰۰۰ کاربر یکسان است.
+        </div>
+        <div class="code-block">
+          <div class="filename">server/caching-proxy.js (روی سرور شما اجرا می‌شود)</div>
+          <pre>
+<span class="comment">// ============================================================</span>
+<span class="comment">// Caching Proxy Server — جایگزین Custodial API فعلی</span>
+<span class="comment">// ============================================================</span>
+<span class="comment">// ویژگی‌ها:</span>
+<span class="comment">// 1. هر ۲ دقیقه ۱ بار از CoinGecko می‌گیرد → بدون Rate Limit</span>
+<span class="comment">// 2. پاسخ از RAM (زیر ۱ms) → بدون فشار به سرور</span>
+<span class="comment">// 3. برای ۱۰ تا ۱۰۰٬۰۰۰ کاربر بار یکسان دارد</span>
+<span class="comment">// 4. فقط داده‌های عمومی — هیچ UserID/کلید خصوصی ذخیره نمی‌کند</span>
+
+<span class="keyword">const</span> express = <span class="function">require</span>(<span class="string">'express'</span>);
+<span class="keyword">const</span> axios = <span class="function">require</span>(<span class="string">'axios'</span>);
+<span class="keyword">const</span> app = express();
+
+<span class="comment">// ========== قیمت لحظه‌ای ==========</span>
+<span class="keyword">let</span> priceCache = { data: <span class="keyword">null</span>, lastUpdate: 0 };
+<span class="keyword">const</span> PRICE_TTL = 2 * 60 * 1000; <span class="comment">// 2 دقیقه</span>
+
+<span class="keyword">async function</span> refreshPrices() {
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> ids = [<span class="string">'bitcoin'</span>,<span class="string">'ethereum'</span>,<span class="string">'tron'</span>,<span class="string">'binancecoin'</span>,<span class="string">'solana'</span>,<span class="string">'ripple'</span>];
+    <span class="keyword">const</span> { data } = <span class="keyword">await</span> axios.get(
+      <span class="string">`https://api.coingecko.com/api/v3/simple/price?ids=<span class="function">${ids.join(',')}</span>&vs_currencies=usd&include_24hr_change=true`</span>
+    );
+    priceCache = { data, lastUpdate: Date.now() };
+    console.log(<span class="string">`✅ Prices refreshed: <span class="function">${Object.keys(data).length}</span> coins`</span>);
+  } <span class="keyword">catch</span> (e) {
+    console.error(<span class="string">`❌ Price refresh failed: <span class="function">${e.message}</span> (using stale cache)`</span>);
+  }
+}
+
+<span class="comment">// هر ۲ دقیقه یکبار آپدیت کن (زمانی که کسی صدا زد)</span>
+app.get(<span class="string">'/api/prices'</span>, <span class="keyword">async</span> (req, res) => {
+  <span class="keyword">if</span> (Date.now() - priceCache.lastUpdate > PRICE_TTL) {
+    <span class="keyword">await</span> refreshPrices(); <span class="comment">// Refresh in background</span>
+  }
+  res.json({ success: <span class="keyword">true</span>, prices: priceCache.data });
+});
+
+<span class="comment">// ========== نمودار تاریخی ==========</span>
+<span class="keyword">let</span> chartCache = {};
+<span class="keyword">const</span> CHART_TTL = 5 * 60 * 1000; <span class="comment">// 5 دقیقه</span>
+
+app.get(<span class="string">'/api/chart'</span>, <span class="keyword">async</span> (req, res) => {
+  <span class="keyword">const</span> { symbol, days = <span class="string">'7'</span> } = req.query;
+  <span class="keyword">const</span> cacheKey = <span class="string">`<span class="function">${symbol}</span>_<span class="function">${days}</span>`</span>;
+  <span class="keyword">const</span> cached = chartCache[cacheKey];
+
+  <span class="keyword">if</span> (cached && Date.now() - cached.ts < CHART_TTL) {
+    <span class="keyword">return</span> res.json({ success: <span class="keyword">true</span>, data: cached.data });
+  }
+
+  <span class="keyword">try</span> {
+    <span class="comment">// CoinGecko ID mapping</span>
+    <span class="keyword">const</span> coinId = symbolToId[symbol.toUpperCase()];
+    <span class="keyword">if</span> (!coinId) <span class="keyword">return</span> res.status(400).json({ error: <span class="string">'Unknown symbol'</span> });
+
+    <span class="keyword">const</span> to = Math.floor(Date.now() / 1000);
+    <span class="keyword">const</span> from = to - (parseInt(days) * 86400);
+    <span class="keyword">const</span> { data } = <span class="keyword">await</span> axios.get(
+      <span class="string">`https://api.coingecko.com/api/v3/coins/<span class="function">${coinId}</span>/market_chart/range?vs_currency=usd&from=<span class="function">${from}</span>&to=<span class="function">${to}</span>`</span>
+    );
+    
+    chartCache[cacheKey] = { data: data.prices, ts: Date.now() };
+    res.json({ success: <span class="keyword">true</span>, data: data.prices });
+  } <span class="keyword">catch</span> (e) {
+    <span class="keyword">if</span> (cached) res.json({ success: <span class="keyword">true</span>, data: cached.data, stale: <span class="keyword">true</span> });
+    <span class="keyword">else</span> res.status(500).json({ error: e.message });
+  }
+});
+
+app.listen(port, () => console.log(<span class="string">`Non-Custodial Proxy running on port <span class="function">${port}</span>`</span>));
+          </pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">🔄 تغییر در اپ Flutter — فقط تغییر Base URL</div>
+        <div class="code-block">
+          <div class="filename">lib/services/api_service.dart (تغییر مسیر)</div>
+          <pre>
+<span class="comment">// BEFORE: مستقیم به CoinGecko</span>
+<span class="keyword">final</span> uri = <span class="type">Uri</span>.parse(<span class="string">'https://api.coingecko.com/api/v3/simple/price?...'</span>);
+
+<span class="comment">// AFTER: از سرور خودتان (Caching Proxy)</span>
+<span class="comment">// همان سرور coinceeper.com ولی endpoint جدید و بدون UserID</span>
+<span class="keyword">static const</span> <span class="type">String</span> _baseUrl = <span class="string">'https://coinceeper.com/api/v2'</span>;  <span class="comment">// endpoint جدید</span>
+
+<span class="comment">// حذف UserID از هدر — این endpointها عمومی هستند</span>
+<span class="type">Future</span>&lt;<span class="type">PricesResponse</span>&gt; getPrices(<span class="type">List</span>&lt;<span class="type">String</span>&gt; symbols, ...) <span class="keyword">async</span> {
+  <span class="comment">// فقط symbolها ارسال می‌شوند — بدون UserID</span>
+  <span class="keyword">final</span> response = <span class="keyword">await</span> _dio.get(<span class="string">'/api/v2/prices'</span>, ...);
+}
+          </pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">📊 تأثیر بر زیرساخت</div>
+        <div class="file-list">
+          ✅ مزیت: ۱ endpoint به جای ۳ (قیمت + نمودار + کارمزد = یک endpoint عمومی)<br>
+          ✅ مزیت: هیچ UserID یا اطلاعات کاربری ذخیره/ارسال نمی‌شود<br>
+          ✅ مزیت: بار سرور ثابت (بدون افزایش با تعداد کاربران)<br>
+          🔄 بدون تغییر در سرور فعلی — فقط endpoint جدید اضافه می‌شود
+        </div>
+      </div>
+    </div>
+
+    <div class="divider" style="height:1px;background:linear-gradient(90deg,transparent,rgba(17,198,153,0.3),transparent);margin:30px 0;"></div>
+
+    <!-- STRATEGY OVERVIEW -->
+    <h2 class="section-title">🏗️ استراتژی نهایی (۵ گام ساده)</h2>
+
+    <div class="summary-box">
+      <h3>اصل طلایی</h3>
+      <p>هر چیزی که عمومی است (قیمت، نمودار، کارمزد، لیست ارزها) ← سرور کش می‌کند و بدون UserID سرویس می‌دهد.</p>
+      <p>هر چیزی که خصوصی است (کلید، امضا، موجودی، تاریخچه) ← روی دستگاه یا از بلاکچین مستقیم خوانده می‌شود.</p>
+    </div>
+
+    <!-- Phase 1: Server Cache -->
+    <div class="phase-card p1">
+      <div class="phase-header">
+        <div class="phase-num">۱</div>
+        <div class="phase-title">
+          <h3>Endpoint جدید قیمت + نمودار + Gas روی سرور (بدون UserID)</h3>
+          <div class="meta">۲-۳ روز | <strong style="color:#11c699;">$0</strong></div>
+        </div>
+        <span class="phase-effort effort-green">ساده</span>
+      </div>
+      <div class="step">
+        <div class="step-title">ایجاد ۳ endpoint عمومی جدید روی سرور</div>
+        <div class="step-desc">
+          <code>/api/v2/prices</code> — قیمت لحظه‌ای (کش ۲ دقیقه)<br>
+          <code>/api/v2/chart?symbol=BTC&days=7</code> — نمودار (کش ۵ دقیقه)<br>
+          <code>/api/v2/gas</code> — کارمزد (کش ۱ دقیقه، از public RPC)<br><br>
+          همه بدون هدر UserID → هیچ اطلاعات کاربری لو نمی‌رود<br>
+          همه با کش → بار سرور ثابت برای هر تعداد کاربر
+        </div>
+        <div class="file-list">تغییر: سمت سرور (backend) + lib/services/api_service.dart</div>
+      </div>
+    </div>
+
+    <!-- Phase 2: Deprecate custodial -->
+    <div class="phase-card p1">
+      <div class="phase-header">
+        <div class="phase-num">۲</div>
+        <div class="phase-title">
+          <h3>حذف UserID از endpointهای عمومی در سمت Flutter</h3>
+          <div class="meta">۱ روز | <strong style="color:#11c699;">$0</strong></div>
+        </div>
+        <span class="phase-effort effort-green">ساده</span>
+      </div>
+      <div class="step">
+        <div class="step-title">تغییر در token_provider + chart_data_manager</div>
+        <div class="step-desc">
+          به جای apiService.getPrices() (که UserID ارسال می‌کند)، از endpoint جدید عمومی استفاده کنید.<br>
+          حذف کامل UserID از درخواست‌های قیمت و نمودار.
+        </div>
+        <div class="file-list">lib/providers/token_provider.dart, lib/services/api_service.dart, lib/services/chart_data_manager.dart</div>
+      </div>
+    </div>
+
+    <!-- Phase 3: Deprecate getUserBalance -->
+    <div class="phase-card p1">
+      <div class="phase-header">
+        <div class="phase-num">۳</div>
+        <div class="phase-title">
+          <h3>Deprecate کردن getUserBalance (قبلاً OnChainBalanceService کامل است)</h3>
+          <div class="meta">نیم روز | <strong style="color:#11c699;">$0 — کد حاضر است</strong></div>
+        </div>
+        <span class="phase-effort effort-green">ساده</span>
+      </div>
+      <div class="step">
+        <div class="step-title">اضافه کردن @Deprecated + _rejectCustodialRead()</div>
+        <div class="step-desc">
+          OnChainBalanceService از قبل همه بلاکچین‌ها را پشتیبانی می‌کند و مستقیماً از public RPC/public node می‌خواند.
+        </div>
+        <div class="file-list">lib/services/api_service.dart</div>
+      </div>
+    </div>
+
+    <!-- Phase 4: Fee Estimator -->
+    <div class="phase-card p2">
+      <div class="phase-header">
+        <div class="phase-num">۴</div>
+        <div class="phase-title">
+          <h3>Fee Estimator متمرکز سمت سرور (یا محلی برای EVM)</h3>
+          <div class="meta">۱-۲ روز | <strong style="color:#11c699;">$0</strong></div>
+        </div>
+        <span class="phase-effort effort-yellow">متوسط</span>
+      </div>
+      <div class="step">
+        <div class="step-title">دو گزینه:</div>
+        <div class="step-desc">
+          <strong>گزینه A (پیشنهادی):</strong> کوئری Gas Price از public RPC سمت سرور + کش ۱ دقیقه + سرویس عمومی<br>
+          <strong>گزینه B:</strong> EvmFeeEstimator محلی (برای EVM کافی است، بقیه placeholder)
+        </div>
+        <div class="file-list">گزینه A: سمت سرور + lib/screens/send_detail_screen.dart | گزینه B: lib/wallet/transactions/fees/</div>
+      </div>
+    </div>
+
+    <!-- Phase 5: Transaction History -->
+    <div class="phase-card p2">
+      <div class="phase-header">
+        <div class="phase-num">۵</div>
+        <div class="phase-title">
+          <h3>غیرفعالسازی API تراکنش‌های سرور</h3>
+          <div class="meta">۱ روز | <strong style="color:#11c699;">$0 — HistoryIndexer حاضر است</strong></div>
+        </div>
+        <span class="phase-effort effort-yellow">متوسط</span>
+      </div>
+      <div class="step">
+        <div class="step-title">Deprecate + حذف fallback</div>
+        <div class="step-desc">
+          HistoryIndexer برای Ethereum, Polygon, BSC, Avalanche, Arbitrum, Bitcoin, Tron, Solana, XRP, Polkadot
+          از block explorer عمومی استفاده می‌کند. کافی است fallback به سرور را حذف کنید.
+        </div>
+        <div class="file-list">lib/services/api_service.dart + lib/screens/history_screen.dart</div>
+      </div>
+    </div>
+
+    <!-- Phase 6: Coin List -->
+    <div class="phase-card p3">
+      <div class="phase-header">
+        <div class="phase-num">۶</div>
+        <div class="phase-title">
+          <h3>لیست ارزها از CoinGecko کش شده روی سرور</h3>
+          <div class="meta">نیم روز | <strong style="color:#11c699;">$0</strong></div>
+        </div>
+        <span class="phase-effort effort-green">ساده</span>
+      </div>
+      <div class="step">
+        <div class="step-title">یک endpoint عمومی /api/v2/coins</div>
+        <div class="step-desc">
+          سرور یکبار در روز لیست را از CoinGecko می‌گیرد و کش می‌کند. کاربران هر بار که نیاز دارند از همین endpoint می‌گیرند.
+          بدون UserID، بدون Rate Limit.
+        </div>
+        <div class="file-list">سمت سرور + lib/services/api_service.dart</div>
+      </div>
+    </div>
+
+    <!-- Phase 7: Remove Public Address Registration -->
+    <div class="phase-card p3">
+      <div class="phase-header">
+        <div class="phase-num">۷</div>
+        <div class="phase-title">
+          <h3>حذف ارسال Public Address به سرور</h3>
+          <div class="meta">نیم روز | <strong style="color:#11c699;">$0</strong></div>
+        </div>
+        <span class="phase-effort effort-green">ساده</span>
+      </div>
+      <div class="step">
+        <div class="step-title">حذف _syncWatchOnlyAddresses از WalletRepository</div>
+        <div class="step-desc">
+          آدرس‌های عمومی محصول derivation از seed هستند و نیازی به ثبت در سرور ندارند.
+        </div>
+        <div class="file-list">lib/wallet/wallet_repository.dart</div>
+      </div>
+    </div>
+
+    <div class="divider" style="height:1px;background:linear-gradient(90deg,transparent,rgba(17,198,153,0.3),transparent);margin:30px 0;"></div>
+
+    <!-- FINAL ARCHITECTURE -->
+    <h2 class="section-title">🏛️ معماری نهایی (Non-Custodial + Enterprise)</h2>
+
+    <div class="architecture-box">
+      <div class="diagram" style="text-align:right; direction:rtl; font-size:0.9rem; line-height:2.5;">
+        <span class="box box-green">📱 اپلیکیشن موبایل</span><br>
+        │<br>
+        ├─ <span style="color:#11c699;">قیمت/نمودار/کارمزد/لیست ارزها</span> ──▶ <span class="box box-blue">🖥️ Cache Proxy (سرور شما)</span> ── ۱req/۲min ──▶ <span class="box box-yellow">CoinGecko</span><br>
+        │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ (از RAM پاسخ می‌دهد)<br>
+        │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;بدون UserID ◄ پاسخ زیر ۱ms<br>
+        │<br>
+        ├─ <span style="color:#11c699;">موجودی (Balance)</span> ──────────────────────────▶ <span class="box box-blue">Public RPC / Block Explorer</span><br>
+        │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;مستقیم از on-chain<br>
+        │<br>
+        ├─ <span style="color:#11c699;">امضای تراکنش</span> ───────────────────────────────▶ <span class="box box-green">🔐 روی دستگاه (Trust Wallet Core)</span><br>
+        │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;کلید خصوصی هرگز خارج نمی‌شود<br>
+        │<br>
+        ├─ <span style="color:#11c699;">تاریخچه تراکنش</span> ─────────────────────────────▶ <span class="box box-blue">HistoryIndexer (Block Explorer)</span><br>
+        │<br>
+        └─ <span style="color:#11c699;">Broadcast تراکنش</span> ──────────────────────────▶ <span class="box box-blue">Public RPC + Infura (fallback)</span>
+      </div>
+    </div>
+
+    <div class="divider" style="height:1px;background:linear-gradient(90deg,transparent,rgba(17,198,153,0.3),transparent);margin:30px 0;"></div>
+
+    <!-- SCALE ANALYSIS -->
+    <h2 class="section-title">📈 تحلیل مقیاس‌پذیری</h2>
+
+    <table>
+      <tr>
+        <th>سناریو</th>
+        <th>تعداد کاربر</th>
+        <th>بار روی سرور شما</th>
+        <th>بار روی CoinGecko</th>
+        <th>مشکل دارد؟</th>
+      </tr>
+      <tr>
+        <td>راه اندازی</td>
+        <td>۱۰۰</td>
+        <td>~۱۰ req/sec</td>
+        <td>۱ req/۲min</td>
+        <td><span class="tag tag-green">خیر</span></td>
+      </tr>
+      <tr>
+        <td>رشد</td>
+        <td>۱,۰۰۰</td>
+        <td>~۱۰۰ req/sec</td>
+        <td>۱ req/۲min</td>
+        <td><span class="tag tag-green">خیر</span></td>
+      </tr>
+      <tr>
+        <td>Enterprise</td>
+        <td>۱۰,۰۰۰</td>
+        <td>~۱۰۰۰ req/sec</td>
+        <td>۱ req/۲min</td>
+        <td><span class="tag tag-green">خیر (کش جواب می‌دهد)</span></td>
+      </tr>
+      <tr>
+        <td>Massive</td>
+        <td>۱۰۰,۰۰۰+</td>
+        <td>~۱۰۰۰۰ req/sec</td>
+        <td>۱ req/۲min</td>
+        <td><span class="tag tag-yellow">ممکن است نیاز به CDN یا Redis باشد</span></td>
+      </tr>
+    </table>
+
+    <div class="summary-box">
+      <h3>🔑 چرا این معماری اسکیل می‌کند؟</h3>
+      <p>
+        بار سرور شما <strong>وابسته به CoinGecko نیست</strong>. وابسته است به اینکه چقدر سریع می‌توانید 
+        از RAM پاسخ دهید. یک سرور معمولی ۱ گیگابایت رم می‌تواند <strong>۱۰۰٬۰۰۰+ پاسخ در ثانیه</strong> 
+        از RAM بدهد — این یعنی تا ۱۰۰٬۰۰۰ کاربر همزمان بدون مشکل.
+      </p>
+      <p style="margin-top: 10px;">
+        <strong>تنها محدودیت واقعی:</strong> اگر بخواهید ۱٬۰۰۰٬۰۰۰+ کاربر داشته باشید، 
+        احتمالاً نیاز به Redis یا CDN پیدا می‌کنید. ولی تا ۱۰۰٬۰۰۰ کاربر، یک سرور معمولی کافی است.
+      </p>
+    </div>
+
+    <div class="divider" style="height:1px;background:linear-gradient(90deg,transparent,rgba(17,198,153,0.3),transparent);margin:30px 0;"></div>
+
+    <!-- FINAL SUMMARY -->
+    <h2 class="section-title">🎯 جمع‌بندی نهایی</h2>
+
+    <table>
+      <tr>
+        <th>بخش</th>
+        <th>راهکار</th>
+        <th>مقیاس‌پذیر؟</th>
+        <th>هزینه برای ۱۰K کاربر</th>
+        <th>Non-Custodial؟</th>
+      </tr>
+      <tr>
+        <td>قیمت + نمودار</td>
+        <td>Cache Proxy روی سرور خودتان (از CoinGecko هر ۲ دقیقه)</td>
+        <td><span class="tag tag-green">✅</span></td>
+        <td class="cost-cell" style="color:#11c699;">$0</td>
+        <td><span class="tag tag-green">✅</span></td>
+      </tr>
+      <tr>
+        <td>موجودی</td>
+        <td>OnChainBalanceService (مستقیم از public node)</td>
+        <td><span class="tag tag-green">✅</span></td>
+        <td class="cost-cell" style="color:#11c699;">$0</td>
+        <td><span class="tag tag-green">✅</span></td>
+      </tr>
+      <tr>
+        <td>امضای تراکنش</td>
+        <td>Trust Wallet Core روی دستگاه</td>
+        <td><span class="tag tag-green">✅</span></td>
+        <td class="cost-cell" style="color:#11c699;">$0</td>
+        <td><span class="tag tag-green">✅</span></td>
+      </tr>
+      <tr>
+        <td>تاریخچه تراکنش</td>
+        <td>HistoryIndexer (از block explorer)</td>
+        <td><span class="tag tag-yellow">⚠️ محدودیت explorer</span></td>
+        <td class="cost-cell" style="color:#11c699;">$0</td>
+        <td><span class="tag tag-green">✅</span></td>
+      </tr>
+      <tr>
+        <td>Gas Fee / کارمزد</td>
+        <td>Cache Proxy (از public RPC)</td>
+        <td><span class="tag tag-green">✅</span></td>
+        <td class="cost-cell" style="color:#11c699;">$0</td>
+        <td><span class="tag tag-green">✅</span></td>
+      </tr>
+      <tr>
+        <td>لیست ارزها</td>
+        <td>Cache Proxy (کش روزانه)</td>
+        <td><span class="tag tag-green">✅</span></td>
+        <td class="cost-cell" style="color:#11c699;">$0</td>
+        <td><span class="tag tag-green">✅</span></td>
+      </tr>
+      <tr>
+        <td>Broadcast تراکنش</td>
+        <td>Public RPC + <strong>۱ Infura</strong> (فقط برای ارسال)</td>
+        <td><span class="tag tag-green">✅</span></td>
+        <td class="cost-cell" style="color:#ff9800;">~$50/ماه</td>
+        <td><span class="tag tag-green">✅</span></td>
+      </tr>
+      <tr style="font-weight:800;">
+        <td style="color:#11c699;">جمع</td>
+        <td></td>
+        <td></td>
+        <td class="cost-cell" style="color:#11c699;">~$50/ماه</td>
+        <td><span class="tag tag-green">✅ ۱۰۰%</span></td>
+      </tr>
+    </table>
+
+    <div class="summary-box" style="margin-top: 25px;">
+      <h3>📌 تصمیم نهایی</h3>
+      <p style="color: #ddd; line-height: 2;">
+        <strong>سرور فعلی را نگه دارید</strong>، ولی نقش آن را تغییر دهید:<br>
+        ۱. endpoint جدید عمومی (بدون UserID) برای قیمت، نمودار، کارمزد و لیست ارزها بسازید<br>
+        ۲. همه این endpointها از <strong>کش درون حافظه (RAM)</strong> استفاده کنند<br>
+        ۳. سرور هر ۱-۲ دقیقه یکبار از CoinGecko و public RPC تازه کند<br>
+        ۴. UserID را از این endpointها حذف کنید → دیگر custodial نیست<br>
+        ۵. موجودی و تاریخچه تراکنش همچنان مستقیم از on-chain خوانده شود (همین الان این کار را می‌کند)
+      </p>
+      <p style="color: #11c699; margin-top: 15px; font-weight: 700;">
+        نتیجه: Non-Custodial واقعی + مقیاس‌پذیر + هزینه ~$50/ماه (فقط ۱ Infura برای broadcast)
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>تاریخ تحلیل: ۳۱ می ۲۰۲۶ — CoinCeepr Wallet Flutter — نسخه Enterprise Scale</p>
+    </div>
+
+  </div>
+</body>
+</html>

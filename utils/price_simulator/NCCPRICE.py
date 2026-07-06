@@ -1,13 +1,16 @@
-import sys, os
-# اضافه کردن مسیر اصلی پروژه به sys.path
-current_dir = os.path.dirname(os.path.abspath(__file__))
-# از utils/price_simulator به CC directory (یعنی 2 سطح بالا)
-project_root = os.path.abspath(os.path.join(current_dir, '../..'))
-# اضافه کردن parent directory که شامل CC است
-parent_dir = os.path.dirname(project_root)
-sys.path.insert(0, parent_dir)
+import sys
+import os
 
-# تغییر مسیر کاری به CC directory
+# Setup paths
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, '../..'))  # CC directory
+parent_dir = os.path.dirname(project_root)  # Directory containing CC
+
+# Add parent to path so we can import CC.database
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+# Change to project root
 os.chdir(project_root)
 
 import time
@@ -19,9 +22,16 @@ import schedule
 from decimal import Decimal
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from CC.database.Currencies import Currencies
-from CC.database.prices import Price
-from CC.utils.logging_config import get_logger
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv(os.path.join(project_root, '.env'))
+
+# Import directly without going through CC package to avoid circular imports
+sys.path.insert(0, project_root)  # Add CC directory itself to path
+from database.Currencies import Currencies
+from database.prices import Price
+from utils.logging_config import get_logger
 
 # تنظیم لاگر با استفاده از ماژول لاگینگ پروژه
 try:
@@ -76,7 +86,12 @@ FIAT_EXCHANGE_RATES = {
     "TND": 0.32
 }
 
-DATABASE_URL = os.getenv("DATABASE_URL", "mysql+mysqlconnector://coincee:09387270277Mn!!??@localhost/coincee")
+# Build DATABASE_URL from environment variables (same as database/base.py)
+DB_USER = os.getenv('DB_USER', 'coincee')
+DB_PASSWORD = os.getenv('DB_PASSWORD', '09387270277Mn!!??')
+DB_HOST = os.getenv('DB_HOST', '127.0.0.1')
+DB_NAME = os.getenv('DB_NAME', 'coincee')
+DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
 NCC_SMART_CONTRACT_1 = "TCDgp5bwtixaShPifUm7HpZ71C1pe6zif1"
 NCC_SMART_CONTRACT_2 = "T9yYp7JUxypLk7GFhsLRj5jN6ZrNDcH2Cf"
 NCC_CURRENCY_IDS_TO_FIND = [8517, 8519]  # هر دو شناسه NCC
@@ -142,22 +157,28 @@ def get_current_price(fiat="USD"):
         
     session = Session()
     try:
-        # استفاده از اولین شناسه ارز برای دریافت قیمت - تبدیل به string
-        currency_id_str = str(NCC_CURRENCY_IDS[0])
-        price = session.query(Price).filter(
-            Price.crypto_id == currency_id_str,
-            Price.currency == fiat
-        ).order_by(Price.last_updated.desc()).first()
+        from sqlalchemy import text
         
-        if price:
-            logger.debug(f"📊 قیمت فعلی برای NCC (ID: {currency_id_str}) به {fiat}: {float(price.price)} {FIAT_CURRENCIES.get(fiat, '')}")
-            return float(price.price)
+        currency_id = NCC_CURRENCY_IDS[0]
+        result = session.execute(text("""
+            SELECT cp.price, fr.rate
+            FROM current_prices cp
+            LEFT JOIN fiat_rates fr ON fr.quote_currency = :fiat
+            WHERE cp.symbol_id = :symbol_id
+        """), {'symbol_id': currency_id, 'fiat': fiat}).first()
+        
+        if result:
+            price_usd = float(result[0])
+            fiat_rate = float(result[1]) if result[1] else 1.0
+            price_fiat = price_usd * fiat_rate
+            logger.debug(f"📊 قیمت NCC (symbol_id: {currency_id}): ${price_fiat:.4f} {fiat}")
+            return price_fiat
         else:
-            logger.debug(f"⚠️ هیچ قیمتی برای NCC (ID: {currency_id_str}) به {fiat} در دیتابیس پیدا نشد")
+            logger.debug(f"⚠️ قیمت NCC یافت نشد")
             return None
+            
     except Exception as e:
-        logger.error(f"❌ خطا در دریافت قیمت فعلی: {str(e)}")
-        session.rollback()
+        logger.error(f"❌ خطا در دریافت قیمت NCC: {str(e)}")
         return None
     finally:
         session.close()
@@ -439,41 +460,48 @@ def update_price(usd_price, change_24h):
         market_cap = usd_price * 100000000
         change_1h = change_24h / 24
         for currency_id in NCC_CURRENCY_IDS:
-            logger.info(f"Trying to update price for currency_id: {currency_id}")
-            for fiat in FIAT_CURRENCIES.keys():
-                try:
-                    fiat_price = calculate_fiat_price(usd_price, fiat)
-                    # تبدیل currency_id به string برای کوئری دیتابیس
-                    currency_id_str = str(currency_id)
-                    price = session.query(Price).filter(
-                        Price.crypto_id == currency_id_str,
-                        Price.currency == fiat
-                    ).first()
-                    if price:
-                        price.price = Decimal(str(fiat_price))
-                        price.change_24h = Decimal(str(change_24h))
-                        price.change_1h = Decimal(str(change_1h))
-                        price.market_cap = Decimal(str(market_cap))
-                        price.volume_24h = Decimal(str(volume))
-                        price.last_updated = now
-                        logger.debug(f"✅ [ID: {currency_id}] رکورد قیمت NCC به {fiat} به‌روزرسانی شد")
-                    else:
-                        new_entry = Price(
-                            crypto_id=currency_id_str,
-                            currency=fiat,
-                            price=Decimal(str(fiat_price)),
-                            change_24h=Decimal(str(change_24h)),
-                            change_1h=Decimal(str(change_1h)),
-                            market_cap=Decimal(str(market_cap)),
-                            volume_24h=Decimal(str(volume)),
-                            change_7d=Decimal('0.00'),
-                            last_updated=now
-                        )
-                        session.add(new_entry)
-                        logger.debug(f"✅ [ID: {currency_id}] رکورد قیمت جدید NCC به {fiat} ایجاد شد")
-                except Exception as e:
-                    logger.error(f"❌ خطا در به‌روزرسانی قیمت ارز {currency_id} به {fiat}: {str(e)}")
-                    success = False
+            logger.info(f"Updating NCC symbol_id: {currency_id} with price ${usd_price:.4f}")
+            
+            try:
+                from sqlalchemy import text
+                
+                session.execute(text("""
+                    INSERT INTO ticks_recent (symbol_id, price, volume_24h, market_cap, timestamp)
+                    VALUES (:symbol_id, :price, :volume_24h, :market_cap, :timestamp)
+                """), {
+                    'symbol_id': currency_id,
+                    'price': usd_price,
+                    'volume_24h': volume,
+                    'market_cap': market_cap,
+                    'timestamp': now
+                })
+                
+                session.execute(text("""
+                    INSERT INTO current_prices 
+                    (symbol_id, price, volume_24h, market_cap, change_1h, change_24h, change_7d, last_updated)
+                    VALUES (:symbol_id, :price, :volume_24h, :market_cap, :change_1h, :change_24h, 0, :last_updated)
+                    ON DUPLICATE KEY UPDATE
+                        price = VALUES(price),
+                        volume_24h = VALUES(volume_24h),
+                        market_cap = VALUES(market_cap),
+                        change_1h = VALUES(change_1h),
+                        change_24h = VALUES(change_24h),
+                        last_updated = VALUES(last_updated)
+                """), {
+                    'symbol_id': currency_id,
+                    'price': usd_price,
+                    'volume_24h': volume,
+                    'market_cap': market_cap,
+                    'change_1h': change_1h,
+                    'change_24h': change_24h,
+                    'last_updated': now
+                })
+                
+                logger.debug(f"✅ NCC (symbol_id: {currency_id}) updated: ${usd_price:.4f}")
+                
+            except Exception as e:
+                logger.error(f"❌ خطا در به‌روزرسانی NCC {currency_id}: {str(e)}")
+                success = False
         session.commit()
         return success
     except Exception as e:

@@ -4,6 +4,7 @@ Chart-specific API endpoints for real-time data
 from flask import Blueprint, request, jsonify
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 from database import engine, Currencies
 from database.prices import Price
 from security.validators import SecurityUtils
@@ -19,10 +20,14 @@ chart_bp = Blueprint('chart_api', __name__)
 @handle_api_errors
 def get_chart_data():
     """
-    Get optimized data for charts with different time ranges
+    [DEPRECATED] Get optimized data for charts with different time ranges
+    
+    ⚠️ DEPRECATED: This endpoint requires UserID and is custodial.
+    ✅ Use GET /api/v2/chart instead (public, cached, no UserID).
+    
     ---
     tags:
-      - Charts
+      - Charts (Deprecated)
     requestBody:
       required: true
       content:
@@ -109,17 +114,19 @@ def get_chart_data():
         
         logger.info(f"Chart data request: {symbol}-{fiat} for {timeframe}")
         
-        # Get currency ID
+        # Get symbol ID from new schema
         session = Session(bind=engine)
         try:
-            currency = session.query(Currencies).filter(
-                (Currencies.Symbol == symbol) | (Currencies.CurrencyName == symbol)
-            ).first()
+            symbol_row = session.execute(text("""
+                SELECT id FROM symbols 
+                WHERE symbol = :symbol OR name = :symbol
+                LIMIT 1
+            """), {'symbol': symbol}).first()
             
-            if not currency:
+            if not symbol_row:
                 raise ValidationError(f"Currency {symbol} not found")
             
-            currency_id = str(currency.CurrencyID)
+            symbol_id = symbol_row[0]
             
         finally:
             session.close()
@@ -127,72 +134,71 @@ def get_chart_data():
         # Calculate time range based on timeframe
         end_time = datetime.now()
         time_ranges = {
-            '1h': timedelta(hours=24),      # Last 24 hours for 1h chart
-            '1d': timedelta(days=30),       # Last 30 days for 1d chart
-            '1w': timedelta(days=90),       # Last 3 months for 1w chart
-            '1m': timedelta(days=365),      # Last year for 1m chart
-            '3m': timedelta(days=1095),     # Last 3 years for 3m chart
-            '6m': timedelta(days=1825),     # Last 5 years for 6m chart
-            '1y': timedelta(days=3650)      # Last 10 years for 1y chart
+            '1h': timedelta(hours=1),
+            '1d': timedelta(days=1),
+            '1w': timedelta(days=7),
+            '1m': timedelta(days=30),
+            '3m': timedelta(days=90),
+            '6m': timedelta(days=180),
+            '1y': timedelta(days=365)
         }
         
-        start_time = end_time - time_ranges.get(timeframe, timedelta(days=30))
+        start_time = end_time - time_ranges.get(timeframe, timedelta(days=1))
         
-        # Get data from database
+        # Get fiat rate
         session = Session(bind=engine)
         try:
-            # Strategy: Get both current and historical data
-            query = session.query(Price).filter(
-                Price.crypto_id == currency_id,
-                Price.currency == fiat
-            )
+            fiat_rate_row = session.execute(text("""
+                SELECT rate FROM fiat_rates WHERE quote_currency = :fiat
+            """), {'fiat': fiat}).first()
             
-            # For short timeframes, include current prices
-            if timeframe in ['1h', '1d']:
-                # Get recent data (including current prices)
-                query = query.filter(Price.last_updated >= start_time)
-                query = query.order_by(Price.last_updated.desc())
-            else:
-                # For longer timeframes, use historical data
-                query = query.filter(
-                    Price.is_historical == True,
-                    Price.timestamp >= start_time
-                )
-                query = query.order_by(Price.timestamp.desc())
+            fiat_rate = fiat_rate_row[0] if fiat_rate_row else 1.0
             
-            # Limit results and get data
-            records = query.limit(max_points * 2).all()  # Get extra for sampling
+            records = session.execute(text("""
+                SELECT 
+                    timestamp,
+                    price * :fiat_rate as price,
+                    market_cap,
+                    volume_24h
+                FROM ticks_recent
+                WHERE symbol_id = :symbol_id
+                  AND timestamp >= :start_time
+                  AND timestamp <= :end_time
+                ORDER BY timestamp ASC
+                LIMIT :max_points
+            """), {
+                'symbol_id': symbol_id,
+                'start_time': start_time,
+                'end_time': end_time,
+                'max_points': max_points,
+                'fiat_rate': fiat_rate
+            }).fetchall()
             
-            logger.info(f"Found {len(records)} records for {symbol}-{fiat} {timeframe}")
+            logger.info(f"Found {len(records)} ticks for {symbol}-{fiat} {timeframe}")
             
             if not records:
-                # No data found, try to fetch fresh data
-                logger.info(f"No data found for {symbol}, attempting fresh fetch")
+                current_price = session.execute(text("""
+                    SELECT 
+                        cp.price * :fiat_rate as price,
+                        cp.market_cap,
+                        cp.volume_24h,
+                        cp.change_1h,
+                        cp.change_24h,
+                        cp.change_7d,
+                        cp.last_updated
+                    FROM current_prices cp
+                    WHERE cp.symbol_id = :symbol_id
+                """), {'symbol_id': symbol_id, 'fiat_rate': fiat_rate}).first()
                 
-                from Currencies.historical_data_service import HistoricalDataService
-                service = HistoricalDataService()
-                
-                fetch_result = service.store_historical_data(
-                    currency_ids=[currency.CurrencyID],
-                    time_start=start_time.isoformat() + "Z",
-                    time_end=end_time.isoformat() + "Z",
-                    interval='daily' if timeframe not in ['1h'] else '1h',
-                    fiat_currencies=[fiat]
-                )
-                
-                if fetch_result.get('success'):
-                    # Retry query after fetch
-                    records = query.limit(max_points).all()
-                    logger.info(f"After fresh fetch: {len(records)} records")
+                if current_price:
+                    records = [(
+                        current_price[6],
+                        current_price[0],
+                        current_price[1],
+                        current_price[2]
+                    )]
+                    logger.info(f"No historical data, using current price only")
             
-            # Sample data if too many points
-            if len(records) > max_points:
-                # Sample evenly across time range
-                step = len(records) // max_points
-                records = records[::step][:max_points]
-                logger.debug(f"Sampled down to {len(records)} points")
-            
-            # Format data for chart
             chart_data = {
                 'symbol': symbol,
                 'fiat': fiat,
@@ -200,16 +206,12 @@ def get_chart_data():
                 'data': []
             }
             
-            for record in reversed(records):  # Chronological order
-                timestamp = record.timestamp if record.is_historical else record.last_updated
+            for record in records:
                 chart_data['data'].append({
-                    'timestamp': timestamp.isoformat() if timestamp else None,
-                    'price': float(record.price),
-                    'market_cap': float(record.market_cap) if record.market_cap else None,
-                    'volume_24h': float(record.volume_24h) if record.volume_24h else None,
-                    'change_1h': float(record.change_1h) if record.change_1h else None,
-                    'change_24h': float(record.change_24h) if record.change_24h else None,
-                    'change_7d': float(record.change_7d) if record.change_7d else None
+                    'timestamp': record[0].isoformat() if record[0] else None,
+                    'price': float(record[1]) if record[1] else None,
+                    'market_cap': float(record[2]) if record[2] else None,
+                    'volume_24h': float(record[3]) if record[3] else None
                 })
             
             logger.info(f"Returning {len(chart_data['data'])} chart points for {symbol}-{fiat}")
@@ -219,9 +221,13 @@ def get_chart_data():
                 'chart_data': chart_data,
                 'points_count': len(chart_data['data']),
                 'timeframe': timeframe,
-                'last_updated': datetime.now().isoformat()
+                'last_updated': datetime.now().isoformat(),
+                'deprecation_notice': (
+                    'This endpoint is deprecated. '
+                    'Use GET /api/v2/chart instead — public, cached, non-custodial.'
+                ),
             }), 200
-            
+
         finally:
             session.close()
             
@@ -244,10 +250,14 @@ def get_chart_data():
 @handle_api_errors
 def get_live_chart_update():
     """
-    Get live price update for charts (current price and market data)
+    [DEPRECATED] Get live price update for charts (current price and market data)
+    
+    ⚠️ DEPRECATED: This endpoint requires UserID and is custodial.
+    ✅ Use GET /api/v2/prices instead (public, cached, no UserID).
+    
     ---
     tags:
-      - Charts
+      - Charts (Deprecated)
     requestBody:
       required: true
       content:
@@ -311,33 +321,45 @@ def get_live_chart_update():
         
         fiat = data.get('FiatCurrency', 'USD')
         
-        # Get current prices from database
+        # Get current prices from new schema
         session = Session(bind=engine)
         try:
             results = {}
             
             for symbol in symbols:
-                currency = session.query(Currencies).filter(
-                    (Currencies.Symbol == symbol) | (Currencies.CurrencyName == symbol)
-                ).first()
+                symbol_row = session.execute(text("""
+                    SELECT id FROM symbols 
+                    WHERE symbol = :symbol OR name = :symbol
+                    LIMIT 1
+                """), {'symbol': symbol}).first()
                 
-                if currency:
-                    # Get latest price (current, not historical)
-                    latest_price = session.query(Price).filter(
-                        Price.crypto_id == str(currency.CurrencyID),
-                        Price.currency == fiat,
-                        Price.is_historical == False
-                    ).first()
+                if symbol_row:
+                    symbol_id = symbol_row[0]
                     
-                    if latest_price:
+                    price_data = session.execute(text("""
+                        SELECT 
+                            cp.price,
+                            cp.price * COALESCE(fr.rate, 1) as price_fiat,
+                            cp.market_cap,
+                            cp.volume_24h,
+                            cp.change_1h,
+                            cp.change_24h,
+                            cp.change_7d,
+                            cp.last_updated
+                        FROM current_prices cp
+                        LEFT JOIN fiat_rates fr ON fr.quote_currency = :fiat
+                        WHERE cp.symbol_id = :symbol_id
+                    """), {'symbol_id': symbol_id, 'fiat': fiat}).first()
+                    
+                    if price_data:
                         results[symbol] = {
-                            'price': float(latest_price.price),
-                            'market_cap': float(latest_price.market_cap) if latest_price.market_cap else None,
-                            'volume_24h': float(latest_price.volume_24h) if latest_price.volume_24h else None,
-                            'change_1h': float(latest_price.change_1h) if latest_price.change_1h else None,
-                            'change_24h': float(latest_price.change_24h) if latest_price.change_24h else None,
-                            'change_7d': float(latest_price.change_7d) if latest_price.change_7d else None,
-                            'last_updated': latest_price.last_updated.isoformat() if latest_price.last_updated else None
+                            'price': float(price_data[1]),
+                            'market_cap': float(price_data[2]) if price_data[2] else None,
+                            'volume_24h': float(price_data[3]) if price_data[3] else None,
+                            'change_1h': float(price_data[4]) if price_data[4] else None,
+                            'change_24h': float(price_data[5]) if price_data[5] else None,
+                            'change_7d': float(price_data[6]) if price_data[6] else None,
+                            'last_updated': price_data[7].isoformat() if price_data[7] else None
                         }
                     else:
                         results[symbol] = None

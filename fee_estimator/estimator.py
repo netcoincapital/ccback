@@ -34,8 +34,11 @@ EVM_CHAIN_ALIASES = {
     "base": "ethereum"
 }
 
-# All supported chains including aliases
+# All supported chains including aliases (for internal routing/validation)
 ALL_SUPPORTED_CHAINS = SUPPORTED_CHAINS + list(EVM_CHAIN_ALIASES.keys())
+
+# Alias-only names that are duplicates — hidden from public API
+_ALIAS_ONLY_NAMES = {"binance", "matic", "avax", "arb", "op", "ftm"}
 
 
 def estimate_fee(
@@ -109,12 +112,12 @@ def estimate_fee(
 
 def get_supported_chains() -> List[str]:
     """
-    Get list of supported blockchain names.
+    Get list of supported blockchain names (canonical names only, no duplicate aliases).
 
     Returns:
         List of supported blockchain names
     """
-    return ALL_SUPPORTED_CHAINS.copy()
+    return [c for c in ALL_SUPPORTED_CHAINS if c not in _ALIAS_ONLY_NAMES]
 
 
 def get_chain_info(blockchain: str) -> Dict[str, Any]:

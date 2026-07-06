@@ -2,8 +2,10 @@
 import sys
 import os
 
-# Set up project path
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+# Set up project path (both root and parent for "CC." imports)
+_project_root = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, _project_root)
+sys.path.insert(0, os.path.dirname(_project_root))  # enables "from CC.database import ..."
 
 if sys.version_info >= (3, 10):
     import collections
@@ -249,6 +251,9 @@ try:
     from fee_estimator.api import fee_estimator_bp
     from api.notification_api import notification_api
     from api.notifications_admin_api import notifications_admin_bp
+    from api.ads_api import ads_api
+    from api.app_version_api import app_version_bp
+    from api.blockchains_api import blockchains_bp
     from api import init_api_routes
     from shop.shop_api import shop_api
     from chat.dm_api import dm_api
@@ -286,6 +291,18 @@ try:
     # Register Notification Admin API (security, price alerts, broadcast)
     app.register_blueprint(notifications_admin_bp, url_prefix='/api')
     logger.info("Registered notifications_admin_api")
+
+    # Register Ads API
+    app.register_blueprint(ads_api, url_prefix='/api')
+    logger.info("Registered ads_api")
+
+    # Register App Version API (force update detection)
+    app.register_blueprint(app_version_bp, url_prefix='/api')
+    logger.info("Registered app_version_api")
+
+    # Register Blockchains List API
+    app.register_blueprint(blockchains_bp, url_prefix='/api')
+    logger.info("Registered blockchains_api")
     
     # نمایش تمام مسیرهای ثبت شده
     logger.info("Registered routes:")
@@ -591,10 +608,19 @@ def api_docs_files(filename):
     except:
         return send_from_directory(api_docs_dir, 'index.html')
 
+@app.route('/uploads/<path:filename>')
+def serve_uploads(filename):
+    """Serve uploaded files (ad images, etc.)"""
+    uploads_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'uploads')
+    try:
+        return send_from_directory(uploads_dir, filename)
+    except FileNotFoundError:
+        return jsonify({"success": False, "error": "فایل یافت نشد"}), 404
+
 @app.route('/<path:path>')
 def serve_static(path):
     """Serve static files"""
-    if path.startswith('api/') or path.startswith('tools') or path.startswith('api-docs') or path in ['balance', 'update-balance', 'test-api', 'generate-wallet', 'test-db', 'debug-api', 'prices', 'update-prices', 'historical-prices', 'generate-wallet-v1', 'import_wallet', 'validate_mnemonic', 'all-currencies', 'chart-data', 'chart-live-update', 'Recive', 'record-deposit', 'gasfee', 'transactions', 'notifications', 'estimate-fee', 'supported-chains', 'health']:
+    if path.startswith('api/') or path.startswith('tools') or path.startswith('api-docs') or path.startswith('uploads/') or path in ['balance', 'update-balance', 'test-api', 'generate-wallet', 'test-db', 'debug-api', 'prices', 'update-prices', 'historical-prices', 'generate-wallet-v1', 'import_wallet', 'validate_mnemonic', 'all-currencies', 'chart-data', 'chart-live-update', 'Recive', 'record-deposit', 'gasfee', 'transactions', 'notifications', 'estimate-fee', 'supported-chains', 'health']:
         from werkzeug.exceptions import NotFound
         raise NotFound()
     frontend_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')

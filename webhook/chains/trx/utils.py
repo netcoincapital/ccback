@@ -1,3 +1,5 @@
+import base58
+
 from CC.utils.logging_config import get_logger
 
 logger = get_logger(__name__)
@@ -97,34 +99,50 @@ def parse_tron_contract_data(contract_data, contract_type):
 
 def tron_address_to_hex(address):
     """
-    تبدیل آدرس ترون از فرمت Base58 به Hex
+    تبدیل آدرس ترون از فرمت Base58 به Hex (hexadecimal).
     
     Args:
-        address (str): آدرس ترون در فرمت Base58 (مثلاً شروع با T)
+        address (str): آدرس ترون در فرمت Base58 (شروع با T)
         
     Returns:
-        str: آدرس در فرمت هگز
+        str: آدرس در فرمت هگز (شروع با 41) یا None در صورت خطا
     """
-    # پیاده‌سازی واقعی نیاز به کتابخانه base58 دارد
-    # این یک پیاده‌سازی ساده است که فقط بررسی می‌کند آدرس با T شروع شود
-    if address and address.startswith('T'):
-        # در پیاده‌سازی واقعی، این بخش باید آدرس را به هگز تبدیل کند
-        return "41" + "0" * 40  # آدرس هگز نمونه
-    return None
+    if not address or not isinstance(address, str) or not address.startswith('T'):
+        logger.warning(f"Invalid TRON address format for hex conversion: {address}")
+        return None
+    try:
+        decoded = base58.b58decode_check(address)
+        return decoded.hex()
+    except Exception as e:
+        logger.error(f"Error converting TRON address to hex: {address}, error: {str(e)}")
+        return None
 
 def hex_to_tron_address(hex_address):
     """
-    تبدیل آدرس ترون از فرمت Hex به Base58
+    تبدیل آدرس ترون از فرمت Hex (hexadecimal) به Base58.
     
     Args:
         hex_address (str): آدرس ترون در فرمت هگز (شروع با 41)
         
     Returns:
-        str: آدرس در فرمت Base58 (شروع با T)
+        str: آدرس در فرمت Base58 (شروع با T) یا None در صورت خطا
     """
-    # پیاده‌سازی واقعی نیاز به کتابخانه base58 دارد
-    # این یک پیاده‌سازی ساده است که فقط بررسی می‌کند آدرس با 41 شروع شود
-    if hex_address and hex_address.startswith('41'):
-        # در پیاده‌سازی واقعی، این بخش باید آدرس را به base58 تبدیل کند
-        return "T" + "A" * 33  # آدرس Base58 نمونه
-    return None 
+    if not hex_address or not isinstance(hex_address, str):
+        logger.warning(f"Invalid TRON hex address format for base58 conversion: {hex_address}")
+        return None
+    try:
+        # Remove 0x prefix first if present
+        clean_hex = hex_address
+        if clean_hex.startswith('0x'):
+            clean_hex = clean_hex[2:]
+
+        # Now validate it starts with 41 (TRON hex prefix)
+        if not clean_hex.startswith('41'):
+            logger.warning(f"Invalid TRON hex address format for base58 conversion: {hex_address}")
+            return None
+
+        decoded = bytes.fromhex(clean_hex)
+        return base58.b58encode_check(decoded).decode()
+    except Exception as e:
+        logger.error(f"Error converting TRON hex address to base58: {hex_address}, error: {str(e)}")
+        return None 

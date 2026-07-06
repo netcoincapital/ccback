@@ -3,7 +3,7 @@ from typing import Optional
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.sql import func
 
-from Database.base import Base
+from .base import Base
 
 class Ads(Base):
     __tablename__ = "ads"

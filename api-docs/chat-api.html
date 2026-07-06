@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat API Documentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; padding: 20px; line-height: 1.8; }
+        .api-card { background: white; padding: 25px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #667eea; }
+        .method { display: inline-block; padding: 5px 15px; border-radius: 5px; color: white; font-weight: bold; margin-left: 10px; }
+        .method.get { background: #28a745; }
+        .method.post { background: #007bff; }
+        .method.put { background: #ffc107; color: #000; }
+        .method.delete { background: #dc3545; }
+        .endpoint { font-family: 'Courier New', monospace; font-size: 1.1em; color: #333; margin: 10px 0; }
+        .description { color: #666; margin: 15px 0; }
+        .params table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .params th, .params td { padding: 12px; text-align: right; border-bottom: 1px solid #ddd; }
+        .params th { background: #667eea; color: white; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 15px 0; direction: ltr; text-align: left; }
+        .code-block pre { margin: 0; font-family: 'Courier New', monospace; font-size: 0.9em; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; margin-left: 5px; }
+        .badge.required { background: #dc3545; color: white; }
+        .badge.optional { background: #6c757d; color: white; }
+        h1 { color: #667eea; margin-bottom: 30px; }
+        h3 { color: #764ba2; margin: 20px 0 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>💬 Chat API (Direct Messages)</h1>
+    
+    <div class="api-card">
+        <h3><span class="method get">GET</span> <span class="endpoint">/api/chat/conversations</span></h3>
+        <p class="description">دریافت لیست مکالمات کاربر</p>
+        <h4>Query Parameters:</h4>
+        <div class="params">
+            <table>
+                <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>UserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر</td></tr>
+            </table>
+        </div>
+        <h4>Response (200 OK):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "conversations": [
+    {
+      "ConversationID": "uuid",
+      "OtherUserID": "uuid",
+      "LastMessage": {
+        "Message": "آخرین پیام",
+        "IsEdited": false,
+        "CreatedAt": "2024-01-01T12:00:00"
+      },
+      "UnreadCount": 2,
+      "LastMessageAt": "2024-01-01T12:00:00"
+    }
+  ]
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method get">GET</span> <span class="endpoint">/api/chat/conversations/{conversation_id}/messages</span></h3>
+        <p class="description">دریافت پیام‌های یک مکالمه</p>
+        <h4>Query Parameters:</h4>
+        <div class="params">
+            <table>
+                <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>UserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر</td></tr>
+                <tr><td>limit</td><td>integer</td><td><span class="badge optional">اختیاری</span> تعداد پیام‌ها (پیش‌فرض: 50)</td></tr>
+                <tr><td>offset</td><td>integer</td><td><span class="badge optional">اختیاری</span> offset برای pagination (پیش‌فرض: 0)</td></tr>
+            </table>
+        </div>
+        <h4>Response (200 OK):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "messages": [
+    {
+      "MessageID": "uuid",
+      "SenderID": "uuid",
+      "ReceiverID": "uuid",
+      "Message": "متن پیام",
+      "MessageType": "text",
+      "Status": "read",
+      "IsEdited": true,
+      "EditedAt": "2024-01-01T12:00:00",
+      "CreatedAt": "2024-01-01T11:00:00"
+    }
+  ]
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method post">POST</span> <span class="endpoint">/api/chat/messages</span></h3>
+        <p class="description">ارسال پیام جدید</p>
+        <h4>Request Body:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>SenderID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه فرستنده</td></tr>
+                <tr><td>ReceiverID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه گیرنده</td></tr>
+                <tr><td>Message</td><td>string</td><td><span class="badge required">الزامی</span> متن پیام</td></tr>
+                <tr><td>MessageType</td><td>string</td><td><span class="badge optional">اختیاری</span> نوع پیام (پیش‌فرض: text)</td></tr>
+            </table>
+        </div>
+        <h4>Request Example:</h4>
+        <div class="code-block"><pre>{
+  "SenderID": "uuid",
+  "ReceiverID": "uuid",
+  "Message": "سلام!",
+  "MessageType": "text"
+}</pre></div>
+        <h4>Response (201 Created):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "message": {
+    "MessageID": "uuid",
+    "ConversationID": "uuid",
+    "SenderID": "uuid",
+    "ReceiverID": "uuid",
+    "Message": "سلام!",
+    "IsEdited": false,
+    "EditedAt": null,
+    "CreatedAt": "2024-01-01T12:00:00"
+  }
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method put">PUT</span> <span class="endpoint">/api/chat/messages/{message_id}</span></h3>
+        <p class="description">ویرایش پیام</p>
+        <h4>Request Body:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>UserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر (باید فرستنده پیام باشد)</td></tr>
+                <tr><td>Message</td><td>string</td><td><span class="badge required">الزامی</span> متن جدید پیام</td></tr>
+            </table>
+        </div>
+        <h4>Response (200 OK):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "message": {
+    "MessageID": "uuid",
+    "Message": "پیام ویرایش شده",
+    "IsEdited": true,
+    "EditedAt": "2024-01-01T12:05:00",
+    "UpdatedAt": "2024-01-01T12:05:00"
+  }
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method delete">DELETE</span> <span class="endpoint">/api/chat/messages/{message_id}</span></h3>
+        <p class="description">حذف پیام</p>
+        <h4>Request Body / Query:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>UserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر (باید فرستنده پیام باشد)</td></tr>
+            </table>
+        </div>
+        <h4>Response (200 OK):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "message": "Message deleted"
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method delete">DELETE</span> <span class="endpoint">/api/chat/conversations/{conversation_id}</span></h3>
+        <p class="description">حذف مکالمه</p>
+        <h4>Query Parameters:</h4>
+        <div class="params">
+            <table>
+                <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>UserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر</td></tr>
+            </table>
+        </div>
+        <h4>Response (200 OK):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "message": "Conversation deleted"
+}</pre></div>
+    </div>
+</body>
+</html>
+
+

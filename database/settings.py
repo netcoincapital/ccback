@@ -3,7 +3,7 @@ from typing import Optional
 from sqlalchemy import Column, Integer, String, Text, DateTime
 from sqlalchemy.sql import func
 
-from Database.base import Base
+from database.base import Base
 
 class Settings(Base):
     __tablename__ = "settings"

@@ -6,12 +6,12 @@ from decimal import Decimal
 from datetime import datetime
 import traceback
 
-from CC.database import SessionLocal, Users, Wallets, Address, Blockchains, Currencies, UserHolding
-from CC.schemas.balance_schemas import UserBalanceRequest, UserBalanceResponse, TokenBalanceItem
-from CC.security.validators import SecurityUtils, InputValidator, ValidationError
-from CC.utils.logging_config import get_logger
-from CC.services.balance_service import BalanceService
-from CC.workers.rebuild_user_holdings import rebuild_user_holdings
+from database import SessionLocal, Users, Wallets, Address, Blockchains, Currencies, UserHolding
+from schemas.balance_schemas import UserBalanceRequest, UserBalanceResponse, TokenBalanceItem
+from security.validators import SecurityUtils, InputValidator, ValidationError
+from utils.logging_config import get_logger
+from services.balance_service import BalanceService
+from workers.rebuild_user_holdings import rebuild_user_holdings
 
 # Configure logging
 logger = get_logger(__file__)
@@ -93,8 +93,9 @@ def get_balance():
 @SecurityUtils.rate_limit(requests=2, window=300)  # Rate limit: 2 requests per 5 minutes (heavy operation)
 def update_balance():
     """
-    Update user balance by checking blockchain balances
+    Update user balance by checking blockchain balances - ASYNC OPERATION
     WARNING: This is a heavy operation that queries blockchain nodes
+    This endpoint starts the process and returns immediately with 202 Accepted
     """
     try:
         # Validate request data
@@ -113,7 +114,7 @@ def update_balance():
         
         logger.info(f"Processing balance update request for UserID={user_id}")
         
-        # Create database session
+        # Create database session for validation only
         session = SessionLocal()
         try:
             # Check if user exists
@@ -143,40 +144,56 @@ def update_balance():
             
             logger.info(f"User {user_id} has {wallet_count} wallets with {address_count} addresses total")
             
-            # Create balance service
-            logger.info(f"Creating BalanceService instance for update-balance")
-            balance_service = BalanceService(session)
-            
-            # List of blockchains available in database
-            blockchains = session.query(Blockchains).all()
-            blockchain_names = [b.BlockchainName for b in blockchains]
-            logger.info(f"Blockchains in database: {blockchain_names}")
-            
-            # Update user balance using private method
-            logger.info(f"Starting balance update for user {user_id}")
-            start_time = datetime.now()
-            result = balance_service._update_user_balance(user_id)
-            end_time = datetime.now()
-            duration = (end_time - start_time).total_seconds()
-            
-            logger.info(f"Balance update completed in {duration:.2f} seconds for user {user_id}")
-            
-            # Log success or failure
-            if result.get('success', False):
-                balances_count = len(result.get('Balances', []))
-                logger.info(f"Successfully updated {balances_count} balances for user {user_id}")
-                
-                # Log specific blockchains found
-                blockchains_found = set([b.get('blockchain') for b in result.get('Balances', [])])
-                logger.info(f"Blockchains with balances: {list(blockchains_found)}")
-            else:
-                logger.error(f"Failed to update balances for user {user_id}: {result.get('message', 'unknown error')}")
-            
-            # Return the response
-            return jsonify(result), 200 if result.get('success', False) else 500
-        
         finally:
             session.close()
+        
+        # Start background thread for balance update to avoid timeout
+        import threading
+        
+        def background_balance_update(user_id_param):
+            """Background task to update balances"""
+            bg_session = SessionLocal()
+            try:
+                logger.info(f"Background balance update started for user {user_id_param}")
+                balance_service = BalanceService(bg_session)
+                
+                start_time = datetime.now()
+                result = balance_service._update_user_balance(user_id_param)
+                end_time = datetime.now()
+                duration = (end_time - start_time).total_seconds()
+                
+                logger.info(f"Background balance update completed in {duration:.2f} seconds for user {user_id_param}")
+                
+                if result.get('success', False):
+                    balances_count = len(result.get('Balances', []))
+                    logger.info(f"Successfully updated {balances_count} balances for user {user_id_param}")
+                else:
+                    logger.error(f"Failed to update balances for user {user_id_param}: {result.get('message', 'unknown error')}")
+                    
+            except Exception as e:
+                logger.error(f"Error in background balance update for user {user_id_param}: {str(e)}", exc_info=True)
+            finally:
+                bg_session.close()
+        
+        # Start the background thread
+        update_thread = threading.Thread(
+            target=background_balance_update,
+            args=(user_id,),
+            daemon=True
+        )
+        update_thread.start()
+        
+        logger.info(f"Started background balance update thread for user {user_id}")
+        
+        # Return immediately with 202 Accepted
+        return jsonify({
+            "success": True,
+            "message": "Balance update started in background. This may take several minutes to complete.",
+            "UserID": user_id,
+            "status": "processing",
+            "note": "Use /api/balance endpoint to check updated balances after a few minutes"
+        }), 202  # 202 Accepted - request accepted for processing
+        
         
     except ValidationError as ve:
         logger.warning(f"Validation error in update-balance: {ve.message}")

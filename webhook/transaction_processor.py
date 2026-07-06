@@ -94,6 +94,111 @@ class TransactionProcessor:
         if expired_txs:
             logger.debug(f"تعداد {len(expired_txs)} رکورد قدیمی از کش تراکنش‌ها پاک شد")
     
+    def _is_internal_transaction(self, from_address, to_address):
+        """
+        بررسی اینکه آیا تراکنش داخلی است (بین دو کیف پول ما)
+        
+        Args:
+            from_address (str): آدرس فرستنده
+            to_address (str): آدرس گیرنده
+            
+        Returns:
+            bool: True اگر تراکنش داخلی باشد
+        """
+        try:
+            user_addresses = self.db_operations.get_user_addresses()
+            user_addresses_lower = [addr['public_address'].lower() for addr in user_addresses]
+            
+            from_is_ours = from_address.lower() in user_addresses_lower
+            to_is_ours = to_address.lower() in user_addresses_lower
+            
+            return from_is_ours and to_is_ours
+        except Exception as e:
+            logger.error(f"Error checking if transaction is internal: {str(e)}")
+            return False
+
+    def _should_process_internal_transaction(self, transaction_id, from_address, to_address, user_blockchain_addresses):
+        """
+        تعیین اینکه آیا این webhook برای تراکنش داخلی باید پردازش شود یا نه
+        
+        Args:
+            transaction_id (str): شناسه تراکنش
+            from_address (str): آدرس فرستنده
+            to_address (str): آدرس گیرنده
+            user_blockchain_addresses (list): لیست آدرس‌های کاربران
+            
+        Returns:
+            tuple: (should_process, direction)
+        """
+        try:
+            # بررسی اینکه آیا این تراکنش قبلاً پردازش شده
+            from sqlalchemy.orm import Session
+            with Session(self.db_operations._get_engine()) as session:
+                existing_count = session.execute(text("""
+                    SELECT COUNT(*) FROM transfers 
+                    WHERE TxHash = :tx_hash 
+                    AND FromAddress = :from_addr 
+                    AND ToAddress = :to_addr
+                """), {
+                    'tx_hash': transaction_id,
+                    'from_addr': from_address,
+                    'to_addr': to_address
+                }).scalar()
+                
+                if existing_count > 0:
+                    logger.info(f"Internal transaction {transaction_id} already processed, skipping")
+                    return False, None
+                
+                # تعیین جهت بر اساس اولین webhook دریافتی
+                # اگر هیچ رکوردی وجود ندارد، این اولین webhook است
+                # بر اساس آدرس‌های کاربران تعیین می‌کنیم که کدام outbound و کدام inbound است
+                
+                # یافتن کیف پول فرستنده و گیرنده
+                from_wallet = None
+                to_wallet = None
+                
+                for addr_info in user_blockchain_addresses:
+                    user_addr = addr_info.get('public_address', '').lower()
+                    if user_addr == from_address.lower():
+                        from_wallet = addr_info.get('wallet_id')
+                    elif user_addr == to_address.lower():
+                        to_wallet = addr_info.get('wallet_id')
+                
+                # اگر هر دو کیف پول پیدا شد، این واقعاً تراکنش داخلی است
+                if from_wallet and to_wallet:
+                    # فقط یک رکورد outbound و یک رکورد inbound ایجاد می‌کنیم
+                    # بر اساس اینکه کدام webhook اول آمده
+                    
+                    # بررسی اینکه آیا قبلاً رکورد outbound ثبت شده
+                    outbound_exists = session.execute(text("""
+                        SELECT COUNT(*) FROM transfers 
+                        WHERE TxHash = :tx_hash 
+                        AND Direction = 'outbound'
+                    """), {'tx_hash': transaction_id}).scalar()
+                    
+                    # بررسی اینکه آیا قبلاً رکورد inbound ثبت شده
+                    inbound_exists = session.execute(text("""
+                        SELECT COUNT(*) FROM transfers 
+                        WHERE TxHash = :tx_hash 
+                        AND Direction = 'inbound'
+                    """), {'tx_hash': transaction_id}).scalar()
+                    
+                    # اگر هیچکدام وجود ندارد، outbound را ثبت می‌کنیم
+                    if not outbound_exists and not inbound_exists:
+                        return True, "outbound"
+                    # اگر outbound وجود دارد اما inbound نه، inbound را ثبت می‌کنیم
+                    elif outbound_exists and not inbound_exists:
+                        return True, "inbound"
+                    # اگر هر دو وجود دارند، نادیده می‌گیریم
+                    else:
+                        return False, None
+                
+                return True, None  # در صورت عدم تشخیص، اجازه پردازش معمولی می‌دهیم
+                
+        except Exception as e:
+            logger.error(f"Error checking internal transaction processing: {str(e)}")
+            return True, None  # در صورت خطا، اجازه پردازش می‌دهیم
+    
     def process_webhook(self, webhook_data):
         """
         پردازش وب‌هوک دریافتی از تاتوم
@@ -420,28 +525,52 @@ class TransactionProcessor:
         
         logger.info(f"Checking {len(user_blockchain_addresses)} addresses for relevance to transaction {transaction_id}")
         
-        # First check if the transaction involves any of our user addresses
-        for addr_info in user_blockchain_addresses:
-            user_addr = addr_info.get('public_address', '').lower()
-            logger.debug(f"Comparing user address {user_addr} with from={from_address_norm}, to={to_address_norm}")
+        # بررسی تراکنش داخلی (بین دو کیف پول ما)
+        is_internal_transaction = self._is_internal_transaction(real_from_address, real_to_address)
+        
+        if is_internal_transaction:
+            logger.info(f"Detected internal transaction: {transaction_id}")
+            should_process, internal_direction = self._should_process_internal_transaction(
+                transaction_id, real_from_address, real_to_address, user_blockchain_addresses
+            )
             
-            if user_addr and from_address_norm and user_addr == from_address_norm:
-                # User address is sending - outbound transaction
+            if not should_process:
+                return {"status": "ignored", "reason": "Internal transaction already processed"}
+            
+            if internal_direction:
+                direction = internal_direction
                 is_relevant = True
-                if direction is None:  # فقط اگر جهت قبلاً تنظیم نشده باشد
-                    direction = "outbound"
-                user_public_address = user_addr
-                logger.info(f"Transaction direction: OUTBOUND - User {user_addr} is sending")
-                break
+                # یافتن آدرس کاربر مربوطه
+                for addr_info in user_blockchain_addresses:
+                    user_addr = addr_info.get('public_address', '').lower()
+                    if (direction == "outbound" and user_addr == from_address_norm) or \
+                       (direction == "inbound" and user_addr == to_address_norm):
+                        user_public_address = user_addr
+                        break
+                logger.info(f"Set direction for internal transaction: {direction}")
+        else:
+            # First check if the transaction involves any of our user addresses
+            for addr_info in user_blockchain_addresses:
+                user_addr = addr_info.get('public_address', '').lower()
+                logger.debug(f"Comparing user address {user_addr} with from={from_address_norm}, to={to_address_norm}")
                 
-            if user_addr and to_address_norm and user_addr == to_address_norm:
-                # User address is receiving - inbound transaction
-                is_relevant = True
-                if direction is None:  # فقط اگر جهت قبلاً تنظیم نشده باشد
-                    direction = "inbound"
-                user_public_address = user_addr
-                logger.info(f"Transaction direction: INBOUND - User {user_addr} is receiving")
-                break
+                if user_addr and from_address_norm and user_addr == from_address_norm:
+                    # User address is sending - outbound transaction
+                    is_relevant = True
+                    if direction is None:  # فقط اگر جهت قبلاً تنظیم نشده باشد
+                        direction = "outbound"
+                    user_public_address = user_addr
+                    logger.info(f"Transaction direction: OUTBOUND - User {user_addr} is sending")
+                    break
+                    
+                if user_addr and to_address_norm and user_addr == to_address_norm:
+                    # User address is receiving - inbound transaction
+                    is_relevant = True
+                    if direction is None:  # فقط اگر جهت قبلاً تنظیم نشده باشد
+                        direction = "inbound"
+                    user_public_address = user_addr
+                    logger.info(f"Transaction direction: INBOUND - User {user_addr} is receiving")
+                    break
         
         # If transaction is not relevant to our users, ignore it
         if not is_relevant:

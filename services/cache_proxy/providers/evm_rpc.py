@@ -313,9 +313,15 @@ def _build_publicnode_providers() -> List[RpcProvider]:
 
 class EvmRpcPool:
     """
-    EVM RPC Pool با fallback chain و circuit breaker.
+    EVM RPC Pool با round-robin واقعی + circuit breaker fallback.
     مطابق ساختار secrets/vm_api_keys.env.
     Thread-safe.
+
+    استراتژی:
+      - round-robin بین همه providerها (dRPC, Ankr, Tenderly, ...)
+      - هر بار call() از یک provider متفاوت شروع می‌کند
+      - circuit breaker: ۵ خطا → ۳۰ ثانیه skip
+      - PublicNode آخرین راهکار (بدون key)
     """
 
     READ_METHODS = {
@@ -330,6 +336,7 @@ class EvmRpcPool:
         self._pool_manager = get_key_pool_manager()
         self._circuit_breakers: Dict[str, CircuitBreaker] = {}
         self._lock = threading.Lock()
+        self._provider_index = 0  # round-robin: هر بار call یک ایندکس متفاوت
 
         # ساختن providerها از env vars
         self._providers: List[RpcProvider] = []
@@ -399,7 +406,19 @@ class EvmRpcPool:
                 return cached.get("result")
 
         last_error = None
-        for provider in self._providers:
+        total = len(self._providers)
+        if total == 0:
+            logger.warning("EvmRpcPool: no providers configured for %s/%s", chain, method)
+            return None
+
+        # شروع از یک ایندکس چرخشی — round-robin واقعی
+        with self._lock:
+            start_index = self._provider_index
+            self._provider_index = (self._provider_index + 1) % total
+
+        for i in range(total):
+            provider = self._providers[(start_index + i) % total]
+
             # بررسی دسترسی provider به این chain
             url = provider.urls.get(chain_key)
             if not url:

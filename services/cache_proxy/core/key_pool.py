@@ -364,6 +364,27 @@ class KeyPoolManager:
     def total_pools(self) -> int:
         return len(self._pools)
 
+    def reload(self) -> Dict[str, Any]:
+        """
+        بارگذاری مجدد همه KeyPoolها از متغیرهای محیطی.
+        کلیدهای موجود در فایل env را دوباره می‌خواند و poolها را جایگزین می‌کند.
+        بدون نیاز به ری‌استارت سرویس.
+
+        Returns:
+            dict: گزارش تعداد کلیدهای بارگذاری شده به ازای هر pool
+        """
+        with self._lock:
+            old_pools = self._pools
+            self._pools = {}
+            self._load_pools()
+            report = {
+                name: len(pool._keys)
+                for name, pool in self._pools.items()
+            }
+            logger.info("KeyPoolManager: reloaded %d pools — %s",
+                        len(self._pools), report)
+            return report
+
 
 # ===================== Singleton =====================
 

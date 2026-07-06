@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report & Block API Documentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; padding: 20px; line-height: 1.8; }
+        .api-card { background: white; padding: 25px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #667eea; }
+        .method { display: inline-block; padding: 5px 15px; border-radius: 5px; color: white; font-weight: bold; margin-left: 10px; }
+        .method.get { background: #28a745; }
+        .method.post { background: #007bff; }
+        .method.delete { background: #dc3545; }
+        .endpoint { font-family: 'Courier New', monospace; font-size: 1.1em; color: #333; margin: 10px 0; }
+        .description { color: #666; margin: 15px 0; }
+        .params table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .params th, .params td { padding: 12px; text-align: right; border-bottom: 1px solid #ddd; }
+        .params th { background: #667eea; color: white; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 15px 0; direction: ltr; text-align: left; }
+        .code-block pre { margin: 0; font-family: 'Courier New', monospace; font-size: 0.9em; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; margin-left: 5px; }
+        .badge.required { background: #dc3545; color: white; }
+        .badge.optional { background: #6c757d; color: white; }
+        h1 { color: #667eea; margin-bottom: 30px; }
+        h3 { color: #764ba2; margin: 20px 0 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>🚨 Report & Block API</h1>
+    
+    <div class="api-card">
+        <h3><span class="method post">POST</span> <span class="endpoint">/api/chat/report</span></h3>
+        <p class="description">گزارش کاربر یا پیام</p>
+        <h4>Request Body:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>ReporterID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه گزارش‌دهنده</td></tr>
+                <tr><td>ReportedUserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر گزارش شده</td></tr>
+                <tr><td>MessageID</td><td>string (UUID)</td><td><span class="badge optional">اختیاری</span> شناسه پیام (در صورت گزارش پیام)</td></tr>
+                <tr><td>Reason</td><td>string</td><td><span class="badge required">الزامی</span> دلیل گزارش: spam, harassment, inappropriate_content, fake_account, scam, other</td></tr>
+                <tr><td>Description</td><td>string</td><td><span class="badge optional">اختیاری</span> توضیحات بیشتر</td></tr>
+            </table>
+        </div>
+        <h4>Request Example:</h4>
+        <div class="code-block"><pre>{
+  "ReporterID": "uuid",
+  "ReportedUserID": "uuid",
+  "MessageID": "uuid",
+  "Reason": "harassment",
+  "Description": "توضیحات گزارش"
+}</pre></div>
+        <h4>Response (201 Created):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "report": {
+    "ReportID": "uuid",
+    "Status": "pending"
+  }
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method get">GET</span> <span class="endpoint">/api/chat/reports</span></h3>
+        <p class="description">دریافت لیست گزارش‌های کاربر</p>
+        <h4>Query Parameters:</h4>
+        <div class="params">
+            <table>
+                <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>UserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر</td></tr>
+                <tr><td>status</td><td>string</td><td><span class="badge optional">اختیاری</span> فیلتر بر اساس وضعیت (پیش‌فرض: pending)</td></tr>
+            </table>
+        </div>
+        <h4>Response (200 OK):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "reports": [
+    {
+      "ReportID": "uuid",
+      "ReportedUserID": "uuid",
+      "MessageID": "uuid",
+      "Reason": "harassment",
+      "Description": "توضیحات",
+      "Status": "pending",
+      "CreatedAt": "2024-01-01T12:00:00"
+    }
+  ]
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method post">POST</span> <span class="endpoint">/api/chat/block</span></h3>
+        <p class="description">بلاک کردن کاربر</p>
+        <h4>Request Body:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>BlockerID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر بلاک کننده</td></tr>
+                <tr><td>BlockedUserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر بلاک شده</td></tr>
+                <tr><td>Reason</td><td>string</td><td><span class="badge optional">اختیاری</span> دلیل بلاک</td></tr>
+            </table>
+        </div>
+        <h4>Response (201 Created):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "message": "User blocked successfully"
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method delete">DELETE</span> <span class="endpoint">/api/chat/block</span></h3>
+        <p class="description">آنبلاک کردن کاربر</p>
+        <h4>Request Body:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>BlockerID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر بلاک کننده</td></tr>
+                <tr><td>BlockedUserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر بلاک شده</td></tr>
+            </table>
+        </div>
+        <h4>Response (200 OK):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "message": "User unblocked successfully"
+}</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="method get">GET</span> <span class="endpoint">/api/chat/blocked-users</span></h3>
+        <p class="description">دریافت لیست کاربران بلاک شده</p>
+        <h4>Query Parameters:</h4>
+        <div class="params">
+            <table>
+                <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>UserID</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر</td></tr>
+            </table>
+        </div>
+        <h4>Response (200 OK):</h4>
+        <div class="code-block"><pre>{
+  "success": true,
+  "blocked_users": [
+    {
+      "BlockID": "uuid",
+      "BlockedUserID": "uuid",
+      "Reason": "دلیل بلاک",
+      "CreatedAt": "2024-01-01T12:00:00"
+    }
+  ]
+}</pre></div>
+    </div>
+</body>
+</html>
+
+

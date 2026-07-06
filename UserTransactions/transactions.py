@@ -21,7 +21,11 @@ transactions_bp = Blueprint('transactions', __name__)
 @transactions_bp.route('/transactions', methods=['POST'])
 def get_user_transactions_post():
     """
-    API برای دریافت تراکنش‌های کاربر با متد POST
+    [DEPRECATED] API برای دریافت تراکنش‌های کاربر با متد POST
+    
+    ⚠️ DEPRECATED: Transaction history should be read directly from block explorer.
+    The HistoryIndexer on the client side already supports direct blockchain reads.
+    This endpoint will be removed in a future version.
     
     فرمت‌های ورودی:
     1. {"UserID": "d7fd960c-0b3b-4f0c-8963-baa6b365953d"} - تمام تراکنش‌های کاربر
@@ -97,12 +101,16 @@ def get_user_transactions_post():
                 # بررسی وجود جداول مورد نیاز
                 inspector = inspect(engine)
                 
-                required_tables = ['Users', 'Wallets', 'Address', 'Blockchains', 'Transfers']
-                missing_tables = []
-                
-                for table in required_tables:
-                    if not inspector.has_table(table):
-                        missing_tables.append(table)
+                # Use actual physical table names (lowercase) from ORM models.
+                required_tables = [
+                    Wallets.__tablename__,
+                    Address.__tablename__,
+                    Blockchains.__tablename__,
+                    Transfers.__tablename__,
+                    'users',  # imported in raw SQL checks below, keep explicit for clarity
+                ]
+                existing_tables = set(inspector.get_table_names())
+                missing_tables = [table for table in required_tables if table not in existing_tables]
                 
                 if missing_tables:
                     logger.error(f"Missing required tables: {missing_tables}")
@@ -167,7 +175,11 @@ def get_user_transactions_post():
             "count": len(formatted_transactions),
             "page": page,
             "per_page": per_page,
-            "transactions": formatted_transactions
+            "transactions": formatted_transactions,
+            "deprecation_notice": (
+                "This endpoint is deprecated. "
+                "Transaction history should be read from block explorer directly."
+            )
         }), 200
         
     except Exception as e:

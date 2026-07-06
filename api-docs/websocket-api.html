@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket API Documentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; padding: 20px; line-height: 1.8; }
+        .api-card { background: white; padding: 25px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #ffc107; }
+        .event { display: inline-block; padding: 5px 15px; border-radius: 5px; color: white; font-weight: bold; margin-left: 10px; }
+        .event.emit { background: #007bff; }
+        .event.on { background: #28a745; }
+        .endpoint { font-family: 'Courier New', monospace; font-size: 1.1em; color: #333; margin: 10px 0; }
+        .description { color: #666; margin: 15px 0; }
+        .params table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .params th, .params td { padding: 12px; text-align: right; border-bottom: 1px solid #ddd; }
+        .params th { background: #ffc107; color: #000; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 15px 0; direction: ltr; text-align: left; }
+        .code-block pre { margin: 0; font-family: 'Courier New', monospace; font-size: 0.9em; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; margin-left: 5px; }
+        .badge.required { background: #dc3545; color: white; }
+        .badge.optional { background: #6c757d; color: white; }
+        h1 { color: #ffc107; margin-bottom: 30px; }
+        h3 { color: #e0a800; margin: 20px 0 10px 0; }
+        .info { background: #d1ecf1; border: 1px solid #bee5eb; padding: 15px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>⚡ WebSocket Events API</h1>
+    <div class="info">
+        <strong>ℹ️ اطلاعات:</strong> برای استفاده از WebSocket، باید از کتابخانه socket.io-client استفاده کنید. تمام Event ها به صورت Real-time و لحظه‌ای کار می‌کنند.
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="event emit">EMIT</span> <span class="endpoint">connect</span></h3>
+        <p class="description">اتصال به WebSocket Server</p>
+        <h4>Connection Example:</h4>
+        <div class="code-block"><pre>const socket = io('https://coinceeper.com', {
+  auth: {
+    user_id: 'YOUR_USER_ID'
+  },
+  transports: ['websocket', 'polling']
+});
+
+socket.on('connect', () => {
+  console.log('Connected!');
+});</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="event emit">EMIT</span> <span class="endpoint">join_conversation</span></h3>
+        <p class="description">ورود به یک مکالمه</p>
+        <h4>Data:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>user_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر</td></tr>
+                <tr><td>conversation_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه مکالمه</td></tr>
+            </table>
+        </div>
+        <h4>Example:</h4>
+        <div class="code-block"><pre>socket.emit('join_conversation', {
+  user_id: 'uuid',
+  conversation_id: 'uuid'
+});</pre></div>
+        <h4><span class="event on">ON</span> Response:</h4>
+        <div class="code-block"><pre>socket.on('joined_conversation', (data) => {
+  console.log('Joined:', data.conversation_id);
+});</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="event emit">EMIT</span> <span class="endpoint">send_message</span></h3>
+        <p class="description">ارسال پیام لحظه‌ای</p>
+        <h4>Data:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>sender_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه فرستنده</td></tr>
+                <tr><td>receiver_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه گیرنده</td></tr>
+                <tr><td>message</td><td>string</td><td><span class="badge required">الزامی</span> متن پیام</td></tr>
+                <tr><td>message_type</td><td>string</td><td><span class="badge optional">اختیاری</span> نوع پیام (پیش‌فرض: text)</td></tr>
+            </table>
+        </div>
+        <h4>Example:</h4>
+        <div class="code-block"><pre>socket.emit('send_message', {
+  sender_id: 'uuid',
+  receiver_id: 'uuid',
+  message: 'سلام!',
+  message_type: 'text'
+});</pre></div>
+        <h4><span class="event on">ON</span> Response:</h4>
+        <div class="code-block"><pre>socket.on('new_message', (data) => {
+  console.log('New message:', data);
+  if (data.is_edited) {
+    console.log('(edited)');
+  }
+});</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="event emit">EMIT</span> <span class="endpoint">typing_start</span></h3>
+        <p class="description">شروع تایپ (نمایش typing indicator)</p>
+        <h4>Data:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>user_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر</td></tr>
+                <tr><td>conversation_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه مکالمه</td></tr>
+            </table>
+        </div>
+        <h4>Example:</h4>
+        <div class="code-block"><pre>socket.emit('typing_start', {
+  user_id: 'uuid',
+  conversation_id: 'uuid'
+});</pre></div>
+        <h4><span class="event on">ON</span> Response:</h4>
+        <div class="code-block"><pre>socket.on('user_typing', (data) => {
+  if (data.is_typing) {
+    showTypingIndicator(data.user_id);
+  } else {
+    hideTypingIndicator(data.user_id);
+  }
+});</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="event emit">EMIT</span> <span class="endpoint">typing_stop</span></h3>
+        <p class="description">توقف تایپ (مخفی کردن typing indicator)</p>
+        <h4>Data:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>user_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر</td></tr>
+                <tr><td>conversation_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه مکالمه</td></tr>
+            </table>
+        </div>
+        <h4>Example:</h4>
+        <div class="code-block"><pre>socket.emit('typing_stop', {
+  user_id: 'uuid',
+  conversation_id: 'uuid'
+});</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="event emit">EMIT</span> <span class="endpoint">edit_message</span></h3>
+        <p class="description">ویرایش پیام</p>
+        <h4>Data:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>user_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر (باید فرستنده باشد)</td></tr>
+                <tr><td>message_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه پیام</td></tr>
+                <tr><td>message</td><td>string</td><td><span class="badge required">الزامی</span> متن جدید پیام</td></tr>
+            </table>
+        </div>
+        <h4>Example:</h4>
+        <div class="code-block"><pre>socket.emit('edit_message', {
+  user_id: 'uuid',
+  message_id: 'uuid',
+  message: 'پیام ویرایش شده'
+});</pre></div>
+        <h4><span class="event on">ON</span> Response:</h4>
+        <div class="code-block"><pre>socket.on('message_edited', (data) => {
+  updateMessageInUI(data);
+});</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="event emit">EMIT</span> <span class="endpoint">delete_message</span></h3>
+        <p class="description">حذف پیام</p>
+        <h4>Data:</h4>
+        <div class="params">
+            <table>
+                <tr><th>فیلد</th><th>نوع</th><th>توضیحات</th></tr>
+                <tr><td>user_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه کاربر (باید فرستنده باشد)</td></tr>
+                <tr><td>message_id</td><td>string (UUID)</td><td><span class="badge required">الزامی</span> شناسه پیام</td></tr>
+            </table>
+        </div>
+        <h4>Example:</h4>
+        <div class="code-block"><pre>socket.emit('delete_message', {
+  user_id: 'uuid',
+  message_id: 'uuid'
+});</pre></div>
+        <h4><span class="event on">ON</span> Response:</h4>
+        <div class="code-block"><pre>socket.on('message_deleted', (data) => {
+  removeMessageFromUI(data.message_id);
+});</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3><span class="event on">ON</span> <span class="endpoint">error</span></h3>
+        <p class="description">دریافت خطا از سرور</p>
+        <h4>Example:</h4>
+        <div class="code-block"><pre>socket.on('error', (data) => {
+  console.error('Error:', data.message);
+});</pre></div>
+    </div>
+    
+    <div class="api-card">
+        <h3>📝 مثال کامل استفاده:</h3>
+        <div class="code-block"><pre>import io from 'socket.io-client';
+
+const socket = io('https://coinceeper.com', {
+  auth: { user_id: 'YOUR_USER_ID' }
+});
+
+socket.on('connect', () => {
+  socket.emit('join_conversation', {
+    user_id: 'USER_ID',
+    conversation_id: 'CONVERSATION_ID'
+  });
+});
+
+socket.on('new_message', (data) => {
+  displayMessage(data);
+  if (data.is_edited) {
+    showEditedTag(data.message_id);
+  }
+});
+
+socket.on('user_typing', (data) => {
+  if (data.is_typing) {
+    showTypingAnimation(data.user_id);
+  } else {
+    hideTypingAnimation(data.user_id);
+  }
+});
+
+const input = document.getElementById('message-input');
+input.addEventListener('input', () => {
+  socket.emit('typing_start', {
+    user_id: 'USER_ID',
+    conversation_id: 'CONVERSATION_ID'
+  });
+  
+  clearTimeout(typingTimeout);
+  typingTimeout = setTimeout(() => {
+    socket.emit('typing_stop', {
+      user_id: 'USER_ID',
+      conversation_id: 'CONVERSATION_ID'
+    });
+  }, 1000);
+});</pre></div>
+    </div>
+</body>
+</html>
+
+

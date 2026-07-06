@@ -588,7 +588,12 @@ def broadcast_transaction():
             provider = "trongrid_broadcasthex"
 
         if not tx_hash:
-            return _error_response("Broadcast failed", 502)
+            provider_name = provider or "unknown"
+            return _error_response(
+                f"Broadcast failed via {provider_name}. "
+                "The transaction could not be submitted to the network.",
+                502,
+            )
 
         return _success_response({
             "chain": chain,

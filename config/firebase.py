@@ -39,10 +39,11 @@ except ImportError:
 
 def initialize_firebase():
     """
-    Initialize Firebase using service account key file
-    
-    This function sets up Firebase using the service account key file.
-    First, it checks for the private key file in the config folder, then checks environment variables.
+    Initialize Firebase using service account key file or ADC.
+
+    اولویت اول: فایل JSON کلید سرویس در config/
+    اولویت دوم: متغیر محیطی FIREBASE_CREDENTIALS یا FIREBASE_CREDENTIALS_PATH
+    اولویت سوم: Application Default Credentials (روی GCP Compute Engine)
     """
     global firebase_initialized
     
@@ -51,40 +52,65 @@ def initialize_firebase():
         return True
     
     try:
-        # Path to Firebase private key file in config folder
+        # Priority 1: Path to Firebase private key file in config folder
         base_dir = pathlib.Path(__file__).parent  # config directory
-        service_account_path = base_dir / 'coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json'
+        # Look for the first JSON service account key file (either old name or new name)
+        service_account_path = None
+        for candidate in ['firebase-admin-key.json', 'coinceeper-f2eaf-firebase-adminsdk-fbsvc-4f2bc9645c.json']:
+            p = base_dir / candidate
+            if p.exists():
+                service_account_path = p
+                break
         
         if service_account_path.exists():
             logger.info(f"Using Firebase credentials from file: {service_account_path}")
-            cred = credentials.Certificate(str(service_account_path))
-        else:
-            # If key file doesn't exist in config folder, check environment variables
-            firebase_credentials_json = os.environ.get('FIREBASE_CREDENTIALS')
-            firebase_credentials_path = os.environ.get('FIREBASE_CREDENTIALS_PATH')
-            
-            if firebase_credentials_json:
-                logger.info("Initializing Firebase using credentials from environment variable")
-                try:
-                    # Convert JSON credentials from environment variable
-                    cred_dict = json.loads(firebase_credentials_json)
-                    cred = credentials.Certificate(cred_dict)
-                except json.JSONDecodeError:
-                    logger.error("Invalid JSON in FIREBASE_CREDENTIALS environment variable")
-                    return False
-            elif firebase_credentials_path:
-                logger.info(f"Initializing Firebase using credentials from file: {firebase_credentials_path}")
-                # Read credentials from file
-                cred = credentials.Certificate(firebase_credentials_path)
-            else:
-                logger.warning("No Firebase credentials found. Firebase notifications disabled.")
-                return False
+            try:
+                cred = credentials.Certificate(str(service_account_path))
+                firebase_admin.initialize_app(cred)
+                firebase_initialized = True
+                logger.info("Firebase initialized successfully via file credentials")
+                return True
+            except Exception as file_err:
+                logger.warning(f"File credentials failed: {file_err}. Trying fallback.")
+
+        # Priority 2: Environment variables
+        firebase_credentials_json = os.environ.get('FIREBASE_CREDENTIALS')
+        firebase_credentials_path = os.environ.get('FIREBASE_CREDENTIALS_PATH')
         
-        # Initialize Firebase app
-        firebase_admin.initialize_app(cred)
-        firebase_initialized = True
-        logger.info("Firebase initialized successfully")
-        return True
+        if firebase_credentials_json:
+            logger.info("Initializing Firebase using credentials from environment variable")
+            try:
+                cred_dict = json.loads(firebase_credentials_json)
+                cred = credentials.Certificate(cred_dict)
+                firebase_admin.initialize_app(cred)
+                firebase_initialized = True
+                logger.info("Firebase initialized successfully via ENV credentials")
+                return True
+            except json.JSONDecodeError:
+                logger.error("Invalid JSON in FIREBASE_CREDENTIALS environment variable")
+                return False
+        elif firebase_credentials_path:
+            logger.info(f"Initializing Firebase using credentials from file: {firebase_credentials_path}")
+            try:
+                cred = credentials.Certificate(firebase_credentials_path)
+                firebase_admin.initialize_app(cred)
+                firebase_initialized = True
+                logger.info("Firebase initialized successfully via ENV file path")
+                return True
+            except Exception as env_path_err:
+                logger.warning(f"ENV file path credentials failed: {env_path_err}.")
+
+        # Priority 3: Application Default Credentials (ADC - works on fresh GCP VMs)
+        try:
+            firebase_admin.initialize_app()
+            firebase_initialized = True
+            logger.info("Firebase initialized successfully via Application Default Credentials (ADC)")
+            return True
+        except Exception as adc_error:
+            logger.warning(f"ADC initialization failed: {adc_error}")
+
+        logger.warning("No Firebase credentials found. Firebase notifications disabled.")
+        return False
         
     except Exception as e:
         logger.error(f"Error initializing Firebase: {str(e)}", exc_info=True)

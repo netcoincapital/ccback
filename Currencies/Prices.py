@@ -32,10 +32,14 @@ CUpdate_bp = Blueprint('currency_update', __name__)
 @handle_api_errors
 def get_currency_price():
     """
-    Get currency prices from local database
+    [DEPRECATED] Get currency prices from local database
+    
+    ⚠️ DEPRECATED: This endpoint requires UserID and is custodial.
+    ✅ Use GET /api/v2/prices instead (public, cached, no UserID).
+    
     ---
     tags:
-      - Currencies
+      - Currencies (Deprecated)
     requestBody:
       required: true
       content:
@@ -154,63 +158,35 @@ def get_currency_price():
         elif days < 1:
             days = 30
 
-        # تبدیل Symbol یا currencyname به CurrencyID با استفاده از دیتابیس
-        logger.info(f"Converting symbols/currencynames to currency IDs: {validated_symbols}")
+        # تبدیل Symbol به symbol_id با استفاده از جدول symbols جدید
+        logger.info(f"Converting symbols to symbol IDs: {validated_symbols}")
         currency_ids = []
-        symbol_to_id_map = {}  # برای نگاشت برگشتی نتایج
-        id_to_symbol_map = {}  # نگاشت CurrencyID به Symbol
+        symbol_to_id_map = {}
+        id_to_symbol_map = {}
 
         session = Session(bind=engine)
         try:
-            # بررسی Symbol
-            symbol_matches = session.query(Currencies).filter(
-                Currencies.Symbol.in_(validated_symbols)
-            ).all()
+            from sqlalchemy import text
             
-            # بررسی CurrencyName (برای پشتیبانی از ورودی currencyname)
-            name_matches = session.query(Currencies).filter(
-                Currencies.CurrencyName.in_(validated_symbols)
-            ).all()
-            
-            # بررسی CurrencyID (برای پشتیبانی از ورودی CurrencyID)
-            id_matches = session.query(Currencies).filter(
-                Currencies.CurrencyID.in_(validated_symbols)
-            ).all()
-            
-            # لاگ کردن برای بررسی نتایج
-            logger.debug(f"Symbol matches: {[c.Symbol for c in symbol_matches]}")
-            logger.debug(f"Name matches: {[c.CurrencyName for c in name_matches]}")
-            logger.debug(f"ID matches: {[c.CurrencyID for c in id_matches]}")
-            
-            # اضافه کردن موارد پیدا شده به لیست نهایی
-            for currency in symbol_matches:
-                # ذخیره CurrencyID در هر دو حالت رشته‌ای و اصلی
-                currency_ids.append(currency.CurrencyID)
-                symbol_to_id_map[currency.Symbol] = currency.CurrencyID
-                # برای نگاشت برگشتی، همیشه از رشته استفاده می‌کنیم
-                id_to_symbol_map[currency.CurrencyID] = currency.Symbol
-                # برای اطمینان، رشته‌ای را هم اضافه می‌کنیم
-                id_to_symbol_map[str(currency.CurrencyID)] = currency.Symbol
-                logger.debug(f"Mapped Symbol {currency.Symbol} to CurrencyID {currency.CurrencyID}")
-            
-            # اضافه کردن تطابق‌های CurrencyName
-            for currency in name_matches:
-                if currency.CurrencyID not in currency_ids:  # جلوگیری از تکرار
-                    currency_ids.append(currency.CurrencyID)
-                    symbol_to_id_map[currency.CurrencyName] = currency.CurrencyID
-                    id_to_symbol_map[currency.CurrencyID] = currency.Symbol
-                    id_to_symbol_map[str(currency.CurrencyID)] = currency.Symbol
-                    logger.debug(f"Mapped CurrencyName {currency.CurrencyName} to CurrencyID {currency.CurrencyID}")
+            for symbol_input in validated_symbols:
+                result = session.execute(text("""
+                    SELECT id, symbol, name FROM symbols 
+                    WHERE symbol = :symbol OR name = :symbol OR id = :symbol
+                    LIMIT 1
+                """), {'symbol': symbol_input}).first()
                 
-            for currency in id_matches:
-                if currency.CurrencyID not in currency_ids:  # جلوگیری از تکرار
-                    currency_ids.append(currency.CurrencyID)
-                    symbol_to_id_map[currency.CurrencyID] = currency.CurrencyID
-                    # اینجا از Symbol واقعی استفاده می‌کنیم
-                    id_to_symbol_map[currency.CurrencyID] = currency.Symbol
-                    # برای اطمینان، رشته‌ای را هم اضافه می‌کنیم
-                    id_to_symbol_map[str(currency.CurrencyID)] = currency.Symbol
-                    logger.debug(f"Mapped CurrencyID {currency.CurrencyID} to Symbol {currency.Symbol}")
+                if result:
+                    symbol_id = result[0]
+                    symbol_name = result[1]
+                    
+                    if symbol_id not in currency_ids:
+                        currency_ids.append(symbol_id)
+                        symbol_to_id_map[symbol_input] = symbol_id
+                        id_to_symbol_map[symbol_id] = symbol_name
+                        id_to_symbol_map[str(symbol_id)] = symbol_name
+                        logger.debug(f"Mapped {symbol_input} to symbol_id {symbol_id} ({symbol_name})")
+                else:
+                    logger.warning(f"Symbol {symbol_input} not found in symbols table")
             
         finally:
             session.close()
@@ -392,6 +368,11 @@ def get_currency_price():
             except Exception as hist_error:
                 logger.error(f"Error fetching historical data: {str(hist_error)}")
         
+        # اضافه کردن deprecation notice
+        response_data["deprecation_notice"] = (
+            "This endpoint is deprecated and requires UserID. "
+            "Use GET /api/v2/prices instead — public, cached, non-custodial."
+        )
         return jsonify(response_data), 200
 
     except ValidationError as e:
@@ -402,6 +383,17 @@ def get_currency_price():
             "message": str(e)
         }), 400
     except Exception as e:
+        from sqlalchemy.exc import IntegrityError
+        
+        # IntegrityError به معنای duplicate است و نباید 500 برگرداند
+        if isinstance(e, IntegrityError):
+            logger.warning(f"Integrity constraint in get_currency_price (likely duplicate): {str(e)}")
+            return jsonify({
+                "success": True,  # data already exists, so it's not really an error
+                "error_type": "duplicate_data",
+                "message": "Data already exists in database"
+            }), 200
+        
         logger.error(f"Error in get_currency_price: {str(e)}", exc_info=True)
         return jsonify({
             "success": False,
@@ -477,17 +469,20 @@ def update_prices_manually():
             # تبدیل Symbol/currencyname به CurrencyID
             session = Session(bind=engine)
             try:
-                # بررسی هم با Symbol و هم با CurrencyID و CurrencyName
+                # بررسی هم با Symbol و هم با CurrencyID و CurrencyName - فقط با CMC_ID
                 symbol_matches = session.query(Currencies).filter(
-                    Currencies.Symbol.in_(validated_symbols)
+                    Currencies.Symbol.in_(validated_symbols),
+                    Currencies.CMC_ID.isnot(None)
                 ).all()
                 
                 name_matches = session.query(Currencies).filter(
-                    Currencies.CurrencyName.in_(validated_symbols)
+                    Currencies.CurrencyName.in_(validated_symbols),
+                    Currencies.CMC_ID.isnot(None)
                 ).all()
                 
                 id_matches = session.query(Currencies).filter(
-                    Currencies.CurrencyID.in_(validated_symbols)
+                    Currencies.CurrencyID.in_(validated_symbols),
+                    Currencies.CMC_ID.isnot(None)
                 ).all()
                 
                 # لاگ کردن برای بررسی نتایج
@@ -574,6 +569,16 @@ def update_prices_manually():
             "success": False
         }), 400
     except Exception as e:
+        from sqlalchemy.exc import IntegrityError
+        
+        # IntegrityError به معنای duplicate است و نباید 500 برگرداند
+        if isinstance(e, IntegrityError):
+            logger.warning(f"Integrity constraint in update_prices_manually (likely duplicate): {str(e)}")
+            return jsonify({
+                "message": "Price data already exists, operation completed successfully",
+                "success": True
+            }), 200
+        
         logger.error(f"Error in update_prices_manually: {str(e)}", exc_info=True)
         return jsonify({
             "message": f"An unexpected error occurred: {str(e)}",
@@ -655,10 +660,14 @@ def get_api_key_stats():
 @handle_api_errors
 def get_historical_prices():
     """
-    Get historical price data for cryptocurrency charts
+    [DEPRECATED] Get historical price data for cryptocurrency charts
+    
+    ⚠️ DEPRECATED: This endpoint requires UserID and is custodial.
+    ✅ Use GET /api/v2/chart instead (public, cached, no UserID).
+    
     ---
     tags:
-      - Currencies
+      - Currencies (Deprecated)
     requestBody:
       required: true
       content:
@@ -749,19 +758,22 @@ def get_historical_prices():
 
         session = Session(bind=engine)
         try:
-            # بررسی Symbol
+            # بررسی Symbol - فقط ارزهایی که CMC_ID دارند
             symbol_matches = session.query(Currencies).filter(
-                Currencies.Symbol.in_(validated_symbols)
+                Currencies.Symbol.in_(validated_symbols),
+                Currencies.CMC_ID.isnot(None)
             ).all()
             
-            # بررسی CurrencyName
+            # بررسی CurrencyName - فقط ارزهایی که CMC_ID دارند
             name_matches = session.query(Currencies).filter(
-                Currencies.CurrencyName.in_(validated_symbols)
+                Currencies.CurrencyName.in_(validated_symbols),
+                Currencies.CMC_ID.isnot(None)
             ).all()
             
-            # بررسی CurrencyID
+            # بررسی CurrencyID - فقط ارزهایی که CMC_ID دارند
             id_matches = session.query(Currencies).filter(
-                Currencies.CurrencyID.in_(validated_symbols)
+                Currencies.CurrencyID.in_(validated_symbols),
+                Currencies.CMC_ID.isnot(None)
             ).all()
             
             # اضافه کردن موارد پیدا شده
@@ -916,11 +928,13 @@ def get_bulk_historical_prices():
         session = Session(bind=engine)
         try:
             symbol_matches = session.query(Currencies).filter(
-                Currencies.Symbol.in_(symbols)
+                Currencies.Symbol.in_(symbols),
+                Currencies.CMC_ID.isnot(None)
             ).all()
             
             name_matches = session.query(Currencies).filter(
-                Currencies.CurrencyName.in_(symbols)
+                Currencies.CurrencyName.in_(symbols),
+                Currencies.CMC_ID.isnot(None)
             ).all()
             
             for currency in symbol_matches + name_matches:
@@ -1162,15 +1176,18 @@ def update_historical_prices():
             session = Session(bind=engine)
             try:
                 symbol_matches = session.query(Currencies).filter(
-                    Currencies.Symbol.in_(validated_symbols)
+                    Currencies.Symbol.in_(validated_symbols),
+                    Currencies.CMC_ID.isnot(None)
                 ).all()
                 
                 name_matches = session.query(Currencies).filter(
-                    Currencies.CurrencyName.in_(validated_symbols)
+                    Currencies.CurrencyName.in_(validated_symbols),
+                    Currencies.CMC_ID.isnot(None)
                 ).all()
                 
                 id_matches = session.query(Currencies).filter(
-                    Currencies.CurrencyID.in_(validated_symbols)
+                    Currencies.CurrencyID.in_(validated_symbols),
+                    Currencies.CMC_ID.isnot(None)
                 ).all()
                 
                 for currency in symbol_matches:

@@ -2,7 +2,8 @@ import logging
 from flask import Blueprint, request, jsonify
 from utils.logging_config import get_logger
 from database import SessionLocal, UserDevices, Users, Wallets
-from sqlalchemy.exc import IntegrityError
+from sqlalchemy.exc import IntegrityError, OperationalError
+from sqlalchemy import func
 from schemas.notification_schemas import DeviceRegistrationRequest
 from security.validators import SecurityUtils
 from utils.error_handlers import APIErrorHandler, handle_api_errors
@@ -16,6 +17,35 @@ logger = get_logger(__file__)
 
 # ایجاد Blueprint
 notification_api = Blueprint('notification_api', __name__)
+
+
+def _safe_insert_user_device(session, device_kwargs):
+    """Insert device row with fallback for misconfigured DeviceID schema."""
+    new_device = UserDevices(**device_kwargs)
+    session.add(new_device)
+    try:
+        session.flush()
+        return new_device
+    except OperationalError as op_error:
+        error_text = str(op_error)
+        needs_manual_id = (
+            "DeviceID" in error_text and "doesn't have a default value" in error_text
+        )
+        if not needs_manual_id:
+            raise
+
+        logger.warning(
+            "DeviceID auto increment is broken in DB schema; using manual DeviceID fallback."
+        )
+        session.rollback()
+
+        next_device_id = (session.query(func.max(UserDevices.DeviceID)).scalar() or 0) + 1
+        fallback_kwargs = dict(device_kwargs)
+        fallback_kwargs["DeviceID"] = next_device_id
+        new_device = UserDevices(**fallback_kwargs)
+        session.add(new_device)
+        session.flush()
+        return new_device
 
 def validate_fcm_token(token):
     """
@@ -33,10 +63,11 @@ def validate_fcm_token(token):
         return False
         
     # بررسی اینکه توکن فقط شامل کاراکترهای مجاز است
-    pattern = r'^[a-zA-Z0-9:_\-]+$'
+    # FCM توکن‌ها علاوه بر حروف و اعداد ممکن است شامل : - _ نیز باشند
+    pattern = r'^[a-zA-Z0-9:_\-\+]+$'
     result = bool(re.match(pattern, token))
     if not result:
-        logger.warning(f"توکن دارای کاراکترهای غیرمجاز است: {token}")
+        logger.warning(f"توکن دارای کاراکترهای غیرمجاز است: {token[:50]}...")
     return result
 
 @notification_api.route('/notifications/register-device', methods=['POST'])
@@ -161,18 +192,16 @@ def register_device():
             else:
                 # ایجاد رکورد جدید
                 try:
-                    new_device = UserDevices(
-                        UserID=user_id,
-                        WalletID=wallet_id,
-                        DeviceToken=device_token,
-                        DeviceName=device_name,
-                        DeviceType=device_type,
-                        CreatedAt=datetime.now(),
-                        UpdatedAt=datetime.now()
-                    )
-                    
-                    session.add(new_device)
-                    session.flush()  # برای اطمینان از اختصاص DeviceID قبل از commit
+                    device_kwargs = {
+                        "UserID": user_id,
+                        "WalletID": wallet_id,
+                        "DeviceToken": device_token,
+                        "DeviceName": device_name,
+                        "DeviceType": device_type,
+                        "CreatedAt": datetime.now(),
+                        "UpdatedAt": datetime.now()
+                    }
+                    new_device = _safe_insert_user_device(session, device_kwargs)
                     device_id = new_device.DeviceID
                     session.commit()
                     
@@ -225,10 +254,16 @@ def register_device():
 @handle_api_errors
 def simple_register_device():
     """
-    API ساده ثبت توکن دستگاه - برای شرایط خطا
+    API ساده ثبت توکن دستگاه — نسخه privacy-preserving (non-custodial).
     
-    این API یک نسخه ساده‌تر از register-device است که حداقل کد را استفاده می‌کند
-    تا مشکلات احتمالی در API اصلی را حذف کند.
+    این API هم از روش قدیمی (UserID + WalletID) و هم از روش جدید
+    (DeviceID) پشتیبانی می‌کند.
+    
+    روش جدید (non-custodial):
+        { "DeviceID": "UUID-v4", "DeviceToken": "fcm:...", "DeviceName": "...", "DeviceType": "android" }
+    
+    روش قدیمی (backward compatible):
+        { "UserID": "...", "WalletID": "...", "DeviceToken": "fcm:...", ... }
     """
     try:
         logger.info("درخواست ساده ثبت دستگاه دریافت شد")
@@ -237,24 +272,39 @@ def simple_register_device():
         data = request.get_json()
         logger.info(f"داده‌های دریافتی: {data}")
         
-        # بررسی وجود فیلدهای ضروری
-        user_id = data.get('UserID')
-        wallet_id = data.get('WalletID')
         device_token = data.get('DeviceToken')
-        
-        if not user_id or not wallet_id or not device_token:
-            logger.warning(f"فیلدهای اجباری وجود ندارند: UserID={user_id}, WalletID={wallet_id}, DeviceToken={device_token}")
+        if not device_token:
             return jsonify({
                 "success": False,
-                "message": "فیلدهای UserID، WalletID و DeviceToken اجباری هستند"
+                "message": "DeviceToken الزامی است"
+            }), 400
+        
+        # تشخیص حالت: DeviceID (جدید) یا UserID+WalletID (قدیمی)
+        device_id = data.get('DeviceID')
+        user_id = data.get('UserID')
+        wallet_id = data.get('WalletID')
+        
+        if device_id and not user_id and not wallet_id:
+            # ─── حالت جدید: privacy-preserving (non-custodial) ───
+            logger.info(f"حالت DeviceID: device_id={device_id[:12]}...")
+            effective_user_id = device_id
+            effective_wallet_id = device_id  # WalletID = DeviceID برای جستجوی یکسان
+        elif user_id and wallet_id:
+            # ─── حالت قدیمی: backward compatible ───
+            logger.info(f"حالت UserID: user_id={user_id[:12]}...")
+            effective_user_id = user_id
+            effective_wallet_id = wallet_id
+        else:
+            return jsonify({
+                "success": False,
+                "message": "یا DeviceID و یا UserID+WalletID الزامی است"
             }), 400
         
         # دریافت فیلدهای اختیاری
         device_name = data.get('DeviceName', 'Unknown')
         device_type = data.get('DeviceType', 'unknown')
         
-        # گزارش اطلاعات دستگاه برای عیب‌یابی
-        logger.info(f"اطلاعات دستگاه: UserID={user_id}, WalletID={wallet_id}, Token length={len(device_token)}, DeviceName={device_name}, DeviceType={device_type}")
+        logger.info(f"اطلاعات دستگاه: UserID={effective_user_id[:12]}..., Token length={len(device_token)}, DeviceName={device_name}, DeviceType={device_type}")
         
         # ایجاد اتصال به دیتابیس
         session = SessionLocal()
@@ -268,8 +318,8 @@ def simple_register_device():
             if existing:
                 logger.info(f"توکن دستگاه موجود یافت شد: DeviceID={existing.DeviceID}")
                 # به‌روزرسانی رکورد موجود
-                existing.UserID = user_id
-                existing.WalletID = wallet_id
+                existing.UserID = effective_user_id
+                existing.WalletID = effective_wallet_id
                 existing.DeviceName = device_name
                 existing.DeviceType = device_type
                 existing.UpdatedAt = datetime.now()
@@ -285,15 +335,14 @@ def simple_register_device():
             else:
                 logger.info("ایجاد رکورد جدید دستگاه")
                 # ایجاد رکورد جدید
-                new_device = UserDevices(
-                    UserID=user_id,
-                    WalletID=wallet_id,
-                    DeviceToken=device_token,
-                    DeviceName=device_name,
-                    DeviceType=device_type
-                )
-                
-                session.add(new_device)
+                device_kwargs = {
+                    "UserID": effective_user_id,
+                    "WalletID": effective_wallet_id,
+                    "DeviceToken": device_token,
+                    "DeviceName": device_name,
+                    "DeviceType": device_type
+                }
+                new_device = _safe_insert_user_device(session, device_kwargs)
                 session.commit()
                 logger.info(f"رکورد جدید دستگاه ایجاد شد: DeviceID={new_device.DeviceID}")
                 

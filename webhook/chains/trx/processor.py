@@ -201,7 +201,7 @@ class TronProcessor(TransactionProcessor):
     
     def _get_tron_transaction_fee(self, tx_hash):
         """
-        Get transaction fee for Tron transaction
+        Get transaction fee for Tron transaction using official FullNode API.
         
         Args:
             tx_hash (str): Transaction hash
@@ -209,42 +209,39 @@ class TronProcessor(TransactionProcessor):
         Returns:
             float: Transaction fee in TRX
         """
+        TRONGRID_BASE = "https://api.trongrid.io"
         try:
-            # First try to get fee from TronGrid API
-            trongrid_url = f"https://api.trongrid.io/v1/transactions/{tx_hash}"
-            headers = {
-                "TRON-PRO-API-KEY": os.getenv("TRONGRID_API_KEY", "")
-            }
+            # 1. Primary: POST /wallet/gettransactioninfobyid — official FullNode API
+            url = f"{TRONGRID_BASE}/wallet/gettransactioninfobyid"
+            headers = {"Content-Type": "application/json"}
+            api_key = os.getenv("TRONGRID_API_KEY", "")
+            if api_key:
+                headers["TRON-PRO-API-KEY"] = api_key
             
-            # Only use API key if it exists
-            if not headers["TRON-PRO-API-KEY"]:
-                del headers["TRON-PRO-API-KEY"]
-                
-            response = requests.get(trongrid_url, headers=headers, timeout=10)
+            payload = {"value": tx_hash}
+            response = requests.post(url, json=payload, headers=headers, timeout=10)
             
             if response.status_code == 200:
                 data = response.json()
-                if 'data' in data and len(data['data']) > 0:
-                    # Cost in SUN
-                    fee_limit = data['data'][0].get('fee', 0)
-                    # Convert SUN to TRX (1 TRX = 1,000,000 SUN)
-                    fee_trx = fee_limit / 1000000.0
-                    logger.info(f"Retrieved fee from TronGrid API for {tx_hash}: {fee_trx} TRX")
+                # fee is in SUN (1 TRX = 1,000,000 SUN)
+                fee_sun = int(data.get('fee', 0))
+                fee_trx = fee_sun / 1_000_000.0
+                if fee_trx > 0:
+                    logger.info(f"Retrieved fee from FullNode API for {tx_hash}: {fee_trx} TRX")
                     return fee_trx
             
-            # Fallback to TRON API
-            tron_url = f"https://apilist.tronscanapi.com/api/transaction-info?hash={tx_hash}"
-            response = requests.get(tron_url, timeout=10)
+            # 2. Fallback: Try TronScan API
+            tronscan_url = f"https://apilist.tronscanapi.com/api/transaction-info?hash={tx_hash}"
+            response = requests.get(tronscan_url, timeout=10)
             
             if response.status_code == 200:
                 data = response.json()
-                # Cost in SUN
-                fee_limit = data.get('cost', {}).get('fee', 0)
-                # Convert SUN to TRX (1 TRX = 1,000,000 SUN)
-                fee_trx = fee_limit / 1000000.0
-                logger.info(f"Retrieved fee from Tronscan API for {tx_hash}: {fee_trx} TRX")
-                return fee_trx
-                
+                fee_sun = int(data.get('cost', {}).get('fee', 0))
+                fee_trx = fee_sun / 1_000_000.0
+                if fee_trx > 0:
+                    logger.info(f"Retrieved fee from TronScan API for {tx_hash}: {fee_trx} TRX")
+                    return fee_trx
+            
             # If both APIs fail, return a default fee
             logger.warning(f"Could not retrieve fee for transaction {tx_hash}, using default")
             return 0.01  # Default fee: 0.01 TRX

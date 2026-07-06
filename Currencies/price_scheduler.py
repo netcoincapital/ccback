@@ -46,9 +46,9 @@ def run_scheduler():
         session.close()
         logger.debug("Database session closed")
 
-    # لیست ارزهای فیات
-    fiat_list = list(fiat_symbols.keys())
-    logger.info(f"Using {len(fiat_list)} fiat currencies: {fiat_list}")
+    # لیست ارزهای فیات - فقط USD (سایر ارزها از fiat_rates محاسبه می‌شوند)
+    fiat_list = ["USD"]
+    logger.info(f"Using {len(fiat_list)} fiat currencies: {fiat_list} (others calculated from fiat_rates)")
 
     # تقسیم کریپتوها به پکیج‌های ۵۰تایی
     crypto_packages = [coin_ids[i:i + BATCH_SIZE] for i in range(0, len(coin_ids), BATCH_SIZE)]

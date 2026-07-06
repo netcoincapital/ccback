@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from solana.rpc.api import Client
 from solders.transaction import Transaction
 from solders.keypair import Keypair
-from solana.system_program import TransferParams, transfer
+from solders.system_program import TransferParams, transfer
 
 from services.blockchains.base_blockchain_service import BaseBlockchainService
 from services.tatum_helper import TatumHelper
@@ -127,7 +127,7 @@ class SolanaService(BaseBlockchainService):
                     # Load private key
                     from solana.keypair import Keypair
                     from solana.transaction import Transaction
-                    from solana.system_program import TransferParams, transfer
+                    from solders.system_program import TransferParams, transfer
                     
                     # Decode private key
                     keypair = Keypair.from_secret_key(bytes.fromhex(private_key))

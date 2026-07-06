@@ -83,18 +83,21 @@ def generate_wallet_v1():
         # Generate wallet synchronously
         session = SessionLocal()
         try:
-            # Import service داخل تابع برای جلوگیری از circular import
-            from ..services.wallet_service import WalletService
+            # Import service داخل تابع برای جلوگیری از circular import (نسبی با top-level gunicorn سازگار نیست)
+            from services.wallet_service import WalletService
             # Use service to create wallet
             wallet_service = WalletService(session)
             with session.begin():
-                user_id, mnemonic, addresses = wallet_service.create_wallet(wallet_name, 5, user_ip, user_device)
+                user_id, wallet_id, mnemonic, addresses = wallet_service.create_wallet(
+                    wallet_name, 5, user_ip, user_device
+                )
 
             # Log success
-            logger.info(f"Wallet generated for user {user_id}")
+            logger.info(f"Wallet generated for user {user_id} wallet {wallet_id}")
 
             return jsonify({
                 'UserID': user_id,
+                'WalletID': wallet_id,
                 'Mnemonic': mnemonic,
                 'Addresses': addresses,
                 'success': True

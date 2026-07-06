@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستندات API - Coinceeper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-right: 4px solid #667eea;
+        }
+        
+        .section.non-custodial {
+            border-right-color: #11c699;
+            background: linear-gradient(135deg, #f0fdf4 0%, #f8f9fa 100%);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .section.non-custodial h2 {
+            color: #11c699;
+            border-bottom-color: #11c699;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .api-card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-right: 4px solid #667eea;
+        }
+        
+        .api-card.non-custodial {
+            border-right-color: #11c699;
+        }
+        
+        .api-card.deprecated {
+            border-right-color: #ffc107;
+            opacity: 0.8;
+        }
+        
+        .method {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .method.get { background: #28a745; }
+        .method.post { background: #007bff; }
+        .method.put { background: #ffc107; color: #000; }
+        .method.delete { background: #dc3545; }
+        
+        .endpoint {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            color: #333;
+            margin: 10px 0;
+        }
+        
+        .description {
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        .params {
+            margin: 20px 0;
+        }
+        
+        .params table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .params th, .params td {
+            padding: 12px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .params th {
+            background: #667eea;
+            color: white;
+        }
+        
+        .params tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .response {
+            margin-top: 20px;
+        }
+        
+        .response h4 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: #2d2d2d;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .badge.required { background: #dc3545; color: white; }
+        .badge.optional { background: #6c757d; color: white; }
+        .badge.green { background: #11c699; color: white; }
+        .badge.yellow { background: #ffc107; color: #000; }
+        .badge.deprecated { background: #e67e22; color: white; }
+        
+        .info-box {
+            background: #e8f5e9;
+            border: 1px solid #11c699;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background: #fff8e1;
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 مستندات API</h1>
+            <p>Coinceeper Platform — Non-Custodial Architecture</p>
+        </div>
+        
+        <div class="nav">
+            <ul>
+                <li><a href="#v2">🟢 V2 (Non-Custodial)</a></li>
+                <li><a href="#shop">🛍️ Shop API</a></li>
+                <li><a href="#chat">💬 Chat API</a></li>
+                <li><a href="#report">🚨 Report & Block API</a></li>
+                <li><a href="#moderation">🛡️ Moderation API</a></li>
+                <li><a href="#websocket">⚡ WebSocket Events</a></li>
+            </ul>
+        </div>
+        
+        <div class="content">
+
+            <!-- ==================== V2 Non-Custodial ==================== -->
+            
+            <div id="v2" class="section non-custodial">
+                <h2>🟢 API V2 — Non-Custodial (بدون UserID)</h2>
+                
+                <div class="info-box">
+                    <strong>✅ معماری جدید Non-Custodial:</strong><br>
+                    این endpointها <strong>عمومی</strong> هستند و نیازی به UserID ندارند.<br>
+                    داده‌ها از CoinGecko رایگان (۱ req/۲min) کش می‌شوند.<br>
+                    بار سرور برای ۱۰ تا ۱۰۰,۰۰۰ کاربر یکسان است.<br>
+                    هزینه اضافی: <strong>$0</strong>
+                </div>
+                
+                <div class="api-card non-custodial">
+                    <h3><span class="method get">GET</span> قیمت لحظه‌ای</h3>
+                    <div class="endpoint"><code>/api/v2/prices</code></div>
+                    <div class="description">دریافت قیمت لحظه‌ای همه ارزهای اصلی. داده از CoinGecko هر ۲ دقیقه کش می‌شود.</div>
+                    
+                    <div class="params">
+                        <h4>Query Parameters (اختیاری):</h4>
+                        <table>
+                            <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                            <tr><td>symbol</td><td>string <span class="badge optional">اختیاری</span></td><td>فیلتر بر اساس سمبل (مثلاً ?symbol=BTC)</td></tr>
+                            <tr><td>currency</td><td>string <span class="badge optional">اختیاری</span></td><td>ارز مرجع (پیش‌فرض: USD)</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre># 🔹 مثال — همه قیمت‌ها
+GET https://coinceeper.com/api/v2/prices
+
+# 🔹 مثال — قیمت بیت‌کوین
+GET https://coinceeper.com/api/v2/prices?symbol=BTC
+
+# 🔹 مثال — قیمت یک ارز خاص
+GET https://coinceeper.com/api/v2/prices/BTC</pre>
+                    </div>
+                </div>
+                
+                <div class="api-card non-custodial">
+                    <h3><span class="method get">GET</span> نمودار قیمت (تاریخی)</h3>
+                    <div class="endpoint"><code>/api/v2/chart?symbol=BTC&days=7</code></div>
+                    <div class="description">داده‌های قیمت تاریخی برای رسم نمودار. از CoinGecko هر ۵ دقیقه کش می‌شود.</div>
+                    
+                    <div class="params">
+                        <h4>Query Parameters:</h4>
+                        <table>
+                            <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                            <tr><td>symbol</td><td>string <span class="badge required">الزامی</span></td><td>سمبل ارز (مثلاً BTC, ETH)</td></tr>
+                            <tr><td>days</td><td>int <span class="badge optional">اختیاری</span></td><td>تعداد روز (۱ تا ۳۶۵، پیش‌فرض: ۷)</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre>GET https://coinceeper.com/api/v2/chart?symbol=BTC&days=30</pre>
+                    </div>
+                </div>
+                
+                <div class="api-card non-custodial">
+                    <h3><span class="method get">GET</span> کارمزد شبکه‌ها (Gas Fee)</h3>
+                    <div class="endpoint"><code>/api/v2/gas</code></div>
+                    <div class="description">کارمزد شبکه‌های مختلف از public RPC. هر ۱ دقیقه کش می‌شود.</div>
+                    
+                    <div class="params">
+                        <h4>Query Parameters (اختیاری):</h4>
+                        <table>
+                            <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                            <tr><td>chain</td><td>string <span class="badge optional">اختیاری</span></td><td>نام شبکه (مثلاً ?chain=Ethereum)</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre># همه شبکه‌ها
+GET https://coinceeper.com/api/v2/gas
+
+# یک شبکه خاص
+GET https://coinceeper.com/api/v2/gas?chain=Ethereum</pre>
+                    </div>
+                </div>
+                
+                <div class="api-card non-custodial">
+                    <h3><span class="method get">GET</span> لیست ارزها (صفحه‌بندی شده)</h3>
+                    <div class="endpoint"><code>/api/v2/coins</code></div>
+                    <div class="description">لیست کامل ارزهای دیجیتال از CoinGecko. یکبار در روز کش می‌شود. با صفحه‌بندی برای کاهش حجم پاسخ و بهبود سرعت.</div>
+                    
+                    <div class="params">
+                        <h4>Query Parameters (اختیاری):</h4>
+                        <table>
+                            <tr><th>پارامتر</th><th>نوع</th><th>توضیحات</th></tr>
+                            <tr><td>search</td><td>string <span class="badge optional">اختیاری</span></td><td>جستجو در نام یا سمبل</td></tr>
+                            <tr><td>page</td><td>int <span class="badge optional">اختیاری</span></td><td>شماره صفحه (پیش‌فرض: 1)</td></tr>
+                            <tr><td>per_page</td><td>int <span class="badge optional">اختیاری</span></td><td>تعداد در هر صفحه (پیش‌فرض: 50، حداکثر: 200)</td></tr>
+                            <tr><td>limit</td><td>int <span class="badge deprecated">منسوخ</span></td><td>از per_page استفاده کنید</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre>GET https://coinceeper.com/api/v2/coins?search=bitcoin&per_page=5</pre>
+                    </div>
+                    
+                    <div class="params">
+                        <h4>Response شامل متادیتای صفحه‌بندی:</h4>
+                        <pre>{
+  "success": true,
+  "coins": [...],
+  "count": 5,
+  "page": 1,
+  "per_page": 50,
+  "total": 17408,
+  "total_pages": 349,
+  "has_next": true,
+  "has_prev": false,
+  "cache_status": "ready",
+  "cache_age_seconds": 123.4
+}</pre>
+                    </div>
+                </div>
+                
+                <div class="api-card non-custodial">
+                    <h3><span class="method get">GET</span> وضعیت سرویس</h3>
+                    <div class="endpoint"><code>/api/v2/health</code></div>
+                    <div class="description">بررسی وضعیت همه کش‌ها و سلامت سرویس Non-Custodial.</div>
+                    <div class="code-block">
+                        <pre>GET https://coinceeper.com/api/v2/health</pre>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <strong>🔑 ویژگی‌های API V2:</strong><br>
+                    ✅ بدون UserID — Non-Custodial واقعی<br>
+                    ✅ کش در RAM — پاسخ زیر ۱ms<br>
+                    ✅ بار سرور ثابت — مقیاس تا ۱۰۰,۰۰۰ کاربر<br>
+                    ✅ هزینه اضافی: $0<br>
+                    ✅ داده از CoinGecko رایگان
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ endpointهای قدیمی (V1) DEPRECATED شده‌اند:</strong><br>
+                    <code>/api/prices</code> ← از <code>/api/v2/prices</code> استفاده کنید<br>
+                    <code>/api/chart-data</code> ← از <code>/api/v2/chart</code> استفاده کنید<br>
+                    <code>/api/historical-prices</code> ← از <code>/api/v2/chart</code> استفاده کنید<br>
+                    <code>/api/transactions</code> ← مستقیم از block explorer بخوانید
+                </div>
+            </div>
+            
+            <!-- ==================== Shop ==================== -->
+            
+            <div id="shop" class="section">
+                <h2>🛍️ Shop API</h2>
+                <p class="description">API های مربوط به مدیریت محصولات فروشگاه</p>
+                <iframe src="shop-api.html" width="100%" height="2000" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+            
+            <div id="chat" class="section">
+                <h2>💬 Chat API (Direct Messages)</h2>
+                <p class="description">API های مربوط به چت تک به تک و مدیریت مکالمات</p>
+                <iframe src="chat-api.html" width="100%" height="2500" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+            
+            <div id="report" class="section">
+                <h2>🚨 Report & Block API</h2>
+                <p class="description">API های مربوط به گزارش و بلاک کردن کاربران</p>
+                <iframe src="report-block-api.html" width="100%" height="2000" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+            
+            <div id="moderation" class="section">
+                <h2>🛡️ Moderation API</h2>
+                <p class="description">API های مربوط به مدیریت و moderation محتوا (فقط برای Moderator ها)</p>
+                <iframe src="moderation-api.html" width="100%" height="2000" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+            
+            <div id="websocket" class="section">
+                <h2>⚡ WebSocket Events</h2>
+                <p class="description">Event های WebSocket برای چت لحظه‌ای و typing indicators</p>
+                <iframe src="websocket-api.html" width="100%" height="2000" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 Coinceeper Platform — Non-Custodial Architecture</p>
+            <p style="margin-top: 10px; opacity: 0.8;">
+                V2 Base URL: <code>https://coinceeper.com/api/v2</code> |
+                V1 Base URL: <code>https://coinceeper.com/api</code> (Deprecated)
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

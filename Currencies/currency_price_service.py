@@ -5,7 +5,9 @@ import logging
 import json
 import requests
 import time
+from decimal import Decimal
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 from database import engine
 from database.prices import Price
 from utils.logging_config import get_logger
@@ -16,6 +18,31 @@ from Currencies.historical_data_service import HistoricalDataService
 # تنظیم لاگر
 logger = get_logger(__file__)
 logger.info("Initializing currency price service module")
+
+# اگر جدول current_prices نباشد، به‌روزرسانی باید در جدول قدیمی prices نوشته شود.
+_use_new_price_tables_cache = None  # type: ignore[var-annotated]
+
+# MySQL named lock for legacy `prices` inserts when `id` has no AUTO_INCREMENT.
+LEGACY_PRICES_BATCH_LOCK = "coinceeper_prices_batch"
+
+
+def _use_new_price_tables() -> bool:
+    global _use_new_price_tables_cache
+    if _use_new_price_tables_cache is not None:
+        return _use_new_price_tables_cache
+    try:
+        from sqlalchemy import inspect as sqla_inspect
+
+        names = {t.lower() for t in sqla_inspect(engine).get_table_names()}
+        _use_new_price_tables_cache = "current_prices" in names
+        logger.info(
+            "Price persistence mode: %s",
+            "new_schema(current_prices)" if _use_new_price_tables_cache else "legacy(prices)",
+        )
+    except Exception as e:
+        logger.warning("Could not inspect DB for price tables, defaulting to legacy: %s", e)
+        _use_new_price_tables_cache = False
+    return _use_new_price_tables_cache
 
 # ارزهای فیات پشتیبانی شده و نماد آنها
 fiat_symbols = {
@@ -317,27 +344,50 @@ class CurrencyPriceService:
                 
                 # Update database - create a new session for each fiat currency
                 session = Session(bind=engine)
+                legacy_prices_lock_held = False
+                legacy_lock_miss_logged = False
                 try:
                     logger.debug(f"Starting database updates for {len(currency_ids)} currencies in {fiat}")
                     fiat_success = 0
                     fiat_fail = 0
+
+                    if fiat == "USD" and not _use_new_price_tables():
+                        try:
+                            lk = session.execute(
+                                text("SELECT GET_LOCK(:ln, 7200)"),
+                                {"ln": LEGACY_PRICES_BATCH_LOCK},
+                            ).scalar()
+                            legacy_prices_lock_held = lk == 1
+                            if not legacy_prices_lock_held:
+                                logger.error(
+                                    "Legacy prices: GET_LOCK returned %s; USD inserts skipped for this batch.",
+                                    lk,
+                                )
+                        except Exception as lock_e:
+                            logger.error(
+                                "Legacy prices GET_LOCK failed: %s",
+                                lock_e,
+                                exc_info=True,
+                            )
+
+                    legacy_next_price_id = None
+                    if legacy_prices_lock_held:
+                        legacy_next_price_id = int(
+                            session.execute(
+                                text(
+                                    "SELECT COALESCE(MAX(id), 0) + 1 AS n FROM prices"
+                                )
+                            ).scalar_one()
+                        )
                     
                     # لاگ اتصال به دیتابیس
                     try:
                         logger.debug(f"Testing database connection...")
-                        from sqlalchemy import text
                         connection_test = session.execute(text("SELECT 1")).first()
                         logger.debug(f"Database connection test result: {connection_test}")
                     except Exception as conn_err:
                         logger.error(f"Database connection error: {str(conn_err)}", exc_info=True)
                         
-                    # اطلاعات جدول قیمت‌ها
-                    try:
-                        price_count = session.query(Price).count()
-                        logger.debug(f"Current price records in database: {price_count}")
-                    except Exception as table_err:
-                        logger.error(f"Error checking price table: {str(table_err)}", exc_info=True)
-                    
                     # Update database - به‌روزرسانی همه CurrencyID های مربوط به هر CMC_ID
                     for cmc_id in unique_cmc_ids:
                         # بررسی اگر CMC_ID در نتایج API وجود دارد
@@ -366,32 +416,120 @@ class CurrencyPriceService:
                         for currency_id in currency_ids_for_cmc:
                             try:
                                 # استفاده از CurrencyID برای به‌روزرسانی دیتابیس
-                                # همیشه رکورد جدید ایجاد کن برای ساخت چارت تاریخی
                                 from datetime import datetime
+
                                 current_timestamp = datetime.now()
-                                
-                                # ایجاد رکورد جدید با timestamp منحصر به فرد
-                                logger.debug(f"Creating new historical record for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}: {price_value}")
-                                new_price = Price(
-                                    crypto_id=currency_id,
-                                    currency=fiat,
-                                    price=price_value,
-                                    market_cap=market_cap_value,
-                                    volume_24h=volume_24h_value,
-                                    change_1h=change_1h_value,
-                                    change_24h=change_24h_value,
-                                    change_7d=change_7d_value,
-                                    timestamp=current_timestamp,  # timestamp منحصر به فرد
-                                    is_historical=True,  # علامت‌گذاری به عنوان تاریخی
-                                    last_updated=current_timestamp
-                                )
-                                session.add(new_price)
-                                
-                                # Commit each record individually to avoid batch errors
-                                logger.debug(f"Committing transaction for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}")
-                                session.commit()
-                                fiat_success += 1
-                                logger.debug(f"Successfully saved price for CurrencyID {currency_id} (CMC_ID {cmc_id}) in {fiat}")
+
+                                if fiat == "USD" and _use_new_price_tables():
+                                    logger.debug(f"Upserting ticks_recent for symbol_id {currency_id}")
+                                    tick_stmt = text("""
+                                        INSERT INTO ticks_recent (symbol_id, price, volume_24h, market_cap, timestamp)
+                                        VALUES (:symbol_id, :price, :volume_24h, :market_cap, :timestamp)
+                                    """)
+                                    try:
+                                        session.execute(tick_stmt, {
+                                            'symbol_id': currency_id,
+                                            'price': price_value,
+                                            'volume_24h': volume_24h_value,
+                                            'market_cap': market_cap_value,
+                                            'timestamp': current_timestamp
+                                        })
+                                        session.commit()
+                                        logger.debug(f"Tick inserted for symbol_id {currency_id}")
+                                    except Exception as te:
+                                        session.rollback()
+                                        logger.warning(f"Could not insert tick for {currency_id}: {str(te)}")
+                                    
+                                    logger.debug(f"Upserting current_prices for symbol_id {currency_id}")
+                                    curr_stmt = text("""
+                                        INSERT INTO current_prices 
+                                        (symbol_id, price, volume_24h, market_cap, change_1h, change_24h, change_7d, last_updated)
+                                        VALUES (:symbol_id, :price, :volume_24h, :market_cap, :change_1h, :change_24h, :change_7d, :last_updated)
+                                        ON DUPLICATE KEY UPDATE
+                                            price = VALUES(price),
+                                            volume_24h = VALUES(volume_24h),
+                                            market_cap = VALUES(market_cap),
+                                            change_1h = VALUES(change_1h),
+                                            change_24h = VALUES(change_24h),
+                                            change_7d = VALUES(change_7d),
+                                            last_updated = VALUES(last_updated)
+                                    """)
+                                    
+                                    try:
+                                        session.execute(curr_stmt, {
+                                            'symbol_id': currency_id,
+                                            'price': price_value,
+                                            'volume_24h': volume_24h_value,
+                                            'market_cap': market_cap_value,
+                                            'change_1h': change_1h_value,
+                                            'change_24h': change_24h_value,
+                                            'change_7d': change_7d_value,
+                                            'last_updated': current_timestamp
+                                        })
+                                        session.commit()
+                                        fiat_success += 1
+                                        logger.debug(f"Successfully updated current_prices and ticks for symbol_id {currency_id}")
+                                    except Exception as ce:
+                                        session.rollback()
+                                        logger.warning(f"Could not update current_prices for {currency_id}: {str(ce)}")
+                                        fiat_fail += 1
+                                elif fiat == "USD":
+                                    # اسکیمای قدیمی: جدول prices — اگر id بدون AUTO_INCREMENT باشد، id صریح + شمارنده زیر قفل دسته‌ای.
+                                    if (
+                                        not legacy_prices_lock_held
+                                        or legacy_next_price_id is None
+                                    ):
+                                        session.rollback()
+                                        fiat_fail += 1
+                                        if not legacy_lock_miss_logged:
+                                            legacy_lock_miss_logged = True
+                                            logger.error(
+                                                "Legacy prices: batch lock not held; "
+                                                "all USD legacy inserts skipped for this batch."
+                                            )
+                                        continue
+                                    try:
+                                        rec = Price(
+                                            id=legacy_next_price_id,
+                                            crypto_id=str(currency_id),
+                                            currency=fiat,
+                                            price=Decimal(str(price_value)),
+                                            market_cap=Decimal(str(market_cap_value)) if market_cap_value is not None else None,
+                                            volume_24h=Decimal(str(volume_24h_value)) if volume_24h_value is not None else None,
+                                            change_1h=Decimal(str(change_1h_value)) if change_1h_value is not None else None,
+                                            change_24h=Decimal(str(change_24h_value)) if change_24h_value is not None else None,
+                                            change_7d=Decimal(str(change_7d_value)) if change_7d_value is not None else None,
+                                            is_historical=False,
+                                            timestamp=current_timestamp,
+                                        )
+                                        session.add(rec)
+                                        session.commit()
+                                        legacy_next_price_id += 1
+                                        fiat_success += 1
+                                    except Exception as le:
+                                        session.rollback()
+                                        fiat_fail += 1
+                                        logger.warning(
+                                            "Legacy prices insert failed for %s: %s",
+                                            currency_id,
+                                            le,
+                                        )
+                                        try:
+                                            legacy_next_price_id = int(
+                                                session.execute(
+                                                    text(
+                                                        "SELECT COALESCE(MAX(id), 0) + 1 AS n FROM prices"
+                                                    )
+                                                ).scalar_one()
+                                            )
+                                        except Exception as sync_e:
+                                            logger.warning(
+                                                "Could not resync legacy_next_price_id: %s",
+                                                sync_e,
+                                            )
+                                else:
+                                    logger.debug(f"Skipping non-USD currency {fiat} (will be calculated from fiat_rates)")
+                                    fiat_success += 1
                                 
                             except Exception as record_error:
                                 # If error occurs for one record, rollback that transaction and continue with others
@@ -413,6 +551,17 @@ class CurrencyPriceService:
                     if hasattr(batch_error, 'orig') and batch_error.orig:
                         logger.error(f"SQL error details: {str(batch_error.orig)}")
                 finally:
+                    if legacy_prices_lock_held:
+                        try:
+                            session.execute(
+                                text("SELECT RELEASE_LOCK(:ln)"),
+                                {"ln": LEGACY_PRICES_BATCH_LOCK},
+                            )
+                        except Exception as rel_e:
+                            logger.warning(
+                                "Legacy prices RELEASE_LOCK: %s",
+                                rel_e,
+                            )
                     session.close()
                     logger.debug(f"Closed database session for {fiat}")
             

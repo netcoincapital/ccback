@@ -244,17 +244,21 @@ class TronGridProxy:
 
     def get_token_info(self, contract_address: str) -> Optional[Dict]:
         """
-        دریافت اطلاعات یک توکن TRC20.
+        دریافت اطلاعات یک توکن TRC20 از قرارداد هوشمند.
+        
+        از TronGrid v1 endpoint استفاده می‌کند:
+          GET /v1/contracts/{contractAddress}
+        (برای TRC10 از /v1/tokens/ استفاده کنید)
         
         Args:
-            contract_address: آدرس قرارداد توکن
+            contract_address: آدرس قرارداد توکن (Base58)
             
         Returns:
-            اطلاعات توکن یا None
+            اطلاعات توکن (شامل name, symbol, decimals) یا None
         """
         cache_key = contract_address.lower()
         result = self._request(
-            "GET", f"/v1/tokens/{contract_address}",
+            "GET", f"/v1/contracts/{contract_address}",
             namespace="tron_token_info", cache_key=cache_key, ttl=3600,
         )
         if result:

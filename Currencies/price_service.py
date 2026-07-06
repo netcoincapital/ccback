@@ -1,5 +1,7 @@
+from typing import Any, Dict, Optional
+
 from sqlalchemy.orm import Session
-from sqlalchemy import func, and_
+from sqlalchemy import func, and_, text
 from database import engine, Currencies
 from database.prices import Price
 from utils.logging_config import get_logger
@@ -7,106 +9,140 @@ from datetime import timedelta
 
 logger = get_logger(__file__)
 
+# کش سبک برای جلوگیری از reflection مکرر روی هر درخواست
+_schema_cache: Optional[Dict[str, Any]] = None
+
+
+def _get_schema_flags():
+    global _schema_cache
+    if _schema_cache is not None:
+        return _schema_cache
+    from sqlalchemy import inspect as sqla_inspect
+
+    inspector = sqla_inspect(engine)
+    table_names = {t.lower() for t in inspector.get_table_names()}
+    _schema_cache = {
+        "has_new": "current_prices" in table_names,
+        "has_old": "prices" in table_names,
+    }
+    return _schema_cache
+
+
 class PriceDbService:
     """سرویس مدیریت قیمت‌ها در دیتابیس"""
 
     @staticmethod
     def get_prices(currency_ids, fiat_currencies):
         """
-        دريافت جديدترين قيمت هر (crypto_id, currency) از جدول prices.
-        - هميشه آخرين ركورد بر اساس COALESCE(timestamp, last_updated) برگردانده می‌شود.
-        - اگر change_24h نال بود، از داده‌ی ۲۴ ساعت قبل محاسبه می‌گردد.
+        دريافت قيمت‌ها از جداول جدید (current_prices + fiat_rates)
+        - قیمت‌ها فقط در USD ذخیره شده‌اند
+        - تبدیل به سایر ارزها با استفاده از fiat_rates
         """
         logger.info(f"Fetching prices for {len(currency_ids)} currencies in {len(fiat_currencies)} fiats")
         session = Session(bind=engine)
         try:
+            flags = _get_schema_flags()
+            has_new_schema = flags["has_new"]
+            has_old_schema = flags["has_old"]
+
             string_ids = [str(cid) for cid in currency_ids]
-
-            # شاخص زمان برای مرتب‌سازی/انتخاب آخرین رکورد
-            ts_expr = func.coalesce(Price.timestamp, Price.last_updated)
-
-            # ساب‌کوئری: آخرین زمان هر (crypto_id, currency)
-            latest_sub = (
-                session.query(
-                    Price.crypto_id.label("cid"),
-                    Price.currency.label("fiat"),
-                    func.max(ts_expr).label("mx_ts"),
-                )
-                .filter(Price.crypto_id.in_(string_ids))
-                .filter(Price.currency.in_(fiat_currencies))
-                .group_by(Price.crypto_id, Price.currency)
-                .subquery()
-            )
-
-            # جوین با جدول prices روی بیشینه‌ی زمان محاسبه‌شده
-            latest_rows = (
-                session.query(Price)
-                .join(
-                    latest_sub,
-                    and_(
-                        Price.crypto_id == latest_sub.c.cid,
-                        Price.currency == latest_sub.c.fiat,
-                        func.coalesce(Price.timestamp, Price.last_updated) == latest_sub.c.mx_ts,
-                    ),
-                )
-                .all()
-            )
-
-            # نگاشت سریع برای دسترسی O(1)
-            pick = {(r.crypto_id, r.currency): r for r in latest_rows}
-
-            # خروجی
+            
             out = {cid: {} for cid in currency_ids}
 
             for cid in currency_ids:
                 scid = str(cid)
-                for fiat in fiat_currencies:
-                    rec = pick.get((scid, fiat))
-                    if not rec:
+
+                price_data = None
+                if has_new_schema:
+                    price_data = session.execute(text("""
+                        SELECT 
+                            cp.price,
+                            cp.market_cap,
+                            cp.volume_24h,
+                            cp.change_1h,
+                            cp.change_24h,
+                            cp.change_7d,
+                            cp.last_updated
+                        FROM current_prices cp
+                        WHERE cp.symbol_id = :symbol_id
+                    """), {"symbol_id": scid}).first()
+                
+                if not price_data:
+                    # Fallback: old prices table (crypto_id + fiat currency)
+                    if has_old_schema:
+                        for fiat in fiat_currencies:
+                            old_row = session.execute(
+                                text(
+                                    """
+                                    SELECT
+                                        p.price,
+                                        p.market_cap,
+                                        p.volume_24h,
+                                        p.change_1h,
+                                        p.change_24h,
+                                        p.change_7d,
+                                        COALESCE(p.last_updated, p.timestamp) AS updated_at
+                                    FROM prices p
+                                    WHERE p.crypto_id = :crypto_id
+                                      AND p.currency = :fiat
+                                    ORDER BY p.id DESC
+                                    LIMIT 1
+                                    """
+                                ),
+                                {"crypto_id": scid, "fiat": fiat},
+                            ).first()
+                            if old_row:
+                                out[cid][fiat] = {
+                                    "price": float(old_row[0]) if old_row[0] is not None else 0.0,
+                                    "market_cap": float(old_row[1]) if old_row[1] is not None else None,
+                                    "volume_24h": float(old_row[2]) if old_row[2] is not None else None,
+                                    "change_1h": float(old_row[3]) if old_row[3] is not None else None,
+                                    "change_24h": float(old_row[4]) if old_row[4] is not None else 0.0,
+                                    "change_7d": float(old_row[5]) if old_row[5] is not None else None,
+                                    "updated_at": old_row[6],
+                                }
+                            else:
+                                out[cid][fiat] = {
+                                    "price": 0.0,
+                                    "market_cap": None,
+                                    "volume_24h": None,
+                                    "change_1h": None,
+                                    "change_24h": 0.0,
+                                    "change_7d": None,
+                                    "updated_at": None,
+                                }
+                        continue
+
+                    for fiat in fiat_currencies:
                         out[cid][fiat] = {
-                            "price": 0.0, 
+                            "price": 0.0,
                             "market_cap": None,
                             "volume_24h": None,
                             "change_1h": None,
                             "change_24h": 0.0,
                             "change_7d": None,
-                            "updated_at": None
+                            "updated_at": None,
                         }
-                        continue
+                    continue
 
-                    price_val = float(rec.price) if rec.price is not None else 0.0
+                price_usd = float(price_data[0]) if price_data[0] else 0.0
 
-                    # اگر change_24h ذخیره‌شده موجود بود همان را بده، وگرنه محاسبه کن
-                    if rec.change_24h is not None:
-                        ch24 = float(rec.change_24h)
-                    else:
-                        # محاسبه‌ی دستی: نسبت (قیمت فعلی - قیمت 24h قبل) / قیمت 24h قبل * 100
-                        anchor_dt = rec.timestamp or rec.last_updated
-                        prev_row = (
-                            session.query(Price.price)
-                            .filter(
-                                Price.crypto_id == scid,
-                                Price.currency == fiat,
-                                Price.is_historical.is_(True),
-                                Price.timestamp <= anchor_dt - timedelta(hours=24),
-                            )
-                            .order_by(Price.timestamp.desc())
-                            .first()
-                        )
-                        if prev_row and prev_row[0] not in (None, 0):
-                            prev_price = float(prev_row[0])
-                            ch24 = ((price_val - prev_price) / prev_price) * 100.0
-                        else:
-                            ch24 = 0.0
+                for fiat in fiat_currencies:
+                    fiat_rate_row = session.execute(
+                        text("SELECT rate FROM fiat_rates WHERE quote_currency = :fiat"),
+                        {"fiat": fiat},
+                    ).first()
+
+                    fiat_rate = float(fiat_rate_row[0]) if fiat_rate_row else 1.0
 
                     out[cid][fiat] = {
-                        "price": price_val,
-                        "market_cap": float(rec.market_cap) if rec.market_cap else None,
-                        "volume_24h": float(rec.volume_24h) if rec.volume_24h else None,
-                        "change_1h": float(rec.change_1h) if rec.change_1h else None,
-                        "change_24h": ch24,
-                        "change_7d": float(rec.change_7d) if rec.change_7d else None,
-                        "updated_at": rec.timestamp or rec.last_updated,
+                        "price": price_usd * fiat_rate,
+                        "market_cap": float(price_data[1]) * fiat_rate if price_data[1] else None,
+                        "volume_24h": float(price_data[2]) * fiat_rate if price_data[2] else None,
+                        "change_1h": float(price_data[3]) if price_data[3] else None,
+                        "change_24h": float(price_data[4]) if price_data[4] else 0.0,
+                        "change_7d": float(price_data[5]) if price_data[5] else None,
+                        "updated_at": price_data[6],
                     }
 
             return out
@@ -141,7 +177,7 @@ class PriceDbService:
             
             # Set default fiat currencies if not provided
             if fiat_currencies is None:
-                fiat_currencies = list(fiat_symbols.keys())
+                fiat_currencies = ["USD"]
             
             # Get all currencies if specific ones not provided
             if currency_ids is None:
@@ -195,3 +231,104 @@ class PriceDbService:
                 "fiats_count": 0,
                 "elapsed_time": 0
             }
+
+    @staticmethod
+    def get_price_stats():
+        """
+        آمار کلی جداول قیمت برای endpoint /api/price-stats
+        اگر جداول کامل نباشند، مقادیر امن برمی‌گردد تا 500 نشود.
+        """
+        from sqlalchemy import inspect as sqla_inspect, text
+
+        empty = {
+            "total_tracked_currencies": 0,
+            "currencies_with_price": 0,
+            "latest_update": None,
+            "up_to_date_percentage": 0.0,
+        }
+        try:
+            insp = sqla_inspect(engine)
+            try:
+                raw_tables = insp.get_table_names()
+            except Exception as e:
+                logger.warning("get_table_names failed in get_price_stats: %s", e)
+                return empty
+
+            tset = {n.lower() for n in raw_tables}
+            if "current_prices" not in tset:
+                if "prices" not in tset:
+                    return empty
+                session = Session(bind=engine)
+                try:
+                    row = session.execute(
+                        text("SELECT COUNT(*), MAX(COALESCE(last_updated, timestamp)) FROM prices")
+                    ).first()
+                    price_rows = int(row[0] or 0) if row else 0
+                    latest = row[1] if row else None
+                except Exception as e:
+                    logger.warning("prices stats query failed: %s", e, exc_info=True)
+                    return empty
+                finally:
+                    session.close()
+
+                total = 0
+                if "currencies" in tset:
+                    session = Session(bind=engine)
+                    try:
+                        r = session.execute(
+                            text("SELECT COUNT(*) FROM currencies WHERE CMC_ID IS NOT NULL")
+                        ).scalar()
+                        total = int(r or 0)
+                    except Exception as e:
+                        logger.warning("currencies count in get_price_stats: %s", e)
+                    finally:
+                        session.close()
+                up_pct = 100.0 if total == 0 and price_rows > 0 else 100.0 * min(1.0, price_rows / max(total, 1))
+                return {
+                    "total_tracked_currencies": total,
+                    "currencies_with_price": price_rows,
+                    "latest_update": latest,
+                    "up_to_date_percentage": up_pct,
+                }
+
+            session = Session(bind=engine)
+            try:
+                row = session.execute(
+                    text("SELECT COUNT(*), MAX(last_updated) FROM current_prices")
+                ).first()
+                price_rows = int(row[0] or 0) if row else 0
+                latest = row[1] if row else None
+            except Exception as e:
+                logger.warning("current_prices stats query failed: %s", e, exc_info=True)
+                return empty
+            finally:
+                session.close()
+
+            total = 0
+            if "currencies" in tset:
+                session = Session(bind=engine)
+                try:
+                    r = session.execute(
+                        text(
+                            "SELECT COUNT(*) FROM currencies WHERE CMC_ID IS NOT NULL"
+                        )
+                    ).scalar()
+                    total = int(r or 0)
+                except Exception as e:
+                    logger.warning("currencies count in get_price_stats: %s", e)
+                finally:
+                    session.close()
+            if total == 0 and price_rows > 0:
+                up_pct = 100.0
+            else:
+                up_pct = 100.0 * min(1.0, price_rows / max(total, 1))
+
+            return {
+                "total_tracked_currencies": total,
+                "currencies_with_price": price_rows,
+                "latest_update": latest,
+                "up_to_date_percentage": up_pct,
+            }
+        except Exception as e:
+            logger.error("get_price_stats failed: %s", e, exc_info=True)
+            return empty
